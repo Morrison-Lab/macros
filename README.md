@@ -52,7 +52,7 @@ git commit -m "Update macros submodule"
 
 There are two main strategies for loading these macros into Quarto output:
 
-- **`include-in-header`** (recommended for PDF and Quarto books): Inserts the macro file into the document header. For LaTeX/PDF, use `macros.qmd` — definitions go into the preamble and all macros work. For HTML/RevealJS, use `macros-header.html` (provided in this repo), which is a loader script that reads `macros.qmd` and sets `MathJax.tex.macros`. Configure once in `_quarto.yml` to apply project-wide. If you use this loader approach in a website, publish `macros.qmd` as a static resource so the loader can fetch it at runtime.
+- **`include-in-header`** (recommended for PDF and Quarto books): Inserts the macro file into the document header. For LaTeX/PDF, use `macros.qmd` — definitions go into the preamble and macros work (see note below regarding `\v`). For HTML/RevealJS, use `macros-header.html` (provided in this repo), which is a loader script that reads `macros.qmd` and sets `MathJax.tex.macros`. Configure once in `_quarto.yml` to apply project-wide. If you use this loader approach in a website, publish `macros.qmd` as a static resource so the loader can fetch it at runtime.
 - **`include` shortcode** (convenient for single documents): Processes and embeds the macro file inline at the point of insertion. No YAML changes required, but must be added to each `.qmd` file individually.
 
 **Tip:** Using `\providecommand` instead of `\newcommand` in macro definitions avoids "already defined" errors when macros are included in multiple files (e.g., in a Quarto book where each chapter is a separate `.qmd`). The macros in this repository follow this convention.
@@ -89,6 +89,8 @@ format:
 ```
 
 > **Why two files?** `macros.qmd` remains the single source of macro definitions. For PDF, it is inserted verbatim into the LaTeX preamble. For HTML/RevealJS, `macros-header.html` is just a loader that reads `macros.qmd` and registers those same macros with MathJax.
+>
+> **Note on `\v` in PDF via `include-in-header`:** In LaTeX/PDF output, LaTeX's font-encoding initialization restores its built-in text caron/háček accent `\v` at `\begin{document}`, overriding the preamble's `\renewcommand{\v}[1]{\vecf{#1}}`. For vector notation in PDF documents using `include-in-header`, use `\vec{...}` or `\vecf{...}` (which work across all formats and engines). If your document requires the `\v` shorthand specifically, add `\AtBeginDocument{\renewcommand{\v}[1]{\vecf{#1}}}` to your LaTeX preamble. Documents using the `{{< include >}}` shortcode recipe are unaffected because pandoc's macro expansion pass expands `\v` into `\tilde` during markdown processing before LaTeX compiles.
 
 #### Via the Quarto `include` shortcode
 

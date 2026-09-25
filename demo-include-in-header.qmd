@@ -58,7 +58,7 @@ format:
 
 This inserts the macro definitions for each output format:
 
-- **PDF**: `macros.qmd` goes into the LaTeX preamble via `include-in-header` — all macros work, including `\providecommand`.
+- **PDF**: `macros.qmd` goes into the LaTeX preamble via `include-in-header` — macros work, including `\providecommand` (note that LaTeX's font-encoding initialization restores `\v` as a text caron accent at `\begin{document}`, so `\v{x}` produces a text accent error in math mode under `include-in-header` unless re-asserted in the preamble; use `\vec{x}` or `\vecf{x}` for robust cross-format vector notation).
 - **HTML**: `macros-header.html` is inserted via `include-in-header` and loads macros from `macros.qmd` into `MathJax.tex.macros`.
 - **RevealJS**: `macros-header.html` does the same loader step and switches the Reveal math plugin to MathJax 3, so slide math uses the same `macros.qmd` source.
 - **docx**: Word documents do not use a LaTeX preamble or MathJax header, so `include-in-header` has no effect on math rendering for docx. The `docx: default` entry above produces docx output without macro support.
