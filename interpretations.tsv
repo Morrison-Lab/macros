@@ -789,3 +789,187 @@ name	interpretation
 \efsurv	estimated survival factor (alias for \esurvfactor)
 \efsurvf	estimated survival factor function (alias for \esurvfactorf)
 \esurvff	estimated survival factor function (shorthand for \esurvfactorf)
+\bbN	blackboard bold N (natural numbers)
+\bbZ	blackboard bold Z (integers)
+\bbQ	blackboard bold Q (rational numbers)
+\bbR	blackboard bold R (real numbers)
+\bbC	blackboard bold C (complex numbers)
+\inas	convergence almost surely arrow
+\indist	convergence in distribution arrow
+\inprob	convergence in probability arrow
+\plim	probability limit operator (plim)
+\plimf	probability limit applied to argument
+\tr	matrix trace operator (tr)
+\trf	matrix trace applied to argument
+\diag	diagonal matrix operator (diag)
+\diagf	diagonal of matrix applied to argument
+\rank	matrix rank operator (rank)
+\rankf	matrix rank applied to argument
+\vct	matrix vectorization operator (vec)
+\vctf	matrix vectorization applied to argument
+\vcs	matrix strict half-vectorization operator (vecs)
+\vcsf	matrix strict half-vectorization applied to argument
+\vch	matrix half-vectorization operator (vech)
+\vchf	matrix half-vectorization applied to argument
+\matvec	matrix vectorization operator (alias for \vct)
+\matvecf	matrix vectorization applied to argument (alias for \vctf)
+\dBeta	Beta distribution operator
+\dBetaf	Beta distribution applied to parameters
+\dBern	Bernoulli distribution operator (statmath prefix)
+\dBernf	Bernoulli distribution applied to parameters
+\dBin	Binomial distribution operator
+\dBinf	Binomial distribution applied to parameters
+\dF	F-distribution operator
+\dFf	F-distribution applied to parameters
+\dGam	Gamma distribution operator
+\dGamf	Gamma distribution applied to parameters
+\dInvGam	Inverse-Gamma distribution operator
+\dInvGamf	Inverse-Gamma distribution applied to parameters
+\dInvW	Inverse-Wishart distribution operator
+\dInvWf	Inverse-Wishart distribution applied to parameters
+\dLaplace	Laplace distribution operator
+\dLaplacef	Laplace distribution applied to parameters
+\dMN	Multinomial/Matrix-Normal distribution operator
+\dMNf	Multinomial/Matrix-Normal distribution applied to parameters
+\dN	Normal distribution operator (statmath prefix)
+\dNf	Normal distribution applied to parameters
+\dPo	Poisson distribution operator (statmath prefix)
+\dPof	Poisson distribution applied to parameters
+\dt	Student-t distribution operator
+\dtf	Student-t distribution applied to parameters
+\dW	Wishart distribution operator
+\dWf	Wishart distribution applied to parameters
+\dWeib	Weibull distribution operator
+\dWeibf	Weibull distribution applied to parameters
+\Ebar	expectation operator with bar
+\Ebarf	expectation with bar applied to subscript
+\Ehat	expectation operator with hat
+\Ehatf	expectation with hat applied to subscript
+\Etilde	expectation operator with tilde
+\Etildef	expectation with tilde applied to subscript
+\Corrt	correlation operator Corr
+\Corr	correlation Corr(·) applied to argument
+\Corrf	correlation Corr(·) applied to argument (alias for \Corr)
+\Corrs	correlation Corr(·, ·) applied to two arguments
+\MSEt	mean squared error operator MSE
+\MSE	mean squared error MSE(·) applied to argument
+\MSEf	mean squared error MSE(·) applied to argument (alias for \MSE)
+\SEtildet	standard error operator with tilde
+\SEtilde	standard error with tilde applied to argument
+\SEtildef	standard error with tilde applied to argument (alias for \SEtilde)
+\Biast	bias operator Bias
+\biast	bias operator Bias (lowercase alias)
+\sign	sign operator (alias for \signt)
+\bfA	bold Roman capital letter A
+\bfB	bold Roman capital letter B
+\bfC	bold Roman capital letter C
+\bfD	bold Roman capital letter D
+\bfE	bold Roman capital letter E
+\bfF	bold Roman capital letter F
+\bfG	bold Roman capital letter G
+\bfH	bold Roman capital letter H
+\bfI	bold Roman capital letter I
+\bfJ	bold Roman capital letter J
+\bfK	bold Roman capital letter K
+\bfL	bold Roman capital letter L
+\bfM	bold Roman capital letter M
+\bfN	bold Roman capital letter N
+\bfO	bold Roman capital letter O
+\bfP	bold Roman capital letter P
+\bfQ	bold Roman capital letter Q
+\bfR	bold Roman capital letter R
+\bfS	bold Roman capital letter S
+\bfT	bold Roman capital letter T
+\bfU	bold Roman capital letter U
+\bfV	bold Roman capital letter V
+\bfW	bold Roman capital letter W
+\bfX	bold Roman capital letter X
+\bfY	bold Roman capital letter Y
+\bfZ	bold Roman capital letter Z
+\bfa	bold Roman lowercase letter a
+\bfb	bold Roman lowercase letter b
+\bfc	bold Roman lowercase letter c
+\bfd	bold Roman lowercase letter d
+\bfe	bold Roman lowercase letter e
+\bff	bold Roman lowercase letter f
+\bfg	bold Roman lowercase letter g
+\bfh	bold Roman lowercase letter h
+\bfi	bold Roman lowercase letter i
+\bfj	bold Roman lowercase letter j
+\bfk	bold Roman lowercase letter k
+\bfl	bold Roman lowercase letter l
+\bfm	bold Roman lowercase letter m
+\bfn	bold Roman lowercase letter n
+\bfo	bold Roman lowercase letter o
+\bfp	bold Roman lowercase letter p
+\bfq	bold Roman lowercase letter q
+\bfr	bold Roman lowercase letter r
+\bfs	bold Roman lowercase letter s
+\bft	bold Roman lowercase letter t
+\bfu	bold Roman lowercase letter u
+\bfv	bold Roman lowercase letter v
+\bfw	bold Roman lowercase letter w
+\bfx	bold Roman lowercase letter x
+\bfy	bold Roman lowercase letter y
+\bfz	bold Roman lowercase letter z
+\bfalpha	bold Greek lowercase letter alpha
+\bfbeta	bold Greek lowercase letter beta
+\bfdelta	bold Greek lowercase letter delta
+\bfepsilon	bold Greek lowercase letter epsilon
+\bfvarepsilon	bold Greek lowercase letter varepsilon
+\bfzeta	bold Greek lowercase letter zeta
+\bfeta	bold Greek lowercase letter eta
+\bftheta	bold Greek lowercase letter theta
+\bfvartheta	bold Greek lowercase letter vartheta
+\bfgamma	bold Greek lowercase letter gamma
+\bfkappa	bold Greek lowercase letter kappa
+\bflambda	bold Greek lowercase letter lambda
+\bfmu	bold Greek lowercase letter mu
+\bfnu	bold Greek lowercase letter nu
+\bfxi	bold Greek lowercase letter xi
+\bfpi	bold Greek lowercase letter pi
+\bfvarpi	bold Greek lowercase letter varpi
+\bfrho	bold Greek lowercase letter rho
+\bfvarrho	bold Greek lowercase letter varrho
+\bfsigma	bold Greek lowercase letter sigma
+\bfvarsigma	bold Greek lowercase letter varsigma
+\bftau	bold Greek lowercase letter tau
+\bfupsilon	bold Greek lowercase letter upsilon
+\bfphi	bold Greek lowercase letter phi
+\bfvarphi	bold Greek lowercase letter varphi
+\bfchi	bold Greek lowercase letter chi
+\bfpsi	bold Greek lowercase letter psi
+\bfomega	bold Greek lowercase letter omega
+\bfiota	bold Greek lowercase letter iota
+\bfGamma	bold Greek capital letter Gamma
+\bfDelta	bold Greek capital letter Delta
+\bfTheta	bold Greek capital letter Theta
+\bfLambda	bold Greek capital letter Lambda
+\bfXi	bold Greek capital letter Xi
+\bfPi	bold Greek capital letter Pi
+\bfSigma	bold Greek capital letter Sigma
+\bfUpsilon	bold Greek capital letter Upsilon
+\bfPhi	bold Greek capital letter Phi
+\bfPsi	bold Greek capital letter Psi
+\bfOmega	bold Greek capital letter Omega
+\bfzero	bold zero vector/number
+\hCorrt	estimated correlation operator Corr̂ (legacy \hat form)
+\hCorr	estimated correlation Corr̂(·) applied to argument (legacy \hat form)
+\hCorrf	estimated correlation Corr̂(·) applied to argument (alias for \hCorr)
+\hCorrs	estimated correlation Corr̂(·, ·) applied to two arguments (legacy \hat form)
+\eCorrt	estimated correlation operator (composable \Est form)
+\eCorr	estimated correlation applied to argument (composable \Est form)
+\eCorrf	estimated correlation applied to argument (alias for \eCorr)
+\eCorrs	estimated correlation applied to two arguments (composable \Est form)
+\hMSEt	estimated mean squared error operator MSÊ (legacy \hat form)
+\hMSE	estimated mean squared error applied to argument (legacy \hat form)
+\hMSEf	estimated mean squared error applied to argument (alias for \hMSE)
+\eMSEt	estimated mean squared error operator (composable \Est form)
+\eMSE	estimated mean squared error applied to argument (composable \Est form)
+\eMSEf	estimated mean squared error applied to argument (alias for \eMSE)
+\hBiast	estimated bias operator Biaŝ (legacy \hat form)
+\hBias	estimated bias applied to argument (legacy \hat form)
+\hbias	estimated bias applied to argument (lowercase alias)
+\eBiast	estimated bias operator (composable \Est form)
+\eBias	estimated bias applied to argument (composable \Est form)
+\ebias	estimated bias applied to argument (lowercase alias)
