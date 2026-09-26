@@ -1,69 +1,29 @@
-name: Quarto Preview
+# Build half of the PR-preview family, delegated to the reusable workflow in
+# Morrison-Lab/gha. Runs read-only in the (possibly fork) PR context and uploads
+# the rendered site as an artifact; preview-deploy.yml publishes it to gh-pages.
+name: Quarto Preview Build
 
 on:
   pull_request:
-    types:
-      - opened
-      - reopened
-      - synchronize
-      - closed
+    types: [opened, reopened, synchronize, labeled, unlabeled, closed]
+
+permissions:
+  contents: read
 
 jobs:
-  build-deploy:
-    runs-on: ubuntu-latest
+  build:
     permissions:
-      contents: write
-      pull-requests: write
-    steps:
-      - name: Check out repository
-        uses: actions/checkout@v4
-
-      - name: Set up Quarto
-        uses: quarto-dev/quarto-actions/setup@v2
-        env:
-          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        with:
-          tinytex: true
-
-      - uses: r-lib/actions/setup-r@v2
-        with:
-          use-public-rspm: true
-
-      - uses: r-lib/actions/setup-r-dependencies@v2
-        with:
-          packages: |
-            any::knitr
-            any::rmarkdown
-            any::DT
-
-      - name: Render
-        uses: quarto-dev/quarto-actions/render@v2
-
-      - name: Deploy PR Preview
-        id: preview-step
-        uses: rossjrw/pr-preview-action@v1
-        with:
-          source-dir: ./_site/
-          action: ${{ github.event.action == 'closed' && 'remove' || 'deploy' }}
-          preview-branch: gh-pages
-          comment: "false"
-
-      - uses: marocchino/sticky-pull-request-comment@v2
-        if: steps.preview-step.outputs.deployment-action == 'deploy'
-        with:
-          header: pr-preview
-          recreate: true
-          message: |
-            [PR Preview Action](https://github.com/rossjrw/pr-preview-action) ${{ steps.preview-step.outputs.action-version }}
-            :---:
-            :rocket: View preview at ${{ steps.preview-step.outputs.preview-url }}
-
-      - uses: marocchino/sticky-pull-request-comment@v2
-        if: steps.preview-step.outputs.deployment-action == 'remove'
-        with:
-          header: pr-preview
-          recreate: true
-          message: |
-            [PR Preview Action](https://github.com/rossjrw/pr-preview-action) ${{ steps.preview-step.outputs.action-version }}
-            :---:
-            Preview removed because the pull request was closed.
+      contents: read
+    uses: Morrison-Lab/gha/.github/workflows/preview.yml@v2
+    with:
+      use-renv: false
+      install-package: false
+      setup-chrome: false
+      submodules: 'false'
+      apt-packages: ''
+      formats: 'default'
+      r-packages: |
+        any::knitr
+        any::rmarkdown
+        any::DT
+      tinytex: true
