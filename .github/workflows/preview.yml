@@ -5,7 +5,7 @@ name: Quarto Preview Build
 
 on:
   pull_request:
-    types: [opened, reopened, synchronize, labeled, closed]
+    types: [opened, reopened, synchronize, labeled, unlabeled, closed]
 
 permissions:
   contents: read
