@@ -21,6 +21,7 @@ jobs:
       setup-chrome: false
       submodules: 'false'
       apt-packages: ''
+      formats: 'default'
       r-packages: |
         any::knitr
         any::rmarkdown
