@@ -7,6 +7,8 @@ format:
     output-file: demo-shortcode-slides.html
     scrollable: true
     center: false
+    include-in-header:
+      - reveal-mathjax.html
   docx: default
 ---
 
