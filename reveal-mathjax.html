@@ -1,0 +1,43 @@
+<script>
+(function () {
+  (function forceRevealMathJax3() {
+    const prior = Object.prototype.hasOwnProperty.call(window, "RevealMath")
+      ? window.RevealMath
+      : undefined;
+
+    let revealMathValue;
+    Object.defineProperty(window, "RevealMath", {
+      configurable: true,
+      enumerable: true,
+      get() {
+        return revealMathValue;
+      },
+      set(value) {
+        if (value && typeof value.MathJax3 === "function") {
+          const originalMathJax3 = value.MathJax3;
+          revealMathValue = function () {
+            const plugin = originalMathJax3.apply(this, arguments);
+            const originalInit = plugin.init;
+            plugin.init = function (deck) {
+              const config = deck.getConfig() || {};
+              config.mathjax3 = config.mathjax3 || {};
+              config.mathjax3.options = config.mathjax3.options || {};
+              config.mathjax3.options.skipHtmlTags = [
+                "script", "noscript", "style", "textarea", "pre", "code"
+              ];
+              return originalInit.apply(this, arguments);
+            };
+            return plugin;
+          };
+        } else {
+          revealMathValue = value;
+        }
+      },
+    });
+
+    if (prior !== undefined) {
+      window.RevealMath = prior;
+    }
+  })();
+})();
+</script>
