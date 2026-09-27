@@ -127,6 +127,35 @@
       margin-right: 0; 
     }
   </style>
+  <script>
+  (function () {
+    (function forceRevealMathJax3() {
+      const prior = Object.prototype.hasOwnProperty.call(window, "RevealMath")
+        ? window.RevealMath
+        : undefined;
+
+      let revealMathValue;
+      Object.defineProperty(window, "RevealMath", {
+        configurable: true,
+        enumerable: true,
+        get() {
+          return revealMathValue;
+        },
+        set(value) {
+          if (value && typeof value.MathJax3 === "function") {
+            revealMathValue = value.MathJax3();
+          } else {
+            revealMathValue = value;
+          }
+        },
+      });
+
+      if (prior !== undefined) {
+        window.RevealMath = prior;
+      }
+    })();
+  })();
+  </script>
 </head>
 <body class="quarto-light">
   <div class="reveal">
