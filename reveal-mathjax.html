@@ -14,7 +14,21 @@
       },
       set(value) {
         if (value && typeof value.MathJax3 === "function") {
-          revealMathValue = value.MathJax3();
+          const originalMathJax3 = value.MathJax3;
+          revealMathValue = function () {
+            const plugin = originalMathJax3.apply(this, arguments);
+            const originalInit = plugin.init;
+            plugin.init = function (deck) {
+              const config = deck.getConfig() || {};
+              config.mathjax3 = config.mathjax3 || {};
+              config.mathjax3.options = config.mathjax3.options || {};
+              config.mathjax3.options.skipHtmlTags = [
+                "script", "noscript", "style", "textarea", "pre", "code"
+              ];
+              return originalInit.apply(this, arguments);
+            };
+            return plugin;
+          };
         } else {
           revealMathValue = value;
         }
