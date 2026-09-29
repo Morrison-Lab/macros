@@ -3,6 +3,9 @@ project:
   resources:
     - macros.qmd
 
+filters:
+  - d-morrison/code-language-labels
+
 website:
   title: "macros"
   repo-url: https://github.com/d-morrison/macros
