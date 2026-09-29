@@ -6,7 +6,7 @@ function Pandoc(doc)
   if quarto.doc.is_format("html") then
     quarto.doc.add_html_dependency({
       name = "code-language-labels",
-      version = "1.0.1",
+      version = "1.0.2",
       stylesheets = { "code-language-labels.css" }
     })
   end
