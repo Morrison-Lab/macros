@@ -263,6 +263,9 @@ name	interpretation
 \covh	estimated covariance function Ĉov(·)
 \covhf	estimated covariance function (alias)
 \hcovf	estimated covariance function (alias)
+\aVar	asymptotic variance aVar(·)
+\aCov	asymptotic covariance aCov(·)
+\cum	cumulative-exposure operator cum(·)
 \Cort	correlation operator symbol Cor
 \hcort	estimated correlation operator
 \Cor	correlation function Cor(·)
@@ -405,6 +408,8 @@ name	interpretation
 \lincomp	linear combination symbol η
 \odds	odds symbol ω
 \OR	odds ratio label OR
+\RD	risk difference label RD
+\RR	risk ratio label RR
 \ratio	generic ratio symbol ϙ (base for \ror, \hr, and similar ratio macros; subscript denotes the ratio type)
 \ratiof	generic ratio function ϙ(·)
 \ror	odds ratio ϙ_ω (ratio symbol with odds subscript)
@@ -553,6 +558,7 @@ name	interpretation
 \survff	survival factor function (shorthand for \survfactorf)
 \hprob	estimated probability π̂
 \hprobs	estimated probability symbol π̂ (alias for \hprob)
+\hPr	estimated probability with brackets Pr̂[·]
 \hrisk	estimated risk π̂ (alias for \hprob)
 \hprev	estimated prevalence π̂ (alias for \hprob)
 \hodds	estimated odds ω̂
@@ -583,6 +589,8 @@ name	interpretation
 \hriskratiof	estimated risk ratio function ϙ̂_π(·)
 \hrriskf	estimated risk ratio function (alias for \hriskratiof)
 \hriskrf	estimated risk ratio function (alias for \hriskratiof)
+\hRD	estimated risk difference RD̂
+\hRR	estimated risk ratio RR̂
 \hprevratio	estimated prevalence ratio ϙ̂_π (hat-wrapped \prevratio)
 \hprr	estimated prevalence ratio (alias for \hprevratio)
 \hprevratiof	estimated prevalence ratio function ϙ̂_π(·)
@@ -705,6 +713,7 @@ name	interpretation
 \ecdff	estimated cumulative distribution function F̂(·) applied to argument
 \eprob	estimated probability π̂
 \eprobs	estimated probability symbol π̂ (alias for \eprob)
+\ePr	estimated probability with brackets Pr̂[·] (via \Est)
 \erisk	estimated risk π̂ (alias for \eprob)
 \eprev	estimated prevalence π̂ (alias for \eprob)
 \eodds	estimated odds ω̂
@@ -735,6 +744,8 @@ name	interpretation
 \eriskratiof	estimated risk ratio function ϙ̂_π(·)
 \erriskf	estimated risk ratio function (alias for \eriskratiof)
 \eriskrf	estimated risk ratio function (alias for \eriskratiof)
+\eRD	estimated risk difference RD̂ (via \Est)
+\eRR	estimated risk ratio RR̂ (via \Est)
 \eprevratio	estimated prevalence ratio ϙ̂_π (hat-wrapped \prevratio)
 \eprr	estimated prevalence ratio (alias for \eprevratio)
 \eprevratiof	estimated prevalence ratio function ϙ̂_π(·)
