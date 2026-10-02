@@ -272,6 +272,9 @@
 \providecommand{\covh}[1]{\hcovt\paren{#1}}
 \providecommand{\covhf}[1]{\hcovt\paren{#1}}
 \providecommand{\hcovf}[1]{\hcovt\paren{#1}}
+\providecommand{\aVar}[1]{\operatorname{aVar}\paren{#1}}
+\providecommand{\aCov}[1]{\operatorname{aCov}\paren{#1}}
+\providecommand{\cum}[1]{\operatorname{cum}\paren{#1}}
 \def\Cort{\operatorname{Cor}}
 \def\hcort{\mathop{\widehat{\Cort}}\nolimits}
 \providecommand{\Cor}[1]{\Cort \paren{#1}}
@@ -414,6 +417,8 @@
 \def\lincomp{\eta}
 \def\odds{\omega}
 \def\OR{\operatorname{OR}}
+\def\RD{\operatorname{RD}}
+\def\RR{\operatorname{RR}}
 \def\koppa{\text{ϙ}}
 \def\Koppa{\text{Ϙ}}
 \def\qoppa{\koppa}
@@ -737,6 +742,7 @@
 \def\bfzero{\boldsymbol{0}}
 \def\hprob{\hat{\prob}}
 \def\hprobs{\hprob}
+\providecommand{\hPr}[1]{\mathop{\widehat{\Pr}}\nolimits\sb{#1}}
 \def\hrisk{\hprob}
 \def\hprev{\hprob}
 \def\hodds{\hat{\odds}}
@@ -775,6 +781,8 @@
 \providecommand{\hriskratiof}[1]{\hriskratio\paren{#1}}
 \def\hrriskf{\hriskratiof}
 \def\hriskrf{\hriskratiof}
+\def\hRD{\widehat{\RD}}
+\def\hRR{\widehat{\RR}}
 \def\hprevratio{\hat{\prevratio}}
 \def\hprr{\hprevratio}
 \providecommand{\hprevratiof}[1]{\hprevratio\paren{#1}}
@@ -898,6 +906,7 @@
 \providecommand{\ecdff}[1]{\ecdf\paren{#1}}
 \def\eprob{\est{\prob}}
 \def\eprobs{\eprob}
+\providecommand{\ePr}[1]{\mathop{\Est{\Pr}}\nolimits\sb{#1}}
 \def\erisk{\eprob}
 \def\eprev{\eprob}
 \def\eodds{\est{\odds}}
@@ -936,6 +945,8 @@
 \providecommand{\eriskratiof}[1]{\eriskratio\paren{#1}}
 \def\erriskf{\eriskratiof}
 \def\eriskrf{\eriskratiof}
+\def\eRD{\Est{\RD}}
+\def\eRR{\Est{\RR}}
 \def\eprevratio{\est{\prevratio}}
 \def\eprr{\eprevratio}
 \providecommand{\eprevratiof}[1]{\eprevratio\paren{#1}}
