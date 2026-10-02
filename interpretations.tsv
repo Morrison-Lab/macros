@@ -243,6 +243,8 @@ name	interpretation
 \Exp	expected value (alias for \E)
 \Expf	expected value (alias for \E)
 \Expfc	conditional expected value E_c[·]
+\ATT	average treatment effect on the treated label ATT
+\ATTf	average treatment effect on the treated function ATT(·)
 \evalAt	evaluate expression at a given point
 \Varr	variance operator symbol Var
 \Vart	variance operator symbol (alias for \Varr)
@@ -556,6 +558,8 @@ name	interpretation
 \hrisk	estimated risk π̂ (alias for \hprob)
 \hprev	estimated prevalence π̂ (alias for \hprob)
 \hodds	estimated odds ω̂
+\hATT	estimated average treatment effect on the treated ATT̂
+\hATTf	estimated average treatment effect on the treated function ATT̂(·)
 \hrate	estimated rate λ̂
 \hhaz	estimated hazard λ̂ (alias for \hrate)
 \hcuhaz	estimated cumulative hazard Λ̂
@@ -708,6 +712,8 @@ name	interpretation
 \erisk	estimated risk π̂ (alias for \eprob)
 \eprev	estimated prevalence π̂ (alias for \eprob)
 \eodds	estimated odds ω̂
+\eATT	estimated average treatment effect on the treated ATT̂ (via \Est)
+\eATTf	estimated average treatment effect on the treated function ATT̂(·) (via \Est)
 \erate	estimated rate λ̂
 \ehaz	estimated hazard λ̂ (alias for \erate)
 \ecuhaz	estimated cumulative hazard Λ̂

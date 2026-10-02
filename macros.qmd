@@ -250,6 +250,8 @@
 \providecommand{\Exp}[1]{\distop{E}\sb{#1}}
 \providecommand{\Expf}[1]{\distop{E}\sb{#1}}
 \providecommand{\Expfc}[2]{\distop{E}_{#1}\sb{#2}}
+\def\ATT{\operatorname{ATT}}
+\providecommand{\ATTf}[1]{\ATT\paren{#1}}
 \providecommand{\evalAt}[2]{\left.{#1}\right|_{#2}}
 \def\Varr{\operatorname{Var}}
 \def\Vart{\operatorname{Var}}
@@ -738,6 +740,8 @@
 \def\hrisk{\hprob}
 \def\hprev{\hprob}
 \def\hodds{\hat{\odds}}
+\def\hATT{\widehat{\ATT}}
+\providecommand{\hATTf}[1]{\hATT\paren{#1}}
 \def\hrate{\hat{\rate}}
 \def\hhaz{\hrate}
 \def\hcuhaz{\hat{\cuhaz}}
@@ -897,6 +901,8 @@
 \def\erisk{\eprob}
 \def\eprev{\eprob}
 \def\eodds{\est{\odds}}
+\def\eATT{\Est{\ATT}}
+\providecommand{\eATTf}[1]{\eATT\paren{#1}}
 \def\erate{\est{\rate}}
 \def\ehaz{\erate}
 \def\ecuhaz{\est{\cuhaz}}
