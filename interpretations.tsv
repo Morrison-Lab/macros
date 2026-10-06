@@ -66,7 +66,7 @@ name	interpretation
 \NegBin	Negative Binomial label (long form)
 \vbeta	beta coefficient vector
 \vcoef	coefficient vector (alias for \vbeta)
-\coef	regression coefficient (alias for \gb / \beta)
+\coef	regression coefficient (alias for \beta)
 \vb	beta vector (alias for \vbeta)
 \vzero	zero vector
 \vone	vector of ones
@@ -104,7 +104,6 @@ name	interpretation
 \hcoef	estimated regression coefficient (alias for \hb)
 \hvb	estimated beta vector (β̂-vector)
 \hvcoef	estimated coefficient vector (alias for \hvb)
-\vhcoef	estimated coefficient vector (alias for \hvcoef)
 \hR	Gelman-Rubin convergence diagnostic (potential scale reduction factor, R-hat)
 \hk	estimated kappa κ̂
 \hkappa	estimated kappa (alias for \hk)
