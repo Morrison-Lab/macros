@@ -66,8 +66,6 @@
 \def\vbeta{\vec \beta}
 \def\vcoef{\vbeta}
 \def\coef{\beta}
-\def\hcoef{\hat{\beta}}
-\def\vhcoef{\hat{\vbeta}}
 \def\vb{\vec \b}
 \def\vzero{\vec{0}}
 \def\vone{\vec{1}}
@@ -102,7 +100,9 @@
 \def\eqdef{\stackrel{\text{def}}{=}}
 \def\defeq{\stackrel{\text{def}}{=}}
 \def\hb{\hat \beta}
+\def\hcoef{\hb}
 \def\hvb{\hat{\vb}}
+\def\vhcoef{\hvb}
 \def\hR{\hat{R}}
 \def\hk{\hat \kappa}
 \def\hkappa{\hat \kappa}
@@ -857,7 +857,9 @@
 \providecommand{\equantilef}[1]{\equantile\paren{#1}}
 \def\ep{\mathop{\est{\p}}\nolimits}
 \def\eb{\est{\beta}}
+\def\ecoef{\eb}
 \def\evb{\est{\vb}}
+\def\evcoef{\evb}
 \def\eR{\est{R}}
 \def\ek{\est{\kappa}}
 \def\ekappa{\est{\kappa}}
