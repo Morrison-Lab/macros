@@ -65,7 +65,12 @@
 \def\NegBin{\operatorname{NegBin}}
 \def\vbeta{\vec \beta}
 \def\vcoef{\vbeta}
-\def\coef{\beta}
+\def\regcoef{\b}
+\def\Regcoef{\mathrm{B}}
+\providecommand{\coef}[1]{\regcoef_{#1}}
+\providecommand{\Coef}[1]{\Regcoef_{#1}}
+\def\intcoef{\coef{0}}
+\def\Intcoef{\Coef{0}}
 \def\vb{\vec \b}
 \def\vzero{\vec{0}}
 \def\vone{\vec{1}}
@@ -73,6 +78,7 @@
 \def\gg{\gamma}
 \def\gd{\delta}
 \def\eps{\varepsilon}
+\def\cdev{\eps}
 \def\veps{\vec{\varepsilon}}
 \providecommand{\epsp}[1]{\eps\paren{#1}}
 \providecommand{\epsf}[1]{\eps\paren{#1}}
@@ -100,7 +106,8 @@
 \def\eqdef{\stackrel{\text{def}}{=}}
 \def\defeq{\stackrel{\text{def}}{=}}
 \def\hb{\hat \beta}
-\def\hcoef{\hb}
+\providecommand{\hcoef}[1]{\hat{\regcoef}_{#1}}
+\def\hintcoef{\hcoef{0}}
 \def\hvb{\hat{\vb}}
 \def\hvcoef{\hvb}
 \def\vhcoef{\hvb}
@@ -110,6 +117,7 @@
 \def\hl{\hat \lambda}
 \def\hy{\hat y}
 \def\yh{\hat y}
+\def\fitted{\hy}
 \def\V{{\operatorname{Var}}}
 \def\hs{\hat \sigma}
 \def\hsig{\hat \sigma}
@@ -183,6 +191,7 @@
 \def\modresid{\modresidual}
 \def\ModResidual{R^*}
 \def\ModResid{\ModResidual}
+\def\prederr{e}
 \def\score{\ell'}
 \def\scorev{\vec{\ell'}}
 \def\scorei{\vec{\ell_i'}}
@@ -858,7 +867,8 @@
 \providecommand{\equantilef}[1]{\equantile\paren{#1}}
 \def\ep{\mathop{\est{\p}}\nolimits}
 \def\eb{\est{\beta}}
-\def\ecoef{\eb}
+\providecommand{\ecoef}[1]{\est{\regcoef}_{#1}}
+\def\eintcoef{\ecoef{0}}
 \def\evb{\est{\vb}}
 \def\evcoef{\evb}
 \def\evhcoef{\evb}
@@ -867,6 +877,7 @@
 \def\ekappa{\est{\kappa}}
 \def\el{\est{\lambda}}
 \def\ey{\est{y}}
+\def\efitted{\ey}
 \def\es{\est{\sigma}}
 \def\esig{\est{\sigma}}
 \def\eS{\est{\Sigma}}
