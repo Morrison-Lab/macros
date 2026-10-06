@@ -191,7 +191,7 @@
 \def\modresid{\modresidual}
 \def\ModResidual{R^*}
 \def\ModResid{\ModResidual}
-\def\prederr{e}
+\def\prederr{\deviation}
 \def\score{\ell'}
 \def\scorev{\vec{\ell'}}
 \def\scorei{\vec{\ell_i'}}
