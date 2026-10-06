@@ -65,6 +65,8 @@ name	interpretation
 \NB	Negative Binomial distribution label
 \NegBin	Negative Binomial label (long form)
 \vbeta	beta coefficient vector
+\vcoef	coefficient vector (alias for \vbeta)
+\coef	regression coefficient (alias for \beta)
 \vb	beta vector (alias for \vbeta)
 \vzero	zero vector
 \vone	vector of ones
@@ -99,7 +101,10 @@ name	interpretation
 \eqdef	equals-by-definition symbol (≝)
 \defeq	equals-by-definition (alias for \eqdef)
 \hb	estimated beta coefficient β̂
+\hcoef	estimated regression coefficient (alias for \hb)
 \hvb	estimated beta vector (β̂-vector)
+\hvcoef	estimated coefficient vector (alias for \hvb)
+\vhcoef	estimated coefficient vector (transposed-letter alias for \hvb)
 \hR	Gelman-Rubin convergence diagnostic (potential scale reduction factor, R-hat)
 \hk	estimated kappa κ̂
 \hkappa	estimated kappa (alias for \hk)
@@ -664,7 +669,10 @@ name	interpretation
 \equantilef	estimated quantile function applied to argument (alias for \eQf)
 \ep	estimated probability density (hat p)
 \eb	estimated beta coefficient β̂
+\ecoef	estimated regression coefficient (alias for \eb)
 \evb	estimated beta vector (β̂-vector)
+\evcoef	estimated coefficient vector (alias for \evb)
+\evhcoef	estimated coefficient vector (transposed-letter alias for \evb)
 \eR	Gelman-Rubin convergence diagnostic (potential scale reduction factor, R-hat)
 \ek	estimated kappa κ̂
 \ekappa	estimated kappa (alias for \ek)
