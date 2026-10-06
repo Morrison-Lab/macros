@@ -66,7 +66,12 @@ name	interpretation
 \NegBin	Negative Binomial label (long form)
 \vbeta	beta coefficient vector
 \vcoef	coefficient vector (alias for \vbeta)
-\coef	regression coefficient (alias for \beta)
+\regcoef	regression coefficient symbol β
+\Regcoef	uppercase regression coefficient symbol B
+\coef	regression coefficient for covariate (β_x)
+\Coef	uppercase regression coefficient for covariate (B_x)
+\intcoef	regression intercept (β_0)
+\Intcoef	uppercase regression intercept (B_0)
 \vb	beta vector (alias for \vbeta)
 \vzero	zero vector
 \vone	vector of ones
@@ -74,6 +79,7 @@ name	interpretation
 \gg	Greek letter gamma (alias for \g)
 \gd	Greek letter delta (δ)
 \eps	varepsilon error term (ε)
+\cdev	deviation from conditional mean (ε)
 \veps	error vector (ε-vector)
 \epsp	ε(·) error function
 \epsf	ε(·) error function (alias for \epsp)
@@ -101,7 +107,8 @@ name	interpretation
 \eqdef	equals-by-definition symbol (≝)
 \defeq	equals-by-definition (alias for \eqdef)
 \hb	estimated beta coefficient β̂
-\hcoef	estimated regression coefficient (alias for \hb)
+\hcoef	estimated regression coefficient for covariate (β̂_x)
+\hintcoef	estimated regression intercept (β̂_0)
 \hvb	estimated beta vector (β̂-vector)
 \hvcoef	estimated coefficient vector (alias for \hvb)
 \vhcoef	estimated coefficient vector (transposed-letter alias for \hvb)
@@ -111,6 +118,7 @@ name	interpretation
 \hl	estimated lambda λ̂
 \hy	fitted / predicted value ŷ
 \yh	fitted value ŷ (alias for \hy)
+\fitted	fitted or predicted value (alias for \hy)
 \V	variance operator symbol Var
 \hs	estimated sigma σ̂
 \hsig	estimated sigma (alias for \hs)
@@ -176,6 +184,7 @@ name	interpretation
 \modresid	modified residual (alias for \modresidual)
 \ModResidual	uppercase modified residual R*
 \ModResid	uppercase modified residual (alias)
+\prederr	prediction error (fitted minus observed)
 \score	score function ℓ′
 \scorev	score vector
 \scorei	per-observation score vector ℓ′_i
@@ -669,7 +678,8 @@ name	interpretation
 \equantilef	estimated quantile function applied to argument (alias for \eQf)
 \ep	estimated probability density (hat p)
 \eb	estimated beta coefficient β̂
-\ecoef	estimated regression coefficient (alias for \eb)
+\ecoef	estimated regression coefficient for covariate (β̂_x)
+\eintcoef	estimated regression intercept (β̂_0)
 \evb	estimated beta vector (β̂-vector)
 \evcoef	estimated coefficient vector (alias for \evb)
 \evhcoef	estimated coefficient vector (transposed-letter alias for \evb)
@@ -678,6 +688,7 @@ name	interpretation
 \ekappa	estimated kappa (alias for \ek)
 \el	estimated lambda λ̂
 \ey	fitted / predicted value ŷ
+\efitted	fitted or predicted value (alias for \ey)
 \es	estimated sigma σ̂
 \esig	estimated sigma (alias for \es)
 \eS	estimated covariance matrix Σ̂
