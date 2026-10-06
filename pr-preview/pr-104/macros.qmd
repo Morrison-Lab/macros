@@ -102,7 +102,8 @@
 \def\hb{\hat \beta}
 \def\hcoef{\hb}
 \def\hvb{\hat{\vb}}
-\def\vhcoef{\hvb}
+\def\hvcoef{\hvb}
+\def\vhcoef{\hvcoef}
 \def\hR{\hat{R}}
 \def\hk{\hat \kappa}
 \def\hkappa{\hat \kappa}
