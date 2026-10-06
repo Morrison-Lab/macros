@@ -103,6 +103,7 @@
 \def\hcoef{\hb}
 \def\hvb{\hat{\vb}}
 \def\hvcoef{\hvb}
+\def\vhcoef{\hvb}
 \def\hR{\hat{R}}
 \def\hk{\hat \kappa}
 \def\hkappa{\hat \kappa}
@@ -860,6 +861,7 @@
 \def\ecoef{\eb}
 \def\evb{\est{\vb}}
 \def\evcoef{\evb}
+\def\evhcoef{\evb}
 \def\eR{\est{R}}
 \def\ek{\est{\kappa}}
 \def\ekappa{\est{\kappa}}
