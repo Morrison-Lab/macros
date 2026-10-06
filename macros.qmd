@@ -64,6 +64,10 @@
 \def\NB{\operatorname{NegBin}}
 \def\NegBin{\operatorname{NegBin}}
 \def\vbeta{\vec \beta}
+\def\vcoef{\vbeta}
+\def\coef{\beta}
+\def\hcoef{\hat{\beta}}
+\def\vhcoef{\hat{\vbeta}}
 \def\vb{\vec \b}
 \def\vzero{\vec{0}}
 \def\vone{\vec{1}}

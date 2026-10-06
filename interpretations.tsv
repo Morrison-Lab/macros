@@ -65,6 +65,10 @@ name	interpretation
 \NB	Negative Binomial distribution label
 \NegBin	Negative Binomial label (long form)
 \vbeta	beta coefficient vector
+\vcoef	coefficient vector (alias for \vbeta)
+\coef	regression coefficient (alias for \gb / \beta)
+\hcoef	estimated regression coefficient (alias for \hb)
+\vhcoef	estimated coefficient vector
 \vb	beta vector (alias for \vbeta)
 \vzero	zero vector
 \vone	vector of ones
