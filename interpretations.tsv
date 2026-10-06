@@ -103,7 +103,8 @@ name	interpretation
 \hb	estimated beta coefficient β̂
 \hcoef	estimated regression coefficient (alias for \hb)
 \hvb	estimated beta vector (β̂-vector)
-\vhcoef	estimated coefficient vector (alias for \hvb)
+\hvcoef	estimated coefficient vector (alias for \hvb)
+\vhcoef	estimated coefficient vector (alias for \hvcoef)
 \hR	Gelman-Rubin convergence diagnostic (potential scale reduction factor, R-hat)
 \hk	estimated kappa κ̂
 \hkappa	estimated kappa (alias for \hk)
