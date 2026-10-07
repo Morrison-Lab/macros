@@ -127,6 +127,8 @@ cat(':::\n::::\n')
 | IID distributed | `X_i \siid \Normal(\m, \ss)` | $X_i \siid \Normal(\m, \ss)$ |
 | Vector: mu | `\vm` | $\vm$ |
 | Hat beta | `\hb` | $\hb$ |
+| Sigma-algebra | `\salg` | $\salg$ |
+| Borel sigma-algebra | `\borel` | $\borel$ |
 
 ## Color macros
 

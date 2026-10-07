@@ -1,3 +1,4 @@
+\providecommand{\mathscr}[1]{\mathcal{#1}}
 \providecommand{\cbl}[1]{\mathopen{}\left\{#1\right.}
 \providecommand{\cb}[1]{\mathopen{}\left\{#1\right\}\mathclose{}}
 \providecommand{\cbmat}[1]{\mathopen{}\left\{\begin{matrix}#1\end{matrix}\right\}\mathclose{}}
@@ -595,6 +596,26 @@
 \def\bbQ{\mathbb{Q}}
 \def\bbR{\mathbb{R}}
 \def\bbC{\mathbb{C}}
+\def\scrA{\mathscr{A}}
+\def\scrB{\mathscr{B}}
+\def\scrC{\mathscr{C}}
+\def\scrF{\mathscr{F}}
+\def\scrS{\mathscr{S}}
+\def\scrT{\mathscr{T}}
+\def\salg{\scrS}
+\def\salgS{\scrS}
+\def\salgT{\scrT}
+\def\sigmaalg{\salg}
+\def\sigmaalgebra{\salg}
+\def\borel{\scrB}
+\def\Borel{\borel}
+\def\borelalg{\borel}
+\def\events{\scrF}
+\def\eventspace{\events}
+\def\coll{\scrC}
+\def\collection{\coll}
+\providecommand{\gensalg}[1]{\sigma\paren{#1}}
+\providecommand{\gensigmaalg}[1]{\gensalg{#1}}
 \def\inas{\overset{\scriptstyle a.s.}{\longrightarrow}}
 \def\indist{\overset{\scriptstyle d}{\longrightarrow}}
 \def\inprob{\overset{\scriptstyle p}{\longrightarrow}}
