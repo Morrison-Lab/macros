@@ -4,7 +4,7 @@
 \providecommand{\paren}[1]{\mathopen{}\left(#1\right)\mathclose{}}
 \providecommand{\pmat}[1]{\begin{pmatrix}#1\end{pmatrix}}
 \providecommand{\sparen}[1]{(#1)}
-\providecommand{\sb}[1]{\mathopen{}\left[#1\right]\mathclose{}}
+\renewcommand{\sb}[1]{\mathopen{}\left[#1\right]\mathclose{}}
 \providecommand{\distop}[1]{\operatorname{#1}}
 \providecommand{\sbmat}[1]{\begin{bmatrix}#1\end{bmatrix}}
 \providecommand{\Prf}[1]{\Pr\paren{#1}}
