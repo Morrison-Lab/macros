@@ -830,6 +830,7 @@ name	interpretation
 \bbQ	blackboard bold Q (rational numbers)
 \bbR	blackboard bold R (real numbers)
 \bbC	blackboard bold C (complex numbers)
+\mathscr	script font operator (fallback to \mathcal)
 \scrA	script A symbol 𝒜
 \scrB	script B symbol ℬ
 \scrC	script C symbol 𝒞
