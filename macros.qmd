@@ -595,6 +595,26 @@
 \def\bbQ{\mathbb{Q}}
 \def\bbR{\mathbb{R}}
 \def\bbC{\mathbb{C}}
+\def\scrA{\mathscr{A}}
+\def\scrB{\mathscr{B}}
+\def\scrC{\mathscr{C}}
+\def\scrF{\mathscr{F}}
+\def\scrS{\mathscr{S}}
+\def\scrT{\mathscr{T}}
+\def\salg{\mathscr{S}}
+\def\salgS{\mathscr{S}}
+\def\salgT{\mathscr{T}}
+\def\sigmaalg{\salg}
+\def\sigmaalgebra{\salg}
+\def\borel{\mathscr{B}}
+\def\Borel{\borel}
+\def\borelalg{\borel}
+\def\events{\mathscr{F}}
+\def\eventspace{\events}
+\def\coll{\mathscr{C}}
+\def\collection{\coll}
+\providecommand{\gensalg}[1]{\sigma\paren{#1}}
+\providecommand{\gensigmaalg}[1]{\gensalg{#1}}
 \def\inas{\overset{\scriptstyle a.s.}{\longrightarrow}}
 \def\indist{\overset{\scriptstyle d}{\longrightarrow}}
 \def\inprob{\overset{\scriptstyle p}{\longrightarrow}}
