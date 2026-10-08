@@ -403,6 +403,14 @@
 \def\vv{\vecf{v}}
 \def\vh{\vecf{h}}
 \def\ve{\vecf{e}}
+\def\vu{\vecf{u}}
+\def\vg{\vecf{g}}
+\def\vp{\vecf{p}}
+\def\vq{\vecf{q}}
+\def\vr{\vecf{r}}
+\def\vdelta{\vecf{\delta}}
+\def\vepsilon{\vecf{\epsilon}}
+\def\vphi{\vecf{\phi}}
 \providecommand{\mat}[1]{\mathbf{#1}}
 \providecommand{\dsn}[1]{#1_1, \ldots, #1_n}
 \def\X1n{\dsn{X}}

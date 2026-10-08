@@ -395,6 +395,14 @@ name	interpretation
 \vv	vector v (ṽ)
 \vh	vector h, such as hidden-unit values (h̃)
 \ve	residual vector e (ẽ)
+\vu	vector u (ũ)
+\vg	vector g, such as a gradient (g̃)
+\vp	vector p, such as a probability distribution (p̃)
+\vq	vector q, such as a second probability distribution (q̃)
+\vr	vector r (r̃)
+\vdelta	vector δ, such as backpropagated errors (δ̃)
+\vepsilon	vector ϵ (ϵ̃); see also \veps for an error vector
+\vphi	vector φ, such as features (φ̃)
 \mat	matrix notation (alias for \matr)
 \dsn	sequence x₁, …, xₙ
 \X1n	sequence of random variables X₁, …, Xₙ
