@@ -431,6 +431,8 @@ name	interpretation
 \sumn	sum over index from 1 to n
 \sumin	sum over i from 1 to n
 \sumiN	sum over i from 1 to N
+\avgin	average over i from 1 to n: one over n times the sum
+\avgiN	average over i from 1 to N: one over N times the sum
 \sumip	sum over i from 1 to p
 \sumjn	sum over j from 1 to n
 \sumjp	sum over j from 1 to p

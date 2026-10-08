@@ -445,6 +445,8 @@
 \def\sumi1n{\sum_{i=1}^n}
 \def\prodin{\prod_{i=1}^n}
 \def\prodi1n{\prod_{i=1}^n}
+\def\avgin{\frac{1}{n}\sumin}
+\def\avgiN{\frac{1}{N}\sumiN}
 \providecommand{\lp}[1]{\dprodf{#1}{\vb}}
 \def\lpdp{\lp{\vx}}
 \def\lincomp{\eta}
