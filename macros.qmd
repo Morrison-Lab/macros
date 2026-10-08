@@ -167,6 +167,10 @@
 \def\tf{\therefore}
 \def\Lik{\mathcal{L}}
 \def\llik{\ell}
+\def\loss{L}
+\providecommand{\lossf}[1]{\loss\paren{#1}}
+\def\hf{\hat{f}}
+\providecommand{\hfx}[1]{\hf\paren{#1}}
 \def\loglik{\ell}
 \def\logl{\ell}
 \providecommand{\llikf}[1]{\llik \paren{#1}}
@@ -259,6 +263,8 @@
 \providecommand{\expitf}[1]{\expit\cb{#1}}
 \providecommand{\dexpitf}[1]{\expit'\cb{#1}}
 \def\logit{\operatorname{logit}}
+\def\sigmoid{\sigma}
+\providecommand{\sigmoidf}[1]{\sigmoid\paren{#1}}
 \providecommand{\logitf}[1]{\logit\cb{#1}}
 \providecommand{\E}[1]{\distop{E}\sb{#1}}
 \providecommand{\Ef}[1]{\distop{E}\sb{#1}}
@@ -393,6 +399,10 @@
 \def\vT{\vecf{T}}
 \def\vt{\vecf{t}}
 \def\vpi{\vecf{\pi}}
+\def\vw{\vecf{w}}
+\def\vv{\vecf{v}}
+\def\vh{\vecf{h}}
+\def\ve{\vecf{e}}
 \providecommand{\mat}[1]{\mathbf{#1}}
 \providecommand{\dsn}[1]{#1_1, \ldots, #1_n}
 \def\X1n{\dsn{X}}

@@ -158,6 +158,10 @@ name	interpretation
 \tf	therefore symbol (∴)
 \Lik	likelihood script symbol (ℒ)
 \llik	log-likelihood symbol (ℓ)
+\loss	loss function symbol (L)
+\lossf	loss function applied to its arguments, L(·)
+\hf	fitted prediction function (f̂)
+\hfx	fitted prediction function applied to its argument, f̂(·)
 \loglik	log-likelihood symbol (alias for \llik)
 \logl	log-likelihood symbol (alias for \llik)
 \llikf	log-likelihood function ℓ(·)
@@ -251,6 +255,8 @@ name	interpretation
 \expitf	expit applied to argument
 \dexpitf	derivative of expit function
 \logit	logit function
+\sigmoid	logistic (sigmoid) function symbol (σ)
+\sigmoidf	logistic (sigmoid) function applied to its argument, σ(·)
 \logitf	logit applied to argument
 \E	expected value E[·]
 \Ef	expected value (alias for \E)
@@ -385,6 +391,10 @@ name	interpretation
 \vT	time vector T (T̃)
 \vt	time vector t lowercase (t̃)
 \vpi	vector of probabilities π (π̃)
+\vw	weight vector w (w̃)
+\vv	vector v (ṽ)
+\vh	vector h, such as hidden-unit values (h̃)
+\ve	residual vector e (ẽ)
 \mat	matrix notation (alias for \matr)
 \dsn	sequence x₁, …, xₙ
 \X1n	sequence of random variables X₁, …, Xₙ
