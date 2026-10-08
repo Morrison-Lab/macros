@@ -1075,9 +1075,12 @@
 \def\sdpar{\sigma}
 \def\varpar{\sigma^2}
 \def\hsdpar{\hat{\sigma}}
+\def\esdpar{\est{\sdpar}}
 \def\hvarpar{\hat{\sigma}^2}
+\def\evarpar{\est{\sdpar}^2}
 \def\covmat{\Sigma}
 \def\hcovmat{\hat{\Sigma}}
+\def\ecovmat{\est{\covmat}}
 \def\corpar{\rho}
 \def\noise{\varepsilon}
 \def\vnoise{\vec{\varepsilon}}
@@ -1110,7 +1113,9 @@
 \def\param{\theta}
 \def\vparam{\vec{\theta}}
 \def\hparam{\hat{\theta}}
+\def\eparam{\est{\param}}
 \def\hvparam{\hat{\vec{\theta}}}
+\def\evparam{\est{\vparam}}
 \def\Param{\Theta}
 \def\Paramspace{\Theta}
 \def\angpar{\theta}
@@ -1118,6 +1123,7 @@
 \def\shapeb{\beta}
 \def\df{\nu}
 \def\hdf{\hat{\nu}}
+\def\edf{\est{\df}}
 \def\gammafn{\Gamma}
 \def\samplespace{\Omega}
 \def\outcome{\omega}
@@ -1128,7 +1134,9 @@
 \def\change{\Delta}
 \def\vprob{\vecf{\pi}}
 \def\hmean{\hat{\mu}}
+\def\emean{\est{\mean}}
 \def\hregcoef{\hat{\beta}}
+\def\eregcoef{\est{\regcoef}}
 \def\armijo{\alpha}
 \def\schedfrac{\alpha}
 \def\schedlen{\tau}
@@ -1167,6 +1175,7 @@
 \def\highend{\beta}
 \def\precision{\tau}
 \def\hprecision{\hat{\tau}}
+\def\eprecision{\est{\precision}}
 \def\mahal{\Delta}
 \def\mahaldist{\delta}
 \def\rvrate{\Lambda}
@@ -1185,6 +1194,7 @@
 \def\lrstat{\Lambda}
 \def\nuisance{\lambda}
 \def\hnuisance{\hat{\lambda}}
+\def\enuisance{\est{\nuisance}}
 \def\interest{\psi}
 \def\quantlevel{\beta}
 \def\tuning{\lambda}
