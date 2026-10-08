@@ -66,13 +66,13 @@
 \def\NegBin{\operatorname{NegBin}}
 \def\vbeta{\vec \beta}
 \def\vcoef{\vbeta}
-\def\regcoef{\b}
+\def\regcoef{\beta}
 \def\Regcoef{\mathrm{B}}
 \providecommand{\coef}[1]{\regcoef_{#1}}
 \providecommand{\Coef}[1]{\Regcoef_{#1}}
 \def\intcoef{\coef{0}}
 \def\Intcoef{\Coef{0}}
-\def\vb{\vec \b}
+\def\vb{\vec \beta}
 \def\vzero{\vec{0}}
 \def\vone{\vec{1}}
 \def\gb{\beta}
