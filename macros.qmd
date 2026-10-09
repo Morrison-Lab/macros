@@ -169,10 +169,12 @@
 \def\llik{\ell}
 \def\loss{L}
 \providecommand{\lossf}[1]{\loss\paren{#1}}
+\providecommand{\obsloss}[1]{\ell_{#1}}
+\providecommand{\lpnorm}[1]{\ell_{#1}}
 \def\hf{\hat{f}}
 \providecommand{\hfx}[1]{\hf\paren{#1}}
-\def\loglik{\ell}
-\def\logl{\ell}
+\def\loglik{\llik}
+\def\logl{\llik}
 \providecommand{\llikf}[1]{\llik \paren{#1}}
 \providecommand{\Likf}[1]{\Lik\paren{#1}}
 \def\loglikf{\llikf}
@@ -197,10 +199,10 @@
 \def\ModResidual{R^*}
 \def\ModResid{\ModResidual}
 \def\prederr{\deviation}
-\def\score{\ell'}
-\def\scorev{\vec{\ell'}}
-\def\scorei{\vec{\ell_i'}}
-\def\scorevi{\vec{\ell_i'}}
+\def\score{\llik'}
+\def\scorev{\vec{\llik'}}
+\def\scorei{\vec{\llik_i'}}
+\def\scorevi{\vec{\llik_i'}}
 \providecommand{\scoref}[1]{\score \paren{#1}}
 \def\hess{\llik''}
 \def\hessm{\llik''}
@@ -210,7 +212,7 @@
 \providecommand{\hessf}[1]{\hess \paren{#1}}
 \providecommand{\hessianf}[1]{\hess \paren{#1}}
 \providecommand{\starf}[1]{#1^*}
-\def\lik{\ell}
+\def\lik{\llik}
 \providecommand{\est}[1]{\hat{#1}}
 \providecommand{\Est}[1]{\widehat{#1}}
 \providecommand{\esttmp}[1]{{\Est{#1}}^*}
