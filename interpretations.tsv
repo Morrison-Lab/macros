@@ -400,6 +400,7 @@ name	interpretation
 \vp	vector p, such as a probability distribution (p̃)
 \vq	vector q, such as a second probability distribution (q̃)
 \vr	vector r (r̃)
+\vconst	constant vector c (c̃)
 \vdelta	vector δ, such as backpropagated errors (δ̃)
 \vepsilon	vector ϵ (ϵ̃); see also \veps for an error vector
 \vphi	vector φ, such as features (φ̃)
