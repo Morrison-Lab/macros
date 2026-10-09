@@ -232,6 +232,9 @@
 \providecommand{\xderiv}[2]{\frac{\partial^2}{\partial #1 \partial #2}}
 \providecommand{\xderivf}[3]{\frac{\partial^2 #1}{\partial #2 \partial #3}}
 \providecommand{\xderivff}[3]{\frac{\partial^2 #3}{\partial #1 \partial #2}}
+\def\grad{\nabla}
+\providecommand{\gradf}[1]{\grad #1}
+\providecommand{\gradwrt}[2]{\grad_{#1} #2}
 \providecommand{\dif}[2]{\frac{d #1}{d #2}}
 \providecommand{\red}[1]{{\color{red}{#1}}}
 \providecommand{\green}[1]{{\color{green}{#1}}}
