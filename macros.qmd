@@ -171,6 +171,8 @@
 \providecommand{\lossf}[1]{\loss\paren{#1}}
 \providecommand{\obsloss}[1]{\ell_{#1}}
 \providecommand{\lpnorm}[1]{\ell_{#1}}
+\def\lbound{\ell}
+\def\ubound{u}
 \def\hf{\hat{f}}
 \providecommand{\hfx}[1]{\hf\paren{#1}}
 \def\loglik{\llik}
