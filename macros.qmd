@@ -169,10 +169,14 @@
 \def\llik{\ell}
 \def\loss{L}
 \providecommand{\lossf}[1]{\loss\paren{#1}}
+\providecommand{\obsloss}[1]{\ell_{#1}}
+\providecommand{\lpnorm}[1]{\ell_{#1}}
+\def\lbound{\ell}
+\def\ubound{u}
 \def\hf{\hat{f}}
 \providecommand{\hfx}[1]{\hf\paren{#1}}
-\def\loglik{\ell}
-\def\logl{\ell}
+\def\loglik{\llik}
+\def\logl{\llik}
 \providecommand{\llikf}[1]{\llik \paren{#1}}
 \providecommand{\Likf}[1]{\Lik\paren{#1}}
 \def\loglikf{\llikf}
@@ -197,10 +201,10 @@
 \def\ModResidual{R^*}
 \def\ModResid{\ModResidual}
 \def\prederr{\deviation}
-\def\score{\ell'}
-\def\scorev{\vec{\ell'}}
-\def\scorei{\vec{\ell_i'}}
-\def\scorevi{\vec{\ell_i'}}
+\def\score{\llik'}
+\def\scorev{\vec{\llik'}}
+\def\scorei{\vec{\llik_i'}}
+\def\scorevi{\vec{\llik_i'}}
 \providecommand{\scoref}[1]{\score \paren{#1}}
 \def\hess{\llik''}
 \def\hessm{\llik''}
@@ -210,7 +214,7 @@
 \providecommand{\hessf}[1]{\hess \paren{#1}}
 \providecommand{\hessianf}[1]{\hess \paren{#1}}
 \providecommand{\starf}[1]{#1^*}
-\def\lik{\ell}
+\def\lik{\llik}
 \providecommand{\est}[1]{\hat{#1}}
 \providecommand{\Est}[1]{\widehat{#1}}
 \providecommand{\esttmp}[1]{{\Est{#1}}^*}
@@ -434,8 +438,8 @@
 \def\x1n{\dsn{x}}
 \def\y1n{\dsn{y}}
 \def\'{^{\top}}
-\providecommand{\pt}[1]{\paren{#1}\'}
-\providecommand{\tp}[1]{{#1}\'}
+\providecommand{\pt}[1]{\paren{#1}^{\top}}
+\providecommand{\tp}[1]{{#1}^{\top}}
 \def\dpr{\cdot}
 \def\Xx1n{X_1=x_1, \ldots, X_n = x_n}
 \providecommand{\dprod}[2]{#1 \cdot #2}
@@ -604,7 +608,7 @@
 \def\defLik{\Lik(\theta) \eqdef \p(\vX = \vx | \Theta = \theta)}
 \def\defLogLik{\lik \eqdef \logf{\Lik(\vx|\th)}}
 \def\defScore{\score \eqdef \deriv{\th} \lik(\vx|\th)}
-\def\defHess{\hess \eqdef \deriv{\vth}\deriv{\vth\'} \llik(\vx | \vth)}
+\def\defHess{\hess \eqdef \deriv{\vth}\deriv{\vth^{\top}} \llik(\vx | \vth)}
 \def\thmHessij{\hessij =
 \deriv{\th_i}\deriv{\th_j} \llik(\vX = \vx | \vth)}
 \def\defOInf{\oinf \eqdef -\hess(\vx|\vth)}
