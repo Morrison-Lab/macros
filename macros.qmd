@@ -438,8 +438,8 @@
 \def\x1n{\dsn{x}}
 \def\y1n{\dsn{y}}
 \def\'{^{\top}}
-\providecommand{\pt}[1]{\paren{#1}\'}
-\providecommand{\tp}[1]{{#1}\'}
+\providecommand{\pt}[1]{\paren{#1}^{\top}}
+\providecommand{\tp}[1]{{#1}^{\top}}
 \def\dpr{\cdot}
 \def\Xx1n{X_1=x_1, \ldots, X_n = x_n}
 \providecommand{\dprod}[2]{#1 \cdot #2}
@@ -608,7 +608,7 @@
 \def\defLik{\Lik(\theta) \eqdef \p(\vX = \vx | \Theta = \theta)}
 \def\defLogLik{\lik \eqdef \logf{\Lik(\vx|\th)}}
 \def\defScore{\score \eqdef \deriv{\th} \lik(\vx|\th)}
-\def\defHess{\hess \eqdef \deriv{\vth}\deriv{\vth\'} \llik(\vx | \vth)}
+\def\defHess{\hess \eqdef \deriv{\vth}\deriv{\vth^{\top}} \llik(\vx | \vth)}
 \def\thmHessij{\hessij =
 \deriv{\th_i}\deriv{\th_j} \llik(\vX = \vx | \vth)}
 \def\defOInf{\oinf \eqdef -\hess(\vx|\vth)}
