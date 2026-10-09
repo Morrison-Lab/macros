@@ -176,7 +176,7 @@ name	interpretation
 \Deviation	uppercase deviation symbol E
 \Devn	uppercase deviation (alias for \Deviation)
 \residual	residual symbol r
-\resid	residual symbol (alias for \residual)
+\resid	residual, observed minus predicted outcome (alias for \residual)
 \residv	residual vector r̃
 \Residual	uppercase residual symbol R
 \Resid	uppercase residual (alias for \Residual)
@@ -188,7 +188,7 @@ name	interpretation
 \modresid	modified residual (alias for \modresidual)
 \ModResidual	uppercase modified residual R*
 \ModResid	uppercase modified residual (alias)
-\prederr	prediction error (fitted minus observed)
+\prederr	prediction error, predicted minus observed outcome
 \score	score function ℓ′
 \scorev	score vector
 \scorei	per-observation score vector ℓ′_i
@@ -371,7 +371,7 @@ name	interpretation
 \sqf	square of argument (·)²
 \sq	square superscript ² (postfix)
 \err	error term (alias for \eps)
-\erf	error term function ε(·)
+\erf	error function ε(·); for an estimate, the estimation error (estimate minus truth)
 \vec	vector notation (tilde style)
 \vecf	vector notation (alias for \vec)
 \v	vector shorthand (alias for \vecf)
@@ -387,6 +387,18 @@ name	interpretation
 \vX	random vector X (X̃)
 \vy	outcome vector y (ỹ)
 \vY	uppercase outcome vector Y (Ỹ)
+\outvar	outcome variable, observed value (prints y)
+\Outvar	outcome variable, random variable (prints Y)
+\voutvar	vector of observed outcomes (prints ỹ)
+\vOutvar	random vector of outcomes (prints Ỹ)
+\eoutvar	predicted outcome, through \est (prints ŷ)
+\veoutvar	vector of predicted outcomes (prints a tilde over ŷ)
+\predvar	predictor variable, observed value (prints x)
+\Predvar	predictor variable, random variable (prints X)
+\vpredvar	vector of one observation's predictor values (prints x̃)
+\vPredvar	random vector of predictors (prints X̃)
+\vresid	vector of residuals, observed minus predicted outcomes (the negative of the prediction errors \prederr) (prints r̃)
+\vprederr	vector of prediction errors, predicted minus observed outcomes (prints ẽ)
 \vz	vector z (z̃)
 \vZ	random vector Z (Z̃)
 \vD	exposure/treatment vector D (D̃)
