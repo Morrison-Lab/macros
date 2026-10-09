@@ -392,7 +392,7 @@
 \def\mx{\matr{x}}
 \def\va{\vecf{a}}
 \def\vx{\vecf{x}}
-\def\vxs{{\vec{x}^*}}
+\def\vxs{\mathord{{\vec{x}^*}}}
 \def\diff{\Delta}
 \def\diffvx{\diff\vx}
 \def\vxi{\vecf{x}_i}
