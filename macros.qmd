@@ -1214,3 +1214,11 @@
 \def\interest{\psi}
 \def\quantlevel{\beta}
 \def\tuning{\lambda}
+\providecommand{\hist}[2]{\bar{#1}_{#2}}
+\providecommand{\trthist}[1]{\hist{A}{#1}}
+\providecommand{\trtvalhist}[1]{\hist{a}{#1}}
+\providecommand{\covhist}[1]{\hist{L}{#1}}
+\providecommand{\covvalhist}[1]{\hist{l}{#1}}
+\providecommand{\censhist}[1]{\hist{C}{#1}}
+\providecommand{\censvalhist}[1]{\hist{c}{#1}}
+\providecommand{\eventnocens}[1]{D^{\bar{c}=0}_{#1}}
