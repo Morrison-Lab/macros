@@ -395,6 +395,17 @@
 \def\vX{\vecf{X}}
 \def\vy{\vecf{y}}
 \def\vY{\vecf{Y}}
+\def\outvar{y}
+\def\Outvar{Y}
+\def\voutvar{\vecf{\outvar}}
+\def\vOutvar{\vecf{\Outvar}}
+\def\eoutvar{\est{\outvar}}
+\def\veoutvar{\vecf{\eoutvar}}
+\def\predvar{x}
+\def\Predvar{X}
+\def\vpredvar{\vecf{\predvar}}
+\def\vPredvar{\vecf{\Predvar}}
+\def\vresid{\vecf{\resid}}
 \def\vz{\vecf{z}}
 \def\vZ{\vecf{Z}}
 \def\vD{\vecf{D}}
