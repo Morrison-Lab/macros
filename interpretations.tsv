@@ -224,6 +224,9 @@ name	interpretation
 \xderiv	cross partial derivative ∂²/∂x∂y
 \xderivf	cross partial ∂²f/∂x∂y with numerator
 \xderivff	cross partial (reversed argument order)
+\grad	gradient operator ∇
+\gradf	gradient of a function, ∇f
+\gradwrt	gradient with respect to a variable, ∇_θ f
 \dif	total derivative fraction dF/dt (numerator first, denominator second)
 \red	typeset argument in red
 \green	typeset argument in green
