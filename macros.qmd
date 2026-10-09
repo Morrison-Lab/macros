@@ -406,6 +406,7 @@
 \def\vpredvar{\vecf{\predvar}}
 \def\vPredvar{\vecf{\Predvar}}
 \def\vresid{\vecf{\resid}}
+\def\vprederr{\vecf{\prederr}}
 \def\vz{\vecf{z}}
 \def\vZ{\vecf{Z}}
 \def\vD{\vecf{D}}

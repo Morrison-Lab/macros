@@ -398,6 +398,7 @@ name	interpretation
 \vpredvar	vector of one observation's predictor values (prints x̃)
 \vPredvar	random vector of predictors (prints X̃)
 \vresid	vector of residuals, observed minus predicted outcomes (the negative of the prediction errors \prederr) (prints r̃)
+\vprederr	vector of prediction errors, predicted minus observed outcomes (prints ẽ)
 \vz	vector z (z̃)
 \vZ	random vector Z (Z̃)
 \vD	exposure/treatment vector D (D̃)
