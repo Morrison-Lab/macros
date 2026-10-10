@@ -170,6 +170,8 @@
 \def\loss{L}
 \providecommand{\lossf}[1]{\loss\paren{#1}}
 \providecommand{\obsloss}[1]{\ell_{#1}}
+\def\poprisk{R}
+\providecommand{\popriskf}[1]{\poprisk\paren{#1}}
 \providecommand{\lpnorm}[1]{\ell_{#1}}
 \def\lbound{\ell}
 \def\ubound{u}
@@ -821,6 +823,10 @@
 \providecommand{\hPr}[1]{\mathop{\widehat{\Pr}}\nolimits\sb{#1}}
 \def\hrisk{\hprob}
 \def\hprev{\hprob}
+\def\hpoprisk{\hat{\poprisk}}
+\providecommand{\hpopriskf}[1]{\hpoprisk\paren{#1}}
+\def\emprisk{\hpoprisk}
+\def\empriskf{\hpopriskf}
 \def\hodds{\hat{\odds}}
 \def\hATT{\widehat{\ATT}}
 \providecommand{\hATTf}[1]{\hATT\paren{#1}}
