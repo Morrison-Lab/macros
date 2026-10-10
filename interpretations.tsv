@@ -161,6 +161,8 @@ name	interpretation
 \loss	loss function symbol (L)
 \lossf	loss function applied to its arguments, L(·)
 \obsloss	loss on one observation, ℓ_i (argument: the observation index)
+\poprisk	population (true) risk symbol R: the expected loss of a model
+\popriskf	population risk of a model, R(·)
 \lpnorm	name of an ℓ_p norm or penalty, such as ℓ_1 or ℓ_2 (argument: p)
 \lbound	a lower bound of a set (ℓ)
 \ubound	an upper bound of a set (u)
@@ -618,6 +620,8 @@ name	interpretation
 \hPr	estimated probability with brackets Pr̂[·]
 \hrisk	estimated risk π̂ (alias for \hprob)
 \hprev	estimated prevalence π̂ (alias for \hprob)
+\hpoprisk	estimated population risk R̂ (hat-wrapped \poprisk); the empirical risk
+\hpopriskf	estimated population risk function R̂(·) (hat-wrapped \popriskf)
 \hodds	estimated odds ω̂
 \hATT	estimated average treatment effect on the treated ATT̂
 \hATTf	estimated average treatment effect on the treated function ATT̂(·)
@@ -780,6 +784,10 @@ name	interpretation
 \ePr	estimated probability with brackets Pr̂[·] (via \Est)
 \erisk	estimated risk π̂ (alias for \eprob)
 \eprev	estimated prevalence π̂ (alias for \eprob)
+\epoprisk	estimated population risk R̂ (via \est); the empirical risk
+\epopriskf	estimated population risk function R̂(·) (via \est)
+\emprisk	empirical risk R̂ (alias for \epoprisk)
+\empriskf	empirical risk function R̂(·) (alias for \epopriskf)
 \eodds	estimated odds ω̂
 \eATT	estimated average treatment effect on the treated ATT̂ (via \Est)
 \eATTf	estimated average treatment effect on the treated function ATT̂(·) (via \Est)
