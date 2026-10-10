@@ -825,8 +825,6 @@
 \def\hprev{\hprob}
 \def\hpoprisk{\hat{\poprisk}}
 \providecommand{\hpopriskf}[1]{\hpoprisk\paren{#1}}
-\def\emprisk{\hpoprisk}
-\def\empriskf{\hpopriskf}
 \def\hodds{\hat{\odds}}
 \def\hATT{\widehat{\ATT}}
 \providecommand{\hATTf}[1]{\hATT\paren{#1}}
@@ -996,6 +994,10 @@
 \providecommand{\ePr}[1]{\mathop{\Est{\Pr}}\nolimits\sb{#1}}
 \def\erisk{\eprob}
 \def\eprev{\eprob}
+\def\epoprisk{\est{\poprisk}}
+\providecommand{\epopriskf}[1]{\epoprisk\paren{#1}}
+\def\emprisk{\epoprisk}
+\def\empriskf{\epopriskf}
 \def\eodds{\est{\odds}}
 \def\eATT{\Est{\ATT}}
 \providecommand{\eATTf}[1]{\eATT\paren{#1}}
