@@ -260,6 +260,7 @@ name	interpretation
 \hmuf	estimated mean function μ̂(·)
 \Expp	expectation operator E (no argument)
 \Ep	expectation operator (alias for \Expp)
+\exp	takes one argument and prints exp{·} with curly braces; never write it bare, use \expf{·} or \expt with your own delimiters
 \expit	expit / logistic function
 \expitf	expit applied to argument
 \dexpitf	derivative of expit function
