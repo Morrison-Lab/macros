@@ -333,7 +333,7 @@ name	interpretation
 \logf	log{·} function applied to argument
 \dlog	derivative of log (log′)
 \dlogf	derivative of log applied to argument
-\exp	exponential function exp{·}
+\exp	exponential function exp{·}; takes one argument, so never write it bare: use \expf{·} or \expt with your own delimiters
 \expt	exp operator symbol
 \expf	exponential function (alias for \exp)
 \expfn	exponential function (alias for \exp)
