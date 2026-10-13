@@ -260,7 +260,6 @@ name	interpretation
 \hmuf	estimated mean function μ̂(·)
 \Expp	expectation operator E (no argument)
 \Ep	expectation operator (alias for \Expp)
-\exp	takes one argument and prints exp{·} with curly braces; never write it bare, use \expf{·} or \expt with your own delimiters
 \expit	expit / logistic function
 \expitf	expit applied to argument
 \dexpitf	derivative of expit function
@@ -334,7 +333,7 @@ name	interpretation
 \logf	log{·} function applied to argument
 \dlog	derivative of log (log′)
 \dlogf	derivative of log applied to argument
-\exp	exponential function exp{·}
+\exp	exponential function exp{·}; takes one argument, so never write it bare: use \expf{·} or \expt with your own delimiters
 \expt	exp operator symbol
 \expf	exponential function (alias for \exp)
 \expfn	exponential function (alias for \exp)
