@@ -1,0 +1,10 @@
+---
+title: "PDF path check: include shortcode"
+format: pdf
+---
+
+{{< include ../macros.qmd >}}
+
+Expectation: $\E{X+Y}$.
+
+Sequence: $\Xin$.

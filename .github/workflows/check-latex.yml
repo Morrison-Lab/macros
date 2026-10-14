@@ -1,0 +1,39 @@
+# Renders macros.qmd through the two PDF paths CI otherwise never touches
+# (raw LaTeX preamble and the include shortcode), and checks that no
+# \providecommand name is already defined. See tools/check_latex.py (#109).
+name: Check LaTeX
+
+on:
+  pull_request:
+    paths:
+      - macros.qmd
+      - _tests/**
+      - tools/check_latex.py
+      - .github/workflows/check-latex.yml
+  push:
+    branches: [main]
+    paths:
+      - macros.qmd
+      - _tests/**
+      - tools/check_latex.py
+      - .github/workflows/check-latex.yml
+
+permissions:
+  contents: read
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: quarto-dev/quarto-actions/setup@v2
+        with:
+          tinytex: true
+      - name: Put TinyTeX on PATH
+        run: echo "$HOME/.TinyTeX/bin/x86_64-linux" >> "$GITHUB_PATH"
+      - name: Install pdftotext
+        run: sudo apt-get update && sudo apt-get install -y --no-install-recommends poppler-utils
+      - name: Check macros through LaTeX
+        run: python3 tools/check_latex.py
