@@ -197,6 +197,10 @@
 \providecommand{\bestmodf}[1]{\bestmod\paren{#1}}
 \def\avgfit{\bar{\modmem}}
 \providecommand{\avgfitf}[1]{\avgfit\paren{#1}}
+\def\hidval{h}
+\providecommand{\hidvalof}[1]{\hidval_{#1}}
+\def\vhidval{\vecf{\hidval}}
+\def\imgheight{h}
 \providecommand{\lpnorm}[1]{\ell_{#1}}
 \def\lbound{\ell}
 \def\ubound{u}
