@@ -1251,3 +1251,15 @@ name	interpretation
 \modmem	generic member h of a model family
 \modmemf	generic member of a model family applied to its argument, h(·)
 \modmemof	member (or fit) h of the model family given as the argument, h with the family as subscript
+\nobs	sample size n: the number of observations or training examples
+\nmodels	number M of models (classifiers) in a model family
+\inputdim	number d of input variables (predictors)
+\popdist	population distribution P that the data are drawn from
+\targetfn	target function f: the true relationship between inputs and outcomes
+\targetfnf	target function applied to its argument, f(·)
+\hmodmem	fitted model (hat-wrapped \modmem), legacy form
+\hmodmemf	fitted model applied to its argument (hat-wrapped), h-hat(·)
+\hmodmemof	fitted model with its model family as subscript (hat-wrapped)
+\emodmem	fitted model: estimate of a member of a model family (via \est)
+\emodmemf	fitted model applied to its argument (via \est), h-hat(·)
+\emodmemof	fitted model with its model family as subscript (via \est)

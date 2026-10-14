@@ -181,6 +181,12 @@
 \def\modmem{h}
 \providecommand{\modmemf}[1]{\modmem\paren{#1}}
 \providecommand{\modmemof}[1]{\modmem_{#1}}
+\def\nobs{n}
+\def\nmodels{M}
+\def\inputdim{d}
+\def\popdist{P}
+\def\targetfn{f}
+\providecommand{\targetfnf}[1]{\targetfn\paren{#1}}
 \def\bestmod{h^*}
 \providecommand{\bestmodf}[1]{\bestmod\paren{#1}}
 \providecommand{\lpnorm}[1]{\ell_{#1}}
@@ -839,6 +845,9 @@
 \def\hprev{\hprob}
 \def\hpoprisk{\hat{\poprisk}}
 \providecommand{\hpopriskf}[1]{\hpoprisk\paren{#1}}
+\def\hmodmem{\hat{\modmem}}
+\providecommand{\hmodmemf}[1]{\hmodmem\paren{#1}}
+\providecommand{\hmodmemof}[1]{\hmodmem_{#1}}
 \def\hodds{\hat{\odds}}
 \def\hATT{\widehat{\ATT}}
 \providecommand{\hATTf}[1]{\hATT\paren{#1}}
@@ -1013,6 +1022,9 @@
 \def\eprev{\eprob}
 \def\epoprisk{\est{\poprisk}}
 \providecommand{\epopriskf}[1]{\epoprisk\paren{#1}}
+\def\emodmem{\est{\modmem}}
+\providecommand{\emodmemf}[1]{\emodmem\paren{#1}}
+\providecommand{\emodmemof}[1]{\emodmem_{#1}}
 \def\emprisk{\epoprisk}
 \def\empriskf{\epopriskf}
 \def\eodds{\est{\odds}}
