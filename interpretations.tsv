@@ -1271,3 +1271,5 @@ name	interpretation
 \emodmemof	fitted model with its model family as subscript (via \est)
 \etargetfn	estimated target function: fitted counterpart of the target function (via \est), f-hat
 \etargetfnf	estimated target function applied to its argument (via \est), f-hat(·)
+\targeterr	error of the fitted target function: target function minus its fitted counterpart, e_f
+\targeterrf	error of the fitted target function at a point (via \targeterr), e_f(·)

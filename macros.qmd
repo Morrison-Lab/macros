@@ -1033,6 +1033,8 @@
 \providecommand{\emodmemof}[1]{\emodmem_{#1}}
 \def\etargetfn{\est{\targetfn}}
 \providecommand{\etargetfnf}[1]{\etargetfn\paren{#1}}
+\def\targeterr{\deviation_{\targetfn}}
+\providecommand{\targeterrf}[1]{\targeterr\paren{#1}}
 \def\emprisk{\epoprisk}
 \def\empriskf{\epopriskf}
 \def\eodds{\est{\odds}}
