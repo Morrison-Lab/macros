@@ -30,6 +30,10 @@ jobs:
       - uses: quarto-dev/quarto-actions/setup@v2
         with:
           tinytex: true
+      - name: Put TinyTeX on PATH
+        run: echo "$HOME/.TinyTeX/bin/x86_64-linux" >> "$GITHUB_PATH"
+      - name: Install LaTeX packages for the static guard
+        run: tlmgr install unicode-math lm-math fontspec amsmath
       - name: Install pdftotext
         run: sudo apt-get update && sudo apt-get install -y --no-install-recommends poppler-utils
       - name: Check macros through LaTeX
