@@ -16,6 +16,7 @@ on:
       - macros.qmd
       - _tests/**
       - tools/check_latex.py
+      - .github/workflows/check-latex.yml
 
 permissions:
   contents: read

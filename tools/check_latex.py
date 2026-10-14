@@ -13,7 +13,6 @@ Set CHECK_LATEX_ENGINE (for example pdflatex) to override Quarto's pdf-engine.
 import os
 import pathlib
 import re
-import shutil
 import subprocess
 import sys
 import unicodedata
@@ -45,10 +44,17 @@ def static_guard():
         tex = pathlib.Path(tmp) / "guard.tex"
         tex.write_text("\n".join(lines))
         engine = "pdflatex"
-        out = subprocess.run(
+        res = subprocess.run(
             [engine, "-interaction=nonstopmode", "guard.tex"],
             cwd=tmp, capture_output=True, text=True,
-        ).stdout
+        )
+    out = res.stdout
+    # A broken TeX install would print no ALREADY-DEFINED lines either,
+    # so insist that the guard document compiled before trusting an empty list.
+    if res.returncode != 0 or "Transcript written" not in out:
+        print("static guard: FAIL, the guard document did not compile")
+        print(out[-2000:])
+        return False
     bad = re.findall(r"ALREADY-DEFINED (\w+)", out)
     print(f"static guard: {len(names)} \\providecommand names checked")
     for name in bad:
@@ -78,12 +84,14 @@ def render_checks():
             ["pdftotext", str(pdfs[0]), "-"], capture_output=True, text=True
         ).stdout
         text = re.sub(r"\s+", "", unicodedata.normalize("NFKC", text))
+        stem_ok = True
         for s in wanted:
             if s not in text:
                 print(f"render {stem}: FAIL, extracted text lacks {s!r}; got {text[:200]!r}")
-                ok = False
-        else:
+                stem_ok = False
+        if stem_ok:
             print(f"render {stem}: rendered")
+        ok = ok and stem_ok
     return ok
 
 
