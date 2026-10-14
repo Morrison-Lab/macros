@@ -180,6 +180,7 @@
 \def\failprob{\delta}
 \def\modmem{h}
 \providecommand{\modmemf}[1]{\modmem\paren{#1}}
+\providecommand{\modmemof}[1]{\modmem_{#1}}
 \def\bestmod{h^*}
 \providecommand{\bestmodf}[1]{\bestmod\paren{#1}}
 \providecommand{\lpnorm}[1]{\ell_{#1}}

@@ -1250,3 +1250,4 @@ name	interpretation
 \bestmodf	best-in-family model applied to its argument, h*(·)
 \modmem	generic member h of a model family
 \modmemf	generic member of a model family applied to its argument, h(·)
+\modmemof	member (or fit) h of the model family given as the argument, h with the family as subscript
