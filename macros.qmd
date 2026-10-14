@@ -188,6 +188,11 @@
 \def\targetfn{f}
 \providecommand{\targetfnf}[1]{\targetfn\paren{#1}}
 \def\trainset{\mathcal{X}}
+\def\valset{\mathcal{X}_{\text{val}}}
+\def\testset{\mathcal{X}_{\text{test}}}
+\def\trainidx{I_{\text{train}}}
+\def\validx{I_{\text{val}}}
+\def\testidx{I_{\text{test}}}
 \def\bestmod{h^*}
 \providecommand{\bestmodf}[1]{\bestmod\paren{#1}}
 \providecommand{\lpnorm}[1]{\ell_{#1}}
