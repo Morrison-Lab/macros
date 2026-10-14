@@ -201,6 +201,8 @@
 \providecommand{\hidvalof}[1]{\hidval_{#1}}
 \def\vhidval{\vecf{\hidval}}
 \def\imgheight{h}
+\def\imgwidth{w}
+\def\poolsize{q}
 \providecommand{\lpnorm}[1]{\ell_{#1}}
 \def\lbound{\ell}
 \def\ubound{u}
