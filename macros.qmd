@@ -719,6 +719,9 @@
 \def\MSEt{\operatorname{MSE}}
 \providecommand{\MSE}[1]{\MSEt\paren{#1}}
 \providecommand{\MSEf}[1]{\MSEt\paren{#1}}
+\def\RMSEt{\operatorname{RMSE}}
+\providecommand{\RMSE}[1]{\RMSEt\paren{#1}}
+\providecommand{\RMSEf}[1]{\RMSEt\paren{#1}}
 \def\SEtildet{\widetilde{\operatorname{SE}}}
 \providecommand{\SEtilde}[1]{\SEtildet\paren{#1}}
 \providecommand{\SEtildef}[1]{\SEtildet\paren{#1}}
@@ -924,6 +927,9 @@
 \def\hMSEt{\mathop{\widehat{\MSEt}}\nolimits}
 \providecommand{\hMSE}[1]{\hMSEt\paren{#1}}
 \providecommand{\hMSEf}[1]{\hMSEt\paren{#1}}
+\def\hRMSEt{\mathop{\widehat{\RMSEt}}\nolimits}
+\providecommand{\hRMSE}[1]{\hRMSEt\paren{#1}}
+\providecommand{\hRMSEf}[1]{\hRMSEt\paren{#1}}
 \def\hBiast{\mathop{\widehat{\Biast}}\nolimits}
 \providecommand{\hBias}[1]{\hBiast\paren{#1}}
 \providecommand{\hbias}[1]{\hBiast\paren{#1}}
@@ -1097,6 +1103,9 @@
 \def\eMSEt{\mathop{\Est{\MSEt}}\nolimits}
 \providecommand{\eMSE}[1]{\eMSEt\paren{#1}}
 \providecommand{\eMSEf}[1]{\eMSEt\paren{#1}}
+\def\eRMSEt{\mathop{\Est{\RMSEt}}\nolimits}
+\providecommand{\eRMSE}[1]{\eRMSEt\paren{#1}}
+\providecommand{\eRMSEf}[1]{\eRMSEt\paren{#1}}
 \def\eBiast{\mathop{\Est{\Biast}}\nolimits}
 \providecommand{\eBias}[1]{\eBiast\paren{#1}}
 \providecommand{\ebias}[1]{\eBiast\paren{#1}}

@@ -960,6 +960,9 @@ name	interpretation
 \MSEt	mean squared error operator MSE
 \MSE	mean squared error MSE(·) applied to argument
 \MSEf	mean squared error MSE(·) applied to argument (alias for \MSE)
+\RMSEt	root mean squared error operator RMSE
+\RMSE	root mean squared error RMSE(·) applied to argument
+\RMSEf	root mean squared error RMSE(·) applied to argument (alias for \RMSE)
 \SEtildet	standard error operator with tilde
 \SEtilde	standard error with tilde applied to argument
 \SEtildef	standard error with tilde applied to argument (alias for \SEtilde)
@@ -1070,9 +1073,15 @@ name	interpretation
 \hMSEt	estimated mean squared error operator MSÊ (legacy \hat form)
 \hMSE	estimated mean squared error applied to argument (legacy \hat form)
 \hMSEf	estimated mean squared error applied to argument (alias for \hMSE)
+\hRMSEt	estimated root mean squared error operator (legacy \hat form)
+\hRMSE	estimated root mean squared error applied to argument (legacy \hat form)
+\hRMSEf	estimated root mean squared error applied to argument (alias for \hRMSE)
 \eMSEt	estimated mean squared error operator (composable \Est form)
 \eMSE	estimated mean squared error applied to argument (composable \Est form)
 \eMSEf	estimated mean squared error applied to argument (alias for \eMSE)
+\eRMSEt	estimated root mean squared error operator (composable \Est form)
+\eRMSE	estimated root mean squared error applied to argument (composable \Est form)
+\eRMSEf	estimated root mean squared error applied to argument (alias for \eRMSE)
 \hBiast	estimated bias operator Biaŝ (legacy \hat form)
 \hBias	estimated bias applied to argument (legacy \hat form)
 \hbias	estimated bias applied to argument (lowercase alias)
