@@ -1,0 +1,11 @@
+---
+title: "PDF path check: include-in-header"
+format:
+  pdf:
+    include-in-header:
+      - ../macros.qmd
+---
+
+Expectation: $\E{X+Y}$.
+
+Sequence: $\Xin$.

@@ -12,3 +12,7 @@
 .Rproj.user/
 
 **/*.quarto_ipynb
+/_tests/*.pdf
+/_tests/*.log
+/_tests/*.tex
+/_tests/*_files/
