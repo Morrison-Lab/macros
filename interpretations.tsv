@@ -1256,7 +1256,7 @@ name	interpretation
 \inputdim	number d of input variables (predictors)
 \popdist	population distribution P that the data are drawn from
 \targetfn	target function f: the true relationship between inputs and outcomes
-\trainset	training set: the labelled data a model is fitted to (prints a calligraphic D)
+\trainset	training set: the labelled data a model is fitted to (prints a calligraphic D with a train subscript)
 \valset	validation set: the held-out observations used to choose among fitted models (prints a calligraphic D with a val subscript)
 \testset	test set: the held-out observations used once, to estimate the risk of the chosen model (prints a calligraphic D with a test subscript)
 \trainidx	index set of the training set (prints I with a train subscript)
