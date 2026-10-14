@@ -1252,7 +1252,7 @@ name	interpretation
 \avgfitf	average fit applied to its argument, h-bar(·)
 \hidval	value of a hidden unit in a neural network, h
 \hidvalof	value of the hidden unit given as the argument, h with the unit as subscript
-\vhidval	vector of hidden-unit values (or a recurrent network's hidden state), bold h
+\vhidval	vector of hidden-unit values (or a recurrent network's hidden state), h̃
 \imgheight	height of an image or feature map, in pixels
 \modmem	generic member h of a model family
 \modmemf	generic member of a model family applied to its argument, h(·)
