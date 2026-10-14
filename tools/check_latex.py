@@ -16,6 +16,7 @@ import re
 import shutil
 import subprocess
 import sys
+import unicodedata
 import tempfile
 
 ROOT = pathlib.Path(__file__).resolve().parent.parent
@@ -76,10 +77,10 @@ def render_checks():
         text = subprocess.run(
             ["pdftotext", str(pdfs[0]), "-"], capture_output=True, text=True
         ).stdout
-        text = re.sub(r"\s+", "", text)
+        text = re.sub(r"\s+", "", unicodedata.normalize("NFKC", text))
         for s in wanted:
             if s not in text:
-                print(f"render {stem}: FAIL, extracted text lacks {s!r}")
+                print(f"render {stem}: FAIL, extracted text lacks {s!r}; got {text[:200]!r}")
                 ok = False
         else:
             print(f"render {stem}: rendered")
