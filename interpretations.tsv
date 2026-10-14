@@ -1246,3 +1246,5 @@ name	interpretation
 \vcdim	Vapnik-Chervonenkis dimension d_VC: the largest number of points the model family shatters
 \vcdimf	VC dimension of a model family, d_VC(·)
 \failprob	failure probability delta of a probabilistic bound (one minus the confidence level)
+\bestmod	best-in-family model h*: the member of the model family closest to the target function
+\bestmodf	best-in-family model applied to its argument, h*(·)
