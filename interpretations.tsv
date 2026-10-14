@@ -1254,6 +1254,8 @@ name	interpretation
 \hidvalof	value of the hidden unit given as the argument, h with the unit as subscript
 \vhidval	vector of hidden-unit values (or a recurrent network's hidden state), h̃
 \imgheight	height of an image or feature map, in pixels
+\imgwidth	width of an image or feature map, in pixels
+\poolsize	side length q of a square pooling block, in pixels
 \modmem	generic member h of a model family
 \modmemf	generic member of a model family applied to its argument, h(·)
 \modmemof	member (or fit) h of the model family given as the argument, h with the family as subscript
