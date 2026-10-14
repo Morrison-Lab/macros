@@ -1127,7 +1127,7 @@
 \def\Eigvals{\Lambda}
 \def\featmap{\phi}
 \def\vfeatmap{\vecf{\phi}}
-\def\design{\Phi}
+\def\design{D}
 \def\normpdf{\phi}
 \def\normcdf{\Phi}
 \def\backerr{\delta}

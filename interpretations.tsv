@@ -1124,7 +1124,7 @@ name	interpretation
 \Eigvals	a diagonal matrix of eigenvalues (prints \Lambda)
 \featmap	a feature map (basis expansion) (prints \phi)
 \vfeatmap	a vector of feature-map outputs (hidden-unit features) (prints \vecf{\phi})
-\design	a design matrix built from a feature map (prints \Phi)
+\design	a design matrix built from a feature map (prints D)
 \normpdf	the standard normal density (prints \phi)
 \normcdf	the standard normal CDF (prints \Phi)
 \backerr	a backpropagation error signal (prints \delta)
