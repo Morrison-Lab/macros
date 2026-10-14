@@ -195,6 +195,8 @@
 \def\testidx{I_{\text{test}}}
 \def\bestmod{h^*}
 \providecommand{\bestmodf}[1]{\bestmod\paren{#1}}
+\def\avgfit{\bar{\modmem}}
+\providecommand{\avgfitf}[1]{\avgfit\paren{#1}}
 \providecommand{\lpnorm}[1]{\ell_{#1}}
 \def\lbound{\ell}
 \def\ubound{u}
