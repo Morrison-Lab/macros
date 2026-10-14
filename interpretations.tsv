@@ -1244,5 +1244,5 @@ name	interpretation
 \growthfn	growth function m_H: the most labelings of n points that the model family can produce
 \growthfnf	growth function at n points, m_H(n)
 \vcdim	Vapnik-Chervonenkis dimension d_VC: the largest number of points the model family shatters
-\vcdimf	VC dimension of a model family, d_VC(.)
+\vcdimf	VC dimension of a model family, d_VC(·)
 \failprob	failure probability delta of a probabilistic bound (one minus the confidence level)
