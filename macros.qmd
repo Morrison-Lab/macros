@@ -1031,6 +1031,8 @@
 \def\emodmem{\est{\modmem}}
 \providecommand{\emodmemf}[1]{\emodmem\paren{#1}}
 \providecommand{\emodmemof}[1]{\emodmem_{#1}}
+\def\etargetfn{\est{\targetfn}}
+\providecommand{\etargetfnf}[1]{\etargetfn\paren{#1}}
 \def\emprisk{\epoprisk}
 \def\empriskf{\epopriskf}
 \def\eodds{\est{\odds}}
