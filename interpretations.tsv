@@ -1240,3 +1240,26 @@ name	interpretation
 \censhist	censoring history through time k (prints \bar{C}_k)
 \censvalhist	a censoring-history value through time k (prints \bar{c}_k)
 \eventnocens	event indicator at time m under the intervention that eliminates censoring (prints D^{\bar{c}=0}_m)
+\modelfam	model family (hypothesis class) H: the set of models that training chooses from
+\growthfn	growth function m_H: the most labelings of n points that the model family can produce
+\growthfnf	growth function at n points, m_H(n)
+\vcdim	Vapnik-Chervonenkis dimension d_VC: the largest number of points the model family shatters
+\vcdimf	VC dimension of a model family, d_VC(·)
+\failprob	failure probability delta of a probabilistic bound (one minus the confidence level)
+\bestmod	best-in-family model h*: the member of the model family closest to the target function
+\bestmodf	best-in-family model applied to its argument, h*(·)
+\modmem	generic member h of a model family
+\modmemf	generic member of a model family applied to its argument, h(·)
+\modmemof	member (or fit) h of the model family given as the argument, h with the family as subscript
+\nobs	sample size n: the number of observations or training examples
+\nmodels	number M of models (classifiers) in a model family
+\inputdim	number d of input variables (predictors)
+\popdist	population distribution P that the data are drawn from
+\targetfn	target function f: the true relationship between inputs and outcomes
+\targetfnf	target function applied to its argument, f(·)
+\hmodmem	fitted model (hat-wrapped \modmem), legacy form
+\hmodmemf	fitted model applied to its argument (hat-wrapped), h-hat(·)
+\hmodmemof	fitted model with its model family as subscript (hat-wrapped)
+\emodmem	fitted model: estimate of a member of a model family (via \est)
+\emodmemf	fitted model applied to its argument (via \est), h-hat(·)
+\emodmemof	fitted model with its model family as subscript (via \est)
