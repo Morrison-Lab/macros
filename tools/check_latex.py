@@ -27,16 +27,12 @@ EXPECTED = {
     "pdf-shortcode": ["E[X+Y]", "X1,...,Xn"],
 }
 
-# Already defined by unicode-math under xelatex, where it is the script
-# alphabet this file wants, so its providecommand is a no-op by design.
-ALLOWED = {"mathscr"}
-
 
 def static_guard():
     names = sorted(set(PROVIDE.findall((ROOT / "macros.qmd").read_text())))
     lines = [
         r"\documentclass{article}",
-        r"\usepackage{amsmath,amssymb,unicode-math}",
+        r"\usepackage{amsmath,amssymb}",
         r"\begin{document}",
     ]
     for name in names:
@@ -47,12 +43,12 @@ def static_guard():
     with tempfile.TemporaryDirectory() as tmp:
         tex = pathlib.Path(tmp) / "guard.tex"
         tex.write_text("\n".join(lines))
-        engine = "xelatex" if shutil.which("xelatex") else "pdflatex"
+        engine = "pdflatex"
         out = subprocess.run(
             [engine, "-interaction=nonstopmode", "guard.tex"],
             cwd=tmp, capture_output=True, text=True,
         ).stdout
-    bad = [n for n in re.findall(r"ALREADY-DEFINED (\w+)", out) if n not in ALLOWED]
+    bad = re.findall(r"ALREADY-DEFINED (\w+)", out)
     print(f"static guard: {len(names)} \\providecommand names checked")
     for name in bad:
         print(f"  FAIL \\{name} is already defined, so \\providecommand does nothing")
