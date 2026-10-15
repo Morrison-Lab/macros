@@ -175,6 +175,8 @@ name	interpretation
 \loglikf	log-likelihood function ℓ(·) (alias for \llikf)
 \loglf	log-likelihood function ℓ(·) (alias for \llikf)
 \likf	log-likelihood function ℓ(·) (alias for \llikf)
+\deviance	deviance of a fitted model: minus twice its log-likelihood
+\nulldeviance	null deviance: the deviance of the intercept-only model
 \deviation	deviation symbol δ
 \devn	deviation symbol (alias for \deviation)
 \deviationv	deviation vector (the vec accent applied to δ)
