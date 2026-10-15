@@ -449,6 +449,7 @@
 \def\Predvar{X}
 \def\vpredvar{\vecf{\predvar}}
 \def\vPredvar{\vecf{\Predvar}}
+\def\rvar{X}
 \def\vresid{\vecf{\resid}}
 \def\vprederr{\vecf{\prederr}}
 \def\vz{\vecf{z}}
