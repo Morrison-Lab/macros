@@ -178,6 +178,8 @@ name	interpretation
 \likf	log-likelihood function ℓ(·) (alias for \llikf)
 \deviance	deviance of a fitted model: minus twice its log-likelihood
 \nulldeviance	null deviance: the deviance of the intercept-only model
+\satllik	maximized log-likelihood of the saturated model
+\satdeviance	deviance relative to the saturated model: twice the difference between the saturated model's and the fitted model's maximized log-likelihoods
 \deviation	deviation symbol δ
 \devn	deviation symbol (alias for \deviation)
 \deviationv	deviation vector (the vec accent applied to δ)
@@ -463,6 +465,7 @@ name	interpretation
 \sumn	sum over index from 1 to n
 \sumto	sum over the first argument from 1 to the second
 \sumin	sum over i from 1 to n
+\sumkK	sum over the K distinct covariate patterns, k from 1 to K
 \sumiN	sum over i from 1 to N
 \avgin	average over i from 1 to n: one over n times the sum
 \avgiN	average over i from 1 to N: one over N times the sum
@@ -1287,6 +1290,9 @@ name	interpretation
 \nmodels	number M of models (classifiers) in a model family
 \inputdim	number p of input variables (predictors)
 \nparams	number p* of parameters: the columns of the design matrix after any feature map
+\npatterns	number K of distinct covariate patterns in a dataset
+\nreps	number m of replicates (observations) that share one covariate pattern; written with a pattern index, as \nreps_k
+\nevents	number s of events among the replicates of one covariate pattern; written with a pattern index, as \nevents_k
 \popdist	population distribution P that the data are drawn from
 \targetfn	target function f: the true relationship between inputs and outcomes
 \dataset	data set: the whole collection of labelled observations that the training, validation and test sets are subsets of (prints a calligraphic D)
