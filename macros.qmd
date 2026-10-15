@@ -188,6 +188,7 @@
 \def\popdist{P}
 \def\targetfn{f}
 \providecommand{\targetfnf}[1]{\targetfn\paren{#1}}
+\def\dataset{\mathcal{D}}
 \def\trainset{\mathcal{D}_{\text{train}}}
 \def\valset{\mathcal{D}_{\text{val}}}
 \def\testset{\mathcal{D}_{\text{test}}}
@@ -449,6 +450,7 @@
 \def\Predvar{X}
 \def\vpredvar{\vecf{\predvar}}
 \def\vPredvar{\vecf{\Predvar}}
+\def\mpredvar{\matr{\Predvar}}
 \def\vresid{\vecf{\resid}}
 \def\vprederr{\vecf{\prederr}}
 \def\vz{\vecf{z}}
