@@ -140,6 +140,7 @@ name	interpretation
 \vth	theta parameter vector
 \Th	uppercase Theta (Θ)
 \xbar	sample mean x̄
+\samplemean	sample mean of n random variables, X̄_n (arguments: the variable and the sample size)
 \hth	estimated theta θ̂
 \hthml	maximum likelihood estimate of theta
 \ba	begin aligned math environment
