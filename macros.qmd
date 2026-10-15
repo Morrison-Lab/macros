@@ -150,6 +150,7 @@
 \def\vth{\vec{\theta}}
 \def\Th{\Theta}
 \def\xbar{\bar{x}}
+\providecommand{\samplemean}[2]{\bar{#1}_{#2}}
 \def\hth{\hat\theta}
 \def\hthml{\hth_{\text{ML}}}
 \def\ba{\begin{aligned}}
