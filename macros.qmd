@@ -1287,6 +1287,12 @@
 \def\poismean{\phi}
 \def\sdest{\tau}
 \def\lrstat{\Lambda}
+\def\stat{T}
+\providecommand{\statf}[1]{\stat\paren{#1}}
+\def\sfac{g}
+\providecommand{\sfacf}[2]{\sfac\paren{#1 ; #2}}
+\def\rfac{h}
+\providecommand{\rfacf}[1]{\rfac\paren{#1}}
 \def\nuisance{\lambda}
 \def\hnuisance{\hat{\lambda}}
 \def\enuisance{\est{\nuisance}}
