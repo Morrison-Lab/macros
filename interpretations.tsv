@@ -179,7 +179,7 @@ name	interpretation
 \devn	deviation symbol (alias for \deviation)
 \deviationv	deviation vector (the vec accent applied to δ)
 \devnv	deviation vector (alias for \deviationv)
-\Deviation	uppercase deviation symbol E
+\Deviation	uppercase deviation symbol Δ
 \Devn	uppercase deviation (alias for \Deviation)
 \residual	residual symbol r
 \resid	residual, observed minus predicted outcome (alias for \residual)
@@ -402,6 +402,7 @@ name	interpretation
 \predvar	predictor variable, observed value (prints x)
 \Predvar	predictor variable, random variable (prints X)
 \vpredvar	vector of one observation's predictor values (prints x̃)
+\mpredvar	input matrix: the predictor vectors of all n observations, one per row (prints bold X, like \mX, the usual textbook form)
 \vPredvar	random vector of predictors (prints X̃)
 \vresid	vector of residuals, observed minus predicted outcomes (the negative of the prediction errors \prederr) (prints r̃)
 \vprederr	vector of prediction errors, predicted minus observed outcomes (the vec accent applied to \prederr)
@@ -1274,6 +1275,7 @@ name	interpretation
 \nparams	number p* of parameters: the columns of the design matrix after any feature map
 \popdist	population distribution P that the data are drawn from
 \targetfn	target function f: the true relationship between inputs and outcomes
+\dataset	data set: the whole collection of labelled observations that the training, validation and test sets are subsets of (prints a calligraphic D)
 \trainset	training set: the labelled data a model is fitted to (prints a calligraphic D with a train subscript)
 \valset	validation set: the held-out observations used to choose among fitted models (prints a calligraphic D with a val subscript)
 \testset	test set: the held-out observations used once, to estimate the risk of the chosen model (prints a calligraphic D with a test subscript)
