@@ -449,6 +449,8 @@ name	interpretation
 \soprod	self outer product x x′
 \sdprod	self dot product x·x
 \sdprodf	self dot product (alias for \sdprod)
+\cossim	cosine similarity: dot product divided by the product of the lengths
+\cossimf	cosine similarity applied to two arguments, cossim(x, y)
 \dsvn	paired sequence X₁=x₁, …, Xₙ=xₙ (alias)
 \sumn	sum over index from 1 to n
 \sumto	sum over the first argument from 1 to the second

@@ -492,6 +492,8 @@
 \providecommand{\soprod}[1]{#1 \tp{#1}}
 \providecommand{\sdprod}[1]{\dprod{#1}{#1}}
 \def\sdprodf{\sdprod}
+\def\cossim{\operatorname{cossim}}
+\providecommand{\cossimf}[2]{\cossim\paren{#1, #2}}
 \providecommand{\dsvn}[2]{#1_1=#2_1, \ldots, #1_n = #2_n}
 \providecommand{\sumn}[1]{\sum_{#1=1}^n}
 \providecommand{\sumto}[2]{\sum_{#1=1}^{#2}}
