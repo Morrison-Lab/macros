@@ -5,6 +5,7 @@
 \providecommand{\paren}[1]{\mathopen{}\left(#1\right)\mathclose{}}
 \providecommand{\pmat}[1]{\begin{pmatrix}#1\end{pmatrix}}
 \providecommand{\sparen}[1]{(#1)}
+\providecommand{\angb}[1]{\mathopen{}\left\langle #1\right\rangle\mathclose{}}
 \renewcommand{\sb}[1]{\mathopen{}\left[#1\right]\mathclose{}}
 \providecommand{\distop}[1]{\operatorname{#1}}
 \providecommand{\sbmat}[1]{\begin{bmatrix}#1\end{bmatrix}}
@@ -320,7 +321,8 @@
 \providecommand{\Expfc}[2]{\distop{E}_{#1}\sb{#2}}
 \def\ATT{\operatorname{ATT}}
 \providecommand{\ATTf}[1]{\ATT\paren{#1}}
-\providecommand{\evalAt}[2]{\left.{#1}\right|_{#2}}
+\providecommand{\evalbar}[1]{\left.{#1}\right|}
+\providecommand{\evalAt}[2]{\evalbar{#1}_{#2}}
 \def\Varr{\operatorname{Var}}
 \def\Vart{\operatorname{Var}}
 \def\hvar{\mathop{\widehat{\Vart}}\nolimits}
@@ -488,7 +490,7 @@
 \def\dpf{\dprodf}
 \providecommand{\tprod}[2]{\tp{#1} #2}
 \def\tprodf{\tprod}
-\providecommand{\iprod}[2]{\left\langle #1, #2 \right\rangle}
+\providecommand{\iprod}[2]{\angb{#1, #2}}
 \def\iprodf{\iprod}
 \providecommand{\oprod}[2]{#1 \tp{#2}}
 \providecommand{\stprod}[1]{\tprod{#1}{#1}}

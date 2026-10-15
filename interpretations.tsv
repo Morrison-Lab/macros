@@ -274,6 +274,7 @@ name	interpretation
 \Expfc	conditional expected value E_c[·]
 \ATT	average treatment effect on the treated label ATT
 \ATTf	average treatment effect on the treated function ATT(·)
+\evalbar	expression followed by an evaluation bar ·|
 \evalAt	evaluate expression at a given point
 \Varr	variance operator symbol Var
 \Vart	variance operator symbol (alias for \Varr)
@@ -442,6 +443,7 @@ name	interpretation
 \dpf	dot product a·b (alias for \dprodf)
 \tprod	transpose-based product x′y
 \tprodf	transpose-based product (alias for \tprod)
+\angb	angle brackets ⟨·⟩ sized to their contents
 \iprod	inner product ⟨x, y⟩
 \iprodf	inner product (alias for \iprod)
 \oprod	outer product x y′
