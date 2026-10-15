@@ -1334,10 +1334,10 @@
 \providecommand{\heldpredval}[1]{\predvar_{*,#1}}
 \providecommand{\heldoutval}[1]{\outvar_{*,#1}}
 \def\given{\mid}
-\providecommand{\condE}[2]{\E{#1 \given #2}}
-\providecommand{\condVar}[2]{\Var{#1 \given #2}}
-\providecommand{\condCov}[3]{\Cov{#1, #2 \given #3}}
-\providecommand{\condPr}[2]{\Prf{#1 \given #2}}
-\providecommand{\condpmf}[2]{\pmf{#1 \given #2}}
-\providecommand{\condpdf}[2]{\pdf\paren{#1 \given #2}}
-\providecommand{\condcdf}[2]{\cdff{#1 \given #2}}
+\providecommand{\condE}[2]{{\E{#1 \given #2}}}
+\providecommand{\condVar}[2]{{\Var{#1 \given #2}}}
+\providecommand{\condCov}[3]{{\Cov{#1, #2 \given #3}}}
+\providecommand{\condPr}[2]{{\Prf{#1 \given #2}}}
+\providecommand{\condpmf}[2]{{\pmf{#1 \given #2}}}
+\providecommand{\condpdf}[2]{{\pdf\paren{#1 \given #2}}}
+\providecommand{\condcdf}[2]{{\cdff{#1 \given #2}}}
