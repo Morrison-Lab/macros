@@ -454,7 +454,6 @@
 \def\vpredvar{\vecf{\predvar}}
 \def\vPredvar{\vecf{\Predvar}}
 \def\mpredvar{\matr{\Predvar}}
-\def\rvar{X}
 \def\vresid{\vecf{\resid}}
 \def\vprederr{\vecf{\prederr}}
 \def\vz{\vecf{z}}
@@ -1180,6 +1179,8 @@
 \def\corpar{\rho}
 \def\noise{\varepsilon}
 \def\vnoise{\vec{\varepsilon}}
+\def\rvar{x}
+\def\Rvar{X}
 \def\learnrate{\eta}
 \def\regpar{\lambda}
 \def\eigval{\lambda}
