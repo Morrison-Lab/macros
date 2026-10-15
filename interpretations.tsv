@@ -1260,6 +1260,8 @@ name	interpretation
 \leverage	leverage of the observation given as the argument, h with the observation as subscript
 \avgleverage	mean leverage, h-bar
 \cutheight	height h at which a dendrogram is cut
+\clusterassign	cluster-assignment function (the encoder) of a clustering method such as k-means, C
+\clusterassignf	cluster assigned to the argument, C applied to it
 \modmem	generic member h of a model family
 \modmemf	generic member of a model family applied to its argument, h(·)
 \modmemof	member (or fit) h of the model family given as the argument, h with the family as subscript
