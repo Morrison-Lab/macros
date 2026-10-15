@@ -183,7 +183,8 @@
 \providecommand{\modmemof}[1]{\modmem_{#1}}
 \def\nobs{n}
 \def\nmodels{M}
-\def\inputdim{d}
+\def\inputdim{p}
+\def\nparams{p^{*}}
 \def\popdist{P}
 \def\targetfn{f}
 \providecommand{\targetfnf}[1]{\targetfn\paren{#1}}
