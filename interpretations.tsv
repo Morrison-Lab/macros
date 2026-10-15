@@ -1179,7 +1179,7 @@ name	interpretation
 \hregcoef	an estimated unsubscripted regression coefficient (prints \hat{\beta})
 \eregcoef	an estimated unsubscripted regression coefficient (forward-looking form) (prints \est{\regcoef})
 \armijo	the Armijo sufficient-decrease constant of a backtracking line search (prints c_1)
-\schedfrac	the fraction of a learning-rate schedule that has elapsed (prints \alpha)
+\schedfrac	the fraction of a learning-rate schedule that has elapsed (prints \varphi)
 \schedlen	the number of updates a learning-rate schedule runs over (prints \tau)
 \decay	a multiplicative learning-rate decay factor (prints \gamma)
 \clipthresh	a gradient-clipping threshold (prints \tau)
