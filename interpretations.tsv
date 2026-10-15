@@ -445,6 +445,7 @@ name	interpretation
 \iprodf	inner product (alias for \iprod)
 \oprod	outer product x y′
 \stprod	self transpose-based product x′x
+\qform	quadratic form of a matrix M in a vector x: x′Mx, written \qform{M}{x}
 \siprod	self inner product ⟨x, x⟩
 \soprod	self outer product x x′
 \sdprod	self dot product x·x

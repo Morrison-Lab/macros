@@ -488,6 +488,7 @@
 \def\iprodf{\iprod}
 \providecommand{\oprod}[2]{#1 \tp{#2}}
 \providecommand{\stprod}[1]{\tprod{#1}{#1}}
+\providecommand{\qform}[2]{\tp{#2} #1 #2}
 \providecommand{\siprod}[1]{\iprod{#1}{#1}}
 \providecommand{\soprod}[1]{#1 \tp{#1}}
 \providecommand{\sdprod}[1]{\dprod{#1}{#1}}
