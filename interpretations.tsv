@@ -339,6 +339,7 @@ name	interpretation
 \expfn	exponential function (alias for \exp)
 \dexp	derivative of exponential (exp′)
 \dexpf	derivative of exp applied to argument
+\euler	Euler's number e (roman)
 \e	e^(·) exponential notation
 \ef	e^(·) exponential notation (alias for \e)
 \inv	multiplicative inverse (·)^{−1} with parentheses

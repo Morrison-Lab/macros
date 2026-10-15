@@ -385,8 +385,9 @@
 \providecommand{\expfn}[1]{\expf{#1}}
 \def\dexp{\operatorname{exp}'}
 \providecommand{\dexpf}[1]{\dexp \cb{#1}}
-\providecommand{\e}[1]{\text{e}^{#1}}
-\providecommand{\ef}[1]{\text{e}^{#1}}
+\def\euler{\text{e}}
+\providecommand{\e}[1]{\euler^{#1}}
+\providecommand{\ef}[1]{\e{#1}}
 \providecommand{\inv}[1]{\paren{#1}^{-1}}
 \providecommand{\invf}[1]{\inv{#1}}
 \providecommand{\invp}[1]{\inv{#1}}
