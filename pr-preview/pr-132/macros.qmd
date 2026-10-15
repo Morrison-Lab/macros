@@ -869,6 +869,8 @@
 \def\hmodmem{\hat{\modmem}}
 \providecommand{\hmodmemf}[1]{\hmodmem\paren{#1}}
 \providecommand{\hmodmemof}[1]{\hmodmem_{#1}}
+\def\htargetfn{\hat{\targetfn}}
+\providecommand{\htargetfnf}[1]{\htargetfn\paren{#1}}
 \def\hodds{\hat{\odds}}
 \def\hATT{\widehat{\ATT}}
 \providecommand{\hATTf}[1]{\hATT\paren{#1}}
