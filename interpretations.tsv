@@ -398,7 +398,7 @@ name	interpretation
 \voutvar	vector of observed outcomes (prints y̰)
 \vOutvar	random vector of outcomes (prints Y̰)
 \eoutvar	predicted outcome, through \est (prints ŷ)
-\veoutvar	vector of predicted outcomes (prints a tilde over ŷ)
+\veoutvar	vector of predicted outcomes (prints ŷ with a tilde under it)
 \predvar	predictor variable, observed value (prints x)
 \Predvar	predictor variable, random variable (prints X)
 \vpredvar	vector of one observation's predictor values (prints x̰)
