@@ -179,7 +179,7 @@ name	interpretation
 \devn	deviation symbol (alias for \deviation)
 \deviationv	deviation vector (the vec accent applied to δ)
 \devnv	deviation vector (alias for \deviationv)
-\Deviation	uppercase deviation symbol E
+\Deviation	uppercase deviation symbol Δ
 \Devn	uppercase deviation (alias for \Deviation)
 \residual	residual symbol r
 \resid	residual, observed minus predicted outcome (alias for \residual)

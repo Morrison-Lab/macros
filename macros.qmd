@@ -226,7 +226,7 @@
 \def\devn{\deviation}
 \providecommand{\deviationv}{\vec{\deviation}}
 \def\devnv{\deviationv}
-\def\Deviation{E}
+\def\Deviation{\Delta}
 \def\Devn{\Deviation}
 \def\residual{r}
 \def\resid{\residual}
