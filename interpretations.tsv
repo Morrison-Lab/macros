@@ -1353,20 +1353,20 @@ name	interpretation
 \condpdf	conditional probability density function f(A | B), \condpdf{A}{B}
 \condcdf	conditional cumulative distribution function F(A | B), \condcdf{A}{B}
 \generr	generalization error operator Err (expected loss of a prediction rule on new data)
-\expgenerr	expected generalization error of a fitting procedure over training sets, Err^g(n); \expgenerr{g}{n}
+\expgenerr	expected generalization error of fitting procedure g trained on n observations, averaged over training sets, Err^g(n); \expgenerr{g}{n}
 \cvest	cross-validation estimate of generalization error, Êrr_CV(k)
-\cvestof	cross-validation estimate of generalization error for a fitting procedure, Êrr^g_CV(k); \cvestof{k}{g}
+\cvestof	k-fold cross-validation estimate of the generalization error of fitting procedure g, Êrr^g_CV(k); \cvestof{k}{g}
 \fold	cross-validation fold F_j (set of held-out observation indices)
 \foldsize	number of observations n_j in fold j
 \foldof	fold κ(i) containing observation i
-\fittedwo	fitted value at an input from a fit leaving out fold j, ŷ^(-j)(x); \fittedwo{j}{x}
+\fittedwo	fitted value at input x from a fit leaving out fold j, ŷ^(-j)(x); \fittedwo{j}{x}
 \lev	leverage h_i of observation i (diagonal of the hat matrix)
 \foldmse	mean squared error MSE_j on fold j
-\foldmseof	mean squared error of a fitting procedure on a fold, MSE^g_j; \foldmseof{j}{g}
+\foldmseof	mean squared error of fitting procedure g on fold j, MSE^g_j; \foldmseof{j}{g}
 \cvse	standard error SE_CV(k) of the cross-validation estimate
-\cvseof	standard error of the cross-validation estimate for a fitting procedure, SE^g_CV(k); \cvseof{k}{g}
+\cvseof	standard error of the k-fold cross-validation estimate for fitting procedure g, SE^g_CV(k); \cvseof{k}{g}
 \rmselr	root mean squared error function RMSE(·), counterpart of \mselr
-\epe	expected prediction error of a fitting procedure at an input, EPE^g_n(x); \epe{g}{n}{x}
+\epe	expected prediction error at input x of fitting procedure g trained on n observations, EPE^g_n(x); \epe{g}{n}{x}
 \termvec	vector t_k of a model term evaluated at every observation
 \trainerr	training error (average loss on the training set), over-barred err
 \arcoef	autoregressive coefficient ρ
