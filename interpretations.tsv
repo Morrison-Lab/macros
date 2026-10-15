@@ -1330,3 +1330,11 @@ name	interpretation
 \heldoutvar	outcome of a held-out observation (random), Y with subscript star and the index of the observation
 \heldpredval	covariate value of a held-out observation (fixed), x with subscript star and the index of the observation
 \heldoutval	outcome value of a held-out observation (fixed), y with subscript star and the index of the observation
+\given	the conditioning bar "given" (prints |), for conditional expressions such as E[Y | X]
+\condE	conditional expected value E[A | B], \condE{A}{B}
+\condVar	conditional variance Var(A | B), \condVar{A}{B}
+\condCov	conditional covariance Cov(A, B | C), \condCov{A}{B}{C}
+\condPr	conditional probability Pr(A | B), \condPr{A}{B}
+\condpmf	conditional probability mass function P(A | B), \condpmf{A}{B}
+\condpdf	conditional probability density function f(A | B), \condpdf{A}{B}
+\condcdf	conditional cumulative distribution function F(A | B), \condcdf{A}{B}
