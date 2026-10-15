@@ -1281,6 +1281,8 @@ name	interpretation
 \hmodmem	fitted model (hat-wrapped \modmem), legacy form
 \hmodmemf	fitted model applied to its argument (hat-wrapped), h-hat(·)
 \hmodmemof	fitted model with its model family as subscript (hat-wrapped)
+\htargetfn	estimated target function: fitted counterpart of the target function (hat-wrapped), legacy form
+\htargetfnf	estimated target function applied to its argument (hat-wrapped), f-hat(·)
 \emodmem	fitted model: estimate of a member of a model family (via \est)
 \emodmemf	fitted model applied to its argument (via \est), h-hat(·)
 \emodmemof	fitted model with its model family as subscript (via \est)
