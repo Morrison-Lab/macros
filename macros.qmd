@@ -183,18 +183,33 @@
 \providecommand{\modmemof}[1]{\modmem_{#1}}
 \def\nobs{n}
 \def\nmodels{M}
-\def\inputdim{d}
+\def\inputdim{p}
+\def\nparams{p^{*}}
 \def\popdist{P}
 \def\targetfn{f}
 \providecommand{\targetfnf}[1]{\targetfn\paren{#1}}
-\def\trainset{\mathcal{X}}
-\def\valset{\mathcal{X}_{\text{val}}}
-\def\testset{\mathcal{X}_{\text{test}}}
+\def\trainset{\mathcal{D}_{\text{train}}}
+\def\valset{\mathcal{D}_{\text{val}}}
+\def\testset{\mathcal{D}_{\text{test}}}
 \def\trainidx{I_{\text{train}}}
 \def\validx{I_{\text{val}}}
 \def\testidx{I_{\text{test}}}
 \def\bestmod{h^*}
 \providecommand{\bestmodf}[1]{\bestmod\paren{#1}}
+\def\avgfit{\bar{\modmem}}
+\providecommand{\avgfitf}[1]{\avgfit\paren{#1}}
+\def\hidval{h}
+\providecommand{\hidvalof}[1]{\hidval_{#1}}
+\def\vhidval{\vecf{\hidval}}
+\def\imgheight{h}
+\def\imgwidth{w}
+\def\poolsize{q}
+\def\hatmat{H}
+\providecommand{\leverage}[1]{h_{#1}}
+\def\avgleverage{\bar{h}}
+\def\cutheight{h}
+\def\clusterassign{C}
+\providecommand{\clusterassignf}[1]{\clusterassign\paren{#1}}
 \providecommand{\lpnorm}[1]{\ell_{#1}}
 \def\lbound{\ell}
 \def\ubound{u}
@@ -1276,3 +1291,16 @@
 \providecommand{\censhist}[1]{\hist{C}{#1}}
 \providecommand{\censvalhist}[1]{\hist{c}{#1}}
 \providecommand{\eventnocens}[1]{D^{\bar{c}=0}_{#1}}
+\def\codealph{\Sigma}
+\def\srcalph{\mathcal{X}}
+\providecommand{\ffield}[1]{\mathbb{F}_{#1}}
+\providecommand{\hamdist}[2]{\Delta\paren{#1, #2}}
+\def\errfrac{\delta}
+\providecommand{\codeparams}[4]{\sb{#1, #2, #3}_{#4}}
+\providecommand{\asymub}[1]{O\paren{#1}}
+\def\entropy{H}
+\providecommand{\entropyf}[1]{\entropy\paren{#1}}
+\def\kolm{K}
+\providecommand{\kolmf}[1]{\kolm\paren{#1}}
+\providecommand{\ckolmf}[2]{\kolm\paren{#1 \mid #2}}
+\providecommand{\strlen}[1]{\abs{#1}}

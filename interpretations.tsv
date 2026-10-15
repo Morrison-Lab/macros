@@ -1248,17 +1248,32 @@ name	interpretation
 \failprob	failure probability delta of a probabilistic bound (one minus the confidence level)
 \bestmod	best-in-family model h*: the member of the model family closest to the target function
 \bestmodf	best-in-family model applied to its argument, h*(·)
+\avgfit	average fit: the mean of the fitted models over training sets, h-bar
+\avgfitf	average fit applied to its argument, h-bar(·)
+\hidval	value of a hidden unit in a neural network, h
+\hidvalof	value of the hidden unit given as the argument, h with the unit as subscript
+\vhidval	vector of hidden-unit values (or a recurrent network's hidden state), h̃
+\imgheight	height of an image or feature map, in pixels
+\imgwidth	width of an image or feature map, in pixels
+\poolsize	side length q of a square pooling block, in pixels
+\hatmat	hat matrix H, which maps observed responses to fitted responses
+\leverage	leverage of the observation given as the argument, h with the observation as subscript
+\avgleverage	mean leverage, h-bar
+\cutheight	height h at which a dendrogram is cut
+\clusterassign	cluster-assignment function (the encoder) of a clustering method such as k-means, C
+\clusterassignf	cluster assigned to the argument, C applied to it
 \modmem	generic member h of a model family
 \modmemf	generic member of a model family applied to its argument, h(·)
 \modmemof	member (or fit) h of the model family given as the argument, h with the family as subscript
 \nobs	sample size n: the number of observations or training examples
 \nmodels	number M of models (classifiers) in a model family
-\inputdim	number d of input variables (predictors)
+\inputdim	number p of input variables (predictors)
+\nparams	number p* of parameters: the columns of the design matrix after any feature map
 \popdist	population distribution P that the data are drawn from
 \targetfn	target function f: the true relationship between inputs and outcomes
-\trainset	training set: the observations a model is fitted to (prints a calligraphic X)
-\valset	validation set: the held-out observations used to choose among fitted models (prints a calligraphic X with a val subscript)
-\testset	test set: the held-out observations used once, to estimate the risk of the chosen model (prints a calligraphic X with a test subscript)
+\trainset	training set: the labelled data a model is fitted to (prints a calligraphic D with a train subscript)
+\valset	validation set: the held-out observations used to choose among fitted models (prints a calligraphic D with a val subscript)
+\testset	test set: the held-out observations used once, to estimate the risk of the chosen model (prints a calligraphic D with a test subscript)
 \trainidx	index set of the training set (prints I with a train subscript)
 \validx	index set of the validation set (prints I with a val subscript)
 \testidx	index set of the test set (prints I with a test subscript)
@@ -1273,3 +1288,16 @@ name	interpretation
 \etargetfnf	estimated target function applied to its argument (via \est), f-hat(·)
 \targeterr	error of the fitted target function: target function minus its fitted counterpart, e_f
 \targeterrf	error of the fitted target function at a point (via \targeterr), e_f(·)
+\codealph	alphabet of a block code (the set of symbols codewords use), Sigma
+\srcalph	alphabet of a source: the finite set of values a random variable takes, calligraphic X
+\ffield	finite field with the given number of elements, F_q
+\hamdist	Hamming distance: number of positions where two strings differ, Delta(x, y)
+\errfrac	fraction of a received word's positions that are corrupted, delta
+\codeparams	parameters of a linear code: block length, message length, minimum distance, alphabet size, [n, k, d]_q
+\asymub	big-O asymptotic upper bound applied to its argument, O(g)
+\entropy	Shannon entropy symbol H
+\entropyf	Shannon entropy of a random variable, H(X)
+\kolm	Kolmogorov complexity symbol K
+\kolmf	Kolmogorov complexity of a string, K(x)
+\ckolmf	conditional Kolmogorov complexity of a string given an input, K(x | n)
+\strlen	length of a string (number of symbols), |p|
