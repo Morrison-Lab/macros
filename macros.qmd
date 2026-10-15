@@ -55,7 +55,7 @@
 \def\g{\gamma}
 \providecommand{\floor}[1]{\mathopen{}\left\lfloor#1\right\rfloor\mathclose{}}
 \providecommand{\ceiling}[1]{\mathopen{}\left\lceil#1\right\rceil\mathclose{}}
-\providecommand{\ceil}[1]{\ceiling{#1}}
+\def\ceil{\ceiling}
 \def\Ber{\operatorname{Ber}}
 \def\Bernoulli{\operatorname{Bernoulli}}
 \def\Pois{\operatorname{Pois}}
@@ -389,10 +389,10 @@
 \providecommand{\dexpf}[1]{\dexp \cb{#1}}
 \def\euler{\text{e}}
 \providecommand{\e}[1]{\euler^{#1}}
-\providecommand{\ef}[1]{\e{#1}}
+\def\ef{\e}
 \providecommand{\inv}[1]{{\paren{#1}}^{-1}}
-\providecommand{\invf}[1]{\inv{#1}}
-\providecommand{\invp}[1]{\inv{#1}}
+\def\invf{\inv}
+\def\invp{\inv}
 \providecommand{\invcb}[1]{{\cb{#1}}^{-1}}
 \providecommand{\invsb}[1]{{\sb{#1}}^{-1}}
 \def\oinf{I}
