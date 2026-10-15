@@ -1306,3 +1306,25 @@
 \providecommand{\kolmf}[1]{\kolm\paren{#1}}
 \providecommand{\ckolmf}[2]{\kolm\paren{#1 \mid #2}}
 \providecommand{\strlen}[1]{\abs{#1}}
+\def\fitproc{g}
+\providecommand{\candproc}[1]{\fitproc_{#1}}
+\providecommand{\candproctuned}[1]{\fitproc^{#1}}
+\providecommand{\candfnset}[1]{\mathcal{G}_{#1}}
+\def\ncand{L}
+\def\icand{l}
+\def\nfolds{k}
+\def\ifold{j}
+\def\iobs{i}
+\def\obsidx{I}
+\def\nheld{m}
+\providecommand{\termfn}[1]{t_{#1}}
+\def\polydeg{d}
+\def\sscp{A}
+\def\newpredvar{\Predvar_{*}}
+\def\newoutvar{\Outvar_{*}}
+\def\newpredval{\predvar_{*}}
+\def\newoutval{\outvar_{*}}
+\providecommand{\heldpredvar}[1]{\Predvar_{*,#1}}
+\providecommand{\heldoutvar}[1]{\Outvar_{*,#1}}
+\providecommand{\heldpredval}[1]{\predvar_{*,#1}}
+\providecommand{\heldoutval}[1]{\outvar_{*,#1}}
