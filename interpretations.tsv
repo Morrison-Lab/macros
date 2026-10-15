@@ -1303,3 +1303,25 @@ name	interpretation
 \kolmf	Kolmogorov complexity of a string, K(x)
 \ckolmf	conditional Kolmogorov complexity of a string given an input, K(x | n)
 \strlen	length of a string (number of symbols), |p|
+\fitproc	fitting procedure: a rule that turns data and a covariate value into a prediction, g
+\candproc	candidate fitting procedure with the index given as the argument, g with that subscript
+\candproctuned	fitting procedure with the label given as the argument as a superscript, such as CV for the cross-validation choice procedure
+\candfnset	set of candidate prediction functions of a fitting procedure, with the index of the procedure as the subscript
+\ncand	number of candidate fitting procedures, L
+\icand	index of a candidate fitting procedure, l
+\nfolds	number of cross-validation folds, k
+\ifold	index of a cross-validation fold, j
+\iobs	index of an observation, i
+\obsidx	index set of the observations of a data set, I
+\nheld	number of observations in a held-out set, m
+\termfn	term of a linear-in-terms model, a function of the covariate value, t with the index given as the argument as a subscript
+\polydeg	degree of a polynomial model, d
+\sscp	sum-of-squares-and-cross-products matrix of the term vectors, A
+\newpredvar	covariate of a new observation (random), X with subscript star
+\newoutvar	outcome of a new observation (random), Y with subscript star
+\newpredval	covariate value of a new observation (fixed), x with subscript star
+\newoutval	outcome value of a new observation (fixed), y with subscript star
+\heldpredvar	covariate of a held-out observation (random), X with subscript star and the index of the observation
+\heldoutvar	outcome of a held-out observation (random), Y with subscript star and the index of the observation
+\heldpredval	covariate value of a held-out observation (fixed), x with subscript star and the index of the observation
+\heldoutval	outcome value of a held-out observation (fixed), y with subscript star and the index of the observation
