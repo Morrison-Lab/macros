@@ -82,7 +82,7 @@
 \def\cdev{\eps}
 \def\veps{\vec{\varepsilon}}
 \providecommand{\epsp}[1]{\eps\paren{#1}}
-\providecommand{\epsf}[1]{\eps\paren{#1}}
+\providecommand{\epsf}[1]{\epsp{#1}}
 \def\om{\omega}
 \def\m{\mu}
 \def\mean{\mu}
@@ -252,7 +252,7 @@
 \def\hessij{\llik_{ij}''}
 \def\hessijalt{\sb{\hess}_{ij}}
 \providecommand{\hessf}[1]{\hess \paren{#1}}
-\providecommand{\hessianf}[1]{\hess \paren{#1}}
+\providecommand{\hessianf}[1]{\hessf{#1}}
 \providecommand{\starf}[1]{#1^*}
 \def\lik{\llik}
 \providecommand{\est}[1]{\hat{#1}}
@@ -300,8 +300,8 @@
 \providecommand{\teal}[1]{{\color{teal}{#1}}}
 \providecommand{\violet}[1]{{\color{violet}{#1}}}
 \providecommand{\hE}[1]{\mathop{\hat{\operatorname{E}}}\nolimits\sb{#1}}
-\providecommand{\hExp}[1]{\mathop{\hat{\operatorname{E}}}\nolimits\sb{#1}}
-\providecommand{\hExpf}[1]{\mathop{\hat{\operatorname{E}}}\nolimits\sb{#1}}
+\providecommand{\hExp}[1]{\hE{#1}}
+\providecommand{\hExpf}[1]{\hE{#1}}
 \def\hmu{\hat{\mu}}
 \providecommand{\hmuf}[1]{\hmu\paren{#1}}
 \def\Expp{\distop{E}}
@@ -314,9 +314,9 @@
 \providecommand{\sigmoidf}[1]{\sigmoid\paren{#1}}
 \providecommand{\logitf}[1]{\logit\cb{#1}}
 \providecommand{\E}[1]{\distop{E}\sb{#1}}
-\providecommand{\Ef}[1]{\distop{E}\sb{#1}}
-\providecommand{\Exp}[1]{\distop{E}\sb{#1}}
-\providecommand{\Expf}[1]{\distop{E}\sb{#1}}
+\providecommand{\Ef}[1]{\E{#1}}
+\providecommand{\Exp}[1]{\E{#1}}
+\providecommand{\Expf}[1]{\E{#1}}
 \providecommand{\Expfc}[2]{\distop{E}_{#1}\sb{#2}}
 \def\ATT{\operatorname{ATT}}
 \providecommand{\ATTf}[1]{\ATT\paren{#1}}
@@ -329,27 +329,27 @@
 \def\hcovt{\mathop{\widehat{\Covt}}\nolimits}
 \def\hCovt{\mathop{\widehat{\Covt}}\nolimits}
 \providecommand{\var}[1]{\operatorname{Var}\paren{#1}}
-\providecommand{\varf}[1]{\operatorname{Var}\paren{#1}}
-\providecommand{\Var}[1]{\operatorname{Var}\paren{#1}}
+\providecommand{\varf}[1]{\var{#1}}
+\providecommand{\Var}[1]{\var{#1}}
 \providecommand{\hVar}[1]{\mathop{\widehat{\operatorname{Var}}}\nolimits\paren{#1}}
-\providecommand{\Varf}[1]{\operatorname{Var}\paren{#1}}
+\providecommand{\Varf}[1]{\var{#1}}
 \providecommand{\hvarf}[1]{\hvart\paren{#1}}
 \providecommand{\Cov}[1]{\Covt \paren{#1}}
 \providecommand{\Covs}[2]{\Covt \paren{#1, #2}}
-\providecommand{\Covf}[1]{\Covt \paren{#1}}
+\providecommand{\Covf}[1]{\Cov{#1}}
 \providecommand{\covh}[1]{\hcovt\paren{#1}}
-\providecommand{\covhf}[1]{\hcovt\paren{#1}}
-\providecommand{\hcovf}[1]{\hcovt\paren{#1}}
+\providecommand{\covhf}[1]{\covh{#1}}
+\providecommand{\hcovf}[1]{\covh{#1}}
 \providecommand{\aVar}[1]{\operatorname{aVar}\paren{#1}}
 \providecommand{\aCov}[1]{\operatorname{aCov}\paren{#1}}
 \providecommand{\cum}[1]{\operatorname{cum}\paren{#1}}
 \def\Cort{\operatorname{Cor}}
 \def\hcort{\mathop{\widehat{\Cort}}\nolimits}
 \providecommand{\Cor}[1]{\Cort \paren{#1}}
-\providecommand{\Corf}[1]{\Cort \paren{#1}}
+\providecommand{\Corf}[1]{\Cor{#1}}
 \providecommand{\Cors}[2]{\Cort \paren{#1, #2}}
 \providecommand{\hCor}[1]{\hcort\paren{#1}}
-\providecommand{\hCorf}[1]{\hcort\paren{#1}}
+\providecommand{\hCorf}[1]{\hCor{#1}}
 \providecommand{\hCors}[2]{\hcort\paren{#1, #2}}
 \def\med{\operatorname{med}}
 \providecommand{\medf}[1]{\med\paren{#1}}
@@ -357,24 +357,24 @@
 \providecommand{\IQRf}[1]{\IQR\paren{#1}}
 \def\varht{\mathop{\widehat{\operatorname{Var}}}\nolimits}
 \providecommand{\varh}[1]{\varht\paren{#1}}
-\providecommand{\varhf}[1]{\varht\paren{#1}}
+\providecommand{\varhf}[1]{\varh{#1}}
 \providecommand{\vc}[1]{\boldsymbol{#1}}
 \providecommand{\sd}[1]{\operatorname{sd}\paren{#1}}
 \providecommand{\SD}[1]{\operatorname{SD}\paren{#1}}
 \providecommand{\hSD}[1]{\mathop{\widehat{\operatorname{SD}}}\nolimits\paren{#1}}
-\providecommand{\hSDf}[1]{\mathop{\widehat{\operatorname{SD}}}\nolimits\paren{#1}}
+\providecommand{\hSDf}[1]{\hSD{#1}}
 \providecommand{\se}[1]{\operatorname{se}\paren{#1}}
 \def\hset{\mathop{\widehat{\operatorname{se}}}\nolimits}
 \def\hSE{\mathop{\widehat{\operatorname{SE}}}\nolimits}
 \def\hSEt{\mathop{\widehat{\operatorname{SE}}}\nolimits}
-\providecommand{\sef}[1]{\operatorname{se}\paren{#1}}
+\providecommand{\sef}[1]{\se{#1}}
 \providecommand{\hse}[1]{\hset\paren{#1}}
-\providecommand{\hsef}[1]{\hset\paren{#1}}
+\providecommand{\hsef}[1]{\hse{#1}}
 \providecommand{\SE}[1]{\operatorname{SE}\paren{#1}}
-\providecommand{\SEf}[1]{\operatorname{SE}\paren{#1}}
-\providecommand{\SDf}[1]{\operatorname{SD}\paren{#1}}
+\providecommand{\SEf}[1]{\SE{#1}}
+\providecommand{\SDf}[1]{\SD{#1}}
 \providecommand{\HSE}[1]{\hSE\paren{#1}}
-\providecommand{\hSEf}[1]{\hSE\paren{#1}}
+\providecommand{\hSEf}[1]{\HSE{#1}}
 \def\logt{\operatorname{log}}
 \providecommand{\logf}[1]{\logt\cb{#1}}
 \def\dlog{\logt'}
@@ -407,12 +407,12 @@
 \providecommand{\indic}[1]{\mathbb{1}_{#1}}
 \providecommand{\indicp}[1]{\mathbb{1}\paren{#1}}
 \providecommand{\indiccb}[1]{\mathbb{1}\cb{#1}}
-\providecommand{\indicf}[1]{\mathbb{1}_{#1}}
+\providecommand{\indicf}[1]{\indic{#1}}
 \providecommand{\set}[1]{\cb{#1}}
 \providecommand{\pf}[1]{\p \paren{#1}}
 \providecommand{\Pf}[1]{\P \paren{#1}}
 \providecommand{\Bias}[1]{\operatorname{Bias}\paren{#1}}
-\providecommand{\bias}[1]{\operatorname{Bias}\paren{#1}}
+\providecommand{\bias}[1]{\Bias{#1}}
 \def\ss{\sigma^2}
 \providecommand{\ssqf}[1]{\sigma^2\paren{#1}}
 \providecommand{\mselr}[1]{\operatorname{MSE}\paren{#1}}
@@ -755,17 +755,17 @@
 \providecommand{\Etildef}[1]{\Etilde\sb{#1}}
 \def\Corrt{\operatorname{Corr}}
 \providecommand{\Corr}[1]{\Corrt\paren{#1}}
-\providecommand{\Corrf}[1]{\Corrt\paren{#1}}
+\providecommand{\Corrf}[1]{\Corr{#1}}
 \providecommand{\Corrs}[2]{\Corrt\paren{#1, #2}}
 \def\MSEt{\operatorname{MSE}}
 \providecommand{\MSE}[1]{\MSEt\paren{#1}}
-\providecommand{\MSEf}[1]{\MSEt\paren{#1}}
+\providecommand{\MSEf}[1]{\MSE{#1}}
 \def\RMSEt{\operatorname{RMSE}}
 \providecommand{\RMSE}[1]{\RMSEt\paren{#1}}
-\providecommand{\RMSEf}[1]{\RMSEt\paren{#1}}
+\providecommand{\RMSEf}[1]{\RMSE{#1}}
 \def\SEtildet{\widetilde{\operatorname{SE}}}
 \providecommand{\SEtilde}[1]{\SEtildet\paren{#1}}
-\providecommand{\SEtildef}[1]{\SEtildet\paren{#1}}
+\providecommand{\SEtildef}[1]{\SEtilde{#1}}
 \def\Biast{\operatorname{Bias}}
 \def\biast{\operatorname{Bias}}
 \def\sign{\signt}
@@ -968,17 +968,17 @@
 \def\hsurvff{\hsurvfactorf}
 \def\hCorrt{\mathop{\widehat{\Corrt}}\nolimits}
 \providecommand{\hCorr}[1]{\hCorrt\paren{#1}}
-\providecommand{\hCorrf}[1]{\hCorrt\paren{#1}}
+\providecommand{\hCorrf}[1]{\hCorr{#1}}
 \providecommand{\hCorrs}[2]{\hCorrt\paren{#1, #2}}
 \def\hMSEt{\mathop{\widehat{\MSEt}}\nolimits}
 \providecommand{\hMSE}[1]{\hMSEt\paren{#1}}
-\providecommand{\hMSEf}[1]{\hMSEt\paren{#1}}
+\providecommand{\hMSEf}[1]{\hMSE{#1}}
 \def\hRMSEt{\mathop{\widehat{\RMSEt}}\nolimits}
 \providecommand{\hRMSE}[1]{\hRMSEt\paren{#1}}
-\providecommand{\hRMSEf}[1]{\hRMSEt\paren{#1}}
+\providecommand{\hRMSEf}[1]{\hRMSE{#1}}
 \def\hBiast{\mathop{\widehat{\Biast}}\nolimits}
 \providecommand{\hBias}[1]{\hBiast\paren{#1}}
-\providecommand{\hbias}[1]{\hBiast\paren{#1}}
+\providecommand{\hbias}[1]{\hBias{#1}}
 \def\eQ{\mathop{\est{\Q}}\nolimits}
 \def\equantile{\mathop{\est{\quantile}}\nolimits}
 \providecommand{\eQf}[1]{\eQ\paren{#1}}
@@ -1013,8 +1013,8 @@
 \def\eth{\est{\theta}}
 \def\ethml{\eth_{\text{ML}}}
 \providecommand{\eE}[1]{\mathop{\est{\operatorname{E}}}\nolimits\sb{#1}}
-\providecommand{\eExp}[1]{\mathop{\est{\operatorname{E}}}\nolimits\sb{#1}}
-\providecommand{\eExpf}[1]{\mathop{\est{\operatorname{E}}}\nolimits\sb{#1}}
+\providecommand{\eExp}[1]{\eE{#1}}
+\providecommand{\eExpf}[1]{\eE{#1}}
 \def\emu{\est{\mu}}
 \providecommand{\emuf}[1]{\emu\paren{#1}}
 \def\evar{\mathop{\Est{\Vart}}\nolimits}
@@ -1026,15 +1026,15 @@
 \providecommand{\ecovf}[1]{\ecovt\paren{#1}}
 \def\ecort{\mathop{\Est{\Cort}}\nolimits}
 \providecommand{\eCor}[1]{\ecort\paren{#1}}
-\providecommand{\eCorf}[1]{\ecort\paren{#1}}
+\providecommand{\eCorf}[1]{\eCor{#1}}
 \providecommand{\eCors}[2]{\ecort\paren{#1, #2}}
 \providecommand{\eSD}[1]{\mathop{\Est{\operatorname{SD}}}\nolimits\paren{#1}}
-\providecommand{\eSDf}[1]{\mathop{\Est{\operatorname{SD}}}\nolimits\paren{#1}}
+\providecommand{\eSDf}[1]{\eSD{#1}}
 \def\eset{\mathop{\Est{\operatorname{se}}}\nolimits}
 \def\eSE{\mathop{\Est{\operatorname{SE}}}\nolimits}
 \def\eSEt{\mathop{\Est{\operatorname{SE}}}\nolimits}
 \providecommand{\ese}[1]{\eset\paren{#1}}
-\providecommand{\esef}[1]{\eset\paren{#1}}
+\providecommand{\esef}[1]{\ese{#1}}
 \providecommand{\eSEf}[1]{\eSE\paren{#1}}
 \def\eeinf{\est{\einf}}
 \providecommand{\eeinff}[1]{\eeinf \paren{#1}}
@@ -1151,17 +1151,17 @@
 \def\esurvff{\esurvfactorf}
 \def\eCorrt{\mathop{\Est{\Corrt}}\nolimits}
 \providecommand{\eCorr}[1]{\eCorrt\paren{#1}}
-\providecommand{\eCorrf}[1]{\eCorrt\paren{#1}}
+\providecommand{\eCorrf}[1]{\eCorr{#1}}
 \providecommand{\eCorrs}[2]{\eCorrt\paren{#1, #2}}
 \def\eMSEt{\mathop{\Est{\MSEt}}\nolimits}
 \providecommand{\eMSE}[1]{\eMSEt\paren{#1}}
-\providecommand{\eMSEf}[1]{\eMSEt\paren{#1}}
+\providecommand{\eMSEf}[1]{\eMSE{#1}}
 \def\eRMSEt{\mathop{\Est{\RMSEt}}\nolimits}
 \providecommand{\eRMSE}[1]{\eRMSEt\paren{#1}}
-\providecommand{\eRMSEf}[1]{\eRMSEt\paren{#1}}
+\providecommand{\eRMSEf}[1]{\eRMSE{#1}}
 \def\eBiast{\mathop{\Est{\Biast}}\nolimits}
 \providecommand{\eBias}[1]{\eBiast\paren{#1}}
-\providecommand{\ebias}[1]{\eBiast\paren{#1}}
+\providecommand{\ebias}[1]{\eBias{#1}}
 \def\sdpar{\sigma}
 \def\varpar{\sigma^2}
 \def\hsdpar{\hat{\sigma}}
