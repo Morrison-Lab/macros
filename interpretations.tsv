@@ -1233,7 +1233,7 @@ name	interpretation
 \stat	a statistic, a function of the sample (prints T)
 \statf	a statistic evaluated at a sample, \statf{\vx} (prints T(x))
 \sfac	the factor of a density that depends on the data only through a statistic, in the factorization theorem for sufficiency (prints g)
-\sfacf	the statistic factor evaluated at a statistic value and a parameter, \sfacf{t}{\param} (prints g(t ; theta))
+\sfacf	the statistic factor evaluated at a statistic value and a parameter, \sfacf{t}{\param} (prints g(t ; \theta))
 \rfac	the factor of a density that does not depend on the parameter, in the factorization theorem for sufficiency (prints h)
 \rfacf	the parameter-free factor evaluated at a sample, \rfacf{\vx} (prints h(x))
 \nuisance	a nuisance parameter (prints \lambda)
