@@ -222,7 +222,7 @@
 \def\loglikf{\llikf}
 \def\loglf{\llikf}
 \def\likf{\llikf}
-\def\deviation{e}
+\def\deviation{\delta}
 \def\devn{\deviation}
 \providecommand{\deviationv}{\vec{\deviation}}
 \def\devnv{\deviationv}
@@ -240,7 +240,7 @@
 \def\modresid{\modresidual}
 \def\ModResidual{R^*}
 \def\ModResid{\ModResidual}
-\def\prederr{\deviation}
+\def\prederr{\err}
 \def\score{\llik'}
 \def\scorev{\vec{\llik'}}
 \def\scorei{\vec{\llik_i'}}
