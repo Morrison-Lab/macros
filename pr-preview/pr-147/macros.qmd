@@ -189,6 +189,7 @@
 \def\popdist{P}
 \def\targetfn{f}
 \providecommand{\targetfnf}[1]{\targetfn\paren{#1}}
+\def\dataset{\mathcal{D}}
 \def\trainset{\mathcal{D}_{\text{train}}}
 \def\valset{\mathcal{D}_{\text{val}}}
 \def\testset{\mathcal{D}_{\text{test}}}
@@ -251,7 +252,7 @@
 \def\hessm{\llik''}
 \def\hessian{\hess}
 \def\hessij{\llik_{ij}''}
-\def\hessijalt{\sb{\hess}_{ij}}
+\def\hessijalt{{\sb{\hess}}_{ij}}
 \providecommand{\hessf}[1]{\hess \paren{#1}}
 \providecommand{\hessianf}[1]{\hess \paren{#1}}
 \providecommand{\starf}[1]{#1^*}
@@ -452,6 +453,7 @@
 \def\Predvar{X}
 \def\vpredvar{\vecf{\predvar}}
 \def\vPredvar{\vecf{\Predvar}}
+\def\mpredvar{\matr{\Predvar}}
 \def\vresid{\vecf{\resid}}
 \def\vprederr{\vecf{\prederr}}
 \def\vz{\vecf{z}}
@@ -481,7 +483,7 @@
 \def\x1n{\dsn{x}}
 \def\y1n{\dsn{y}}
 \def\'{^{\top}}
-\providecommand{\pt}[1]{\paren{#1}^{\top}}
+\providecommand{\pt}[1]{{\paren{#1}}^{\top}}
 \providecommand{\tp}[1]{{#1}^{\top}}
 \def\dpr{\cdot}
 \def\Xx1n{X_1=x_1, \ldots, X_n = x_n}
@@ -659,11 +661,11 @@
 \deriv{\th_i}\deriv{\th_j} \llik(\vX = \vx | \vth)}
 \def\defOInf{\oinf \eqdef -\hess(\vx|\vth)}
 \def\defEInf{\einf \eqdef \E{\oinf(\vx|\theta)}}
-\def\thmADistMLE{\hth_{ML}\ \dot \sim\ \ndist{\th,\sb{\einf(\vth)}^{-1}}}
+\def\thmADistMLE{\hth_{ML}\ \dot \sim\ \ndist{\th,{\sb{\einf(\vth)}}^{-1}}}
 \def\eqGLMRatio{\ror(\vx,\vxs) = \exp{(\diffvx) \cdot \vb}}
 \def\defHR{\hr(t| \vx : \vxs) \eqdef \frac{\haz(t|\vx)}{\haz(t|\vxs)}}
 \def\kerngaus{\frac{-1}{2}\frac{(x-\mu)^2}{\ss}}
-\def\likgaus{\paren{2\pi\ss}^{-1/2}\expf{\kerngaus}}
+\def\likgaus{{\paren{2\pi\ss}}^{-1/2}\expf{\kerngaus}}
 \def\llgaus{\frac{-1}{2}\paren{\logf{2\pi\ss} + \frac{\devn^2}{\ss}}}
 \def\scoreexpf{\frac{\devn}{\Varf{X}}}
 \def\llexpmean{-\logf{\pmean} - \frac{x}{\pmean}}
@@ -1304,7 +1306,7 @@
 \providecommand{\ffield}[1]{\mathbb{F}_{#1}}
 \providecommand{\hamdist}[2]{\Delta\paren{#1, #2}}
 \def\errfrac{\delta}
-\providecommand{\codeparams}[4]{\sb{#1, #2, #3}_{#4}}
+\providecommand{\codeparams}[4]{{\sb{#1, #2, #3}}_{#4}}
 \providecommand{\asymub}[1]{O\paren{#1}}
 \def\entropy{H}
 \providecommand{\entropyf}[1]{\entropy\paren{#1}}
