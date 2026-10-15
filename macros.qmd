@@ -1179,7 +1179,7 @@
 \def\corpar{\rho}
 \def\noise{\varepsilon}
 \def\vnoise{\vec{\varepsilon}}
-\def\learnrate{\eta}
+\def\learnrate{\alpha}
 \def\regpar{\lambda}
 \def\eigval{\lambda}
 \def\Eigvals{\Lambda}
@@ -1232,7 +1232,7 @@
 \def\emean{\est{\mean}}
 \def\hregcoef{\hat{\beta}}
 \def\eregcoef{\est{\regcoef}}
-\def\armijo{\alpha}
+\def\armijo{c_{1}}
 \def\schedfrac{\alpha}
 \def\schedlen{\tau}
 \def\decay{\gamma}
