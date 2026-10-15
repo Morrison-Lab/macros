@@ -227,7 +227,7 @@
 \def\devn{\deviation}
 \providecommand{\deviationv}{\vec{\deviation}}
 \def\devnv{\deviationv}
-\def\Deviation{E}
+\def\Deviation{\Delta}
 \def\Devn{\Deviation}
 \def\residual{r}
 \def\resid{\residual}
@@ -450,8 +450,7 @@
 \def\Predvar{X}
 \def\vpredvar{\vecf{\predvar}}
 \def\vPredvar{\vecf{\Predvar}}
-\def\mpredvar{\matr{\predvar}}
-\def\mPredvar{\matr{\Predvar}}
+\def\mpredvar{\matr{\Predvar}}
 \def\vresid{\vecf{\resid}}
 \def\vprederr{\vecf{\prederr}}
 \def\vz{\vecf{z}}
