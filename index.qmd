@@ -94,7 +94,7 @@ format:
 
 > **Why two files?** `macros.qmd` remains the single source of macro definitions. For PDF, it is inserted verbatim into the LaTeX preamble. For HTML/RevealJS, `macros-header.html` is just a loader that reads `macros.qmd` and registers those same macros with MathJax.
 >
-> **Note on `\v` in PDF via `include-in-header`:** In LaTeX/PDF output, LaTeX's font-encoding initialization restores its built-in text caron/háček accent `\v` at `\begin{document}`, overriding the preamble's `\renewcommand{\v}[1]{\vecf{#1}}`. For vector notation in PDF documents using `include-in-header`, use `\vec{...}` or `\vecf{...}` (which work across all formats and engines). If your document requires the `\v` shorthand specifically, add `\AtBeginDocument{\renewcommand{\v}[1]{\vecf{#1}}}` to your LaTeX preamble. Documents using the `{{\< include \>}}` shortcode recipe are unaffected because pandoc's macro expansion pass expands `\v` into `\tilde` during markdown processing before LaTeX compiles.
+> **Note on `\v` in PDF via `include-in-header`:** In LaTeX/PDF output, LaTeX's font-encoding initialization restores its built-in text caron/háček accent `\v` at `\begin{document}`, overriding the preamble's `\renewcommand{\v}[1]{\vecf{#1}}`. For vector notation in PDF documents using `include-in-header`, use `\vec{...}` or `\vecf{...}` (which work across all formats and engines). If your document requires the `\v` shorthand specifically, add `\AtBeginDocument{\renewcommand{\v}[1]{\vecf{#1}}}` to your LaTeX preamble. Documents using the `{{\< include \>}}` shortcode recipe are unaffected because pandoc's macro expansion pass expands `\v` into the definition of `\vecf` during markdown processing before LaTeX compiles.
 
 #### Via the Quarto `include` shortcode
 
