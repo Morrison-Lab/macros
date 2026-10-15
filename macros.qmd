@@ -1232,7 +1232,7 @@
 \def\emean{\est{\mean}}
 \def\hregcoef{\hat{\beta}}
 \def\eregcoef{\est{\regcoef}}
-\def\armijo{c_{1}}
+\def\armijo{c_1}
 \def\schedfrac{\zeta}
 \def\schedlen{\tau}
 \def\decay{\gamma}
