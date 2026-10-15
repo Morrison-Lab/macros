@@ -402,7 +402,7 @@ name	interpretation
 \predvar	predictor variable, observed value (prints x)
 \Predvar	predictor variable, random variable (prints X)
 \vpredvar	vector of one observation's predictor values (prints x̃)
-\mpredvar	data matrix: the predictor vectors of all n observations, one per row (prints bold X, like \mX, the usual textbook form)
+\mpredvar	input matrix: the predictor vectors of all n observations, one per row (prints bold X, like \mX, the usual textbook form)
 \vPredvar	random vector of predictors (prints X̃)
 \vresid	vector of residuals, observed minus predicted outcomes (the negative of the prediction errors \prederr) (prints r̃)
 \vprederr	vector of prediction errors, predicted minus observed outcomes (the vec accent applied to \prederr)
