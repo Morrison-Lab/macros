@@ -1330,3 +1330,7 @@ name	interpretation
 \heldoutvar	outcome of a held-out observation (random), Y with subscript star and the index of the observation
 \heldpredval	covariate value of a held-out observation (fixed), x with subscript star and the index of the observation
 \heldoutval	outcome value of a held-out observation (fixed), y with subscript star and the index of the observation
+\ntp	number of true positives in a confusion matrix, T_p
+\nfp	number of false positives in a confusion matrix, F_p
+\nfn	number of false negatives in a confusion matrix, F_n
+\ntn	number of true negatives in a confusion matrix, T_n
