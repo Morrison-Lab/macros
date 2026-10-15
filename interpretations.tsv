@@ -1281,9 +1281,15 @@ name	interpretation
 \hmodmem	fitted model (hat-wrapped \modmem), legacy form
 \hmodmemf	fitted model applied to its argument (hat-wrapped), h-hat(·)
 \hmodmemof	fitted model with its model family as subscript (hat-wrapped)
+\htargetfn	estimated target function: fitted counterpart of the target function (hat-wrapped), legacy form
+\htargetfnf	estimated target function applied to its argument (hat-wrapped), f-hat(·)
 \emodmem	fitted model: estimate of a member of a model family (via \est)
 \emodmemf	fitted model applied to its argument (via \est), h-hat(·)
 \emodmemof	fitted model with its model family as subscript (via \est)
+\etargetfn	estimated target function: fitted counterpart of the target function (via \est), f-hat
+\etargetfnf	estimated target function applied to its argument (via \est), f-hat(·)
+\targeterr	error of the fitted target function: target function minus its fitted counterpart, e_f
+\targeterrf	error of the fitted target function at a point (via \targeterr), e_f(·)
 \codealph	alphabet of a block code (the set of symbols codewords use), Sigma
 \srcalph	alphabet of a source: the finite set of values a random variable takes, calligraphic X
 \ffield	finite field with the given number of elements, F_q
