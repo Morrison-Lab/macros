@@ -1265,7 +1265,8 @@ name	interpretation
 \modmemof	member (or fit) h of the model family given as the argument, h with the family as subscript
 \nobs	sample size n: the number of observations or training examples
 \nmodels	number M of models (classifiers) in a model family
-\inputdim	number d of input variables (predictors)
+\inputdim	number p of input variables (predictors)
+\nparams	number p* of parameters: the columns of the design matrix after any feature map
 \popdist	population distribution P that the data are drawn from
 \targetfn	target function f: the true relationship between inputs and outcomes
 \trainset	training set: the labelled data a model is fitted to (prints a calligraphic D with a train subscript)
