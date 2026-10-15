@@ -1284,3 +1284,16 @@ name	interpretation
 \emodmem	fitted model: estimate of a member of a model family (via \est)
 \emodmemf	fitted model applied to its argument (via \est), h-hat(·)
 \emodmemof	fitted model with its model family as subscript (via \est)
+\codealph	alphabet of a block code (the set of symbols codewords use), Sigma
+\srcalph	alphabet of a source: the finite set of values a random variable takes, calligraphic X
+\ffield	finite field with the given number of elements, F_q
+\hamdist	Hamming distance: number of positions where two strings differ, Delta(x, y)
+\errfrac	fraction of a received word's positions that are corrupted, delta
+\codeparams	parameters of a linear code: block length, message length, minimum distance, alphabet size, [n, k, d]_q
+\asymub	big-O asymptotic upper bound applied to its argument, O(g)
+\entropy	Shannon entropy symbol H
+\entropyf	Shannon entropy of a random variable, H(X)
+\kolm	Kolmogorov complexity symbol K
+\kolmf	Kolmogorov complexity of a string, K(x)
+\ckolmf	conditional Kolmogorov complexity of a string given an input, K(x | n)
+\strlen	length of a string (number of symbols), |p|
