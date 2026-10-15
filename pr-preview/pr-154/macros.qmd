@@ -272,8 +272,8 @@
 \providecommand{\dderiv}[1]{\frac{\partial^2}{\partial #1^2}}
 \providecommand{\derivf}[2]{\frac{\partial #1}{\partial #2}}
 \providecommand{\derivff}[2]{\frac{\partial #2}{\partial #1}}
-\providecommand{\derivfnd}[2]{\derivf{#1}{#2}}
-\providecommand{\derivfdn}[2]{\derivff{#1}{#2}}
+\def\derivfnd{\derivf}
+\def\derivfdn{\derivff}
 \providecommand{\dderivf}[2]{\frac{\partial^2 #1}{\partial #2^2}}
 \providecommand{\xderiv}[2]{\frac{\partial^2}{\partial #1 \partial #2}}
 \providecommand{\xderivf}[3]{\frac{\partial^2 #1}{\partial #2 \partial #3}}
@@ -385,7 +385,7 @@
 \renewcommand{\exp}[1]{\operatorname{exp}\cb{#1}}
 \def\expt{\operatorname{exp}}
 \providecommand{\expf}[1]{\operatorname{exp}\cb{#1}}
-\providecommand{\expfn}[1]{\expf{#1}}
+\def\expfn{\expf}
 \def\dexp{\operatorname{exp}'}
 \providecommand{\dexpf}[1]{\dexp \cb{#1}}
 \def\euler{\text{e}}
@@ -412,7 +412,7 @@
 \providecommand{\indicp}[1]{\mathbb{1}\paren{#1}}
 \providecommand{\indiccb}[1]{\mathbb{1}\cb{#1}}
 \def\indicf{\indic}
-\providecommand{\set}[1]{\cb{#1}}
+\def\set{\cb}
 \providecommand{\pf}[1]{\p \paren{#1}}
 \providecommand{\Pf}[1]{\P \paren{#1}}
 \providecommand{\Bias}[1]{\operatorname{Bias}\paren{#1}}
@@ -704,7 +704,7 @@
 \def\coll{\scrC}
 \def\collection{\coll}
 \providecommand{\gensalg}[1]{\sigma\paren{#1}}
-\providecommand{\gensigmaalg}[1]{\gensalg{#1}}
+\def\gensigmaalg{\gensalg}
 \def\inas{\overset{\scriptstyle a.s.}{\longrightarrow}}
 \def\indist{\overset{\scriptstyle d}{\longrightarrow}}
 \def\inprob{\overset{\scriptstyle p}{\longrightarrow}}
@@ -723,7 +723,7 @@
 \def\vch{\operatorname{vech}}
 \providecommand{\vchf}[1]{\vch\paren{#1}}
 \def\matvec{\vct}
-\providecommand{\matvecf}[1]{\vctf{#1}}
+\def\matvecf{\vctf}
 \def\dBeta{\operatorname{Beta}}
 \providecommand{\dBetaf}[1]{\dBeta\paren{#1}}
 \def\dBern{\operatorname{Bern}}
@@ -1313,7 +1313,7 @@
 \def\kolm{K}
 \providecommand{\kolmf}[1]{\kolm\paren{#1}}
 \providecommand{\ckolmf}[2]{\kolm\paren{#1 \mid #2}}
-\providecommand{\strlen}[1]{\abs{#1}}
+\def\strlen{\abs}
 \def\fitproc{g}
 \providecommand{\candproc}[1]{\fitproc_{#1}}
 \providecommand{\candproctuned}[1]{\fitproc^{#1}}
