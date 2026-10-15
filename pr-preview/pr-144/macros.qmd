@@ -1301,7 +1301,6 @@
 \providecommand{\ckolmf}[2]{\kolm\paren{#1 \mid #2}}
 \providecommand{\strlen}[1]{\abs{#1}}
 \def\fitproc{g}
-\providecommand{\fitprocf}[2]{\fitproc\paren{#1; #2}}
 \providecommand{\candproc}[1]{\fitproc_{#1}}
 \providecommand{\candproctuned}[1]{\fitproc^{#1}}
 \providecommand{\candfnset}[1]{\mathcal{G}_{#1}}
@@ -1312,7 +1311,8 @@
 \def\iobs{i}
 \def\obsidx{I}
 \def\nheld{m}
-\def\nterms{p}
+\providecommand{\termfn}[1]{t_{#1}}
+\def\polydeg{d}
 \def\sscp{A}
 \def\newpredvar{\Predvar_0}
 \def\newoutvar{\Outvar_0}
