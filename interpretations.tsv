@@ -1310,7 +1310,7 @@ name	interpretation
 \nheld	number of observations in a held-out set, m
 \termfn	term of a linear-in-terms model, a function of the covariate value, t with the index given as the argument as a subscript
 \polydeg	degree of a polynomial model, d
-\sscp	sum-of-squares and cross-products (cross-product) matrix of the term vectors, A
+\sscp	sum-of-squares-and-cross-products matrix of the term vectors, A
 \newpredvar	covariate of a new observation (random), X with subscript 0
 \newoutvar	outcome of a new observation (random), Y with subscript 0
 \newpredval	covariate value of a new observation (fixed), x with subscript 0
