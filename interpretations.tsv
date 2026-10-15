@@ -1334,3 +1334,4 @@ name	interpretation
 \nfp	number of false positives in a confusion matrix, F_p
 \nfn	number of false negatives in a confusion matrix, F_n
 \ntn	number of true negatives in a confusion matrix, T_n
+\linscore	linear score of a classifier: the dot product of the coefficient vector and the features, z (the log-odds in logistic regression; use where \logodds, which prints eta, would clash with \learnrate)

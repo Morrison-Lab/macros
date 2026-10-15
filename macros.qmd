@@ -1337,3 +1337,4 @@
 \def\nfp{F_{p}}
 \def\nfn{F_{n}}
 \def\ntn{T_{n}}
+\def\linscore{z}
