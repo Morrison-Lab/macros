@@ -1336,10 +1336,10 @@
 \providecommand{\heldoutvar}[1]{\Outvar_{*,#1}}
 \providecommand{\heldpredval}[1]{\predvar_{*,#1}}
 \providecommand{\heldoutval}[1]{\outvar_{*,#1}}
-\def\ntp{T_{p}}
-\def\nfp{F_{p}}
-\def\nfn{F_{n}}
-\def\ntn{T_{n}}
+\def\ntp{n_{T+}}
+\def\nfp{n_{F+}}
+\def\nfn{n_{F-}}
+\def\ntn{n_{T-}}
 \def\given{\mid}
 \providecommand{\condE}[2]{{\E{#1 \given #2}}}
 \providecommand{\condVar}[2]{{\Var{#1 \given #2}}}
