@@ -223,11 +223,11 @@
 \def\loglikf{\llikf}
 \def\loglf{\llikf}
 \def\likf{\llikf}
-\def\deviation{e}
+\def\deviation{\delta}
 \def\devn{\deviation}
 \providecommand{\deviationv}{\vec{\deviation}}
 \def\devnv{\deviationv}
-\def\Deviation{E}
+\def\Deviation{\Delta}
 \def\Devn{\Deviation}
 \def\residual{r}
 \def\resid{\residual}
@@ -241,7 +241,7 @@
 \def\modresid{\modresidual}
 \def\ModResidual{R^*}
 \def\ModResid{\ModResidual}
-\def\prederr{\deviation}
+\def\prederr{\err}
 \def\score{\llik'}
 \def\scorev{\vec{\llik'}}
 \def\scorei{\vec{\llik_i'}}
@@ -494,10 +494,13 @@
 \def\iprodf{\iprod}
 \providecommand{\oprod}[2]{#1 \tp{#2}}
 \providecommand{\stprod}[1]{\tprod{#1}{#1}}
+\providecommand{\qform}[2]{\tp{#2} #1 #2}
 \providecommand{\siprod}[1]{\iprod{#1}{#1}}
 \providecommand{\soprod}[1]{#1 \tp{#1}}
 \providecommand{\sdprod}[1]{\dprod{#1}{#1}}
 \def\sdprodf{\sdprod}
+\def\cossim{\operatorname{cossim}}
+\providecommand{\cossimf}[2]{\cossim\paren{#1, #2}}
 \providecommand{\dsvn}[2]{#1_1=#2_1, \ldots, #1_n = #2_n}
 \providecommand{\sumn}[1]{\sum_{#1=1}^n}
 \providecommand{\sumto}[2]{\sum_{#1=1}^{#2}}
@@ -872,6 +875,8 @@
 \def\hmodmem{\hat{\modmem}}
 \providecommand{\hmodmemf}[1]{\hmodmem\paren{#1}}
 \providecommand{\hmodmemof}[1]{\hmodmem_{#1}}
+\def\htargetfn{\hat{\targetfn}}
+\providecommand{\htargetfnf}[1]{\htargetfn\paren{#1}}
 \def\hodds{\hat{\odds}}
 \def\hATT{\widehat{\ATT}}
 \providecommand{\hATTf}[1]{\hATT\paren{#1}}
@@ -1049,6 +1054,10 @@
 \def\emodmem{\est{\modmem}}
 \providecommand{\emodmemf}[1]{\emodmem\paren{#1}}
 \providecommand{\emodmemof}[1]{\emodmem_{#1}}
+\def\etargetfn{\est{\targetfn}}
+\providecommand{\etargetfnf}[1]{\etargetfn\paren{#1}}
+\def\targeterr{\deviation_{\targetfn}}
+\providecommand{\targeterrf}[1]{\targeterr\paren{#1}}
 \def\emprisk{\epoprisk}
 \def\empriskf{\epopriskf}
 \def\eodds{\est{\odds}}
@@ -1303,3 +1312,25 @@
 \providecommand{\kolmf}[1]{\kolm\paren{#1}}
 \providecommand{\ckolmf}[2]{\kolm\paren{#1 \mid #2}}
 \providecommand{\strlen}[1]{\abs{#1}}
+\def\fitproc{g}
+\providecommand{\candproc}[1]{\fitproc_{#1}}
+\providecommand{\candproctuned}[1]{\fitproc^{#1}}
+\providecommand{\candfnset}[1]{\mathcal{G}_{#1}}
+\def\ncand{L}
+\def\icand{l}
+\def\nfolds{k}
+\def\ifold{j}
+\def\iobs{i}
+\def\obsidx{I}
+\def\nheld{m}
+\providecommand{\termfn}[1]{t_{#1}}
+\def\polydeg{d}
+\def\sscp{A}
+\def\newpredvar{\Predvar_{*}}
+\def\newoutvar{\Outvar_{*}}
+\def\newpredval{\predvar_{*}}
+\def\newoutval{\outvar_{*}}
+\providecommand{\heldpredvar}[1]{\Predvar_{*,#1}}
+\providecommand{\heldoutvar}[1]{\Outvar_{*,#1}}
+\providecommand{\heldpredval}[1]{\predvar_{*,#1}}
+\providecommand{\heldoutval}[1]{\outvar_{*,#1}}
