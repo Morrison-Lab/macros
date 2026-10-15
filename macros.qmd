@@ -1355,3 +1355,22 @@
 \providecommand{\condpmf}[2]{{\pmf{#1 \given #2}}}
 \providecommand{\condpdf}[2]{{\pdf\paren{#1 \given #2}}}
 \providecommand{\condcdf}[2]{{\cdff{#1 \given #2}}}
+\def\generr{\operatorname{Err}}
+\providecommand{\expgenerr}[2]{\generr^{#1}\paren{#2}}
+\providecommand{\cvest}[1]{\Est{\generr}_{\text{CV}(#1)}}
+\providecommand{\cvestof}[2]{\Est{\generr}^{#2}_{\text{CV}(#1)}}
+\providecommand{\fold}[1]{\mathcal{F}_{#1}}
+\providecommand{\foldsize}[1]{n_{#1}}
+\providecommand{\foldof}[1]{\kappa\paren{#1}}
+\providecommand{\fittedwo}[2]{\fitted^{(-#1)}\paren{#2}}
+\providecommand{\lev}[1]{h_{#1}}
+\providecommand{\foldmse}[1]{\MSEt_{#1}}
+\providecommand{\foldmseof}[2]{\MSEt^{#2}_{#1}}
+\providecommand{\cvse}[1]{\operatorname{SE}_{\text{CV}(#1)}}
+\providecommand{\cvseof}[2]{\operatorname{SE}^{#2}_{\text{CV}(#1)}}
+\providecommand{\rmselr}[1]{\RMSEt\paren{#1}}
+\providecommand{\epe}[3]{\operatorname{EPE}^{#1}_{#2}\paren{#3}}
+\providecommand{\termvec}[1]{\vecf{t}_{#1}}
+\def\trainerr{\overline{\operatorname{err}}}
+\def\arcoef{\rho}
+\def\truenulls{\mathcal{I}_0}
