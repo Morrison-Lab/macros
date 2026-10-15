@@ -274,6 +274,7 @@ name	interpretation
 \Expfc	conditional expected value E_c[·]
 \ATT	average treatment effect on the treated label ATT
 \ATTf	average treatment effect on the treated function ATT(·)
+\evalbar	expression followed by an evaluation bar ·|
 \evalAt	evaluate expression at a given point
 \Varr	variance operator symbol Var
 \Vart	variance operator symbol (alias for \Varr)
@@ -339,6 +340,7 @@ name	interpretation
 \expfn	exponential function (alias for \exp)
 \dexp	derivative of exponential (exp′)
 \dexpf	derivative of exp applied to argument
+\euler	Euler's number e (roman)
 \e	e^(·) exponential notation
 \ef	e^(·) exponential notation (alias for \e)
 \inv	multiplicative inverse (·)^{−1} with parentheses
@@ -442,6 +444,7 @@ name	interpretation
 \dpf	dot product a·b (alias for \dprodf)
 \tprod	transpose-based product x′y
 \tprodf	transpose-based product (alias for \tprod)
+\angb	angle brackets ⟨·⟩ sized to their contents
 \iprod	inner product ⟨x, y⟩
 \iprodf	inner product (alias for \iprod)
 \oprod	outer product x y′
@@ -1334,3 +1337,11 @@ name	interpretation
 \nfp	number of false positives in a confusion matrix, F_p
 \nfn	number of false negatives in a confusion matrix, F_n
 \ntn	number of true negatives in a confusion matrix, T_n
+\given	the conditioning bar "given" (prints |), for conditional expressions such as E[Y | X]
+\condE	conditional expected value E[A | B], \condE{A}{B}
+\condVar	conditional variance Var(A | B), \condVar{A}{B}
+\condCov	conditional covariance Cov(A, B | C), \condCov{A}{B}{C}
+\condPr	conditional probability Pr(A | B), \condPr{A}{B}
+\condpmf	conditional probability mass function P(A | B), \condpmf{A}{B}
+\condpdf	conditional probability density function f(A | B), \condpdf{A}{B}
+\condcdf	conditional cumulative distribution function F(A | B), \condcdf{A}{B}
