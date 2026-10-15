@@ -175,9 +175,9 @@ name	interpretation
 \loglikf	log-likelihood function ℓ(·) (alias for \llikf)
 \loglf	log-likelihood function ℓ(·) (alias for \llikf)
 \likf	log-likelihood function ℓ(·) (alias for \llikf)
-\deviation	deviation symbol e
+\deviation	deviation symbol δ
 \devn	deviation symbol (alias for \deviation)
-\deviationv	deviation vector ẽ
+\deviationv	deviation vector (the vec accent applied to δ)
 \devnv	deviation vector (alias for \deviationv)
 \Deviation	uppercase deviation symbol E
 \Devn	uppercase deviation (alias for \Deviation)
@@ -194,7 +194,7 @@ name	interpretation
 \modresid	modified residual (alias for \modresidual)
 \ModResidual	uppercase modified residual R*
 \ModResid	uppercase modified residual (alias)
-\prederr	prediction error, predicted minus observed outcome
+\prederr	prediction error, predicted minus observed outcome (alias for \err)
 \score	score function ℓ′
 \scorev	score vector
 \scorei	per-observation score vector ℓ′_i
@@ -376,7 +376,7 @@ name	interpretation
 \normsq	squared norm ‖·‖²
 \sqf	square of argument (·)²
 \sq	square superscript ² (postfix)
-\err	error term (alias for \eps)
+\err	error term ε (alias for \eps); also the prediction error, which \prederr aliases
 \erf	error function ε(·); for an estimate, the estimation error (estimate minus truth)
 \vec	vector notation (tilde style)
 \vecf	vector notation (alias for \vec)
@@ -404,7 +404,7 @@ name	interpretation
 \vpredvar	vector of one observation's predictor values (prints x̃)
 \vPredvar	random vector of predictors (prints X̃)
 \vresid	vector of residuals, observed minus predicted outcomes (the negative of the prediction errors \prederr) (prints r̃)
-\vprederr	vector of prediction errors, predicted minus observed outcomes (prints ẽ)
+\vprederr	vector of prediction errors, predicted minus observed outcomes (the vec accent applied to \prederr)
 \vz	vector z (z̃)
 \vZ	random vector Z (Z̃)
 \vD	exposure/treatment vector D (D̃)
