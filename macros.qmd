@@ -224,6 +224,8 @@
 \def\loglikf{\llikf}
 \def\loglf{\llikf}
 \def\likf{\llikf}
+\def\deviance{D}
+\def\nulldeviance{\deviance_0}
 \def\deviation{\delta}
 \def\devn{\deviation}
 \providecommand{\deviationv}{\vec{\deviation}}
