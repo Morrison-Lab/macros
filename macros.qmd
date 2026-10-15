@@ -208,6 +208,8 @@
 \providecommand{\leverage}[1]{h_{#1}}
 \def\avgleverage{\bar{h}}
 \def\cutheight{h}
+\def\clusterassign{C}
+\providecommand{\clusterassignf}[1]{\clusterassign\paren{#1}}
 \providecommand{\lpnorm}[1]{\ell_{#1}}
 \def\lbound{\ell}
 \def\ubound{u}
