@@ -1263,12 +1263,15 @@ name	interpretation
 \leverage	leverage of the observation given as the argument, h with the observation as subscript
 \avgleverage	mean leverage, h-bar
 \cutheight	height h at which a dendrogram is cut
+\clusterassign	cluster-assignment function (the encoder) of a clustering method such as k-means, C
+\clusterassignf	cluster assigned to the argument, C applied to it
 \modmem	generic member h of a model family
 \modmemf	generic member of a model family applied to its argument, h(·)
 \modmemof	member (or fit) h of the model family given as the argument, h with the family as subscript
 \nobs	sample size n: the number of observations or training examples
 \nmodels	number M of models (classifiers) in a model family
-\inputdim	number d of input variables (predictors)
+\inputdim	number p of input variables (predictors)
+\nparams	number p* of parameters: the columns of the design matrix after any feature map
 \popdist	population distribution P that the data are drawn from
 \targetfn	target function f: the true relationship between inputs and outcomes
 \trainset	training set: the labelled data a model is fitted to (prints a calligraphic D with a train subscript)
@@ -1281,6 +1284,47 @@ name	interpretation
 \hmodmem	fitted model (hat-wrapped \modmem), legacy form
 \hmodmemf	fitted model applied to its argument (hat-wrapped), h-hat(·)
 \hmodmemof	fitted model with its model family as subscript (hat-wrapped)
+\htargetfn	estimated target function: fitted counterpart of the target function (hat-wrapped), legacy form
+\htargetfnf	estimated target function applied to its argument (hat-wrapped), f-hat(·)
 \emodmem	fitted model: estimate of a member of a model family (via \est)
 \emodmemf	fitted model applied to its argument (via \est), h-hat(·)
 \emodmemof	fitted model with its model family as subscript (via \est)
+\etargetfn	estimated target function: fitted counterpart of the target function (via \est), f-hat
+\etargetfnf	estimated target function applied to its argument (via \est), f-hat(·)
+\targeterr	error of the fitted target function: target function minus its fitted counterpart, e_f
+\targeterrf	error of the fitted target function at a point (via \targeterr), e_f(·)
+\codealph	alphabet of a block code (the set of symbols codewords use), Sigma
+\srcalph	alphabet of a source: the finite set of values a random variable takes, calligraphic X
+\ffield	finite field with the given number of elements, F_q
+\hamdist	Hamming distance: number of positions where two strings differ, Delta(x, y)
+\errfrac	fraction of a received word's positions that are corrupted, delta
+\codeparams	parameters of a linear code: block length, message length, minimum distance, alphabet size, [n, k, d]_q
+\asymub	big-O asymptotic upper bound applied to its argument, O(g)
+\entropy	Shannon entropy symbol H
+\entropyf	Shannon entropy of a random variable, H(X)
+\kolm	Kolmogorov complexity symbol K
+\kolmf	Kolmogorov complexity of a string, K(x)
+\ckolmf	conditional Kolmogorov complexity of a string given an input, K(x | n)
+\strlen	length of a string (number of symbols), |p|
+\fitproc	fitting procedure: a rule that turns data and a covariate value into a prediction, g
+\candproc	candidate fitting procedure with the index given as the argument, g with that subscript
+\candproctuned	fitting procedure with the label given as the argument as a superscript, such as CV for the cross-validation choice procedure
+\candfnset	set of candidate prediction functions of a fitting procedure, with the index of the procedure as the subscript
+\ncand	number of candidate fitting procedures, L
+\icand	index of a candidate fitting procedure, l
+\nfolds	number of cross-validation folds, k
+\ifold	index of a cross-validation fold, j
+\iobs	index of an observation, i
+\obsidx	index set of the observations of a data set, I
+\nheld	number of observations in a held-out set, m
+\termfn	term of a linear-in-terms model, a function of the covariate value, t with the index given as the argument as a subscript
+\polydeg	degree of a polynomial model, d
+\sscp	sum-of-squares-and-cross-products matrix of the term vectors, A
+\newpredvar	covariate of a new observation (random), X with subscript star
+\newoutvar	outcome of a new observation (random), Y with subscript star
+\newpredval	covariate value of a new observation (fixed), x with subscript star
+\newoutval	outcome value of a new observation (fixed), y with subscript star
+\heldpredvar	covariate of a held-out observation (random), X with subscript star and the index of the observation
+\heldoutvar	outcome of a held-out observation (random), Y with subscript star and the index of the observation
+\heldpredval	covariate value of a held-out observation (fixed), x with subscript star and the index of the observation
+\heldoutval	outcome value of a held-out observation (fixed), y with subscript star and the index of the observation
