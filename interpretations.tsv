@@ -463,6 +463,7 @@ name	interpretation
 \sumn	sum over index from 1 to n
 \sumto	sum over the first argument from 1 to the second
 \sumin	sum over i from 1 to n
+\sumkq	sum over the q distinct covariate patterns, k from 1 to q
 \sumiN	sum over i from 1 to N
 \avgin	average over i from 1 to n: one over n times the sum
 \avgiN	average over i from 1 to N: one over N times the sum
@@ -1286,6 +1287,9 @@ name	interpretation
 \nobs	sample size n: the number of observations or training examples
 \nmodels	number M of models (classifiers) in a model family
 \inputdim	number p of input variables (predictors)
+\npatterns	number q of distinct covariate patterns in a dataset
+\nreps	number m of replicates (observations) that share one covariate pattern; written with a pattern index, as \nreps_k
+\nevents	number s of events among the replicates of one covariate pattern; written with a pattern index, as \nevents_k
 \nparams	number p* of parameters: the columns of the design matrix after any feature map
 \popdist	population distribution P that the data are drawn from
 \targetfn	target function f: the true relationship between inputs and outcomes
