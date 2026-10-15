@@ -1311,11 +1311,11 @@ name	interpretation
 \termfn	term of a linear-in-terms model, a function of the covariate value, t with the index given as the argument as a subscript
 \polydeg	degree of a polynomial model, d
 \sscp	sum-of-squares-and-cross-products matrix of the term vectors, A
-\newpredvar	covariate of a new observation (random), X with subscript 0
-\newoutvar	outcome of a new observation (random), Y with subscript 0
-\newpredval	covariate value of a new observation (fixed), x with subscript 0
-\newoutval	outcome value of a new observation (fixed), y with subscript 0
-\heldpredvar	covariate of a held-out observation (random), X with subscript 0 and the index of the observation
-\heldoutvar	outcome of a held-out observation (random), Y with subscript 0 and the index of the observation
-\heldpredval	covariate value of a held-out observation (fixed), x with subscript 0 and the index of the observation
-\heldoutval	outcome value of a held-out observation (fixed), y with subscript 0 and the index of the observation
+\newpredvar	covariate of a new observation (random), X with subscript star
+\newoutvar	outcome of a new observation (random), Y with subscript star
+\newpredval	covariate value of a new observation (fixed), x with subscript star
+\newoutval	outcome value of a new observation (fixed), y with subscript star
+\heldpredvar	covariate of a held-out observation (random), X with subscript star and the index of the observation
+\heldoutvar	outcome of a held-out observation (random), Y with subscript star and the index of the observation
+\heldpredval	covariate value of a held-out observation (fixed), x with subscript star and the index of the observation
+\heldoutval	outcome value of a held-out observation (fixed), y with subscript star and the index of the observation
