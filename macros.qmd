@@ -387,11 +387,11 @@
 \providecommand{\dexpf}[1]{\dexp \cb{#1}}
 \providecommand{\e}[1]{\text{e}^{#1}}
 \providecommand{\ef}[1]{\text{e}^{#1}}
-\providecommand{\inv}[1]{\mathopen{}\left(#1\right)^{-1}\mathclose{}}
-\providecommand{\invf}[1]{\mathopen{}\left(#1\right)^{-1}\mathclose{}}
-\providecommand{\invp}[1]{\mathopen{}\left(#1\right)^{-1}\mathclose{}}
-\providecommand{\invcb}[1]{\mathopen{}\left\{#1\right\}^{-1}\mathclose{}}
-\providecommand{\invsb}[1]{\mathopen{}\left[#1\right]^{-1}\mathclose{}}
+\providecommand{\inv}[1]{\paren{#1}^{-1}}
+\providecommand{\invf}[1]{\paren{#1}^{-1}}
+\providecommand{\invp}[1]{\paren{#1}^{-1}}
+\providecommand{\invcb}[1]{\cb{#1}^{-1}}
+\providecommand{\invsb}[1]{\sb{#1}^{-1}}
 \def\oinf{I}
 \def\oinfm{\mat{I}}
 \def\Nat{\mathbb{N}}
@@ -420,7 +420,7 @@
 \providecommand{\abs}[1]{\mathopen{}\left|#1\right|\mathclose{}}
 \providecommand{\norm}[1]{\mathopen{}\left\lVert#1\right\rVert\mathclose{}}
 \providecommand{\normsq}[1]{\mathopen{}\left\lVert#1\right\rVert^2\mathclose{}}
-\providecommand{\sqf}[1]{\mathopen{}\left(#1\right)^2\mathclose{}}
+\providecommand{\sqf}[1]{\paren{#1}^2}
 \providecommand{\sq}{^2}
 \def\err{\eps}
 \providecommand{\erf}[1]{\err\paren{#1}}
