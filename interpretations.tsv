@@ -1125,6 +1125,8 @@ name	interpretation
 \corpar	a correlation parameter (prints \rho)
 \noise	a model error term (prints \varepsilon)
 \vnoise	a vector of model error terms (prints \vec{\varepsilon})
+\rvar	a generic value of a random variable in probability expressions (prints x)
+\Rvar	a generic random variable in probability expressions (prints X)
 \learnrate	a learning rate (gradient-descent step size) (prints \eta)
 \regpar	a regularization penalty (tuning) parameter (prints \lambda)
 \eigval	an eigenvalue (prints \lambda)
