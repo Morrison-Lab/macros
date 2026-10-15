@@ -187,6 +187,9 @@
 \def\nmodels{M}
 \def\inputdim{p}
 \def\nparams{p^{*}}
+\def\npatterns{K}
+\def\nreps{m}
+\def\nevents{s}
 \def\popdist{P}
 \def\targetfn{f}
 \providecommand{\targetfnf}[1]{\targetfn\paren{#1}}
@@ -227,6 +230,8 @@
 \def\likf{\llikf}
 \def\deviance{D}
 \def\nulldeviance{\deviance_0}
+\def\satllik{\llik_{\mathrm{sat}}}
+\def\satdeviance{\deviance_{\mathrm{sat}}}
 \def\deviation{\delta}
 \def\devn{\deviation}
 \providecommand{\deviationv}{\vec{\deviation}}
@@ -510,6 +515,7 @@
 \providecommand{\sumn}[1]{\sum_{#1=1}^n}
 \providecommand{\sumto}[2]{\sum_{#1=1}^{#2}}
 \def\sumin{\sum_{i=1}^n}
+\def\sumkK{\sum_{k=1}^{K}}
 \def\sumiN{\sum_{i=1}^N}
 \def\sumip{\sum_{i=1}^p}
 \def\sumjn{\sum_{j=1}^n}
