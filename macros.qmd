@@ -1285,3 +1285,16 @@
 \providecommand{\censhist}[1]{\hist{C}{#1}}
 \providecommand{\censvalhist}[1]{\hist{c}{#1}}
 \providecommand{\eventnocens}[1]{D^{\bar{c}=0}_{#1}}
+\def\codealph{\Sigma}
+\def\srcalph{\mathcal{X}}
+\providecommand{\ffield}[1]{\mathbb{F}_{#1}}
+\providecommand{\hamdist}[2]{\Delta\paren{#1, #2}}
+\def\errfrac{\delta}
+\providecommand{\codeparams}[4]{\sb{#1, #2, #3}_{#4}}
+\providecommand{\asymub}[1]{O\paren{#1}}
+\def\entropy{H}
+\providecommand{\entropyf}[1]{\entropy\paren{#1}}
+\def\kolm{K}
+\providecommand{\kolmf}[1]{\kolm\paren{#1}}
+\providecommand{\ckolmf}[2]{\kolm\paren{#1 \mid #2}}
+\providecommand{\strlen}[1]{\abs{#1}}
