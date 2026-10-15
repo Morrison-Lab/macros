@@ -1233,7 +1233,7 @@
 \def\hregcoef{\hat{\beta}}
 \def\eregcoef{\est{\regcoef}}
 \def\armijo{c_{1}}
-\def\schedfrac{\varphi}
+\def\schedfrac{\zeta}
 \def\schedlen{\tau}
 \def\decay{\gamma}
 \def\clipthresh{\tau}
