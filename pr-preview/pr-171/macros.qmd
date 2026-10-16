@@ -1395,3 +1395,5 @@
 \providecommand{\aug}[1]{{#1}^{\mathrm{aug}}}
 \def\bestpredfn{\predfn^*}
 \providecommand{\bestpredfnf}[1]{\bestpredfn\paren{#1}}
+\def\predval{\eoutvar}
+\def\vpredval{\veoutvar}
