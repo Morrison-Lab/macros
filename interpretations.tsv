@@ -385,7 +385,7 @@ name	interpretation
 \sq	square superscript ² (postfix)
 \err	error term ε (alias for \eps); also the prediction error, which \prederr aliases
 \erf	error function ε(·); for an estimate, the estimation error (estimate minus truth)
-\vec	vector notation (tilde style)
+\vec	vector notation (undertilde style, as in Kleinbaum et al.)
 \vecf	vector notation (alias for \vec)
 \v	vector shorthand (alias for \vecf)
 \matr	matrix notation (bold style)
@@ -405,7 +405,7 @@ name	interpretation
 \voutvar	vector of observed outcomes (prints ỹ)
 \vOutvar	random vector of outcomes (prints Ỹ)
 \eoutvar	predicted outcome, through \est (prints ŷ)
-\veoutvar	vector of predicted outcomes (prints a tilde over ŷ)
+\veoutvar	vector of predicted outcomes (prints a tilde under ŷ)
 \predvar	predictor variable, observed value (prints x)
 \Predvar	predictor variable, random variable (prints X)
 \vpredvar	vector of one observation's predictor values (prints x̃)
