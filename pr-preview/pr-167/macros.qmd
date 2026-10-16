@@ -1378,6 +1378,7 @@
 \providecommand{\cvseof}[2]{\operatorname{SE}^{#2}_{\text{CV}(#1)}}
 \providecommand{\rmselr}[1]{\RMSEt\paren{#1}}
 \providecommand{\epe}[3]{\operatorname{EPE}^{#1}_{#2}\paren{#3}}
+\providecommand{\epl}[3]{\operatorname{EPL}^{#1}_{#2}\paren{#3}}
 \providecommand{\termvec}[1]{\vecf{t}_{#1}}
 \def\trainerr{\overline{\operatorname{err}}}
 \def\valerr{\overline{\operatorname{err}}_{\text{val}}}
