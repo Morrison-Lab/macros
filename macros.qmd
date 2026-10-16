@@ -191,7 +191,7 @@
 \def\nreps{m}
 \def\nevents{s}
 \def\popdist{P}
-\def\targetfn{f}
+\def\targetfn{\mu}
 \providecommand{\targetfnf}[1]{\targetfn\paren{#1}}
 \def\dataset{\mathcal{D}}
 \def\trainset{\mathcal{D}_{\text{train}}}
@@ -1206,8 +1206,8 @@
 \def\hcovmat{\hat{\Sigma}}
 \def\ecovmat{\est{\covmat}}
 \def\corpar{\rho}
-\def\noise{\varepsilon}
-\def\vnoise{\vec{\varepsilon}}
+\def\noise{\nu}
+\def\vnoise{\vec{\nu}}
 \def\rvar{x}
 \def\Rvar{X}
 \def\predbar{\bar{\predvar}}
