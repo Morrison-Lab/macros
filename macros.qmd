@@ -1378,6 +1378,8 @@
 \providecommand{\epe}[3]{\operatorname{EPE}^{#1}_{#2}\paren{#3}}
 \providecommand{\termvec}[1]{\vecf{t}_{#1}}
 \def\trainerr{\overline{\operatorname{err}}}
+\def\valerr{\overline{\operatorname{err}}_{\text{val}}}
+\def\testerr{\overline{\operatorname{err}}_{\text{test}}}
 \def\arcoef{\rho}
 \def\truenulls{\mathcal{I}_0}
 \def\levelset{\mathcal{L}}

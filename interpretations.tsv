@@ -1375,6 +1375,8 @@ name	interpretation
 \epe	expected prediction error at input x of fitting procedure g trained on n observations, EPE^g_n(x); \epe{g}{n}{x}
 \termvec	vector t_k of a model term evaluated at every observation
 \trainerr	training error (average loss on the training set), over-barred err
+\valerr	validation error (average loss on the validation set), over-barred err with subscript val
+\testerr	test error (average loss on the test set), over-barred err with subscript test
 \arcoef	autoregressive coefficient ρ
 \truenulls	index set I_0 of the true null hypotheses
 \levelset	symbol for a level set of a function
