@@ -436,8 +436,8 @@
 \providecommand{\sq}{^2}
 \def\err{\eps}
 \providecommand{\erf}[1]{\err\paren{#1}}
-\renewcommand{\vec}[1]{\tilde{#1}}
-\providecommand{\vecf}[1]{\tilde{#1}}
+\renewcommand{\vec}[1]{\vecf{#1}}
+\providecommand{\vecf}[1]{\underset{\sim}{#1}}
 \renewcommand{\v}[1]{\vecf{#1}}
 \providecommand{\matr}[1]{\mathbf{#1}}
 \def\mX{\matr{X}}
