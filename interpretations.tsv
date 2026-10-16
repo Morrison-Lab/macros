@@ -1392,3 +1392,5 @@ name	interpretation
 \aug	mark for the augmented version of the argument (extended with additional entries)
 \bestpredfn	best prediction function g*: the conditional mean of the outcome given the inputs, which minimizes the squared-error risk
 \bestpredfnf	best prediction function applied to its argument, g*(·)
+\predval	predicted value of the outcome (alias of \eoutvar)
+\vpredval	vector of predicted values (alias of \veoutvar)
