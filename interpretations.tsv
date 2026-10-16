@@ -987,13 +987,13 @@ name	interpretation
 \pMAEt	population mean absolute error operator pMAE
 \pMAE	population mean absolute error pMAE(·) applied to argument
 \pMAEf	population mean absolute error pMAE(·) applied to argument (alias for \pMAE)
-\sMSEt	sample mean squared error operator sMSE
+\sMSEt	sample mean squared error operator sMSE, the estimator of pMSE (no hat form is needed)
 \sMSE	sample mean squared error sMSE(·) applied to argument
 \sMSEf	sample mean squared error sMSE(·) applied to argument (alias for \sMSE)
-\sRMSEt	sample root mean squared error operator sRMSE
+\sRMSEt	sample root mean squared error operator sRMSE, the estimator of pRMSE (no hat form is needed)
 \sRMSE	sample root mean squared error sRMSE(·) applied to argument
 \sRMSEf	sample root mean squared error sRMSE(·) applied to argument (alias for \sRMSE)
-\sMAEt	sample mean absolute error operator sMAE
+\sMAEt	sample mean absolute error operator sMAE, the estimator of pMAE (no hat form is needed)
 \sMAE	sample mean absolute error sMAE(·) applied to argument
 \sMAEf	sample mean absolute error sMAE(·) applied to argument (alias for \sMAE)
 \SEtildet	standard error operator with tilde
