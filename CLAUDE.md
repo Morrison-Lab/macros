@@ -53,7 +53,7 @@ read both before editing `macros.qmd`.
 - **A refactor that "leaves output unchanged" needs a measurement in MathJax and in LaTeX.**
   A macro that ends in `\mathclose{}` (such as `\paren`, `\sb`, `\cb`, `\norm` and `\angb`) must not have `^` or `_` placed right after it inside another macro:
   the script then attaches to the empty close atom and no longer rises over a tall argument.
-  Wrap the delimited group instead, as in `{\paren{#1}}^{-1}` (macros#147).
+  Wrap the delimited group instead, as in `{\paren{#1}}^{-1}` ([macros#147](https://github.com/Morrison-Lab/macros/pull/147)).
   Compare old and new with a tall argument (`\frac{a}{b}`) in `mathjax-full` and in pdflatex (compare `\ht`, `\dp` and `\wd` of a box),
   and include the rejected form as a control to prove the test can fail.
 
