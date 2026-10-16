@@ -1240,7 +1240,7 @@ name	interpretation
 \midpt	an intermediate point in a mean-value or Taylor remainder (prints \tau)
 \nullity	the nullity of a matrix (prints \nu)
 \lsresid	a residual written as epsilon (prints \varepsilon)
-\vlsresid	a vector of residuals written as epsilon (the vec accent applied to \noise)
+\vlsresid	a vector of residuals written as epsilon (prints \vec{\varepsilon})
 \subdiv	a subdivision of a region into rectangles (prints \Delta)
 \universe	a universal set (prints \Omega)
 \lowend	the lower endpoint of an interval (prints \alpha)
