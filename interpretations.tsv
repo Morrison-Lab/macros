@@ -747,7 +747,7 @@ name	interpretation
 \ek	estimated kappa κ̂
 \ekappa	estimated kappa (alias for \ek)
 \el	estimated lambda λ̂
-\ey	estimated value of y (hat of y), whether or not y is an outcome
+\ey	estimated value of y
 \efitted	fitted or predicted value (alias for \ey)
 \es	estimated sigma σ̂
 \esig	estimated sigma (alias for \es)
