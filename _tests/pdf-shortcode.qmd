@@ -8,3 +8,5 @@ format: pdf
 Expectation: $\E{X+Y}$.
 
 Sequence: $\Xin$.
+
+Subscripted vector (a LaTeX error here fails the check): $\vxi^T$.
