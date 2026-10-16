@@ -191,7 +191,7 @@ name	interpretation
 \Devn	uppercase deviation (alias for \Deviation)
 \residual	residual symbol r
 \resid	residual, observed minus predicted outcome (alias for \residual)
-\residv	residual vector r̃
+\residv	residual vector r̰
 \Residual	uppercase residual symbol R
 \Resid	uppercase residual (alias for \Residual)
 \stdresidual	standardized residual r′
@@ -394,48 +394,48 @@ name	interpretation
 \matr	matrix notation (bold style)
 \mX	design matrix X (bold)
 \mx	design matrix x lowercase (bold)
-\va	vector a (ã)
-\vx	vector x (x̃)
-\vxs	starred/reference vector x* (x̃*)
+\va	vector a (a̰)
+\vx	vector x (x̰)
+\vxs	starred/reference vector x* (x̰*)
 \diff	difference operator Δ
-\diffvx	difference in x-vector Δx̃
-\vxi	i-th observation vector x̃_i
-\vX	random vector X (X̃)
-\vy	outcome vector y (ỹ)
-\vY	uppercase outcome vector Y (Ỹ)
+\diffvx	difference in x-vector Δx̰
+\vxi	i-th observation vector x̰_i
+\vX	random vector X (X̰)
+\vy	outcome vector y (y̰)
+\vY	uppercase outcome vector Y (Y̰)
 \outvar	outcome variable, observed value (prints y)
 \Outvar	outcome variable, random variable (prints Y)
-\voutvar	vector of observed outcomes (prints ỹ)
-\vOutvar	random vector of outcomes (prints Ỹ)
+\voutvar	vector of observed outcomes (prints y̰)
+\vOutvar	random vector of outcomes (prints Y̰)
 \eoutvar	predicted outcome, through \est (prints ŷ)
 \veoutvar	vector of predicted outcomes (prints a tilde under ŷ)
 \predvar	predictor variable, observed value (prints x)
 \Predvar	predictor variable, random variable (prints X)
-\vpredvar	vector of one observation's predictor values (prints x̃)
+\vpredvar	vector of one observation's predictor values (prints x̰)
 \mpredvar	input matrix: the predictor vectors of all n observations, one per row (prints bold X, like \mX, the usual textbook form)
-\vPredvar	random vector of predictors (prints X̃)
-\vresid	vector of residuals, observed minus predicted outcomes (the negative of the prediction errors \prederr) (prints r̃)
+\vPredvar	random vector of predictors (prints X̰)
+\vresid	vector of residuals, observed minus predicted outcomes (the negative of the prediction errors \prederr) (prints r̰)
 \vprederr	vector of prediction errors, predicted minus observed outcomes (the vec accent applied to \prederr)
-\vz	vector z (z̃)
-\vZ	random vector Z (Z̃)
-\vD	exposure/treatment vector D (D̃)
-\vd	exposure vector d lowercase (d̃)
-\vT	time vector T (T̃)
-\vt	time vector t lowercase (t̃)
-\vpi	vector of probabilities π (π̃)
-\vw	weight vector w (w̃)
-\vv	vector v (ṽ)
-\vh	vector h, such as hidden-unit values (h̃)
-\ve	residual vector e (ẽ)
-\vu	vector u (ũ)
-\vg	vector g, such as a gradient (g̃)
-\vp	vector p, such as a probability distribution (p̃)
-\vq	vector q, such as a second probability distribution (q̃)
-\vr	vector r (r̃)
-\vconst	constant vector c (c̃)
-\vdelta	vector δ, such as backpropagated errors (δ̃)
-\vepsilon	vector ϵ (ϵ̃); see also \veps for an error vector
-\vphi	vector φ, such as features (φ̃)
+\vz	vector z (z̰)
+\vZ	random vector Z (Z̰)
+\vD	exposure/treatment vector D (D̰)
+\vd	exposure vector d lowercase (d̰)
+\vT	time vector T (T̰)
+\vt	time vector t lowercase (t̰)
+\vpi	vector of probabilities π (π̰)
+\vw	weight vector w (w̰)
+\vv	vector v (v̰)
+\vh	vector h, such as hidden-unit values (h̰)
+\ve	residual vector e (ḛ)
+\vu	vector u (ṵ)
+\vg	vector g, such as a gradient (g̰)
+\vp	vector p, such as a probability distribution (p̰)
+\vq	vector q, such as a second probability distribution (q̰)
+\vr	vector r (r̰)
+\vconst	constant vector c (c̰)
+\vdelta	vector δ, such as backpropagated errors (δ̰)
+\vepsilon	vector ϵ (ϵ̰); see also \veps for an error vector
+\vphi	vector φ, such as features (φ̰)
 \mat	matrix notation (alias for \matr)
 \dsn	sequence x₁, …, xₙ
 \Xin	sequence of random variables X₁, …, Xₙ
@@ -562,7 +562,7 @@ name	interpretation
 \phaz	expected hazard E[λ] (Poisson hazard)
 \idmat	identity matrix 𝕀
 \and	set intersection (∩)
-\reglincomb	regression linear combination x̃·β̃
+\reglincomb	regression linear combination x̰·β̰
 \regbetasum	expanded regression sum β₁x₁+⋯+βₚxₚ
 \pdf	probability density function symbol f
 \pmf	probability mass function P(·)
@@ -1293,7 +1293,7 @@ name	interpretation
 \avgfitf	average fit applied to its argument, h-bar(·)
 \hidval	value of a hidden unit in a neural network, h
 \hidvalof	value of the hidden unit given as the argument, h with the unit as subscript
-\vhidval	vector of hidden-unit values (or a recurrent network's hidden state), h̃
+\vhidval	vector of hidden-unit values (or a recurrent network's hidden state), h̰
 \imgheight	height of an image or feature map, in pixels
 \imgwidth	width of an image or feature map, in pixels
 \poolsize	side length q of a square pooling block, in pixels
