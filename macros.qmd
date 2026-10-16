@@ -80,7 +80,7 @@
 \def\gg{\gamma}
 \def\gd{\delta}
 \def\eps{\varepsilon}
-\def\cdev{\eps}
+\def\cdev{\popdev}
 \def\veps{\vec{\varepsilon}}
 \providecommand{\epsp}[1]{\eps\paren{#1}}
 \def\epsf{\epsp}
@@ -191,7 +191,7 @@
 \def\nreps{m}
 \def\nevents{s}
 \def\popdist{P}
-\def\targetfn{f}
+\def\targetfn{\mu}
 \providecommand{\targetfnf}[1]{\targetfn\paren{#1}}
 \def\dataset{\mathcal{D}}
 \def\trainset{\mathcal{D}_{\text{train}}}
@@ -236,6 +236,9 @@
 \def\devn{\deviation}
 \providecommand{\deviationv}{\vec{\deviation}}
 \def\devnv{\deviationv}
+\providecommand{\deviationf}[2]{\deviation_{#2}\paren{#1}}
+\def\popdev{\nu}
+\providecommand{\popdevf}[1]{\popdev_{#1}}
 \def\Deviation{\Delta}
 \def\Devn{\Deviation}
 \def\residual{r}
@@ -1206,8 +1209,8 @@
 \def\hcovmat{\hat{\Sigma}}
 \def\ecovmat{\est{\covmat}}
 \def\corpar{\rho}
-\def\noise{\varepsilon}
-\def\vnoise{\vec{\varepsilon}}
+\def\noise{\popdev}
+\def\vnoise{\vec{\popdev}}
 \def\rvar{x}
 \def\Rvar{X}
 \def\predbar{\bar{\predvar}}
