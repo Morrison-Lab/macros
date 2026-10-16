@@ -1377,3 +1377,5 @@ name	interpretation
 \trainerr	training error (average loss on the training set), over-barred err
 \arcoef	autoregressive coefficient ρ
 \truenulls	index set I_0 of the true null hypotheses
+\levelset	symbol for a level set of a function
+\levelsetof	level set of the function given as the second argument at the value given as the first, written with the value as a subscript
