@@ -202,7 +202,7 @@
 \def\testidx{I_{\text{test}}}
 \def\bestmod{h^*}
 \providecommand{\bestmodf}[1]{\bestmod\paren{#1}}
-\def\avgfit{\targetfn_{\modmem}}
+\def\avgfit{\popmean_{\modmem}}
 \providecommand{\avgfitf}[1]{\avgfit\paren{#1}}
 \def\hidval{h}
 \providecommand{\hidvalof}[1]{\hidval_{#1}}

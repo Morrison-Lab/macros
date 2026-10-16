@@ -1289,7 +1289,7 @@ name	interpretation
 \failprob	failure probability delta of a probabilistic bound (one minus the confidence level)
 \bestmod	best-in-family model h*: the member of the model family closest to the target function
 \bestmodf	best-in-family model applied to its argument, h*(·)
-\avgfit	average fit: the mean function of the fitted model, the population expectation over training sets of the fitted model, written like the true mean function with the model as subscript (mu_h; no bar or hat)
+\avgfit	average fit: the population mean over training sets of the fitted model, written as the population mean with the model as subscript (mu_h; no bar or hat)
 \avgfitf	average fit at input x: the population expectation over training sets of the fitted model's value at x, mu_h(x)
 \hidval	value of a hidden unit in a neural network, h
 \hidvalof	value of the hidden unit given as the argument, h with the unit as subscript
