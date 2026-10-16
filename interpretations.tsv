@@ -469,6 +469,8 @@ name	interpretation
 \sumiN	sum over i from 1 to N
 \avgin	average over i from 1 to n: one over n times the sum
 \avgiN	average over i from 1 to N: one over N times the sum
+\avgto	average over the first argument from 1 to the second: one over the second argument times the sum
+\avgon	average over the observations in an index set: one over the set's size times the sum over its members
 \sumip	sum over i from 1 to p
 \sumjn	sum over j from 1 to n
 \sumjp	sum over j from 1 to p
@@ -1373,6 +1375,7 @@ name	interpretation
 \cvseof	standard error of the k-fold cross-validation estimate for fitting procedure g, SE^g_CV(k); \cvseof{k}{g}
 \rmselr	root mean squared error function RMSE(·), counterpart of \mselr
 \epe	expected prediction error at input x of fitting procedure g trained on n observations, EPE^g_n(x); \epe{g}{n}{x}
+\epl	expected prediction loss at input x of fitting procedure g trained on n observations, for any loss, EPL^g_n(x); \epl{g}{n}{x}
 \termvec	vector t_k of a model term evaluated at every observation
 \trainerr	training error (average loss on the training set), over-barred err
 \valerr	validation error (average loss on the validation set), over-barred err with subscript val
