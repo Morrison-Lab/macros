@@ -1380,3 +1380,5 @@
 \def\trainerr{\overline{\operatorname{err}}}
 \def\arcoef{\rho}
 \def\truenulls{\mathcal{I}_0}
+\def\levelset{\mathcal{L}}
+\providecommand{\levelsetof}[2]{\levelset_{#1}\paren{#2}}
