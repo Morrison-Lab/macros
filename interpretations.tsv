@@ -438,15 +438,14 @@ name	interpretation
 \vphi	vector φ, such as features (φ̃)
 \mat	matrix notation (alias for \matr)
 \dsn	sequence x₁, …, xₙ
-\X1n	sequence of random variables X₁, …, Xₙ
-\Xin	sequence Xᵢ, i=1…n (alias for \X1n)
-\x1n	sequence of observations x₁, …, xₙ
-\y1n	sequence of outcomes y₁, …, yₙ
+\Xin	sequence of random variables X₁, …, Xₙ
+\xin	sequence of observations x₁, …, xₙ
+\yin	sequence of outcomes y₁, …, yₙ
 \'	transpose superscript ⊤
 \pt	parenthesized transpose (x)′
 \tp	transpose of argument x′
 \dpr	dot product symbol (·)
-\Xx1n	paired sequence X₁=x₁, …, Xₙ=xₙ
+\Xxin	paired sequence X₁=x₁, …, Xₙ=xₙ
 \dprod	dot product of two arguments a·b
 \dprodf	dot product a·b (alias for \dprod)
 \dpf	dot product a·b (alias for \dprodf)
@@ -477,9 +476,7 @@ name	interpretation
 \sumip	sum over i from 1 to p
 \sumjn	sum over j from 1 to n
 \sumjp	sum over j from 1 to p
-\sumi1n	sum over i from 1 to n (alias for \sumin)
 \prodin	product over i from 1 to n
-\prodi1n	product over i from 1 to n (alias)
 \lp	linear predictor x′β
 \lpdp	linear predictor at x (dot product x⃗·β⃗)
 \lincomp	linear combination symbol η
