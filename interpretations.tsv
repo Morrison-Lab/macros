@@ -1384,3 +1384,7 @@ name	interpretation
 \truenulls	index set I_0 of the true null hypotheses
 \levelset	symbol for a level set of a function
 \levelsetof	level set of the function given as the second argument at the value given as the first, written with the value as a subscript
+\predfn	prediction function g: any function of the inputs used to predict the outcome
+\predfnf	prediction function applied to its argument, g(·)
+\bestpredfn	best prediction function g*: the conditional mean of the outcome given the inputs, which minimizes the squared-error risk
+\bestpredfnf	best prediction function applied to its argument, g*(·)
