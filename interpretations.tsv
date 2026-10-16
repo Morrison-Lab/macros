@@ -385,7 +385,7 @@ name	interpretation
 \sq	square superscript ² (postfix)
 \err	error term ε (alias for \eps); also the prediction error, which \prederr aliases
 \erf	error function ε(·); for an estimate, the estimation error (estimate minus truth)
-\vec	vector notation (undertilde style, as in Kleinbaum et al.)
+\vec	vector notation (undertilde style)
 \vecf	vector notation (alias for \vec)
 \v	vector shorthand (alias for \vecf)
 \matr	matrix notation (bold style)
