@@ -1387,3 +1387,9 @@
 \def\truenulls{\mathcal{I}_0}
 \def\levelset{\mathcal{L}}
 \providecommand{\levelsetof}[2]{\levelset_{#1}\paren{#2}}
+\def\predfn{g}
+\def\epredfn{\est{\predfn}}
+\providecommand{\predfnof}[1]{\predfn\paren{#1}}
+\providecommand{\epredfnof}[1]{\epredfn\paren{#1}}
+\providecommand{\cent}[1]{{#1}^{\mathrm{c}}}
+\providecommand{\aug}[1]{{#1}^{\mathrm{aug}}}
