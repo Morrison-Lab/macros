@@ -1210,6 +1210,12 @@
 \def\vnoise{\vec{\varepsilon}}
 \def\rvar{x}
 \def\Rvar{X}
+\def\predbar{\bar{\predvar}}
+\def\outbar{\bar{\outvar}}
+\def\rvarbar{\bar{\rvar}}
+\def\sspred{S_{\predvar\predvar}}
+\def\ssout{S_{\outvar\outvar}}
+\def\sspredout{S_{\predvar\outvar}}
 \def\learnrate{\eta}
 \def\regpar{\lambda}
 \def\eigval{\lambda}
