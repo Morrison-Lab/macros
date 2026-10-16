@@ -1290,7 +1290,7 @@ name	interpretation
 \bestmod	best-in-family model h*: the member of the model family closest to the target function
 \bestmodf	best-in-family model applied to its argument, h*(·)
 \avgfit	average fit: the mean function of the fitted model, the population expectation over training sets of the fitted model, written like the true mean function with the model as subscript (mu_h; no bar or hat)
-\avgfitf	average fit applied to its argument, the population expectation over training sets of the indexed fitted model at that input, mu_h(x)
+\avgfitf	average fit at input x: the population expectation over training sets of the fitted model's value at x, mu_h(x)
 \hidval	value of a hidden unit in a neural network, h
 \hidvalof	value of the hidden unit given as the argument, h with the unit as subscript
 \vhidval	vector of hidden-unit values (or a recurrent network's hidden state), h̃
