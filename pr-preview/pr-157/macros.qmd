@@ -150,6 +150,7 @@
 \def\vth{\vec{\theta}}
 \def\Th{\Theta}
 \def\xbar{\bar{x}}
+\providecommand{\samplemean}[2]{\bar{#1}_{#2}}
 \def\hth{\hat\theta}
 \def\hthml{\hth_{\text{ML}}}
 \def\ba{\begin{aligned}}
@@ -186,6 +187,9 @@
 \def\nmodels{M}
 \def\inputdim{p}
 \def\nparams{p^{*}}
+\def\npatterns{K}
+\def\nreps{m}
+\def\nevents{s}
 \def\popdist{P}
 \def\targetfn{f}
 \providecommand{\targetfnf}[1]{\targetfn\paren{#1}}
@@ -224,6 +228,10 @@
 \def\loglikf{\llikf}
 \def\loglf{\llikf}
 \def\likf{\llikf}
+\def\deviance{D}
+\def\nulldeviance{\deviance_0}
+\def\satllik{\llik_{\mathrm{sat}}}
+\def\satdeviance{\deviance_{\mathrm{sat}}}
 \def\deviation{\delta}
 \def\devn{\deviation}
 \providecommand{\deviationv}{\vec{\deviation}}
@@ -428,8 +436,8 @@
 \providecommand{\sq}{^2}
 \def\err{\eps}
 \providecommand{\erf}[1]{\err\paren{#1}}
-\renewcommand{\vec}[1]{\tilde{#1}}
-\providecommand{\vecf}[1]{\tilde{#1}}
+\renewcommand{\vec}[1]{\vecf{#1}}
+\providecommand{\vecf}[1]{\mathord{\underset{\sim}{#1}}}
 \renewcommand{\v}[1]{\vecf{#1}}
 \providecommand{\matr}[1]{\mathbf{#1}}
 \def\mX{\matr{X}}
@@ -507,6 +515,7 @@
 \providecommand{\sumn}[1]{\sum_{#1=1}^n}
 \providecommand{\sumto}[2]{\sum_{#1=1}^{#2}}
 \def\sumin{\sum_{i=1}^n}
+\def\sumkK{\sum_{k=1}^{K}}
 \def\sumiN{\sum_{i=1}^N}
 \def\sumip{\sum_{i=1}^p}
 \def\sumjn{\sum_{j=1}^n}
@@ -516,6 +525,8 @@
 \def\prodi1n{\prod_{i=1}^n}
 \def\avgin{\frac{1}{n}\sumin}
 \def\avgiN{\frac{1}{N}\sumiN}
+\providecommand{\avgto}[2]{\frac{1}{#2}\sumto{#1}{#2}}
+\providecommand{\avgon}[1]{\frac{1}{\abs{#1}}\sum_{\iobs \in #1}}
 \providecommand{\lp}[1]{\dprodf{#1}{\vb}}
 \def\lpdp{\lp{\vx}}
 \def\lincomp{\eta}
@@ -768,6 +779,24 @@
 \def\RMSEt{\operatorname{RMSE}}
 \providecommand{\RMSE}[1]{\RMSEt\paren{#1}}
 \def\RMSEf{\RMSE}
+\def\pMSEt{\operatorname{pMSE}}
+\providecommand{\pMSE}[1]{\pMSEt\paren{#1}}
+\def\pMSEf{\pMSE}
+\def\pRMSEt{\operatorname{pRMSE}}
+\providecommand{\pRMSE}[1]{\pRMSEt\paren{#1}}
+\def\pRMSEf{\pRMSE}
+\def\pMAEt{\operatorname{pMAE}}
+\providecommand{\pMAE}[1]{\pMAEt\paren{#1}}
+\def\pMAEf{\pMAE}
+\def\sMSEt{\operatorname{sMSE}}
+\providecommand{\sMSE}[1]{\sMSEt\paren{#1}}
+\def\sMSEf{\sMSE}
+\def\sRMSEt{\operatorname{sRMSE}}
+\providecommand{\sRMSE}[1]{\sRMSEt\paren{#1}}
+\def\sRMSEf{\sRMSE}
+\def\sMAEt{\operatorname{sMAE}}
+\providecommand{\sMAE}[1]{\sMAEt\paren{#1}}
+\def\sMAEf{\sMAE}
 \def\SEtildet{\widetilde{\operatorname{SE}}}
 \providecommand{\SEtilde}[1]{\SEtildet\paren{#1}}
 \def\SEtildef{\SEtilde}
@@ -1179,6 +1208,14 @@
 \def\corpar{\rho}
 \def\noise{\varepsilon}
 \def\vnoise{\vec{\varepsilon}}
+\def\rvar{x}
+\def\Rvar{X}
+\def\predbar{\bar{\predvar}}
+\def\outbar{\bar{\outvar}}
+\def\rvarbar{\bar{\rvar}}
+\def\sspred{S_{\predvar\predvar}}
+\def\ssout{S_{\outvar\outvar}}
+\def\sspredout{S_{\predvar\outvar}}
 \def\learnrate{\alpha}
 \def\regpar{\lambda}
 \def\eigval{\lambda}
@@ -1287,6 +1324,12 @@
 \def\poismean{\phi}
 \def\sdest{\tau}
 \def\lrstat{\Lambda}
+\def\stat{T}
+\providecommand{\statf}[1]{\stat\paren{#1}}
+\def\sfac{g}
+\providecommand{\sfacf}[2]{\sfac\paren{#1 ; #2}}
+\def\rfac{h}
+\providecommand{\rfacf}[1]{\rfac\paren{#1}}
 \def\nuisance{\lambda}
 \def\hnuisance{\hat{\lambda}}
 \def\enuisance{\est{\nuisance}}
@@ -1336,6 +1379,10 @@
 \providecommand{\heldoutvar}[1]{\Outvar_{*,#1}}
 \providecommand{\heldpredval}[1]{\predvar_{*,#1}}
 \providecommand{\heldoutval}[1]{\outvar_{*,#1}}
+\def\ntp{n_{T+}}
+\def\nfp{n_{F+}}
+\def\nfn{n_{F-}}
+\def\ntn{n_{T-}}
 \def\given{\mid}
 \providecommand{\condE}[2]{{\E{#1 \given #2}}}
 \providecommand{\condVar}[2]{{\Var{#1 \given #2}}}
@@ -1344,3 +1391,37 @@
 \providecommand{\condpmf}[2]{{\pmf{#1 \given #2}}}
 \providecommand{\condpdf}[2]{{\pdf\paren{#1 \given #2}}}
 \providecommand{\condcdf}[2]{{\cdff{#1 \given #2}}}
+\def\generr{\operatorname{Err}}
+\providecommand{\expgenerr}[2]{\generr^{#1}\paren{#2}}
+\providecommand{\cvest}[1]{\Est{\generr}_{\text{CV}(#1)}}
+\providecommand{\cvestof}[2]{\Est{\generr}^{#2}_{\text{CV}(#1)}}
+\providecommand{\fold}[1]{\mathcal{F}_{#1}}
+\providecommand{\foldsize}[1]{n_{#1}}
+\providecommand{\foldof}[1]{\kappa\paren{#1}}
+\providecommand{\fittedwo}[2]{\fitted^{(-#1)}\paren{#2}}
+\providecommand{\lev}[1]{h_{#1}}
+\providecommand{\foldmse}[1]{\MSEt_{#1}}
+\providecommand{\foldmseof}[2]{\MSEt^{#2}_{#1}}
+\providecommand{\cvse}[1]{\operatorname{SE}_{\text{CV}(#1)}}
+\providecommand{\cvseof}[2]{\operatorname{SE}^{#2}_{\text{CV}(#1)}}
+\providecommand{\rmselr}[1]{\RMSEt\paren{#1}}
+\providecommand{\epe}[3]{\operatorname{EPE}^{#1}_{#2}\paren{#3}}
+\providecommand{\epl}[3]{\operatorname{EPL}^{#1}_{#2}\paren{#3}}
+\providecommand{\termvec}[1]{\vecf{t}_{#1}}
+\def\trainerr{\overline{\operatorname{err}}}
+\def\valerr{\overline{\operatorname{err}}_{\text{val}}}
+\def\testerr{\overline{\operatorname{err}}_{\text{test}}}
+\def\arcoef{\rho}
+\def\truenulls{\mathcal{I}_0}
+\def\levelset{\mathcal{L}}
+\providecommand{\levelsetof}[2]{\levelset_{#1}\paren{#2}}
+\def\predfn{g}
+\def\epredfn{\est{\predfn}}
+\providecommand{\predfnf}[1]{\predfn\paren{#1}}
+\providecommand{\epredfnf}[1]{\epredfn\paren{#1}}
+\providecommand{\cent}[1]{{#1}^{\mathrm{c}}}
+\providecommand{\aug}[1]{{#1}^{\mathrm{aug}}}
+\def\bestpredfn{\predfn^*}
+\providecommand{\bestpredfnf}[1]{\bestpredfn\paren{#1}}
+\def\predval{\eoutvar}
+\def\vpredval{\veoutvar}
