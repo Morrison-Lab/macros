@@ -47,11 +47,11 @@ read both before editing `macros.qmd`.
 
 - **Check for an existing key before adding a row to `interpretations.tsv`.**
   `macros-table.qmd` joins macros to that file by name, so a duplicate key renders two rows.
-  Grep for the key first,
+  Grep for the key first, including its leading backslash,
   and afterwards run `cut -f1 interpretations.tsv | sort | uniq -d` to confirm there are no duplicates.
 
 - **A refactor that "leaves output unchanged" needs a measurement in MathJax and in LaTeX.**
-  A macro that ends in `\mathclose{}` (`\paren`, `\sb`, `\cb`, `\norm`, `\angb`) must not have `^` or `_` placed right after it inside another macro:
+  A macro that ends in `\mathclose{}` (such as `\paren`, `\sb`, `\cb`, `\norm` and `\angb`) must not have `^` or `_` placed right after it inside another macro:
   the script then attaches to the empty close atom and no longer rises over a tall argument.
   Wrap the delimited group instead, as in `{\paren{#1}}^{-1}` (macros#147).
   Compare old and new with a tall argument (`\frac{a}{b}`) in `mathjax-full` and in pdflatex (compare `\ht`, `\dp` and `\wd` of a box),
@@ -69,7 +69,7 @@ read both before editing `macros.qmd`.
   and grep `README.md`, `index.qmd`, `CONTRIBUTING.md` and `docs/`.
   Prefer rows that name the macro (`prints \vecf{\delta}`) over rows that hard-code a glyph.
 
-- **Name macros for their role, never for a letter.**
+- **Name new macros for their role, never for a letter.**
   Write `\eoutvar` for the estimated outcome (ŷ), not `\hy`,
   and `\bestmod` for the best model in the family, not `\starf`.
   Add a macro for any conceptually coherent chunk of an expression that appears twice,
