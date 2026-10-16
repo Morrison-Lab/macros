@@ -79,7 +79,7 @@ name	interpretation
 \gg	Greek letter gamma (alias for \g)
 \gd	Greek letter delta (δ)
 \eps	varepsilon error term (ε)
-\cdev	deviation from conditional mean (ε)
+\cdev	deviation from conditional mean (alias for \popdev)
 \veps	error vector (ε-vector)
 \epsp	ε(·) error function
 \epsf	ε(·) error function (alias for \epsp)
@@ -184,6 +184,9 @@ name	interpretation
 \devn	deviation symbol (alias for \deviation)
 \deviationv	deviation vector (the vec accent applied to δ)
 \devnv	deviation vector (alias for \deviationv)
+\deviationf	deviation of the first argument from the reference value in the second, δ_r(z)
+\popdev	deviation from a population mean, symbol ν
+\popdevf	deviation of the argument from its population mean, ν_z
 \Deviation	uppercase deviation symbol Δ
 \Devn	uppercase deviation (alias for \Deviation)
 \residual	residual symbol r
@@ -1149,8 +1152,8 @@ name	interpretation
 \hcovmat	an estimated covariance matrix (prints \hat{\Sigma})
 \ecovmat	an estimated covariance matrix (forward-looking form) (prints \est{\covmat})
 \corpar	a correlation parameter (prints \rho)
-\noise	a model error term (prints \varepsilon)
-\vnoise	a vector of model error terms (prints \vec{\varepsilon})
+\noise	a model error term: the deviation of an outcome from its mean given the input (alias for \popdev)
+\vnoise	a vector of model error terms (the vec accent applied to \noise)
 \rvar	a generic value of a random variable in probability expressions (prints x)
 \Rvar	a generic random variable in probability expressions (prints X)
 \learnrate	a learning rate (gradient-descent step size) (prints \eta)
@@ -1314,7 +1317,7 @@ name	interpretation
 \nreps	number m of replicates (observations) that share one covariate pattern; written with a pattern index, as \nreps_k
 \nevents	number s of events among the replicates of one covariate pattern; written with a pattern index, as \nevents_k
 \popdist	population distribution P that the data are drawn from
-\targetfn	target function f: the true relationship between inputs and outcomes
+\targetfn	target function \mu: the true relationship between inputs and outcomes
 \dataset	data set: the whole collection of labelled observations that the training, validation and test sets are subsets of (prints a calligraphic D)
 \trainset	training set: the labelled data a model is fitted to (prints a calligraphic D with a train subscript)
 \valset	validation set: the held-out observations used to choose among fitted models (prints a calligraphic D with a val subscript)
@@ -1322,17 +1325,17 @@ name	interpretation
 \trainidx	index set of the training set (prints I with a train subscript)
 \validx	index set of the validation set (prints I with a val subscript)
 \testidx	index set of the test set (prints I with a test subscript)
-\targetfnf	target function applied to its argument, f(·)
+\targetfnf	target function applied to its argument, \mu(·)
 \hmodmem	fitted model (hat-wrapped \modmem), legacy form
 \hmodmemf	fitted model applied to its argument (hat-wrapped), h-hat(·)
 \hmodmemof	fitted model with its model family as subscript (hat-wrapped)
 \htargetfn	estimated target function: fitted counterpart of the target function (hat-wrapped), legacy form
-\htargetfnf	estimated target function applied to its argument (hat-wrapped), f-hat(·)
+\htargetfnf	estimated target function applied to its argument (hat-wrapped), \mu-hat(·)
 \emodmem	fitted model: estimate of a member of a model family (via \est)
 \emodmemf	fitted model applied to its argument (via \est), h-hat(·)
 \emodmemof	fitted model with its model family as subscript (via \est)
-\etargetfn	estimated target function: fitted counterpart of the target function (via \est), f-hat
-\etargetfnf	estimated target function applied to its argument (via \est), f-hat(·)
+\etargetfn	estimated target function: fitted counterpart of the target function (via \est), \mu-hat
+\etargetfnf	estimated target function applied to its argument (via \est), \mu-hat(·)
 \targeterr	error of the fitted target function: target function minus its fitted counterpart (the deviation symbol subscripted by the target function)
 \targeterrf	error of the fitted target function at a point (via \targeterr)
 \codealph	alphabet of a block code (the set of symbols codewords use), Sigma
