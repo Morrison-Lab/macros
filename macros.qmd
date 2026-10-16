@@ -202,7 +202,7 @@
 \def\testidx{I_{\text{test}}}
 \def\bestmod{h^*}
 \providecommand{\bestmodf}[1]{\bestmod\paren{#1}}
-\def\avgfit{\bar{\modmem}}
+\def\avgfit{\popmean_{\modmem}}
 \providecommand{\avgfitf}[1]{\avgfit\paren{#1}}
 \def\hidval{h}
 \providecommand{\hidvalof}[1]{\hidval_{#1}}
@@ -1085,6 +1085,8 @@
 \def\emodmem{\est{\modmem}}
 \providecommand{\emodmemf}[1]{\emodmem\paren{#1}}
 \providecommand{\emodmemof}[1]{\emodmem_{#1}}
+\providecommand{\emodmemat}[1]{\emodmem_{#1}}
+\providecommand{\emodmematf}[2]{\emodmemat{#1}\paren{#2}}
 \def\etargetfn{\est{\targetfn}}
 \providecommand{\etargetfnf}[1]{\etargetfn\paren{#1}}
 \def\targeterr{\deviation_{\targetfn}}
