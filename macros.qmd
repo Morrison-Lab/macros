@@ -1216,7 +1216,7 @@
 \def\sspred{S_{\predvar\predvar}}
 \def\ssout{S_{\outvar\outvar}}
 \def\sspredout{S_{\predvar\outvar}}
-\def\learnrate{\eta}
+\def\learnrate{\alpha}
 \def\regpar{\lambda}
 \def\eigval{\lambda}
 \def\Eigvals{\Lambda}
@@ -1269,8 +1269,8 @@
 \def\emean{\est{\mean}}
 \def\hregcoef{\hat{\beta}}
 \def\eregcoef{\est{\regcoef}}
-\def\armijo{\alpha}
-\def\schedfrac{\alpha}
+\def\armijo{c_1}
+\def\schedfrac{\zeta}
 \def\schedlen{\tau}
 \def\decay{\gamma}
 \def\clipthresh{\tau}
