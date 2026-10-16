@@ -79,7 +79,7 @@ name	interpretation
 \gg	Greek letter gamma (alias for \g)
 \gd	Greek letter delta (δ)
 \eps	varepsilon error term (ε)
-\cdev	deviation from conditional mean (ε)
+\cdev	deviation from conditional mean (alias for \popdev)
 \veps	error vector (ε-vector)
 \epsp	ε(·) error function
 \epsf	ε(·) error function (alias for \epsp)
@@ -184,6 +184,9 @@ name	interpretation
 \devn	deviation symbol (alias for \deviation)
 \deviationv	deviation vector (the vec accent applied to δ)
 \devnv	deviation vector (alias for \deviationv)
+\deviationf	deviation of the first argument from the reference value in the second, δ_r(z)
+\popdev	deviation from a population mean, symbol ν
+\popdevf	deviation of the argument from its population mean, ν_z
 \Deviation	uppercase deviation symbol Δ
 \Devn	uppercase deviation (alias for \Deviation)
 \residual	residual symbol r
@@ -1149,8 +1152,8 @@ name	interpretation
 \hcovmat	an estimated covariance matrix (prints \hat{\Sigma})
 \ecovmat	an estimated covariance matrix (forward-looking form) (prints \est{\covmat})
 \corpar	a correlation parameter (prints \rho)
-\noise	a model error term (prints \nu)
-\vnoise	a vector of model error terms (prints \vec{\nu})
+\noise	a model error term: the deviation of an outcome from its mean given the input (alias for \popdev)
+\vnoise	a vector of model error terms (the vec accent applied to \noise)
 \rvar	a generic value of a random variable in probability expressions (prints x)
 \Rvar	a generic random variable in probability expressions (prints X)
 \learnrate	a learning rate (gradient-descent step size) (prints \eta)
@@ -1237,7 +1240,7 @@ name	interpretation
 \midpt	an intermediate point in a mean-value or Taylor remainder (prints \tau)
 \nullity	the nullity of a matrix (prints \nu)
 \lsresid	a residual written as epsilon (prints \varepsilon)
-\vlsresid	a vector of residuals written as epsilon (prints \vec{\nu})
+\vlsresid	a vector of residuals written as epsilon (the vec accent applied to \noise)
 \subdiv	a subdivision of a region into rectangles (prints \Delta)
 \universe	a universal set (prints \Omega)
 \lowend	the lower endpoint of an interval (prints \alpha)
