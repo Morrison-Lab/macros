@@ -140,6 +140,7 @@ name	interpretation
 \vth	theta parameter vector
 \Th	uppercase Theta (Θ)
 \xbar	sample mean x̄
+\samplemean	sample mean of n random variables, X̄_n (arguments: the variable and the sample size)
 \hth	estimated theta θ̂
 \hthml	maximum likelihood estimate of theta
 \ba	begin aligned math environment
@@ -175,6 +176,10 @@ name	interpretation
 \loglikf	log-likelihood function ℓ(·) (alias for \llikf)
 \loglf	log-likelihood function ℓ(·) (alias for \llikf)
 \likf	log-likelihood function ℓ(·) (alias for \llikf)
+\deviance	deviance of a fitted model: minus twice its log-likelihood
+\nulldeviance	null deviance: the deviance of the intercept-only model
+\satllik	maximized log-likelihood of the saturated model
+\satdeviance	deviance relative to the saturated model: twice the difference between the saturated model's and the fitted model's maximized log-likelihoods
 \deviation	deviation symbol δ
 \devn	deviation symbol (alias for \deviation)
 \deviationv	deviation vector (the vec accent applied to δ)
@@ -380,7 +385,7 @@ name	interpretation
 \sq	square superscript ² (postfix)
 \err	error term ε (alias for \eps); also the prediction error, which \prederr aliases
 \erf	error function ε(·); for an estimate, the estimation error (estimate minus truth)
-\vec	vector notation (tilde style)
+\vec	vector notation (undertilde style)
 \vecf	vector notation (alias for \vec)
 \v	vector shorthand (alias for \vecf)
 \matr	matrix notation (bold style)
@@ -400,7 +405,7 @@ name	interpretation
 \voutvar	vector of observed outcomes (prints ỹ)
 \vOutvar	random vector of outcomes (prints Ỹ)
 \eoutvar	predicted outcome, through \est (prints ŷ)
-\veoutvar	vector of predicted outcomes (prints a tilde over ŷ)
+\veoutvar	vector of predicted outcomes (prints a tilde under ŷ)
 \predvar	predictor variable, observed value (prints x)
 \Predvar	predictor variable, random variable (prints X)
 \vpredvar	vector of one observation's predictor values (prints x̃)
@@ -460,9 +465,12 @@ name	interpretation
 \sumn	sum over index from 1 to n
 \sumto	sum over the first argument from 1 to the second
 \sumin	sum over i from 1 to n
+\sumkK	sum over the K distinct covariate patterns, k from 1 to K
 \sumiN	sum over i from 1 to N
 \avgin	average over i from 1 to n: one over n times the sum
 \avgiN	average over i from 1 to N: one over N times the sum
+\avgto	average over the first argument from 1 to the second: one over the second argument times the sum
+\avgon	average over the observations in an index set: one over the set's size times the sum over its members
 \sumip	sum over i from 1 to p
 \sumjn	sum over j from 1 to n
 \sumjp	sum over j from 1 to p
@@ -739,7 +747,7 @@ name	interpretation
 \ek	estimated kappa κ̂
 \ekappa	estimated kappa (alias for \ek)
 \el	estimated lambda λ̂
-\ey	fitted / predicted value ŷ
+\ey	estimated value of y
 \efitted	fitted or predicted value (alias for \ey)
 \es	estimated sigma σ̂
 \esig	estimated sigma (alias for \es)
@@ -970,6 +978,24 @@ name	interpretation
 \RMSEt	root mean squared error operator RMSE
 \RMSE	root mean squared error RMSE(·) applied to argument
 \RMSEf	root mean squared error RMSE(·) applied to argument (alias for \RMSE)
+\pMSEt	population mean squared error operator pMSE
+\pMSE	population mean squared error pMSE(·) applied to argument
+\pMSEf	population mean squared error pMSE(·) applied to argument (alias for \pMSE)
+\pRMSEt	population root mean squared error operator pRMSE
+\pRMSE	population root mean squared error pRMSE(·) applied to argument
+\pRMSEf	population root mean squared error pRMSE(·) applied to argument (alias for \pRMSE)
+\pMAEt	population mean absolute error operator pMAE
+\pMAE	population mean absolute error pMAE(·) applied to argument
+\pMAEf	population mean absolute error pMAE(·) applied to argument (alias for \pMAE)
+\sMSEt	sample mean squared error operator sMSE, the estimator of pMSE (no hat form is needed)
+\sMSE	sample mean squared error sMSE(·) applied to argument
+\sMSEf	sample mean squared error sMSE(·) applied to argument (alias for \sMSE)
+\sRMSEt	sample root mean squared error operator sRMSE, the estimator of pRMSE (no hat form is needed)
+\sRMSE	sample root mean squared error sRMSE(·) applied to argument
+\sRMSEf	sample root mean squared error sRMSE(·) applied to argument (alias for \sRMSE)
+\sMAEt	sample mean absolute error operator sMAE, the estimator of pMAE (no hat form is needed)
+\sMAE	sample mean absolute error sMAE(·) applied to argument
+\sMAEf	sample mean absolute error sMAE(·) applied to argument (alias for \sMAE)
 \SEtildet	standard error operator with tilde
 \SEtilde	standard error with tilde applied to argument
 \SEtildef	standard error with tilde applied to argument (alias for \SEtilde)
@@ -1125,6 +1151,8 @@ name	interpretation
 \corpar	a correlation parameter (prints \rho)
 \noise	a model error term (prints \varepsilon)
 \vnoise	a vector of model error terms (prints \vec{\varepsilon})
+\rvar	a generic value of a random variable in probability expressions (prints x)
+\Rvar	a generic random variable in probability expressions (prints X)
 \learnrate	a learning rate (gradient-descent step size) (prints \alpha)
 \regpar	a regularization penalty (tuning) parameter (prints \lambda)
 \eigval	an eigenvalue (prints \lambda)
@@ -1233,6 +1261,12 @@ name	interpretation
 \poismean	a Poisson mean in the zeros trick (prints \phi)
 \sdest	the standard deviation of an estimator (prints \tau)
 \lrstat	a likelihood-ratio test statistic (prints \Lambda)
+\stat	a statistic, a function of the sample (prints T)
+\statf	a statistic evaluated at a sample, \statf{\vx} (prints T(x))
+\sfac	the factor of a density that depends on the data only through a statistic, in the factorization theorem for sufficiency (prints g)
+\sfacf	the statistic factor evaluated at a statistic value and a parameter, \sfacf{t}{\param} (prints g(t ; \theta))
+\rfac	the factor of a density that does not depend on the parameter, in the factorization theorem for sufficiency (prints h)
+\rfacf	the parameter-free factor evaluated at a sample, \rfacf{\vx} (prints h(x))
 \nuisance	a nuisance parameter (prints \lambda)
 \hnuisance	an estimated nuisance parameter (prints \hat{\lambda})
 \enuisance	an estimated nuisance parameter (forward-looking form) (prints \est{\nuisance})
@@ -1276,6 +1310,9 @@ name	interpretation
 \nmodels	number M of models (classifiers) in a model family
 \inputdim	number p of input variables (predictors)
 \nparams	number p* of parameters: the columns of the design matrix after any feature map
+\npatterns	number K of distinct covariate patterns in a dataset
+\nreps	number m of replicates (observations) that share one covariate pattern; written with a pattern index, as \nreps_k
+\nevents	number s of events among the replicates of one covariate pattern; written with a pattern index, as \nevents_k
 \popdist	population distribution P that the data are drawn from
 \targetfn	target function f: the true relationship between inputs and outcomes
 \dataset	data set: the whole collection of labelled observations that the training, validation and test sets are subsets of (prints a calligraphic D)
@@ -1333,6 +1370,10 @@ name	interpretation
 \heldoutvar	outcome of a held-out observation (random), Y with subscript star and the index of the observation
 \heldpredval	covariate value of a held-out observation (fixed), x with subscript star and the index of the observation
 \heldoutval	outcome value of a held-out observation (fixed), y with subscript star and the index of the observation
+\ntp	number of true positives in a confusion matrix, n_{T+}
+\nfp	number of false positives in a confusion matrix, n_{F+}
+\nfn	number of false negatives in a confusion matrix, n_{F-}
+\ntn	number of true negatives in a confusion matrix, n_{T-}
 \given	the conditioning bar "given" (prints |), for conditional expressions such as E[Y | X]
 \condE	conditional expected value E[A | B], \condE{A}{B}
 \condVar	conditional variance Var(A | B), \condVar{A}{B}
@@ -1341,3 +1382,43 @@ name	interpretation
 \condpmf	conditional probability mass function P(A | B), \condpmf{A}{B}
 \condpdf	conditional probability density function f(A | B), \condpdf{A}{B}
 \condcdf	conditional cumulative distribution function F(A | B), \condcdf{A}{B}
+\generr	generalization error operator Err (expected loss of a prediction rule on new data)
+\expgenerr	expected generalization error of fitting procedure g trained on n observations, averaged over training sets, Err^g(n); \expgenerr{g}{n}
+\cvest	cross-validation estimate of generalization error, Êrr_CV(k)
+\cvestof	k-fold cross-validation estimate of the generalization error of fitting procedure g, Êrr^g_CV(k); \cvestof{k}{g}
+\fold	cross-validation fold F_j (set of held-out observation indices)
+\foldsize	number of observations n_j in fold j
+\foldof	fold κ(i) containing observation i
+\fittedwo	fitted value at input x from a fit leaving out fold j, ŷ^(-j)(x); \fittedwo{j}{x}
+\lev	leverage h_i of observation i (diagonal of the hat matrix)
+\foldmse	mean squared error MSE_j on fold j
+\foldmseof	mean squared error of fitting procedure g on fold j, MSE^g_j; \foldmseof{j}{g}
+\cvse	standard error SE_CV(k) of the cross-validation estimate
+\cvseof	standard error of the k-fold cross-validation estimate for fitting procedure g, SE^g_CV(k); \cvseof{k}{g}
+\rmselr	root mean squared error function RMSE(·), counterpart of \mselr
+\epe	expected prediction error at input x of fitting procedure g trained on n observations, EPE^g_n(x); \epe{g}{n}{x}
+\epl	expected prediction loss at input x of fitting procedure g trained on n observations, for any loss, EPL^g_n(x); \epl{g}{n}{x}
+\termvec	vector t_k of a model term evaluated at every observation
+\trainerr	training error (average loss on the training set), over-barred err
+\valerr	validation error (average loss on the validation set), over-barred err with subscript val
+\testerr	test error (average loss on the test set), over-barred err with subscript test
+\arcoef	autoregressive coefficient ρ
+\truenulls	index set I_0 of the true null hypotheses
+\levelset	symbol for a level set of a function
+\levelsetof	level set of the function given as the second argument at the value given as the first, written with the value as a subscript
+\predfn	symbol for a prediction function, which maps predictor values to a predicted outcome
+\epredfn	estimated prediction function, such as one fitted from training data
+\predfnf	prediction function applied to the argument
+\epredfnf	estimated prediction function applied to the argument
+\cent	mark for the centered version of the argument (the data with its mean subtracted)
+\aug	mark for the augmented version of the argument (extended with additional entries)
+\bestpredfn	best prediction function g*: the conditional mean of the outcome given the inputs, which minimizes the squared-error risk
+\bestpredfnf	best prediction function applied to its argument, g*(·)
+\predval	predicted value of the outcome (alias of \eoutvar)
+\vpredval	vector of predicted values (alias of \veoutvar)
+\predbar	sample mean of the predictor values (prints \bar{\predvar})
+\outbar	sample mean of the outcome values (prints \bar{\outvar})
+\rvarbar	sample mean of a generic variable (prints \bar{\rvar})
+\sspred	centered sum of squares of the predictor values (prints S_{\predvar\predvar})
+\ssout	centered sum of squares of the outcome values (prints S_{\outvar\outvar})
+\sspredout	centered sum of cross-products of the predictor and outcome values (prints S_{\predvar\outvar})
