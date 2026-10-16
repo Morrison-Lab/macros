@@ -80,7 +80,7 @@
 \def\gg{\gamma}
 \def\gd{\delta}
 \def\eps{\varepsilon}
-\def\cdev{\eps}
+\def\cdev{\popdev}
 \def\veps{\vec{\varepsilon}}
 \providecommand{\epsp}[1]{\eps\paren{#1}}
 \def\epsf{\epsp}
@@ -191,7 +191,7 @@
 \def\nreps{m}
 \def\nevents{s}
 \def\popdist{P}
-\def\targetfn{f}
+\def\targetfn{\mu}
 \providecommand{\targetfnf}[1]{\targetfn\paren{#1}}
 \def\dataset{\mathcal{D}}
 \def\trainset{\mathcal{D}_{\text{train}}}
@@ -236,6 +236,9 @@
 \def\devn{\deviation}
 \providecommand{\deviationv}{\vec{\deviation}}
 \def\devnv{\deviationv}
+\providecommand{\deviationf}[2]{\deviation_{#2}\paren{#1}}
+\def\popdev{\nu}
+\providecommand{\popdevf}[1]{\popdev_{#1}}
 \def\Deviation{\Delta}
 \def\Devn{\Deviation}
 \def\residual{r}
@@ -486,15 +489,14 @@
 \def\vphi{\vecf{\phi}}
 \providecommand{\mat}[1]{\mathbf{#1}}
 \providecommand{\dsn}[1]{#1_1, \ldots, #1_n}
-\def\X1n{\dsn{X}}
 \def\Xin{\dsn{X}}
-\def\x1n{\dsn{x}}
-\def\y1n{\dsn{y}}
+\def\xin{\dsn{x}}
+\def\yin{\dsn{y}}
 \def\'{^{\top}}
 \providecommand{\pt}[1]{{\paren{#1}}^{\top}}
 \providecommand{\tp}[1]{{#1}^{\top}}
 \def\dpr{\cdot}
-\def\Xx1n{X_1=x_1, \ldots, X_n = x_n}
+\def\Xxin{X_1=x_1, \ldots, X_n = x_n}
 \providecommand{\dprod}[2]{#1 \cdot #2}
 \def\dprodf{\dprod}
 \def\dpf{\dprodf}
@@ -520,9 +522,7 @@
 \def\sumip{\sum_{i=1}^p}
 \def\sumjn{\sum_{j=1}^n}
 \def\sumjp{\sum_{j=1}^p}
-\def\sumi1n{\sum_{i=1}^n}
 \def\prodin{\prod_{i=1}^n}
-\def\prodi1n{\prod_{i=1}^n}
 \def\avgin{\frac{1}{n}\sumin}
 \def\avgiN{\frac{1}{N}\sumiN}
 \providecommand{\avgto}[2]{\frac{1}{#2}\sumto{#1}{#2}}
@@ -1208,8 +1208,8 @@
 \def\hcovmat{\hat{\Sigma}}
 \def\ecovmat{\est{\covmat}}
 \def\corpar{\rho}
-\def\noise{\varepsilon}
-\def\vnoise{\vec{\varepsilon}}
+\def\noise{\popdev}
+\def\vnoise{\vec{\popdev}}
 \def\rvar{x}
 \def\Rvar{X}
 \def\predbar{\bar{\predvar}}
