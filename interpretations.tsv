@@ -1370,6 +1370,10 @@ name	interpretation
 \heldoutvar	outcome of a held-out observation (random), Y with subscript star and the index of the observation
 \heldpredval	covariate value of a held-out observation (fixed), x with subscript star and the index of the observation
 \heldoutval	outcome value of a held-out observation (fixed), y with subscript star and the index of the observation
+\ntp	number of true positives in a confusion matrix, n_{T+}
+\nfp	number of false positives in a confusion matrix, n_{F+}
+\nfn	number of false negatives in a confusion matrix, n_{F-}
+\ntn	number of true negatives in a confusion matrix, n_{T-}
 \given	the conditioning bar "given" (prints |), for conditional expressions such as E[Y | X]
 \condE	conditional expected value E[A | B], \condE{A}{B}
 \condVar	conditional variance Var(A | B), \condVar{A}{B}
