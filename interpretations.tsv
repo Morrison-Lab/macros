@@ -1331,6 +1331,8 @@ name	interpretation
 \emodmem	fitted model: estimate of a member of a model family (via \est)
 \emodmemf	fitted model applied to its argument (via \est), h-hat(·)
 \emodmemof	fitted model with its model family as subscript (via \est)
+\emodmemat	fitted model indexed by the input value, which is the subscript (stochastic-process style), h-hat_x (via \est)
+\emodmematf	fitted model indexed by the input value in the subscript, applied to the data set in parentheses, h-hat_x(D) (via \est)
 \etargetfn	estimated target function: fitted counterpart of the target function (via \est), f-hat
 \etargetfnf	estimated target function applied to its argument (via \est), f-hat(·)
 \targeterr	error of the fitted target function: target function minus its fitted counterpart (the deviation symbol subscripted by the target function)
