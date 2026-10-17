@@ -16,6 +16,8 @@ website:
         text: Home
       - href: macros-table.qmd
         text: Macro Reference
+      - href: notation-choices.qmd
+        text: Notation Choices
       - href: demo-include-in-header.qmd
         text: Demo (include in header strategy)
       - href: demo-shortcode.qmd
