@@ -1431,8 +1431,8 @@ name	interpretation
 \aug	mark for the augmented version of the argument (extended with additional entries)
 \bestpredfn	best prediction function g*: the conditional mean of the outcome given the inputs, which minimizes the squared-error risk
 \bestpredfnf	best prediction function applied to its argument, g*(·)
-\predfam	prediction function family G: the set of prediction functions that training chooses from (prediction level; a member is \predfn, a fitted member is \epredfn)
-\predfamof	prediction function family with its label as the subscript, G with the label below
+\predfam	prediction function family P-script: the set of prediction functions that training chooses from (prediction level; a member is \predfn, a fitted member is \epredfn)
+\predfamof	prediction function family with its label as the subscript, P-script with the label below
 \distfam	probability distribution model family Q: a set of probability distribution models, each a candidate for the distribution of the outcome given the covariate (distribution level)
 \distfamof	distribution model family with its label as the subscript, Q with the label below
 \distmem	generic member Q of a distribution model family: a probability distribution model for the outcome given the covariate; the mean-function model it contains is \meanfnof{\distmem}

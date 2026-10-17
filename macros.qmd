@@ -1440,7 +1440,7 @@
 \providecommand{\aug}[1]{{#1}^{\mathrm{aug}}}
 \def\bestpredfn{\predfn^*}
 \providecommand{\bestpredfnf}[1]{\bestpredfn\paren{#1}}
-\def\predfam{\mathcal{G}}
+\def\predfam{\mathcal{P}}
 \providecommand{\predfamof}[1]{\predfam_{#1}}
 \def\distfam{\mathcal{Q}}
 \providecommand{\distfamof}[1]{\distfam_{#1}}
