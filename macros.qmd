@@ -782,6 +782,15 @@
 \def\pMSEt{\operatorname{pMSE}}
 \providecommand{\pMSE}[1]{\pMSEt\paren{#1}}
 \def\pMSEf{\pMSE}
+\def\ESEt{\operatorname{ESE}}
+\providecommand{\ESE}[1]{\ESEt\paren{#1}}
+\def\ESEf{\ESE}
+\def\ESEEt{\operatorname{ESEE}}
+\providecommand{\ESEE}[1]{\ESEEt\paren{#1}}
+\def\ESEEf{\ESEE}
+\def\ESPEt{\operatorname{ESPE}}
+\providecommand{\ESPE}[1]{\ESPEt\paren{#1}}
+\def\ESPEf{\ESPE}
 \def\pRMSEt{\operatorname{pRMSE}}
 \providecommand{\pRMSE}[1]{\pRMSEt\paren{#1}}
 \def\pRMSEf{\pRMSE}
