@@ -1418,6 +1418,7 @@ name	interpretation
 \lev	leverage h_i of observation i (diagonal of the hat matrix)
 \foldmse	mean squared error MSE_j on fold j
 \foldmseof	mean squared error of fitting procedure g on fold j, MSE^g_j; \foldmseof{j}{g}
+\foldmseoff	mean squared error on the fold given as the first argument, of the fitting procedure given as the second argument, computed on the data set given as the third argument (prints \foldmseof{j}{g}\paren{D}; the f form of \foldmseof, which leaves the data set implicit)
 \cvse	standard error SE_CV(k) of the cross-validation estimate
 \cvseof	standard error of the k-fold cross-validation estimate for fitting procedure g, SE^g_CV(k); \cvseof{k}{g}
 \cvseoff	standard error of the k-fold cross-validation estimate for the fitting procedure given as the second argument, computed on the data set given as the third argument (prints \cvseof{k}{g}\paren{D}; the f form of \cvseof, which leaves the data set implicit)
