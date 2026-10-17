@@ -1313,8 +1313,8 @@ name	interpretation
 \clusterassign	cluster-assignment function (the encoder) of a clustering method such as k-means, C
 \clusterassignf	cluster assigned to the argument, C applied to it
 \modmem	generic member h of a mean-function model family
-\modmemf	generic member of a model family applied to its argument, h(·)
-\modmemof	member (or fit) h of the model family given as the argument, h with the family as subscript
+\modmemf	generic member of a mean-function model family applied to its argument, h(·)
+\modmemof	member (or fit) h of the mean-function model family given as the argument, h with the family as subscript
 \nobs	sample size n: the number of observations or training examples
 \nmodels	number M of models (classifiers) in a model family
 \inputdim	number p of input variables (predictors)
@@ -1439,7 +1439,7 @@ name	interpretation
 \distmemof	member of a distribution model family, with its label as the subscript, P with the label below
 \edistmem	fitted distribution model: estimate of a member of a distribution model family (via \est)
 \edistmemof	fitted distribution model with its label as the subscript (via \est)
-\meanfnof	mean function of the distribution model given as the argument, \mean with the model below: the mean-function component of a distribution model (for the true distribution \popdist it is \targetfn)
+\meanfnof	mean function of the distribution model given as the argument, \mean with the model below: the mean-function component of a distribution model (for the true distribution \popdist it is the same function as \targetfn, though it prints mu with the distribution as the subscript)
 \meanfnoff	mean function of the distribution model in the first argument, applied to the covariate value in the second
 \predval	predicted value of the outcome (alias of \eoutvar)
 \vpredval	vector of predicted values (alias of \veoutvar)

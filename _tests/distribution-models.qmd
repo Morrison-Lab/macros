@@ -6,8 +6,10 @@ format:
       - ../macros.qmd
 ---
 
-Families: $\modelfam$, $\distfam$, $\predfam$, $\distfamof{\text{lin}}$, $\predfamof{\text{lin}}^2$.
+Distribution family and member: DFAM $\distfam$, DFAMSUB $\distfamof{\text{lin}}^2$, DMEM $\distmem$, DMEMSUB $\distmemof{\theta}^2$.
 
-Members: $\modmem$, $\distmem$, $\distmemof{\theta}$, $\edistmem$, $\edistmemof{\trainset}$, $\epredfn$.
+Fitted distribution model: EDMEM $\edistmem$, EDMEMSUB $\edistmemof{\trainset}^2$.
 
-Mean-function component: $\meanfnof{\distmem}$, $\meanfnoff{\edistmem}{\predvar}$, $\meanfnoff{\popdist}{\predvar}^2$, $\meanfnof{\frac{a}{b}}$.
+Prediction family: PFAM $\predfam$, PFAMSUB $\predfamof{\text{lin}}^2$.
+
+Mean-function component: MEANSUB $\meanfnof{\distmem}^2$, MEANAPP $\meanfnoff{\edistmem}{\predvar}^2$, MEANTRUE $\meanfnoff{\popdist}{\predvar}$, MEANTALL $\meanfnof{\frac{a}{b}}$.
