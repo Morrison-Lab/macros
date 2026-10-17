@@ -1375,8 +1375,8 @@
 \providecommand{\candproctuned}[1]{\fitproc^{#1}}
 \providecommand{\candfitted}[1]{{\fitted_{#1}}}
 \providecommand{\candpredvalf}[2]{{\candfitted{#1}\paren{#2}}}
-\providecommand{\Epredvalf}[1]{\Expfc{\trainset}{\predvalf{#1}}}
-\def\Epredval{\Expfc{\trainset}{\predval}}
+\providecommand{\Epredvalf}[1]{{\Expfc{\trainset}{\predvalf{#1}}}}
+\def\Epredval{{\Expfc{\trainset}{\predval}}}
 \providecommand{\candfnset}[1]{\mathcal{G}_{#1}}
 \def\ncand{L}
 \def\icand{l}
