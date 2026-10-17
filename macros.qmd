@@ -175,7 +175,7 @@
 \def\poprisk{R}
 \providecommand{\popriskf}[1]{\poprisk\paren{#1}}
 \def\modelfam{\mathcal{H}}
-\def\growthfn{m_{\modelfam}}
+\def\growthfn{m_{\predfam}}
 \providecommand{\growthfnf}[1]{\growthfn\paren{#1}}
 \def\vcdim{d_{\mathrm{VC}}}
 \providecommand{\vcdimf}[1]{\vcdim\paren{#1}}

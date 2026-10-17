@@ -12,6 +12,8 @@ Fitted distribution model: EDMEM $\edistmem$, EDMEMSUB $\edistmemof{\trainset}^2
 
 Prediction family: PFAM $\predfam$, PFAMSUB $\predfamof{\text{lin}}^2$.
 
+Growth function: GROWTH $\growthfn$, GROWTHAPP $\growthfnf{2n}^2$.
+
 Mean-function component: MEANSUB $\meanfnof{\distmem}^2$, MEANAPP $\meanfnoff{\edistmem}{\predvar}^2$, MEANTRUE $\meanfnoff{\popdist}{\predvar}$, MEANTALL $\meanfnof{\frac{a}{b}}$.
 
 ```{=latex}

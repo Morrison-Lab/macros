@@ -41,6 +41,8 @@ EXPECTED = {
         "MEANAPPμP̂(x)2",
         "MEANTRUEμP(x)",
         "MEANTALLμab",
+        "GROWTHmY,",
+        "GROWTHAPPmY(2n)2",
     ],
 }
 
