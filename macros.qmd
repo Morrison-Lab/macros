@@ -1372,6 +1372,7 @@
 \def\strlen{\abs}
 \def\fitproc{g}
 \providecommand{\fitprocf}[1]{\fitproc\paren{#1}}
+\providecommand{\fitmodf}[1]{\fitprocf{#1}}
 \providecommand{\predvalf}[1]{{\fitted\paren{#1}}}
 \providecommand{\candproc}[1]{\fitproc_{#1}}
 \providecommand{\candprocf}[2]{{\candproc{#1}\paren{#2}}}

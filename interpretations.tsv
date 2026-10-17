@@ -1363,6 +1363,7 @@ name	interpretation
 \strlen	length of a string (number of symbols), |p|
 \fitproc	fitting procedure: a rule that turns data and a covariate value into a prediction, g
 \fitprocf	fitting procedure applied to its argument, g(·); write \fitprocf{D} for the model g(D) fitted to the data set D, and \fitprocf{D}\paren{x} for its prediction at x
+\fitmodf	fitted model obtained from the training set given as the argument, g(D); prints the same as \fitprocf{D}, but names the model that results rather than the procedure that produced it, and \fitmodf{D}\paren{x} is its prediction at x
 \predvalf	prediction at the covariate value given as the argument, from the model that a fitting procedure fits to the training set (prints \fitted\paren{x}, the fitted prediction function applied to x; unlike \predval, which takes no argument and names no covariate value, this applies the fitted function to the covariate value given, and unlike \epredfnf, which applies any estimated prediction function, it is fixed to the training-set fit)
 \candproc	candidate fitting procedure with the index given as the argument, g with that subscript
 \candprocf	candidate fitting procedure applied to a data set, g with the candidate subscript applied to its argument; write \candprocf{l}{D} for the model that candidate l fits to the data set D (prints \candproc{l}\paren{D}; the candidate counterpart of \fitprocf; unlike \candfitted, which is the resulting model and takes a covariate value, this is the procedure applied to a data set)
