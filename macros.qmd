@@ -1445,5 +1445,15 @@
 \providecommand{\aug}[1]{{#1}^{\mathrm{aug}}}
 \def\bestpredfn{\predfn^*}
 \providecommand{\bestpredfnf}[1]{\bestpredfn\paren{#1}}
+\def\predfam{\mathcal{Y}}
+\providecommand{\predfamof}[1]{\predfam_{#1}}
+\def\distfam{\mathcal{P}}
+\providecommand{\distfamof}[1]{\distfam_{#1}}
+\def\distmem{P}
+\providecommand{\distmemof}[1]{\distmem_{#1}}
+\def\edistmem{\est{\distmem}}
+\providecommand{\edistmemof}[1]{\edistmem_{#1}}
+\providecommand{\meanfnof}[1]{\mean_{#1}}
+\providecommand{\meanfnoff}[2]{{\meanfnof{#1}\paren{#2}}}
 \def\predval{\eoutvar}
 \def\vpredval{\veoutvar}
