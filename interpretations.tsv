@@ -981,6 +981,15 @@ name	interpretation
 \pMSEt	population mean squared error operator pMSE
 \pMSE	population mean squared error pMSE(·) applied to argument
 \pMSEf	population mean squared error pMSE(·) applied to argument (alias for \pMSE)
+\ESEt	expected squared error operator ESE, of a predicted value or a parameter estimate
+\ESE	expected squared error ESE(·) of a predicted value or a parameter estimate, applied to argument
+\ESEf	expected squared error ESE(·) applied to argument (alias for \ESE)
+\ESEEt	expected squared estimation error operator ESEE, of a parameter estimate
+\ESEE	expected squared estimation error ESEE(·) of a parameter estimate, applied to argument
+\ESEEf	expected squared estimation error ESEE(·) applied to argument (alias for \ESEE)
+\ESPEt	expected squared prediction error operator ESPE, of a predicted value
+\ESPE	expected squared prediction error ESPE(·) of a predicted value, applied to argument
+\ESPEf	expected squared prediction error ESPE(·) applied to argument (alias for \ESPE)
 \pRMSEt	population root mean squared error operator pRMSE
 \pRMSE	population root mean squared error pRMSE(·) applied to argument
 \pRMSEf	population root mean squared error pRMSE(·) applied to argument (alias for \pRMSE)
