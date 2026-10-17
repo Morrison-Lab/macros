@@ -1363,6 +1363,7 @@ name	interpretation
 \fitprocf	fitting procedure applied to its argument, g(·); write \fitprocf{D} for the model g(D) fitted to the data set D, and \fitprocf{D}\paren{x} for its prediction at x
 \predvalf	prediction at the covariate value given as the argument, from the model fitted to the training set only; for a fit to another data set write \fitprocf{D}\paren{x} (prints \fitprocf{\trainset}\paren{x}; unlike \predval, a value, this is the fitted model applied to a covariate value, and unlike \epredfnf, which applies any estimated prediction function, it is fixed to the training-set fit)
 \candproc	candidate fitting procedure with the index given as the argument, g with that subscript
+\candpredvalf	prediction at the covariate value given as the second argument, from the model that the candidate procedure with the index given as the first argument fits to the training set (prints \candproc{l}\paren{\trainset}\paren{x}; the candidate counterpart of \predvalf)
 \candproctuned	fitting procedure with the label given as the argument as a superscript, such as CV for the cross-validation choice procedure
 \candfnset	set of candidate prediction functions of a fitting procedure, with the index of the procedure as the subscript
 \ncand	number of candidate fitting procedures, L
