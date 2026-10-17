@@ -1370,9 +1370,10 @@
 \def\strlen{\abs}
 \def\fitproc{g}
 \providecommand{\fitprocf}[1]{\fitproc\paren{#1}}
-\providecommand{\predvalf}[1]{{\fitprocf{\trainset}\paren{#1}}}
+\providecommand{\predvalf}[1]{{\fitted\paren{#1}}}
 \providecommand{\candproc}[1]{\fitproc_{#1}}
 \providecommand{\candproctuned}[1]{\fitproc^{#1}}
+\providecommand{\candpredvalf}[2]{{\fitted_{#1}\paren{#2}}}
 \providecommand{\candfnset}[1]{\mathcal{G}_{#1}}
 \def\ncand{L}
 \def\icand{l}
