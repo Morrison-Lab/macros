@@ -1360,8 +1360,8 @@ name	interpretation
 \ckolmf	conditional Kolmogorov complexity of a string given an input, K(x | n)
 \strlen	length of a string (number of symbols), |p|
 \fitproc	fitting procedure: a rule that turns data and a covariate value into a prediction, g
-\fitprocf	fitting procedure applied to its argument, g(·); write \fitprocf{x; D} for g(x; D)
-\predvalf	prediction at the covariate value given as the argument, from the fitted model that the fitting procedure produces from the training set (prints \fitprocf{\trainset}\paren{x})
+\fitprocf	fitting procedure applied to its argument, g(·); write \fitprocf{D} for the model g(D) fitted to the data set D, and \fitprocf{D}\paren{x} for its prediction at x
+\predvalf	prediction at the covariate value given as the argument, from the model fitted to the training set only; for a fit to another data set write \fitprocf{D}\paren{x} (prints \fitprocf{\trainset}\paren{x}; unlike \predval, a value, this is the fitted model applied to a covariate value)
 \candproc	candidate fitting procedure with the index given as the argument, g with that subscript
 \candproctuned	fitting procedure with the label given as the argument as a superscript, such as CV for the cross-validation choice procedure
 \candfnset	set of candidate prediction functions of a fitting procedure, with the index of the procedure as the subscript
