@@ -1363,6 +1363,10 @@ name	interpretation
 \nheld	number of observations in a held-out set, m
 \termfn	term of a linear-in-terms model, a function of the covariate value, t with the index given as the argument as a subscript
 \polydeg	degree of a polynomial model, d
+\objfn	objective function that a fitting procedure minimizes over a model family (prints \mathcal{J})
+\objfnf	value of the objective function at a candidate model, the argument (prints \objfn applied to the argument)
+\optalg	optimization algorithm that searches a model family for a minimizer of the objective function (prints \mathcal{A})
+\seed	random seed that starts a pseudorandom number generator (prints \mathfrak{s})
 \sscp	sum-of-squares-and-cross-products matrix of the term vectors, A
 \newpredvar	covariate of a new observation (random), X with subscript star
 \newoutvar	outcome of a new observation (random), Y with subscript star

@@ -1372,6 +1372,10 @@
 \def\nheld{m}
 \providecommand{\termfn}[1]{t_{#1}}
 \def\polydeg{d}
+\def\objfn{\mathcal{J}}
+\providecommand{\objfnf}[1]{{\objfn\paren{#1}}}
+\def\optalg{\mathcal{A}}
+\def\seed{\mathfrak{s}}
 \def\sscp{A}
 \def\newpredvar{\Predvar_{*}}
 \def\newoutvar{\Outvar_{*}}
