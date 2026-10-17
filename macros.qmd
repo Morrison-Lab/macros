@@ -1375,7 +1375,7 @@
 \providecommand{\fitmodf}[1]{\fitprocf{#1}}
 \providecommand{\predvalf}[1]{{\fitted\paren{#1}}}
 \providecommand{\candproc}[1]{\fitproc_{#1}}
-\providecommand{\candprocf}[2]{{\candproc{#1}\paren{#2}}}
+\providecommand{\candmodf}[2]{{\candproc{#1}\paren{#2}}}
 \providecommand{\candproctuned}[1]{\fitproc^{#1}}
 \providecommand{\candfitted}[1]{{\fitted_{#1}}}
 \providecommand{\candpredvalf}[2]{{\candfitted{#1}\paren{#2}}}
