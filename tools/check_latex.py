@@ -25,6 +25,23 @@ PROVIDE = re.compile(r"^\\providecommand\*?\{\\([A-Za-z]+)\}", re.M)
 EXPECTED = {
     "pdf-include-in-header": ["E[X+Y]", "X1,...,Xn"],
     "pdf-shortcode": ["E[X+Y]", "X1,...,Xn"],
+    # pdftotext puts a hat after its letter and may reorder scripts, and NFKC
+    # folds a script letter to its plain letter, so these strings pin which
+    # macro prints which letter, not the script or subscript position.
+    # EXPRISES is printed by a box-height test in the page: an exponent after
+    # \meanfnoff must rise over a tall argument (the macros#147 brace rule).
+    "distribution-models": [
+        "EXPRISES",
+        "DMEMP,",
+        "DFAMSUBP2lin",
+        "EDMEMP̂",
+        "PFAMY,",
+        "PFAMSUBY2lin",
+        "MEANSUBμ2P",
+        "MEANAPPμP̂(x)2",
+        "MEANTRUEμP(x)",
+        "MEANTALLμab",
+    ],
 }
 
 
