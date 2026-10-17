@@ -1429,6 +1429,7 @@
 \providecommand{\lev}[1]{h_{#1}}
 \providecommand{\foldmse}[1]{\MSEt_{#1}}
 \providecommand{\foldmseof}[2]{\MSEt^{#2}_{#1}}
+\providecommand{\foldmseoff}[3]{{\foldmseof{#1}{#2}\paren{#3}}}
 \providecommand{\cvse}[1]{\operatorname{SE}_{\text{CV}(#1)}}
 \providecommand{\cvseof}[2]{\operatorname{SE}^{#2}_{\text{CV}(#1)}}
 \providecommand{\cvseoff}[3]{{\cvseof{#1}{#2}\paren{#3}}}
