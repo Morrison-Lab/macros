@@ -1,0 +1,13 @@
+---
+title: "Distribution model macros"
+format:
+  pdf:
+    include-in-header:
+      - ../macros.qmd
+---
+
+Families: $\modelfam$, $\distfam$, $\predfam$, $\distfamof{\text{lin}}$, $\predfamof{\text{lin}}^2$.
+
+Members: $\modmem$, $\distmem$, $\distmemof{\theta}$, $\edistmem$, $\edistmemof{\trainset}$, $\epredfn$.
+
+Mean-function component: $\meanfnof{\distmem}$, $\meanfnoff{\edistmem}{\predvar}$, $\meanfnoff{\popdist}{\predvar}^2$, $\meanfnof{\frac{a}{b}}$.

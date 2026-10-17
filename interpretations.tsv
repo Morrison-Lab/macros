@@ -1290,7 +1290,7 @@ name	interpretation
 \censhist	censoring history through time k (prints \bar{C}_k)
 \censvalhist	a censoring-history value through time k (prints \bar{c}_k)
 \eventnocens	event indicator at time m under the intervention that eliminates censoring (prints D^{\bar{c}=0}_m)
-\modelfam	model family (hypothesis class) H: the set of models that training chooses from
+\modelfam	mean-function model family (hypothesis class) H: the set of mean-function models that training chooses from (mean-function level; the distribution level is \distfam)
 \growthfn	growth function m_H: the most labelings of n points that the model family can produce
 \growthfnf	growth function at n points, m_H(n)
 \vcdim	Vapnik-Chervonenkis dimension d_VC: the largest number of points the model family shatters
@@ -1312,7 +1312,7 @@ name	interpretation
 \cutheight	height h at which a dendrogram is cut
 \clusterassign	cluster-assignment function (the encoder) of a clustering method such as k-means, C
 \clusterassignf	cluster assigned to the argument, C applied to it
-\modmem	generic member h of a model family
+\modmem	generic member h of a mean-function model family
 \modmemf	generic member of a model family applied to its argument, h(·)
 \modmemof	member (or fit) h of the model family given as the argument, h with the family as subscript
 \nobs	sample size n: the number of observations or training examples
@@ -1431,6 +1431,16 @@ name	interpretation
 \aug	mark for the augmented version of the argument (extended with additional entries)
 \bestpredfn	best prediction function g*: the conditional mean of the outcome given the inputs, which minimizes the squared-error risk
 \bestpredfnf	best prediction function applied to its argument, g*(·)
+\predfam	prediction function family G: the set of prediction functions that training chooses from (prediction level; a member is \predfn, a fitted member is \epredfn)
+\predfamof	prediction function family with its label as the subscript, G with the label below
+\distfam	probability distribution model family Q: a set of probability distribution models, each a candidate for the distribution of the outcome given the covariate (distribution level)
+\distfamof	distribution model family with its label as the subscript, Q with the label below
+\distmem	generic member Q of a distribution model family: a probability distribution model for the outcome given the covariate; the mean-function model it contains is \meanfnof{\distmem}
+\distmemof	member of a distribution model family, with its label as the subscript, Q with the label below
+\edistmem	fitted distribution model: estimate of a member of a distribution model family (via \est)
+\edistmemof	fitted distribution model with its label as the subscript (via \est)
+\meanfnof	mean function of the distribution model given as the argument, \mean with the model below: the mean-function component of a distribution model (for the true distribution \popdist it is \targetfn)
+\meanfnoff	mean function of the distribution model in the first argument, applied to the covariate value in the second
 \predval	predicted value of the outcome (alias of \eoutvar)
 \vpredval	vector of predicted values (alias of \veoutvar)
 \predbar	sample mean of the predictor values (prints \bar{\predvar})
