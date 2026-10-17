@@ -21,4 +21,10 @@ Mean-function component: MEANSUB $\meanfnof{\distmem}^2$, MEANAPP $\meanfnoff{\e
 \sbox{\withexp}{$\meanfnoff{\distmem}{\frac{a}{b}}^2$}
 \sbox{\withoutexp}{$\meanfnoff{\distmem}{\frac{a}{b}}$}
 \par\ifdim\dimexpr\ht\withexp-\ht\withoutexp\relax>1.5pt EXPRISES\else EXPSTUCK\fi
+\sbox{\withexp}{$\growthfnf{\frac{a}{b}}^2$}
+\sbox{\withoutexp}{$\growthfnf{\frac{a}{b}}$}
+\par\ifdim\dimexpr\ht\withexp-\ht\withoutexp\relax>1.5pt GROWTHRISES\else GROWTHSTUCK\fi
+\sbox{\withexp}{$\vcdimf{\frac{a}{b}}^2$}
+\sbox{\withoutexp}{$\vcdimf{\frac{a}{b}}$}
+\par\ifdim\dimexpr\ht\withexp-\ht\withoutexp\relax>1.5pt VCRISES\else VCSTUCK\fi
 ```
