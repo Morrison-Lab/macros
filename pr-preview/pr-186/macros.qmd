@@ -1370,9 +1370,10 @@
 \def\strlen{\abs}
 \def\fitproc{g}
 \providecommand{\fitprocf}[1]{\fitproc\paren{#1}}
-\providecommand{\predvalf}[1]{{\fitprocf{\trainset}\paren{#1}}}
+\providecommand{\predvalf}[1]{{\fitted\paren{#1}}}
 \providecommand{\candproc}[1]{\fitproc_{#1}}
 \providecommand{\candproctuned}[1]{\fitproc^{#1}}
+\providecommand{\candpredvalf}[2]{{\fitted_{#1}\paren{#2}}}
 \providecommand{\candfnset}[1]{\mathcal{G}_{#1}}
 \def\ncand{L}
 \def\icand{l}
@@ -1440,11 +1441,11 @@
 \providecommand{\aug}[1]{{#1}^{\mathrm{aug}}}
 \def\bestpredfn{\predfn^*}
 \providecommand{\bestpredfnf}[1]{\bestpredfn\paren{#1}}
-\def\predfam{\mathcal{G}}
+\def\predfam{\mathcal{Y}}
 \providecommand{\predfamof}[1]{\predfam_{#1}}
-\def\distfam{\mathcal{Q}}
+\def\distfam{\mathcal{P}}
 \providecommand{\distfamof}[1]{\distfam_{#1}}
-\def\distmem{Q}
+\def\distmem{P}
 \providecommand{\distmemof}[1]{\distmem_{#1}}
 \def\edistmem{\est{\distmem}}
 \providecommand{\edistmemof}[1]{\edistmem_{#1}}
