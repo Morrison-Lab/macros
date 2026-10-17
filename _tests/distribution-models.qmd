@@ -13,3 +13,10 @@ Fitted distribution model: EDMEM $\edistmem$, EDMEMSUB $\edistmemof{\trainset}^2
 Prediction family: PFAM $\predfam$, PFAMSUB $\predfamof{\text{lin}}^2$.
 
 Mean-function component: MEANSUB $\meanfnof{\distmem}^2$, MEANAPP $\meanfnoff{\edistmem}{\predvar}^2$, MEANTRUE $\meanfnoff{\popdist}{\predvar}$, MEANTALL $\meanfnof{\frac{a}{b}}$.
+
+```{=latex}
+\newsavebox{\withexp}\newsavebox{\withoutexp}
+\sbox{\withexp}{$\meanfnoff{\distmem}{\frac{a}{b}}^2$}
+\sbox{\withoutexp}{$\meanfnoff{\distmem}{\frac{a}{b}}$}
+\par\ifdim\dimexpr\ht\withexp-\ht\withoutexp\relax>1.5pt EXPRISES\else EXPSTUCK\fi
+```
