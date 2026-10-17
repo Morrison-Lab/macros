@@ -1291,8 +1291,8 @@ name	interpretation
 \censvalhist	a censoring-history value through time k (prints \bar{c}_k)
 \eventnocens	event indicator at time m under the intervention that eliminates censoring (prints D^{\bar{c}=0}_m)
 \modelfam	mean-function model family (hypothesis class) H: the set of mean-function models that training chooses from (mean-function level; the distribution level is \distfam)
-\growthfn	growth function m_H: the most labelings of n points that the model family can produce
-\growthfnf	growth function at n points, m_H(n)
+\growthfn	growth function m_Y (prints m_{\predfam}): the most labelings of n points that the prediction function family can produce
+\growthfnf	growth function at n points, m_Y(n) (prints \growthfn\paren{n})
 \vcdim	Vapnik-Chervonenkis dimension d_VC: the largest number of points the model family shatters
 \vcdimf	VC dimension of a model family, d_VC(·)
 \failprob	failure probability delta of a probabilistic bound (one minus the confidence level)
