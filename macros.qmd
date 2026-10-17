@@ -193,6 +193,8 @@
 \def\popdist{P}
 \def\targetfn{\mu}
 \providecommand{\targetfnf}[1]{\targetfn\paren{#1}}
+\def\truemeanfn{\targetfn}
+\providecommand{\truemeanfnf}[1]{\targetfnf{#1}}
 \def\dataset{\mathcal{D}}
 \def\trainset{\mathcal{D}_{\text{train}}}
 \def\valset{\mathcal{D}_{\text{val}}}
