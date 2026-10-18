@@ -40,3 +40,31 @@ That entry is a single number, so it needs no vector mark, only the hat.
 
 Other sources use bold letters ($\mathbf{x}$) or arrows ($\overrightarrow{x}$) for the same objects.
 All of these notations mark a vector.
+
+## Subscripts and parentheses {#sec-subscripts-parentheses}
+
+Our convention splits the work between a subscript and parentheses.
+A subscript names which member of an indexed family we mean.
+It holds an index, such as the $i$ in $x_i$,
+or a parameter that picks one function or distribution out of a family, such as the $\theta$ in $f_\theta$.
+Parentheses hold the input a function is evaluated at, as in $f(x)$.
+So $f_\theta(x)$ reads "the member of the family labeled $\theta$, evaluated at $x$".
+
+We chose this split for one reason.
+Each slot then answers one question about the symbol, so a reader can tell what each part of a symbol is doing without looking anything up.
+
+Nothing forces the split.
+Sources divide the work differently, and you will meet the same objects written the other way around.
+When you read a formula from another source, first work out what each subscript and each argument is doing:
+labeling a member of an indexed family, or being the input of a function.
+That tells you which convention the source follows, whatever its layout.
+
+::: {#exm-stochastic-process-slots}
+##### A stochastic process uses both slots
+
+A stochastic process is an indexed family of random variables $X_t$, one for each index $t$, such as a time.
+The index goes in the subscript, because it picks a member of the family.
+Each $X_t$ is itself a function of the outcome $\omega$ of a random experiment, so the outcome goes in the parentheses: $X_t(\omega)$.
+Fixing $\omega$ and letting $t$ vary traces out one path of the process.
+Many sources drop $\omega$ and write $X_t$, or write $X(t)$ when $t$ is continuous.
+:::
