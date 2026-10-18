@@ -184,19 +184,18 @@ Other sources write the same likelihood in other ways:
 -   $\Lik_{\vx}(\theta)$.
 -   $\Lik(\vx \mid \theta)$ or $\Lik_{\theta}(\vx)$.
 
-In every form, $\vx$ is the observed data, held fixed, and $\theta$ is the input that varies.
-The first form lists the data first.
-The last form writes the data where a formula for the distribution of the data would write it.
+We read every one of these forms as the likelihood: $\vx$ is the observed data, held fixed, and $\theta$ is the input that varies.
+The forms $\Lik(\vx \mid \theta)$ and $\Lik_{\theta}(\vx)$ write the data where a formula for the distribution of the data would write it.
 That formula is a function of the data, with the parameter held fixed.
 The likelihood uses the same formula, but treats the parameter as the input and holds the data fixed.
-Because that last form looks like a formula for the distribution of the data, check that the source means it as a function of $\theta$.
+So when a source writes one of these two forms, check that it means a function of $\theta$.
 
 ## Writing the score function {#sec-score-notation}
 
 The log-likelihood is the natural logarithm of the likelihood function.
 The score function is the derivative of the log-likelihood with respect to the parameter.
 This is the score of statistics, which is not the linear score of [the intercept entry](#sec-intercept).
-When the model has several parameters, the score is a vector that holds one such derivative for each parameter.
+When the model has several parameters, the score is a vector that holds one partial derivative for each parameter, taken with the other parameters held fixed.
 We often omit its arguments and write $\score$ for $\score(\theta)$.
 When we want to show the data, we write $\score(\theta; \vx)$, in the same style as the likelihood.
 
