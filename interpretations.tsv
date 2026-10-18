@@ -385,6 +385,7 @@ name	interpretation
 \norm	Euclidean norm ‖·‖
 \normsq	squared norm ‖·‖²
 \sqf	square of argument (·)²
+\ssdev	sum of squared deviations of the observations from #1, over i = 1, ..., n
 \sq	square superscript ² (postfix)
 \err	error term ε (alias for \eps); also the prediction error, which \prederr aliases
 \erf	error function ε(·); for an estimate, the estimation error (estimate minus truth)
