@@ -1324,7 +1324,7 @@ name	interpretation
 \nevents	number s of events among the replicates of one covariate pattern; written with a pattern index, as \nevents_k
 \popdist	population distribution P that the data are drawn from
 \targetfn	target function \mu: the true relationship between inputs and outcomes
-\truemeanfn	true mean function \mu: the population mean of the outcome given the inputs; an alias of \targetfn
+\truemeanfn	true mean function \mu: the population mean of the outcome given the inputs
 \dataset	data set: the whole collection of labelled observations that the training, validation and test sets are subsets of (prints a calligraphic D)
 \trainset	training set: the labelled data a model is fitted to (prints a calligraphic D with a train subscript)
 \valset	validation set: the held-out observations used to choose among fitted models (prints a calligraphic D with a val subscript)
@@ -1333,7 +1333,7 @@ name	interpretation
 \validx	index set of the validation set (prints I with a val subscript)
 \testidx	index set of the test set (prints I with a test subscript)
 \targetfnf	target function applied to its argument, \mu(·)
-\truemeanfnf	true mean function applied to its argument, \mu(·); an alias of \targetfnf
+\truemeanfnf	true mean function applied to its argument, \mu(·)
 \hmodmem	fitted model (hat-wrapped \modmem), legacy form
 \hmodmemf	fitted model applied to its argument (hat-wrapped), h-hat(·)
 \hmodmemof	fitted model with its mean-function model family as subscript (hat-wrapped)
