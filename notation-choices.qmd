@@ -170,3 +170,75 @@ For example, the chapter on neural networks writes $\vw$ and $b$, and the regres
     In classification, all of these names mean the same object as our label.
 
 You will read both literatures, so expect to meet both sets of names and symbols.
+
+## Writing the likelihood function {#sec-likelihood-notation}
+
+The likelihood function is a function of the model's parameters, with the observed data held fixed.
+Our convention is mostly $\Lik(\theta)$, which leaves the data implicit.
+We use a form that shows the data, such as $\Lik(\theta; \vx)$, when we want to name which data set the likelihood is computed from.
+We chose $\Lik(\theta)$ to emphasize that the likelihood is a function of the parameters.
+
+Other sources write the same likelihood in other ways:
+
+-   $\Lik(\vx; \theta)$.
+-   $\Lik_{\vx}(\theta)$.
+-   $\Lik(\vx \mid \theta)$ or $\Lik_{\theta}(\vx)$.
+
+We read every one of these forms as the likelihood: $\vx$ is the observed data, held fixed, and $\theta$ is the input that varies.
+The forms $\Lik(\vx \mid \theta)$ and $\Lik_{\theta}(\vx)$ write the data where a formula for the distribution of the data would write it.
+That formula is a function of the data, with the parameter held fixed.
+The likelihood uses the same formula, but treats the parameter as the input and holds the data fixed.
+So when a source writes one of these two forms, check that it means a function of $\theta$.
+
+## Writing the score function {#sec-score-notation}
+
+The log-likelihood is the natural logarithm of the likelihood function.
+The score function is the derivative of the log-likelihood with respect to the parameter.
+This is the score of statistics, which is not the linear score of [the intercept entry](#sec-intercept).
+When the model has several parameters, the score is a vector that holds one partial derivative for each parameter, taken with the other parameters held fixed.
+We often omit its arguments and write $\score$ for $\score(\theta)$.
+When we want to show the data, we write $\score(\theta; \vx)$, in the same style as the likelihood.
+
+Some sources write $U$ or $S$ for the score function instead.
+We write $\score$ because it keeps $U$ and $S$ free for other uses.
+
+## Symbols for estimands and estimators {#sec-estimand-estimator-symbols}
+
+An estimand is the quantity we want to learn about, and an estimator is a rule that computes a guess of it from data.
+
+Our convention is to write estimands with lower-case Greek letters, such as $\alpha, \beta, \gamma, \delta$.
+We write an estimator by placing a hat over the symbol of its estimand, as in $\hat\theta$.
+Usually the dependence of the estimator on the data is left implicit.
+
+Other sources use other symbols, so check which symbol a source uses for the estimand before reading a formula.
+
+## Probability notation {#sec-probability-notation}
+
+A random variable is a function of the outcome of a random experiment, as in [the stochastic process example](#exm-stochastic-process-slots).
+Its value depends on chance.
+Our convention is to write random variables with uppercase letters, such as $X$, $Y$ and $Z$, and their observed values with the matching lowercase letters, such as $x$, $y$ and $z$.
+Some sources keep uppercase letters for matrices, and use other symbols for random variables.
+Check a source's own notation section before assuming ours.
+
+An event is something that may or may not happen, such as $X > 2$.
+A probability mass function gives the probability of each value of a discrete random variable, one that takes separate values such as $0, 1, 2$.
+A probability density describes a continuous random variable, one that takes values on a continuous range, such as a height.
+
+We write $\Pr()$ for the probability of an event, and $\p()$ for a probability mass function or a probability density.
+Here $\p$ is a function name, not the number of inputs.
+Some sources write $P()$ for all of these.
+Others keep $f()$ for densities and mass functions, and use $P()$ only for the probability of an event.
+
+We write the expectation of a random variable with square brackets, as in $\E{X}$.
+Some sources write blackboard bold $\mathbb{E}[X]$, or parentheses, $E(X)$.
+The meaning is the same.
+
+We write $X \ind Y$ for "$X$ is independent of $Y$".
+Some sources write $X \perp Y$, or state independence only in words.
+
+We write $\neg A$ for the complement of an event $A$, read "not $A$".
+Some sources write $A^c$ or $\bar{A}$.
+
+We write $\eqdef$ for an equality that holds by definition.
+This tells it apart from an equality that follows from other facts.
+Some sources use a bare $=$ for both.
