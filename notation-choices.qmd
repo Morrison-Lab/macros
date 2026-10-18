@@ -174,21 +174,27 @@ You will read both literatures, so expect to meet both sets of names and symbols
 ## Writing the likelihood function {#sec-likelihood-notation}
 
 The likelihood function is a function of the model's parameters, with the observed data held fixed.
-Sources write it in several ways, all meaning the same function:
-
--   $\Lik(\theta)$.
--   $\Lik(\vx; \theta)$ or $\Lik(\theta; \vx)$.
--   $\Lik_{\vx}(\theta)$ or $\Lik_{\theta}(\vx)$.
--   $\Lik(\vx \mid \theta)$.
-
 Our convention is mostly $\Lik(\theta)$, which leaves the data implicit.
-We chose it to emphasize that the likelihood is a function of the parameters, with the data held fixed at their observed values.
-The forms that show $\vx$ keep the data in view.
+We use a form that shows the data, such as $\Lik(\theta; \vx)$, when we want to name which data set the likelihood is computed from.
+We chose $\Lik(\theta)$ to emphasize that the likelihood is a function of the parameters.
+
+Other sources write the same likelihood in other ways:
+
+-   $\Lik(\vx; \theta)$ or $\Lik(\theta; \vx)$.
+-   $\Lik_{\vx}(\theta)$.
+-   $\Lik(\vx \mid \theta)$ or $\Lik_{\theta}(\vx)$.
+
+In every form, read $\vx$ as the observed data, held fixed, and read $\theta$ as the input that varies.
+The last two forms put the data in the position where a probability density would put it, so some sources write them for the likelihood in a loose way.
+Check which argument the source varies before reading the formula.
 
 ## Writing the score function {#sec-score-notation}
 
-The score function is the derivative of the log-likelihood with respect to the parameters.
-We often omit its arguments and write $\score$ for $\score(\vx \mid \theta)$ and for $\score(\theta)$.
+The log-likelihood is the natural logarithm of the likelihood function.
+The score function is the derivative of the log-likelihood with respect to the parameter.
+When the model has several parameters, it holds one such derivative for each parameter.
+We often omit its arguments and write $\score$ for $\score(\theta)$.
+When we want to show the data, we write $\score(\theta; \vx)$, in the same style as the likelihood.
 
 Some sources write $U$ or $S$ for the score function instead.
 We write $\score$ for two reasons.
@@ -197,23 +203,26 @@ It keeps $U$ and $S$ free for other uses, and it needs no extra symbol to memori
 ## Symbols for estimands and estimators {#sec-estimand-estimator-symbols}
 
 An estimand is the quantity we want to learn about, and an estimator is a rule that computes a guess of it from data.
-In statistics, most estimands are parameters of probability models, or functions of those parameters.
 
 Our convention is to write estimands with lower-case Greek letters, such as $\alpha, \beta, \gamma, \delta$.
 We write an estimator by placing a hat over the symbol of its estimand, as in $\hat\theta$.
 Usually the dependence of the estimator on the data is left implicit.
-When an estimator is applied to random variables instead of to their observed values, the result is also a random variable.
 
 Other sources use other symbols, so check which symbol a source uses for the estimand before reading a formula.
 
 ## Probability notation {#sec-probability-notation}
 
+A random variable is a quantity whose value depends on chance.
 Our convention is to write random variables with uppercase letters, such as $X$, $Y$ and $Z$, and their observed values with the matching lowercase letters, such as $x$, $y$ and $z$.
 Some sources use uppercase and lowercase letters from different alphabets, or keep uppercase letters for matrices.
 Check a source's own notation section before assuming ours.
 
-We write $\Pr()$ for the probability of an event or for a probability mass function, and $\p()$ for a probability density.
-Some sources write $P()$ for both.
+An event is something that may or may not happen, such as $X > 2$.
+A probability mass function gives the probability of each value of a discrete random variable, one that takes separate values such as $0, 1, 2$.
+A probability density describes a continuous random variable, one that takes values on a continuous range, such as a height.
+
+We write $\Pr()$ for the probability of an event, and $\p()$ for a probability mass function or a probability density.
+Some sources write $P()$ for all of these.
 Others keep $f()$ for densities and mass functions, and use $P()$ only for the probability of an event.
 
 We write the expectation of a random variable with square brackets, as in $\E{X}$.
@@ -227,5 +236,5 @@ We write $\neg A$ for the complement of an event $A$, read "not $A$".
 Some sources write $A^c$ or $\bar{A}$.
 
 We write $\eqdef$ for an equality that holds by definition.
-The reason is to tell it apart from an equality that follows from other facts.
-Most sources do not make this distinction and use a bare $=$ for both.
+This tells it apart from an equality that follows from other facts.
+Some sources use a bare $=$ for both.
