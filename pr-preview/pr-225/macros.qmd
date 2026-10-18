@@ -195,6 +195,8 @@
 \providecommand{\targetfnf}[1]{\targetfn\paren{#1}}
 \def\truemeanfn{\mu}
 \providecommand{\truemeanfnf}[1]{\truemeanfn\paren{#1}}
+\def\truemean{\mu}
+\providecommand{\truemeanf}[1]{\truemean\paren{#1}}
 \def\dataset{\mathcal{D}}
 \def\trainset{\mathcal{D}_{\text{train}}}
 \def\valset{\mathcal{D}_{\text{val}}}
