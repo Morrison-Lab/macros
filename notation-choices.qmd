@@ -84,15 +84,16 @@ A classifier outputs a number.
 It predicts the class $+1$ when the number is positive, and the class $-1$ when the number is negative.
 With $\pm 1$ labels, a prediction is correct when the output and the label have the same sign.
 So the product of the label and the output is positive for a correct prediction and negative for a wrong one.
-When larger outputs mean a more extreme prediction, a larger product means the output lies further on the correct side of zero.
-With $0$ and $1$ labels, the same test needs two cases: an output above $0.5$ with the label $1$, or an output below $0.5$ with the label $0$.
+The size of the product measures how far the output is from zero, on the correct side when the prediction is correct.
+With $0$ and $1$ labels, the same test needs two cases.
+If the output is a probability, a correct prediction is an output above $0.5$ with the label $1$, or an output below $0.5$ with the label $0$.
 
 Both codings describe the same data.
 Other sources pick one coding and use it everywhere, so check which one a formula assumes before comparing it with ours.
 
 ## The intercept {#sec-intercept}
 
-A linear model for a label adds up the inputs times their coefficients, and then adds one more number that does not multiply any input.
+A linear model for an outcome adds up the inputs times their coefficients, and then adds one more number that does not multiply any input.
 That number is the intercept.
 Our convention is to write the intercept separately, as $\coef{0}$.
 The coefficient vector $\vcoef$ then holds the slopes only, meaning the coefficients that multiply the inputs.
@@ -106,7 +107,7 @@ Writing the intercept separately keeps it visible as its own number.
 In logistic regression, for example, the intercept shifts the decision boundary, the set of inputs where the model is undecided between the two classes, while the slopes tilt it.
 
 Other sources absorb the intercept.
-They add a constant input $1$ to the start of the input vector and put the intercept at the start of the coefficient vector.
+They add a constant input $1$ to the start of the input vector, and the coefficient vector then also holds the intercept, at its start.
 The score is then $\dprod{\vcoef}{\vpredvar}$ alone.
 Both forms describe the same model.
 When you meet a score written as $\dprod{\vcoef}{\vpredvar}$, check whether the input vector starts with a constant $1$.
@@ -126,7 +127,7 @@ We can also say that it has one hidden layer.
 
 We chose to count the weight matrices because the input layer has no weights of its own and does no computation.
 Its values are the data.
-Counting the weight matrices therefore counts the steps that do work.
+Each weight matrix is one computation from one row of units to the next, so counting the weight matrices counts the steps that do work.
 This is a choice, not a requirement, and both names are in use.
 Check which one a source means before comparing the depths of two networks.
 
@@ -159,13 +160,13 @@ For example, the chapter on neural networks writes $\vw$ and $b$, and the regres
 
 -   A linear function is written $f(\vx) = \dprod{\vw}{\vx} + b$ in neural network texts.
     There $\vw$ holds the weights, and $b$ is the bias, which plays the role of the intercept.
-    This "bias" is a different idea from the bias of an estimator, which is a separate topic.
+    This "bias" is a different idea from the bias of an estimator in statistics.
     Statistics texts write the coefficients as $\vbeta$ and the intercept as $\beta_0$, as in [the intercept entry](#sec-intercept).
     The two notations describe the same linear model.
 -   Machine learning texts often write $D$ or $d$ for the number of inputs and $N$ for the number of observations.
     Statistics texts write $n$ for the number of observations and $p$ for the number of inputs, which they call predictors.
 -   Neural network and pattern recognition texts often call the label the target.
     Statistics texts call it the response or the outcome.
-    All of these names mean the same object as our label.
+    In classification, all of these names mean the same object as our label.
 
 You will read both literatures, so expect to meet both sets of names and symbols.
