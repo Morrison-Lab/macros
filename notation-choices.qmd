@@ -132,8 +132,9 @@ Two choices change its numerical value without changing which of two models it p
 The first choice is the base of the logarithm.
 The definition leaves the base free, so state it whenever you quote a number.
 Base $e$ measures cross-entropy in nats, and base $2$ measures it in bits.
-A two-class model that has learned nothing has a cross-entropy of $\log_e 2 \approx 0.693$ per example in nats and $\log_2 2 = 1$ per example in bits.
-Changing the base multiplies every score by the same positive constant, so it cannot change which of two classifiers you would pick.
+A lower cross-entropy means a better match.
+A two-class model that gives probability $0.5$ to each class has a cross-entropy of $\log_e 2 \approx 0.693$ per example in nats and $\log_2 2 = 1$ per example in bits.
+Changing the base multiplies every cross-entropy by the same positive constant, so it cannot change which of two classifiers you would pick.
 It does change the number, so a cross-entropy quoted without its base cannot be checked against a number from another source.
 
 The second choice is whether to sum or to average over the examples.
@@ -146,7 +147,7 @@ So also check whether a source reports the sum or the average before comparing i
 
 Machine learning and statistics texts often use different names and symbols for the same object.
 Our convention is to pick the symbols that fit the chapter, and to say which ones a chapter uses.
-For example, the chapter on neural networks writes $\vw$ and $b$, and the regression chapters write $\vcoef$ and $\beta_0$.
+For example, the chapter on neural networks writes $\vw$ and $b$, and the regression chapters write $\vcoef$ and $\coef{0}$.
 
 -   A linear function is written $f(\vx) = \dprod{\vw}{\vx} + b$ in neural network texts.
     There $\vw$ holds the weights, and $b$ is the bias, which plays the role of the intercept.
