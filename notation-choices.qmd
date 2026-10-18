@@ -45,13 +45,14 @@ All of these notations mark a vector.
 
 Our convention splits the work between a subscript and parentheses.
 A subscript names which member of an indexed family we mean.
+An indexed family is a collection of objects labeled by an index.
 It holds an index, such as the $i$ in $x_i$,
 or a parameter that picks one function or distribution out of a family, such as the $\theta$ in $f_\theta$.
 Parentheses hold the input a function is evaluated at, as in $f(x)$.
 So $f_\theta(x)$ reads "the member of the family labeled $\theta$, evaluated at $x$".
 
 We chose this split for one reason.
-Each slot then answers one question about the symbol, so a reader can tell what each part of a symbol is doing without looking anything up.
+Each slot then answers one question about the symbol, so a reader can tell what each part of a symbol is doing without guessing.
 
 Nothing forces the split.
 Sources divide the work differently, and you will meet the same objects written the other way around.
@@ -63,8 +64,10 @@ That tells you which convention the source follows, whatever its layout.
 ##### A stochastic process uses both slots
 
 A stochastic process is an indexed family of random variables $X_t$, one for each index $t$, such as a time.
+A random variable is a function whose input is $\omega$, the outcome of a random experiment, meaning one possible result of it.
 The index goes in the subscript, because it picks a member of the family.
-Each $X_t$ is itself a function of the outcome $\omega$ of a random experiment, so the outcome goes in the parentheses: $X_t(\omega)$.
+Each $X_t$ is itself a function of the outcome $\omega$, so the outcome goes in the parentheses: $X_t(\omega)$.
 Fixing $\omega$ and letting $t$ vary traces out one path of the process.
-Many sources drop $\omega$ and write $X_t$, or write $X(t)$ when $t$ is continuous.
+Many sources drop $\omega$ and write $X_t$.
+Others write $X(t)$, often when $t$ is continuous, which puts the index in the parentheses instead of the subscript.
 :::
