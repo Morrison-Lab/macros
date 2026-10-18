@@ -180,25 +180,27 @@ We chose $\Lik(\theta)$ to emphasize that the likelihood is a function of the pa
 
 Other sources write the same likelihood in other ways:
 
--   $\Lik(\vx; \theta)$ or $\Lik(\theta; \vx)$.
+-   $\Lik(\vx; \theta)$.
 -   $\Lik_{\vx}(\theta)$.
 -   $\Lik(\vx \mid \theta)$ or $\Lik_{\theta}(\vx)$.
 
-In every form, read $\vx$ as the observed data, held fixed, and read $\theta$ as the input that varies.
-The last two forms put the data in the position where a probability density would put it, so some sources write them for the likelihood in a loose way.
+In every form, $\vx$ is the observed data, held fixed, and $\theta$ is the input that varies.
+The first form lists the data first.
+The last form writes the data where a formula for the distribution of the data would write it.
+That formula is a function of the data, with the parameter held fixed.
+The likelihood uses the same formula, but treats the parameter as the input and holds the data fixed.
 Check which argument the source varies before reading the formula.
 
 ## Writing the score function {#sec-score-notation}
 
 The log-likelihood is the natural logarithm of the likelihood function.
 The score function is the derivative of the log-likelihood with respect to the parameter.
-When the model has several parameters, it holds one such derivative for each parameter.
+When the model has several parameters, the score is a vector that holds one such derivative for each parameter.
 We often omit its arguments and write $\score$ for $\score(\theta)$.
 When we want to show the data, we write $\score(\theta; \vx)$, in the same style as the likelihood.
 
 Some sources write $U$ or $S$ for the score function instead.
-We write $\score$ for two reasons.
-It keeps $U$ and $S$ free for other uses, and it needs no extra symbol to memorize.
+We write $\score$ because it keeps $U$ and $S$ free for other uses.
 
 ## Symbols for estimands and estimators {#sec-estimand-estimator-symbols}
 
@@ -214,7 +216,7 @@ Other sources use other symbols, so check which symbol a source uses for the est
 
 A random variable is a quantity whose value depends on chance.
 Our convention is to write random variables with uppercase letters, such as $X$, $Y$ and $Z$, and their observed values with the matching lowercase letters, such as $x$, $y$ and $z$.
-Some sources use uppercase and lowercase letters from different alphabets, or keep uppercase letters for matrices.
+Some sources keep uppercase letters for matrices, and use other symbols for random variables.
 Check a source's own notation section before assuming ours.
 
 An event is something that may or may not happen, such as $X > 2$.
