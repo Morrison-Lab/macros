@@ -441,7 +441,7 @@
 \providecommand{\normsq}[1]{{\norm{#1}}\sq}
 \providecommand{\sqf}[1]{{\paren{#1}}\sq}
 \providecommand{\devsq}[2]{\sqf{\devn_{#2}\paren{#1}}}
-\providecommand{\ssdev}[1]{\sumin \devsq{\rvar_\iobs}{#1}}
+\providecommand{\ssdev}[1]{\suminf{\devsq{\rvar_\iobs}{#1}}}
 \providecommand{\sq}{^2}
 \def\err{\eps}
 \providecommand{\erf}[1]{\err\paren{#1}}
@@ -523,6 +523,7 @@
 \providecommand{\sumn}[1]{\sum_{#1=1}^n}
 \providecommand{\sumto}[2]{\sum_{#1=1}^{#2}}
 \def\sumin{\sum_{i=1}^n}
+\providecommand{\suminf}[1]{\sumin \paren{#1}}
 \def\sumkK{\sum_{k=1}^{K}}
 \def\sumiN{\sum_{i=1}^N}
 \def\sumip{\sum_{i=1}^p}
