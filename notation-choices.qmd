@@ -189,7 +189,7 @@ The first form lists the data first.
 The last form writes the data where a formula for the distribution of the data would write it.
 That formula is a function of the data, with the parameter held fixed.
 The likelihood uses the same formula, but treats the parameter as the input and holds the data fixed.
-Check which argument the source varies before reading the formula.
+Because that last form looks like a formula for the distribution of the data, check that the source means it as a function of $\theta$.
 
 ## Writing the score function {#sec-score-notation}
 
