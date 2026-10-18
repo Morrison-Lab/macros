@@ -82,7 +82,7 @@ The chapter on support vector machines switches to the labels $-1$ and $+1$, and
 We switch to $-1$ and $+1$ for support vector machines for one reason.
 A classifier outputs a number, and it predicts the class $+1$ when the number is positive and the class $-1$ when it is negative.
 With $\pm 1$ labels, a prediction is correct when the output and the label have the same sign, so the product of the label and the output is positive for a correct prediction and negative for a wrong one.
-The larger the product, the more confident the prediction.
+The larger the product, the further the output lies on the correct side of zero.
 With $0$ and $1$ labels, the same test needs two cases.
 
 Both codings describe the same data.
@@ -92,9 +92,9 @@ Other sources pick one coding and use it everywhere, so check which one a formul
 
 A linear model for an outcome adds up the inputs times their coefficients, and then adds one more number that does not multiply any input.
 That number is the intercept.
-Our convention is to write the intercept separately, as $\coef{0}$, and to let the coefficient vector $\vcoef$ hold the slopes only.
+Our convention is to write the intercept separately, as $\coef{0}$, and to let the coefficient vector $\vcoef$ hold the slopes only, meaning the coefficients that multiply the inputs.
 The input vector $\vpredvar$ holds the inputs.
-So the number the model computes before any further step, called the score, is written $\coef{0} + \dprod{\vcoef}{\vpredvar}$.
+So the number the model computes before any further step, called the score here (not the score of statistics), is written $\coef{0} + \dprod{\vcoef}{\vpredvar}$.
 
 Writing the intercept separately keeps it visible as its own number.
 In logistic regression, for example, the intercept shifts the decision boundary, the set of inputs where the model is undecided between the two classes, while the slopes tilt it.
@@ -132,14 +132,14 @@ Two choices change its numerical value without changing which of two models it p
 The first choice is the base of the logarithm.
 The definition leaves the base free, so state it whenever you quote a number.
 Base $e$ measures cross-entropy in nats, and base $2$ measures it in bits.
-A two-class model that has learned nothing scores $\log_e 2 \approx 0.693$ per example in nats and $\log_2 2 = 1$ per example in bits.
+A two-class model that has learned nothing has a cross-entropy of $\log_e 2 \approx 0.693$ per example in nats and $\log_2 2 = 1$ per example in bits.
 Changing the base multiplies every score by the same positive constant, so it cannot change which of two classifiers you would pick.
 It does change the number, so a cross-entropy quoted without its base cannot be checked against a number from another source.
 
 The second choice is whether to sum or to average over the examples.
-Our convention is to sum over all examples, and to say so wherever it matters, as when perplexity is defined from the average.
+Our convention is to sum over all examples.
 Some software reports the average under the same name.
-On the same data, dividing every score by the number of examples does not change which of two models is preferred, but it does change the number.
+On the same data, dividing every cross-entropy by the number of examples does not change which of two models is preferred, but it does change the number.
 So also check whether a source reports the sum or the average before comparing its numbers with ours.
 
 ## Names for the same object in machine learning and statistics {#sec-ml-statistics-names}
@@ -152,7 +152,7 @@ For example, the chapter on neural networks writes $\vw$ and $b$, and the regres
     There $\vw$ holds the weights, and $b$ is the bias, which plays the role of the intercept.
     This "bias" is a different idea from the bias of an estimator.
     Statistics texts write the coefficients as $\vbeta$ and the intercept as $\beta_0$, as in [the intercept entry](#sec-intercept).
-    These are the same linear model.
+    The two notations describe the same linear model.
 -   Machine learning texts often write the dimension of the input as $D$ or $d$ and the number of observations as $N$.
     Statistics texts write the number of observations as $n$ and the number of predictors as $p$.
 -   Neural network and pattern recognition texts often call the label the target and write it $t$ or $y$.
