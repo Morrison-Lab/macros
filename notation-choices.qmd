@@ -72,3 +72,81 @@ Fixing $\omega$ and letting $t$ vary gives one ordinary function of $t$, called 
 Many sources drop $\omega$ and write $X_t$.
 Others write $X(t)$, often when $t$ is continuous, which puts the index in the parentheses instead of the subscript.
 :::
+
+## Binary labels {#sec-binary-labels}
+
+A binary classification problem has two classes, and each observation carries a label that names its class.
+Our convention is to code the labels as $0$ and $1$, as in logistic regression, where the label $1$ means the event happened.
+The chapter on support vector machines switches to the labels $-1$ and $+1$, and says so where it does.
+
+We switch to $-1$ and $+1$ for support vector machines for one reason.
+With $\pm 1$ labels, a prediction is correct exactly when the model's output and the label have the same sign, so the product of the label and the output is positive for a correct prediction and negative for a wrong one.
+Its size says how far the point sits from the decision boundary.
+With $0$ and $1$ labels, the same test needs two cases.
+
+Both codings describe the same data.
+Other sources pick one coding and use it everywhere, so check which one a formula assumes before comparing it with ours.
+
+## The intercept {#sec-intercept}
+
+A linear model for an outcome adds up the inputs times their coefficients, and then adds one more number that does not multiply any input.
+That number is the intercept.
+Our convention is to write the intercept separately, as $\coef{0}$, and to let the coefficient vector $\vcoef$ hold the slopes only.
+So a score is written $\coef{0} + \dprod{\vcoef}{\vpredvar}$.
+
+Writing it separately has one benefit.
+Formulas such as the decision boundary of logistic regression treat the intercept differently from the slopes, and showing $\coef{0}$ keeps that visible.
+
+Other sources absorb the intercept.
+They add a constant input $1$ to the start of the input vector and put the intercept at the start of the coefficient vector.
+The score is then $\dprod{\vcoef}{\vpredvar}$ alone.
+Both forms describe the same model.
+When you meet a score written as $\dprod{\vcoef}{\vpredvar}$, check whether the input vector starts with a constant $1$.
+
+## Counting the layers of a neural network {#sec-counting-layers}
+
+A neural network passes its input through a sequence of layers.
+Suppose a network has an input layer, one hidden layer (a layer between the input and the output), and an output layer.
+Some sources call it a three-layer network, because it has three rows of units.
+Our convention is to call it a two-layer network, because it has two weight matrices: input to hidden, and hidden to output.
+We can also say that it has one hidden layer.
+
+We count the weight matrices because the input layer holds no parameters and does no computation.
+It is the data.
+Counting the transformations therefore counts the layers that do work.
+
+Both names are in use.
+Check which one a source means before comparing the depths of two networks.
+
+## Conventions for cross-entropy {#sec-cross-entropy-conventions}
+
+Cross-entropy is a measure of how well a model's predicted probabilities match the observed labels.
+Two choices change its numerical value without changing which of two models it prefers.
+
+The first choice is the base of the logarithm.
+The definition leaves the base free, so state it whenever you quote a number.
+Base $e$ measures cross-entropy in nats, and base $2$ measures it in bits.
+A two-class model that has learned nothing scores $\log_e 2 \approx 0.693$ per example in nats and $\log_2 2 = 1$ per example in bits.
+Changing the base multiplies every score by the same positive constant, so it cannot change which of two classifiers you would pick.
+It does change the number, so a cross-entropy quoted without its base cannot be checked against a number from another source.
+
+The second choice is whether to sum or to average over the examples.
+Our convention is to sum over all examples, and to say so wherever it matters.
+Most software reports the average under the same name.
+Check which one a source reports before comparing its numbers with ours.
+
+## Weights and coefficients, dimension, sample size and targets {#sec-ml-statistics-names}
+
+Machine learning and statistics developed their notations separately, and the same object often has two names and two symbols.
+Our convention is to pick the symbols that fit the chapter, and to say which ones a chapter uses.
+For example, the chapter on neural networks writes $\vw$ and $b$, and the regression chapters write $\vcoef$ and $\beta_0$.
+
+-   A linear function is written $f(\vx) = \dprod{\vw}{\vx} + b$ in neural network texts, where $\vw$ holds the weights and $b$ is the bias, which plays the role of the intercept.
+    Statistics texts write the coefficients as $\vbeta$ and the intercept as $\beta_0$.
+    These are the same linear model.
+-   Machine learning texts often write the dimension of the input as $D$ or $d$ and the number of observations as $N$.
+    Statistics texts write the number of observations as $n$ and the number of predictors as $p$.
+-   Neural network and pattern recognition texts often call the label the target and write it $t$ or $y$.
+    Statistics calls it the response or the outcome and writes it $y$.
+
+We keep both sets of symbols because you will read both literatures.
