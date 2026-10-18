@@ -22,3 +22,6 @@ Keep any filters the site already lists, in their existing order.
 - `numeric-author.csl` is the IEEE style (CC BY-SA 3.0, by Michael Berkowitz and contributors) with the author name added before the number in each in-text citation.
 - `numeric-citations.lua` is a Pandoc filter that runs before citeproc.
   It marks every citation that is not an in-text `@key` as author-suppressed, so citeproc prints only the number.
+
+The filter must run before citeproc.
+Quarto does this for a `filters:` entry; with the plain Pandoc command line, put `--lua-filter` before `--citeproc`.
