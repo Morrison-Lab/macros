@@ -195,6 +195,7 @@ Because that last form looks like a formula for the distribution of the data, ch
 
 The log-likelihood is the natural logarithm of the likelihood function.
 The score function is the derivative of the log-likelihood with respect to the parameter.
+This is the score of statistics, which is not the linear score of [the intercept entry](#sec-intercept).
 When the model has several parameters, the score is a vector that holds one such derivative for each parameter.
 We often omit its arguments and write $\score$ for $\score(\theta)$.
 When we want to show the data, we write $\score(\theta; \vx)$, in the same style as the likelihood.
@@ -214,7 +215,8 @@ Other sources use other symbols, so check which symbol a source uses for the est
 
 ## Probability notation {#sec-probability-notation}
 
-A random variable is a quantity whose value depends on chance.
+A random variable is a function of the outcome of a random experiment, as in [the stochastic process example](#exm-stochastic-process-slots).
+Its value depends on chance.
 Our convention is to write random variables with uppercase letters, such as $X$, $Y$ and $Z$, and their observed values with the matching lowercase letters, such as $x$, $y$ and $z$.
 Some sources keep uppercase letters for matrices, and use other symbols for random variables.
 Check a source's own notation section before assuming ours.
@@ -224,6 +226,7 @@ A probability mass function gives the probability of each value of a discrete ra
 A probability density describes a continuous random variable, one that takes values on a continuous range, such as a height.
 
 We write $\Pr()$ for the probability of an event, and $\p()$ for a probability mass function or a probability density.
+Here $\p$ is a function name, not the number of inputs.
 Some sources write $P()$ for all of these.
 Others keep $f()$ for densities and mass functions, and use $P()$ only for the probability of an event.
 
