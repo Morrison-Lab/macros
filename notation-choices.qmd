@@ -170,3 +170,62 @@ For example, the chapter on neural networks writes $\vw$ and $b$, and the regres
     In classification, all of these names mean the same object as our label.
 
 You will read both literatures, so expect to meet both sets of names and symbols.
+
+## Writing the likelihood function {#sec-likelihood-notation}
+
+The likelihood function is a function of the model's parameters, with the observed data held fixed.
+Sources write it in several ways, all meaning the same function:
+
+-   $\Lik(\theta)$.
+-   $\Lik(\vx; \theta)$ or $\Lik(\theta; \vx)$.
+-   $\Lik_{\vx}(\theta)$ or $\Lik_{\theta}(\vx)$.
+-   $\Lik(\vx \mid \theta)$.
+
+Our convention is mostly $\Lik(\theta)$, which leaves the data implicit.
+We chose it to emphasize that the likelihood is a function of the parameters, with the data held fixed at their observed values.
+The forms that show $\vx$ keep the data in view.
+
+## Writing the score function {#sec-score-notation}
+
+The score function is the derivative of the log-likelihood with respect to the parameters.
+We often omit its arguments and write $\score$ for $\score(\vx \mid \theta)$ and for $\score(\theta)$.
+
+Some sources write $U$ or $S$ for the score function instead.
+We write $\score$ for two reasons.
+It keeps $U$ and $S$ free for other uses, and it needs no extra symbol to memorize.
+
+## Symbols for estimands and estimators {#sec-estimand-estimator-symbols}
+
+An estimand is the quantity we want to learn about, and an estimator is a rule that computes a guess of it from data.
+In statistics, most estimands are parameters of probability models, or functions of those parameters.
+
+Our convention is to write estimands with lower-case Greek letters, such as $\alpha, \beta, \gamma, \delta$.
+We write an estimator by placing a hat over the symbol of its estimand, as in $\hat\theta$.
+Usually the dependence of the estimator on the data is left implicit.
+When an estimator is applied to random variables instead of to their observed values, the result is also a random variable.
+
+Other sources use other symbols, so check which symbol a source uses for the estimand before reading a formula.
+
+## Probability notation {#sec-probability-notation}
+
+Our convention is to write random variables with uppercase letters, such as $X$, $Y$ and $Z$, and their observed values with the matching lowercase letters, such as $x$, $y$ and $z$.
+Some sources use uppercase and lowercase letters from different alphabets, or keep uppercase letters for matrices.
+Check a source's own notation section before assuming ours.
+
+We write $\Pr()$ for the probability of an event or for a probability mass function, and $\p()$ for a probability density.
+Some sources write $P()$ for both.
+Others keep $f()$ for densities and mass functions, and use $P()$ only for the probability of an event.
+
+We write the expectation of a random variable with square brackets, as in $\E{X}$.
+Some sources write blackboard bold $\mathbb{E}[X]$, or parentheses, $E(X)$.
+The meaning is the same.
+
+We write $X \ind Y$ for "$X$ is independent of $Y$".
+Some sources write $X \perp Y$, or state independence only in words.
+
+We write $\neg A$ for the complement of an event $A$, read "not $A$".
+Some sources write $A^c$ or $\bar{A}$.
+
+We write $\eqdef$ for an equality that holds by definition.
+The reason is to tell it apart from an equality that follows from other facts.
+Most sources do not make this distinction and use a bare $=$ for both.
