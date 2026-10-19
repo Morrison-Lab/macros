@@ -273,7 +273,8 @@ We chose a separate macro, not an optional subscript on `\truemeanf`, for two re
 Other sources write the true mean function as $\mu(x)$ or $f(x)$, or write the conditional population mean in full as $E[Y \mid X = x]$.
 The subscripted form $\mu_{Y|X}(x)$ is also common.
 
-We keep `\popmean` and its alias `\pmean` as names for the population mean of a variable, the same symbol as `\mean`.
+We keep `\popmean` and `\pmean` as aliases of `\mean`, the population mean of a variable.
 We do not make them aliases of `\truemean`.
-In the source, `\mean` and `\popmean` name the mean of a variable, and `\truemean` and `\truemeanf` name the true mean function.
+In the source, `\mean`, `\popmean` and `\pmean` name the mean of a variable.
+The names `\truemean` and `\truemeanf` name the true mean function.
 Each name then says which of the two a formula means, even though all of them print $\mu$.
