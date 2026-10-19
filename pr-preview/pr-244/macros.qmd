@@ -405,7 +405,7 @@
 \providecommand{\cosf}[1]{{\cos\paren{#1}}}
 \providecommand{\tanhf}[1]{{\tanh\paren{#1}}}
 \providecommand{\detf}[1]{{\det\paren{#1}}}
-\renewcommand{\exp}[1]{\operatorname{exp}\cb{#1}}
+\renewcommand{\exp}[1]{{\operatorname{exp}\cb{#1}}}
 \def\expt{\operatorname{exp}}
 \providecommand{\expf}[1]{{\operatorname{exp}\cb{#1}}}
 \def\expfn{\expf}
@@ -598,13 +598,13 @@
 \def\omu{\obsmean}
 \def\probit{\operatorname{probit}}
 \providecommand{\oddsf}[1]{{\oddst\cb{#1}}}
-\providecommand{\doddsf}[1]{{\oddst}'\cb{#1}}
+\providecommand{\doddsf}[1]{{{\oddst}'\cb{#1}}}
 \def\oddsinv{\oddst^{-1}}
 \def\invodds{\operatorname{invodds}}
 \providecommand{\oddsinvf}[1]{{\oddsinv\cb{#1}}}
 \providecommand{\invoddsf}[1]{{\invodds\cb{#1}}}
-\providecommand{\doddsinvf}[1]{{\oddsinv}'\cb{#1}}
-\providecommand{\dinvoddsf}[1]{{\invodds}'\cb{#1}}
+\providecommand{\doddsinvf}[1]{{{\oddsinv}'\cb{#1}}}
+\providecommand{\dinvoddsf}[1]{{{\invodds}'\cb{#1}}}
 \def\rate{{\lambda}}
 \def\lograte{\lincomp}
 \def\haz{{\lambda}}
@@ -1246,6 +1246,11 @@
 \def\ecovmat{\est{\covmat}}
 \def\corpar{\rho}
 \def\noise{\popdev}
+\def\biassym{\distop{B}}
+\providecommand{\biassymf}[1]{{\biassym\sb{#1}}}
+\def\varsym{\distop{V}}
+\providecommand{\varsymf}[1]{{\varsym\sb{#1}}}
+\def\irrerr{\varpar}
 \def\vnoise{\vec{\popdev}}
 \def\rvar{x}
 \def\Rvar{X}
