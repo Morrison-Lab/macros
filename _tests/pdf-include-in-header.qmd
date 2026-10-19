@@ -13,3 +13,5 @@ Sequence: $\Xin$.
 Subscripted vector (a LaTeX error here fails the check): $\vxi^T$.
 
 Indexed and squared vectors: $\vecf{x}_i$, $\vecf{X}_{ij}$, $\vecf{y}_i^2$.
+
+Noise: $\Noise_i^2$, $\noise_i$, $\vNoise^T$, $\vnoise_i$.

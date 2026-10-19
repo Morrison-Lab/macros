@@ -1246,8 +1246,8 @@
 \def\corpar{\rho}
 \def\noise{u}
 \def\Noise{U}
-\def\vnoise{\vec{\noise}}
-\def\vNoise{\vec{\Noise}}
+\def\vnoise{\vecf{\noise}}
+\def\vNoise{\vecf{\Noise}}
 \def\rvar{x}
 \def\Rvar{X}
 \def\predbar{\bar{\predvar}}

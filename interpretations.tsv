@@ -1181,10 +1181,10 @@ name	interpretation
 \hcovmat	an estimated covariance matrix (prints \hat{\Sigma})
 \ecovmat	an estimated covariance matrix (forward-looking form) (prints \est{\covmat})
 \corpar	a correlation parameter (prints \rho)
-\noise	a realized value of the noise (prints u), the lowercase of \Noise
+\noise	a realized value of the noise (prints u, the lowercase of \Noise; \ubound prints the same letter for an upper bound)
 \Noise	the noise: a latent random variable, the deviation of an outcome from its mean given the input (prints U)
-\vnoise	a vector of realized noise values (the vec accent applied to \noise)
-\vNoise	a vector of noise random variables (the vec accent applied to \Noise)
+\vnoise	a vector of realized noise values (prints \vecf{\noise}; \vu prints the same symbol for a generic vector)
+\vNoise	a vector of noise random variables (prints \vecf{\Noise})
 \rvar	a generic value of a random variable in probability expressions (prints x)
 \Rvar	a generic random variable in probability expressions (prints X)
 \learnrate	a learning rate (gradient-descent step size) (prints \alpha)
