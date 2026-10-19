@@ -1249,6 +1249,11 @@
 \def\Noise{U}
 \def\vnoise{\vecf{\noise}}
 \def\vNoise{\vecf{\Noise}}
+\def\biassym{\distop{B}}
+\providecommand{\biassymf}[1]{{\biassym\sb{#1}}}
+\def\varsym{\distop{V}}
+\providecommand{\varsymf}[1]{{\varsym\sb{#1}}}
+\def\irrerr{\varpar}
 \def\rvar{x}
 \def\Rvar{X}
 \def\predbar{\bar{\predvar}}
