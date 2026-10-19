@@ -153,7 +153,7 @@ def top_level_groups(body):
         elif body[i] == "{":
             end = group_end(body, i)
             if end < 0:
-                return groups
+                raise ValueError(f"unclosed brace in {body!r}")
             groups.append((i, end))
             i = end + 1
         else:
@@ -201,12 +201,9 @@ def unbraced_delimiter_body(body, delimiters):
     body = body.strip()
     if re.fullmatch(r"\\(?:" + names + ")", body):
         return True
-    groups = top_level_groups(body)
-    if groups and groups[0] == (0, len(body) - 1):
-        return script_after_delimiter(body[1:-1], tail)
     ends = any(
-        tail.search(body[:start]) and not body[end + 1 :].strip()
-        for start, end in groups
+        tail.search(body[:start]) and not body[end + 1 :]
+        for start, end in top_level_groups(body)
     )
     return ends or script_after_delimiter(body, tail)
 
@@ -223,6 +220,7 @@ def unbraced_definitions(text, delimiters):
 GUARD_PRELUDE = (
     "\\providecommand{\\paren}[1]{\\mathopen{}\\left(#1\\right)\\mathclose{}}\n"
     "\\providecommand{\\norm}[1]{\\mathopen{}\\left\\|#1\\right\\|\\mathclose{}}\n"
+    "\\providecommand{\\angb}[1]{\\mathopen{}\\left\\langle#1\\right\\rangle\\mathclose{} }\n"
 )
 GUARD_SHOULD_FLAG = [
     r"\providecommand{\a}[1]{\P\paren{#1}}",
@@ -247,6 +245,13 @@ GUARD_SHOULD_FLAG = [
     r"\def\a{\norm}",
     r"\providecommand{\a}[1]{{\frac{\paren{x}^2}{y}}}",
     r"\providecommand{\a}[1]{\frac{\paren{x}^2}{y}}",
+    r"\providecommand{\a}[1]{\P\paren{#1}_{i}}",
+    r"\providecommand{\a}[1]{\P\paren{#1} ^2}",
+    r"\providecommand{\a}[1]{\P\paren{#1} }",
+    r"\DeclareRobustCommand{\a}[1]{\P\paren{#1}}",
+    r"\newcommand*{\a}[1]{\P\paren{#1}}",
+    r"\providecommand{\a}[1]{\{\P\paren{#1}}",
+    r"\providecommand{\a}[1]{\P\angb{#1}}",
 ]
 GUARD_SHOULD_PASS = [
     r"\providecommand{\a}[1]{{\P\paren{#1}}}",
@@ -258,7 +263,18 @@ GUARD_SHOULD_PASS = [
     r"\providecommand{\a}[1]{{\P\paren{#1}}} % comment with an open {",
     r"\providecommand{\a}[1]{{\P \paren{\%}}}",
     r"\providecommand{\a}[1]{{\frac{\paren{#1}}{2}}}",
+    r"\\def\a{\P\paren{#1}}",
 ]
+
+
+def suspect_parse(delimiters, examined):
+    """True if the parse found too little for a zero-unbraced result to mean anything."""
+    return len(delimiters) < MIN_DELIMITER_MACROS or examined < MIN_DEFINITIONS
+
+
+def unsupported_commands(text):
+    """Definition commands in text that the guard cannot read."""
+    return UNSUPPORTED.findall(COMMENT.sub(r"\1", text))
 
 
 def guard_self_test():
@@ -270,7 +286,29 @@ def guard_self_test():
         print(f"  FAIL guard missed {d!r}")
     for d in wrong:
         print(f"  FAIL guard flagged {d!r}")
-    return not (flag or wrong)
+    refusals = [
+        label for label, held in [
+            ("an empty parse passed the floors", not suspect_parse(set(), 0)),
+            ("too few definitions passed the floors", not suspect_parse(
+                set(range(MIN_DELIMITER_MACROS)), 0)),
+            ("too few delimiter macros passed the floors", not suspect_parse(
+                set(), MIN_DEFINITIONS)),
+            ("a full parse failed the floors", suspect_parse(
+                set(range(MIN_DELIMITER_MACROS)), MIN_DEFINITIONS)),
+            ("xparse was not refused", not unsupported_commands(
+                r"\NewDocumentCommand{\a}{m}{x}")),
+            ("a commented xparse was refused", unsupported_commands(
+                r"% \NewDocumentCommand{\a}{m}{x}")),
+        ] if held
+    ]
+    try:
+        top_level_groups("{")
+        refusals.append("an unclosed brace was not refused")
+    except ValueError:
+        pass
+    for label in refusals:
+        print(f"  FAIL {label}")
+    return not (flag or wrong or refusals)
 
 
 def brace_guard():
@@ -291,14 +329,13 @@ def brace_guard():
         f"({len(delimiters)} delimiter macros, {examined} definitions examined)"
     )
     # A parse that finds nothing would report zero unbraced and pass.
-    if len(delimiters) < MIN_DELIMITER_MACROS or examined < MIN_DEFINITIONS:
+    if suspect_parse(delimiters, examined):
         print(
             f"  FAIL the guard found fewer than {MIN_DELIMITER_MACROS} delimiter "
             f"macros or {MIN_DEFINITIONS} definitions, so the parse is suspect"
         )
         return False
-    unsupported = UNSUPPORTED.findall(COMMENT.sub(r"\1", text))
-    if unsupported:
+    if unsupported_commands(text):
         print("  FAIL macros.qmd uses a definition command the guard cannot read")
         return False
     for name in bad:

@@ -69,7 +69,7 @@ See issue #75's follow-up discussion for background on this split.
 
 A script after a delimiter macro attaches to the empty `\mathclose{}` atom.
 The delimiter macros are the ones whose body ends in `\mathclose{}`,
-such as `\paren`, `\sb`, `\cb`, `\angb`, `\abs`, `\norm`, `\floor` and `\ceiling`.
+such as `\paren`, `\sb`, `\cb`, `\angb`, `\abs`, `\norm`, `\floor`, `\ceiling` and `\cbmat`.
 An exponent then does not rise over a tall argument
 ([macros#147](https://github.com/Morrison-Lab/macros/pull/147)).
 Wrap the whole body in one extra pair of braces:
