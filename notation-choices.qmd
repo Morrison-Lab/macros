@@ -381,6 +381,7 @@ These four forms differ in how much they say.
 We defined them because $\Outvar \given \Predvar$ is the subscript of the usual case.
 That subscript is long to write out each time.
 The names follow `\condE`: the `c` stands for conditional, and the `f` ending marks the applied form, as in `\truemeanf`.
+
 For the general form we chose a separate macro, `\truemeansubf`, not an optional subscript on `\truemeanf`, for three reasons.
 
 -   An optional argument breaks the lds site's build.
