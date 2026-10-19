@@ -79,7 +79,7 @@ read both before editing `macros.qmd`.
   Adding, renaming, removing or changing what a macro prints needs an entry or an edit there:
   our convention, the reason for it, and the other conventions readers will meet in other sources.
   If the page already says everything true after your change, say so in the PR description and apply the `no-notation-change` label.
-  CI fails a PR that changes `macros.qmd` without changing `notation-choices.qmd` ([#248](https://github.com/Morrison-Lab/macros/issues/248)).
+  Once [#248](https://github.com/Morrison-Lab/macros/issues/248) lands, CI will fail a PR that changes `macros.qmd` without changing `notation-choices.qmd`; until then nothing catches the omission, so check it yourself.
 
 - **Notes repositories never define a macro locally, even as a stopgap.**
   Order the work as: macros PR merges, the notes repository bumps its `latex-macros` pin, then the notes use the macro.
