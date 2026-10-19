@@ -107,6 +107,7 @@
 \def\lds{\ldots}
 \def\eqdef{\stackrel{\text{def}}{=}}
 \def\defeq{\stackrel{\text{def}}{=}}
+\providecommand{\eqby}[1]{\overset{#1}{=}}
 \def\hb{\hat \beta}
 \providecommand{\hcoef}[1]{\hat{\regcoef}_{#1}}
 \def\hintcoef{\hcoef{0}}
