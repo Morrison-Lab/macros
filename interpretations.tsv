@@ -1370,6 +1370,8 @@ name	interpretation
 \truemeanfnf	true mean function applied to its argument, \mu(·); deprecated, use \truemeanf
 \truemeanf	true mean function applied to its argument, \mu(·); replaces the deprecated \truemeanfnf
 \truemeansubf	true mean function with the subscript given as the first argument, applied to the second argument; with the subscript \Outvar \given \Predvar it is the conditional population mean \condE{\Outvar}{\Predvar = x}
+\cmean	conditional population mean function of the outcome given the predictor, the subscripted \truemean with the subscript \Outvar \given \Predvar and no argument
+\cmeanf	conditional population mean of the outcome given the predictor at x, \cmeanf{x}; the same as \truemeansubf{\Outvar \given \Predvar}{x} and \condE{\Outvar}{\Predvar = x}
 \hmodmem	fitted model (hat-wrapped \modmem), legacy form
 \hmodmemf	fitted model applied to its argument (hat-wrapped), h-hat(·)
 \hmodmemof	fitted model with its mean-function model family as subscript (hat-wrapped)
