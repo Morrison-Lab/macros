@@ -221,22 +221,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
     while (index < line.length && /\s/.test(line[index])) index += 1;
 
-    // An optional first argument: \providecommand{\name}[n][default]{body}
-    let defaultArg = null;
-    if (argc > 0 && line[index] === "[") {
-      const close = line.indexOf("]", index + 1);
-      if (close === -1) return false;
-      defaultArg = line.slice(index + 1, close);
-      index = close + 1;
-      while (index < line.length && /\s/.test(line[index])) index += 1;
-    }
-
     const body = extractBraceContent(line, index);
     if (!body) return false;
 
-    if (argc === 0) macros[name] = body.content;
-    else if (defaultArg === null) macros[name] = [body.content, argc];
-    else macros[name] = [body.content, argc, defaultArg];
+    macros[name] = argc > 0 ? [body.content, argc] : body.content;
     return true;
   }
 
