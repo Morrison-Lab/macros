@@ -245,6 +245,8 @@ GUARD_SHOULD_FLAG = [
     r"\def\b{x} \def\a{\P\paren{#1}}",
     r"\gdef\a#1{\P\paren{#1}}",
     r"\def\a{\norm}",
+    r"\providecommand{\a}[1]{{\frac{\paren{x}^2}{y}}}",
+    r"\providecommand{\a}[1]{\frac{\paren{x}^2}{y}}",
 ]
 GUARD_SHOULD_PASS = [
     r"\providecommand{\a}[1]{{\P\paren{#1}}}",
