@@ -553,7 +553,7 @@ window.Quarto = {
 </ul>
 <p>With these symbols, the expected squared error splits into three pieces, where the expectation is over the training data and over <span class="math inline">\(\Outvar\)</span>:</p>
 <p><span class="math display">\[
-\E{\sqf{\Outvar - \predfn\paren{\predvar}}} = \sqf{\biassymf{\predfn\paren{\predvar}}} +\varsymf{\predfn\paren{\predvar}} + \irrerr.
+\E{\sqf{\Outvar - \predfn\paren{\predvar}}} = \sqf{\biassymf{\predfn\paren{\predvar}}} + \varsymf{\predfn\paren{\predvar}} + \irrerr.
 \]</span></p>
 <p>A derivation that does not manipulate a piece can write its short symbol, after the piece is defined in full. Each piece is a population quantity. It is a fixed number once <span class="math inline">\(\predvar\)</span>, the population, the fitting procedure and the training sample size are fixed.</p>
 <p>We write the bias and the variance with upright Latin letters, in the style of the expectation <span class="math inline">\(\E{\cdot}\)</span>. We make this exception to the Greek convention for estimands in <a href="#sec-estimand-estimator-symbols">the estimands entry</a>. The variance operator applies to any random variable, not only to a fitted value. The bias operator is applied to an estimator, and its letter matches the name of the long operator <span class="math inline">\(\Biast\)</span>. Like the expectation, each has two macros. The macros <code>\biassym</code> and <code>\varsym</code> print the bare operators <span class="math inline">\(\biassym\)</span> and <span class="math inline">\(\varsym\)</span>, as <code>\Expp</code> prints <span class="math inline">\(\Expp\)</span>. The macros <code>\biassymf</code> and <code>\varsymf</code> apply the operator to an argument in square brackets, as <code>\E</code> does.</p>
