@@ -440,7 +440,8 @@
 \providecommand{\norm}[1]{\mathopen{}\left\lVert#1\right\rVert\mathclose{}}
 \providecommand{\normsq}[1]{{\norm{#1}}\sq}
 \providecommand{\sqf}[1]{{\paren{#1}}\sq}
-\providecommand{\ssdev}[1]{\sumin \sqf{\rvar_\iobs - #1}}
+\providecommand{\devsq}[2]{\sqf{\devn_{#2}\paren{#1}}}
+\providecommand{\ssdev}[1]{\sumin \devsq{\rvar_\iobs}{#1}}
 \providecommand{\sq}{^2}
 \def\err{\eps}
 \providecommand{\erf}[1]{\err\paren{#1}}
