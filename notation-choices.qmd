@@ -362,12 +362,15 @@ Then $\truemeansubf{\Outvar \given \Predvar}{10}$ is the population mean height 
 It is the same number as $\condE{\Outvar}{\Predvar = 10}$.
 :::
 
-When the outcome is $\Outvar$ and the predictor is $\Predvar$, which is the usual case, we write $\cmean$ for the conditional population mean function and $\cmeanf{x}$ for its value at $x$.
-The macro `\cmeanf{x}` prints the same as `\truemeansubf{\Outvar \given \Predvar}{x}`, and `\cmean` prints that without its argument.
+The usual case has the outcome $\Outvar$ and the predictor $\Predvar$.
+There we write $\cmean$ for the conditional population mean function.
+We write $\cmeanf{x}$ for its value at $x$.
+The macro `\cmeanf{x}` prints the same as `\truemeansubf{\Outvar \given \Predvar}{x}`.
+The macro `\cmean` prints the subscripted $\truemean$ of that expression, without an argument.
 So $\cmeanf{10}$ is the same number as $\condE{\Outvar}{\Predvar = 10}$.
 We keep `\truemeansubf` for any other pair of variables.
 
-The three forms differ in how much they say.
+These four forms differ in how much they say.
 
 -   `\condE{\Outvar}{\Predvar = x}` writes out the expectation, so a reader sees the definition.
 -   `\cmeanf{x}` is the function notation for that expectation, used once the function is the object of study, as in "$\cmeanf{x}$ is linear in $x$".
@@ -375,9 +378,10 @@ The three forms differ in how much they say.
 -   `\truemeansubf{A \given B}{x}` is the general form, for variables other than $\Outvar$ and $\Predvar$.
 
 `\cmean` and `\cmeanf` only fix the subscript of `\truemeansubf`, so they add no new meaning.
-We defined them because $\Outvar \given \Predvar$ is the subscript of the usual case, and writing it out each time is long.
+We defined them because $\Outvar \given \Predvar$ is the subscript of the usual case.
+That subscript is long to write out each time.
 The names follow `\condE`: the `c` stands for conditional, and the `f` ending marks the applied form, as in `\truemeanf`.
-We did not name them `\condmean`, so that the source stays as short as `\pmean`.
+We did not name them `\condmean`, because `\cmean` is shorter.
 
 For the general form we chose a separate macro, `\truemeansubf`, not an optional subscript on `\truemeanf`, for three reasons.
 
