@@ -561,9 +561,10 @@ window.Quarto = {
 <p>We chose a separate macro, not an optional subscript on <code>\truemeanf</code>, for two reasons.</p>
 <ul>
 <li>An optional argument breaks the notes repositories’ builds. LaTeX and MathJax allow an optional argument only as the first argument, so it would be written <code>\truemeanf[Y|X]{x}</code>. The <code>build_math_macros.py</code> script that each notes repository runs before rendering cannot read an optional argument with a default value. It would stop every page in every format after the repository updated its <code>latex-macros</code> pin.</li>
-<li>Two required arguments read the same everywhere. The macro name says that a subscript is present, so a reader of the source does not need to look for a bracket.</li>
+<li>A separate macro works with the existing parsers. Its two arguments are both required, and <code>\condE</code> already has the same form. The macro name also tells a reader of the source that a subscript is present.</li>
 </ul>
-<p>We keep <code>\popmean</code> as the scalar population mean, the same symbol as <code>\mean</code>, and do not make it an alias of <code>\truemean</code>. A scalar is one number, and the true mean function takes a value <span class="math inline">\(x\)</span> and returns a number. Giving one name to both would make a reader of <code>\popmean</code> unsure whether <span class="math inline">\(x\)</span> is an input. The macros are separate names for the number and the function, even though both print <span class="math inline">\(\mu\)</span>.</p>
+<p>Other sources write the true mean function as <span class="math inline">\(\mu(x)\)</span> or <span class="math inline">\(f(x)\)</span>, or write the conditional population mean in full as <span class="math inline">\(E[Y \mid X = x]\)</span>. The subscripted form <span class="math inline">\(\mu_{Y|X}(x)\)</span> is also common.</p>
+<p>We keep <code>\popmean</code> and its alias <code>\pmean</code> as names for the population mean of a variable, the same symbol as <code>\mean</code>. We do not make them aliases of <code>\truemean</code>. In the source, <code>\mean</code> and <code>\popmean</code> name the mean of a variable, and <code>\truemean</code> and <code>\truemeanf</code> name the true mean function. Each name then says which of the two a formula means, even though all of them print <span class="math inline">\(\mu\)</span>.</p>
 
 
 </section>
