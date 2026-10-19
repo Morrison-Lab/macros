@@ -202,9 +202,9 @@ name	interpretation
 \modresid	modified residual (alias for \modresidual)
 \ModResidual	uppercase modified residual R*
 \ModResid	uppercase modified residual (alias)
-\devof	deviation of the first argument from the reference value in the second (prints the first minus the second inside parentheses, so a power squares the whole difference; wrap a compound reference in \paren yourself); the reference may be a conditional mean (giving the noise \Noise) or a true value (giving \esterr); not \deviationf, which prints the labelled symbol δ_r(z)
+\devof	deviation of the first argument from the reference value in the second (prints the first minus the second inside parentheses; see notation-choices for compound references)
 \esterr	estimation error: the estimate in the first argument minus the estimand in the second (prints \devof{estimate}{estimand}; an instance of \devof)
-\prederr	prediction error, predicted minus observed outcome, symbol ε (alias for \err); an instance of estimation error whose estimand is the new outcome \Outvar, so it has the same meaning as \esterr{\predval}{\Outvar} but prints a bare ε
+\prederr	prediction error, predicted minus observed outcome, symbol ε (alias for \err); same meaning as \esterr{\predval}{\Outvar}
 \score	score function ℓ′
 \scorev	score vector
 \scorei	per-observation score vector ℓ′_i
