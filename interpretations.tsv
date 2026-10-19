@@ -202,7 +202,7 @@ name	interpretation
 \modresid	modified residual (alias for \modresidual)
 \ModResidual	uppercase modified residual R*
 \ModResid	uppercase modified residual (alias)
-\devof	deviation of the first argument from the reference value in the second: the first minus the second; the reference is a marginal mean for a deviation and the conditional mean for noise \Noise
+\devof	deviation of the first argument from the reference value in the second: the first minus the second; the reference is any value, such as a marginal mean, a conditional mean (giving the noise \Noise) or a true value (giving an estimation error \esterr)
 \esterr	estimation error: the estimate in the first argument minus the estimand in the second (an instance of \devof)
 \prederr	prediction error, predicted minus observed outcome: the estimation error \esterr{\predval}{\Outvar}, whose estimand is the new outcome (alias for \err)
 \score	score function ℓ′
