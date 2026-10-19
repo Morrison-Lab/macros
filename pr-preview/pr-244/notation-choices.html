@@ -437,7 +437,7 @@ window.Quarto = {
   <li><a href="#sec-noise-deviation-error" id="toc-sec-noise-deviation-error" class="nav-link" data-scroll-target="#sec-noise-deviation-error">Noise, deviation and error</a></li>
   <li><a href="#sec-probability-notation" id="toc-sec-probability-notation" class="nav-link" data-scroll-target="#sec-probability-notation">Probability notation</a></li>
   <li><a href="#sec-true-mean-function" id="toc-sec-true-mean-function" class="nav-link" data-scroll-target="#sec-true-mean-function">The true mean function and its conditional form</a></li>
-  <li><a href="#sec-brace-delimited-forms" id="toc-sec-brace-delimited-forms" class="nav-link" data-scroll-target="#sec-brace-delimited-forms">An exponent on a function with built-in parentheses</a></li>
+  <li><a href="#sec-brace-delimited-forms" id="toc-sec-brace-delimited-forms" class="nav-link" data-scroll-target="#sec-brace-delimited-forms">An exponent on a function with built-in delimiters</a></li>
   </ul>
 <div class="toc-actions"><ul><li><a href="https://github.com/d-morrison/macros/blob/main/notation-choices.qmd" class="toc-action"><i class="bi bi-github"></i>View source</a></li></ul></div></nav>
     </div>
@@ -609,10 +609,11 @@ window.Quarto = {
 <p>We keep <code>\popmean</code> and <code>\pmean</code> as aliases of <code>\mean</code>, the population mean of a variable. We do not make them aliases of <code>\truemean</code>, and we do not define a <code>\popmeanf</code> as an alias of <code>\truemeanf</code>. In the source, <code>\mean</code>, <code>\popmean</code> and <code>\pmean</code> name the population mean of a variable. The names <code>\truemean</code> and <code>\truemeanf</code> name the true mean function. Each name then says which of the two a formula means, even though all of them print <span class="math inline">\(\mu\)</span>.</p>
 </section>
 <section id="sec-brace-delimited-forms" class="level2">
-<h2 class="anchored" data-anchor-id="sec-brace-delimited-forms">An exponent on a function with built-in parentheses</h2>
-<p>Some macros print a function name with its argument in parentheses, such as <code>\Pf{x}</code>, <code>\E{x}</code> and <code>\sigmoidf{x}</code>. Our convention is that such a macro wraps its whole output in one pair of braces, as in <code>\providecommand{\Pf}[1]{{\P \paren{#1}}}</code>. An exponent written after the macro then applies to the whole expression, and it sits above the top of a tall argument, as in <span class="math inline">\(\Pf{\frac{a}{b}}^2\)</span>.</p>
-<p>We chose this for one reason. The parentheses macros (<code>\paren</code>, <code>\sb</code>, <code>\cb</code> and similar) end in an empty closing atom, and an exponent that follows without the braces attaches to that empty atom. It then stays at the height of the text line. The braces change what is printed in one small way: the thin space between a leading digit and the function name is lost, as it already was for <code>\lnf</code> and <code>\maxf</code>.</p>
-<p>A macro with no argument cannot be wrapped this way, so the aliases <code>\ceil</code>, <code>\set</code> and <code>\strlen</code> now take an argument, as in <code>\ceil{x}</code>. Another choice is to leave the macros unbraced and wrap each use in braces, but every use that forgot the braces would print the exponent at the wrong height.</p>
+<h2 class="anchored" data-anchor-id="sec-brace-delimited-forms">An exponent on a function with built-in delimiters</h2>
+<p>Some macros print a function name with its argument inside delimiters, such as <code>\Pf{x}</code> (parentheses), <code>\E{x}</code> (square brackets) and <code>\sigmoidf{x}</code>. Our convention is that such a macro wraps its whole output in one pair of braces, as in <code>\providecommand{\Pf}[1]{{\P \paren{#1}}}</code>. An exponent written after the macro then applies to the whole expression, and it sits above the top of a tall argument, as in <span class="math inline">\(\Pf{\frac{a}{b}}^2\)</span>.</p>
+<p>We chose this for one reason. The delimiter macros (<code>\paren</code>, <code>\sb</code>, <code>\cb</code> and similar) end in an empty closing atom, and an exponent that follows without the braces attaches to that empty atom. It then stays at the height of the text line. The braces change what is printed in one small way: the thin space between a leading digit and the function name is lost, as it already was for <code>\lnf</code> and <code>\maxf</code>.</p>
+<p>A macro with no argument cannot be wrapped this way, so the aliases <code>\ceil</code>, <code>\set</code> and <code>\strlen</code> take an argument, as in <code>\ceil{x}</code>.</p>
+<p>Another convention is to leave the macros unbraced and to wrap each use in braces. Every use that forgot the braces would then print the exponent at the wrong height.</p>
 
 
 </section>
