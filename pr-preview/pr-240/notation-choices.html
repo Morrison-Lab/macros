@@ -433,6 +433,7 @@ window.Quarto = {
   <li><a href="#sec-likelihood-notation" id="toc-sec-likelihood-notation" class="nav-link" data-scroll-target="#sec-likelihood-notation">Writing the likelihood function</a></li>
   <li><a href="#sec-score-notation" id="toc-sec-score-notation" class="nav-link" data-scroll-target="#sec-score-notation">Writing the score function</a></li>
   <li><a href="#sec-estimand-estimator-symbols" id="toc-sec-estimand-estimator-symbols" class="nav-link" data-scroll-target="#sec-estimand-estimator-symbols">Symbols for estimands and estimators</a></li>
+  <li><a href="#sec-bias-variance-symbols" id="toc-sec-bias-variance-symbols" class="nav-link" data-scroll-target="#sec-bias-variance-symbols">Short symbols for the pieces of the bias-variance decomposition</a></li>
   <li><a href="#sec-probability-notation" id="toc-sec-probability-notation" class="nav-link" data-scroll-target="#sec-probability-notation">Probability notation</a></li>
   </ul>
 <div class="toc-actions"><ul><li><a href="https://github.com/d-morrison/macros/blob/main/notation-choices.qmd" class="toc-action"><i class="bi bi-github"></i>View source</a></li></ul></div></nav>
@@ -539,6 +540,30 @@ window.Quarto = {
 <p>An estimand is the quantity we want to learn about, and an estimator is a rule that computes a guess of it from data.</p>
 <p>Our convention is to write estimands with lower-case Greek letters, such as <span class="math inline">\(\alpha, \beta, \gamma, \delta\)</span>. We write an estimator by placing a hat over the symbol of its estimand, as in <span class="math inline">\(\hat\theta\)</span>. Usually the dependence of the estimator on the data is left implicit.</p>
 <p>Other sources use other symbols, so check which symbol a source uses for the estimand before reading a formula.</p>
+</section>
+<section id="sec-bias-variance-symbols" class="level2">
+<h2 class="anchored" data-anchor-id="sec-bias-variance-symbols">Short symbols for the pieces of the bias-variance decomposition</h2>
+<p>The expected squared prediction error at a covariate value splits into three pieces. They are the squared bias of the fitted prediction function, the variance of its fitted value over data sets, and the irreducible error. Each piece is defined in full where it first appears. After that, a derivation that does not manipulate a piece can write a short symbol for it.</p>
+<p>Our short symbols are:</p>
+<ul>
+<li>The bias of the fitted prediction function at a covariate value is <span class="math inline">\(\biassym\)</span>, from the macro <code>\biassym</code>. The operator <span class="math inline">\(\Biast(\cdot)\)</span> stays available for the full definition.</li>
+<li>The variance of the fitted value over data sets is <span class="math inline">\(\fitvarsym\)</span>, from the macro <code>\fitvarsym</code>. It is the square of <span class="math inline">\(\sdest\)</span>, the standard deviation of an estimator.</li>
+<li>The irreducible error is <span class="math inline">\(\irrerr\)</span>, from the macro <code>\irrerr</code>. It is the variance of the noise, so it is the existing variance parameter <span class="math inline">\(\varpar\)</span>.</li>
+</ul>
+<p>We write these three with Greek letters for the reason given in <a href="#sec-estimand-estimator-symbols">the estimands entry</a>. Each is a population quantity: a fixed number once the population and the fitting procedure are fixed. The letters are chosen to avoid collisions:</p>
+<ul>
+<li><span class="math inline">\(\beta\)</span> is taken by the regression coefficients, so it cannot name the bias.</li>
+<li><span class="math inline">\(\delta\)</span> is taken by the deviation of a value from its population mean, so it cannot name the bias either.</li>
+<li><span class="math inline">\(\sigma^2\)</span> already names the noise variance, so the irreducible error reuses it instead of getting a new letter.</li>
+<li><span class="math inline">\(\zeta\)</span> and <span class="math inline">\(\tau\)</span> were not in use for these roles. Other macros print them for other roles, such as a learning-rate schedule, so avoid mixing those macros with these two in one document.</li>
+</ul>
+<p>Other sources write the same pieces in other ways:</p>
+<ul>
+<li>They keep the operator form, as in <span class="math inline">\(\Biast(\hat f(x))^2\)</span> and <span class="math inline">\(\Vart(\hat f(x))\)</span>, in every line of the derivation. This is unambiguous but long.</li>
+<li>They write <span class="math inline">\(\sigma_\epsilon^2\)</span> or <span class="math inline">\(\Vart(\epsilon)\)</span> for the irreducible error, where <span class="math inline">\(\epsilon\)</span> is their noise symbol.</li>
+<li>They use a Latin letter for each piece, such as <span class="math inline">\(b\)</span> or <span class="math inline">\(v\)</span>. We avoid this because lower-case Latin letters usually name observed values or covariates.</li>
+</ul>
+<p>Check which form a source uses before comparing its decomposition with ours.</p>
 </section>
 <section id="sec-probability-notation" class="level2">
 <h2 class="anchored" data-anchor-id="sec-probability-notation">Probability notation</h2>
