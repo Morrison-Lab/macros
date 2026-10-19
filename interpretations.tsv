@@ -1181,7 +1181,7 @@ name	interpretation
 \hcovmat	an estimated covariance matrix (prints \hat{\Sigma})
 \ecovmat	an estimated covariance matrix (forward-looking form) (prints \est{\covmat})
 \corpar	a correlation parameter (prints \rho)
-\noise	a realized value of the noise (prints u, the lowercase of \Noise; \ubound prints the same letter for an upper bound)
+\noise	a realized value of the noise (prints the lowercase of \Noise; \ubound prints the same letter for an upper bound)
 \Noise	the noise: a latent random variable, the deviation of an outcome from its mean given the input (prints U)
 \vnoise	a vector of realized noise values (prints \vecf{\noise}; \vu prints the same symbol for a generic vector)
 \vNoise	a vector of noise random variables (prints \vecf{\Noise})
