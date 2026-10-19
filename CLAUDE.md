@@ -75,11 +75,16 @@ read both before editing `macros.qmd`.
   Add a macro for any conceptually coherent chunk of an expression that appears twice,
   such as `\prederr` for fitted minus outcome.
 
-- **Every change to a macro updates [`notation-choices.qmd`](notation-choices.qmd) in the same PR** (Ezra, 2026-10-19).
+- **Every change to a macro updates [`notation-choices.qmd`](notation-choices.qmd) in the same PR**
+  (Directive from the maintainer, Ezra, 2026-10-19.)
   Adding, renaming, removing or changing what a macro prints needs an entry or an edit there:
   our convention, the reason for it, and the other conventions readers will meet in other sources.
-  If the page is already accurate after your change, explain why in the PR description and add the `no-notation-change` label.
-  Once the `check-paired-file-change` caller workflow is added here ([#248](https://github.com/Morrison-Lab/macros/issues/248)), CI will fail a PR that changes `macros.qmd` without changing `notation-choices.qmd`.
+  If the page is already accurate after your change, explain why in the PR description.
+  Then add the `no-notation-change` label.
+  CI will fail a PR that changes `macros.qmd` without changing `notation-choices.qmd`
+  once two things have happened:
+  `Morrison-Lab/gha` has released its `check-paired-file-change` check under the `v3` tag,
+  and a caller workflow for it is added here ([#248](https://github.com/Morrison-Lab/macros/issues/248)).
   Until then nothing catches the omission, so check it yourself.
 
 - **Notes repositories never define a macro locally, even as a stopgap.**
