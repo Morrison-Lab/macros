@@ -391,6 +391,7 @@ name	interpretation
 \abs	absolute value |·|
 \norm	Euclidean norm ‖·‖
 \normsq	squared norm ‖·‖²
+\powf	first argument (·) raised to the power of the second argument, with parentheses around the base
 \sqf	square of argument (·)²
 \devsq	squared deviation of the first argument from the reference value in the second (δ_r(z))²
 \ssdev	sum over i = 1, ..., n of the squared deviation of the observation from the argument (·), via \devsq
