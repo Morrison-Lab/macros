@@ -12,7 +12,7 @@ Fitted distribution model: EDMEM $\edistmem$, EDMEMSUB $\edistmemof{\trainset}^2
 
 Prediction family: PFAM $\predfam$, PFAMSUB $\predfamof{\text{lin}}^2$.
 
-True mean function: TMF $\truemeanf{x}^2$, TMFSUB $\truemeansubf{\Outvar \given \Predvar}{x}^2$.
+True mean function: TMF $\truemeanf{x}^2$, TMFSUB $\truemeansubf{\Outvar \given \Predvar}{x}^2$, CMEAN $\cmean^2$, CMEANF $\cmeanf{x}^2$, CMEANFTALL $\cmeanf{\frac{a}{b}}^2$.
 
 Growth function: GROWTH $\growthfn$, GROWTHAPP $\growthfnf{2n}^2$.
 
