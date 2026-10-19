@@ -221,12 +221,14 @@ Our convention is to write a deviation as $\devof{a}{b}$, the quantity $a$ minus
 The noise is the deviation of an outcome from its mean given the input, $\Noise = \devof{\Outvar}{\truemeanf{\predvar}}$.
 An estimation error is the deviation of an estimate from its estimand, $\esterr{\est{\theta}}{\theta}$.
 A prediction error is the estimation error whose estimand is the new outcome.
-These three differ only in the reference, so one macro states the shared structure and each named quantity is an instance of it.
+In meaning, these three differ only in the reference.
+The macro `\devof` states that shared structure, and `\esterr` is defined through it.
+The macros `\Noise` and `\prederr` keep their own symbols, $U$ and $\varepsilon$.
 In all three we subtract the reference from the quantity, so an estimate that is too large has a positive error.
 The residual `\resid` is the exception, because it is the observed outcome minus the predicted outcome, the opposite sign of the prediction error.
 The macro `\devof` always prints parentheses around the difference, so a power such as $\devof{a}{b}^2$ squares the whole difference.
 When the reference is a sum, wrap it in `\paren` yourself, as in $\devof{a}{\paren{b + c}}$.
-For squared deviations summed over observations, use `\devsq` and `\ssdev`.
+For squared deviations summed over observations, use `\devsq` and `\ssdev`, which print the labelled symbol $\delta$ and not a difference.
 
 We write the noise with a capital Latin letter, $\Noise$, and a realized value with the lower-case letter, $\noise$.
 The vector of noise variables is $\vNoise$, and the vector of realized values is $\vnoise$.
@@ -254,7 +256,7 @@ We keep `\popdev` and `\deviationf` for existing uses.
 
 Many sources write the noise as the Greek letter $\varepsilon$ and call it the error term.
 Our older macros `\err`, `\eps` and `\prederr` also print $\varepsilon$, so they follow that source convention and not the rule above.
-We have not retired them, because other pages still use them.
+We have not retired them, because retiring $\varepsilon$ needs a survey of downstream uses first.
 Some sources reuse $\varepsilon$ for the estimation error or the residual, so check what a source means by it.
 Some sources subtract in the other order, so check the sign before comparing a formula with ours.
 

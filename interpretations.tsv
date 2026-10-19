@@ -79,7 +79,7 @@ name	interpretation
 \gg	Greek letter gamma (alias for \g)
 \gd	Greek letter delta (δ)
 \eps	varepsilon error term (ε)
-\cdev	deviation from conditional mean (alias for \popdev)
+\cdev	deviation from conditional mean (alias for \popdev, symbol ν; for the noise, the deviation of an outcome from its conditional mean, use \Noise)
 \veps	error vector (ε-vector)
 \epsp	ε(·) error function
 \epsf	ε(·) error function (alias for \epsp)
