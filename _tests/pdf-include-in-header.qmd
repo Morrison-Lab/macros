@@ -18,4 +18,4 @@ Deviation and estimation error, squared and with a compound reference: $\devof{\
 
 Subscripted and squared deviations: $\devof{\frac{a}{b}}{\paren{\mu_1 + \mu_2}}_i$, $\esterr{\frac{a}{b}}{\theta}_i^2$, $\esterr{\predval}{\Outvar}_i$.
 
-Noise: $\Noise_i^2$, $\noise_i$, $\vNoise^T$, $\vnoise_i$.
+Noise: $\Noise_i^2$, $\noise_i^2$, $\vNoise_i^2$, $\vnoise_i^2$, $\vNoise^T$.
