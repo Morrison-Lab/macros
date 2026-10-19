@@ -543,25 +543,29 @@ window.Quarto = {
 </section>
 <section id="sec-bias-variance-symbols" class="level2">
 <h2 class="anchored" data-anchor-id="sec-bias-variance-symbols">Short symbols for the pieces of the bias-variance decomposition</h2>
-<p>The expected squared prediction error at a covariate value splits into three pieces. They are the squared bias of the fitted prediction function, the variance of its fitted value over data sets, and the irreducible error. Each piece is defined in full where it first appears. After that, a derivation that does not manipulate a piece can write a short symbol for it.</p>
+<p>Fix a covariate value <span class="math inline">\(\predvar\)</span>, a training sample size, and a fitting procedure. The fitted prediction function <span class="math inline">\(\predfn\)</span> varies from one training data set to the next. Let <span class="math inline">\(\Outvar\)</span> be a new outcome at <span class="math inline">\(\predvar\)</span>, independent of the training data. Write <span class="math inline">\(\truemeanf{\predvar}\)</span> for the mean of <span class="math inline">\(\Outvar\)</span>. The noise is the random part of <span class="math inline">\(\Outvar\)</span> that no function of the covariates predicts. The expected squared error in predicting <span class="math inline">\(\Outvar\)</span> splits into three pieces, where the expectation is over the training data and over <span class="math inline">\(\Outvar\)</span>:</p>
+<p><span class="math display">\[
+\E{\paren{\Outvar - \predfn\paren{\predvar}}^2} = \biassym^2 + \fitvarsym + \irrerr.
+\]</span></p>
+<p>The three pieces are the square of the bias, the variance of the fitted value, and the irreducible error, each defined below. Each chapter defines a piece in full where it first uses it. After that, a derivation that does not manipulate a piece can write a short symbol for it.</p>
 <p>Our short symbols are:</p>
 <ul>
-<li>The bias of the fitted prediction function at a covariate value is <span class="math inline">\(\biassym\)</span>, from the macro <code>\biassym</code>. The operator <span class="math inline">\(\Biast(\cdot)\)</span> stays available for the full definition.</li>
-<li>The variance of the fitted value over data sets is <span class="math inline">\(\fitvarsym\)</span>, from the macro <code>\fitvarsym</code>. It is the square of <span class="math inline">\(\sdest\)</span>, the standard deviation of an estimator.</li>
-<li>The irreducible error is <span class="math inline">\(\irrerr\)</span>, from the macro <code>\irrerr</code>. It is the variance of the noise, so it is the existing variance parameter <span class="math inline">\(\varpar\)</span>.</li>
+<li>The bias at <span class="math inline">\(\predvar\)</span> is <span class="math inline">\(\biassym\)</span>, from the macro <code>\biassym</code>. It is the mean of the fitted value over training data sets, minus the true mean outcome <span class="math inline">\(\truemeanf{\predvar}\)</span>. The operator <span class="math inline">\(\Biast(\cdot)\)</span> stays available for the full definition.</li>
+<li>The variance of the fitted value over training data sets is <span class="math inline">\(\fitvarsym\)</span>, from the macro <code>\fitvarsym</code>. It is the square of <span class="math inline">\(\sdest\)</span>, the standard deviation of an estimator, here the fitted value treated as an estimator over data sets.</li>
+<li>The irreducible error is <span class="math inline">\(\irrerr\)</span>, from the macro <code>\irrerr</code>. It is the variance of the noise, so it is the existing variance parameter <span class="math inline">\(\varpar\)</span>. When the noise variance depends on <span class="math inline">\(\predvar\)</span>, the irreducible error is a function of <span class="math inline">\(\predvar\)</span>.</li>
 </ul>
-<p>We write these three with Greek letters for the reason given in <a href="#sec-estimand-estimator-symbols">the estimands entry</a>. Each is a population quantity: a fixed number once the population and the fitting procedure are fixed. The letters are chosen to avoid collisions:</p>
+<p>Each piece is a population quantity. It is a fixed number once <span class="math inline">\(\predvar\)</span>, the population, the fitting procedure and the training sample size are fixed. We write these three with Greek letters, following the convention in <a href="#sec-estimand-estimator-symbols">the estimands entry</a>. The letters are chosen to avoid collisions:</p>
 <ul>
 <li><span class="math inline">\(\beta\)</span> is taken by the regression coefficients, so it cannot name the bias.</li>
-<li><span class="math inline">\(\delta\)</span> is taken by the deviation of a value from its population mean, so it cannot name the bias either.</li>
-<li><span class="math inline">\(\sigma^2\)</span> already names the noise variance, so the irreducible error reuses it instead of getting a new letter.</li>
-<li><span class="math inline">\(\zeta\)</span> and <span class="math inline">\(\tau\)</span> were not in use for these roles. Other macros print them for other roles, such as a learning-rate schedule, so avoid mixing those macros with these two in one document.</li>
+<li><span class="math inline">\(\delta\)</span> is taken by the deviation symbol <code>\deviation</code>, and by other macros, so it cannot name the bias either.</li>
+<li><span class="math inline">\(\sigma^2\)</span> already names the variance parameter, so the irreducible error reuses it instead of getting a new letter.</li>
+<li><span class="math inline">\(\zeta\)</span> and <span class="math inline">\(\tau\)</span> carry none of the roles of the other symbols in this list. Other macros print them for other roles, such as a learning-rate schedule, so avoid mixing those macros with these two in one document.</li>
 </ul>
-<p>Other sources write the same pieces in other ways:</p>
+<p>Some sources write the same pieces in other ways:</p>
 <ul>
 <li>They keep the operator form, as in <span class="math inline">\(\Biast(\hat f(x))^2\)</span> and <span class="math inline">\(\Vart(\hat f(x))\)</span>, in every line of the derivation. This is unambiguous but long.</li>
 <li>They write <span class="math inline">\(\sigma_\epsilon^2\)</span> or <span class="math inline">\(\Vart(\epsilon)\)</span> for the irreducible error, where <span class="math inline">\(\epsilon\)</span> is their noise symbol.</li>
-<li>They use a Latin letter for each piece, such as <span class="math inline">\(b\)</span> or <span class="math inline">\(v\)</span>. We avoid this because lower-case Latin letters usually name observed values or covariates.</li>
+<li>They may use a Latin letter for each piece. We avoid this because <span class="math inline">\(b\)</span> already names the bias of a neural network in <a href="#sec-ml-statistics-names">the names entry</a>, and the macro <code>\vv</code> prints the vector <span class="math inline">\(\vv\)</span>.</li>
 </ul>
 <p>Check which form a source uses before comparing its decomposition with ours.</p>
 </section>
