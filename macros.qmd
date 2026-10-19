@@ -1244,8 +1244,10 @@
 \def\hcovmat{\hat{\Sigma}}
 \def\ecovmat{\est{\covmat}}
 \def\corpar{\rho}
-\def\noise{\popdev}
-\def\vnoise{\vec{\popdev}}
+\def\noise{u}
+\def\Noise{U}
+\def\vnoise{\vec{\noise}}
+\def\vNoise{\vec{\Noise}}
 \def\rvar{x}
 \def\Rvar{X}
 \def\predbar{\bar{\predvar}}
