@@ -434,6 +434,7 @@ window.Quarto = {
   <li><a href="#sec-score-notation" id="toc-sec-score-notation" class="nav-link" data-scroll-target="#sec-score-notation">Writing the score function</a></li>
   <li><a href="#sec-estimand-estimator-symbols" id="toc-sec-estimand-estimator-symbols" class="nav-link" data-scroll-target="#sec-estimand-estimator-symbols">Symbols for estimands and estimators</a></li>
   <li><a href="#sec-bias-variance-symbols" id="toc-sec-bias-variance-symbols" class="nav-link" data-scroll-target="#sec-bias-variance-symbols">Short symbols for the pieces of the bias-variance decomposition</a></li>
+  <li><a href="#sec-noise" id="toc-sec-noise" class="nav-link" data-scroll-target="#sec-noise">The noise</a></li>
   <li><a href="#sec-probability-notation" id="toc-sec-probability-notation" class="nav-link" data-scroll-target="#sec-probability-notation">Probability notation</a></li>
   <li><a href="#sec-true-mean-function" id="toc-sec-true-mean-function" class="nav-link" data-scroll-target="#sec-true-mean-function">The true mean function and its conditional form</a></li>
   </ul>
@@ -569,6 +570,15 @@ window.Quarto = {
 <li>They may use a lower-case Latin letter for each piece. We avoid this because <span class="math inline">\(b\)</span> already names the bias of a neural network in <a href="#sec-ml-statistics-names">the names entry</a>, and the macro <code>\vv</code> prints the vector <span class="math inline">\(\vv\)</span>.</li>
 </ul>
 <p>Check which form a source uses before comparing its decomposition with ours.</p>
+</section>
+<section id="sec-noise" class="level2">
+<h2 class="anchored" data-anchor-id="sec-noise">The noise</h2>
+<p>The noise is the difference between an outcome and its mean given the input.</p>
+<p>Our convention is to write the noise with a capital Latin letter, <span class="math inline">\(\Noise\)</span>, and a realized value with the lower-case letter, <span class="math inline">\(\noise\)</span>. The vector of noise variables is <span class="math inline">\(\vNoise\)</span>, and the vector of realized values is <span class="math inline">\(\vnoise\)</span>. Noise is a random variable, not a parameter, so it does not get a Greek letter. It differs from one observation to the next and has a distribution. A realized value is the value the noise takes for one observation. In real data we never observe a realized noise value, but we write it when we reason about a single observation.</p>
+<p>We chose the letter <span class="math inline">\(U\)</span> because the only other macro that prints a capital <span class="math inline">\(U\)</span> is the bold <code>\bfU</code>, and the <a href="#sec-score-notation">score entry above</a> leaves plain <span class="math inline">\(U\)</span> available.</p>
+<p>The lower-case <span class="math inline">\(\noise\)</span> and <span class="math inline">\(\vnoise\)</span> print the same symbols as the upper bound <span class="math inline">\(\ubound\)</span> and the generic vector <span class="math inline">\(\vu\)</span>. We accepted the overlap because lower-case <span class="math inline">\(u\)</span> is the natural realized value of <span class="math inline">\(\Noise\)</span>, and a different letter would break the rule that a value is the lower-case form of its variable.</p>
+<p>Earlier versions of these macros printed the noise as the Greek letter <span class="math inline">\(\nu\)</span>, with <code>\noise</code> as an alias of <code>\popdev</code>. That treated the noise like a parameter, so <code>\noise</code> and <code>\vnoise</code> now print <span class="math inline">\(u\)</span>. Any use of <code>\noise</code> that meant <span class="math inline">\(\nu\)</span> needs a sweep. The macros <code>\popdev</code> and <code>\cdev</code> still print <span class="math inline">\(\nu\)</span> for a deviation from a mean.</p>
+<p>Many sources write the noise as the Greek letter <span class="math inline">\(\varepsilon\)</span> and call it the error term. Our older macros <code>\err</code> and <code>\eps</code> also print <span class="math inline">\(\varepsilon\)</span>, so they follow that source convention and are exceptions to the rule above, since <span class="math inline">\(\varepsilon\)</span> is a Greek letter for a random variable. Some sources reuse <span class="math inline">\(\varepsilon\)</span> for the residual or the prediction error, so check what a source means by it.</p>
 </section>
 <section id="sec-probability-notation" class="level2">
 <h2 class="anchored" data-anchor-id="sec-probability-notation">Probability notation</h2>
