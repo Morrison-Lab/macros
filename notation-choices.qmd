@@ -212,6 +212,21 @@ Usually the dependence of the estimator on the data is left implicit.
 
 Other sources use other symbols, so check which symbol a source uses for the estimand before reading a formula.
 
+## The noise {#sec-noise}
+
+The noise is the difference between an outcome and its mean given the input.
+
+Our convention is to write the noise with a capital Latin letter, $\Noise$, and a realized value with the lower-case letter, $\noise$.
+Noise is a random variable, not a parameter.
+It differs from one observation to the next and has a distribution, and we never observe it.
+A parameter is a fixed constant, so only parameters get Greek letters.
+This is the same rule that separates an outcome variable $\Outvar$ from its observed value $\outvar$.
+The letter $U$ stands for an unobserved variable in many texts on causal inference.
+We chose it because no other macro uses it, and because $E$ is already the expectation.
+
+Many sources write the noise as the Greek letter $\varepsilon$ and call it the error term.
+Some then reuse $\varepsilon$ for the residual or the prediction error, so check what a source means by it.
+
 ## Probability notation {#sec-probability-notation}
 
 A random variable is a function of the outcome of a random experiment, as in [the stochastic process example](#exm-stochastic-process-slots).
