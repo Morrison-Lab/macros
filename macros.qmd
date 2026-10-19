@@ -62,7 +62,7 @@
 \def\Poisson{\operatorname{Poisson}}
 \def\Gaus{\operatorname{Gaussian}}
 \def\Normal{\operatorname{N}}
-\providecommand{\ndist}[1]{\Normal\paren{#1}}
+\providecommand{\ndist}[1]{{\Normal\paren{#1}}}
 \def\NB{\operatorname{NegBin}}
 \def\NegBin{\operatorname{NegBin}}
 \def\vbeta{\vec \beta}
@@ -82,7 +82,7 @@
 \def\eps{\varepsilon}
 \def\cdev{\popdev}
 \def\veps{\vec{\varepsilon}}
-\providecommand{\epsp}[1]{\eps\paren{#1}}
+\providecommand{\epsp}[1]{{\eps\paren{#1}}}
 \def\epsf{\epsp}
 \def\om{\omega}
 \def\m{\mu}
@@ -431,7 +431,7 @@
 \providecommand{\heinff}[1]{{\heinf \paren{#1}}}
 \providecommand{\1}[1]{\text{1}_{#1}}
 \providecommand{\indic}[1]{\mathbb{1}_{#1}}
-\providecommand{\indicp}[1]{\mathbb{1}\paren{#1}}
+\providecommand{\indicp}[1]{{\mathbb{1}\paren{#1}}}
 \providecommand{\indiccb}[1]{{\mathbb{1}\cb{#1}}}
 \def\indicf{\indic}
 \def\set{\cb}

@@ -91,8 +91,6 @@ UNBRACED = re.compile(
     r".*\\(?:paren|sb|cb|angb) ?\{[^{}]*#\d[^{}]*\}[^{}]*\}$",
     re.M,
 )
-# Bodies that end in a delimiter macro without being an operator applied to it.
-NOT_FFORMS = {"\\ndist", "\\epsp", "\\indicp"}
 
 
 def brace_guard():
@@ -104,7 +102,6 @@ def brace_guard():
     bad = [
         m.group(1)
         for m in UNBRACED.finditer((ROOT / "macros.qmd").read_text())
-        if m.group(1) not in NOT_FFORMS
     ]
     print(f"brace guard: {len(bad)} unbraced delimiter-ending definitions")
     for name in bad:
