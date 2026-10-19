@@ -197,6 +197,7 @@
 \providecommand{\truemeanfnf}[1]{{\truemeanfn\paren{#1}}}
 \def\truemean{\mu}
 \providecommand{\truemeanf}[1]{{\truemean\paren{#1}}}
+\providecommand{\truemeansubf}[2]{{\truemean_{#1}\paren{#2}}}
 \def\dataset{\mathcal{D}}
 \def\trainset{\mathcal{D}_{\text{train}}}
 \def\valset{\mathcal{D}_{\text{val}}}
