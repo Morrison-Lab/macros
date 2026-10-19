@@ -77,7 +77,10 @@ Wrap the whole body in one extra pair of braces:
 `python3 tools/check_latex.py` fails on a definition
 (`\providecommand`, `\renewcommand`, `\newcommand` or `\def`)
 whose body ends in a delimiter group and is not wrapped.
-It also fails when a script follows a delimiter group inside an unwrapped body.
+It also fails when a script (`^`, `_` or `'`) follows a delimiter group at any depth of a body,
+and when a zero-argument alias such as `\def\set{\cb}` names a delimiter macro,
+because the alias passes its argument on and so cannot be braced.
+Give the alias an argument instead: `\providecommand{\set}[1]{{\cb{#1}}}`.
 
 ## Before pushing
 

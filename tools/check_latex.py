@@ -102,11 +102,22 @@ def static_guard():
     return not bad
 
 
+# Supported: \providecommand, \renewcommand, \newcommand, \def, \gdef and
+# \DeclareRobustCommand, anywhere on a line, with the body brace on a later line.
 DEFINITION_HEAD = re.compile(
-    r"^[ \t]*\\(?:providecommand|renewcommand|newcommand|def)\*?[ \t]*"
-    r"(?:\{(\\[A-Za-z]+)\}|(\\[A-Za-z]+))(?:[ \t]*\[[^\]]*\])*(?:#\d)*[ \t]*(?=\{)",
-    re.M,
+    r"(?<!\\)\\(?:providecommand|renewcommand|newcommand|def|gdef|DeclareRobustCommand)"
+    r"\*?\s*(?:\{(\\[A-Za-z]+)\}|(\\[A-Za-z]+))"
+    r"(?:\s*\[[^\]]*\])*(?:#\d)*\s*(?=\{)"
 )
+# xparse definitions have another argument syntax, which the guard does not read.
+UNSUPPORTED = re.compile(
+    r"\\(?:New|Provide|Declare|NewExpandable)DocumentCommand\b"
+)
+# Floors against a parse that finds nothing: macros.qmd had 9 delimiter macros
+# and 1490 definitions when the guard was written.
+MIN_DELIMITER_MACROS = 9
+MIN_DEFINITIONS = 400
+SCRIPT_STARTS = "^_'"
 # An even run of backslashes before % leaves the % a real comment start.
 COMMENT = re.compile(r"(?<!\\)((?:\\\\)*)%.*$", re.M)
 
@@ -170,21 +181,34 @@ def delimiter_macros(text):
     }
 
 
-def unbraced_delimiter_body(body, delimiters):
-    """True if body is not wrapped in one brace pair and ends in, or has a script after, a delimiter group."""
-    tail = re.compile(
-        r"\\(?:" + "|".join(re.escape(d[1:]) for d in delimiters) + r")\s*$"
-    )
-    body = body.strip()
-    groups = top_level_groups(body)
-    if not groups or (groups[0][0] == 0 and groups[0][1] == len(body) - 1):
-        return False
-    for start, end in groups:
-        if tail.search(body[:start]):
-            after = body[end + 1 :].lstrip()
-            if after == "" or after[0] in "^_":
-                return True
+def script_after_delimiter(body, tail):
+    """True if a script follows a delimiter group at any depth of body."""
+    for start, end in top_level_groups(body):
+        after = body[end + 1 :].lstrip()
+        if tail.search(body[:start]) and after and after[0] in SCRIPT_STARTS:
+            return True
+        if script_after_delimiter(body[start + 1 : end], tail):
+            return True
     return False
+
+
+def unbraced_delimiter_body(body, delimiters):
+    """True if body is a bare delimiter alias, ends in an unwrapped delimiter group,
+    or has a script right after a delimiter group at any depth.
+    """
+    names = "|".join(re.escape(d[1:]) for d in delimiters)
+    tail = re.compile(r"\\(?:" + names + r")\s*$")
+    body = body.strip()
+    if re.fullmatch(r"\\(?:" + names + ")", body):
+        return True
+    groups = top_level_groups(body)
+    if groups and groups[0] == (0, len(body) - 1):
+        return script_after_delimiter(body[1:-1], tail)
+    ends = any(
+        tail.search(body[:start]) and not body[end + 1 :].strip()
+        for start, end in groups
+    )
+    return ends or script_after_delimiter(body, tail)
 
 
 def unbraced_definitions(text, delimiters):
@@ -214,6 +238,13 @@ GUARD_SHOULD_FLAG = [
     r"\newcommand{\a}[2][x]{\P\paren{#1}}",
     r"\providecommand{\a}[1]{\P\paren{#1}} \\% comment with an open {",
     r"\providecommand{\a}[1]{\P\paren{\%}} % comment",
+    r"\providecommand{\a}[1]{{\P\paren{#1}^2}}",
+    r"\providecommand{\a}[1]{{\P\paren{#1}'}}",
+    "\\providecommand{\\a}[1]{\\P \\\\% {\n  \\paren{#1}}",
+    "\\providecommand{\\a}[1]\n{\\P\\paren{#1}}",
+    r"\def\b{x} \def\a{\P\paren{#1}}",
+    r"\gdef\a#1{\P\paren{#1}}",
+    r"\def\a{\norm}",
 ]
 GUARD_SHOULD_PASS = [
     r"\providecommand{\a}[1]{{\P\paren{#1}}}",
@@ -224,6 +255,7 @@ GUARD_SHOULD_PASS = [
     r"\providecommand{\a}[1]{\paren{#1} + 1}",
     r"\providecommand{\a}[1]{{\P\paren{#1}}} % comment with an open {",
     r"\providecommand{\a}[1]{{\P \paren{\%}}}",
+    r"\providecommand{\a}[1]{{\frac{\paren{#1}}{2}}}",
 ]
 
 
@@ -257,8 +289,15 @@ def brace_guard():
         f"({len(delimiters)} delimiter macros, {examined} definitions examined)"
     )
     # A parse that finds nothing would report zero unbraced and pass.
-    if len(delimiters) < 9 or examined < 400:
-        print("  FAIL the guard found too few delimiter macros or definitions")
+    if len(delimiters) < MIN_DELIMITER_MACROS or examined < MIN_DEFINITIONS:
+        print(
+            f"  FAIL the guard found fewer than {MIN_DELIMITER_MACROS} delimiter "
+            f"macros or {MIN_DEFINITIONS} definitions, so the parse is suspect"
+        )
+        return False
+    unsupported = UNSUPPORTED.findall(COMMENT.sub(r"\1", text))
+    if unsupported:
+        print("  FAIL macros.qmd uses a definition command the guard cannot read")
         return False
     for name in bad:
         print(f"  FAIL {name} needs a braced body, {{...}}, so an exponent rises")

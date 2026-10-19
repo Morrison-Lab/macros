@@ -55,7 +55,7 @@
 \def\g{\gamma}
 \providecommand{\floor}[1]{\mathopen{}\left\lfloor#1\right\rfloor\mathclose{}}
 \providecommand{\ceiling}[1]{\mathopen{}\left\lceil#1\right\rceil\mathclose{}}
-\def\ceil{\ceiling}
+\providecommand{\ceil}[1]{{\ceiling{#1}}}
 \def\Ber{\operatorname{Ber}}
 \def\Bernoulli{\operatorname{Bernoulli}}
 \def\Pois{\operatorname{Pois}}
@@ -435,7 +435,7 @@
 \providecommand{\indicp}[1]{{\mathbb{1}\paren{#1}}}
 \providecommand{\indiccb}[1]{{\mathbb{1}\cb{#1}}}
 \def\indicf{\indic}
-\def\set{\cb}
+\providecommand{\set}[1]{{\cb{#1}}}
 \providecommand{\pf}[1]{{\p \paren{#1}}}
 \providecommand{\Pf}[1]{{\P \paren{#1}}}
 \providecommand{\Bias}[1]{{\operatorname{Bias}\paren{#1}}}
@@ -1396,7 +1396,7 @@
 \def\kolm{K}
 \providecommand{\kolmf}[1]{{\kolm\paren{#1}}}
 \providecommand{\ckolmf}[2]{{\kolm\paren{#1 \mid #2}}}
-\def\strlen{\abs}
+\providecommand{\strlen}[1]{{\abs{#1}}}
 \def\fitproc{g}
 \providecommand{\fitprocf}[1]{{\fitproc\paren{#1}}}
 \providecommand{\fitmodf}[1]{{\fitted_{#1}}}
