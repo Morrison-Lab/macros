@@ -1359,7 +1359,8 @@ name	interpretation
 \testidx	index set of the test set (prints I with a test subscript)
 \targetfnf	target function applied to its argument, \mu(·)
 \truemeanfnf	true mean function applied to its argument, \mu(·); deprecated, use \truemeanf
-\truemeanf	true mean function applied to its argument, \mu(·); replaces the deprecated \truemeanfnf; the optional first argument is a subscript, so \truemeanf[\Outvar \given \Predvar]{x} prints \mu_{Y|X}(x), the conditional population mean E[Y | X = x]
+\truemeanf	true mean function applied to its argument, \mu(·); replaces the deprecated \truemeanfnf
+\truemeansubf	true mean function with a subscript, applied to its argument, \truemeansubf{\Outvar \given \Predvar}{x} prints \mu_{Y|X}(x), the conditional population mean E[Y | X = x]
 \hmodmem	fitted model (hat-wrapped \modmem), legacy form
 \hmodmemf	fitted model applied to its argument (hat-wrapped), h-hat(·)
 \hmodmemof	fitted model with its mean-function model family as subscript (hat-wrapped)
