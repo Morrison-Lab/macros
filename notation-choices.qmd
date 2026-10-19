@@ -217,14 +217,15 @@ Other sources use other symbols, so check which symbol a source uses for the est
 Fix a covariate value $\predvar$, a training sample size, and a fitting procedure.
 The fitted prediction function $\predfn$ varies from one training data set to the next.
 Let $\Outvar$ be a new outcome at $\predvar$, independent of the training data.
+Write $\truemeanf{\predvar}$ for the mean of $\Outvar$.
 The noise is the random part of $\Outvar$ that no function of the covariates predicts.
-When the noise has constant variance, the expected squared error in predicting $\Outvar$ splits into three pieces:
+The expected squared error in predicting $\Outvar$ splits into three pieces, where the expectation is over the training data and over $\Outvar$:
 
 $$
 \E{\paren{\Outvar - \predfn\paren{\predvar}}^2} = \biassym^2 + \fitvarsym + \irrerr.
 $$
 
-The three pieces are the square of the bias, the variance of the fitted value, and the irreducible error.
+The three pieces are the square of the bias, the variance of the fitted value, and the irreducible error, each defined below.
 Each chapter defines a piece in full where it first uses it.
 After that, a derivation that does not manipulate a piece can write a short symbol for it.
 
@@ -256,7 +257,7 @@ Some sources write the same pieces in other ways:
     This is unambiguous but long.
 -   They write $\sigma_\epsilon^2$ or $\Vart(\epsilon)$ for the irreducible error, where $\epsilon$ is their noise symbol.
 -   They may use a Latin letter for each piece.
-    We avoid this because $b$ already names the bias of a neural network in [the names entry](#sec-ml-statistics-names), and $v$ is the macro `\vv`, a vector.
+    We avoid this because $b$ already names the bias of a neural network in [the names entry](#sec-ml-statistics-names), and the macro `\vv` prints the vector $\vv$.
 
 Check which form a source uses before comparing its decomposition with ours.
 
