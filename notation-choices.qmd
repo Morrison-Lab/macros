@@ -212,6 +212,42 @@ Usually the dependence of the estimator on the data is left implicit.
 
 Other sources use other symbols, so check which symbol a source uses for the estimand before reading a formula.
 
+## Short symbols for the pieces of the bias-variance decomposition {#sec-bias-variance-symbols}
+
+The expected squared prediction error at a covariate value splits into three pieces.
+They are the squared bias of the fitted prediction function, the variance of its fitted value over data sets, and the irreducible error.
+Each piece is defined in full where it first appears.
+After that, a derivation that does not manipulate a piece can write a short symbol for it.
+
+Our short symbols are:
+
+-   The bias of the fitted prediction function at a covariate value is $\biassym$, from the macro `\biassym`.
+    The operator $\Biast(\cdot)$ stays available for the full definition.
+-   The variance of the fitted value over data sets is $\fitvarsym$, from the macro `\fitvarsym`.
+    It is the square of $\sdest$, the standard deviation of an estimator.
+-   The irreducible error is $\irrerr$, from the macro `\irrerr`.
+    It is the variance of the noise, so it is the existing variance parameter $\varpar$.
+
+We write these three with Greek letters for the reason given in [the estimands entry](#sec-estimand-estimator-symbols).
+Each is a population quantity: a fixed number once the population and the fitting procedure are fixed.
+The letters are chosen to avoid collisions:
+
+-   $\beta$ is taken by the regression coefficients, so it cannot name the bias.
+-   $\delta$ is taken by the deviation of a value from its population mean, so it cannot name the bias either.
+-   $\sigma^2$ already names the noise variance, so the irreducible error reuses it instead of getting a new letter.
+-   $\zeta$ and $\tau$ were not in use for these roles.
+    Other macros print them for other roles, such as a learning-rate schedule, so avoid mixing those macros with these two in one document.
+
+Other sources write the same pieces in other ways:
+
+-   They keep the operator form, as in $\Biast(\hat f(x))^2$ and $\Vart(\hat f(x))$, in every line of the derivation.
+    This is unambiguous but long.
+-   They write $\sigma_\epsilon^2$ or $\Vart(\epsilon)$ for the irreducible error, where $\epsilon$ is their noise symbol.
+-   They use a Latin letter for each piece, such as $b$ or $v$.
+    We avoid this because lower-case Latin letters usually name observed values or covariates.
+
+Check which form a source uses before comparing its decomposition with ours.
+
 ## Probability notation {#sec-probability-notation}
 
 A random variable is a function of the outcome of a random experiment, as in [the stochastic process example](#exm-stochastic-process-slots).
