@@ -1245,6 +1245,9 @@
 \def\ecovmat{\est{\covmat}}
 \def\corpar{\rho}
 \def\noise{\popdev}
+\def\biassym{\zeta}
+\def\fitvarsym{\tau^2}
+\def\irrerr{\varpar}
 \def\vnoise{\vec{\popdev}}
 \def\rvar{x}
 \def\Rvar{X}
