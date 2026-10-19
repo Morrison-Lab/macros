@@ -242,3 +242,34 @@ Some sources write $A^c$ or $\bar{A}$.
 We write $\eqdef$ for an equality that holds by definition.
 This tells it apart from an equality that follows from other facts.
 Some sources use a bare $=$ for both.
+
+## The true mean function and its conditional form {#sec-true-mean-function}
+
+The true mean function gives the population mean of the outcome $Y$ at each value $x$ of the predictor.
+Our convention is to write it $\truemean$, and its value at $x$ as $\truemeanf{x}$.
+Both print $\mu$.
+
+When the outcome and the predictor need to be named, we write $\truemeansubf{\Outvar \given \Predvar}{x}$.
+This prints $\mu_{Y|X}(x)$, a shorthand for the conditional population mean $\condE{\Outvar}{\Predvar = x}$.
+
+::: {#exm-true-mean-subscript}
+##### The conditional population mean
+
+Let $Y$ be a person's height and $X$ their age.
+Then $\truemeansubf{\Outvar \given \Predvar}{10}$ is the population mean height of 10-year-olds.
+It is the same number as $\condE{\Outvar}{\Predvar = 10}$.
+:::
+
+We chose a separate macro, not an optional subscript on `\truemeanf`, for two reasons.
+
+-   An optional argument breaks the notes repositories' builds.
+    LaTeX and MathJax allow an optional argument only as the first argument, so it would be written `\truemeanf[Y|X]{x}`.
+    The `build_math_macros.py` script that each notes repository runs before rendering cannot read an optional argument with a default value.
+    It would stop every page in every format after the repository updated its `latex-macros` pin.
+-   Two required arguments read the same everywhere.
+    The macro name says that a subscript is present, so a reader of the source does not need to look for a bracket.
+
+We keep `\popmean` as the scalar population mean, the same symbol as `\mean`, and do not make it an alias of `\truemean`.
+A scalar is one number, and the true mean function takes a value $x$ and returns a number.
+Giving one name to both would make a reader of `\popmean` unsure whether $x$ is an input.
+The macros are separate names for the number and the function, even though both print $\mu$.
