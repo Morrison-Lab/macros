@@ -74,8 +74,9 @@ An exponent then does not rise over a tall argument
 ([macros#147](https://github.com/Morrison-Lab/macros/pull/147)).
 Wrap the whole body in one extra pair of braces:
 `\providecommand{\Pf}[1]{{\P \paren{#1}}}`.
-`python3 tools/check_latex.py` fails on a `\providecommand`, `\renewcommand`,
-`\newcommand` or `\def` whose body ends in a delimiter group and is not wrapped.
+`python3 tools/check_latex.py` fails on a definition
+(`\providecommand`, `\renewcommand`, `\newcommand` or `\def`)
+whose body ends in a delimiter group and is not wrapped.
 It also fails when a script follows a delimiter group inside an unwrapped body.
 
 ## Before pushing

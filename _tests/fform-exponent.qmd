@@ -18,7 +18,7 @@ An exponent after an f form must rise over a tall argument (the macros#147 brace
 \par\ifdim\dimexpr\ht\withexp-\ht\withoutexp\relax>1.5pt VARRISES\else VARSTUCK\fi
 \sbox{\withexp}{$\Pf{\frac{a}{b}}^2$}
 \sbox{\withoutexp}{$\Pf{\frac{a}{b}}$}
-\par\ifdim\dimexpr\ht\withexp-\ht\withoutexp\relax>1.5pt PFRISES\else PFSTUCK\fi
+\par\ifdim\dimexpr\ht\withexp-\ht\withoutexp\relax>1.5pt PROBRISES\else PROBSTUCK\fi
 \sbox{\withexp}{$\sigmoidf{\frac{a}{b}}^2$}
 \sbox{\withoutexp}{$\sigmoidf{\frac{a}{b}}$}
 \par\ifdim\dimexpr\ht\withexp-\ht\withoutexp\relax>1.5pt SIGRISES\else SIGSTUCK\fi

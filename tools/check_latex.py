@@ -4,8 +4,9 @@
 1. Static guard: a name given to \\providecommand that LaTeX already defines
    is silently ignored (the #106 bug with \\sb). Typeset every such name under
    \\ifdefined in a minimal document and fail if any is already defined.
-2. Brace guard: a one-line \\providecommand, \\renewcommand or \\newcommand
-   whose body ends in a delimiter macro must be wrapped in one brace pair.
+2. Brace guard: a \\providecommand, \\renewcommand, \\newcommand or \\def
+   whose body ends in, or has a script after, a delimiter group must be
+   wrapped in one brace pair.
 3. PDF render: render _tests/*.qmd to PDF through the include-in-header path
    and the include-shortcode path, fail on any LaTeX error, and check that
    macros whose meaning differs by path print what they should.
@@ -32,7 +33,7 @@ EXPECTED = {
     "fform-exponent": [
         "EFRISES",
         "VARRISES",
-        "PFRISES",
+        "PROBRISES",
         "SIGRISES",
         "DODDSRISES",
         "EXPFRISES",
@@ -103,10 +104,11 @@ def static_guard():
 
 DEFINITION_HEAD = re.compile(
     r"^[ \t]*\\(?:providecommand|renewcommand|newcommand|def)\*?[ \t]*"
-    r"(?:\{(\\[A-Za-z]+)\}|(\\[A-Za-z]+))(?:[ \t]*\[\d\])*(?:#\d)*[ \t]*(?=\{)",
+    r"(?:\{(\\[A-Za-z]+)\}|(\\[A-Za-z]+))(?:[ \t]*\[[^\]]*\])*(?:#\d)*[ \t]*(?=\{)",
     re.M,
 )
-COMMENT = re.compile(r"(?<!\\)%.*$", re.M)
+# An even run of backslashes before % leaves the % a real comment start.
+COMMENT = re.compile(r"(?<!\\)((?:\\\\)*)%.*$", re.M)
 
 
 def group_end(text, start):
@@ -150,7 +152,7 @@ def top_level_groups(body):
 
 def definitions(text):
     """(name, body) of each definition in text, comments removed."""
-    text = COMMENT.sub("", text)
+    text = COMMENT.sub(r"\1", text)
     found = []
     for m in DEFINITION_HEAD.finditer(text):
         start = m.end()
@@ -209,6 +211,9 @@ GUARD_SHOULD_FLAG = [
     "\\providecommand{\\a}[1]{\n  \\P\\paren{#1}\n}",
     r"\providecommand{\a}[1]{\P\paren{\{}}",
     r"\providecommand{\a}[1]{{\oddst}'\paren{#1}^2}",
+    r"\newcommand{\a}[2][x]{\P\paren{#1}}",
+    r"\providecommand{\a}[1]{\P\paren{#1}} \\% comment with an open {",
+    r"\providecommand{\a}[1]{\P\paren{\%}} % comment",
 ]
 GUARD_SHOULD_PASS = [
     r"\providecommand{\a}[1]{{\P\paren{#1}}}",
@@ -217,6 +222,8 @@ GUARD_SHOULD_PASS = [
     r"\providecommand{\a}[1]{{\P \paren{\{}}}",
     r"\def\a{{\frac{-1}{2}\paren{x}}}",
     r"\providecommand{\a}[1]{\paren{#1} + 1}",
+    r"\providecommand{\a}[1]{{\P\paren{#1}}} % comment with an open {",
+    r"\providecommand{\a}[1]{{\P \paren{\%}}}",
 ]
 
 
@@ -244,10 +251,15 @@ def brace_guard():
     text = (ROOT / "macros.qmd").read_text()
     delimiters = delimiter_macros(text)
     bad = unbraced_definitions(text, delimiters)
+    examined = len(definitions(text))
     print(
         f"brace guard: {len(bad)} unbraced delimiter-ending definitions "
-        f"({len(delimiters)} delimiter macros)"
+        f"({len(delimiters)} delimiter macros, {examined} definitions examined)"
     )
+    # A parse that finds nothing would report zero unbraced and pass.
+    if len(delimiters) < 9 or examined < 400:
+        print("  FAIL the guard found too few delimiter macros or definitions")
+        return False
     for name in bad:
         print(f"  FAIL {name} needs a braced body, {{...}}, so an exponent rises")
     return guard_self_test() and not bad
