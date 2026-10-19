@@ -243,7 +243,7 @@ It is a fixed number once $\predvar$, the population, the fitting procedure and 
 
 We write the bias and the variance with upright Latin letters, in the style of the expectation $\E{\cdot}$.
 We make this exception to the Greek convention for estimands in [the estimands entry](#sec-estimand-estimator-symbols).
-The variance operator is applied to a random variable, as the expectation is, and it applies to any random variable, not only to a fitted value.
+The variance operator applies to any random variable, not only to a fitted value.
 The bias operator is applied to an estimator, and its letter matches the name of the long operator $\Biast$.
 Like the expectation, each has two macros.
 The macros `\biassym` and `\varsym` print the bare operators $\biassym$ and $\varsym$, as `\Expp` prints $\Expp$.
