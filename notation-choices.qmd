@@ -212,6 +212,108 @@ Usually the dependence of the estimator on the data is left implicit.
 
 Other sources use other symbols, so check which symbol a source uses for the estimand before reading a formula.
 
+## Short symbols for the pieces of the bias-variance decomposition {#sec-bias-variance-symbols}
+
+Fix a covariate value $\predvar$, a training sample size, and a fitting procedure.
+The fitted prediction function $\predfn$ varies from one training data set to the next.
+Let $\Outvar$ be a new outcome at $\predvar$, independent of the training data.
+Write $\truemeanf{\predvar}$ for the mean of $\Outvar$.
+The noise is the random part of $\Outvar$ that no function of the covariates predicts.
+Three short symbols name the pieces of the expected squared error in predicting $\Outvar$:
+
+-   The bias of the fitted value at $\predvar$ is $\biassymf{\predfn\paren{\predvar}}$, from the macro `\biassymf`.
+    It is the mean of the fitted value over training data sets, minus the true mean $\truemeanf{\predvar}$.
+    This is the expected error of the fitted value as an estimate of the true mean.
+    The long operator $\Biast$ stays available for the full definition.
+-   The variance of the fitted value over training data sets is $\varsymf{\predfn\paren{\predvar}}$, from the macro `\varsymf`.
+    The macro `\varsymf` is a variance operator for any random variable, in the style of the expectation $\E{\cdot}$.
+-   The irreducible error is $\irrerr$, from the macro `\irrerr`.
+    It is the variance of the noise, so it is the existing variance parameter $\varpar$.
+    When the noise variance depends on $\predvar$, the irreducible error is a function of $\predvar$.
+
+With these symbols, the expected squared error splits into three pieces, where the expectation is over the training data and over $\Outvar$:
+
+$$
+\E{\paren{\Outvar - \predfn\paren{\predvar}}^2} = \biassymf{\predfn\paren{\predvar}}^2 + \varsymf{\predfn\paren{\predvar}} + \irrerr.
+$$
+
+A derivation that does not manipulate a piece can write its short symbol, after the piece is defined in full.
+Each piece is a population quantity.
+It is a fixed number once $\predvar$, the population, the fitting procedure and the training sample size are fixed.
+
+We write the bias and the variance with upright Latin letters, in the style of the expectation $\E{\cdot}$.
+We make this exception to the Greek convention for estimands in [the estimands entry](#sec-estimand-estimator-symbols).
+The variance operator applies to any random variable, not only to a fitted value.
+The bias operator is applied to an estimator, and its letter matches the name of the long operator $\Biast$.
+Like the expectation, each has two macros.
+The macros `\biassym` and `\varsym` print the bare operators $\biassym$ and $\varsym$, as `\Expp` prints $\Expp$.
+The macros `\biassymf` and `\varsymf` apply the operator to an argument in square brackets, as `\E` does.
+
+These Latin letters have collisions:
+
+-   The macros `\Regcoef` and `\Coef` also print an upright $\Regcoef$, for regression coefficients.
+    So avoid using `\biassym` or `\biassymf` together with either of them in one document.
+-   The existing macro `\V` prints $\V$, the full name of the variance, so `\varsymf` is the short form, not a replacement.
+
+The irreducible error keeps a Greek letter, because it is a variance parameter and not an operator.
+It reuses $\sigma^2$, which already names the variance parameter, instead of getting a new letter.
+
+Some sources write the same pieces in other ways:
+
+-   They keep the operator form, as in $\Biast(\hat f(x))^2$ and $\Vart(\hat f(x))$, in every line of the derivation.
+    This is unambiguous but long.
+-   They write $\sigma_\epsilon^2$ or $\Vart(\epsilon)$ for the irreducible error, where $\epsilon$ is their noise symbol.
+-   They may use a lower-case Latin letter for each piece.
+    We avoid this because $b$ already names the bias of a neural network in [the names entry](#sec-ml-statistics-names), and the macro `\vv` prints the vector $\vv$.
+
+Check which form a source uses before comparing its decomposition with ours.
+
+## Noise, deviation and error {#sec-noise-deviation-error}
+
+Noise, estimation error and prediction error are three deviations, each with its own reference.
+
+Our convention is to write a deviation as $\devof{a}{b}$, the quantity $a$ minus the reference value $b$.
+The noise is the deviation of an outcome from its mean given the input, $\Noise = \devof{\Outvar}{\truemeanf{\predvar}}$.
+An estimation error is the deviation of an estimate from its estimand, $\esterr{\est{\theta}}{\theta}$.
+A prediction error is the estimation error whose estimand is the new outcome.
+In meaning, these three differ only in the reference.
+The macro `\devof` states that shared structure.
+The macro `\esterr` is defined through it.
+The macros `\Noise` and `\prederr` keep their own symbols, $U$ and $\varepsilon$.
+In all three we subtract the reference from the quantity.
+So an estimate or prediction that is too large has a positive error.
+The residual `\resid` is the exception, because it is the observed outcome minus the predicted outcome, the opposite sign of the prediction error.
+The macro `\devof` always prints parentheses around the difference, so a power such as $\devof{a}{b}^2$ squares the whole difference.
+When the reference is a sum, wrap it in `\paren` yourself, as in $\devof{a}{\paren{b + c}}$.
+The macro `\devsq` prints a squared deviation, and `\ssdev` prints the sum of squared deviations over observations.
+Both print the labelled symbol $\delta$ and not a difference.
+
+We write the noise with a capital Latin letter, $\Noise$, and a realized value with the lower-case letter, $\noise$.
+The vector of noise variables is $\vNoise$, and the vector of realized values is $\vnoise$.
+Noise is a random variable, not a parameter, so it does not get a Greek letter.
+It differs from one observation to the next and has a distribution.
+A realized value is the value the noise takes for one observation.
+In real data we never observe a realized noise value, but we write it when we reason about a single observation.
+
+We chose the letter $U$ because the only other macro that prints a capital $U$ is the bold `\bfU`, and the [score entry above](#sec-score-notation) leaves plain $U$ available.
+
+The lower-case $\noise$ and $\vnoise$ print the same symbols as the upper bound $\ubound$ and the generic vector $\vu$.
+We accepted the overlap because lower-case $u$ is the natural realized value of $\Noise$, and a different letter would break the rule that a value is the lower-case form of its variable.
+
+Earlier versions of these macros printed the noise as the Greek letter $\nu$, with `\noise` as an alias of `\popdev`.
+That treated the noise like a parameter, so `\noise` and `\vnoise` now print $u$.
+Any use of `\noise` that meant $\nu$ needs a sweep.
+The macros `\popdev` and `\cdev` still print $\nu$ for a deviation from a mean.
+The macro `\deviationf` also prints $\delta$, with the reference as a subscript.
+We keep `\popdev` and `\deviationf` for existing uses.
+
+Many sources write the noise as the Greek letter $\varepsilon$ and call it the error term.
+Our older macros `\err` and `\eps` also print $\varepsilon$, so they follow that source convention and are exceptions to the rule above, since $\varepsilon$ is a Greek letter for a random variable.
+We have not retired `\err` and `\eps`, because retiring $\varepsilon$ needs a survey of downstream uses first.
+The macro `\prederr` prints the same $\varepsilon$ for the prediction error, which is an estimation error and not the noise.
+Some sources reuse $\varepsilon$ for the residual, so check what a source means by it.
+Some sources subtract in the other order, so check the sign before comparing a formula with ours.
+
 ## Probability notation {#sec-probability-notation}
 
 A random variable is a function of the outcome of a random experiment, as in [the stochastic process example](#exm-stochastic-process-slots).
@@ -242,3 +344,39 @@ Some sources write $A^c$ or $\bar{A}$.
 We write $\eqdef$ for an equality that holds by definition.
 This tells it apart from an equality that follows from other facts.
 Some sources use a bare $=$ for both.
+
+## The true mean function and its conditional form {#sec-true-mean-function}
+
+The true mean function gives the population mean of the outcome $\Outvar$ at each value $x$ of the predictor.
+Our convention is to write it $\truemean$, and its value at $x$ as $\truemeanf{x}$.
+Both print $\mu$.
+
+When the outcome and the predictor need to be named, we write $\truemeansubf{\Outvar \given \Predvar}{x}$.
+This prints $\mu_{Y|X}(x)$, a shorthand for the conditional population mean $\condE{\Outvar}{\Predvar = x}$.
+
+::: {#exm-true-mean-subscript}
+##### The conditional population mean
+
+Let $\Outvar$ be a person's height and $\Predvar$ their age.
+Then $\truemeansubf{\Outvar \given \Predvar}{10}$ is the population mean height of 10-year-olds.
+It is the same number as $\condE{\Outvar}{\Predvar = 10}$.
+:::
+
+We chose a separate macro, not an optional subscript on `\truemeanf`, for three reasons.
+
+-   An optional argument breaks the lds site's build.
+    LaTeX and MathJax allow an optional argument only as the first argument, so it would be written `\truemeanf[Y|X]{x}`.
+    The `build_math_macros.py` script that lds runs before rendering cannot read an optional argument with a default value.
+    It would stop every page in every format after lds updated its `latex-macros` pin.
+-   A separate macro works with the existing parsers.
+    Its two arguments are both required, and `\condE` already has the same form.
+-   The macro name tells a reader of the source that a subscript is present.
+
+Other sources write the true mean function as $\mu(x)$ or $f(x)$, or write the conditional population mean in full as $E[Y \mid X = x]$.
+The subscripted form $\mu_{Y|X}(x)$ is also common.
+
+We keep `\popmean` and `\pmean` as aliases of `\mean`, the population mean of a variable.
+We do not make them aliases of `\truemean`, and we do not define a `\popmeanf` as an alias of `\truemeanf`.
+In the source, `\mean`, `\popmean` and `\pmean` name the population mean of a variable.
+The names `\truemean` and `\truemeanf` name the true mean function.
+Each name then says which of the two a formula means, even though all of them print $\mu$.
