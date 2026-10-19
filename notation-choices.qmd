@@ -401,3 +401,19 @@ We do not make them aliases of `\truemean`, and we do not define a `\popmeanf` a
 In the source, `\mean`, `\popmean` and `\pmean` name the population mean of a variable.
 The names `\truemean` and `\truemeanf` name the true mean function.
 Each name then says which of the two a formula means, even though all of them print $\mu$.
+
+## An exponent on a function with built-in delimiters {#sec-brace-delimited-forms}
+
+Some macros print a function name with its argument inside delimiters, such as `\Pf{x}` (parentheses), `\E{x}` (square brackets) and `\sigmoidf{x}`.
+Our convention is that such a macro wraps its whole output in one pair of braces, as in `\providecommand{\Pf}[1]{{\P \paren{#1}}}`.
+An exponent written after the macro then applies to the whole expression, and it sits above the top of a tall argument, as in $\Pf{\frac{a}{b}}^2$.
+
+We chose this for one reason.
+The delimiter macros (`\paren`, `\sb`, `\cb` and similar) end in an empty closing atom, and an exponent that follows without the braces attaches to that empty atom.
+It then stays at the height of the text line.
+The braces change what is printed in one small way: the thin space between a leading digit and the function name is lost, as it already was for `\lnf` and `\maxf`.
+
+A macro with no argument cannot be wrapped this way, so the aliases `\ceil`, `\set` and `\strlen` take an argument, as in `\ceil{x}`.
+
+Another convention is to leave the macros unbraced and to wrap each use in braces.
+Every use that forgot the braces would then print the exponent at the wrong height.

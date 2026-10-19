@@ -1,0 +1,55 @@
+---
+title: "Exponent after an f form"
+format:
+  pdf:
+    include-in-header:
+      - ../macros.qmd
+---
+
+An exponent after an f form must rise over a tall argument (the macros#147 brace rule).
+
+```{=latex}
+\newsavebox{\withexp}\newsavebox{\withoutexp}
+\sbox{\withexp}{$\E{\frac{a}{b}}^2$}
+\sbox{\withoutexp}{$\E{\frac{a}{b}}$}
+\par\ifdim\dimexpr\ht\withexp-\ht\withoutexp\relax>1.5pt EFRISES\else EFSTUCK\fi
+\sbox{\withexp}{$\var{\frac{a}{b}}^2$}
+\sbox{\withoutexp}{$\var{\frac{a}{b}}$}
+\par\ifdim\dimexpr\ht\withexp-\ht\withoutexp\relax>1.5pt VARRISES\else VARSTUCK\fi
+\sbox{\withexp}{$\Pf{\frac{a}{b}}^2$}
+\sbox{\withoutexp}{$\Pf{\frac{a}{b}}$}
+\par\ifdim\dimexpr\ht\withexp-\ht\withoutexp\relax>1.5pt PROBRISES\else PROBSTUCK\fi
+\sbox{\withexp}{$\sigmoidf{\frac{a}{b}}^2$}
+\sbox{\withoutexp}{$\sigmoidf{\frac{a}{b}}$}
+\par\ifdim\dimexpr\ht\withexp-\ht\withoutexp\relax>1.5pt SIGRISES\else SIGSTUCK\fi
+\sbox{\withexp}{$\doddsf{\frac{a}{b}}^2$}
+\sbox{\withoutexp}{$\doddsf{\frac{a}{b}}$}
+\par\ifdim\dimexpr\ht\withexp-\ht\withoutexp\relax>1.5pt DODDSRISES\else DODDSSTUCK\fi
+\sbox{\withexp}{$\exp{\frac{a}{b}}^2$}
+\sbox{\withoutexp}{$\exp{\frac{a}{b}}$}
+\par\ifdim\dimexpr\ht\withexp-\ht\withoutexp\relax>1.5pt EXPFRISES\else EXPFSTUCK\fi
+\sbox{\withexp}{$\ndist{\frac{a}{b}}^2$}
+\sbox{\withoutexp}{$\ndist{\frac{a}{b}}$}
+\par\ifdim\dimexpr\ht\withexp-\ht\withoutexp\relax>1.5pt NDISTRISES\else NDISTSTUCK\fi
+\sbox{\withexp}{$\epsp{\frac{a}{b}}^2$}
+\sbox{\withoutexp}{$\epsp{\frac{a}{b}}$}
+\par\ifdim\dimexpr\ht\withexp-\ht\withoutexp\relax>1.5pt EPSPRISES\else EPSPSTUCK\fi
+\sbox{\withexp}{$\indicp{\frac{a}{b}}^2$}
+\sbox{\withoutexp}{$\indicp{\frac{a}{b}}$}
+\par\ifdim\dimexpr\ht\withexp-\ht\withoutexp\relax>1.5pt INDICPRISES\else INDICPSTUCK\fi
+\sbox{\withexp}{$\doddsinvf{\frac{a}{b}}^2$}
+\sbox{\withoutexp}{$\doddsinvf{\frac{a}{b}}$}
+\par\ifdim\dimexpr\ht\withexp-\ht\withoutexp\relax>1.5pt DODDSINVRISES\else DODDSINVSTUCK\fi
+\sbox{\withexp}{$\dinvoddsf{\frac{a}{b}}^2$}
+\sbox{\withoutexp}{$\dinvoddsf{\frac{a}{b}}$}
+\par\ifdim\dimexpr\ht\withexp-\ht\withoutexp\relax>1.5pt DINVODDSRISES\else DINVODDSSTUCK\fi
+```
+
+The rejected form is the control: an unbraced body must not rise, so the test can fail.
+
+```{=latex}
+\newcommand{\unbracedcontrol}[1]{\mathrm{P}\paren{#1}}
+\sbox{\withexp}{$\unbracedcontrol{\frac{a}{b}}^2$}
+\sbox{\withoutexp}{$\unbracedcontrol{\frac{a}{b}}$}
+\par\ifdim\dimexpr\ht\withexp-\ht\withoutexp\relax>1.5pt CTRLRISES\else CTRLSTUCK\fi
+```
