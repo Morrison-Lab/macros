@@ -65,6 +65,16 @@ When adding a new estimator macro group, define both:
 
 See issue #75's follow-up discussion for background on this split.
 
+## Update `notation-choices.qmd` with every macro change
+
+Whenever you add, rename, remove or change the output of a macro in `macros.qmd`,
+update [`notation-choices.qmd`](notation-choices.qmd) in the same pull request.
+Each entry there states our convention, the reasons for it,
+and the other conventions readers will meet in other sources.
+CI fails a pull request that changes `macros.qmd` without changing `notation-choices.qmd`.
+If the page is already accurate after your change,
+explain why in the description and add the `no-notation-change` label.
+
 ## Before pushing
 
 Render the site and both demos to make sure nothing broke across the four

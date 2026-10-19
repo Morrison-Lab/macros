@@ -75,6 +75,12 @@ read both before editing `macros.qmd`.
   Add a macro for any conceptually coherent chunk of an expression that appears twice,
   such as `\prederr` for fitted minus outcome.
 
+- **Every change to a macro updates [`notation-choices.qmd`](notation-choices.qmd) in the same PR** (Ezra, 2026-10-19).
+  Adding, renaming, removing or changing what a macro prints needs an entry or an edit there:
+  our convention, the reason for it, and the other conventions readers will meet in other sources.
+  If the page already says everything true after your change, say so in the PR description and apply the `no-notation-change` label.
+  CI fails a PR that changes `macros.qmd` without changing `notation-choices.qmd` ([#248](https://github.com/Morrison-Lab/macros/issues/248)).
+
 - **Notes repositories never define a macro locally, even as a stopgap.**
   Order the work as: macros PR merges, the notes repository bumps its `latex-macros` pin, then the notes use the macro.
 
