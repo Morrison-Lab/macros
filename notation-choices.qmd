@@ -242,21 +242,25 @@ Our short symbols are:
 
 Each piece is a population quantity.
 It is a fixed number once $\predvar$, the population, the fitting procedure and the training sample size are fixed.
-We write these three with Greek letters, following the convention in [the estimands entry](#sec-estimand-estimator-symbols).
+
+We write the bias with a Latin $\biassym$, in the style of the expectation $\E{\cdot}$.
+Bias is the expected estimation error, so like the expectation it is computed from the distribution of the fitted value, and the operator name $\Biast$ starts with the same letter.
+The macro `\Regcoef` also prints an upright $\Regcoef$, for a matrix of regression coefficients.
+So avoid using both macros in one document.
+
+We write the other two pieces with Greek letters, following the convention in [the estimands entry](#sec-estimand-estimator-symbols).
 The letters are chosen to avoid collisions:
 
--   $\beta$ is taken by the regression coefficients, so it cannot name the bias.
--   $\delta$ is taken by the deviation symbol `\deviation`, and by other macros, so it cannot name the bias either.
 -   $\sigma^2$ already names the variance parameter, so the irreducible error reuses it instead of getting a new letter.
--   $\zeta$ and $\tau$ carry none of the roles of the other symbols in this list.
-    Other macros print them for other roles, such as a learning-rate schedule, so avoid mixing those macros with these two in one document.
+-   $\tau$ names the standard deviation of an estimator, so its square names the variance of the fitted value.
+    Other macros also print $\tau$, such as a learning-rate schedule length, so avoid mixing those macros with `\fitvarsym` in one document.
 
 Some sources write the same pieces in other ways:
 
 -   They keep the operator form, as in $\Biast(\hat f(x))^2$ and $\Vart(\hat f(x))$, in every line of the derivation.
     This is unambiguous but long.
 -   They write $\sigma_\epsilon^2$ or $\Vart(\epsilon)$ for the irreducible error, where $\epsilon$ is their noise symbol.
--   They may use a Latin letter for each piece.
+-   They may use a lower-case Latin letter for each piece.
     We avoid this because $b$ already names the bias of a neural network in [the names entry](#sec-ml-statistics-names), and the macro `\vv` prints the vector $\vv$.
 
 Check which form a source uses before comparing its decomposition with ours.
