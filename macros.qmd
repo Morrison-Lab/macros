@@ -1246,7 +1246,7 @@
 \def\corpar{\rho}
 \def\noise{\popdev}
 \def\biassym{\distop{B}}
-\def\fitvarsym{{\sdest}^2}
+\providecommand{\varsym}[1]{\distop{V}\sb{#1}}
 \def\irrerr{\varpar}
 \def\vnoise{\vec{\popdev}}
 \def\rvar{x}
