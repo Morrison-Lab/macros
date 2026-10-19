@@ -1185,6 +1185,11 @@ name	interpretation
 \Noise	the noise: a latent random variable, the deviation of an outcome from its mean given the input (prints U)
 \vnoise	a vector of realized noise values (prints \vecf{\noise}; \vu prints the same symbol for a generic vector)
 \vNoise	a vector of noise random variables (prints \vecf{\Noise})
+\biassym	short bias operator B (no argument, upright like \Expp)
+\biassymf	short bias operator applied to an estimator, like \E (prints \biassym with its argument in square brackets)
+\varsym	short variance operator V for any random variable (no argument, upright like \Expp)
+\varsymf	short variance operator applied to a random variable, like \E (prints \varsym with its argument in square brackets)
+\irrerr	short symbol for the irreducible error, the variance of the noise \Noise (alias for \varpar)
 \rvar	a generic value of a random variable in probability expressions (prints x)
 \Rvar	a generic random variable in probability expressions (prints X)
 \learnrate	a learning rate (gradient-descent step size) (prints \alpha)
@@ -1362,6 +1367,7 @@ name	interpretation
 \targetfnf	target function applied to its argument, \mu(·)
 \truemeanfnf	true mean function applied to its argument, \mu(·); deprecated, use \truemeanf
 \truemeanf	true mean function applied to its argument, \mu(·); replaces the deprecated \truemeanfnf
+\truemeansubf	true mean function with the subscript given as the first argument, applied to the second argument; with the subscript \Outvar \given \Predvar it is the conditional population mean \condE{\Outvar}{\Predvar = x}
 \hmodmem	fitted model (hat-wrapped \modmem), legacy form
 \hmodmemf	fitted model applied to its argument (hat-wrapped), h-hat(·)
 \hmodmemof	fitted model with its mean-function model family as subscript (hat-wrapped)
