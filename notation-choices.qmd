@@ -214,37 +214,49 @@ Other sources use other symbols, so check which symbol a source uses for the est
 
 ## Short symbols for the pieces of the bias-variance decomposition {#sec-bias-variance-symbols}
 
-The expected squared prediction error at a covariate value splits into three pieces.
-They are the squared bias of the fitted prediction function, the variance of its fitted value over data sets, and the irreducible error.
-Each piece is defined in full where it first appears.
+Fix a covariate value $\predvar$, a training sample size, and a fitting procedure.
+The fitted prediction function $\predfn$ varies from one training data set to the next.
+Let $\Outvar$ be a new outcome at $\predvar$, independent of the training data.
+The noise is the random part of $\Outvar$ that no function of the covariates predicts.
+When the noise has constant variance, the expected squared error in predicting $\Outvar$ splits into three pieces:
+
+$$
+\E{\paren{\Outvar - \predfn\paren{\predvar}}^2} = \biassym^2 + \fitvarsym + \irrerr.
+$$
+
+The three pieces are the square of the bias, the variance of the fitted value, and the irreducible error.
+Each chapter defines a piece in full where it first uses it.
 After that, a derivation that does not manipulate a piece can write a short symbol for it.
 
 Our short symbols are:
 
--   The bias of the fitted prediction function at a covariate value is $\biassym$, from the macro `\biassym`.
+-   The bias at $\predvar$ is $\biassym$, from the macro `\biassym`.
+    It is the mean of the fitted value over training data sets, minus the true mean outcome $\truemeanf{\predvar}$.
     The operator $\Biast(\cdot)$ stays available for the full definition.
--   The variance of the fitted value over data sets is $\fitvarsym$, from the macro `\fitvarsym`.
-    It is the square of $\sdest$, the standard deviation of an estimator.
+-   The variance of the fitted value over training data sets is $\fitvarsym$, from the macro `\fitvarsym`.
+    It is the square of $\sdest$, the standard deviation of an estimator, here the fitted value treated as an estimator over data sets.
 -   The irreducible error is $\irrerr$, from the macro `\irrerr`.
     It is the variance of the noise, so it is the existing variance parameter $\varpar$.
+    When the noise variance depends on $\predvar$, the irreducible error is a function of $\predvar$.
 
-We write these three with Greek letters for the reason given in [the estimands entry](#sec-estimand-estimator-symbols).
-Each is a population quantity: a fixed number once the population and the fitting procedure are fixed.
+Each piece is a population quantity.
+It is a fixed number once $\predvar$, the population, the fitting procedure and the training sample size are fixed.
+We write these three with Greek letters, following the convention in [the estimands entry](#sec-estimand-estimator-symbols).
 The letters are chosen to avoid collisions:
 
 -   $\beta$ is taken by the regression coefficients, so it cannot name the bias.
--   $\delta$ is taken by the deviation of a value from its population mean, so it cannot name the bias either.
--   $\sigma^2$ already names the noise variance, so the irreducible error reuses it instead of getting a new letter.
--   $\zeta$ and $\tau$ were not in use for these roles.
+-   $\delta$ is taken by the deviation symbol `\deviation`, and by other macros, so it cannot name the bias either.
+-   $\sigma^2$ already names the variance parameter, so the irreducible error reuses it instead of getting a new letter.
+-   $\zeta$ and $\tau$ carry none of the roles of the other symbols in this list.
     Other macros print them for other roles, such as a learning-rate schedule, so avoid mixing those macros with these two in one document.
 
-Other sources write the same pieces in other ways:
+Some sources write the same pieces in other ways:
 
 -   They keep the operator form, as in $\Biast(\hat f(x))^2$ and $\Vart(\hat f(x))$, in every line of the derivation.
     This is unambiguous but long.
 -   They write $\sigma_\epsilon^2$ or $\Vart(\epsilon)$ for the irreducible error, where $\epsilon$ is their noise symbol.
--   They use a Latin letter for each piece, such as $b$ or $v$.
-    We avoid this because lower-case Latin letters usually name observed values or covariates.
+-   They may use a Latin letter for each piece.
+    We avoid this because $b$ already names the bias of a neural network in [the names entry](#sec-ml-statistics-names), and $v$ is the macro `\vv`, a vector.
 
 Check which form a source uses before comparing its decomposition with ours.
 
