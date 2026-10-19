@@ -36,6 +36,11 @@ EXPECTED = {
         "SIGRISES",
         "DODDSRISES",
         "EXPFRISES",
+        "NDISTRISES",
+        "EPSPRISES",
+        "INDICPRISES",
+        "DODDSINVRISES",
+        "DINVODDSRISES",
         "CTRLSTUCK",
     ],
     # pdftotext puts a hat after its letter and may reorder scripts, and NFKC
@@ -96,92 +101,153 @@ def static_guard():
     return not bad
 
 
-DEFINITION = re.compile(
-    r"^\\(?:providecommand|renewcommand|newcommand)\*?\{(\\[A-Za-z]+)\}"
-    r"(?:\[\d\])?\{(.*)\}$"
+DEFINITION_HEAD = re.compile(
+    r"^[ \t]*\\(?:providecommand|renewcommand|newcommand|def)\*?[ \t]*"
+    r"(?:\{(\\[A-Za-z]+)\}|(\\[A-Za-z]+))(?:[ \t]*\[\d\])*(?:#\d)*[ \t]*(?=\{)",
+    re.M,
 )
-DELIMITER_TAIL = re.compile(r"\\(?:paren|sb|cb|angb) ?$")
+COMMENT = re.compile(r"(?<!\\)%.*$", re.M)
 
 
-def closing_index(text, start):
-    """Index of the brace that closes the one opened at text[start]."""
+def group_end(text, start):
+    """Index of the brace that closes the one opened at text[start].
+
+    A backslash escapes the next character, so \\{ and \\} do not count.
+    """
     depth = 0
-    for i in range(start, len(text)):
+    i = start
+    while i < len(text):
+        if text[i] == "\\":
+            i += 2
+            continue
         if text[i] == "{":
             depth += 1
         elif text[i] == "}":
             depth -= 1
             if depth == 0:
                 return i
+        i += 1
     return -1
 
 
-def opening_index(text, end):
-    """Index of the brace that opens the one closed at text[end]."""
-    depth = 0
-    for i in range(end, -1, -1):
-        if text[i] == "}":
-            depth += 1
-        elif text[i] == "{":
-            depth -= 1
-            if depth == 0:
-                return i
-    return -1
+def top_level_groups(body):
+    """(start, end) of each brace group at depth 0 of body, in order."""
+    groups = []
+    i = 0
+    while i < len(body):
+        if body[i] == "\\":
+            i += 2
+        elif body[i] == "{":
+            end = group_end(body, i)
+            if end < 0:
+                return groups
+            groups.append((i, end))
+            i = end + 1
+        else:
+            i += 1
+    return groups
 
 
-def is_unbraced_delimiter_body(body):
-    """True if body ends in a delimiter macro and no one brace pair wraps it."""
-    if not body.endswith("}"):
-        return False
-    wrapped = body.startswith("{") and closing_index(body, 0) == len(body) - 1
-    start = opening_index(body, len(body) - 1)
-    return not wrapped and start > 0 and bool(DELIMITER_TAIL.search(body[:start]))
-
-
-def unbraced_definitions(text):
-    """Names of one-line definitions whose body ends in an unwrapped delimiter."""
+def definitions(text):
+    """(name, body) of each definition in text, comments removed."""
+    text = COMMENT.sub("", text)
     found = []
-    for line in text.splitlines():
-        m = DEFINITION.match(line)
-        if m and is_unbraced_delimiter_body(m.group(2)):
-            found.append(m.group(1))
+    for m in DEFINITION_HEAD.finditer(text):
+        start = m.end()
+        end = group_end(text, start)
+        if end > 0:
+            found.append((m.group(1) or m.group(2), text[start + 1 : end]))
     return found
 
 
+def delimiter_macros(text):
+    """Names of the macros whose body ends in \\mathclose{}."""
+    return {
+        name for name, body in definitions(text)
+        if body.rstrip().endswith(r"\mathclose{}")
+    }
+
+
+def unbraced_delimiter_body(body, delimiters):
+    """True if body is not wrapped in one brace pair and ends in, or has a script after, a delimiter group."""
+    tail = re.compile(
+        r"\\(?:" + "|".join(re.escape(d[1:]) for d in delimiters) + r")\s*$"
+    )
+    body = body.strip()
+    groups = top_level_groups(body)
+    if not groups or (groups[0][0] == 0 and groups[0][1] == len(body) - 1):
+        return False
+    for start, end in groups:
+        if tail.search(body[:start]):
+            after = body[end + 1 :].lstrip()
+            if after == "" or after[0] in "^_":
+                return True
+    return False
+
+
+def unbraced_definitions(text, delimiters):
+    """Names of definitions in text with an unbraced delimiter-ending body."""
+    return [
+        name for name, body in definitions(text)
+        if unbraced_delimiter_body(body, delimiters)
+    ]
+
+
 # Definitions the guard must flag, and ones it must leave alone.
+GUARD_PRELUDE = (
+    "\\providecommand{\\paren}[1]{\\mathopen{}\\left(#1\\right)\\mathclose{}}\n"
+    "\\providecommand{\\norm}[1]{\\mathopen{}\\left\\|#1\\right\\|\\mathclose{}}\n"
+)
 GUARD_SHOULD_FLAG = [
     r"\providecommand{\a}[1]{\P\paren{#1}}",
-    r"\providecommand{\a}[1]{{\oddst}'\cb{#1}}",
-    r"\renewcommand{\a}[1]{\operatorname{exp}\cb{#1}}",
-    r"\providecommand{\a}[1]{\P\paren{\foo{#1_{i}}}}",
+    r"\providecommand{\a}[1]{{\oddst}'\paren{#1}}",
+    r"\renewcommand{\a}[1]{\operatorname{exp}\paren{#1}}",
+    r"\newcommand{\a}[1]{\P\paren{\foo{#1_{i}}}}",
+    r"\def\a{\frac{-1}{2}\paren{x}}",
+    r"\providecommand{\a}[1]{\P\norm{#1}}",
+    "  \\providecommand{\\a}[1]{\\P\\paren{#1}}  % trailing comment",
+    "\\providecommand{\\a}[1]{\n  \\P\\paren{#1}\n}",
+    r"\providecommand{\a}[1]{\P\paren{\{}}",
+    r"\providecommand{\a}[1]{{\oddst}'\paren{#1}^2}",
 ]
 GUARD_SHOULD_PASS = [
     r"\providecommand{\a}[1]{{\P\paren{#1}}}",
     r"\providecommand{\a}[1]{{\paren{#1}}^{-1}}",
-    r"\providecommand{\a}[1]{{\oddst}'\cb{#1}^2}",
+    "\\providecommand{\\a}[1]{{\n  \\P\\paren{#1}\n}}",
+    r"\providecommand{\a}[1]{{\P \paren{\{}}}",
+    r"\def\a{{\frac{-1}{2}\paren{x}}}",
+    r"\providecommand{\a}[1]{\paren{#1} + 1}",
 ]
 
 
 def guard_self_test():
     """The guard must flag each unbraced fixture and pass each braced one."""
-    missed = [d for d in GUARD_SHOULD_FLAG if not unbraced_definitions(d)]
-    wrong = [d for d in GUARD_SHOULD_PASS if unbraced_definitions(d)]
-    for d in missed:
-        print(f"  FAIL guard missed {d}")
+    delimiters = delimiter_macros(GUARD_PRELUDE)
+    flag = [d for d in GUARD_SHOULD_FLAG if not unbraced_definitions(d, delimiters)]
+    wrong = [d for d in GUARD_SHOULD_PASS if unbraced_definitions(d, delimiters)]
+    for d in flag:
+        print(f"  FAIL guard missed {d!r}")
     for d in wrong:
-        print(f"  FAIL guard flagged {d}")
-    return not (missed or wrong)
+        print(f"  FAIL guard flagged {d!r}")
+    return not (flag or wrong)
 
 
 def brace_guard():
-    """Fail on a one-line definition that ends in a delimiter macro unbraced.
+    """Fail on a definition that ends in a delimiter macro and is not braced.
 
     A script after \\mathclose{} attaches to the empty close atom and does not
     rise over a tall argument (macros#147), so one brace pair must wrap such a
-    body. Multi-line definitions are not examined.
+    body. The delimiter macros are the ones macros.qmd defines with a body that
+    ends in \\mathclose{}. A script written directly after a delimiter group is
+    the same defect.
     """
-    bad = unbraced_definitions((ROOT / "macros.qmd").read_text())
-    print(f"brace guard: {len(bad)} unbraced delimiter-ending definitions")
+    text = (ROOT / "macros.qmd").read_text()
+    delimiters = delimiter_macros(text)
+    bad = unbraced_definitions(text, delimiters)
+    print(
+        f"brace guard: {len(bad)} unbraced delimiter-ending definitions "
+        f"({len(delimiters)} delimiter macros)"
+    )
     for name in bad:
         print(f"  FAIL {name} needs a braced body, {{...}}, so an exponent rises")
     return guard_self_test() and not bad

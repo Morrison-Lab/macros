@@ -67,12 +67,16 @@ See issue #75's follow-up discussion for background on this split.
 
 ## Brace a definition that ends in a delimiter macro
 
-A script after `\paren`, `\sb`, `\cb` or `\angb` attaches to the empty
-`\mathclose{}` atom, so an exponent does not rise over a tall argument
+A script after a delimiter macro attaches to the empty `\mathclose{}` atom.
+The delimiter macros are the ones whose body ends in `\mathclose{}`,
+such as `\paren`, `\sb`, `\cb`, `\angb`, `\abs`, `\norm`, `\floor` and `\ceiling`.
+An exponent then does not rise over a tall argument
 ([macros#147](https://github.com/Morrison-Lab/macros/pull/147)).
 Wrap the whole body in one extra pair of braces:
 `\providecommand{\Pf}[1]{{\P \paren{#1}}}`.
-`python3 tools/check_latex.py` fails on a one-line definition that is not wrapped.
+`python3 tools/check_latex.py` fails on a `\providecommand`, `\renewcommand`,
+`\newcommand` or `\def` whose body ends in a delimiter group and is not wrapped.
+It also fails when a script follows a delimiter group inside an unwrapped body.
 
 ## Before pushing
 
