@@ -245,6 +245,8 @@
 \providecommand{\popdevf}[1]{\popdev_{#1}}
 \def\Deviation{\Delta}
 \def\Devn{\Deviation}
+\providecommand{\devof}[2]{{#1 - #2}}
+\providecommand{\esterr}[2]{\devof{#1}{#2}}
 \def\residual{r}
 \def\resid{\residual}
 \def\Residual{R}

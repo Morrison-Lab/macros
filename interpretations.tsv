@@ -202,7 +202,9 @@ name	interpretation
 \modresid	modified residual (alias for \modresidual)
 \ModResidual	uppercase modified residual R*
 \ModResid	uppercase modified residual (alias)
-\prederr	prediction error, predicted minus observed outcome (alias for \err)
+\devof	deviation of the first argument from the reference value in the second: the first minus the second; the reference is a marginal mean for a deviation and the conditional mean for noise \Noise
+\esterr	estimation error: the estimate in the first argument minus the estimand in the second (an instance of \devof)
+\prederr	prediction error, predicted minus observed outcome: the estimation error \esterr{\predval}{\Outvar}, whose estimand is the new outcome (alias for \err)
 \score	score function ℓ′
 \scorev	score vector
 \scorei	per-observation score vector ℓ′_i
@@ -1182,7 +1184,7 @@ name	interpretation
 \ecovmat	an estimated covariance matrix (forward-looking form) (prints \est{\covmat})
 \corpar	a correlation parameter (prints \rho)
 \noise	a realized value of the noise (prints u), the lowercase of \Noise
-\Noise	the noise: a latent random variable, the deviation of an outcome from its mean given the input (prints U)
+\Noise	the noise: a latent random variable, the deviation \devof{\Outvar}{\truemeanf{\predvar}} of an outcome from its mean given the input (prints U)
 \vnoise	a vector of realized noise values (the vec accent applied to \noise)
 \vNoise	a vector of noise random variables (the vec accent applied to \Noise)
 \rvar	a generic value of a random variable in probability expressions (prints x)
