@@ -334,7 +334,6 @@
 \def\Ef{\E}
 \def\Exp{\E}
 \def\Expf{\E}
-\def\Epf{\E}
 \providecommand{\Expfc}[2]{\distop{E}_{#1}\sb{#2}}
 \def\ATT{\operatorname{ATT}}
 \providecommand{\ATTf}[1]{\ATT\paren{#1}}
@@ -398,13 +397,13 @@
 \providecommand{\logf}[1]{\logt\cb{#1}}
 \def\dlog{\logt'}
 \providecommand{\dlogf}[1]{\dlog \cb{#1}}
-\providecommand{\lnf}[1]{\ln\paren{#1}}
-\providecommand{\maxf}[1]{\max\paren{#1}}
-\providecommand{\minf}[1]{\min\paren{#1}}
-\providecommand{\sinf}[1]{\sin\paren{#1}}
-\providecommand{\cosf}[1]{\cos\paren{#1}}
-\providecommand{\tanhf}[1]{\tanh\paren{#1}}
-\providecommand{\detf}[1]{\det\paren{#1}}
+\providecommand{\lnf}[1]{{\ln\paren{#1}}}
+\providecommand{\maxf}[1]{{\max\paren{#1}}}
+\providecommand{\minf}[1]{{\min\paren{#1}}}
+\providecommand{\sinf}[1]{{\sin\paren{#1}}}
+\providecommand{\cosf}[1]{{\cos\paren{#1}}}
+\providecommand{\tanhf}[1]{{\tanh\paren{#1}}}
+\providecommand{\detf}[1]{{\det\paren{#1}}}
 \renewcommand{\exp}[1]{\operatorname{exp}\cb{#1}}
 \def\expt{\operatorname{exp}}
 \providecommand{\expf}[1]{\operatorname{exp}\cb{#1}}
@@ -1327,7 +1326,7 @@
 \def\singval{\sigma}
 \def\svfrac{\nu}
 \def\truthind{\delta}
-\providecommand{\truthindf}[1]{\truthind\paren{#1}}
+\providecommand{\truthindf}[1]{{\truthind\paren{#1}}}
 \def\typetwoerr{\beta}
 \def\unitthresh{\Theta}
 \def\votewt{\alpha}

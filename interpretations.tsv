@@ -279,7 +279,6 @@ name	interpretation
 \Ef	expected value (alias for \E)
 \Exp	expected value (alias for \E)
 \Expf	expected value (alias for \E)
-\Epf	expected value (alias for \E)
 \Expfc	conditional expected value E_c[·]
 \ATT	average treatment effect on the treated label ATT
 \ATTf	average treatment effect on the treated function ATT(·)
@@ -342,8 +341,8 @@ name	interpretation
 \logt	log operator symbol
 \logf	log{·} function applied to argument
 \lnf	natural log function applied to its argument, ln(·)
-\maxf	maximum of its arguments, max(·)
-\minf	minimum of its arguments, min(·)
+\maxf	maximum of a comma-separated list, max(·)
+\minf	minimum of a comma-separated list, min(·)
 \sinf	sine function applied to its argument, sin(·)
 \cosf	cosine function applied to its argument, cos(·)
 \tanhf	hyperbolic tangent function applied to its argument, tanh(·)
@@ -1258,7 +1257,7 @@ name	interpretation
 \singval	a singular value (prints \sigma)
 \svfrac	the nu-SVM bound on the fraction of margin errors (prints \nu)
 \truthind	a 0/1 truth indicator written delta(condition) (prints \delta)
-\truthindf	a 0/1 truth indicator applied to its condition, delta(condition)
+\truthindf	prints \truthind\paren{...}, the truth indicator of its condition
 \typetwoerr	the probability of a type II error (prints \beta)
 \unitthresh	a neuron's firing threshold (prints \Theta)
 \votewt	an AdaBoost vote weight (prints \alpha)
