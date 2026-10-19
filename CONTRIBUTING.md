@@ -84,6 +84,19 @@ and when a zero-argument alias such as `\def\set{\cb}` names a delimiter macro,
 because the alias passes its argument on and so cannot be braced.
 Give the alias an argument instead: `\providecommand{\set}[1]{{\cb{#1}}}`.
 
+## Update `notation-choices.qmd` with every macro change
+
+Whenever you add, rename, remove or change the output of a macro in `macros.qmd`,
+update [`notation-choices.qmd`](notation-choices.qmd) in the same pull request.
+Each entry there states our convention, the reasons for it, and the other conventions readers will meet in other sources.
+If the page is already accurate after your change, add the `no-notation-change` label.
+Then explain in the pull request description why the page needs no change.
+CI will fail a pull request that changes `macros.qmd` without changing `notation-choices.qmd`
+once two things have happened:
+`Morrison-Lab/gha` has published its `check-paired-file-change` check in the `v3` tag,
+and a caller workflow for it is added here ([#248](https://github.com/Morrison-Lab/macros/issues/248)).
+Until then nothing catches the omission, so check it yourself.
+
 ## Before pushing
 
 Render the site and both demos to make sure nothing broke across the four

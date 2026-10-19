@@ -79,7 +79,7 @@ name	interpretation
 \gg	Greek letter gamma (alias for \g)
 \gd	Greek letter delta (δ)
 \eps	varepsilon error term (ε)
-\cdev	deviation from conditional mean (alias for \popdev)
+\cdev	deviation from conditional mean (alias for \popdev, symbol ν; for the noise, the deviation of an outcome from its conditional mean, use \Noise)
 \veps	error vector (ε-vector)
 \epsp	ε(·) error function
 \epsf	ε(·) error function (alias for \epsp)
@@ -185,7 +185,7 @@ name	interpretation
 \deviationv	deviation vector (the vec accent applied to δ)
 \devnv	deviation vector (alias for \deviationv)
 \deviationf	deviation of the first argument from the reference value in the second, δ_r(z)
-\popdev	deviation from a population mean, symbol ν
+\popdev	deviation from a population mean, symbol ν (for the noise, the deviation from the conditional mean, use \Noise)
 \popdevf	deviation of the argument from its population mean, ν_z
 \Deviation	uppercase deviation symbol Δ
 \Devn	uppercase deviation (alias for \Deviation)
@@ -202,7 +202,9 @@ name	interpretation
 \modresid	modified residual (alias for \modresidual)
 \ModResidual	uppercase modified residual R*
 \ModResid	uppercase modified residual (alias)
-\prederr	prediction error, predicted minus observed outcome (alias for \err)
+\devof	deviation of the first argument from the reference value in the second (prints the first minus the second inside parentheses; see notation-choices for compound references)
+\esterr	estimation error: the estimate in the first argument minus the estimand in the second (prints \devof{estimate}{estimand}; an instance of \devof)
+\prederr	prediction error, predicted minus observed outcome, symbol ε (alias for \err); same meaning as \esterr{\predval}{\Outvar}
 \score	score function ℓ′
 \scorev	score vector
 \scorei	per-observation score vector ℓ′_i
@@ -396,8 +398,8 @@ name	interpretation
 \devsq	squared deviation of the first argument from the reference value in the second (δ_r(z))²
 \ssdev	sum over i = 1, ..., n of the squared deviation of the observation from the argument (·), via \devsq
 \sq	square superscript ² (postfix)
-\err	error term ε (alias for \eps); also the prediction error, which \prederr aliases
-\erf	error function ε(·); for an estimate, the estimation error (estimate minus truth)
+\err	error term ε (alias for \eps); also the prediction error, which \prederr aliases; the noise is \Noise, not \err
+\erf	error function ε(·); for an estimate, the estimation error (estimate minus truth), written \esterr{estimate}{truth}
 \vec	vector notation (undertilde style)
 \vecf	vector notation (alias for \vec)
 \v	vector shorthand (alias for \vecf)
@@ -1181,8 +1183,15 @@ name	interpretation
 \hcovmat	an estimated covariance matrix (prints \hat{\Sigma})
 \ecovmat	an estimated covariance matrix (forward-looking form) (prints \est{\covmat})
 \corpar	a correlation parameter (prints \rho)
-\noise	a model error term: the deviation of an outcome from its mean given the input (alias for \popdev)
-\vnoise	a vector of model error terms (the vec accent applied to \noise)
+\noise	a realized value of the noise (prints the lowercase of \Noise; \ubound prints the same letter for an upper bound)
+\Noise	the noise: a latent random variable, the deviation \devof{\Outvar}{\truemeanf{\predvar}} of an outcome from its mean given the input (prints U)
+\vnoise	a vector of realized noise values (prints \vecf{\noise}; \vu prints the same symbol for a generic vector)
+\vNoise	a vector of noise random variables (prints \vecf{\Noise})
+\biassym	short bias operator B (no argument, upright like \Expp)
+\biassymf	short bias operator applied to an estimator, like \E (prints \biassym with its argument in square brackets)
+\varsym	short variance operator V for any random variable (no argument, upright like \Expp)
+\varsymf	short variance operator applied to a random variable, like \E (prints \varsym with its argument in square brackets)
+\irrerr	short symbol for the irreducible error, the variance of the noise \Noise (alias for \varpar)
 \rvar	a generic value of a random variable in probability expressions (prints x)
 \Rvar	a generic random variable in probability expressions (prints X)
 \learnrate	a learning rate (gradient-descent step size) (prints \alpha)

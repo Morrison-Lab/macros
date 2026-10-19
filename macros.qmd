@@ -246,6 +246,8 @@
 \providecommand{\popdevf}[1]{\popdev_{#1}}
 \def\Deviation{\Delta}
 \def\Devn{\Deviation}
+\providecommand{\devof}[2]{{\paren{#1 - #2}}}
+\providecommand{\esterr}[2]{{\devof{#1}{#2}}}
 \def\residual{r}
 \def\resid{\residual}
 \def\Residual{R}
@@ -1245,8 +1247,15 @@
 \def\hcovmat{\hat{\Sigma}}
 \def\ecovmat{\est{\covmat}}
 \def\corpar{\rho}
-\def\noise{\popdev}
-\def\vnoise{\vec{\popdev}}
+\def\noise{u}
+\def\Noise{U}
+\def\vnoise{\vecf{\noise}}
+\def\vNoise{\vecf{\Noise}}
+\def\biassym{\distop{B}}
+\providecommand{\biassymf}[1]{{\biassym\sb{#1}}}
+\def\varsym{\distop{V}}
+\providecommand{\varsymf}[1]{{\varsym\sb{#1}}}
+\def\irrerr{\varpar}
 \def\rvar{x}
 \def\Rvar{X}
 \def\predbar{\bar{\predvar}}
