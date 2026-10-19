@@ -22,4 +22,19 @@ An exponent after an f form must rise over a tall argument (the macros#147 brace
 \sbox{\withexp}{$\sigmoidf{\frac{a}{b}}^2$}
 \sbox{\withoutexp}{$\sigmoidf{\frac{a}{b}}$}
 \par\ifdim\dimexpr\ht\withexp-\ht\withoutexp\relax>1.5pt SIGRISES\else SIGSTUCK\fi
+\sbox{\withexp}{$\doddsf{\frac{a}{b}}^2$}
+\sbox{\withoutexp}{$\doddsf{\frac{a}{b}}$}
+\par\ifdim\dimexpr\ht\withexp-\ht\withoutexp\relax>1.5pt DODDSRISES\else DODDSSTUCK\fi
+\sbox{\withexp}{$\exp{\frac{a}{b}}^2$}
+\sbox{\withoutexp}{$\exp{\frac{a}{b}}$}
+\par\ifdim\dimexpr\ht\withexp-\ht\withoutexp\relax>1.5pt EXPFRISES\else EXPFSTUCK\fi
+```
+
+The rejected form is the control: an unbraced body must not rise, so the test can fail.
+
+```{=latex}
+\newcommand{\unbracedcontrol}[1]{\mathrm{P}\paren{#1}}
+\sbox{\withexp}{$\unbracedcontrol{\frac{a}{b}}^2$}
+\sbox{\withoutexp}{$\unbracedcontrol{\frac{a}{b}}$}
+\par\ifdim\dimexpr\ht\withexp-\ht\withoutexp\relax>1.5pt CTRLRISES\else CTRLSTUCK\fi
 ```

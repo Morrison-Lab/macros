@@ -65,6 +65,15 @@ When adding a new estimator macro group, define both:
 
 See issue #75's follow-up discussion for background on this split.
 
+## Brace a definition that ends in a delimiter macro
+
+A script after `\paren`, `\sb`, `\cb` or `\angb` attaches to the empty
+`\mathclose{}` atom, so an exponent does not rise over a tall argument
+([macros#147](https://github.com/Morrison-Lab/macros/pull/147)).
+Wrap the whole body in one extra pair of braces:
+`\providecommand{\Pf}[1]{{\P \paren{#1}}}`.
+`python3 tools/check_latex.py` fails on a one-line definition that is not wrapped.
+
 ## Before pushing
 
 Render the site and both demos to make sure nothing broke across the four

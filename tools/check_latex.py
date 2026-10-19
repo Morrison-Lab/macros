@@ -4,7 +4,8 @@
 1. Static guard: a name given to \\providecommand that LaTeX already defines
    is silently ignored (the #106 bug with \\sb). Typeset every such name under
    \\ifdefined in a minimal document and fail if any is already defined.
-2. Brace guard: a definition that ends in a delimiter macro must be braced.
+2. Brace guard: a one-line \\providecommand, \\renewcommand or \\newcommand
+   whose body ends in a delimiter macro must be wrapped in one brace pair.
 3. PDF render: render _tests/*.qmd to PDF through the include-in-header path
    and the include-shortcode path, fail on any LaTeX error, and check that
    macros whose meaning differs by path print what they should.
@@ -27,7 +28,16 @@ EXPECTED = {
     "pdf-include-in-header": ["E[X+Y]", "X1,...,Xn"],
     "pdf-shortcode": ["E[X+Y]", "X1,...,Xn"],
     # Box-height tests: an exponent after an f form rises over a tall argument.
-    "fform-exponent": ["EFRISES", "VARRISES", "PFRISES", "SIGRISES"],
+    # CTRLSTUCK is the control: an unbraced body must not rise.
+    "fform-exponent": [
+        "EFRISES",
+        "VARRISES",
+        "PFRISES",
+        "SIGRISES",
+        "DODDSRISES",
+        "EXPFRISES",
+        "CTRLSTUCK",
+    ],
     # pdftotext puts a hat after its letter and may reorder scripts, and NFKC
     # folds a script letter to its plain letter, so these strings pin which
     # macro prints which letter, not the script or subscript position.
@@ -86,27 +96,95 @@ def static_guard():
     return not bad
 
 
-UNBRACED = re.compile(
-    r"^\\providecommand\{(\\[A-Za-z]+)\}\[\d\]\{(?!\{)"
-    r".*\\(?:paren|sb|cb|angb) ?\{[^{}]*#\d[^{}]*\}[^{}]*\}$",
-    re.M,
+DEFINITION = re.compile(
+    r"^\\(?:providecommand|renewcommand|newcommand)\*?\{(\\[A-Za-z]+)\}"
+    r"(?:\[\d\])?\{(.*)\}$"
 )
+DELIMITER_TAIL = re.compile(r"\\(?:paren|sb|cb|angb) ?$")
+
+
+def closing_index(text, start):
+    """Index of the brace that closes the one opened at text[start]."""
+    depth = 0
+    for i in range(start, len(text)):
+        if text[i] == "{":
+            depth += 1
+        elif text[i] == "}":
+            depth -= 1
+            if depth == 0:
+                return i
+    return -1
+
+
+def opening_index(text, end):
+    """Index of the brace that opens the one closed at text[end]."""
+    depth = 0
+    for i in range(end, -1, -1):
+        if text[i] == "}":
+            depth += 1
+        elif text[i] == "{":
+            depth -= 1
+            if depth == 0:
+                return i
+    return -1
+
+
+def is_unbraced_delimiter_body(body):
+    """True if body ends in a delimiter macro and no one brace pair wraps it."""
+    if not body.endswith("}"):
+        return False
+    wrapped = body.startswith("{") and closing_index(body, 0) == len(body) - 1
+    start = opening_index(body, len(body) - 1)
+    return not wrapped and start > 0 and bool(DELIMITER_TAIL.search(body[:start]))
+
+
+def unbraced_definitions(text):
+    """Names of one-line definitions whose body ends in an unwrapped delimiter."""
+    found = []
+    for line in text.splitlines():
+        m = DEFINITION.match(line)
+        if m and is_unbraced_delimiter_body(m.group(2)):
+            found.append(m.group(1))
+    return found
+
+
+# Definitions the guard must flag, and ones it must leave alone.
+GUARD_SHOULD_FLAG = [
+    r"\providecommand{\a}[1]{\P\paren{#1}}",
+    r"\providecommand{\a}[1]{{\oddst}'\cb{#1}}",
+    r"\renewcommand{\a}[1]{\operatorname{exp}\cb{#1}}",
+    r"\providecommand{\a}[1]{\P\paren{\foo{#1_{i}}}}",
+]
+GUARD_SHOULD_PASS = [
+    r"\providecommand{\a}[1]{{\P\paren{#1}}}",
+    r"\providecommand{\a}[1]{{\paren{#1}}^{-1}}",
+    r"\providecommand{\a}[1]{{\oddst}'\cb{#1}^2}",
+]
+
+
+def guard_self_test():
+    """The guard must flag each unbraced fixture and pass each braced one."""
+    missed = [d for d in GUARD_SHOULD_FLAG if not unbraced_definitions(d)]
+    wrong = [d for d in GUARD_SHOULD_PASS if unbraced_definitions(d)]
+    for d in missed:
+        print(f"  FAIL guard missed {d}")
+    for d in wrong:
+        print(f"  FAIL guard flagged {d}")
+    return not (missed or wrong)
 
 
 def brace_guard():
-    """Fail on a definition that ends in a delimiter macro and is not braced.
+    """Fail on a one-line definition that ends in a delimiter macro unbraced.
 
     A script after \\mathclose{} attaches to the empty close atom and does not
-    rise over a tall argument (macros#147), so such a body must be {...}.
+    rise over a tall argument (macros#147), so one brace pair must wrap such a
+    body. Multi-line definitions are not examined.
     """
-    bad = [
-        m.group(1)
-        for m in UNBRACED.finditer((ROOT / "macros.qmd").read_text())
-    ]
+    bad = unbraced_definitions((ROOT / "macros.qmd").read_text())
     print(f"brace guard: {len(bad)} unbraced delimiter-ending definitions")
     for name in bad:
         print(f"  FAIL {name} needs a braced body, {{...}}, so an exponent rises")
-    return not bad
+    return guard_self_test() and not bad
 
 
 def render_checks():
