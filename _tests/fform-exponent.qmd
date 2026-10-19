@@ -1,0 +1,25 @@
+---
+title: "Exponent after an f form"
+format:
+  pdf:
+    include-in-header:
+      - ../macros.qmd
+---
+
+An exponent after an f form must rise over a tall argument (the macros#147 brace rule).
+
+```{=latex}
+\newsavebox{\withexp}\newsavebox{\withoutexp}
+\sbox{\withexp}{$\E{\frac{a}{b}}^2$}
+\sbox{\withoutexp}{$\E{\frac{a}{b}}$}
+\par\ifdim\dimexpr\ht\withexp-\ht\withoutexp\relax>1.5pt EFRISES\else EFSTUCK\fi
+\sbox{\withexp}{$\var{\frac{a}{b}}^2$}
+\sbox{\withoutexp}{$\var{\frac{a}{b}}$}
+\par\ifdim\dimexpr\ht\withexp-\ht\withoutexp\relax>1.5pt VARRISES\else VARSTUCK\fi
+\sbox{\withexp}{$\Pf{\frac{a}{b}}^2$}
+\sbox{\withoutexp}{$\Pf{\frac{a}{b}}$}
+\par\ifdim\dimexpr\ht\withexp-\ht\withoutexp\relax>1.5pt PFRISES\else PFSTUCK\fi
+\sbox{\withexp}{$\sigmoidf{\frac{a}{b}}^2$}
+\sbox{\withoutexp}{$\sigmoidf{\frac{a}{b}}$}
+\par\ifdim\dimexpr\ht\withexp-\ht\withoutexp\relax>1.5pt SIGRISES\else SIGSTUCK\fi
+```

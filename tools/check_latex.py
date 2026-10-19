@@ -4,7 +4,8 @@
 1. Static guard: a name given to \\providecommand that LaTeX already defines
    is silently ignored (the #106 bug with \\sb). Typeset every such name under
    \\ifdefined in a minimal document and fail if any is already defined.
-2. PDF render: render _tests/*.qmd to PDF through the include-in-header path
+2. Brace guard: a definition that ends in a delimiter macro must be braced.
+3. PDF render: render _tests/*.qmd to PDF through the include-in-header path
    and the include-shortcode path, fail on any LaTeX error, and check that
    macros whose meaning differs by path print what they should.
 
@@ -25,6 +26,8 @@ PROVIDE = re.compile(r"^\\providecommand\*?\{\\([A-Za-z]+)\}", re.M)
 EXPECTED = {
     "pdf-include-in-header": ["E[X+Y]", "X1,...,Xn"],
     "pdf-shortcode": ["E[X+Y]", "X1,...,Xn"],
+    # Box-height tests: an exponent after an f form rises over a tall argument.
+    "fform-exponent": ["EFRISES", "VARRISES", "PFRISES", "SIGRISES"],
     # pdftotext puts a hat after its letter and may reorder scripts, and NFKC
     # folds a script letter to its plain letter, so these strings pin which
     # macro prints which letter, not the script or subscript position.
@@ -83,6 +86,32 @@ def static_guard():
     return not bad
 
 
+UNBRACED = re.compile(
+    r"^\\providecommand\{(\\[A-Za-z]+)\}\[\d\]\{(?!\{)"
+    r".*\\(?:paren|sb|cb|angb) ?\{[^{}]*#\d[^{}]*\}[^{}]*\}$",
+    re.M,
+)
+# Bodies that end in a delimiter macro without being an operator applied to it.
+NOT_FFORMS = {"\\ndist", "\\epsp", "\\indicp"}
+
+
+def brace_guard():
+    """Fail on a definition that ends in a delimiter macro and is not braced.
+
+    A script after \\mathclose{} attaches to the empty close atom and does not
+    rise over a tall argument (macros#147), so such a body must be {...}.
+    """
+    bad = [
+        m.group(1)
+        for m in UNBRACED.finditer((ROOT / "macros.qmd").read_text())
+        if m.group(1) not in NOT_FFORMS
+    ]
+    print(f"brace guard: {len(bad)} unbraced delimiter-ending definitions")
+    for name in bad:
+        print(f"  FAIL {name} needs a braced body, {{...}}, so an exponent rises")
+    return not bad
+
+
 def render_checks():
     ok = True
     env = os.environ.copy()
@@ -118,5 +147,6 @@ def render_checks():
 
 if __name__ == "__main__":
     good = static_guard()
+    good = brace_guard() and good
     good = render_checks() and good
     sys.exit(0 if good else 1)
