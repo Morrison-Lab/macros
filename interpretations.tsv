@@ -467,19 +467,31 @@ name	interpretation
 \cossimf	cosine similarity applied to two arguments, cossim(x, y)
 \dsvn	paired sequence X₁=x₁, …, Xₙ=xₙ (alias)
 \sumn	sum over index from 1 to n
+\sumnf	sum over the first argument from 1 to n of the second argument (·)
 \sumto	sum over the first argument from 1 to the second
+\sumtof	sum over the first argument from 1 to the second of the third argument (·)
 \sumin	sum over i from 1 to n
 \suminf	sum over i from 1 to n of the argument (·)
 \sumkK	sum over the K distinct covariate patterns, k from 1 to K
+\sumkKf	sum over k from 1 to K of the argument (·)
 \sumiN	sum over i from 1 to N
+\sumiNf	sum over i from 1 to N of the argument (·)
 \avgin	average over i from 1 to n: one over n times the sum
+\avginf	average over i from 1 to n of the argument (·)
 \avgiN	average over i from 1 to N: one over N times the sum
+\avgiNf	average over i from 1 to N of the argument (·)
 \avgto	average over the first argument from 1 to the second: one over the second argument times the sum
+\avgtof	average over the first argument from 1 to the second of the third argument (·)
 \avgon	average over the observations in an index set: one over the set's size times the sum over its members
+\avgonf	average over the observations in an index set of the second argument (·)
 \sumip	sum over i from 1 to p
+\sumipf	sum over i from 1 to p of the argument (·)
 \sumjn	sum over j from 1 to n
+\sumjnf	sum over j from 1 to n of the argument (·)
 \sumjp	sum over j from 1 to p
+\sumjpf	sum over j from 1 to p of the argument (·)
 \prodin	product over i from 1 to n
+\prodinf	product over i from 1 to n of the argument (·)
 \lp	linear predictor x′β
 \lpdp	linear predictor at x (dot product x⃗·β⃗)
 \lincomp	linear combination symbol η

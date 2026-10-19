@@ -521,19 +521,31 @@
 \providecommand{\cossimf}[2]{\cossim\paren{#1, #2}}
 \providecommand{\dsvn}[2]{#1_1=#2_1, \ldots, #1_n = #2_n}
 \providecommand{\sumn}[1]{\sum_{#1=1}^n}
+\providecommand{\sumnf}[2]{\sumn{#1} \paren{#2}}
 \providecommand{\sumto}[2]{\sum_{#1=1}^{#2}}
+\providecommand{\sumtof}[3]{\sumto{#1}{#2} \paren{#3}}
 \def\sumin{\sum_{i=1}^n}
 \providecommand{\suminf}[1]{\sumin \paren{#1}}
 \def\sumkK{\sum_{k=1}^{K}}
+\providecommand{\sumkKf}[1]{\sumkK \paren{#1}}
 \def\sumiN{\sum_{i=1}^N}
+\providecommand{\sumiNf}[1]{\sumiN \paren{#1}}
 \def\sumip{\sum_{i=1}^p}
+\providecommand{\sumipf}[1]{\sumip \paren{#1}}
 \def\sumjn{\sum_{j=1}^n}
+\providecommand{\sumjnf}[1]{\sumjn \paren{#1}}
 \def\sumjp{\sum_{j=1}^p}
+\providecommand{\sumjpf}[1]{\sumjp \paren{#1}}
 \def\prodin{\prod_{i=1}^n}
+\providecommand{\prodinf}[1]{\prodin \paren{#1}}
 \def\avgin{\frac{1}{n}\sumin}
+\providecommand{\avginf}[1]{\avgin \paren{#1}}
 \def\avgiN{\frac{1}{N}\sumiN}
+\providecommand{\avgiNf}[1]{\avgiN \paren{#1}}
 \providecommand{\avgto}[2]{\frac{1}{#2}\sumto{#1}{#2}}
+\providecommand{\avgtof}[3]{\avgto{#1}{#2} \paren{#3}}
 \providecommand{\avgon}[1]{\frac{1}{\abs{#1}}\sum_{\iobs \in #1}}
+\providecommand{\avgonf}[2]{\avgon{#1} \paren{#2}}
 \providecommand{\lp}[1]{\dprodf{#1}{\vb}}
 \def\lpdp{\lp{\vx}}
 \def\lincomp{\eta}
