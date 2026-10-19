@@ -433,6 +433,7 @@ window.Quarto = {
   <li><a href="#sec-likelihood-notation" id="toc-sec-likelihood-notation" class="nav-link" data-scroll-target="#sec-likelihood-notation">Writing the likelihood function</a></li>
   <li><a href="#sec-score-notation" id="toc-sec-score-notation" class="nav-link" data-scroll-target="#sec-score-notation">Writing the score function</a></li>
   <li><a href="#sec-estimand-estimator-symbols" id="toc-sec-estimand-estimator-symbols" class="nav-link" data-scroll-target="#sec-estimand-estimator-symbols">Symbols for estimands and estimators</a></li>
+  <li><a href="#sec-noise-deviation-error" id="toc-sec-noise-deviation-error" class="nav-link" data-scroll-target="#sec-noise-deviation-error">Noise, deviation and error</a></li>
   <li><a href="#sec-probability-notation" id="toc-sec-probability-notation" class="nav-link" data-scroll-target="#sec-probability-notation">Probability notation</a></li>
   </ul>
 <div class="toc-actions"><ul><li><a href="https://github.com/d-morrison/macros/blob/main/notation-choices.qmd" class="toc-action"><i class="bi bi-github"></i>View source</a></li></ul></div></nav>
@@ -539,6 +540,13 @@ window.Quarto = {
 <p>An estimand is the quantity we want to learn about, and an estimator is a rule that computes a guess of it from data.</p>
 <p>Our convention is to write estimands with lower-case Greek letters, such as <span class="math inline">\(\alpha, \beta, \gamma, \delta\)</span>. We write an estimator by placing a hat over the symbol of its estimand, as in <span class="math inline">\(\hat\theta\)</span>. Usually the dependence of the estimator on the data is left implicit.</p>
 <p>Other sources use other symbols, so check which symbol a source uses for the estimand before reading a formula.</p>
+</section>
+<section id="sec-noise-deviation-error" class="level2">
+<h2 class="anchored" data-anchor-id="sec-noise-deviation-error">Noise, deviation and error</h2>
+<p>A deviation is a quantity minus a reference value. Noise and estimation error are two deviations with a particular reference.</p>
+<p>Our convention is to write a deviation as <span class="math inline">\(\devof{a}{b}\)</span>, the quantity <span class="math inline">\(a\)</span> minus the reference <span class="math inline">\(b\)</span>. The noise is the deviation of an outcome from its mean given the input, <span class="math inline">\(\Noise = \devof{\Outvar}{\truemeanf{\predvar}}\)</span>. An estimation error is the deviation of an estimate from its estimand, <span class="math inline">\(\esterr{\hat\theta}{\theta}\)</span>. A prediction error is the estimation error whose estimand is the new outcome. We always subtract the reference from the quantity, so an estimate that is too large has a positive error.</p>
+<p>We write the noise with a capital Latin letter, <span class="math inline">\(\Noise\)</span>, and a realized value with the lower-case letter, <span class="math inline">\(\noise\)</span>. Noise is a random variable, not a parameter. It differs from one observation to the next and has a distribution, and we never observe it. A parameter is a fixed constant, so only parameters get Greek letters. This is the same rule that separates an outcome variable <span class="math inline">\(\Outvar\)</span> from its observed value <span class="math inline">\(\outvar\)</span>. The letter <span class="math inline">\(U\)</span> stands for an unobserved variable in many texts on causal inference. We chose it because no other macro uses it, and because <span class="math inline">\(E\)</span> is already the expectation.</p>
+<p>Many sources write the noise as the Greek letter <span class="math inline">\(\varepsilon\)</span> and call it the error term. Some then reuse <span class="math inline">\(\varepsilon\)</span> for the estimation error or the residual. Some sources subtract in the other order, so check the sign before comparing a formula with ours.</p>
 </section>
 <section id="sec-probability-notation" class="level2">
 <h2 class="anchored" data-anchor-id="sec-probability-notation">Probability notation</h2>

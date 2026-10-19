@@ -259,6 +259,13 @@
     "text": "Symbols for estimands and estimators\nAn estimand is the quantity we want to learn about, and an estimator is a rule that computes a guess of it from data.\nOur convention is to write estimands with lower-case Greek letters, such as \\(\\alpha, \\beta, \\gamma, \\delta\\). We write an estimator by placing a hat over the symbol of its estimand, as in \\(\\hat\\theta\\). Usually the dependence of the estimator on the data is left implicit.\nOther sources use other symbols, so check which symbol a source uses for the estimand before reading a formula."
   },
   {
+    "objectID": "notation-choices.html#sec-noise-deviation-error",
+    "href": "notation-choices.html#sec-noise-deviation-error",
+    "title": "Notation Choices",
+    "section": "Noise, deviation and error",
+    "text": "Noise, deviation and error\nA deviation is a quantity minus a reference value. Noise and estimation error are two deviations with a particular reference.\nOur convention is to write a deviation as \\(\\devof{a}{b}\\), the quantity \\(a\\) minus the reference \\(b\\). The noise is the deviation of an outcome from its mean given the input, \\(\\Noise = \\devof{\\Outvar}{\\truemeanf{\\predvar}}\\). An estimation error is the deviation of an estimate from its estimand, \\(\\esterr{\\hat\\theta}{\\theta}\\). A prediction error is the estimation error whose estimand is the new outcome. We always subtract the reference from the quantity, so an estimate that is too large has a positive error.\nWe write the noise with a capital Latin letter, \\(\\Noise\\), and a realized value with the lower-case letter, \\(\\noise\\). Noise is a random variable, not a parameter. It differs from one observation to the next and has a distribution, and we never observe it. A parameter is a fixed constant, so only parameters get Greek letters. This is the same rule that separates an outcome variable \\(\\Outvar\\) from its observed value \\(\\outvar\\). The letter \\(U\\) stands for an unobserved variable in many texts on causal inference. We chose it because no other macro uses it, and because \\(E\\) is already the expectation.\nMany sources write the noise as the Greek letter \\(\\varepsilon\\) and call it the error term. Some then reuse \\(\\varepsilon\\) for the estimation error or the residual. Some sources subtract in the other order, so check the sign before comparing a formula with ours."
+  },
+  {
     "objectID": "notation-choices.html#sec-probability-notation",
     "href": "notation-choices.html#sec-probability-notation",
     "title": "Notation Choices",
