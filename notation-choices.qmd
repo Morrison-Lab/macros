@@ -345,6 +345,12 @@ We write $\eqdef$ for an equality that holds by definition.
 This tells it apart from an equality that follows from other facts.
 Some sources use a bare $=$ for both.
 
+We write $\eqby{\text{(A1)}}$ for an equality that holds for the reason written over the sign.
+The reason can be an assumption, a numbered result or a rule, such as $\eqby{\text{Thm 2}}$.
+This tells a reader which fact each step of a derivation uses.
+Some sources put the reason in words after the line, or leave it out.
+Equal by definition, $\eqdef$, is the special case where the reason is the definition.
+
 ## The true mean function and its conditional form {#sec-true-mean-function}
 
 The true mean function gives the population mean of the outcome $\Outvar$ at each value $x$ of the predictor.

@@ -106,6 +106,7 @@ name	interpretation
 \lds	lower ellipsis (…)
 \eqdef	equals-by-definition symbol (≝)
 \defeq	equals-by-definition (alias for \eqdef)
+\eqby	equals sign with the reason written over it (prints \eqby{\text{Thm 2}})
 \hb	estimated beta coefficient β̂
 \hcoef	estimated regression coefficient for covariate (β̂_x)
 \hintcoef	estimated regression intercept (β̂_0)
