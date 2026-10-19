@@ -266,10 +266,14 @@ We chose a separate macro, not an optional subscript on `\truemeanf`, for two re
     LaTeX and MathJax allow an optional argument only as the first argument, so it would be written `\truemeanf[Y|X]{x}`.
     The `build_math_macros.py` script that each notes repository runs before rendering cannot read an optional argument with a default value.
     It would stop every page in every format after the repository updated its `latex-macros` pin.
--   Two required arguments read the same everywhere.
-    The macro name says that a subscript is present, so a reader of the source does not need to look for a bracket.
+-   A separate macro works with the existing parsers.
+    Its two arguments are both required, and `\condE` already has the same form.
+    The macro name also tells a reader of the source that a subscript is present.
 
-We keep `\popmean` as the scalar population mean, the same symbol as `\mean`, and do not make it an alias of `\truemean`.
-A scalar is one number, and the true mean function takes a value $x$ and returns a number.
-Giving one name to both would make a reader of `\popmean` unsure whether $x$ is an input.
-The macros are separate names for the number and the function, even though both print $\mu$.
+Other sources write the true mean function as $\mu(x)$ or $f(x)$, or write the conditional population mean in full as $E[Y \mid X = x]$.
+The subscripted form $\mu_{Y|X}(x)$ is also common.
+
+We keep `\popmean` and its alias `\pmean` as names for the population mean of a variable, the same symbol as `\mean`.
+We do not make them aliases of `\truemean`.
+In the source, `\mean` and `\popmean` name the mean of a variable, and `\truemean` and `\truemeanf` name the true mean function.
+Each name then says which of the two a formula means, even though all of them print $\mu$.
