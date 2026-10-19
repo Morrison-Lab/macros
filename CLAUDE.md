@@ -66,7 +66,7 @@ read both before editing `macros.qmd`.
 
 - **After changing how a macro prints, scan for the old description in glyphs and in words.**
   Search `interpretations.tsv` for the glyph (decompose with NFD first, so precomposed letters match) and for words such as "tilde", "over", "above" and "hat",
-  and grep `README.md`, `index.qmd`, `CONTRIBUTING.md` and `docs/`.
+  and grep `README.md`, `index.qmd`, `notation-choices.qmd`, `CONTRIBUTING.md` and `docs/`.
   Prefer rows that name the macro (`prints \vecf{\delta}`) over rows that hard-code a glyph.
 
 - **Name new macros for their role, never for a letter.**
@@ -78,8 +78,9 @@ read both before editing `macros.qmd`.
 - **Every change to a macro updates [`notation-choices.qmd`](notation-choices.qmd) in the same PR** (Ezra, 2026-10-19).
   Adding, renaming, removing or changing what a macro prints needs an entry or an edit there:
   our convention, the reason for it, and the other conventions readers will meet in other sources.
-  If the page already says everything true after your change, say so in the PR description and apply the `no-notation-change` label.
-  Once [#248](https://github.com/Morrison-Lab/macros/issues/248) lands, CI will fail a PR that changes `macros.qmd` without changing `notation-choices.qmd`; until then nothing catches the omission, so check it yourself.
+  If the page is already accurate after your change, explain why in the PR description and add the `no-notation-change` label.
+  Once the `check-paired-file-change` caller workflow is added here ([#248](https://github.com/Morrison-Lab/macros/issues/248)), CI will fail a PR that changes `macros.qmd` without changing `notation-choices.qmd`.
+  Until then nothing catches the omission, so check it yourself.
 
 - **Notes repositories never define a macro locally, even as a stopgap.**
   Order the work as: macros PR merges, the notes repository bumps its `latex-macros` pin, then the notes use the macro.
