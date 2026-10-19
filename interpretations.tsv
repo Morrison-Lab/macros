@@ -340,6 +340,13 @@ name	interpretation
 \hSEf	estimated standard error function (alias)
 \logt	log operator symbol
 \logf	log{·} function applied to argument
+\lnf	natural log function applied to its argument, ln(·)
+\maxf	maximum of a comma-separated list, max(·)
+\minf	minimum of a comma-separated list, min(·)
+\sinf	sine function applied to its argument, sin(·)
+\cosf	cosine function applied to its argument, cos(·)
+\tanhf	hyperbolic tangent function applied to its argument, tanh(·)
+\detf	determinant of its argument, det(·)
 \dlog	derivative of log (log′)
 \dlogf	derivative of log applied to argument
 \exp	exponential function exp{·}; takes one argument, so never write it bare: use \expf{·} or \expt with your own delimiters
@@ -1250,6 +1257,7 @@ name	interpretation
 \singval	a singular value (prints \sigma)
 \svfrac	the nu-SVM bound on the fraction of margin errors (prints \nu)
 \truthind	a 0/1 truth indicator written delta(condition) (prints \delta)
+\truthindf	prints \truthind\paren{...}, the truth indicator of its condition
 \typetwoerr	the probability of a type II error (prints \beta)
 \unitthresh	a neuron's firing threshold (prints \Theta)
 \votewt	an AdaBoost vote weight (prints \alpha)
