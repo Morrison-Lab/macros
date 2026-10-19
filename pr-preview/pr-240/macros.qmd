@@ -197,6 +197,7 @@
 \providecommand{\truemeanfnf}[1]{\truemeanfn\paren{#1}}
 \def\truemean{\mu}
 \providecommand{\truemeanf}[1]{\truemean\paren{#1}}
+\providecommand{\truemeansubf}[2]{{\truemean_{#1}\paren{#2}}}
 \def\dataset{\mathcal{D}}
 \def\trainset{\mathcal{D}_{\text{train}}}
 \def\valset{\mathcal{D}_{\text{val}}}
@@ -1245,8 +1246,10 @@
 \def\ecovmat{\est{\covmat}}
 \def\corpar{\rho}
 \def\noise{\popdev}
-\def\biassym{\zeta}
-\def\fitvarsym{{\sdest}^2}
+\def\biassym{\distop{B}}
+\providecommand{\biassymf}[1]{{\biassym\sb{#1}}}
+\def\varsym{\distop{V}}
+\providecommand{\varsymf}[1]{{\varsym\sb{#1}}}
 \def\irrerr{\varpar}
 \def\vnoise{\vec{\popdev}}
 \def\rvar{x}

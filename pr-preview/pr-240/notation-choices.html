@@ -435,6 +435,7 @@ window.Quarto = {
   <li><a href="#sec-estimand-estimator-symbols" id="toc-sec-estimand-estimator-symbols" class="nav-link" data-scroll-target="#sec-estimand-estimator-symbols">Symbols for estimands and estimators</a></li>
   <li><a href="#sec-bias-variance-symbols" id="toc-sec-bias-variance-symbols" class="nav-link" data-scroll-target="#sec-bias-variance-symbols">Short symbols for the pieces of the bias-variance decomposition</a></li>
   <li><a href="#sec-probability-notation" id="toc-sec-probability-notation" class="nav-link" data-scroll-target="#sec-probability-notation">Probability notation</a></li>
+  <li><a href="#sec-true-mean-function" id="toc-sec-true-mean-function" class="nav-link" data-scroll-target="#sec-true-mean-function">The true mean function and its conditional form</a></li>
   </ul>
 <div class="toc-actions"><ul><li><a href="https://github.com/d-morrison/macros/blob/main/notation-choices.qmd" class="toc-action"><i class="bi bi-github"></i>View source</a></li></ul></div></nav>
     </div>
@@ -543,29 +544,29 @@ window.Quarto = {
 </section>
 <section id="sec-bias-variance-symbols" class="level2">
 <h2 class="anchored" data-anchor-id="sec-bias-variance-symbols">Short symbols for the pieces of the bias-variance decomposition</h2>
-<p>Fix a covariate value <span class="math inline">\(\predvar\)</span>, a training sample size, and a fitting procedure. The fitted prediction function <span class="math inline">\(\predfn\)</span> varies from one training data set to the next. Let <span class="math inline">\(\Outvar\)</span> be a new outcome at <span class="math inline">\(\predvar\)</span>, independent of the training data. Write <span class="math inline">\(\truemeanf{\predvar}\)</span> for the mean of <span class="math inline">\(\Outvar\)</span>. The noise is the random part of <span class="math inline">\(\Outvar\)</span> that no function of the covariates predicts. The expected squared error in predicting <span class="math inline">\(\Outvar\)</span> splits into three pieces, where the expectation is over the training data and over <span class="math inline">\(\Outvar\)</span>:</p>
-<p><span class="math display">\[
-\E{\paren{\Outvar - \predfn\paren{\predvar}}^2} = \biassym^2 + \fitvarsym + \irrerr.
-\]</span></p>
-<p>The three pieces are the square of the bias, the variance of the fitted value, and the irreducible error, each defined below. Each chapter defines a piece in full where it first uses it. After that, a derivation that does not manipulate a piece can write a short symbol for it.</p>
-<p>Our short symbols are:</p>
+<p>Fix a covariate value <span class="math inline">\(\predvar\)</span>, a training sample size, and a fitting procedure. The fitted prediction function <span class="math inline">\(\predfn\)</span> varies from one training data set to the next. Let <span class="math inline">\(\Outvar\)</span> be a new outcome at <span class="math inline">\(\predvar\)</span>, independent of the training data. Write <span class="math inline">\(\truemeanf{\predvar}\)</span> for the mean of <span class="math inline">\(\Outvar\)</span>. The noise is the random part of <span class="math inline">\(\Outvar\)</span> that no function of the covariates predicts. Three short symbols name the pieces of the expected squared error in predicting <span class="math inline">\(\Outvar\)</span>:</p>
 <ul>
-<li>The bias at <span class="math inline">\(\predvar\)</span> is <span class="math inline">\(\biassym\)</span>, from the macro <code>\biassym</code>. It is the mean of the fitted value over training data sets, minus the true mean outcome <span class="math inline">\(\truemeanf{\predvar}\)</span>. The operator <span class="math inline">\(\Biast(\cdot)\)</span> stays available for the full definition.</li>
-<li>The variance of the fitted value over training data sets is <span class="math inline">\(\fitvarsym\)</span>, from the macro <code>\fitvarsym</code>. It is the square of <span class="math inline">\(\sdest\)</span>, the standard deviation of an estimator, here the fitted value treated as an estimator over data sets.</li>
+<li>The bias of the fitted value at <span class="math inline">\(\predvar\)</span> is <span class="math inline">\(\biassymf{\predfn\paren{\predvar}}\)</span>, from the macro <code>\biassymf</code>. It is the mean of the fitted value over training data sets, minus the true mean <span class="math inline">\(\truemeanf{\predvar}\)</span>. This is the expected error of the fitted value as an estimate of the true mean. The long operator <span class="math inline">\(\Biast\)</span> stays available for the full definition.</li>
+<li>The variance of the fitted value over training data sets is <span class="math inline">\(\varsymf{\predfn\paren{\predvar}}\)</span>, from the macro <code>\varsymf</code>. The macro <code>\varsymf</code> is a variance operator for any random variable, in the style of the expectation <span class="math inline">\(\E{\cdot}\)</span>.</li>
 <li>The irreducible error is <span class="math inline">\(\irrerr\)</span>, from the macro <code>\irrerr</code>. It is the variance of the noise, so it is the existing variance parameter <span class="math inline">\(\varpar\)</span>. When the noise variance depends on <span class="math inline">\(\predvar\)</span>, the irreducible error is a function of <span class="math inline">\(\predvar\)</span>.</li>
 </ul>
-<p>Each piece is a population quantity. It is a fixed number once <span class="math inline">\(\predvar\)</span>, the population, the fitting procedure and the training sample size are fixed. We write these three with Greek letters, following the convention in <a href="#sec-estimand-estimator-symbols">the estimands entry</a>. The letters are chosen to avoid collisions:</p>
+<p>With these symbols, the expected squared error splits into three pieces, where the expectation is over the training data and over <span class="math inline">\(\Outvar\)</span>:</p>
+<p><span class="math display">\[
+\E{\paren{\Outvar - \predfn\paren{\predvar}}^2} = \biassymf{\predfn\paren{\predvar}}^2 + \varsymf{\predfn\paren{\predvar}} + \irrerr.
+\]</span></p>
+<p>A derivation that does not manipulate a piece can write its short symbol, after the piece is defined in full. Each piece is a population quantity. It is a fixed number once <span class="math inline">\(\predvar\)</span>, the population, the fitting procedure and the training sample size are fixed.</p>
+<p>We write the bias and the variance with upright Latin letters, in the style of the expectation <span class="math inline">\(\E{\cdot}\)</span>. We make this exception to the Greek convention for estimands in <a href="#sec-estimand-estimator-symbols">the estimands entry</a>. The variance operator applies to any random variable, not only to a fitted value. The bias operator is applied to an estimator, and its letter matches the name of the long operator <span class="math inline">\(\Biast\)</span>. Like the expectation, each has two macros. The macros <code>\biassym</code> and <code>\varsym</code> print the bare operators <span class="math inline">\(\biassym\)</span> and <span class="math inline">\(\varsym\)</span>, as <code>\Expp</code> prints <span class="math inline">\(\Expp\)</span>. The macros <code>\biassymf</code> and <code>\varsymf</code> apply the operator to an argument in square brackets, as <code>\E</code> does.</p>
+<p>These Latin letters have collisions:</p>
 <ul>
-<li><span class="math inline">\(\beta\)</span> is taken by the regression coefficients, so it cannot name the bias.</li>
-<li><span class="math inline">\(\delta\)</span> is taken by the deviation symbol <code>\deviation</code>, and by other macros, so it cannot name the bias either.</li>
-<li><span class="math inline">\(\sigma^2\)</span> already names the variance parameter, so the irreducible error reuses it instead of getting a new letter.</li>
-<li><span class="math inline">\(\zeta\)</span> and <span class="math inline">\(\tau\)</span> carry none of the roles of the other symbols in this list. Other macros print them for other roles, such as a learning-rate schedule, so avoid mixing those macros with these two in one document.</li>
+<li>The macros <code>\Regcoef</code> and <code>\Coef</code> also print an upright <span class="math inline">\(\Regcoef\)</span>, for regression coefficients. So avoid using <code>\biassym</code> or <code>\biassymf</code> together with either of them in one document.</li>
+<li>The existing macro <code>\V</code> prints <span class="math inline">\(\V\)</span>, the full name of the variance, so <code>\varsymf</code> is the short form, not a replacement.</li>
 </ul>
+<p>The irreducible error keeps a Greek letter, because it is a variance parameter and not an operator. It reuses <span class="math inline">\(\sigma^2\)</span>, which already names the variance parameter, instead of getting a new letter.</p>
 <p>Some sources write the same pieces in other ways:</p>
 <ul>
 <li>They keep the operator form, as in <span class="math inline">\(\Biast(\hat f(x))^2\)</span> and <span class="math inline">\(\Vart(\hat f(x))\)</span>, in every line of the derivation. This is unambiguous but long.</li>
 <li>They write <span class="math inline">\(\sigma_\epsilon^2\)</span> or <span class="math inline">\(\Vart(\epsilon)\)</span> for the irreducible error, where <span class="math inline">\(\epsilon\)</span> is their noise symbol.</li>
-<li>They may use a Latin letter for each piece. We avoid this because <span class="math inline">\(b\)</span> already names the bias of a neural network in <a href="#sec-ml-statistics-names">the names entry</a>, and the macro <code>\vv</code> prints the vector <span class="math inline">\(\vv\)</span>.</li>
+<li>They may use a lower-case Latin letter for each piece. We avoid this because <span class="math inline">\(b\)</span> already names the bias of a neural network in <a href="#sec-ml-statistics-names">the names entry</a>, and the macro <code>\vv</code> prints the vector <span class="math inline">\(\vv\)</span>.</li>
 </ul>
 <p>Check which form a source uses before comparing its decomposition with ours.</p>
 </section>
@@ -578,6 +579,22 @@ window.Quarto = {
 <p>We write <span class="math inline">\(X \ind Y\)</span> for “<span class="math inline">\(X\)</span> is independent of <span class="math inline">\(Y\)</span>”. Some sources write <span class="math inline">\(X \perp Y\)</span>, or state independence only in words.</p>
 <p>We write <span class="math inline">\(\neg A\)</span> for the complement of an event <span class="math inline">\(A\)</span>, read “not <span class="math inline">\(A\)</span>”. Some sources write <span class="math inline">\(A^c\)</span> or <span class="math inline">\(\bar{A}\)</span>.</p>
 <p>We write <span class="math inline">\(\eqdef\)</span> for an equality that holds by definition. This tells it apart from an equality that follows from other facts. Some sources use a bare <span class="math inline">\(=\)</span> for both.</p>
+</section>
+<section id="sec-true-mean-function" class="level2">
+<h2 class="anchored" data-anchor-id="sec-true-mean-function">The true mean function and its conditional form</h2>
+<p>The true mean function gives the population mean of the outcome <span class="math inline">\(\Outvar\)</span> at each value <span class="math inline">\(x\)</span> of the predictor. Our convention is to write it <span class="math inline">\(\truemean\)</span>, and its value at <span class="math inline">\(x\)</span> as <span class="math inline">\(\truemeanf{x}\)</span>. Both print <span class="math inline">\(\mu\)</span>.</p>
+<p>When the outcome and the predictor need to be named, we write <span class="math inline">\(\truemeansubf{\Outvar \given \Predvar}{x}\)</span>. This prints <span class="math inline">\(\mu_{Y|X}(x)\)</span>, a shorthand for the conditional population mean <span class="math inline">\(\condE{\Outvar}{\Predvar = x}\)</span>.</p>
+<div id="exm-true-mean-subscript" class="theorem example">
+<p><span class="theorem-title"><strong>Example 3 (The conditional population mean)</strong></span> Let <span class="math inline">\(\Outvar\)</span> be a person’s height and <span class="math inline">\(\Predvar\)</span> their age. Then <span class="math inline">\(\truemeansubf{\Outvar \given \Predvar}{10}\)</span> is the population mean height of 10-year-olds. It is the same number as <span class="math inline">\(\condE{\Outvar}{\Predvar = 10}\)</span>.</p>
+</div>
+<p>We chose a separate macro, not an optional subscript on <code>\truemeanf</code>, for three reasons.</p>
+<ul>
+<li>An optional argument breaks the lds site’s build. LaTeX and MathJax allow an optional argument only as the first argument, so it would be written <code>\truemeanf[Y|X]{x}</code>. The <code>build_math_macros.py</code> script that lds runs before rendering cannot read an optional argument with a default value. It would stop every page in every format after lds updated its <code>latex-macros</code> pin.</li>
+<li>A separate macro works with the existing parsers. Its two arguments are both required, and <code>\condE</code> already has the same form.</li>
+<li>The macro name tells a reader of the source that a subscript is present.</li>
+</ul>
+<p>Other sources write the true mean function as <span class="math inline">\(\mu(x)\)</span> or <span class="math inline">\(f(x)\)</span>, or write the conditional population mean in full as <span class="math inline">\(E[Y \mid X = x]\)</span>. The subscripted form <span class="math inline">\(\mu_{Y|X}(x)\)</span> is also common.</p>
+<p>We keep <code>\popmean</code> and <code>\pmean</code> as aliases of <code>\mean</code>, the population mean of a variable. We do not make them aliases of <code>\truemean</code>, and we do not define a <code>\popmeanf</code> as an alias of <code>\truemeanf</code>. In the source, <code>\mean</code>, <code>\popmean</code> and <code>\pmean</code> name the population mean of a variable. The names <code>\truemean</code> and <code>\truemeanf</code> name the true mean function. Each name then says which of the two a formula means, even though all of them print <span class="math inline">\(\mu\)</span>.</p>
 
 
 </section>
