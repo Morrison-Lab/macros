@@ -264,7 +264,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section>
 <section id="update-notation-choices.qmd-with-every-macro-change" class="level2">
 <h2 class="anchored" data-anchor-id="update-notation-choices.qmd-with-every-macro-change">Update <code>notation-choices.qmd</code> with every macro change</h2>
-<p>Whenever you add, rename, remove or change the output of a macro in <code>macros.qmd</code>, update <a href="./notation-choices.html"><code>notation-choices.qmd</code></a> in the same pull request. Each entry there states our convention, the reasons for it, and the other conventions readers will meet in other sources. CI fails a pull request that changes <code>macros.qmd</code> without changing <code>notation-choices.qmd</code>. If the page is already accurate after your change, explain why in the description and add the <code>no-notation-change</code> label.</p>
+<p>Whenever you add, rename, remove or change the output of a macro in <code>macros.qmd</code>, update <a href="./notation-choices.html"><code>notation-choices.qmd</code></a> in the same pull request. Each entry there states our convention, the reasons for it, and the other conventions readers will meet in other sources. Once <a href="https://github.com/Morrison-Lab/macros/issues/248">#248</a> lands, CI will fail a pull request that changes <code>macros.qmd</code> without changing <code>notation-choices.qmd</code>. Until then nothing catches the omission, so check it yourself. If the page is already accurate after your change, explain why in the description and add the <code>no-notation-change</code> label.</p>
 </section>
 <section id="before-pushing" class="level2">
 <h2 class="anchored" data-anchor-id="before-pushing">Before pushing</h2>
