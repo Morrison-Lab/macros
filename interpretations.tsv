@@ -202,9 +202,9 @@ name	interpretation
 \modresid	modified residual (alias for \modresidual)
 \ModResidual	uppercase modified residual R*
 \ModResid	uppercase modified residual (alias)
-\devof	deviation of the first argument from the reference value in the second: the first minus the second, in parentheses so a power reads correctly; wrap a compound reference in \paren yourself (the general form of \deviationf, which prints the symbol δ_r(z)); the reference is any value, such as a marginal mean, a conditional mean (giving the noise \Noise) or a true value (giving an estimation error \esterr)
-\esterr	estimation error: the estimate in the first argument minus the estimand in the second, in parentheses (an instance of \devof)
-\prederr	prediction error, predicted minus observed outcome, symbol ε (alias for \err); an instance of estimation error, equal to \esterr{\predval}{\Outvar}, whose estimand is the new outcome
+\devof	deviation of the first argument from the reference value in the second (prints the first minus the second inside parentheses, so a power squares the whole difference); wrap a compound reference in \paren yourself, because the second argument has no inner grouping; the general form of \deviationf, which prints δ_r(z); the reference is any value, such as a marginal mean, a conditional mean (giving the noise \Noise) or a true value (giving an estimation error \esterr)
+\esterr	estimation error: the estimate in the first argument minus the estimand in the second (prints \devof{estimate}{estimand}; an instance of \devof)
+\prederr	prediction error, predicted minus observed outcome, symbol ε (alias for \err); an instance of estimation error whose estimand is the new outcome \Outvar, so it has the same meaning as \esterr{\predval}{\Outvar} but prints a bare ε
 \score	score function ℓ′
 \scorev	score vector
 \scorei	per-observation score vector ℓ′_i
@@ -1183,10 +1183,10 @@ name	interpretation
 \hcovmat	an estimated covariance matrix (prints \hat{\Sigma})
 \ecovmat	an estimated covariance matrix (forward-looking form) (prints \est{\covmat})
 \corpar	a correlation parameter (prints \rho)
-\noise	a realized value of the noise (prints u), the lowercase of \Noise
+\noise	a realized value of the noise (prints u, the lowercase of \Noise; \ubound prints the same letter for an upper bound)
 \Noise	the noise: a latent random variable, the deviation \devof{\Outvar}{\truemeanf{\predvar}} of an outcome from its mean given the input (prints U)
-\vnoise	a vector of realized noise values (the vec accent applied to \noise)
-\vNoise	a vector of noise random variables (the vec accent applied to \Noise)
+\vnoise	a vector of realized noise values (prints \vecf{\noise}; \vu prints the same symbol for a generic vector)
+\vNoise	a vector of noise random variables (prints \vecf{\Noise})
 \rvar	a generic value of a random variable in probability expressions (prints x)
 \Rvar	a generic random variable in probability expressions (prints X)
 \learnrate	a learning rate (gradient-descent step size) (prints \alpha)

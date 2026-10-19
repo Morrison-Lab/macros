@@ -14,4 +14,8 @@ Subscripted vector (a LaTeX error here fails the check): $\vxi^T$.
 
 Indexed and squared vectors: $\vecf{x}_i$, $\vecf{X}_{ij}$, $\vecf{y}_i^2$.
 
-Deviation and estimation error, squared and with a compound reference: $\devof{\frac{a}{b}}{\paren{\mu_1 + \mu_2}}^2$, $\esterr{\predval}{\Outvar}^2$, $\Noise$, $\noise$, $\vNoise$.
+Deviation and estimation error, squared and with a compound reference: $\devof{\frac{a}{b}}{\paren{\mu_1 + \mu_2}}^2$, $\esterr{\predval}{\Outvar}^2$.
+
+Subscripted and squared deviations: $\devof{\frac{a}{b}}{\paren{\mu_1 + \mu_2}}_i$, $\esterr{\frac{a}{b}}{\theta}_i^2$, $\esterr{\predval}{\Outvar}_i$.
+
+Noise: $\Noise_i^2$, $\noise_i$, $\vNoise^T$, $\vnoise_i$.
