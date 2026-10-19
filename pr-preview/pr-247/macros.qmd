@@ -197,6 +197,7 @@
 \providecommand{\truemeanfnf}[1]{\truemeanfn\paren{#1}}
 \def\truemean{\mu}
 \providecommand{\truemeanf}[1]{\truemean\paren{#1}}
+\providecommand{\truemeansubf}[2]{{\truemean_{#1}\paren{#2}}}
 \def\dataset{\mathcal{D}}
 \def\trainset{\mathcal{D}_{\text{train}}}
 \def\valset{\mathcal{D}_{\text{val}}}
@@ -1250,6 +1251,11 @@
 \def\Noise{U}
 \def\vnoise{\vecf{\noise}}
 \def\vNoise{\vecf{\Noise}}
+\def\biassym{\distop{B}}
+\providecommand{\biassymf}[1]{{\biassym\sb{#1}}}
+\def\varsym{\distop{V}}
+\providecommand{\varsymf}[1]{{\varsym\sb{#1}}}
+\def\irrerr{\varpar}
 \def\rvar{x}
 \def\Rvar{X}
 \def\predbar{\bar{\predvar}}
