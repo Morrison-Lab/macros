@@ -599,7 +599,16 @@ window.Quarto = {
 <div id="exm-true-mean-subscript" class="theorem example">
 <p><span class="theorem-title"><strong>Example 3 (The conditional population mean)</strong></span> Let <span class="math inline">\(\Outvar\)</span> be a person’s height and <span class="math inline">\(\Predvar\)</span> their age. Then <span class="math inline">\(\truemeansubf{\Outvar \given \Predvar}{10}\)</span> is the population mean height of 10-year-olds. It is the same number as <span class="math inline">\(\condE{\Outvar}{\Predvar = 10}\)</span>.</p>
 </div>
-<p>We chose a separate macro, not an optional subscript on <code>\truemeanf</code>, for three reasons.</p>
+<p>The usual case has the outcome <span class="math inline">\(\Outvar\)</span> and the predictor <span class="math inline">\(\Predvar\)</span>, and there we shorten that form. We write <span class="math inline">\(\cmean\)</span> for the conditional population mean function. We write <span class="math inline">\(\cmeanf{x}\)</span> for its value at <span class="math inline">\(x\)</span>. The macro <code>\cmeanf{x}</code> prints the same as <code>\truemeansubf{\Outvar \given \Predvar}{x}</code>. The macro <code>\cmean</code> prints <span class="math inline">\(\truemean\)</span> with the subscript <span class="math inline">\(\Outvar \given \Predvar\)</span>, and no argument. So <span class="math inline">\(\cmeanf{10}\)</span> is the same number as <span class="math inline">\(\condE{\Outvar}{\Predvar = 10}\)</span>. We keep <code>\truemeansubf</code> for any other pair of variables.</p>
+<p>These four forms differ in how much they say.</p>
+<ul>
+<li><code>\condE{\Outvar}{\Predvar = x}</code> writes out the expectation, so a reader sees the definition.</li>
+<li><code>\cmeanf{x}</code> is the function notation for that expectation, used once the function is the object of study, as in “<span class="math inline">\(\cmeanf{x}\)</span> is linear in <span class="math inline">\(x\)</span>”.</li>
+<li><code>\cmean</code> names the function itself, without a value, as in “the function <span class="math inline">\(\cmean\)</span>”.</li>
+<li><code>\truemeansubf{A \given B}{x}</code> is the general form, for variables other than <span class="math inline">\(\Outvar\)</span> and <span class="math inline">\(\Predvar\)</span>.</li>
+</ul>
+<p><code>\cmean</code> and <code>\cmeanf</code> only fix the subscript of the subscripted <span class="math inline">\(\truemean\)</span>, so they add no new meaning. We defined them because <span class="math inline">\(\Outvar \given \Predvar\)</span> is the subscript of the usual case. That subscript is long to write out each time. The <code>c</code> in each name stands for conditional, as the <code>cond</code> in <code>\condE</code> does. The <code>f</code> ending marks the applied form, as in <code>\truemeanf</code>.</p>
+<p>For the general form we chose a separate macro, <code>\truemeansubf</code>, not an optional subscript on <code>\truemeanf</code>, for three reasons.</p>
 <ul>
 <li>An optional argument breaks the lds site’s build. LaTeX and MathJax allow an optional argument only as the first argument, so it would be written <code>\truemeanf[Y|X]{x}</code>. The <code>build_math_macros.py</code> script that lds runs before rendering cannot read an optional argument with a default value. It would stop every page in every format after lds updated its <code>latex-macros</code> pin.</li>
 <li>A separate macro works with the existing parsers. Its two arguments are both required, and <code>\condE</code> already has the same form.</li>
