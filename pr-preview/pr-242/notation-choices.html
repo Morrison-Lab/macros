@@ -564,7 +564,7 @@ window.Quarto = {
 <li>A separate macro works with the existing parsers. Its two arguments are both required, and <code>\condE</code> already has the same form. The macro name also tells a reader of the source that a subscript is present.</li>
 </ul>
 <p>Other sources write the true mean function as <span class="math inline">\(\mu(x)\)</span> or <span class="math inline">\(f(x)\)</span>, or write the conditional population mean in full as <span class="math inline">\(E[Y \mid X = x]\)</span>. The subscripted form <span class="math inline">\(\mu_{Y|X}(x)\)</span> is also common.</p>
-<p>We keep <code>\popmean</code> and its alias <code>\pmean</code> as names for the population mean of a variable, the same symbol as <code>\mean</code>. We do not make them aliases of <code>\truemean</code>. In the source, <code>\mean</code> and <code>\popmean</code> name the mean of a variable, and <code>\truemean</code> and <code>\truemeanf</code> name the true mean function. Each name then says which of the two a formula means, even though all of them print <span class="math inline">\(\mu\)</span>.</p>
+<p>We keep <code>\popmean</code> and <code>\pmean</code> as aliases of <code>\mean</code>, the population mean of a variable. We do not make them aliases of <code>\truemean</code>. In the source, <code>\mean</code>, <code>\popmean</code> and <code>\pmean</code> name the mean of a variable. The names <code>\truemean</code> and <code>\truemeanf</code> name the true mean function. Each name then says which of the two a formula means, even though all of them print <span class="math inline">\(\mu\)</span>.</p>
 
 
 </section>
