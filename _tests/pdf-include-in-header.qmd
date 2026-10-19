@@ -13,3 +13,5 @@ Sequence: $\Xin$.
 Subscripted vector (a LaTeX error here fails the check): $\vxi^T$.
 
 Indexed and squared vectors: $\vecf{x}_i$, $\vecf{X}_{ij}$, $\vecf{y}_i^2$.
+
+Deviation and estimation error, squared and with a compound reference: $\devof{\frac{a}{b}}{\paren{\mu_1 + \mu_2}}^2$, $\esterr{\predval}{\Outvar}^2$, $\Noise$, $\noise$, $\vNoise$.
