@@ -16,3 +16,4 @@
 /_tests/*.log
 /_tests/*.tex
 /_tests/*_files/
+__pycache__/

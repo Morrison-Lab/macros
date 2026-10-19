@@ -65,6 +65,25 @@ When adding a new estimator macro group, define both:
 
 See issue #75's follow-up discussion for background on this split.
 
+## Brace a definition that ends in a delimiter macro
+
+A script after a delimiter macro attaches to the empty `\mathclose{}` atom.
+The delimiter macros are the ones whose body ends in `\mathclose{}`,
+such as `\paren`, `\sb`, `\cb`, `\angb`, `\abs`, `\norm`, `\floor`, `\ceiling` and `\cbmat`.
+An exponent then does not rise over a tall argument
+([macros#147](https://github.com/Morrison-Lab/macros/pull/147)).
+Wrap the whole body in one extra pair of braces:
+`\providecommand{\Pf}[1]{{\P \paren{#1}}}`.
+`python3 tools/check_latex.py` fails on a definition
+(`\providecommand`, `\renewcommand`, `\newcommand`, `\def`, `\gdef` or `\DeclareRobustCommand`)
+whose body ends in a delimiter group and is not wrapped.
+It also fails, because it cannot read them, on `\NewDocumentCommand` and the other xparse definition commands,
+and on a definition whose body brace is never closed.
+It also fails when a script (`^`, `_` or `'`) follows a delimiter group at any depth of a body,
+and when a zero-argument alias such as `\def\set{\cb}` names a delimiter macro,
+because the alias passes its argument on and so cannot be braced.
+Give the alias an argument instead: `\providecommand{\set}[1]{{\cb{#1}}}`.
+
 ## Update `notation-choices.qmd` with every macro change
 
 Whenever you add, rename, remove or change the output of a macro in `macros.qmd`,
