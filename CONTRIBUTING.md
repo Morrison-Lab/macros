@@ -70,12 +70,11 @@ See issue #75's follow-up discussion for background on this split.
 Whenever you add, rename, remove or change the output of a macro in `macros.qmd`,
 update [`notation-choices.qmd`](notation-choices.qmd) in the same pull request.
 Each entry there states our convention, the reasons for it, and the other conventions readers will meet in other sources.
-If the page is already accurate after your change,
-explain why in the description.
-Then add the `no-notation-change` label.
+If the page is already accurate after your change, add the `no-notation-change` label.
+Then explain in the pull request description why the page needs no change.
 CI will fail a pull request that changes `macros.qmd` without changing `notation-choices.qmd`
 once two things have happened:
-`Morrison-Lab/gha` has released its `check-paired-file-change` check under the `v3` tag,
+`Morrison-Lab/gha` has published its `check-paired-file-change` check in the `v3` tag,
 and a caller workflow for it is added here ([#248](https://github.com/Morrison-Lab/macros/issues/248)).
 Until then nothing catches the omission, so check it yourself.
 
