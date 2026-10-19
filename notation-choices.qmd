@@ -234,7 +234,7 @@ Three short symbols name the pieces of the expected squared error in predicting 
 With these symbols, the expected squared error splits into three pieces, where the expectation is over the training data and over $\Outvar$:
 
 $$
-\E{\sqf{\Outvar - \predfn\paren{\predvar}}} = \sqf{\biassymf{\predfn\paren{\predvar}}} +\varsymf{\predfn\paren{\predvar}} + \irrerr.
+\E{\sqf{\Outvar - \predfn\paren{\predvar}}} = \sqf{\biassymf{\predfn\paren{\predvar}}} + \varsymf{\predfn\paren{\predvar}} + \irrerr.
 $$
 
 A derivation that does not manipulate a piece can write its short symbol, after the piece is defined in full.
