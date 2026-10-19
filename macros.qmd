@@ -1246,6 +1246,11 @@
 \def\ecovmat{\est{\covmat}}
 \def\corpar{\rho}
 \def\noise{\popdev}
+\def\biassym{\distop{B}}
+\providecommand{\biassymf}[1]{{\biassym\sb{#1}}}
+\def\varsym{\distop{V}}
+\providecommand{\varsymf}[1]{{\varsym\sb{#1}}}
+\def\irrerr{\varpar}
 \def\vnoise{\vec{\popdev}}
 \def\rvar{x}
 \def\Rvar{X}
