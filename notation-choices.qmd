@@ -221,10 +221,10 @@ Write $\truemeanf{\predvar}$ for the mean of $\Outvar$.
 The noise is the random part of $\Outvar$ that no function of the covariates predicts.
 Three short symbols name the pieces of the expected squared error in predicting $\Outvar$:
 
--   The bias at $\predvar$ is $\biassym$, from the macro `\biassym`.
+-   The bias of the fitted value at $\predvar$ is $\biassym{\predfn\paren{\predvar}}$, from the macro `\biassym`.
     It is the mean of the fitted value over training data sets, minus the true mean $\truemeanf{\predvar}$.
     This is the expected error of the fitted value as an estimate of the true mean.
-    The operator $\Biast(\cdot)$ stays available for the full definition.
+    The long operator $\Biast$ stays available for the full definition.
 -   The variance of the fitted value over training data sets is $\varsym{\predfn\paren{\predvar}}$, from the macro `\varsym`.
     The macro `\varsym` is a variance operator for any random variable, in the style of the expectation $\E{\cdot}$.
 -   The irreducible error is $\irrerr$, from the macro `\irrerr`.
@@ -234,7 +234,7 @@ Three short symbols name the pieces of the expected squared error in predicting 
 With these symbols, the expected squared error splits into three pieces, where the expectation is over the training data and over $\Outvar$:
 
 $$
-\E{\paren{\Outvar - \predfn\paren{\predvar}}^2} = \biassym^2 + \varsym{\predfn\paren{\predvar}} + \irrerr.
+\E{\paren{\Outvar - \predfn\paren{\predvar}}^2} = \biassym{\predfn\paren{\predvar}}^2 + \varsym{\predfn\paren{\predvar}} + \irrerr.
 $$
 
 A derivation that does not manipulate a piece can write its short symbol, after the piece is defined in full.
@@ -244,12 +244,15 @@ It is a fixed number once $\predvar$, the population, the fitting procedure and 
 We write the bias and the variance with upright Latin letters, in the style of the expectation $\E{\cdot}$.
 We make this exception to the Greek convention for estimands in [the estimands entry](#sec-estimand-estimator-symbols).
 The variance operator is applied to a random variable, as the expectation is, and it applies to any random variable, not only to a fitted value.
-The bias symbol $\biassym$ is the value of the bias at $\predvar$, and its name matches the bias operator $\Biast$.
+The bias operator is applied to an estimator, and its letter matches the name of the long operator $\Biast$.
+Like the expectation, each has two macros.
+The macros `\biasop` and `\varop` print the bare operators $\biasop$ and $\varop$, as `\Expp` prints $\Expp$.
+The macros `\biassym` and `\varsym` apply the operator to an argument in square brackets, as `\E` does.
 
 These Latin letters have collisions:
 
 -   The macros `\Regcoef` and `\Coef` also print an upright $\Regcoef$, for regression coefficients.
-    So avoid using `\biassym` together with either of them in one document.
+    So avoid using `\biasop` or `\biassym` together with either of them in one document.
 -   The existing macro `\V` prints $\V$, the full name of the variance, so `\varsym` is the short form, not a replacement.
 
 The irreducible error keeps a Greek letter, because it is a variance parameter and not an operator.
