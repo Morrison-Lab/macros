@@ -246,7 +246,7 @@
 \def\Deviation{\Delta}
 \def\Devn{\Deviation}
 \providecommand{\devof}[2]{{\paren{#1 - #2}}}
-\providecommand{\esterr}[2]{\devof{#1}{#2}}
+\providecommand{\esterr}[2]{{\devof{#1}{#2}}}
 \def\residual{r}
 \def\resid{\residual}
 \def\Residual{R}
@@ -1248,8 +1248,8 @@
 \def\corpar{\rho}
 \def\noise{u}
 \def\Noise{U}
-\def\vnoise{\vec{\noise}}
-\def\vNoise{\vec{\Noise}}
+\def\vnoise{\vecf{\noise}}
+\def\vNoise{\vecf{\Noise}}
 \def\rvar{x}
 \def\Rvar{X}
 \def\predbar{\bar{\predvar}}
