@@ -219,20 +219,11 @@ The fitted prediction function $\predfn$ varies from one training data set to th
 Let $\Outvar$ be a new outcome at $\predvar$, independent of the training data.
 Write $\truemeanf{\predvar}$ for the mean of $\Outvar$.
 The noise is the random part of $\Outvar$ that no function of the covariates predicts.
-The expected squared error in predicting $\Outvar$ splits into three pieces, where the expectation is over the training data and over $\Outvar$:
-
-$$
-\E{\paren{\Outvar - \predfn\paren{\predvar}}^2} = \biassym^2 + \varsym{\predfn\paren{\predvar}} + \irrerr.
-$$
-
-The three pieces are the square of the bias, the variance of the fitted value, and the irreducible error, each defined below.
-Each chapter defines a piece in full where it first uses it.
-After that, a derivation that does not manipulate a piece can write a short symbol for it.
-
-Our short symbols are:
+Three short symbols name the pieces of the expected squared error in predicting $\Outvar$:
 
 -   The bias at $\predvar$ is $\biassym$, from the macro `\biassym`.
-    It is the mean of the fitted value over training data sets, minus the true mean outcome $\truemeanf{\predvar}$.
+    It is the mean of the fitted value over training data sets, minus the true mean $\truemeanf{\predvar}$.
+    This is the expected error of the fitted value as an estimate of the true mean.
     The operator $\Biast(\cdot)$ stays available for the full definition.
 -   The variance of the fitted value over training data sets is $\varsym{\predfn\paren{\predvar}}$, from the macro `\varsym`.
     The macro `\varsym` is a variance operator for any random variable, in the style of the expectation $\E{\cdot}$.
@@ -240,15 +231,20 @@ Our short symbols are:
     It is the variance of the noise, so it is the existing variance parameter $\varpar$.
     When the noise variance depends on $\predvar$, the irreducible error is a function of $\predvar$.
 
+With these symbols, the expected squared error splits into three pieces, where the expectation is over the training data and over $\Outvar$:
+
+$$
+\E{\paren{\Outvar - \predfn\paren{\predvar}}^2} = \biassym^2 + \varsym{\predfn\paren{\predvar}} + \irrerr.
+$$
+
+A derivation that does not manipulate a piece can write its short symbol, after the piece is defined in full.
 Each piece is a population quantity.
 It is a fixed number once $\predvar$, the population, the fitting procedure and the training sample size are fixed.
 
-We write the bias and the variance with upright Latin letters, $\biassym$ and $\varsym{\cdot}$, in the style of the expectation $\E{\cdot}$.
+We write the bias and the variance with upright Latin letters, in the style of the expectation $\E{\cdot}$.
 We make this exception to the Greek convention for estimands in [the estimands entry](#sec-estimand-estimator-symbols).
-The reason is that each of these is an operator that is applied to a random variable, as the expectation is.
-The variance operator applies to any random variable, not only to a fitted value.
-The bias is the expected estimation error of the fitted value.
-The name $\Biast$ of the bias operator starts with the same letter.
+The variance operator is applied to a random variable, as the expectation is, and it applies to any random variable, not only to a fitted value.
+The bias symbol $\biassym$ is the value of the bias at $\predvar$, and its name matches the bias operator $\Biast$.
 
 These Latin letters have collisions:
 
@@ -256,7 +252,7 @@ These Latin letters have collisions:
     So avoid using `\biassym` together with either of them in one document.
 -   The existing macro `\V` prints $\V$, the full name of the variance, so `\varsym` is the short form, not a replacement.
 
-The irreducible error is a parameter, not an operator, so it keeps a Greek letter.
+The irreducible error keeps a Greek letter, because it is a variance parameter and not an operator.
 It reuses $\sigma^2$, which already names the variance parameter, instead of getting a new letter.
 
 Some sources write the same pieces in other ways:
