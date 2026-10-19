@@ -168,8 +168,9 @@ def definitions(text):
     for m in DEFINITION_HEAD.finditer(text):
         start = m.end()
         end = group_end(text, start)
-        if end > 0:
-            found.append((m.group(1) or m.group(2), text[start + 1 : end]))
+        if end < 0:
+            raise ValueError(f"unclosed definition body at {text[start:start + 40]!r}")
+        found.append((m.group(1) or m.group(2), text[start + 1 : end]))
     return found
 
 
@@ -252,6 +253,7 @@ GUARD_SHOULD_FLAG = [
     r"\newcommand*{\a}[1]{\P\paren{#1}}",
     r"\providecommand{\a}[1]{\{\P\paren{#1}}",
     r"\providecommand{\a}[1]{\P\angb{#1}}",
+    r"\providecommand{\a}[1]{\P\paren {#1}}",
 ]
 GUARD_SHOULD_PASS = [
     r"\providecommand{\a}[1]{{\P\paren{#1}}}",
@@ -264,6 +266,7 @@ GUARD_SHOULD_PASS = [
     r"\providecommand{\a}[1]{{\P \paren{\%}}}",
     r"\providecommand{\a}[1]{{\frac{\paren{#1}}{2}}}",
     r"\\def\a{\P\paren{#1}}",
+    r"\providecommand{\a}[1]{{\P\paren{#1}}} %\providecommand{\b}[1]{\P\paren{#1}}",
 ]
 
 
@@ -301,11 +304,12 @@ def guard_self_test():
                 r"% \NewDocumentCommand{\a}{m}{x}")),
         ] if held
     ]
-    try:
-        top_level_groups("{")
-        refusals.append("an unclosed brace was not refused")
-    except ValueError:
-        pass
+    for unclosed in (lambda: top_level_groups("{"), lambda: definitions(r"\def\a{x")):
+        try:
+            unclosed()
+            refusals.append("an unclosed brace was not refused")
+        except ValueError:
+            pass
     for label in refusals:
         print(f"  FAIL {label}")
     return not (flag or wrong or refusals)

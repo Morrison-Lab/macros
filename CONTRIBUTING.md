@@ -75,8 +75,10 @@ An exponent then does not rise over a tall argument
 Wrap the whole body in one extra pair of braces:
 `\providecommand{\Pf}[1]{{\P \paren{#1}}}`.
 `python3 tools/check_latex.py` fails on a definition
-(`\providecommand`, `\renewcommand`, `\newcommand` or `\def`)
+(`\providecommand`, `\renewcommand`, `\newcommand`, `\def`, `\gdef` or `\DeclareRobustCommand`)
 whose body ends in a delimiter group and is not wrapped.
+It also fails, because it cannot read them, on `\NewDocumentCommand` and the other xparse definition commands,
+and on a definition whose body brace is never closed.
 It also fails when a script (`^`, `_` or `'`) follows a delimiter group at any depth of a body,
 and when a zero-argument alias such as `\def\set{\cb}` names a delimiter macro,
 because the alias passes its argument on and so cannot be braced.
