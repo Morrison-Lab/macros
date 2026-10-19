@@ -212,6 +212,62 @@ Usually the dependence of the estimator on the data is left implicit.
 
 Other sources use other symbols, so check which symbol a source uses for the estimand before reading a formula.
 
+## Short symbols for the pieces of the bias-variance decomposition {#sec-bias-variance-symbols}
+
+Fix a covariate value $\predvar$, a training sample size, and a fitting procedure.
+The fitted prediction function $\predfn$ varies from one training data set to the next.
+Let $\Outvar$ be a new outcome at $\predvar$, independent of the training data.
+Write $\truemeanf{\predvar}$ for the mean of $\Outvar$.
+The noise is the random part of $\Outvar$ that no function of the covariates predicts.
+Three short symbols name the pieces of the expected squared error in predicting $\Outvar$:
+
+-   The bias of the fitted value at $\predvar$ is $\biassymf{\predfn\paren{\predvar}}$, from the macro `\biassymf`.
+    It is the mean of the fitted value over training data sets, minus the true mean $\truemeanf{\predvar}$.
+    This is the expected error of the fitted value as an estimate of the true mean.
+    The long operator $\Biast$ stays available for the full definition.
+-   The variance of the fitted value over training data sets is $\varsymf{\predfn\paren{\predvar}}$, from the macro `\varsymf`.
+    The macro `\varsymf` is a variance operator for any random variable, in the style of the expectation $\E{\cdot}$.
+-   The irreducible error is $\irrerr$, from the macro `\irrerr`.
+    It is the variance of the noise, so it is the existing variance parameter $\varpar$.
+    When the noise variance depends on $\predvar$, the irreducible error is a function of $\predvar$.
+
+With these symbols, the expected squared error splits into three pieces, where the expectation is over the training data and over $\Outvar$:
+
+$$
+\E{\paren{\Outvar - \predfn\paren{\predvar}}^2} = \biassymf{\predfn\paren{\predvar}}^2 + \varsymf{\predfn\paren{\predvar}} + \irrerr.
+$$
+
+A derivation that does not manipulate a piece can write its short symbol, after the piece is defined in full.
+Each piece is a population quantity.
+It is a fixed number once $\predvar$, the population, the fitting procedure and the training sample size are fixed.
+
+We write the bias and the variance with upright Latin letters, in the style of the expectation $\E{\cdot}$.
+We make this exception to the Greek convention for estimands in [the estimands entry](#sec-estimand-estimator-symbols).
+The variance operator applies to any random variable, not only to a fitted value.
+The bias operator is applied to an estimator, and its letter matches the name of the long operator $\Biast$.
+Like the expectation, each has two macros.
+The macros `\biassym` and `\varsym` print the bare operators $\biassym$ and $\varsym$, as `\Expp` prints $\Expp$.
+The macros `\biassymf` and `\varsymf` apply the operator to an argument in square brackets, as `\E` does.
+
+These Latin letters have collisions:
+
+-   The macros `\Regcoef` and `\Coef` also print an upright $\Regcoef$, for regression coefficients.
+    So avoid using `\biassym` or `\biassymf` together with either of them in one document.
+-   The existing macro `\V` prints $\V$, the full name of the variance, so `\varsymf` is the short form, not a replacement.
+
+The irreducible error keeps a Greek letter, because it is a variance parameter and not an operator.
+It reuses $\sigma^2$, which already names the variance parameter, instead of getting a new letter.
+
+Some sources write the same pieces in other ways:
+
+-   They keep the operator form, as in $\Biast(\hat f(x))^2$ and $\Vart(\hat f(x))$, in every line of the derivation.
+    This is unambiguous but long.
+-   They write $\sigma_\epsilon^2$ or $\Vart(\epsilon)$ for the irreducible error, where $\epsilon$ is their noise symbol.
+-   They may use a lower-case Latin letter for each piece.
+    We avoid this because $b$ already names the bias of a neural network in [the names entry](#sec-ml-statistics-names), and the macro `\vv` prints the vector $\vv$.
+
+Check which form a source uses before comparing its decomposition with ours.
+
 ## Probability notation {#sec-probability-notation}
 
 A random variable is a function of the outcome of a random experiment, as in [the stochastic process example](#exm-stochastic-process-slots).
