@@ -68,6 +68,7 @@ read both before editing `macros.qmd`.
   Search `interpretations.tsv` for the glyph (decompose with NFD first, so precomposed letters match) and for words such as "tilde", "over", "above" and "hat",
   and grep `README.md`, `index.qmd`, `notation-choices.qmd`, `CONTRIBUTING.md` and `docs/`.
   Prefer rows that name the macro (`prints \vecf{\delta}`) over rows that hard-code a glyph.
+  Write `(prints ...)` in `interpretations.tsv` for the rendered glyph or TeX expression (`prints +`), not for implementation braces (`{+}`) from `macros.qmd`.
 
 - **Name new macros for their role, never for a letter.**
   Write `\eoutvar` for the estimated outcome (ŷ), not `\hy`,
