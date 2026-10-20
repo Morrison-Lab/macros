@@ -75,22 +75,28 @@ Others write $X(t)$, often when $t$ is continuous, which puts the index in the p
 
 ## Binary labels {#sec-binary-labels}
 
-A binary classification problem has two classes, and each observation carries a label that names its class.
+A binary classification problem has two classes,
+and each observation carries a label that names its class.
 We call the two classes the positive class and the negative class.
-When a formula needs no numerical coding for the two classes, we write them as $\posclass$ and $\negclass$, from the macros `\posclass` and `\negclass`.
-We also write $\posclass$ and $\negclass$ for a positive or negative result from a binary classifier or diagnostic test.
-The macros `\posclass` and `\negclass` wrap each sign in braces (`{+}` and `{-}`).
-TeX then spaces each sign as an ordinary symbol rather than as a binary plus or minus operator, in expressions such as $\Prf{\negclass}$ and $x = \negclass$.
+When a formula needs no numerical coding for the two classes,
+we write them as the sign symbols $\posclass$ and $\negclass$,
+from the macros `\posclass` and `\negclass`,
+and we use the same symbols for a positive or negative result from a binary classifier or diagnostic test.
+Each macro wraps its sign in braces (`{+}` and `{-}`),
+following the library's brace-the-body convention so that TeX treats the sign as a single ordinary atom even alongside adjacent symbols or scripts.
 
-We write $\negclass$ rather than $\neg \posclass$ because $\neg$ is the operator for the complement of an event or the negation of a statement, and $\posclass$ and $\negclass$ are paired sign symbols.
+We write $\negclass$ rather than $\neg \posclass$ because $\neg$ is the operator for the complement of an event or the negation of a statement,
+and $\posclass$ and $\negclass$ are paired sign symbols.
 Writing $\neg \posclass$ mixes those two conventions and reads as "not plus" rather than "negative".
-Because a binary classifier assigns every observation to one of the two classes, the negative event $\negclass$ is the complement $\neg \posclass$ of the positive event $\posclass$, so $\negclass = \neg \posclass$.
+Because a binary classifier assigns every observation to one of the two classes,
+the negative event $\negclass$ is the complement $\neg \posclass$ of the positive event $\posclass$,
+so $\negclass = \neg \posclass$.
 
 Other sources write $\neg +$, $T^+$ and $T^-$, or words such as $\text{pos}$ and $\text{neg}$ for positive and negative test results.
 
 When a model needs numerical labels for the two classes, our convention is to code the labels as $0$ and $1$, as in logistic regression.
 There the label $1$ means the positive class and the label $0$ means the negative class.
-The chapter on support vector machines switches to the labels $-1$ and $+1$, and says so where it does.
+The chapter on support vector machines switches to the numerical labels $-1$ and $+1$, and says so where it does.
 
 We switch to $-1$ and $+1$ for support vector machines for one reason.
 A classifier outputs a number.
@@ -101,7 +107,7 @@ The size of the product measures how far the output is from zero, on the correct
 With $0$ and $1$ labels, the same test needs two cases.
 If the output is a probability, a correct prediction is an output above $0.5$ with the label $1$, or an output below $0.5$ with the label $0$.
 
-All of these codings describe the same two classes.
+Both numerical codings ($0/1$ and $\pm 1$) and the sign symbols ($\posclass$ and $\negclass$) describe the same two classes.
 Other sources pick one coding and use it everywhere, so check which one a formula assumes before comparing it with ours.
 
 ## The intercept {#sec-intercept}

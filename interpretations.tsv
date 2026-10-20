@@ -1501,5 +1501,5 @@ name	interpretation
 \sspredout	centered sum of cross-products of the predictor and outcome values (prints S_{\predvar\outvar})
 \Epredvalf	expected predicted value at the covariate value given as the argument: the population expectation over training sets of the fitted model's prediction at that value (prints the expectation over the training set of \fitted\paren{x}; the same quantity \avgfitf prints as mu_h(x), written as an expectation of a prediction rather than as a function in a model family; unlike \Epredval, it names the covariate value)
 \Epredval	expected predicted value when no covariate value is salient: the population expectation over training sets of \predval
-\posclass	positive class or positive test result in binary classification (prints {+})
-\negclass	negative class or negative test result in binary classification (prints {-})
+\posclass	positive class or positive test result in binary classification (prints +)
+\negclass	negative class or negative test result in binary classification (prints -)
