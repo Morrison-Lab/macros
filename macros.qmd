@@ -1445,10 +1445,12 @@
 \providecommand{\heldoutvar}[1]{\Outvar_{*,#1}}
 \providecommand{\heldpredval}[1]{\predvar_{*,#1}}
 \providecommand{\heldoutval}[1]{\outvar_{*,#1}}
-\def\ntp{n_{T+}}
-\def\nfp{n_{F+}}
-\def\nfn{n_{F-}}
-\def\ntn{n_{T-}}
+\def\posclass{{+}}
+\def\negclass{{-}}
+\def\ntp{n_{T\posclass}}
+\def\nfp{n_{F\posclass}}
+\def\nfn{n_{F\negclass}}
+\def\ntn{n_{T\negclass}}
 \def\given{\mid}
 \providecommand{\condE}[2]{{\E{#1 \given #2}}}
 \providecommand{\condVar}[2]{{\Var{#1 \given #2}}}
