@@ -1504,3 +1504,5 @@
 \providecommand{\meanfnoff}[2]{{\meanfnof{#1}\paren{#2}}}
 \def\predval{\eoutvar}
 \def\vpredval{\veoutvar}
+\def\posclass{{+}}
+\def\negclass{{-}}

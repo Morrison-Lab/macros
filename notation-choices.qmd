@@ -76,7 +76,20 @@ Others write $X(t)$, often when $t$ is continuous, which puts the index in the p
 ## Binary labels {#sec-binary-labels}
 
 A binary classification problem has two classes, and each observation carries a label that names its class.
-Our convention is to code the labels as $0$ and $1$, as in logistic regression, where the label $1$ means the event happened.
+When a formula needs no numerical coding for the two classes, we call them the positive class and the negative class, and we write them as $\posclass$ and $\negclass$, from the macros `\posclass` and `\negclass`.
+The same symbols $\posclass$ and $\negclass$ also write a positive or negative result from a binary classifier or diagnostic test.
+Because a binary classifier assigns every observation to one of the two classes, the negative event $\negclass$ is the complement of the positive event $\posclass$, so $\negclass = \neg \posclass$.
+
+We write $\negclass$ rather than $\neg \posclass$ for two reasons.
+
+-   The symbol $\neg$ is the operator for the complement of an event or the negation of a statement, while $\posclass$ and $\negclass$ are paired sign symbols.
+    Writing $\neg \posclass$ mixes those two conventions and reads as "not plus" rather than "negative".
+-   The macros `\posclass` and `\negclass` wrap the sign in braces (`{+}` and `{-}`).
+    TeX then spaces each sign as an ordinary symbol rather than as a binary plus or minus operator, in expressions such as $\Prf{\negclass}$ and $x = \negclass$.
+
+Other sources write $\neg +$, $T^+$ and $T^-$, or words such as $\text{pos}$ and $\text{neg}$ for positive and negative test results.
+
+When a model needs numerical labels for the two classes, our convention is to code the labels as $0$ and $1$, as in logistic regression, where the label $1$ means the positive class.
 The chapter on support vector machines switches to the labels $-1$ and $+1$, and says so where it does.
 
 We switch to $-1$ and $+1$ for support vector machines for one reason.
@@ -88,7 +101,7 @@ The size of the product measures how far the output is from zero, on the correct
 With $0$ and $1$ labels, the same test needs two cases.
 If the output is a probability, a correct prediction is an output above $0.5$ with the label $1$, or an output below $0.5$ with the label $0$.
 
-Both codings describe the same data.
+All of these codings describe the same two classes.
 Other sources pick one coding and use it everywhere, so check which one a formula assumes before comparing it with ours.
 
 ## The intercept {#sec-intercept}

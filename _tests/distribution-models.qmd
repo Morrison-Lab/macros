@@ -18,6 +18,8 @@ Growth function: GROWTH $\growthfn$, GROWTHAPP $\growthfnf{2n}^2$.
 
 Mean-function component: MEANSUB $\meanfnof{\distmem}^2$, MEANAPP $\meanfnoff{\edistmem}{\predvar}^2$, MEANTRUE $\meanfnoff{\popdist}{\predvar}$, MEANTALL $\meanfnof{\frac{a}{b}}$.
 
+Binary classes: POSCLASS $\posclass_1^2$, NEGCLASS $\negclass_1^2$.
+
 ```{=latex}
 \newsavebox{\withexp}\newsavebox{\withoutexp}
 \sbox{\withexp}{$\meanfnoff{\distmem}{\frac{a}{b}}^2$}
