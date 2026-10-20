@@ -49,6 +49,7 @@ read both before editing `macros.qmd`.
   `macros-table.qmd` joins macros to that file by name, so a duplicate key renders two rows.
   Grep for the key first, including its leading backslash,
   and afterwards run `cut -f1 interpretations.tsv | sort | uniq -d` to confirm there are no duplicates.
+  Write `(prints ...)` for the rendered output or its name in words (`prints a plus sign`, `prints \vecf{\delta}`), not for implementation braces (`{+}`) from `macros.qmd`.
 
 - **A refactor that "leaves output unchanged" needs a measurement in MathJax and in LaTeX.**
   A macro that ends in `\mathclose{}` (such as `\paren`, `\sb`, `\cb`, `\norm` and `\angb`) must not have `^` or `_` placed right after it inside another macro:
@@ -68,7 +69,6 @@ read both before editing `macros.qmd`.
   Search `interpretations.tsv` for the glyph (decompose with NFD first, so precomposed letters match) and for words such as "tilde", "over", "above" and "hat",
   and grep `README.md`, `index.qmd`, `notation-choices.qmd`, `CONTRIBUTING.md` and `docs/`.
   Prefer rows that name the macro (`prints \vecf{\delta}`) over rows that hard-code a glyph.
-  Write `(prints ...)` in `interpretations.tsv` for the rendered glyph or TeX expression (`prints +`), not for implementation braces (`{+}`) from `macros.qmd`.
 
 - **Name new macros for their role, never for a letter.**
   Write `\eoutvar` for the estimated outcome (ŷ), not `\hy`,

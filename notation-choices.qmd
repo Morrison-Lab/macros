@@ -81,17 +81,21 @@ We call the two classes the positive class and the negative class.
 When a formula does not need numerical labels,
 we write the classes as the sign symbols $\posclass$ and $\negclass$,
 from the macros `\posclass` and `\negclass`,
-and we use the same symbols for a positive or negative result from a binary classifier or diagnostic test.
+and we use the same symbols for the event that a binary classifier or diagnostic test returns a positive or negative result.
+Those two sign symbols are class names rather than numbers,
+unlike the numerical labels $+1$ and $-1$ used below.
 
-We write $\negclass$ rather than $\neg \posclass$ because $\neg$ is the operator for the complement of an event or the negation of a statement,
+We write $\negclass$ rather than $\neg \posclass$ for the negative class or a negative test result because $\neg$ is the operator for the complement of an event or the negation of a statement,
 and $\posclass$ and $\negclass$ are paired sign symbols.
 Writing $\neg \posclass$ mixes those two conventions and reads as "not plus" rather than "negative".
-Because a binary classifier assigns every observation to one of the two classes,
-the negative event $\negclass$ is the complement $\neg \posclass$ of the positive event $\posclass$.
+When a binary classifier or diagnostic test assigns every observation to one of the two classes,
+the event $\negclass$ of a negative result is the complement $\neg \posclass$ of the event $\posclass$ of a positive result.
 The two are equal as events,
 and we write the sign symbol $\negclass$.
 
-Other sources write $\neg +$, $T^+$ and $T^-$, or words such as $\text{pos}$ and $\text{neg}$ for positive and negative test results.
+Other sources write $T^+$ and $T^-$,
+or words such as $\text{pos}$ and $\text{neg}$,
+for positive and negative test results.
 
 When a model needs numerical labels for the two classes, our convention is to code the labels as $0$ and $1$, as in logistic regression.
 There the label $1$ means the positive class and the label $0$ means the negative class.
