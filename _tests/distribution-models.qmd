@@ -18,7 +18,7 @@ Growth function: GROWTH $\growthfn$, GROWTHAPP $\growthfnf{2n}^2$.
 
 Mean-function component: MEANSUB $\meanfnof{\distmem}^2$, MEANAPP $\meanfnoff{\edistmem}{\predvar}^2$, MEANTRUE $\meanfnoff{\popdist}{\predvar}$, MEANTALL $\meanfnof{\frac{a}{b}}$.
 
-Binary classes: POSCLASS $\posclass_1^2$, NEGCLASS $\negclass_1^2$.
+Binary classes: POSCLASS $\posclass_1^2$, NEGCLASS $\negclass_1^2$, NTP $\ntp^2$, NFP $\nfp^2$, NFN $\nfn^2$, NTN $\ntn^2$.
 
 ```{=latex}
 \newsavebox{\withexp}\newsavebox{\withoutexp}
