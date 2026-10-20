@@ -49,6 +49,7 @@ read both before editing `macros.qmd`.
   `macros-table.qmd` joins macros to that file by name, so a duplicate key renders two rows.
   Grep for the key first, including its leading backslash,
   and afterwards run `cut -f1 interpretations.tsv | sort | uniq -d` to confirm there are no duplicates.
+  Write `(prints ...)` for the rendered expression or its name in words (`prints a plus sign`, `prints \vecf{\delta}`, `prints n_{T\posclass}`), without outer atom-grouping braces (`{+}`).
 
 - **A refactor that "leaves output unchanged" needs a measurement in MathJax and in LaTeX.**
   A macro that ends in `\mathclose{}` (such as `\paren`, `\sb`, `\cb`, `\norm` and `\angb`) must not have `^` or `_` placed right after it inside another macro:

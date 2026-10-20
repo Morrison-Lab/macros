@@ -64,6 +64,12 @@ EXPECTED = {
         "VCRISES",
         "GROWTHmY,",
         "GROWTHAPPmY(2n)2",
+        "POSCLASS+21",
+        "NEGCLASS\u221221",
+        "NTPn2T+",
+        "NFPn2F+",
+        "NFNn2F\u2212",
+        "NTNn2T\u2212",
     ],
 }
 
