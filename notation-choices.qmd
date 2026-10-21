@@ -446,3 +446,27 @@ A macro with no argument cannot be wrapped this way, so the aliases `\ceil`, `\s
 
 Another convention is to leave the macros unbraced and to wrap each use in braces.
 Every use that forgot the braces would then print the exponent at the wrong height.
+
+## Counting: cardinality, factorials and binomial coefficients {#sec-counting-notation}
+
+Our convention has three parts.
+
+-   We write the number of elements of a finite set $A$ as $\card{A}$, with vertical bars.
+-   We write the factorial of $n$ as $\factorial{n}$.
+-   We write the number of ways to choose $k$ of $n$ objects as $\binomial{n}{k}$, read "$n$ choose $k$".
+
+The macros `\card`, `\factorial` and `\binomial` print them.
+
+We chose these for three reasons.
+
+-   `\card` names a role, so a reader of the source can tell a count of elements from an absolute value or a length, even though `\card` prints the same bars as `\abs`.
+-   `\binomial` prints parentheses around the stacked pair, which distinguish $\binomial{n}{k}$ from the fraction $n$ over $k$.
+-   `\factorial` groups its argument and the exclamation mark, so an exponent written after it applies to the whole factorial, as in $\factorial{n}^2$.
+
+The `\factorial` macro puts an exclamation mark after its argument without adding parentheses.
+An argument with more than one symbol needs its own parentheses, as in `\factorial{(n-1)}`, which prints $\factorial{(n-1)}$.
+Without them, `\factorial{n-1}` prints $\factorial{n-1}$, which reads as $n - (1!)$.
+
+Other sources write the cardinality as $\#A$ or $n(A)$.
+They write the binomial coefficient as $C(n, k)$ or ${}^{n}C_{k}$.
+When you read a formula from another source, check which of these a symbol means before you compare it with ours.
