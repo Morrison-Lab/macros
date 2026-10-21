@@ -45,7 +45,7 @@ ul.task-list li input[type="checkbox"] {
 <link href="site_libs/quarto-html/quarto-syntax-highlighting-bf27225e3a48a9273f3daa8f8e829971.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-d3c09cf01b9717715406c5b992d80823.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-55617497126496852ff9f5a59253c640.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <link href="site_libs/quarto-contrib/code-language-labels-1.0.2/code-language-labels.css" rel="stylesheet">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
@@ -438,6 +438,7 @@ window.Quarto = {
   <li><a href="#sec-probability-notation" id="toc-sec-probability-notation" class="nav-link" data-scroll-target="#sec-probability-notation">Probability notation</a></li>
   <li><a href="#sec-true-mean-function" id="toc-sec-true-mean-function" class="nav-link" data-scroll-target="#sec-true-mean-function">The true mean function and its conditional form</a></li>
   <li><a href="#sec-brace-delimited-forms" id="toc-sec-brace-delimited-forms" class="nav-link" data-scroll-target="#sec-brace-delimited-forms">An exponent on a function with built-in delimiters</a></li>
+  <li><a href="#sec-counting-notation" id="toc-sec-counting-notation" class="nav-link" data-scroll-target="#sec-counting-notation">Counting: cardinality, factorials and binomial coefficients</a></li>
   </ul>
 <div class="toc-actions"><ul><li><a href="https://github.com/d-morrison/macros/blob/main/notation-choices.qmd" class="toc-action"><i class="bi bi-github"></i>View source</a></li></ul></div></nav>
     </div>
@@ -627,6 +628,24 @@ window.Quarto = {
 <p>We chose this for one reason. The delimiter macros (<code>\paren</code>, <code>\sb</code>, <code>\cb</code> and similar) end in an empty closing atom, and an exponent that follows without the braces attaches to that empty atom. It then stays at the height of the text line. The braces change what is printed in one small way: the thin space between a leading digit and the function name is lost, as it already was for <code>\lnf</code> and <code>\maxf</code>.</p>
 <p>A macro with no argument cannot be wrapped this way, so the aliases <code>\ceil</code>, <code>\set</code> and <code>\strlen</code> take an argument, as in <code>\ceil{x}</code>.</p>
 <p>Another convention is to leave the macros unbraced and to wrap each use in braces. Every use that forgot the braces would then print the exponent at the wrong height.</p>
+</section>
+<section id="sec-counting-notation" class="level2">
+<h2 class="anchored" data-anchor-id="sec-counting-notation">Counting: cardinality, factorials and binomial coefficients</h2>
+<p>Our convention has three parts.</p>
+<ul>
+<li>We write the number of elements of a finite set <span class="math inline">\(A\)</span> as <span class="math inline">\(\card{A}\)</span>, with vertical bars.</li>
+<li>We write the factorial of <span class="math inline">\(n\)</span> as <span class="math inline">\(\factorial{n}\)</span>.</li>
+<li>We write the number of ways to choose <span class="math inline">\(k\)</span> of <span class="math inline">\(n\)</span> objects as <span class="math inline">\(\binomial{n}{k}\)</span>, read “<span class="math inline">\(n\)</span> choose <span class="math inline">\(k\)</span>”.</li>
+</ul>
+<p>The macros <code>\card</code>, <code>\factorial</code> and <code>\binomial</code> print them.</p>
+<p>We chose these for three reasons.</p>
+<ul>
+<li><code>\card</code> names a role, so a reader of the source can tell a count of elements from an absolute value or a length, even though <code>\card</code> prints the same bars as <code>\abs</code>.</li>
+<li><code>\binomial</code> prints parentheses around the stacked pair, which distinguish <span class="math inline">\(\binomial{n}{k}\)</span> from the fraction <span class="math inline">\(n\)</span> over <span class="math inline">\(k\)</span>.</li>
+<li><code>\factorial</code> groups its argument and the exclamation mark, so an exponent written after it applies to the whole factorial, as in <span class="math inline">\(\factorial{n}^2\)</span>.</li>
+</ul>
+<p>The <code>\factorial</code> macro puts an exclamation mark after its argument without adding parentheses. An argument with more than one symbol needs its own parentheses, as in <code>\factorial{(n-1)}</code>, which prints <span class="math inline">\(\factorial{(n-1)}\)</span>. Without them, <code>\factorial{n-1}</code> prints <span class="math inline">\(\factorial{n-1}\)</span>, which reads as <span class="math inline">\(n - (1!)\)</span>.</p>
+<p>Other sources write the cardinality as <span class="math inline">\(\#A\)</span> or <span class="math inline">\(n(A)\)</span>. They write the binomial coefficient as <span class="math inline">\(C(n, k)\)</span> or <span class="math inline">\({}^{n}C_{k}\)</span>. When you read a formula from another source, check which of these a symbol means before you compare it with ours.</p>
 
 
 </section>
