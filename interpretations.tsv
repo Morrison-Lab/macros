@@ -395,7 +395,7 @@ name	interpretation
 \norm	Euclidean norm ‖·‖
 \normsq	squared norm ‖·‖²
 \card	cardinality (number of elements) of a finite set |·|
-\factorial	factorial of a non-negative integer n! (prints n followed by an exclamation mark)
+\factorial	factorial of a non-negative integer n! (prints its argument followed by an exclamation mark; an argument with more than one symbol needs its own parentheses)
 \binomial	binomial coefficient, "n choose k" (prints \binom{n}{k})
 \powf	first argument (·) raised to the power of the second argument, with parentheses around the base
 \sqf	square of argument (·)²
