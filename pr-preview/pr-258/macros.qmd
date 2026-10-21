@@ -453,7 +453,7 @@
 \providecommand{\norm}[1]{\mathopen{}\left\lVert#1\right\rVert\mathclose{}}
 \providecommand{\normsq}[1]{{\norm{#1}}\sq}
 \providecommand{\card}[1]{{\abs{#1}}}
-\providecommand{\factorial}[1]{{#1}!}
+\providecommand{\factorial}[1]{{{#1}!}}
 \providecommand{\binomial}[2]{{\binom{#1}{#2}}}
 \providecommand{\powf}[2]{{\paren{#1}}^{#2}}
 \providecommand{\sqf}[1]{\powf{#1}{2}}

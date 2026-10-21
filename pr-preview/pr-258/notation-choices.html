@@ -631,13 +631,21 @@ window.Quarto = {
 </section>
 <section id="sec-counting-notation" class="level2">
 <h2 class="anchored" data-anchor-id="sec-counting-notation">Counting: cardinality, factorials and binomial coefficients</h2>
-<p>Our convention is to write the number of elements of a finite set <span class="math inline">\(A\)</span> as <span class="math inline">\(\card{A}\)</span>, with vertical bars, to write the factorial of <span class="math inline">\(n\)</span> as <span class="math inline">\(\factorial{n}\)</span>, and to write the number of ways to choose <span class="math inline">\(k\)</span> of <span class="math inline">\(n\)</span> objects as <span class="math inline">\(\binomial{n}{k}\)</span>, read “<span class="math inline">\(n\)</span> choose <span class="math inline">\(k\)</span>”. The macros <code>\card</code>, <code>\factorial</code> and <code>\binomial</code> print them.</p>
-<p>We chose these for two reasons.</p>
+<p>Our convention has three parts.</p>
 <ul>
-<li>Each macro names a role, so a reader of the source can tell a count of elements from an absolute value or a length, even though <code>\card</code> prints the same bars as <code>\abs</code>.</li>
-<li>The binomial coefficient is written as a stacked pair of numbers, which keeps <span class="math inline">\(\binomial{n}{k}\)</span> apart from a fraction or a function call <span class="math inline">\(C(n, k)\)</span> in the same formula.</li>
+<li>We write the number of elements of a finite set <span class="math inline">\(A\)</span> as <span class="math inline">\(\card{A}\)</span>, with vertical bars.</li>
+<li>We write the factorial of <span class="math inline">\(n\)</span> as <span class="math inline">\(\factorial{n}\)</span>.</li>
+<li>We write the number of ways to choose <span class="math inline">\(k\)</span> of <span class="math inline">\(n\)</span> objects as <span class="math inline">\(\binomial{n}{k}\)</span>, read “<span class="math inline">\(n\)</span> choose <span class="math inline">\(k\)</span>”.</li>
 </ul>
-<p>Other sources write the cardinality as <span class="math inline">\(\#A\)</span> or <span class="math inline">\(n(A)\)</span>, and the binomial coefficient as <span class="math inline">\(C(n, k)\)</span>, <span class="math inline">\({}^{n}C_{k}\)</span> or <span class="math inline">\(\binom{n}{k}\)</span> in a form with no macro. When you read a formula from another source, check which of these a symbol means before you compare it with ours.</p>
+<p>The macros <code>\card</code>, <code>\factorial</code> and <code>\binomial</code> print them.</p>
+<p>We chose these for three reasons.</p>
+<ul>
+<li><code>\card</code> names a role, so a reader of the source can tell a count of elements from an absolute value or a length, even though <code>\card</code> prints the same bars as <code>\abs</code>.</li>
+<li><code>\binomial</code> prints parentheses around the stacked pair, which distinguish <span class="math inline">\(\binomial{n}{k}\)</span> from the fraction <span class="math inline">\(n\)</span> over <span class="math inline">\(k\)</span>.</li>
+<li><code>\factorial</code> groups its argument and the exclamation mark, so an exponent written after it applies to the whole factorial, as in <span class="math inline">\(\factorial{n}^2\)</span>.</li>
+</ul>
+<p>The <code>\factorial</code> macro puts an exclamation mark after its argument without adding parentheses. An argument with more than one symbol needs its own parentheses, as in <code>\factorial{(n-1)}</code>, which prints <span class="math inline">\(\factorial{(n-1)}\)</span>. Without them, <code>\factorial{n-1}</code> prints <span class="math inline">\(\factorial{n-1}\)</span>, which reads as <span class="math inline">\(n - (1!)\)</span>.</p>
+<p>Other sources write the cardinality as <span class="math inline">\(\#A\)</span> or <span class="math inline">\(n(A)\)</span>. They write the binomial coefficient as <span class="math inline">\(C(n, k)\)</span> or <span class="math inline">\({}^{n}C_{k}\)</span>. When you read a formula from another source, check which of these a symbol means before you compare it with ours.</p>
 
 
 </section>
