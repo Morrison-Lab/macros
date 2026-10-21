@@ -457,12 +457,13 @@ Our convention has three parts.
 
 The macros `\card`, `\factorial` and `\binomial` print them.
 
-We chose these for two reasons.
+We chose these for three reasons.
 
--   Each macro names a role, so a reader of the source can tell a count of elements from an absolute value or a length, even though `\card` prints the same bars as `\abs`.
--   The parentheses around the stacked pair distinguish $\binomial{n}{k}$ from the fraction $n$ over $k$.
+-   `\card` names a role, so a reader of the source can tell a count of elements from an absolute value or a length, even though `\card` prints the same bars as `\abs`.
+-   `\binomial` prints parentheses around the stacked pair, which distinguish $\binomial{n}{k}$ from the fraction $n$ over $k$.
+-   `\factorial` groups its argument and the exclamation mark, so an exponent written after it applies to the whole factorial, as in $\factorial{n}^2$.
 
-The `\factorial` macro puts an exclamation mark after its argument without adding parentheses, so every page writes a factorial the same way.
+The `\factorial` macro puts an exclamation mark after its argument without adding parentheses.
 An argument with more than one symbol needs its own parentheses, as in `\factorial{(n-1)}`, which prints $\factorial{(n-1)}$.
 Without them, `\factorial{n-1}` prints $\factorial{n-1}$, which reads as $n - (1!)$.
 
