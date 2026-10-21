@@ -446,3 +446,16 @@ A macro with no argument cannot be wrapped this way, so the aliases `\ceil`, `\s
 
 Another convention is to leave the macros unbraced and to wrap each use in braces.
 Every use that forgot the braces would then print the exponent at the wrong height.
+
+## Counting: cardinality, factorials and binomial coefficients {#sec-counting-notation}
+
+Our convention is to write the number of elements of a finite set $A$ as $\card{A}$, with vertical bars, to write the factorial of $n$ as $\factorial{n}$, and to write the number of ways to choose $k$ of $n$ objects as $\binomial{n}{k}$, read "$n$ choose $k$".
+The macros `\card`, `\factorial` and `\binomial` print them.
+
+We chose these for two reasons.
+
+-   Each macro names a role, so a reader of the source can tell a count of elements from an absolute value or a length, even though `\card` prints the same bars as `\abs`.
+-   The binomial coefficient is written as a stacked pair of numbers, which keeps $\binomial{n}{k}$ apart from a fraction or a function call $C(n, k)$ in the same formula.
+
+Other sources write the cardinality as $\#A$ or $n(A)$, and the binomial coefficient as $C(n, k)$, ${}^{n}C_{k}$ or $\binom{n}{k}$ in a form with no macro.
+When you read a formula from another source, check which of these a symbol means before you compare it with ours.
