@@ -344,7 +344,7 @@ name	interpretation
 \SE	standard error function SE(·)
 \SEf	standard error function (alias for \SE)
 \SDf	standard deviation function (alias for \SD)
-\HSE	estimated standard error function (alias)
+\HSE	estimated standard error function (alias); deprecated, use \eSEf
 \hSEf	estimated standard error function (alias); deprecated, use \eSEf
 \logt	log operator symbol
 \logf	log{·} function applied to argument
