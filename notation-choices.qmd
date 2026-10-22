@@ -313,20 +313,23 @@ When the reference is a sum, wrap it in `\paren` yourself, as in $\devof{a}{\par
 The macro `\devsq` prints a squared deviation, and `\ssdev` prints the sum of squared deviations over observations.
 Both print the labelled symbol $\delta$ and not a difference.
 
-We distinguish errors from other deviations, and the noise is a deviation, not an error.
-An error has an estimand: an estimation error is an estimate minus its estimand, and a prediction error is the case where the estimand is the new outcome.
-The noise is the outcome minus its mean given the input, so nothing was estimated and nothing went wrong.
-We therefore write it with $\nu$, the symbol that `\popdev` and `\cdev` already print for a deviation from a population mean.
-The macros `\Noise` and `\noise` print the same $\Noise$ for the random variable and for a realized value, as `\popdev` does.
-The vector of noise variables is $\vNoise$ and the vector of realized values is $\vnoise$.
+We follow the textbooks *An Introduction to Statistical Learning* (ISL) and *The Elements of Statistical Learning* (ESL) and write the noise as the Greek letter $\varepsilon$.
+The macros `\Noise` and `\noise` both print $\Noise$, so a random noise variable and its realized value share one symbol, as in those books.
+The vector of noise variables and the vector of realized values are both $\vNoise$.
 The noise differs from one observation to the next and has a distribution.
 In real data we never observe a realized noise value, but we write it when we reason about a single observation.
-The letter $\nu$ was also the degrees of freedom `\df`, which now prints the upright name $\df$ instead, because an abbreviation is a name and the italic and upright rule below gives names upright type.
-The letter $\nu$ is still printed by `\shrinkage`, `\svfrac`, `\measureb` and `\nullity`, which we have not changed.
+This is an exception to our rule that a random variable gets a capital Latin letter and a Greek letter names a parameter.
+We accept the exception because every common textbook uses $\varepsilon$ for the noise.
 
-The errors keep the letter $\varepsilon$: `\prederr` and `\err` print $\varepsilon$.
-So the Greek letter $\varepsilon$ means an error here, even though ISL and most textbooks use it for the noise and call it the error term.
-Check what a source means by $\varepsilon$ before comparing a formula with ours.
+Strictly, the noise is a deviation and not an error.
+It is the outcome minus its mean given the input, so nothing was estimated and nothing went wrong.
+An estimation error is an estimate minus its estimand, and a prediction error is the case where the estimand is the new outcome.
+The textbooks call $\varepsilon$ the error term, but we call it the noise.
+
+We keep the errors distinct from the noise by giving them a label.
+The macro `\esterr{a}{b}` prints $\esterr{a}{b}$, the error of the estimate $a$ for the estimand $b$.
+The macro `\prederr` prints $\prederr$, with the upright label "pred".
+The older macros `\err` and `\eps` print the bare $\varepsilon$, the same symbol as the noise.
 
 The residual is computed from a fitted model and so is observed.
 It estimates the noise, with the same sign: both are an outcome minus a reference.
@@ -336,11 +339,11 @@ ISL writes the residual as $e_i = y_i - \hat{y}_i$, but the letter $e$ is Euler'
 The standardized residual is $\stdresid$ and the modified residual is $\modresid$.
 The residual has no separate capital: `\Resid` prints the same $\resid$.
 
-Earlier versions of these macros printed the noise as $U$ with realized value $u$.
-Before that they printed it as $\nu$, with `\noise` an alias of `\popdev`, which is where we are again.
-Any use of `\noise` or `\Noise` that expected $U$ or $u$ needs a sweep.
-The macro `\deviationf` prints $\delta$ with the reference as a subscript, for a labelled deviation of a given value, such as $\deviationf{y}{\truemean}$.
-We keep `\deviationf` for that use.
+Earlier versions of these macros printed the noise as $U$ with realized value $u$, and before that as the Greek letter $\nu$.
+Any use that meant $\nu$ or expected $U$ or $u$ needs a sweep.
+The macros `\popdev` and `\cdev` still print $\nu$ for a deviation from a mean.
+The macro `\deviationf` prints $\delta$ with the reference as a subscript, for a labelled deviation of a given value.
+We keep `\popdev` and `\deviationf` for existing uses.
 
 Some sources use $e$ for the noise, so check what a source means by it.
 Some sources subtract in the other order, so check the sign before comparing a formula with ours.
@@ -354,6 +357,8 @@ An upright letter or word is a name, not a quantity.
 It is an operator, a function name, a constant or a label, such as $\tr$, $\diag$, $\rank$, the constant $\euler$ and a text subscript like $\vcdim$.
 So we never print a variable upright, and we never print an operator or a constant in italic.
 For example, `\Regcoef` prints an italic $\Regcoef$, because a regression coefficient is a variable.
+The degrees of freedom `\df` prints the upright name $\df$ instead of $\nu$, because an abbreviation is a name.
+That also frees $\nu$ for `\popdev`, the deviation from a population mean.
 
 ## Probability notation {#sec-probability-notation}
 
