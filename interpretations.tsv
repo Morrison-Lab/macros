@@ -140,6 +140,7 @@ name	interpretation
 \th	Greek letter theta (θ)
 \vth	theta parameter vector
 \Th	uppercase Theta (Θ)
+\smean	sample mean of the quantity in the argument, a bar over it (prints a bar over its argument)
 \xbar	sample mean x̄
 \samplemean	sample mean of n random variables, X̄_n (arguments: the variable and the sample size)
 \hth	estimated theta θ̂
@@ -186,6 +187,7 @@ name	interpretation
 \deviationv	deviation vector (the vec accent applied to δ)
 \devnv	deviation vector (alias for \deviationv)
 \deviationf	deviation of the first argument from the reference value in the second, δ_r(z)
+\smeandev	deviation of the sample mean, the sample mean of the deviations (prints \smean{\deviation}, δ with a bar)
 \popdev	deviation from a population mean, symbol δ (alias for \deviation; the noise is \Noise, which prints ε)
 \popdevf	deviation of the argument from its population mean, δ_z
 \Deviation	uppercase deviation symbol Δ
