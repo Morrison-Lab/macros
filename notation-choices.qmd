@@ -351,6 +351,19 @@ We keep `\popdev` and `\deviationf` for existing uses.
 Some sources use $e$ for the noise, so check what a source means by it.
 Some sources subtract in the other order, so check the sign before comparing a formula with ours.
 
+## A deviation and a difference {#sec-deviation-difference}
+
+A deviation and a difference are both one value minus another.
+They differ in what the second value is.
+
+- A deviation is a value minus a fixed reference, such as a mean or an estimand. We write it with $\deviation$, or with `\devof` for the explicit form.
+- A difference compares two values of equal standing, such as an outcome at two inputs. We write it with $\diff$, as in `\diffvx`.
+
+We keep two symbols because the two ideas answer different questions.
+A deviation answers "how far is this from where it should be?".
+A difference answers "how much does this change between two values?".
+The deviance of a fitted model is a difference, between the minus twice log-likelihood at the fitted model and at the saturated model, so it is named $\deviance$ rather than written with either symbol.
+
 ## Italic and upright {#sec-italic-upright}
 
 We use italic and upright type to carry meaning.
