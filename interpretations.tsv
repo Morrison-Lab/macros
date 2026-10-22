@@ -1486,9 +1486,9 @@ name	interpretation
 \levelset	symbol for a level set of a function
 \levelsetof	level set of the function given as the second argument at the value given as the first, written with the value as a subscript
 \predfn	symbol for a prediction function, which maps predictor values to a predicted outcome
-\epredfn	estimated prediction function, such as one fitted from training data
+\epredfn	estimated prediction function, such as one fitted from training data; replaces the deprecated \hf
 \predfnf	prediction function applied to the argument
-\epredfnf	estimated prediction function applied to the argument
+\epredfnf	estimated prediction function applied to the argument; replaces the deprecated \hfx
 \cent	mark for the centered version of the argument (the data with its mean subtracted)
 \aug	mark for the augmented version of the argument (extended with additional entries)
 \bestpredfn	best prediction function f*: the conditional mean of the outcome given the inputs, which minimizes the squared-error risk
