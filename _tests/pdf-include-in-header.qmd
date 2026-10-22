@@ -24,6 +24,8 @@ Residuals, prediction errors and the deviation from a mean, subscripted and squa
 
 Design matrix, design vector and feature map, subscripted and squared: $\design_{ij}^2$, $\vdesign_i^2$, $\vdesign^T$, $\vfeatmap_i^2$, $\featmap^2$.
 
+Deviances, subscripted and squared: $\deviance^2$, $\nulldeviance$, $\satdeviance^2$.
+
 Degrees of freedom and regression coefficients, subscripted and squared: $\df_i^2$, $\hdf_i^2$, $\edf^2$, $\Regcoef_i^2$, $\Coef{j}^2$.
 
 Equality with a reason, alone, with a tall side, and squared: $a \eqby{\text{(A1)}} b$, $\frac{a}{b} \eqby{\text{Thm 2}} c$, $\paren{a \eqby{\text{(A1)}} b}^2$, $\E{X \eqby{\text{(A1)}} Y}^2$.

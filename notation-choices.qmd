@@ -377,6 +377,11 @@ Earlier versions used $\phi$ for the feature map and the design vector; the desi
 The macro `\vfeatmap` still works and prints the same symbol as `\vdesign`, so existing pages keep rendering.
 The letters $\phi$ and $\Phi$ stay with the standard normal density and distribution function, `\normpdf` and `\normcdf`.
 
+The deviance used to print $D$ as well, which collided with the design matrix.
+The deviance is twice the gap between the log-likelihood of the saturated model and that of the fitted model.
+It is a scaled statistic, not a deviation of a value from a reference, so it does not take the deviation symbol.
+`\deviance` now prints the upright name $\deviance$, as the other named quantities do.
+
 Other sources differ.
 Some write the design matrix as $X$, and some write the feature map as $\phi$ or $\Phi$.
 Check which letter a source uses for each of the three objects before you compare formulas.

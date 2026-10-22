@@ -236,7 +236,7 @@
 \def\loglikf{\llikf}
 \def\loglf{\llikf}
 \def\likf{\llikf}
-\def\deviance{D}
+\def\deviance{\operatorname{dev}}
 \def\nulldeviance{\deviance_0}
 \def\satllik{\llik_{\mathrm{sat}}}
 \def\satdeviance{\deviance_{\mathrm{sat}}}
