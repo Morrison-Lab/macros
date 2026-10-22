@@ -34,4 +34,4 @@ Input counts, subscripted and squared: $\ninputvars_i^2$, $\inputdim^2$.
 
 Sum of the elements, plain, squared and with a tall argument: $\sumof{\vy}$, $\Sumof{\vY}^2$, $\Sumof{\frac{a}{b}}_i$.
 
-Sample means, plain, subscripted and squared: $\smean{y}_i^2$, $\xbar^2$, $\samplemean{X}{n}^2$, $\smeandev^2$, $\smeandev_i$.
+Sample means, plain, subscripted and squared: $\smean{y}_i^2$, $\xbar^2$, $\samplemean{X}{n}^2$, $\smeandev^2$, $\smeandev_i$, $\avgleverage^2$.

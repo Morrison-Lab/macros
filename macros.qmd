@@ -222,7 +222,7 @@
 \def\poolsize{q}
 \def\hatmat{H}
 \providecommand{\leverage}[1]{h_{#1}}
-\def\avgleverage{\bar{h}}
+\def\avgleverage{\smean{h}}
 \def\cutheight{h}
 \def\clusterassign{C}
 \providecommand{\clusterassignf}[1]{{\clusterassign\paren{#1}}}
