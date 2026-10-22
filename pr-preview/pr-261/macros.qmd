@@ -255,11 +255,11 @@
 \def\resid{\residual}
 \def\Residual{\residual}
 \def\Resid{\Residual}
-\def\stdresidual{\residual^\prime}
+\def\stdresidual{{\residual'}}
 \def\stdresid{\stdresidual}
 \def\StdResidual{\stdresidual}
 \def\StdResid{\StdResidual}
-\def\modresidual{\residual^*}
+\def\modresidual{{\residual^*}}
 \def\modresid{\modresidual}
 \def\ModResidual{\modresidual}
 \def\ModResid{\ModResidual}
