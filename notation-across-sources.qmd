@@ -140,7 +140,7 @@ for (g in names(notation_groups)) {
 
 The [Notation Choices](notation-choices.qmd#sec-subscripts-parentheses) page gives the reason for our split.
 
-| object | our form | other forms you may see |
+| object | our form | other forms you may encounter |
 |---|---|---|
 | entry of a vector or matrix | $x_i$, $A_{ij}$ | $x(i)$, $A(i, j)$, and `A[i, j]` in code |
 | term of a [sequence](https://morrison-lab.github.io/mds/functions.html#def-sequence) | $a_n$ | $a(n)$ |
