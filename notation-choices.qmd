@@ -488,4 +488,5 @@ We chose this for three reasons.
 
 Some sources write the sum of $n$ random variables as $S_n$.
 The subscript $n$ there is the sample size, not the vector.
+Within these notes, $S$ with two subscripts, such as `\sspred`, is a centered sum of squares or cross-products, not a sum of elements.
 When you read a formula from another source, check whether the subscript of $S$ is a count or a vector before you compare it with ours.
