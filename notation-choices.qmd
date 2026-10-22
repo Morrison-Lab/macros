@@ -345,7 +345,7 @@ The residual has no separate capital: `\Resid` prints the same $\resid$.
 
 Earlier versions of these macros printed the noise as $U$ with realized value $u$, and before that as the Greek letter $\nu$.
 Any use that meant $\nu$ or expected $U$ or $u$ needs a sweep.
-The macros `\popdev` and `\cdev` now print $\popdev$, the general deviation symbol `\devn`, for a deviation from a mean, where they used to print $\nu$.
+The macros `\popdev` and `\cdev` now print $\delta$, the general deviation symbol `\devn`, for a deviation from a mean, where they used to print $\nu$.
 The macro `\deviationf` prints $\delta$ with the reference as a subscript, for a labelled deviation of a given value.
 We keep `\popdev` and `\deviationf` for existing uses.
 
