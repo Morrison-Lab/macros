@@ -73,6 +73,7 @@ Six differences cause most of the confusion when you read across sources:
 notation <- utils::read.csv(
   "data/notation-conventions.csv",
   stringsAsFactors = FALSE,
+  encoding = "UTF-8",
   na.strings = character(0)
 )
 
@@ -144,6 +145,7 @@ Where a symbol takes arguments, the letters $a$, $b$ and so on stand in for them
 symbols_used <- utils::read.csv(
   "data/symbols-used.csv",
   stringsAsFactors = FALSE,
+  encoding = "UTF-8",
   na.strings = character(0)
 )
 symbols_used$meaning[is.na(symbols_used$meaning)] <- ""
