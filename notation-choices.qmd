@@ -9,7 +9,7 @@ execute:
 ---
 
 This page records why the lab's notes write certain symbols the way they do.
-Each entry states our convention, the reasons for it, and the other conventions you will see in other sources.
+Each entry states our convention, the reasons for it, and the other conventions you will encounter in other sources.
 Notes sites can link to an entry here instead of keeping their own copy.
 
 ## The vector mark {#sec-vector-mark}
@@ -55,7 +55,7 @@ We chose this split for one reason.
 Each slot then answers one question about the symbol, so once you know the split, you can tell what each part of a symbol is doing.
 
 Nothing forces the split.
-Sources divide the work differently, and you will see the same objects written the other way around.
+Sources divide the work differently, and you will encounter the same objects written the other way around.
 When you read a formula from another source, first work out what each subscript and each input in parentheses is doing:
 labeling a member of an indexed family, or being the input of a function.
 That tells you which convention the source follows, whatever its layout.
@@ -191,7 +191,7 @@ For example, the chapter on neural networks writes $\vw$ and $b$, and the regres
     Statistics texts call it the response or the outcome.
     In classification, all of these names mean the same object as our label.
 
-You will read both literatures, so expect to see both sets of names and symbols.
+You will read both literatures, so expect to encounter both sets of names and symbols.
 
 ## Writing the likelihood function {#sec-likelihood-notation}
 
