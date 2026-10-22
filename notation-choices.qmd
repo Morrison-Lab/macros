@@ -362,6 +362,30 @@ For example, `\Regcoef` prints an italic $\Regcoef$, because a regression coeffi
 The degrees of freedom `\df` prints the upright name $\df$ instead of $\nu$, because an abbreviation is a name.
 That leaves $\nu$ to the macros that still print it, such as `\shrinkage`.
 
+## The design matrix and the design vector {#sec-design-notation}
+
+The design matrix holds the input values for a model, one row for each observation, after any feature map.
+A feature map turns one input into a vector of features, such as its powers or the outputs of a layer of hidden units.
+Our convention is to write the design matrix as $\design$, and the design vector for one input as $\vdesign$.
+The vector mark is the same one that every vector here carries.
+Row $i$ of the design matrix is the design vector of observation $i$, transposed.
+The feature map itself, `\featmap`, prints the same letter, $\featmap$.
+
+We chose the letter $D$ because the design matrix involves no parameters, so it has no reason to be a Greek letter.
+Greek letters are for parameters.
+Earlier versions used $\phi$ for the feature map and the design vector; the design matrix was already $D$.
+The macro `\vfeatmap` still works and prints the same symbol as `\vdesign`, so existing pages keep rendering.
+The letters $\phi$ and $\Phi$ stay with the standard normal density and distribution function, `\normpdf` and `\normcdf`.
+
+The deviance used to print $D$ as well, which collided with the design matrix.
+The deviance is twice the gap between the log-likelihood of the saturated model and that of the fitted model.
+It is a scaled statistic, not a deviation of a value from a reference, so it does not take the deviation symbol.
+`\deviance` now prints the upright name $\deviance$, as the other named quantities do.
+
+Other sources differ.
+Some write the design matrix as $X$, and some write the feature map as $\phi$ or $\Phi$.
+Check which letter a source uses for each of the three objects before you compare formulas.
+
 ## Probability notation {#sec-probability-notation}
 
 A random variable is a function of the outcome of a random experiment, as in [the stochastic process example](#exm-stochastic-process-slots).
