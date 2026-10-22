@@ -279,7 +279,7 @@ The macros `\biassymf` and `\varsymf` apply the operator to an argument in squar
 These Latin letters have collisions:
 
 -   The macros `\Regcoef` and `\Coef` print an italic $\Regcoef$, for regression coefficients, which are variables.
-    The bias operator prints an upright letter, so the two are distinguishable in one document.
+    The bias operator prints a blackboard bold letter, so the two are distinguishable in one document.
 -   The existing macro `\V` prints $\V$, the full name of the variance, so `\varsymf` is the short form, not a replacement.
 
 The irreducible error keeps a Greek letter, because it is a variance parameter and not an operator.

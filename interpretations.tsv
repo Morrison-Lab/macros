@@ -264,7 +264,7 @@ name	interpretation
 \purple	typeset argument in purple
 \teal	typeset argument in teal
 \violet	typeset argument in violet
-\hE	estimated expected value Ê[·]
+\hE	estimated expected value (prints the hat of \Expp, with the argument in square brackets)
 \hExp	estimated expected value (alias for \hE)
 \hExpf	estimated expected value (alias for \hE)
 \hmu	estimated mean μ̂
@@ -278,11 +278,11 @@ name	interpretation
 \sigmoid	logistic (sigmoid) function symbol (σ)
 \sigmoidf	logistic (sigmoid) function applied to its argument, σ(·)
 \logitf	logit applied to argument
-\E	expected value E[·]
+\E	expected value (prints \Expp, with the argument in square brackets)
 \Ef	expected value (alias for \E)
 \Exp	expected value (alias for \E)
 \Expf	expected value (alias for \E)
-\Expfc	conditional expected value E_c[·]
+\Expfc	conditional expected value (prints \Expp with the conditioning subscript c and the argument in square brackets)
 \ATT	average treatment effect on the treated label ATT
 \ATTf	average treatment effect on the treated function ATT(·)
 \evalbar	expression followed by an evaluation bar ·|
@@ -384,7 +384,7 @@ name	interpretation
 \indicf	indicator function (alias for \indic)
 \set	set notation {·}
 \pf	probability density/mass p(·)
-\Pf	probability P(·)
+\Pf	probability (prints \P with the argument in parentheses)
 \Bias	bias function Bias(·)
 \bias	bias function (alias for \Bias)
 \ss	variance σ²
@@ -794,7 +794,7 @@ name	interpretation
 \esnaaf	Nelson-Aalen survival function estimator Ŝ_NA(·) applied to argument
 \eth	estimated theta θ̂
 \ethml	maximum likelihood estimate of theta
-\eE	estimated expected value Ê[·]
+\eE	estimated expected value (prints \est of \Expp, with the argument in square brackets)
 \eExp	estimated expected value (alias for \eE)
 \eExpf	estimated expected value (alias for \eE)
 \emu	estimated mean μ̂
@@ -1448,7 +1448,7 @@ name	interpretation
 \condVar	conditional variance Var(A | B), \condVar{A}{B}
 \condCov	conditional covariance Cov(A, B | C), \condCov{A}{B}{C}
 \condPr	conditional probability Pr(A | B), \condPr{A}{B}
-\condpmf	conditional probability mass function P(A | B), \condpmf{A}{B}
+\condpmf	conditional probability mass function (prints \pmf of A given B), \condpmf{A}{B}
 \condpdf	conditional probability density function f(A | B), \condpdf{A}{B}
 \condcdf	conditional cumulative distribution function F(A | B), \condcdf{A}{B}
 \generr	generalization error operator Err (expected loss of a prediction rule on new data)
