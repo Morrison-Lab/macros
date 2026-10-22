@@ -242,6 +242,8 @@
 \def\nulldeviance{\deviance_0}
 \def\satllik{\llik_{\mathrm{sat}}}
 \def\satdeviance{\deviance_{\mathrm{sat}}}
+\def\dicdev{\deviance_{\mathrm{DIC}}}
+\providecommand{\dicdevf}[1]{{\dicdev\paren{#1}}}
 \def\deviation{\delta}
 \def\devn{\deviation}
 \providecommand{\deviationv}{\vec{\deviation}}
