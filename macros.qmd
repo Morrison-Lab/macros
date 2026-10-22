@@ -1314,7 +1314,7 @@
 \def\samplespace{\Omega}
 \def\outcome{\omega}
 \def\measure{\mu}
-\def\measureb{\nu}
+\def\measureb{\varrho}
 \def\lebesgue{\lambda}
 \def\condnum{\kappa}
 \def\change{\Delta}
@@ -1339,9 +1339,9 @@
 \def\prevalence{\pi}
 \def\recallweight{\beta}
 \def\resp{\gamma}
-\def\shrinkage{\nu}
+\def\shrinkage{\varsigma}
 \def\singval{\sigma}
-\def\svfrac{\nu}
+\def\svfrac{\vartheta}
 \def\truthind{\delta}
 \providecommand{\truthindf}[1]{{\truthind\paren{#1}}}
 \def\typetwoerr{\beta}
@@ -1353,7 +1353,7 @@
 \def\combwtb{\beta}
 \def\errcov{\Omega}
 \def\midpt{\tau}
-\def\nullity{\nu}
+\def\nullity{\operatorname{nullity}}
 \def\lsresid{\varepsilon}
 \def\vlsresid{\vec{\varepsilon}}
 \def\subdiv{\Delta}

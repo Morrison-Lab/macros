@@ -326,7 +326,17 @@ The vector of noise variables is $\vNoise$ and the vector of realized values is 
 The noise differs from one observation to the next and has a distribution.
 In real data we never observe a realized noise value, but we write it when we reason about a single observation.
 The letter $\nu$ was also the degrees of freedom `\df`, which now prints the upright name $\df$ instead, because an abbreviation is a name and the italic and upright rule below gives names upright type.
-The letter $\nu$ is still printed by `\shrinkage`, `\svfrac`, `\measureb` and `\nullity`, which we have not changed.
+No other macro prints $\nu$, so it means the noise and the deviation from a mean.
+The macros that used to print it now print:
+
+-   `\shrinkage`, the boosting shrinkage factor, prints $\shrinkage$.
+-   `\svfrac`, the bound on the fraction of margin errors in the support vector machine that is traditionally called the $\nu$-SVM, prints $\svfrac$.
+-   `\measureb`, a second measure, prints $\measureb$.
+-   `\nullity`, the nullity of a matrix, prints the upright name $\nullity$.
+
+We chose $\varsigma$, $\vartheta$ and $\varrho$ because no other macro printed them on its own, only their bold versions.
+Textbooks write the shrinkage as $\lambda$ and the second measure as $\nu$, but `\regpar` and the other macros already use $\lambda$, and $\nu$ is now the noise.
+
 
 The errors keep the letter $\varepsilon$: `\prederr` and `\err` print $\varepsilon$.
 So the Greek letter $\varepsilon$ means an error here, even though ISL and most textbooks use it for the noise and call it the error term.
