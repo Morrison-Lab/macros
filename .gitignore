@@ -17,3 +17,7 @@
 /_tests/*.tex
 /_tests/*_files/
 __pycache__/
+
+# Source HTML partials we intentionally track (not build output).
+!theme-picker.html
+!anchor-landing.html

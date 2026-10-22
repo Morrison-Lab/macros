@@ -10,6 +10,9 @@ website:
   title: "macros"
   repo-url: https://github.com/d-morrison/macros
   repo-actions: [source]
+  page-footer:
+    center: "Built with [Quarto](https://quarto.org/)"
+  back-to-top-navigation: true
   navbar:
     left:
       - href: index.qmd
@@ -30,7 +33,14 @@ website:
 
 format:
   html:
-    theme: cosmo
+    theme:
+      light: [cosmo, offwhite.scss]
+      dark: darkly
+    # Replaces Quarto's two-way toggle with a Light / Off-white / Parchment / Dark dropdown.
+    include-in-header: theme-picker.html
+    include-after-body:
+      - anchor-landing.html
+    css: styles.css
     toc: true
 
 execute:
