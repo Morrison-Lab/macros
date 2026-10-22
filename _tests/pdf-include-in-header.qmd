@@ -33,3 +33,5 @@ Equality with a reason, alone, with a tall side, and squared: $a \eqby{\text{(A1
 Input counts, subscripted and squared: $\ninputvars_i^2$, $\inputdim^2$.
 
 Sum of the elements, plain, squared and with a tall argument: $\sumof{\vy}$, $\Sumof{\vY}^2$, $\Sumof{\frac{a}{b}}_i$.
+
+Fitted prediction function, plain, squared and applied: $\epredfn^2$, $\epredfnf{x}^2$, $\predfnf{x}_i$, $\bestpredfnf{x}^2$.

@@ -238,6 +238,8 @@ Other sources use other symbols, so check which symbol a source uses for the est
 
 Fix a covariate value $\predvar$, a training sample size, and a fitting procedure.
 The fitted prediction function $\predfn$ varies from one training data set to the next.
+We write the prediction function as $f$, as ISL and ESL do, and the fitted one as $\epredfn$, from the macro `\epredfn`.
+The older macros `\hf` and `\hfx{x}` print the same fitted function and are deprecated in favour of `\epredfn` and `\epredfnf{x}`.
 Let $\Outvar$ be a new outcome at $\predvar$, independent of the training data.
 Write $\truemeanf{\predvar}$ for the mean of $\Outvar$.
 The noise is the random part of $\Outvar$ that no function of the covariates predicts.
