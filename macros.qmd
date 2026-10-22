@@ -186,7 +186,8 @@
 \providecommand{\modmemof}[1]{\modmem_{#1}}
 \def\nobs{n}
 \def\nmodels{M}
-\def\inputdim{p}
+\def\ninputvars{p}
+\def\inputdim{\ninputvars}
 \def\nparams{p^{*}}
 \def\npatterns{K}
 \def\nreps{m}
