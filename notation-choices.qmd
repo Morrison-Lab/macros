@@ -373,7 +373,7 @@ The feature map itself, `\featmap`, prints the same letter, $\featmap$.
 
 We chose the letter $D$ because the design matrix involves no parameters, so it has no reason to be a Greek letter.
 Greek letters are for parameters.
-Earlier versions used $\phi$ for the feature map and the design vector, and $\Phi$ for the design matrix.
+Earlier versions used $\phi$ for the feature map and the design vector; the design matrix was already $D$.
 The macro `\vfeatmap` still works and prints the same symbol as `\vdesign`, so existing pages keep rendering.
 The letters $\phi$ and $\Phi$ stay with the standard normal density and distribution function, `\normpdf` and `\normcdf`.
 
