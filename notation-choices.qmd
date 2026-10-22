@@ -278,8 +278,8 @@ The macros `\biassymf` and `\varsymf` apply the operator to an argument in squar
 
 These Latin letters have collisions:
 
--   The macros `\Regcoef` and `\Coef` also print an upright $\Regcoef$, for regression coefficients.
-    So avoid using `\biassym` or `\biassymf` together with either of them in one document.
+-   The macros `\Regcoef` and `\Coef` print an italic $\Regcoef$, for regression coefficients, which are variables.
+    The bias operator prints an upright letter, so the two are distinguishable in one document.
 -   The existing macro `\V` prints $\V$, the full name of the variance, so `\varsymf` is the short form, not a replacement.
 
 The irreducible error keeps a Greek letter, because it is a variance parameter and not an operator.
@@ -297,15 +297,17 @@ Check which form a source uses before comparing its decomposition with ours.
 
 ## Noise, deviation and error {#sec-noise-deviation-error}
 
-Noise, estimation error and prediction error are three deviations, each with its own reference.
+The noise is a deviation.
+An estimation error and a prediction error are errors, which are deviations whose reference is an estimand.
+Each of the three has its own reference.
 
 Our convention is to write a deviation as $\devof{a}{b}$, the quantity $a$ minus the reference value $b$.
 The noise is the deviation of an outcome from its mean given the input, $\Noise = \devof{\Outvar}{\truemeanf{\predvar}}$.
-An estimation error is the deviation of an estimate from its estimand, $\esterr{\est{\theta}}{\theta}$.
+An estimation error is the deviation of an estimate from its estimand, $\devof{\est{\theta}}{\theta}$, and we write it $\esterr{\est{\theta}}{\theta}$.
 A prediction error is the estimation error whose estimand is the new outcome.
 In meaning, these three differ only in the reference.
-The macro `\devof` states that shared structure.
-The macro `\esterr` is defined through it.
+The macro `\devof` states that shared structure, and prints the difference itself.
+The macro `\esterr` prints the error symbol $\varepsilon$, with the estimand as a subscript, so an error is not mistaken for another deviation.
 The macros `\Noise` and `\prederr` have their own symbols, $\Noise$ and $\prederr$.
 In all three we subtract the reference from the quantity.
 So an estimate or prediction that is too large has a positive error.
@@ -344,6 +346,16 @@ We keep `\popdev` and `\deviationf` for existing uses.
 
 Some sources use $e$ for the noise, so check what a source means by it.
 Some sources subtract in the other order, so check the sign before comparing a formula with ours.
+
+## Italic and upright {#sec-italic-upright}
+
+We use italic and upright type to carry meaning.
+An italic letter is a variable, a value or a parameter.
+This includes the Greek letters, such as $\varepsilon$, $\mu$ and $\theta$, and an estimate such as $\resid$.
+An upright letter or word is a name, not a quantity.
+It is an operator, a function name, a constant or a label, such as $\tr$, $\diag$, $\rank$, the constant $\euler$ and a text subscript like $\vcdim$.
+So we never print a variable upright, and we never print an operator or a constant in italic.
+For example, `\Regcoef` prints an italic $\Regcoef$, because a regression coefficient is a variable.
 
 ## Probability notation {#sec-probability-notation}
 
