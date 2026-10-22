@@ -25,3 +25,5 @@ Residuals, prediction errors and the deviation from a mean, subscripted and squa
 Degrees of freedom and regression coefficients, subscripted and squared: $\df_i^2$, $\hdf_i^2$, $\edf^2$, $\Regcoef_i^2$, $\Coef{j}^2$.
 
 Equality with a reason, alone, with a tall side, and squared: $a \eqby{\text{(A1)}} b$, $\frac{a}{b} \eqby{\text{Thm 2}} c$, $\paren{a \eqby{\text{(A1)}} b}^2$, $\E{X \eqby{\text{(A1)}} Y}^2$.
+
+Sum of the elements, plain, squared and with a tall argument: $\sumof{\vy}$, $\Sumof{\vY}^2$, $\Sumof{\frac{a}{b}}_i$.
