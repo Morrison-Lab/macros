@@ -177,7 +177,7 @@ name	interpretation
 \loglikf	log-likelihood function ℓ(·) (alias for \llikf)
 \loglf	log-likelihood function ℓ(·) (alias for \llikf)
 \likf	log-likelihood function ℓ(·) (alias for \llikf)
-\deviance	deviance of a fitted model: twice the gap between the saturated model's log-likelihood and its own (prints an upright name)
+\deviance	deviance of a fitted model: twice the gap between the saturated model's log-likelihood and its own (prints the upright name dev, because an abbreviation is a name)
 \nulldeviance	null deviance: the deviance of the intercept-only model
 \satllik	maximized log-likelihood of the saturated model
 \satdeviance	deviance relative to the saturated model: twice the difference between the saturated model's and the fitted model's maximized log-likelihoods
