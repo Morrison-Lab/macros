@@ -1,0 +1,2578 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.10.19">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>Notation Across Sources – macros</title>
+<style>
+/* Default styles provided by pandoc.
+** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+*/
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: 1.5em;}
+div.column{flex: auto;}
+@media screen {
+div.columns{gap: min(4vw, 1.5em);}
+div.column{overflow-x: auto;}
+}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+  margin-bottom: 0em;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<script src="site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-bf27225e3a48a9273f3daa8f8e829971.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap-55617497126496852ff9f5a59253c640.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/quarto-contrib/code-language-labels-1.0.2/code-language-labels.css" rel="stylesheet">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+<script>
+(function () {
+  (function forceRevealMathJax3() {
+    const prior = Object.prototype.hasOwnProperty.call(window, "RevealMath")
+      ? window.RevealMath
+      : undefined;
+
+    let revealMathValue;
+    Object.defineProperty(window, "RevealMath", {
+      configurable: true,
+      enumerable: true,
+      get() {
+        return revealMathValue;
+      },
+      set(value) {
+        if (value && typeof value.MathJax3 === "function") {
+          const originalMathJax3 = value.MathJax3;
+          revealMathValue = function () {
+            const plugin = originalMathJax3.apply(this, arguments);
+            const originalInit = plugin.init;
+            plugin.init = function (deck) {
+              const config = deck.getConfig() || {};
+              config.mathjax3 = config.mathjax3 || {};
+              config.mathjax3.options = config.mathjax3.options || {};
+              config.mathjax3.options.skipHtmlTags = [
+                "script", "noscript", "style", "textarea", "pre", "code"
+              ];
+              return originalInit.apply(this, arguments);
+            };
+            return plugin;
+          };
+        } else {
+          revealMathValue = value;
+        }
+      },
+    });
+
+    if (prior !== undefined) {
+      window.RevealMath = prior;
+    }
+  })();
+
+  const macroSources = ["macros.qmd", "macros/macros.qmd"];
+
+  function extractBraceContent(text, startIndex) {
+    if (text[startIndex] !== "{") return null;
+    let depth = 0;
+    const isEscaped = (index) => {
+      let backslashes = 0;
+      for (let j = index - 1; j >= 0 && text[j] === "\\"; j -= 1) backslashes += 1;
+      return backslashes % 2 === 1;
+    };
+
+    for (let i = startIndex; i < text.length; i += 1) {
+      const ch = text[i];
+      if (ch === "{" && !isEscaped(i)) depth += 1;
+      if (ch === "}" && !isEscaped(i)) {
+        depth -= 1;
+        if (depth === 0) {
+          return { content: text.slice(startIndex + 1, i), nextIndex: i + 1 };
+        }
+      }
+    }
+
+    return null;
+  }
+
+  function parseDef(line, macros) {
+    if (!line.startsWith("\\def\\")) return false;
+
+    let index = "\\def\\".length;
+    let name = "";
+
+    while (index < line.length && !/[\s{]/.test(line[index])) {
+      name += line[index];
+      index += 1;
+    }
+
+    while (index < line.length && /\s/.test(line[index])) index += 1;
+    const body = extractBraceContent(line, index);
+    if (!name || !body) return false;
+
+    const argMatches = [...body.content.matchAll(/#(\d+)/g)].map((m) => Number(m[1]));
+    const argc = argMatches.length ? Math.max(...argMatches) : 0;
+    macros[name] = argc > 0 ? [body.content, argc] : body.content;
+    return true;
+  }
+
+  function parseCommand(line, macros) {
+    const commandMatch = line.match(/^\\(providecommand|newcommand|renewcommand)/);
+    if (!commandMatch) return false;
+
+    let index = commandMatch[0].length;
+    while (index < line.length && /\s/.test(line[index])) index += 1;
+
+    const nameBlock = extractBraceContent(line, index);
+    if (!nameBlock || !nameBlock.content.startsWith("\\")) return false;
+    const name = nameBlock.content.slice(1);
+    index = nameBlock.nextIndex;
+
+    while (index < line.length && /\s/.test(line[index])) index += 1;
+
+    let argc = 0;
+    if (line[index] === "[") {
+      const close = line.indexOf("]", index + 1);
+      if (close === -1) return false;
+      argc = Number(line.slice(index + 1, close)) || 0;
+      index = close + 1;
+    }
+
+    while (index < line.length && /\s/.test(line[index])) index += 1;
+
+    const body = extractBraceContent(line, index);
+    if (!body) return false;
+
+    macros[name] = argc > 0 ? [body.content, argc] : body.content;
+    return true;
+  }
+
+  function parseMacros(sourceText) {
+    const macros = {};
+    const commandStart = /^\\(def|providecommand|newcommand|renewcommand)\b/;
+
+    function braceBalance(text) {
+      let balance = 0;
+      let backslashes = 0;
+
+      for (let i = 0; i < text.length; i++) {
+        const ch = text[i];
+        if (ch === "\\") {
+          backslashes += 1;
+          continue;
+        }
+
+        const escaped = backslashes % 2 === 1;
+        backslashes = 0;
+
+        if (ch === "{" && !escaped) balance += 1;
+        if (ch === "}" && !escaped) balance -= 1;
+      }
+
+      return balance;
+    }
+
+    let current = "";
+
+    for (const rawLine of sourceText.split(/\r?\n/)) {
+      const line = rawLine.trim();
+      if (!line || line.startsWith("%") || line.startsWith("<!--")) continue;
+
+      if (current || commandStart.test(line)) {
+        current = current ? `${current}\n${line}` : line;
+      } else {
+        continue;
+      }
+
+      const balance = braceBalance(current);
+      if (balance < 0) {
+        current = "";
+        continue;
+      }
+      if (balance !== 0) continue;
+
+      if (parseDef(current, macros)) {
+        current = "";
+        continue;
+      }
+
+      parseCommand(current, macros);
+      current = "";
+    }
+
+    return macros;
+  }
+
+  async function loadMacroSource() {
+    for (const path of macroSources) {
+      try {
+        const response = await fetch(path, { cache: "default" });
+        if (response.ok) return await response.text();
+      } catch (_) {
+        // try next path
+      }
+    }
+
+    throw new Error("Unable to load macros.qmd from known paths");
+  }
+
+  function applyMacros(parsed) {
+    window.MathJax = window.MathJax || {};
+    const skipTags = ["script", "noscript", "style", "textarea", "pre", "code"];
+
+    window.MathJax.tex = window.MathJax.tex || {};
+    window.MathJax.tex.macros = Object.assign({}, window.MathJax.tex.macros || {}, parsed);
+    window.MathJax.options = window.MathJax.options || {};
+    const existingSkipTags = Array.isArray(window.MathJax.options.skipHtmlTags)
+      ? window.MathJax.options.skipHtmlTags
+      : [];
+    window.MathJax.options.skipHtmlTags = Array.from(new Set([...existingSkipTags, ...skipTags]));
+    window.MathJax.config = window.MathJax.config || {};
+    window.MathJax.config.tex = window.MathJax.config.tex || {};
+    window.MathJax.config.tex.macros = Object.assign(
+      {},
+      window.MathJax.config.tex.macros || {},
+      parsed
+    );
+
+    window.MathJax.TeX = window.MathJax.TeX || {};
+    window.MathJax.TeX.Macros = Object.assign({}, window.MathJax.TeX.Macros || {}, parsed);
+
+    if (window.MathJax.Hub && window.MathJax.Hub.Config) {
+      window.MathJax.Hub.Config({
+        TeX: { Macros: window.MathJax.TeX.Macros },
+        tex2jax: { skipTags: skipTags },
+      });
+    }
+  }
+
+  window.MathJax = window.MathJax || {};
+  window.MathJax.delayStartupUntil = window.MathJax.delayStartupUntil || "configured";
+  window.MathJax.startup = window.MathJax.startup || {};
+
+  const sourcePromise = loadMacroSource();
+  const priorReady = window.MathJax.startup.ready;
+
+  window.MathJax.startup.ready = async () => {
+    try {
+      applyMacros(parseMacros(await sourcePromise));
+    } catch (error) {
+      console.warn("[macros-header] Failed to load macros.qmd for MathJax:", error);
+    }
+
+    if (typeof priorReady === "function") {
+      return priorReady();
+    }
+
+    if (window.MathJax.startup.defaultReady) {
+      return window.MathJax.startup.defaultReady();
+    }
+  };
+
+  sourcePromise
+    .then((sourceText) => {
+      applyMacros(parseMacros(sourceText));
+      if (window.MathJax.Hub && window.MathJax.Hub.Configured) {
+        window.MathJax.Hub.Configured();
+      }
+    })
+    .catch((error) => {
+      console.warn("[macros-header] Failed to load macros.qmd for MathJax:", error);
+      if (window.MathJax.Hub && window.MathJax.Hub.Configured) {
+        window.MathJax.Hub.Configured();
+      }
+    });
+})();
+</script>
+
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script defer="" src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-chtml.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
+</head>
+
+<body class="nav-fixed quarto-light">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a class="navbar-brand" href="./index.html">
+    <span class="navbar-title">macros</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="./index.html"> 
+<span class="menu-text">Home</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./macros-table.html"> 
+<span class="menu-text">Macro Reference</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./notation-choices.html"> 
+<span class="menu-text">Notation Choices</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link active" href="./notation-across-sources.html" aria-current="page"> 
+<span class="menu-text">Notation Across Sources</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./demo-include-in-header.html"> 
+<span class="menu-text">Demo (include in header strategy)</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./demo-shortcode.html"> 
+<span class="menu-text">Demo (include shortcode strategy)</span></a>
+  </li>  
+</ul>
+            <ul class="navbar-nav navbar-nav-scroll ms-auto">
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://github.com/d-morrison/macros"> <i class="bi bi-github" role="img">
+</i> 
+<span class="menu-text"></span></a>
+  </li>  
+</ul>
+          </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#sec-notation-sources" id="toc-sec-notation-sources" class="nav-link active" data-scroll-target="#sec-notation-sources">Sources</a></li>
+  <li><a href="#sec-notation-differences" id="toc-sec-notation-differences" class="nav-link" data-scroll-target="#sec-notation-differences">Differences that cause confusion</a></li>
+  <li><a href="#sec-notation-tables" id="toc-sec-notation-tables" class="nav-link" data-scroll-target="#sec-notation-tables">Tables</a>
+  <ul class="collapse">
+  <li><a href="#sec-notation-data" id="toc-sec-notation-data" class="nav-link" data-scroll-target="#sec-notation-data">Data</a></li>
+  <li><a href="#sec-notation-model" id="toc-sec-notation-model" class="nav-link" data-scroll-target="#sec-notation-model">Models, loss and risk</a></li>
+  <li><a href="#sec-notation-linear" id="toc-sec-notation-linear" class="nav-link" data-scroll-target="#sec-notation-linear">Linear models</a></li>
+  <li><a href="#sec-notation-nn" id="toc-sec-notation-nn" class="nav-link" data-scroll-target="#sec-notation-nn">Neural networks</a></li>
+  <li><a href="#sec-notation-svm" id="toc-sec-notation-svm" class="nav-link" data-scroll-target="#sec-notation-svm">Support vector machines</a></li>
+  <li><a href="#sec-notation-unsup" id="toc-sec-notation-unsup" class="nav-link" data-scroll-target="#sec-notation-unsup">Unsupervised learning</a></li>
+  </ul></li>
+  <li><a href="#sec-notation-other" id="toc-sec-notation-other" class="nav-link" data-scroll-target="#sec-notation-other">Other comparisons</a>
+  <ul class="collapse">
+  <li><a href="#sec-notation-subscripts" id="toc-sec-notation-subscripts" class="nav-link" data-scroll-target="#sec-notation-subscripts">Subscripts and parentheses</a></li>
+  <li><a href="#sec-notation-information" id="toc-sec-notation-information" class="nav-link" data-scroll-target="#sec-notation-information">Information matrices</a></li>
+  </ul></li>
+  <li><a href="#sec-notation-symbols" id="toc-sec-notation-symbols" class="nav-link" data-scroll-target="#sec-notation-symbols">Other symbols used</a></li>
+  <li><a href="#references" id="toc-references" class="nav-link" data-scroll-target="#references">References</a></li>
+  </ul>
+<div class="toc-actions"><ul><li><a href="https://github.com/d-morrison/macros/blob/main/notation-across-sources.qmd" class="toc-action"><i class="bi bi-github"></i>View source</a></li></ul></div></nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Notation Across Sources</h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<p>This page sets our notation beside the notation of Hutchinson’s and Harris’ lecture notes and five textbooks. The <a href="./notation-choices.html">Notation Choices</a> page gives the reasons for our conventions; this page lists the symbols side by side. The data are in <a href="data/notation-conventions.csv"><code>data/notation-conventions.csv</code></a> and <a href="data/symbols-used.csv"><code>data/symbols-used.csv</code></a>. Links in the tables go to the definitions in the <a href="https://morrison-lab.github.io/lds/">DATA 571 notes</a>, with a few to the statistics and math prerequisite notes.</p>
+<section id="sec-notation-sources" class="level1">
+<h1>Sources</h1>
+<p>The tables on this page set our notation beside the notation of these sources:</p>
+<ul>
+<li>Brian Hutchinson’s lecture notes for DATA 471/571 <span class="citation" data-cites="hutchinson2025data471"><a href="#ref-hutchinson2025data471" role="doc-biblioref">[1]</a></span>.</li>
+<li>Kameron Decker Harris’ 2022 weekly notes for DATA 471 <span class="citation" data-cites="harris2022data471"><a href="#ref-harris2022data471" role="doc-biblioref">[2]</a></span>.</li>
+<li><em>An Introduction to Statistical Learning</em>, or ISL, in its R edition <span class="citation" data-cites="james2021islr"><a href="#ref-james2021islr" role="doc-biblioref">[3]</a></span> and its Python edition <span class="citation" data-cites="james2023introduction"><a href="#ref-james2023introduction" role="doc-biblioref">[4]</a></span>. They share one column because the two books use the same notation: their notation sections are word for word the same, and so are the symbols for the slack variable, the budget <span class="math inline">\(C\)</span> and the learning rate.</li>
+<li><em>The Elements of Statistical Learning</em>, or ESL <span class="citation" data-cites="hastie2009esl"><a href="#ref-hastie2009esl" role="doc-biblioref">[5]</a></span>.</li>
+<li><em>Learning From Data</em>, or LfD <span class="citation" data-cites="abumostafa2012learning"><a href="#ref-abumostafa2012learning" role="doc-biblioref">[6]</a></span>.</li>
+<li>Bishop’s <em>Pattern Recognition and Machine Learning</em> <span class="citation" data-cites="bishop2006prml"><a href="#ref-bishop2006prml" role="doc-biblioref">[7]</a></span>.</li>
+<li>Murphy’s <em>Probabilistic Machine Learning: An Introduction</em> <span class="citation" data-cites="murphy2022pml"><a href="#ref-murphy2022pml" role="doc-biblioref">[8]</a></span>.</li>
+</ul>
+<p>To read the tables:</p>
+<ul>
+<li>A dash means the source has no symbol for the concept or does not cover it. The printed chapters of LfD, for example, stop before neural networks and SVMs.</li>
+<li>A cell is bold where the source writes the symbol in bold, and plain where the source does not. Hutchinson’s notes write vectors as plain letters, and Harris’ notes put an arrow over them.</li>
+<li>The name of each source in a table header links to its entry in the reference list.</li>
+<li>A row label links to the definition in these notes where there is one.</li>
+</ul>
+</section>
+<section id="sec-notation-differences" class="level1">
+<h1>Differences that cause confusion</h1>
+<p>Six differences cause most of the confusion when you read across sources:</p>
+<ul>
+<li><strong>Labels</strong>: the two-class label is <span class="math inline">\(\{0, 1\}\)</span> for logistic regression and <span class="math inline">\(\{-1, +1\}\)</span> for SVMs in most sources, and always <span class="math inline">\(\{-1, +1\}\)</span> in LfD.</li>
+<li><strong>The SVM constant <span class="math inline">\(C\)</span></strong>: Hutchinson, Bishop and Murphy use <span class="math inline">\(C\)</span> as a penalty on the slack, so a larger <span class="math inline">\(C\)</span> allows fewer violations. ISL uses <span class="math inline">\(C\)</span> as a budget on the slack, so a larger <span class="math inline">\(C\)</span> allows more.</li>
+<li><strong>Sample index</strong>: a superscript in parentheses (<span class="math inline">\(x^{(i)}\)</span>) in Hutchinson’s notes, a subscript <span class="math inline">\(i\)</span> in ISL and ESL, and a subscript <span class="math inline">\(n\)</span> in LfD, Bishop and Murphy.</li>
+<li><strong>Prediction of the fitted model, averaged over data sets</strong>: these notes write the prediction at <span class="math inline">\(x\)</span> as <span class="math inline">\(\predvalf{x}\)</span>, as ISL and ESL do (<span class="math inline">\(\hat{f}(x)\)</span>). Where <span class="math inline">\(x\)</span> is fixed and its dependence is not the point, as in the <a href="https://morrison-lab.github.io/lds/chapters/big-ideas.html#eq-bias-variance">bias–variance decomposition</a>, they drop the argument and write <span class="math inline">\(\predval\)</span>. Either way the prediction is a random variable, because it depends on the training set. The <a href="https://morrison-lab.github.io/lds/chapters/big-ideas.html#eq-average-fit">average fit</a> <span class="math inline">\(\avgfitf{x}\)</span> is the population expectation of that prediction over training sets, written with no bar and no hat.</li>
+<li><strong>Target</strong>: Bishop calls the output <span class="math inline">\(t\)</span> for <em>target</em>, and every other source calls it <span class="math inline">\(y\)</span>.</li>
+<li><strong>Subscripts and parentheses</strong>: which arguments go in a subscript and which in parentheses varies, as in <span class="math inline">\(f_\theta(x)\)</span> versus <span class="math inline">\(f(x; \theta)\)</span>. The <a href="./notation-choices.html#sec-subscripts-parentheses">Notation Choices page</a> states our convention and the alternatives.</li>
+</ul>
+</section>
+<section id="sec-notation-tables" class="level1">
+<h1>Tables</h1>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> (g <span class="cf">in</span> <span class="fu">names</span>(notation_groups)) {</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">cat</span>(<span class="st">"</span><span class="sc">\n\n</span><span class="st">## "</span>, notation_groups[[g]], <span class="st">" {#sec-notation-"</span>, g, <span class="st">"}</span><span class="sc">\n\n</span><span class="st">"</span>, <span class="at">sep =</span> <span class="st">""</span>)</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">cat</span>(<span class="fu">notation_table</span>(g), <span class="st">"</span><span class="sc">\n</span><span class="st">"</span>, <span class="at">sep =</span> <span class="st">"</span><span class="sc">\n</span><span class="st">"</span>)</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<section id="sec-notation-data" class="level2">
+<h2 class="anchored" data-anchor-id="sec-notation-data">Data</h2>
+<div id="tbl-notation-data" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-tbl figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-notation-data-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Table&nbsp;1: Data: notation across sources
+</figcaption>
+<div aria-describedby="tbl-notation-data-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th style="text-align: left;">Concept</th>
+<th style="text-align: left;">These notes</th>
+<th style="text-align: left;"><a href="#ref-hutchinson2025data471">Hutchinson</a></th>
+<th style="text-align: left;"><a href="#ref-harris2022data471">Harris</a></th>
+<th style="text-align: left;">ISL (<a href="#ref-james2021islr">R</a>, <a href="#ref-james2023introduction">Python</a>)</th>
+<th style="text-align: left;"><a href="#ref-hastie2009esl">ESL</a></th>
+<th style="text-align: left;"><a href="#ref-abumostafa2012learning">LfD</a></th>
+<th style="text-align: left;"><a href="#ref-bishop2006prml">Bishop</a></th>
+<th style="text-align: left;"><a href="#ref-murphy2022pml">Murphy</a></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Number of observations</td>
+<td style="text-align: left;"><span class="math inline">\(\nobs\)</span> (<span class="math inline">\(N\)</span> in the SVM chapter)</td>
+<td style="text-align: left;"><span class="math inline">\(N\)</span></td>
+<td style="text-align: left;"><span class="math inline">\(n\)</span></td>
+<td style="text-align: left;"><span class="math inline">\(n\)</span></td>
+<td style="text-align: left;"><span class="math inline">\(N\)</span></td>
+<td style="text-align: left;"><span class="math inline">\(N\)</span></td>
+<td style="text-align: left;"><span class="math inline">\(N\)</span></td>
+<td style="text-align: left;"><span class="math inline">\(N\)</span></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Number of input variables</td>
+<td style="text-align: left;"><span class="math inline">\(\inputdim\)</span></td>
+<td style="text-align: left;"><span class="math inline">\(D\)</span></td>
+<td style="text-align: left;"><span class="math inline">\(d\)</span></td>
+<td style="text-align: left;"><span class="math inline">\(p\)</span></td>
+<td style="text-align: left;"><span class="math inline">\(p\)</span></td>
+<td style="text-align: left;"><span class="math inline">\(d\)</span></td>
+<td style="text-align: left;"><span class="math inline">\(D\)</span></td>
+<td style="text-align: left;"><span class="math inline">\(D\)</span></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><a href="https://morrison-lab.github.io/lds/chapters/math-prereqs.html#sec-notation-origins">Vector notation</a></td>
+<td style="text-align: left;">a tilde under the letter: <span class="math inline">\(\vx\)</span></td>
+<td style="text-align: left;">plain letter: <span class="math inline">\(x\)</span></td>
+<td style="text-align: left;">an arrow: <span class="math inline">\(\overrightarrow{x}\)</span></td>
+<td style="text-align: left;">plain letter for a feature vector: <span class="math inline">\(x\)</span>; bold for a vector of length <span class="math inline">\(n\)</span>: <span class="math inline">\(\mathbf{a}\)</span></td>
+<td style="text-align: left;">plain letter: <span class="math inline">\(x_i\)</span>; bold for a vector of length <span class="math inline">\(N\)</span>: <span class="math inline">\(\mathbf{x}_j\)</span></td>
+<td style="text-align: left;">bold: <span class="math inline">\(\mathbf{x}\)</span></td>
+<td style="text-align: left;">bold lowercase: <span class="math inline">\(\mathbf{x}\)</span></td>
+<td style="text-align: left;">bold lowercase: <span class="math inline">\(\mathbf{x}\)</span></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><a href="https://morrison-lab.github.io/lds/chapters/course-overview.html#def-feature-vector">Input (feature vector)</a>, observed</td>
+<td style="text-align: left;"><span class="math inline">\(\vpredvar \in \reals^\inputdim\)</span></td>
+<td style="text-align: left;"><span class="math inline">\(x \in \reals^D\)</span></td>
+<td style="text-align: left;"><span class="math inline">\(\overrightarrow{x}_i \in \mathbb{R}^d\)</span></td>
+<td style="text-align: left;"><span class="math inline">\(x_i\)</span></td>
+<td style="text-align: left;"><span class="math inline">\(x_i\)</span></td>
+<td style="text-align: left;"><span class="math inline">\(\mathbf{x}\)</span>, with <span class="math inline">\(x_0 = 1\)</span></td>
+<td style="text-align: left;"><span class="math inline">\(\mathbf{x}\)</span></td>
+<td style="text-align: left;"><span class="math inline">\(\mathbf{x}\)</span></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><a href="https://morrison-lab.github.io/lds/chapters/course-overview.html#def-feature-vector">Input (feature vector)</a>, random</td>
+<td style="text-align: left;"><span class="math inline">\(\vPredvar\)</span></td>
+<td style="text-align: left;">no separate symbol</td>
+<td style="text-align: left;">no separate symbol</td>
+<td style="text-align: left;"><span class="math inline">\(X\)</span></td>
+<td style="text-align: left;"><span class="math inline">\(X\)</span></td>
+<td style="text-align: left;">no separate symbol</td>
+<td style="text-align: left;">no separate symbol</td>
+<td style="text-align: left;">no separate symbol</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><a href="https://morrison-lab.github.io/lds/chapters/linear-regression.html#def-design-matrix">Data matrix</a></td>
+<td style="text-align: left;"><span class="math inline">\(\mX\)</span> (<span class="math inline">\(\nobs \times \inputdim\)</span>); <span class="math inline">\(\design\)</span> (<span class="math inline">\(\nobs \times \nparams\)</span>) after a feature map</td>
+<td style="text-align: left;"><span class="math inline">\(X \in \reals^{N \times (D+1)}\)</span>, rows padded with a 1</td>
+<td style="text-align: left;"><span class="math inline">\(X\)</span> (<span class="math inline">\(n \times (d+1)\)</span>), rows padded with a 1</td>
+<td style="text-align: left;"><span class="math inline">\(\mathbf{X}\)</span> (<span class="math inline">\(n \times p\)</span>)</td>
+<td style="text-align: left;"><span class="math inline">\(\mathbf{X}\)</span> (<span class="math inline">\(N \times p\)</span>)</td>
+<td style="text-align: left;"><span class="math inline">\(X\)</span> (<span class="math inline">\(N \times (d+1)\)</span>)</td>
+<td style="text-align: left;"><span class="math inline">\(\mathbf{X}\)</span> (<span class="math inline">\(N \times D\)</span>)</td>
+<td style="text-align: left;"><span class="math inline">\(\mathbf{X}\)</span> (<span class="math inline">\(N \times D\)</span>)</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><a href="https://morrison-lab.github.io/lds/chapters/linear-regression.html#def-feature-expansion">Feature map</a></td>
+<td style="text-align: left;"><span class="math inline">\(\vfeatmap\)</span></td>
+<td style="text-align: left;"><span class="math inline">\(\phi\)</span></td>
+<td style="text-align: left;"><span class="math inline">\(\Phi\)</span> (<a href="https://morrison-lab.github.io/lds/chapters/linear-regression.html#def-feature-expansion">feature matrix</a>)</td>
+<td style="text-align: left;"><a href="https://morrison-lab.github.io/lds/chapters/linear-regression.html#def-feature-expansion">basis functions</a> <span class="math inline">\(b_j\)</span></td>
+<td style="text-align: left;"><a href="https://morrison-lab.github.io/lds/chapters/linear-regression.html#def-feature-expansion">basis functions</a> <span class="math inline">\(h_m\)</span></td>
+<td style="text-align: left;"><span class="math inline">\(\Phi\)</span></td>
+<td style="text-align: left;"><span class="math inline">\(\boldsymbol{\phi}\)</span> (design matrix <span class="math inline">\(\boldsymbol{\Phi}\)</span>)</td>
+<td style="text-align: left;"><span class="math inline">\(\boldsymbol{\phi}\)</span></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><a href="https://morrison-lab.github.io/lds/chapters/course-overview.html#def-output-variable">Output (response, target)</a>, observed</td>
+<td style="text-align: left;"><span class="math inline">\(\outvar\)</span></td>
+<td style="text-align: left;"><span class="math inline">\(y\)</span></td>
+<td style="text-align: left;"><span class="math inline">\(y_i\)</span></td>
+<td style="text-align: left;"><span class="math inline">\(y_i\)</span></td>
+<td style="text-align: left;"><span class="math inline">\(y_i\)</span></td>
+<td style="text-align: left;"><span class="math inline">\(y\)</span></td>
+<td style="text-align: left;"><span class="math inline">\(t\)</span> (target)</td>
+<td style="text-align: left;"><span class="math inline">\(y\)</span></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><a href="https://morrison-lab.github.io/lds/chapters/course-overview.html#def-output-variable">Output (response, target)</a>, random</td>
+<td style="text-align: left;"><span class="math inline">\(\Outvar\)</span></td>
+<td style="text-align: left;">no separate symbol</td>
+<td style="text-align: left;"><span class="math inline">\(Y\)</span></td>
+<td style="text-align: left;"><span class="math inline">\(Y\)</span></td>
+<td style="text-align: left;"><span class="math inline">\(Y\)</span></td>
+<td style="text-align: left;">no separate symbol</td>
+<td style="text-align: left;">no separate symbol</td>
+<td style="text-align: left;">no separate symbol</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><span class="math inline">\(i\)</span>th example</td>
+<td style="text-align: left;"><span class="math inline">\(\vpredvar_i\)</span>, <span class="math inline">\(\outvar_i\)</span> (<span class="math inline">\(\vpredvar_{(i)}\)</span>, <span class="math inline">\(\outvar_{(i)}\)</span> in the SVM chapter)</td>
+<td style="text-align: left;"><span class="math inline">\(x^{(i)}\)</span>, <span class="math inline">\(y^{(i)}\)</span></td>
+<td style="text-align: left;"><span class="math inline">\(\overrightarrow{x}_i\)</span>, <span class="math inline">\(y_i\)</span></td>
+<td style="text-align: left;"><span class="math inline">\(x_i\)</span>, <span class="math inline">\(y_i\)</span></td>
+<td style="text-align: left;"><span class="math inline">\(x_i\)</span>, <span class="math inline">\(y_i\)</span></td>
+<td style="text-align: left;"><span class="math inline">\(\mathbf{x}_n\)</span>, <span class="math inline">\(y_n\)</span></td>
+<td style="text-align: left;"><span class="math inline">\(\mathbf{x}_n\)</span>, <span class="math inline">\(t_n\)</span></td>
+<td style="text-align: left;"><span class="math inline">\(\mathbf{x}_n\)</span>, <span class="math inline">\(y_n\)</span></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><a href="https://morrison-lab.github.io/lds/chapters/big-ideas.html#def-training-set">Training data</a></td>
+<td style="text-align: left;"><span class="math inline">\(\trainset\)</span></td>
+<td style="text-align: left;"><span class="math inline">\(\mathcal{X}\)</span></td>
+<td style="text-align: left;">no separate symbol</td>
+<td style="text-align: left;">—</td>
+<td style="text-align: left;"><span class="math inline">\(\mathcal{T}\)</span></td>
+<td style="text-align: left;"><span class="math inline">\(\mathcal{D}\)</span></td>
+<td style="text-align: left;"><span class="math inline">\(\mathbf{X}\)</span>, <span class="math inline">\(\mathbf{t}\)</span></td>
+<td style="text-align: left;"><span class="math inline">\(\mathcal{D}\)</span></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><a href="https://morrison-lab.github.io/lds/chapters/big-ideas.html#def-validation-set">Validation data</a></td>
+<td style="text-align: left;"><span class="math inline">\(\valset\)</span></td>
+<td style="text-align: left;">dev set</td>
+<td style="text-align: left;">train blocks (<span class="math inline">\(K\)</span>-fold)</td>
+<td style="text-align: left;">validation set</td>
+<td style="text-align: left;">validation set</td>
+<td style="text-align: left;"><span class="math inline">\(\mathcal{D}_{\mathrm{val}}\)</span></td>
+<td style="text-align: left;">validation set</td>
+<td style="text-align: left;">validation set</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><a href="https://morrison-lab.github.io/lds/chapters/big-ideas.html#def-test-set">Test data</a></td>
+<td style="text-align: left;"><span class="math inline">\(\testset\)</span></td>
+<td style="text-align: left;">test set</td>
+<td style="text-align: left;">test block (<span class="math inline">\(K\)</span>-fold)</td>
+<td style="text-align: left;">test observations</td>
+<td style="text-align: left;">test set</td>
+<td style="text-align: left;">test set</td>
+<td style="text-align: left;">test set</td>
+<td style="text-align: left;"><span class="math inline">\(\mathcal{D}_{\mathrm{test}}\)</span></td>
+</tr>
+</tbody>
+</table>
+</div>
+</figure>
+</div>
+</section>
+<section id="sec-notation-model" class="level2">
+<h2 class="anchored" data-anchor-id="sec-notation-model">Models, loss and risk</h2>
+<div id="tbl-notation-model" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-tbl figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-notation-model-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Table&nbsp;2: Models, loss and risk: notation across sources
+</figcaption>
+<div aria-describedby="tbl-notation-model-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th style="text-align: left;">Concept</th>
+<th style="text-align: left;">These notes</th>
+<th style="text-align: left;"><a href="#ref-hutchinson2025data471">Hutchinson</a></th>
+<th style="text-align: left;"><a href="#ref-harris2022data471">Harris</a></th>
+<th style="text-align: left;">ISL (<a href="#ref-james2021islr">R</a>, <a href="#ref-james2023introduction">Python</a>)</th>
+<th style="text-align: left;"><a href="#ref-hastie2009esl">ESL</a></th>
+<th style="text-align: left;"><a href="#ref-abumostafa2012learning">LfD</a></th>
+<th style="text-align: left;"><a href="#ref-bishop2006prml">Bishop</a></th>
+<th style="text-align: left;"><a href="#ref-murphy2022pml">Murphy</a></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><a href="https://morrison-lab.github.io/sds/model-validation.html#def-prediction-function-family">Model</a></td>
+<td style="text-align: left;"><span class="math inline">\(\modmem\)</span> (family <span class="math inline">\(\modelfam\)</span>)</td>
+<td style="text-align: left;"><span class="math inline">\(h\)</span></td>
+<td style="text-align: left;"><span class="math inline">\(f\)</span></td>
+<td style="text-align: left;"><span class="math inline">\(f\)</span></td>
+<td style="text-align: left;"><span class="math inline">\(f\)</span></td>
+<td style="text-align: left;"><span class="math inline">\(h \in \mathcal{H}\)</span> (target <span class="math inline">\(f\)</span>)</td>
+<td style="text-align: left;"><span class="math inline">\(y(\mathbf{x}, \mathbf{w})\)</span></td>
+<td style="text-align: left;"><span class="math inline">\(f(\mathbf{x}; \boldsymbol{\theta})\)</span></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><a href="https://morrison-lab.github.io/lds/chapters/big-ideas.html#def-fitted-model">Fitted model</a></td>
+<td style="text-align: left;"><span class="math inline">\(\emodmem\)</span></td>
+<td style="text-align: left;"><span class="math inline">\(h\)</span></td>
+<td style="text-align: left;"><span class="math inline">\(f\)</span> (the fit model)</td>
+<td style="text-align: left;"><span class="math inline">\(\hat{f}\)</span></td>
+<td style="text-align: left;"><span class="math inline">\(\hat{f}\)</span></td>
+<td style="text-align: left;"><span class="math inline">\(g\)</span></td>
+<td style="text-align: left;"><span class="math inline">\(y(\mathbf{x}, \mathbf{w}^{\star})\)</span></td>
+<td style="text-align: left;"><span class="math inline">\(\hat{f}\)</span></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Fitted value</td>
+<td style="text-align: left;"><span class="math inline">\(\eoutvar_i = \emodmemf{\predvar_i}\)</span></td>
+<td style="text-align: left;"><span class="math inline">\(h(x^{(i)})\)</span></td>
+<td style="text-align: left;"><span class="math inline">\(\hat{y}\)</span></td>
+<td style="text-align: left;"><span class="math inline">\(\hat{y}_i\)</span></td>
+<td style="text-align: left;"><span class="math inline">\(\hat{y}_i\)</span></td>
+<td style="text-align: left;"><span class="math inline">\(g(\mathbf{x}_n)\)</span></td>
+<td style="text-align: left;"><span class="math inline">\(y(\mathbf{x}_n, \mathbf{w}^{\star})\)</span></td>
+<td style="text-align: left;"><span class="math inline">\(\hat{y}_n\)</span></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><a href="https://morrison-lab.github.io/lds/chapters/big-ideas.html#def-parameter">Parameters</a>, general</td>
+<td style="text-align: left;"><span class="math inline">\(\param\)</span></td>
+<td style="text-align: left;"><span class="math inline">\(\theta\)</span></td>
+<td style="text-align: left;">no separate symbol</td>
+<td style="text-align: left;"><span class="math inline">\(\theta\)</span></td>
+<td style="text-align: left;"><span class="math inline">\(\theta\)</span></td>
+<td style="text-align: left;"><span class="math inline">\(\mathbf{w}\)</span></td>
+<td style="text-align: left;"><span class="math inline">\(\mathbf{w}\)</span></td>
+<td style="text-align: left;"><span class="math inline">\(\boldsymbol{\theta}\)</span></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><a href="https://morrison-lab.github.io/lds/chapters/big-ideas.html#def-noise">Noise</a></td>
+<td style="text-align: left;"><span class="math inline">\(\noise\)</span></td>
+<td style="text-align: left;"><span class="math inline">\(\epsilon\)</span></td>
+<td style="text-align: left;"><span class="math inline">\(\varepsilon\)</span></td>
+<td style="text-align: left;"><span class="math inline">\(\epsilon\)</span></td>
+<td style="text-align: left;"><span class="math inline">\(\varepsilon\)</span></td>
+<td style="text-align: left;">noisy target <span class="math inline">\(P(y \mid \mathbf{x})\)</span></td>
+<td style="text-align: left;"><span class="math inline">\(\epsilon\)</span></td>
+<td style="text-align: left;"><span class="math inline">\(\epsilon\)</span></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><a href="https://morrison-lab.github.io/lds/chapters/big-ideas.html#def-loss-function">Loss</a> on one example</td>
+<td style="text-align: left;"><span class="math inline">\(\lossf{\outvar, \modmemf{\vx}}\)</span></td>
+<td style="text-align: left;"><span class="math inline">\(L(y, h(x))\)</span></td>
+<td style="text-align: left;"><span class="math inline">\(L(y, f(\overrightarrow{x}))\)</span>; cost <span class="math inline">\(C(\overrightarrow{\beta})\)</span> summed over examples</td>
+<td style="text-align: left;">squared error, no general symbol</td>
+<td style="text-align: left;"><span class="math inline">\(L(Y, f(X))\)</span></td>
+<td style="text-align: left;"><span class="math inline">\(e(h(\mathbf{x}), f(\mathbf{x}))\)</span></td>
+<td style="text-align: left;"><span class="math inline">\(L(t, y(\mathbf{x}))\)</span></td>
+<td style="text-align: left;"><span class="math inline">\(\ell(y, \hat{y})\)</span></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Population (true) <a href="https://morrison-lab.github.io/lds/chapters/big-ideas.html#def-risk">risk</a></td>
+<td style="text-align: left;"><span class="math inline">\(\poprisk\)</span></td>
+<td style="text-align: left;"><span class="math inline">\(R(h)\)</span></td>
+<td style="text-align: left;"><span class="math inline">\(E(\hat{y} - y)^2\)</span>, no name</td>
+<td style="text-align: left;">expected test MSE</td>
+<td style="text-align: left;"><span class="math inline">\(\mathrm{Err}\)</span>, <span class="math inline">\(\mathrm{EPE}\)</span></td>
+<td style="text-align: left;"><span class="math inline">\(E_{\mathrm{out}}\)</span></td>
+<td style="text-align: left;"><span class="math inline">\(\mathbb{E}[L]\)</span></td>
+<td style="text-align: left;"><span class="math inline">\(L(\boldsymbol{\theta}; p^{*})\)</span></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><a href="https://morrison-lab.github.io/lds/chapters/big-ideas.html#def-training-error">Training error</a> (<a href="https://morrison-lab.github.io/lds/chapters/big-ideas.html#def-empirical-risk">empirical risk</a> on the training set)</td>
+<td style="text-align: left;"><span class="math inline">\(\empriskf{\modmem; \trainset}\)</span></td>
+<td style="text-align: left;"><span class="math inline">\(\hat{R}(h)\)</span></td>
+<td style="text-align: left;"><span class="math inline">\(\mathrm{MSE}\)</span>, cost <span class="math inline">\(C\)</span></td>
+<td style="text-align: left;">training MSE</td>
+<td style="text-align: left;"><span class="math inline">\(\overline{\mathrm{err}}\)</span></td>
+<td style="text-align: left;"><span class="math inline">\(E_{\mathrm{in}}\)</span></td>
+<td style="text-align: left;"><span class="math inline">\(E(\mathbf{w})\)</span></td>
+<td style="text-align: left;"><span class="math inline">\(L(\boldsymbol{\theta}; \mathcal{D}_{\mathrm{train}})\)</span></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><a href="https://morrison-lab.github.io/lds/chapters/big-ideas.html#def-penalty-weight">Regularization strength</a></td>
+<td style="text-align: left;"><span class="math inline">\(\regpar\)</span></td>
+<td style="text-align: left;"><span class="math inline">\(\lambda\)</span></td>
+<td style="text-align: left;"><span class="math inline">\(\lambda\)</span></td>
+<td style="text-align: left;"><span class="math inline">\(\lambda\)</span></td>
+<td style="text-align: left;"><span class="math inline">\(\lambda\)</span></td>
+<td style="text-align: left;"><span class="math inline">\(\lambda\)</span></td>
+<td style="text-align: left;"><span class="math inline">\(\lambda\)</span></td>
+<td style="text-align: left;"><span class="math inline">\(\lambda\)</span></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Learning rate (step size)</td>
+<td style="text-align: left;"><span class="math inline">\(\learnrate\)</span></td>
+<td style="text-align: left;"><span class="math inline">\(t_k\)</span> (step size)</td>
+<td style="text-align: left;"><span class="math inline">\(h\)</span></td>
+<td style="text-align: left;"><span class="math inline">\(\rho\)</span></td>
+<td style="text-align: left;"><span class="math inline">\(\gamma_r\)</span></td>
+<td style="text-align: left;"><span class="math inline">\(\eta\)</span></td>
+<td style="text-align: left;"><span class="math inline">\(\eta\)</span></td>
+<td style="text-align: left;"><span class="math inline">\(\eta\)</span></td>
+</tr>
+</tbody>
+</table>
+</div>
+</figure>
+</div>
+</section>
+<section id="sec-notation-linear" class="level2">
+<h2 class="anchored" data-anchor-id="sec-notation-linear">Linear models</h2>
+<div id="tbl-notation-linear" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-tbl figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-notation-linear-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Table&nbsp;3: Linear models: notation across sources
+</figcaption>
+<div aria-describedby="tbl-notation-linear-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th style="text-align: left;">Concept</th>
+<th style="text-align: left;">These notes</th>
+<th style="text-align: left;"><a href="#ref-hutchinson2025data471">Hutchinson</a></th>
+<th style="text-align: left;"><a href="#ref-harris2022data471">Harris</a></th>
+<th style="text-align: left;">ISL (<a href="#ref-james2021islr">R</a>, <a href="#ref-james2023introduction">Python</a>)</th>
+<th style="text-align: left;"><a href="#ref-hastie2009esl">ESL</a></th>
+<th style="text-align: left;"><a href="#ref-abumostafa2012learning">LfD</a></th>
+<th style="text-align: left;"><a href="#ref-bishop2006prml">Bishop</a></th>
+<th style="text-align: left;"><a href="#ref-murphy2022pml">Murphy</a></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><a href="https://morrison-lab.github.io/lds/chapters/linear-regression.html#def-linear-model">Regression coefficients</a></td>
+<td style="text-align: left;"><span class="math inline">\(\vcoef\)</span></td>
+<td style="text-align: left;"><span class="math inline">\(\beta\)</span></td>
+<td style="text-align: left;"><span class="math inline">\(\overrightarrow{\beta}\)</span></td>
+<td style="text-align: left;"><span class="math inline">\(\beta\)</span></td>
+<td style="text-align: left;"><span class="math inline">\(\beta\)</span></td>
+<td style="text-align: left;"><span class="math inline">\(\mathbf{w}\)</span></td>
+<td style="text-align: left;"><span class="math inline">\(\mathbf{w}\)</span></td>
+<td style="text-align: left;"><span class="math inline">\(\mathbf{w}\)</span></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Weights (neural networks, SVMs)</td>
+<td style="text-align: left;"><span class="math inline">\(\vw\)</span></td>
+<td style="text-align: left;"><span class="math inline">\(w\)</span> (SVM), <span class="math inline">\(W\)</span>, <span class="math inline">\(U\)</span> (neural network)</td>
+<td style="text-align: left;"><span class="math inline">\(w_i\)</span> (hidden units), <span class="math inline">\(\overrightarrow{\beta}\)</span> (output layer)</td>
+<td style="text-align: left;"><span class="math inline">\(w_{kj}\)</span>, <span class="math inline">\(\beta_k\)</span> (neural network), <span class="math inline">\(\beta_j\)</span> (SVM)</td>
+<td style="text-align: left;"><span class="math inline">\(\alpha_m\)</span>, <span class="math inline">\(\beta_k\)</span> (neural network), <span class="math inline">\(\beta\)</span> (SVM)</td>
+<td style="text-align: left;"><span class="math inline">\(\mathbf{w}\)</span></td>
+<td style="text-align: left;"><span class="math inline">\(\mathbf{w}\)</span></td>
+<td style="text-align: left;"><span class="math inline">\(\mathbf{w}\)</span></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Intercept or bias</td>
+<td style="text-align: left;"><span class="math inline">\(\intcoef\)</span> (regression), <span class="math inline">\(b\)</span> (neural networks, SVMs)</td>
+<td style="text-align: left;"><span class="math inline">\(\beta_0\)</span> or <span class="math inline">\(b\)</span>, or absorbed by padding <span class="math inline">\(\hat{x} = [1; x]\)</span></td>
+<td style="text-align: left;"><span class="math inline">\(\beta_0\)</span></td>
+<td style="text-align: left;"><span class="math inline">\(\beta_0\)</span></td>
+<td style="text-align: left;"><span class="math inline">\(\beta_0\)</span></td>
+<td style="text-align: left;"><span class="math inline">\(w_0\)</span>, with <span class="math inline">\(x_0 = 1\)</span></td>
+<td style="text-align: left;"><span class="math inline">\(w_0\)</span> (<span class="math inline">\(b\)</span> in the SVM chapter)</td>
+<td style="text-align: left;"><span class="math inline">\(b\)</span> (<span class="math inline">\(w_0\)</span> in the SVM chapter)</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Logistic (sigmoid) function</td>
+<td style="text-align: left;"><span class="math inline">\(\sigmoid\)</span></td>
+<td style="text-align: left;"><span class="math inline">\(\sigma\)</span></td>
+<td style="text-align: left;">no symbol (the formula is written out)</td>
+<td style="text-align: left;">no symbol</td>
+<td style="text-align: left;">no symbol</td>
+<td style="text-align: left;"><span class="math inline">\(\theta(s)\)</span></td>
+<td style="text-align: left;"><span class="math inline">\(\sigma(a)\)</span></td>
+<td style="text-align: left;"><span class="math inline">\(\sigma(a)\)</span></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Class labels, two classes</td>
+<td style="text-align: left;"><span class="math inline">\(\{0, 1\}\)</span> (logistic regression), <span class="math inline">\(\{-1, +1\}\)</span> (SVMs)</td>
+<td style="text-align: left;"><span class="math inline">\(\{0, 1\}\)</span> (logistic regression), <span class="math inline">\(\{-1, +1\}\)</span> (SVMs)</td>
+<td style="text-align: left;"><span class="math inline">\(\{+1, -1\}\)</span> (logistic regression)</td>
+<td style="text-align: left;"><span class="math inline">\(\{0, 1\}\)</span> (logistic regression), <span class="math inline">\(\{-1, +1\}\)</span> (SVMs)</td>
+<td style="text-align: left;"><span class="math inline">\(\{0, 1\}\)</span> (logistic regression), <span class="math inline">\(\{-1, +1\}\)</span> (SVMs)</td>
+<td style="text-align: left;"><span class="math inline">\(\{-1, +1\}\)</span></td>
+<td style="text-align: left;"><span class="math inline">\(\{0, 1\}\)</span> (logistic regression), <span class="math inline">\(\{-1, +1\}\)</span> (SVMs)</td>
+<td style="text-align: left;"><span class="math inline">\(\{0, 1\}\)</span> or <span class="math inline">\(\{-1, +1\}\)</span></td>
+</tr>
+</tbody>
+</table>
+</div>
+</figure>
+</div>
+</section>
+<section id="sec-notation-nn" class="level2">
+<h2 class="anchored" data-anchor-id="sec-notation-nn">Neural networks</h2>
+<div id="tbl-notation-nn" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-tbl figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-notation-nn-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Table&nbsp;4: Neural networks: notation across sources
+</figcaption>
+<div aria-describedby="tbl-notation-nn-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th style="text-align: left;">Concept</th>
+<th style="text-align: left;">These notes</th>
+<th style="text-align: left;"><a href="#ref-hutchinson2025data471">Hutchinson</a></th>
+<th style="text-align: left;"><a href="#ref-harris2022data471">Harris</a></th>
+<th style="text-align: left;">ISL (<a href="#ref-james2021islr">R</a>, <a href="#ref-james2023introduction">Python</a>)</th>
+<th style="text-align: left;"><a href="#ref-hastie2009esl">ESL</a></th>
+<th style="text-align: left;"><a href="#ref-abumostafa2012learning">LfD</a></th>
+<th style="text-align: left;"><a href="#ref-bishop2006prml">Bishop</a></th>
+<th style="text-align: left;"><a href="#ref-murphy2022pml">Murphy</a></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Hidden-layer values</td>
+<td style="text-align: left;"><span class="math inline">\(\vh\)</span></td>
+<td style="text-align: left;"><span class="math inline">\(h\)</span></td>
+<td style="text-align: left;"><span class="math inline">\(\phi_i\)</span>, <span class="math inline">\(\overrightarrow{\phi}\)</span></td>
+<td style="text-align: left;"><span class="math inline">\(A_k\)</span> (activations)</td>
+<td style="text-align: left;"><span class="math inline">\(Z_m\)</span></td>
+<td style="text-align: left;">—</td>
+<td style="text-align: left;"><span class="math inline">\(z_j\)</span></td>
+<td style="text-align: left;"><span class="math inline">\(\mathbf{z}_\ell\)</span></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Backpropagation error signal</td>
+<td style="text-align: left;"><span class="math inline">\(\backerr\)</span></td>
+<td style="text-align: left;">—</td>
+<td style="text-align: left;">—</td>
+<td style="text-align: left;">—</td>
+<td style="text-align: left;"><span class="math inline">\(\delta_{ki}\)</span>, <span class="math inline">\(s_{mi}\)</span></td>
+<td style="text-align: left;">—</td>
+<td style="text-align: left;"><span class="math inline">\(\delta_j\)</span></td>
+<td style="text-align: left;">Jacobian products, no symbol</td>
+</tr>
+</tbody>
+</table>
+</div>
+</figure>
+</div>
+</section>
+<section id="sec-notation-svm" class="level2">
+<h2 class="anchored" data-anchor-id="sec-notation-svm">Support vector machines</h2>
+<div id="tbl-notation-svm" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-tbl figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-notation-svm-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Table&nbsp;5: Support vector machines: notation across sources
+</figcaption>
+<div aria-describedby="tbl-notation-svm-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th style="text-align: left;">Concept</th>
+<th style="text-align: left;">These notes</th>
+<th style="text-align: left;"><a href="#ref-hutchinson2025data471">Hutchinson</a></th>
+<th style="text-align: left;"><a href="#ref-harris2022data471">Harris</a></th>
+<th style="text-align: left;">ISL (<a href="#ref-james2021islr">R</a>, <a href="#ref-james2023introduction">Python</a>)</th>
+<th style="text-align: left;"><a href="#ref-hastie2009esl">ESL</a></th>
+<th style="text-align: left;"><a href="#ref-abumostafa2012learning">LfD</a></th>
+<th style="text-align: left;"><a href="#ref-bishop2006prml">Bishop</a></th>
+<th style="text-align: left;"><a href="#ref-murphy2022pml">Murphy</a></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Margin <a href="https://morrison-lab.github.io/lds/chapters/svms.html#def-slack-variable">slack</a></td>
+<td style="text-align: left;"><span class="math inline">\(\slack\)</span></td>
+<td style="text-align: left;"><span class="math inline">\(\xi\)</span></td>
+<td style="text-align: left;">—</td>
+<td style="text-align: left;"><span class="math inline">\(\epsilon_i\)</span></td>
+<td style="text-align: left;"><span class="math inline">\(\xi_i\)</span></td>
+<td style="text-align: left;">—</td>
+<td style="text-align: left;"><span class="math inline">\(\xi_n\)</span></td>
+<td style="text-align: left;"><span class="math inline">\(\xi_n\)</span></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><a href="https://morrison-lab.github.io/lds/chapters/svms.html#def-dual-variable">Dual variable</a> (Lagrange multiplier)</td>
+<td style="text-align: left;"><span class="math inline">\(\dualvar\)</span></td>
+<td style="text-align: left;"><span class="math inline">\(\alpha_i\)</span></td>
+<td style="text-align: left;">—</td>
+<td style="text-align: left;"><span class="math inline">\(\alpha_i\)</span></td>
+<td style="text-align: left;"><span class="math inline">\(\alpha_i\)</span></td>
+<td style="text-align: left;">—</td>
+<td style="text-align: left;"><span class="math inline">\(a_n\)</span></td>
+<td style="text-align: left;"><span class="math inline">\(\alpha_n\)</span></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><a href="https://morrison-lab.github.io/lds/chapters/svms.html#def-kernel-function">Kernel</a></td>
+<td style="text-align: left;"><span class="math inline">\(K(x, z)\)</span></td>
+<td style="text-align: left;"><span class="math inline">\(K(x, z)\)</span></td>
+<td style="text-align: left;"><span class="math inline">\(K(x, x')\)</span></td>
+<td style="text-align: left;"><span class="math inline">\(K(x_i, x_{i'})\)</span></td>
+<td style="text-align: left;"><span class="math inline">\(K(x, x')\)</span></td>
+<td style="text-align: left;">—</td>
+<td style="text-align: left;"><span class="math inline">\(k(\mathbf{x}, \mathbf{x}')\)</span></td>
+<td style="text-align: left;"><span class="math inline">\(K(\mathbf{x}, \mathbf{x}')\)</span></td>
+</tr>
+</tbody>
+</table>
+</div>
+</figure>
+</div>
+</section>
+<section id="sec-notation-unsup" class="level2">
+<h2 class="anchored" data-anchor-id="sec-notation-unsup">Unsupervised learning</h2>
+<div id="tbl-notation-unsup" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-tbl figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-notation-unsup-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Table&nbsp;6: Unsupervised learning: notation across sources
+</figcaption>
+<div aria-describedby="tbl-notation-unsup-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th style="text-align: left;">Concept</th>
+<th style="text-align: left;">These notes</th>
+<th style="text-align: left;"><a href="#ref-hutchinson2025data471">Hutchinson</a></th>
+<th style="text-align: left;"><a href="#ref-harris2022data471">Harris</a></th>
+<th style="text-align: left;">ISL (<a href="#ref-james2021islr">R</a>, <a href="#ref-james2023introduction">Python</a>)</th>
+<th style="text-align: left;"><a href="#ref-hastie2009esl">ESL</a></th>
+<th style="text-align: left;"><a href="#ref-abumostafa2012learning">LfD</a></th>
+<th style="text-align: left;"><a href="#ref-bishop2006prml">Bishop</a></th>
+<th style="text-align: left;"><a href="#ref-murphy2022pml">Murphy</a></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Number of clusters or components</td>
+<td style="text-align: left;"><span class="math inline">\(K\)</span></td>
+<td style="text-align: left;"><span class="math inline">\(K\)</span></td>
+<td style="text-align: left;"><span class="math inline">\(K\)</span></td>
+<td style="text-align: left;"><span class="math inline">\(K\)</span></td>
+<td style="text-align: left;"><span class="math inline">\(K\)</span></td>
+<td style="text-align: left;">—</td>
+<td style="text-align: left;"><span class="math inline">\(K\)</span></td>
+<td style="text-align: left;"><span class="math inline">\(K\)</span></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Mean and covariance matrix</td>
+<td style="text-align: left;"><span class="math inline">\(\mean\)</span>, <span class="math inline">\(\covmat\)</span></td>
+<td style="text-align: left;"><span class="math inline">\(\mu\)</span>, <span class="math inline">\(\Sigma\)</span></td>
+<td style="text-align: left;"><span class="math inline">\(\mu\)</span>, <span class="math inline">\(\sigma^2\)</span></td>
+<td style="text-align: left;"><span class="math inline">\(\mu\)</span>, <span class="math inline">\(\Sigma\)</span></td>
+<td style="text-align: left;"><span class="math inline">\(\mu\)</span>, <span class="math inline">\(\Sigma\)</span></td>
+<td style="text-align: left;">—</td>
+<td style="text-align: left;"><span class="math inline">\(\boldsymbol{\mu}\)</span>, <span class="math inline">\(\boldsymbol{\Sigma}\)</span></td>
+<td style="text-align: left;"><span class="math inline">\(\boldsymbol{\mu}\)</span>, <span class="math inline">\(\boldsymbol{\Sigma}\)</span></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><a href="https://morrison-lab.github.io/lds/chapters/semi-supervised.html#eq-responsibility">Responsibility</a> of component <span class="math inline">\(c\)</span> for point <span class="math inline">\(i\)</span></td>
+<td style="text-align: left;"><span class="math inline">\(\resp_{ic}\)</span></td>
+<td style="text-align: left;"><span class="math inline">\(\gamma_{ic}\)</span></td>
+<td style="text-align: left;">—</td>
+<td style="text-align: left;">—</td>
+<td style="text-align: left;"><span class="math inline">\(\hat{\gamma}_i\)</span></td>
+<td style="text-align: left;">—</td>
+<td style="text-align: left;"><span class="math inline">\(\gamma(z_{nk})\)</span></td>
+<td style="text-align: left;"><span class="math inline">\(r_{nk}\)</span></td>
+</tr>
+</tbody>
+</table>
+</div>
+</figure>
+</div>
+</section>
+</section>
+<section id="sec-notation-other" class="level1">
+<h1>Other comparisons</h1>
+<section id="sec-notation-subscripts" class="level2">
+<h2 class="anchored" data-anchor-id="sec-notation-subscripts">Subscripts and parentheses</h2>
+<p>The <a href="./notation-choices.html#sec-subscripts-parentheses">Notation Choices</a> page gives the reason for our split.</p>
+<div id="tbl-subscript-parentheses" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-tbl figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-subscript-parentheses-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Table&nbsp;7: Subscripts and parentheses in these notes, and the alternatives
+</figcaption>
+<div aria-describedby="tbl-subscript-parentheses-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>object</th>
+<th>our form</th>
+<th>other forms you may meet</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>entry of a vector or matrix</td>
+<td><span class="math inline">\(x_i\)</span>, <span class="math inline">\(A_{ij}\)</span></td>
+<td><span class="math inline">\(x(i)\)</span>, <span class="math inline">\(A(i, j)\)</span>, and <code>A[i, j]</code> in code</td>
+</tr>
+<tr class="even">
+<td>term of a <a href="https://morrison-lab.github.io/mds/functions.html#def-sequence">sequence</a></td>
+<td><span class="math inline">\(a_n\)</span></td>
+<td><span class="math inline">\(a(n)\)</span></td>
+</tr>
+<tr class="odd">
+<td>function with a parameter</td>
+<td><span class="math inline">\(f_\theta(x)\)</span></td>
+<td><span class="math inline">\(f(x; \theta)\)</span>, <span class="math inline">\(f(x \mid \theta)\)</span>, <span class="math inline">\(f(x, \theta)\)</span></td>
+</tr>
+<tr class="even">
+<td>probability under a parameter</td>
+<td><span class="math inline">\(\Pr_\theta(A)\)</span></td>
+<td><span class="math inline">\(\Pr(A; \theta)\)</span>, <span class="math inline">\(\Pr(A \mid \theta)\)</span></td>
+</tr>
+<tr class="odd">
+<td>derivative of order <span class="math inline">\(k\)</span></td>
+<td><span class="math inline">\(f^{(k)}(x)\)</span></td>
+<td><span class="math inline">\(f^{[k]}(x)\)</span>, <span class="math inline">\(\mathrm{D}^k f(x)\)</span></td>
+</tr>
+<tr class="even">
+<td>order statistic</td>
+<td><span class="math inline">\(X_{(i)}\)</span></td>
+<td><span class="math inline">\(X_{i:n}\)</span></td>
+</tr>
+<tr class="odd">
+<td>sample index</td>
+<td><span class="math inline">\(x_i\)</span></td>
+<td><span class="math inline">\(x^{(i)}\)</span></td>
+</tr>
+</tbody>
+</table>
+</div>
+</figure>
+</div>
+</section>
+<section id="sec-notation-information" class="level2">
+<h2 class="anchored" data-anchor-id="sec-notation-information">Information matrices</h2>
+<p>Sources disagree on the symbols for the observed and expected information (<a href="#tbl-info-mat-symbols" class="quarto-xref">Table&nbsp;8</a>).</p>
+<div id="tbl-info-mat-symbols" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-tbl figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-info-mat-symbols-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Table&nbsp;8: Notation for information matrices in several sources
+</figcaption>
+<div aria-describedby="tbl-info-mat-symbols-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Source</th>
+<th>Observed information</th>
+<th>Expected information</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>These notes</td>
+<td><span class="math inline">\(\oinf\)</span></td>
+<td><span class="math inline">\(\einf\)</span></td>
+</tr>
+<tr class="even">
+<td><span class="citation" data-cites="dobson4e">Dobson and Barnett <a href="#ref-dobson4e" role="doc-biblioref">[9]</a></span></td>
+<td><span class="math inline">\(-U'\)</span></td>
+<td><span class="math inline">\(\mathfrak{I}\)</span></td>
+</tr>
+<tr class="odd">
+<td><span class="citation" data-cites="dunn2018generalized">Dunn and Smyth <a href="#ref-dunn2018generalized" role="doc-biblioref">[10]</a></span></td>
+<td><span class="math inline">\(\mathfrak{I}\)</span></td>
+<td><span class="math inline">\(\mathcal{I}\)</span></td>
+</tr>
+<tr class="even">
+<td><span class="citation" data-cites="mclachlan2007em">McLachlan and Krishnan <a href="#ref-mclachlan2007em" role="doc-biblioref">[11]</a></span></td>
+<td><span class="math inline">\(I\)</span></td>
+<td><span class="math inline">\(\mathcal{I}\)</span></td>
+</tr>
+<tr class="odd">
+<td><span class="citation" data-cites="wood2017generalized">Wood <a href="#ref-wood2017generalized" role="doc-biblioref">[12]</a></span></td>
+<td><span class="math inline">\(\hat{I}\)</span></td>
+<td><span class="math inline">\(\mathcal{I}\)</span></td>
+</tr>
+</tbody>
+</table>
+</div>
+</figure>
+</div>
+</section>
+</section>
+<section id="sec-notation-symbols" class="level1">
+<h1>Other symbols used</h1>
+<p>The side-by-side tables show the symbols that differ between sources. This table lists every other symbol that a chapter of these notes uses, with what it means. Where a symbol takes arguments, the letters <span class="math inline">\(a\)</span>, <span class="math inline">\(b\)</span> and so on stand in for them.</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>symbols_used <span class="ot">&lt;-</span> utils<span class="sc">::</span><span class="fu">read.csv</span>(</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>  <span class="st">"data/symbols-used.csv"</span>,</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>  <span class="at">stringsAsFactors =</span> <span class="cn">FALSE</span>,</span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>  <span class="at">encoding =</span> <span class="st">"UTF-8"</span>,</span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>  <span class="at">na.strings =</span> <span class="fu">character</span>(<span class="dv">0</span>)</span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>symbols_used<span class="sc">$</span>meaning[<span class="fu">is.na</span>(symbols_used<span class="sc">$</span>meaning)] <span class="ot">&lt;-</span> <span class="st">""</span></span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>symbols_table <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a>  <span class="at">Symbol =</span> <span class="fu">sprintf</span>(<span class="st">"$%s$"</span>, symbols_used<span class="sc">$</span>symbol),</span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a>  <span class="at">Meaning =</span> <span class="fu">gsub</span>(<span class="st">"|"</span>, <span class="st">"</span><span class="sc">\\</span><span class="st">|"</span>, symbols_used<span class="sc">$</span>meaning, <span class="at">fixed =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">kable</span>(</span>
+<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a>  symbols_table,</span>
+<span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a>  <span class="at">format =</span> <span class="st">"pipe"</span>,</span>
+<span id="cb2-15"><a href="#cb2-15" aria-hidden="true" tabindex="-1"></a>  <span class="at">caption =</span> <span class="st">"Other symbols used in these notes {#tbl-symbols-used}"</span></span>
+<span id="cb2-16"><a href="#cb2-16" aria-hidden="true" tabindex="-1"></a>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div id="tbl-symbols-used" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-tbl figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-symbols-used-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Table&nbsp;9: Other symbols used in these notes
+</figcaption>
+<div aria-describedby="tbl-symbols-used-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<table class="caption-top table">
+<colgroup>
+<col style="width: 11%">
+<col style="width: 88%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Symbol</th>
+<th style="text-align: left;">Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><span class="math inline">\(\truthind\)</span></td>
+<td style="text-align: left;">a 0/1 truth indicator written delta(condition)</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><span class="math inline">\(\mbackerr\)</span></td>
+<td style="text-align: left;">a batch matrix of backpropagation error signals</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><span class="math inline">\(\thresh\)</span></td>
+<td style="text-align: left;">a classification threshold</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><span class="math inline">\(\condnum\)</span></td>
+<td style="text-align: left;">a condition number</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><span class="math inline">\(\corpar\)</span></td>
+<td style="text-align: left;">a correlation parameter</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><span class="math inline">\(\Eigvals\)</span></td>
+<td style="text-align: left;">a diagonal matrix of eigenvalues</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><span class="math inline">\(\clipthresh\)</span></td>
+<td style="text-align: left;">a gradient-clipping threshold</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><span class="math inline">\(\bandwidth\)</span></td>
+<td style="text-align: left;">a kernel bandwidth</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><span class="math inline">\(\lagmult\)</span></td>
+<td style="text-align: left;">a Lagrange multiplier</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><span class="math inline">\(\decay\)</span></td>
+<td style="text-align: left;">a multiplicative learning-rate decay factor</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><span class="math inline">\(\unitthresh\)</span></td>
+<td style="text-align: left;">a neuron’s firing threshold</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><span class="math inline">\(\singval\)</span></td>
+<td style="text-align: left;">a singular value</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><span class="math inline">\(\smallconst\)</span></td>
+<td style="text-align: left;">a small positive constant (a small step, cutoff or half-width)</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><span class="math inline">\(\sdpar\)</span></td>
+<td style="text-align: left;">a standard-deviation parameter</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><span class="math inline">\(\varpar\)</span></td>
+<td style="text-align: left;">a variance parameter</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><span class="math inline">\(\vbackerr\)</span></td>
+<td style="text-align: left;">a vector of backpropagation error signals</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><span class="math inline">\(\vfeatmap\)</span></td>
+<td style="text-align: left;">a vector of feature-map outputs (hidden-unit features)</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><span class="math inline">\(\vnoise\)</span></td>
+<td style="text-align: left;">a vector of model error terms</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><span class="math inline">\(\vprob\)</span></td>
+<td style="text-align: left;">a vector of probabilities</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><span class="math inline">\(\abs{a}\)</span></td>
+<td style="text-align: left;">absolute value &amp;#124;·&amp;#124;</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><span class="math inline">\(\votewt\)</span></td>
+<td style="text-align: left;">an AdaBoost vote weight</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><span class="math inline">\(\wterr\)</span></td>
+<td style="text-align: left;">an AdaBoost weighted training error</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><span class="math inline">\(\angpar\)</span></td>
+<td style="text-align: left;">an angle</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><span class="math inline">\(\attnweight\)</span></td>
+<td style="text-align: left;">an attention weight</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><span class="math inline">\(\eigval\)</span></td>
+<td style="text-align: left;">an eigenvalue</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><span class="math inline">\(\hcovmat\)</span></td>
+<td style="text-align: left;">an estimated covariance matrix</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><span class="math inline">\(\hmean\)</span></td>
+<td style="text-align: left;">an estimated mean</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><span class="math inline">\(\hparam\)</span></td>
+<td style="text-align: left;">an estimated parameter</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><span class="math inline">\(\hsdpar\)</span></td>
+<td style="text-align: left;">an estimated standard deviation</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><span class="math inline">\(\tolin\)</span></td>
+<td style="text-align: left;">an input radius (the delta of an epsilon-delta statement), or a small allowed failure probability</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><span class="math inline">\(\tolout\)</span></td>
+<td style="text-align: left;">an output tolerance (the epsilon of an epsilon-delta statement)</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><span class="math inline">\(\argmax\)</span></td>
+<td style="text-align: left;">arg max operator</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><span class="math inline">\(\argmin\)</span></td>
+<td style="text-align: left;">arg min operator</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><span class="math inline">\(\paren{a}\)</span></td>
+<td style="text-align: left;">auto-sized parentheses around argument</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><span class="math inline">\(\sb{a}\)</span></td>
+<td style="text-align: left;">auto-sized square brackets around argument</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><span class="math inline">\(\avgfitf{a}\)</span></td>
+<td style="text-align: left;">average fit at input x: the population expectation over training sets of the fitted model’s value at x, mu_h(x)</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><span class="math inline">\(\avgfit\)</span></td>
+<td style="text-align: left;">average fit: the population mean over training sets of the fitted model, written as the population mean with the model as subscript (mu_h; no bar or hat)</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><span class="math inline">\(\avgiN\)</span></td>
+<td style="text-align: left;">average over i from 1 to N: one over N times the sum</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><span class="math inline">\(\avgin\)</span></td>
+<td style="text-align: left;">average over i from 1 to n: one over n times the sum</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><span class="math inline">\(\bestmodf{a}\)</span></td>
+<td style="text-align: left;">best-in-family model applied to its argument, h*(·)</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><span class="math inline">\(\bestmod\)</span></td>
+<td style="text-align: left;">best-in-family model h*: the member of the mean-function model family closest to the target function</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><span class="math inline">\(\vbeta\)</span></td>
+<td style="text-align: left;">beta coefficient vector</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><span class="math inline">\(\bias{a}\)</span></td>
+<td style="text-align: left;">bias function</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><span class="math inline">\(\Covs{a}{b}\)</span></td>
+<td style="text-align: left;">bivariate covariance Cov(·,·)</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><span class="math inline">\(\vc{a}\)</span></td>
+<td style="text-align: left;">bold vector notation for argument</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><span class="math inline">\(\clusterassignf{a}\)</span></td>
+<td style="text-align: left;">cluster assigned to the argument, C applied to it</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><span class="math inline">\(\clusterassign\)</span></td>
+<td style="text-align: left;">cluster-assignment function (the encoder) of a clustering method such as k-means, C</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><span class="math inline">\(\condE{a}{b}\)</span></td>
+<td style="text-align: left;">conditional expected value E[A &amp;#124; B]</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><span class="math inline">\(\Expfc{a}{b}\)</span></td>
+<td style="text-align: left;">conditional expected value E_c[·]</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><span class="math inline">\(\Cov{a}\)</span></td>
+<td style="text-align: left;">covariance function Cov(·)</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><span class="math inline">\(\dataset\)</span></td>
+<td style="text-align: left;">data set: the whole collection of labelled observations that the training, validation and test sets are subsets of</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><span class="math inline">\(\popdevf{a}\)</span></td>
+<td style="text-align: left;">deviation of the argument from its population mean, ν_z</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><span class="math inline">\(\diag\)</span></td>
+<td style="text-align: left;">diagonal matrix operator (diag)</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><span class="math inline">\(\diagf{a}\)</span></td>
+<td style="text-align: left;">diagonal of matrix applied to argument</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><span class="math inline">\(\dist\)</span></td>
+<td style="text-align: left;">distributes as relation (∼)</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><span class="math inline">\(\dprod{a}{b}\)</span></td>
+<td style="text-align: left;">dot product of two arguments a·b</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><span class="math inline">\(\emprisk\)</span></td>
+<td style="text-align: left;">empirical risk R̂</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><span class="math inline">\(\eqdef\)</span></td>
+<td style="text-align: left;">equals-by-definition symbol (≝)</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><span class="math inline">\(\erf{a}\)</span></td>
+<td style="text-align: left;">error function ε(·); for an estimate, the estimation error (estimate minus truth)</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><span class="math inline">\(\err\)</span></td>
+<td style="text-align: left;">error term ε</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><span class="math inline">\(\veps\)</span></td>
+<td style="text-align: left;">error vector (ε-vector)</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><span class="math inline">\(\est{a}\)</span></td>
+<td style="text-align: left;">estimated / hat version of argument</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><span class="math inline">\(\hb\)</span></td>
+<td style="text-align: left;">estimated beta coefficient β̂</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><span class="math inline">\(\hvb\)</span></td>
+<td style="text-align: left;">estimated beta vector (β̂-vector)</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><span class="math inline">\(\hvcoef\)</span></td>
+<td style="text-align: left;">estimated coefficient vector</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><span class="math inline">\(\covh{a}\)</span></td>
+<td style="text-align: left;">estimated covariance function Ĉov(·)</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><span class="math inline">\(\epredfn\)</span></td>
+<td style="text-align: left;">estimated prediction function, such as one fitted from training data</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><span class="math inline">\(\hcoef{a}\)</span></td>
+<td style="text-align: left;">estimated regression coefficient for covariate (β̂_x)</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><span class="math inline">\(\hintcoef\)</span></td>
+<td style="text-align: left;">estimated regression intercept (β̂_0)</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><span class="math inline">\(\hse{a}\)</span></td>
+<td style="text-align: left;">estimated standard error ŝe(·)</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><span class="math inline">\(\hVar{a}\)</span></td>
+<td style="text-align: left;">estimated variance function V̂ar(·)</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><span class="math inline">\(\norm{a}\)</span></td>
+<td style="text-align: left;">Euclidean norm ‖·‖</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><span class="math inline">\(\expt\)</span></td>
+<td style="text-align: left;">exp operator symbol</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><span class="math inline">\(\Ep\)</span></td>
+<td style="text-align: left;">expectation operator</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><span class="math inline">\(\Epredvalf{a}\)</span></td>
+<td style="text-align: left;">expected predicted value at the covariate value given as the argument: the population expectation over training sets of the fitted model’s prediction at that value</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><span class="math inline">\(\Epredval\)</span></td>
+<td style="text-align: left;">expected predicted value when no covariate value is salient</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><span class="math inline">\(\Expf{a}\)</span></td>
+<td style="text-align: left;">expected value</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><span class="math inline">\(\E{a}\)</span></td>
+<td style="text-align: left;">expected value E[·]</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><span class="math inline">\(\expf{a}\)</span></td>
+<td style="text-align: left;">exponential function</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><span class="math inline">\(\vd\)</span></td>
+<td style="text-align: left;">exposure vector d lowercase (d̰)</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><span class="math inline">\(\failprob\)</span></td>
+<td style="text-align: left;">failure probability delta of a probabilistic bound (one minus the confidence level)</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><span class="math inline">\(\hy\)</span></td>
+<td style="text-align: left;">fitted / predicted value ŷ</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><span class="math inline">\(\fitmodf{a}\)</span></td>
+<td style="text-align: left;">fitted model obtained from the training set given as the argument, the prediction function ŷ with the training set as subscript</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><span class="math inline">\(\hf\)</span></td>
+<td style="text-align: left;">fitted prediction function (f̂)</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><span class="math inline">\(\hfx{a}\)</span></td>
+<td style="text-align: left;">fitted prediction function applied to its argument, f̂(·)</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><span class="math inline">\(\floor{a}\)</span></td>
+<td style="text-align: left;">floor function ⌊·⌋</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><span class="math inline">\(\hR\)</span></td>
+<td style="text-align: left;">Gelman-Rubin convergence diagnostic (potential scale reduction factor, R-hat)</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><span class="math inline">\(\grad\)</span></td>
+<td style="text-align: left;">gradient operator ∇</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><span class="math inline">\(\gg\)</span></td>
+<td style="text-align: left;">Greek letter gamma</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><span class="math inline">\(\growthfnf{a}\)</span></td>
+<td style="text-align: left;">growth function at n points, m_Y(n)</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><span class="math inline">\(\hatmat\)</span></td>
+<td style="text-align: left;">hat matrix H, which maps observed responses to fitted responses</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><span class="math inline">\(\h\)</span></td>
+<td style="text-align: left;">hazard function symbol h</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><span class="math inline">\(\cutheight\)</span></td>
+<td style="text-align: left;">height h at which a dendrogram is cut</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><span class="math inline">\(\imgheight\)</span></td>
+<td style="text-align: left;">height of an image or feature map, in pixels</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><span class="math inline">\(\vxi\)</span></td>
+<td style="text-align: left;">i-th observation vector x̰_i</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><span class="math inline">\(\siid\)</span></td>
+<td style="text-align: left;">i.i.d. distributed relation</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><span class="math inline">\(\testidx\)</span></td>
+<td style="text-align: left;">index set of the test set</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><span class="math inline">\(\trainidx\)</span></td>
+<td style="text-align: left;">index set of the training set</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><span class="math inline">\(\validx\)</span></td>
+<td style="text-align: left;">index set of the validation set</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><span class="math inline">\(\indicp{a}\)</span></td>
+<td style="text-align: left;">indicator function 𝟙(·) with parentheses</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><span class="math inline">\(\indic{a}\)</span></td>
+<td style="text-align: left;">indicator function 𝟙_{·} (blackboard bold)</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><span class="math inline">\(\mpredvar\)</span></td>
+<td style="text-align: left;">input matrix: the predictor vectors of all n observations, one per row</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><span class="math inline">\(\levelsetof{a}{b}\)</span></td>
+<td style="text-align: left;">level set of the function given as the second argument at the value given as the first, written with the value as a subscript</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><span class="math inline">\(\leverage{a}\)</span></td>
+<td style="text-align: left;">leverage of the observation given as the argument, h with the observation as subscript</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><span class="math inline">\(\llik\)</span></td>
+<td style="text-align: left;">log-likelihood symbol (ℓ)</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><span class="math inline">\(\logodds\)</span></td>
+<td style="text-align: left;">log-odds symbol η</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><span class="math inline">\(\sigmoidf{a}\)</span></td>
+<td style="text-align: left;">logistic (sigmoid) function applied to its argument, σ(·)</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><span class="math inline">\(\logit\)</span></td>
+<td style="text-align: left;">logit function</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><span class="math inline">\(\loss\)</span></td>
+<td style="text-align: left;">loss function symbol (L)</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><span class="math inline">\(\obsloss{a}\)</span></td>
+<td style="text-align: left;">loss on one observation, ℓ_i (argument: the observation index)</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><span class="math inline">\(\machineps\)</span></td>
+<td style="text-align: left;">machine epsilon</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><span class="math inline">\(\cent{a}\)</span></td>
+<td style="text-align: left;">mark for the centered version of the argument (the data with its mean subtracted)</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><span class="math inline">\(\matr{a}\)</span></td>
+<td style="text-align: left;">matrix notation (bold style)</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><span class="math inline">\(\trf{a}\)</span></td>
+<td style="text-align: left;">matrix trace applied to argument</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><span class="math inline">\(\tr\)</span></td>
+<td style="text-align: left;">matrix trace operator (tr)</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><span class="math inline">\(\avgleverage\)</span></td>
+<td style="text-align: left;">mean leverage, h-bar</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><span class="math inline">\(\vm\)</span></td>
+<td style="text-align: left;">mean vector (μ-vector)</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><span class="math inline">\(\modmemof{a}\)</span></td>
+<td style="text-align: left;">member (or fit) h of the mean-function model family given as the argument, h with the family as subscript</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><span class="math inline">\(\inv{a}\)</span></td>
+<td style="text-align: left;">multiplicative inverse (·)^{−1} with parentheses</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><span class="math inline">\(\lpnorm{a}\)</span></td>
+<td style="text-align: left;">name of an ℓ_p norm or penalty, such as ℓ_1 or ℓ_2 (argument: p)</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><span class="math inline">\(\ndist{a}\)</span></td>
+<td style="text-align: left;">Normal distribution expression N(·)</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><span class="math inline">\(\Normal\)</span></td>
+<td style="text-align: left;">Normal distribution label N</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><span class="math inline">\(\nmodels\)</span></td>
+<td style="text-align: left;">number M of models (classifiers) in a model family</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><span class="math inline">\(\odds\)</span></td>
+<td style="text-align: left;">odds symbol ω</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><span class="math inline">\(\vy\)</span></td>
+<td style="text-align: left;">outcome vector y (y̰)</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><span class="math inline">\(\pt{a}\)</span></td>
+<td style="text-align: left;">parenthesized transpose (x)′</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><span class="math inline">\(\deriv{a}\)</span></td>
+<td style="text-align: left;">partial derivative operator ∂/∂(·)</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><span class="math inline">\(\derivf{a}{b}\)</span></td>
+<td style="text-align: left;">partial derivative ∂f/∂x with numerator</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><span class="math inline">\(\popdist\)</span></td>
+<td style="text-align: left;">population distribution P that the data are drawn from</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><span class="math inline">\(\pMSE{a}\)</span></td>
+<td style="text-align: left;">population mean squared error pMSE(·) applied to argument</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><span class="math inline">\(\popriskf{a}\)</span></td>
+<td style="text-align: left;">population risk of a model, R(·)</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><span class="math inline">\(\Prf{a}\)</span></td>
+<td style="text-align: left;">Pr(·) probability expression</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><span class="math inline">\(\predval\)</span></td>
+<td style="text-align: left;">predicted value of the outcome</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><span class="math inline">\(\predvalf{a}\)</span></td>
+<td style="text-align: left;">prediction at the covariate value given as the argument, from the model that a fitting procedure fits to the training set</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><span class="math inline">\(\prederr\)</span></td>
+<td style="text-align: left;">prediction error, predicted minus observed outcome</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><span class="math inline">\(\predfnf{a}\)</span></td>
+<td style="text-align: left;">prediction function applied to the argument</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><span class="math inline">\(\predfam\)</span></td>
+<td style="text-align: left;">prediction function family Y-script: the set of prediction functions that training chooses from</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><span class="math inline">\(\Predvar\)</span></td>
+<td style="text-align: left;">predictor variable, random variable</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><span class="math inline">\(\Pf{a}\)</span></td>
+<td style="text-align: left;">probability P(·)</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><span class="math inline">\(\prob\)</span></td>
+<td style="text-align: left;">probability symbol π</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><span class="math inline">\(\prodin\)</span></td>
+<td style="text-align: left;">product over i from 1 to n</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><span class="math inline">\(\coef{a}\)</span></td>
+<td style="text-align: left;">regression coefficient for covariate (β_x)</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><span class="math inline">\(\regcoef\)</span></td>
+<td style="text-align: left;">regression coefficient symbol β</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><span class="math inline">\(\ve\)</span></td>
+<td style="text-align: left;">residual vector e (ḛ)</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><span class="math inline">\(\sMAEt\)</span></td>
+<td style="text-align: left;">sample mean absolute error operator sMAE, the estimator of pMAE (no hat form is needed)</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><span class="math inline">\(\sMSEt\)</span></td>
+<td style="text-align: left;">sample mean squared error operator sMSE, the estimator of pMSE (no hat form is needed)</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><span class="math inline">\(\sMSE{a}\)</span></td>
+<td style="text-align: left;">sample mean squared error sMSE(·) applied to argument</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><span class="math inline">\(\xbar\)</span></td>
+<td style="text-align: left;">sample mean x̄</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><span class="math inline">\(\sRMSEt\)</span></td>
+<td style="text-align: left;">sample root mean squared error operator sRMSE, the estimator of pRMSE (no hat form is needed)</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><span class="math inline">\(\score\)</span></td>
+<td style="text-align: left;">score function ℓ′</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><span class="math inline">\(\stprod{a}\)</span></td>
+<td style="text-align: left;">self transpose-based product x′x</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><span class="math inline">\(\set{a}\)</span></td>
+<td style="text-align: left;">set notation {·}</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><span class="math inline">\(\poolsize\)</span></td>
+<td style="text-align: left;">side length q of a square pooling block, in pixels</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><span class="math inline">\(\sign\)</span></td>
+<td style="text-align: left;">sign operator</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><span class="math inline">\(\sqf{a}\)</span></td>
+<td style="text-align: left;">square of argument (·)²</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><span class="math inline">\(\normsq{a}\)</span></td>
+<td style="text-align: left;">squared norm ‖·‖²</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><span class="math inline">\(\SE{a}\)</span></td>
+<td style="text-align: left;">standard error function SE(·)</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><span class="math inline">\(\ind\)</span></td>
+<td style="text-align: left;">statistical independence symbol (⊥⊥)</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><span class="math inline">\(\sumiN\)</span></td>
+<td style="text-align: left;">sum over i from 1 to N</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><span class="math inline">\(\sumin\)</span></td>
+<td style="text-align: left;">sum over i from 1 to n</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><span class="math inline">\(\sumip\)</span></td>
+<td style="text-align: left;">sum over i from 1 to p</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><span class="math inline">\(\sumjp\)</span></td>
+<td style="text-align: left;">sum over j from 1 to p</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><span class="math inline">\(\sumto{a}{b}\)</span></td>
+<td style="text-align: left;">sum over the first argument from 1 to the second</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><span class="math inline">\(\targetfn\)</span></td>
+<td style="text-align: left;">target function <span class="math inline">\(\mu\)</span>: the true relationship between inputs and outcomes</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><span class="math inline">\(\targetfnf{a}\)</span></td>
+<td style="text-align: left;">target function applied to its argument, <span class="math inline">\(\mu\)</span>(·)</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><span class="math inline">\(\armijo\)</span></td>
+<td style="text-align: left;">the Armijo sufficient-decrease constant of a backtracking line search</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><span class="math inline">\(\degmat\)</span></td>
+<td style="text-align: left;">the degree matrix of a similarity graph</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><span class="math inline">\(\recallweight\)</span></td>
+<td style="text-align: left;">the F-beta weight on recall</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><span class="math inline">\(\schedfrac\)</span></td>
+<td style="text-align: left;">the fraction of a learning-rate schedule that has elapsed</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><span class="math inline">\(\vhidgrad\)</span></td>
+<td style="text-align: left;">the gradient of the loss with respect to a hidden layer’s output</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><span class="math inline">\(\shrinkage\)</span></td>
+<td style="text-align: left;">the gradient-boosting shrinkage factor</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><span class="math inline">\(\leak\)</span></td>
+<td style="text-align: left;">the negative-side slope of a leaky ReLU</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><span class="math inline">\(\svfrac\)</span></td>
+<td style="text-align: left;">the nu-SVM bound on the fraction of margin errors</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><span class="math inline">\(\schedlen\)</span></td>
+<td style="text-align: left;">the number of updates a learning-rate schedule runs over</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><span class="math inline">\(\linefn\)</span></td>
+<td style="text-align: left;">the one-variable function a line search minimizes</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><span class="math inline">\(\coordfactor\)</span></td>
+<td style="text-align: left;">the per-coordinate contraction factor of gradient descent</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><span class="math inline">\(\convrate\)</span></td>
+<td style="text-align: left;">the per-step contraction factor of gradient descent</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><span class="math inline">\(\prevalence\)</span></td>
+<td style="text-align: left;">the prevalence of the positive class</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><span class="math inline">\(\typetwoerr\)</span></td>
+<td style="text-align: left;">the probability of a type II error</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><span class="math inline">\(\siglevel\)</span></td>
+<td style="text-align: left;">the significance level of a test</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><span class="math inline">\(\tf\)</span></td>
+<td style="text-align: left;">therefore symbol (∴)</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><span class="math inline">\(\vt\)</span></td>
+<td style="text-align: left;">time vector t lowercase (t̰)</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><span class="math inline">\(\dif{a}{b}\)</span></td>
+<td style="text-align: left;">total derivative fraction dF/dt (numerator first, denominator second)</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><span class="math inline">\(\tp{a}\)</span></td>
+<td style="text-align: left;">transpose of argument x′</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><span class="math inline">\(\truemean\)</span></td>
+<td style="text-align: left;">true mean function <span class="math inline">\(\mu\)</span>: the population mean of the outcome given the inputs</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><span class="math inline">\(\truemeanf{a}\)</span></td>
+<td style="text-align: left;">true mean function applied to its argument, <span class="math inline">\(\mu\)</span>(·)</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><span class="math inline">\(\vY\)</span></td>
+<td style="text-align: left;">uppercase outcome vector Y (Y̰)</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><span class="math inline">\(\hidval\)</span></td>
+<td style="text-align: left;">value of a hidden unit in a neural network, h</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><span class="math inline">\(\hidvalof{a}\)</span></td>
+<td style="text-align: left;">value of the hidden unit given as the argument, h with the unit as subscript</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><span class="math inline">\(\vcdim\)</span></td>
+<td style="text-align: left;">Vapnik-Chervonenkis dimension d_VC: the largest number of points the model family shatters</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><span class="math inline">\(\Var{a}\)</span></td>
+<td style="text-align: left;">variance function</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><span class="math inline">\(\vcdimf{a}\)</span></td>
+<td style="text-align: left;">VC dimension of a model family, d_VC(·)</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><span class="math inline">\(\va\)</span></td>
+<td style="text-align: left;">vector a (a̰)</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><span class="math inline">\(\vg\)</span></td>
+<td style="text-align: left;">vector g, such as a gradient (g̰)</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><span class="math inline">\(\vecf{a}\)</span></td>
+<td style="text-align: left;">vector notation</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><span class="math inline">\(\vec{a}\)</span></td>
+<td style="text-align: left;">vector notation (undertilde style)</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><span class="math inline">\(\vhidval\)</span></td>
+<td style="text-align: left;">vector of hidden-unit values (or a recurrent network’s hidden state), h̰</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><span class="math inline">\(\voutvar\)</span></td>
+<td style="text-align: left;">vector of observed outcomes</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><span class="math inline">\(\vone\)</span></td>
+<td style="text-align: left;">vector of ones</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><span class="math inline">\(\vprederr\)</span></td>
+<td style="text-align: left;">vector of prediction errors, predicted minus observed outcomes</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><span class="math inline">\(\vp\)</span></td>
+<td style="text-align: left;">vector p, such as a probability distribution (p̰)</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><span class="math inline">\(\vq\)</span></td>
+<td style="text-align: left;">vector q, such as a second probability distribution (q̰)</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><span class="math inline">\(\vr\)</span></td>
+<td style="text-align: left;">vector r (r̰)</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><span class="math inline">\(\v{a}\)</span></td>
+<td style="text-align: left;">vector shorthand</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><span class="math inline">\(\vu\)</span></td>
+<td style="text-align: left;">vector u (ṵ)</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><span class="math inline">\(\vv\)</span></td>
+<td style="text-align: left;">vector v (v̰)</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><span class="math inline">\(\vz\)</span></td>
+<td style="text-align: left;">vector z (z̰)</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><span class="math inline">\(\imgwidth\)</span></td>
+<td style="text-align: left;">width of an image or feature map, in pixels</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><span class="math inline">\(\vzero\)</span></td>
+<td style="text-align: left;">zero vector</td>
+</tr>
+</tbody>
+</table>
+</div>
+</figure>
+</div>
+</section>
+<section id="references" class="level1 unnumbered">
+<h1 class="unnumbered">References</h1>
+<div id="refs" class="references csl-bib-body" data-entry-spacing="0" role="list">
+<div id="ref-hutchinson2025data471" class="csl-entry" role="listitem">
+<div class="csl-left-margin">[1] </div><div class="csl-right-inline">B. Hutchinson, <span>“<span>DATA</span> 471/571: Machine learning.”</span> Western Washington University, 2025.</div>
+</div>
+<div id="ref-harris2022data471" class="csl-entry" role="listitem">
+<div class="csl-left-margin">[2] </div><div class="csl-right-inline">K. D. Harris, <span>“<span>DATA</span> 471: Machine learning, weekly lecture notes.”</span> Western Washington University, 2022.</div>
+</div>
+<div id="ref-james2021islr" class="csl-entry" role="listitem">
+<div class="csl-left-margin">[3] </div><div class="csl-right-inline">G. James, D. Witten, T. Hastie, and R. Tibshirani, <em>An introduction to statistical learning with applications in <span>R</span></em>, 2nd ed. Springer, 2021. Available: <a href="https://www.statlearning.com/">https://www.statlearning.com/</a></div>
+</div>
+<div id="ref-james2023introduction" class="csl-entry" role="listitem">
+<div class="csl-left-margin">[4] </div><div class="csl-right-inline">G. James, D. Witten, T. Hastie, R. Tibshirani, and J. Taylor, <em>An introduction to statistical learning: With applications in <span>Python</span></em>. Springer, 2023. doi: <a href="https://doi.org/10.1007/978-3-031-38747-0">10.1007/978-3-031-38747-0</a>.</div>
+</div>
+<div id="ref-hastie2009esl" class="csl-entry" role="listitem">
+<div class="csl-left-margin">[5] </div><div class="csl-right-inline">T. Hastie, R. Tibshirani, and J. Friedman, <em>The elements of statistical learning: Data mining, inference, and prediction</em>, 2nd ed. Springer, 2009. Available: <a href="https://hastie.su.domains/ElemStatLearn/">https://hastie.su.domains/ElemStatLearn/</a></div>
+</div>
+<div id="ref-abumostafa2012learning" class="csl-entry" role="listitem">
+<div class="csl-left-margin">[6] </div><div class="csl-right-inline">Y. S. Abu-Mostafa, M. Magdon-Ismail, and H.-T. Lin, <em>Learning from data: A short course</em>. AMLBook, 2012. Available: <a href="https://amlbook.com/">https://amlbook.com/</a></div>
+</div>
+<div id="ref-bishop2006prml" class="csl-entry" role="listitem">
+<div class="csl-left-margin">[7] </div><div class="csl-right-inline">C. M. Bishop, <em>Pattern recognition and machine learning</em>. in Information science and statistics. New York: Springer, 2006.</div>
+</div>
+<div id="ref-murphy2022pml" class="csl-entry" role="listitem">
+<div class="csl-left-margin">[8] </div><div class="csl-right-inline">K. P. Murphy, <em>Probabilistic machine learning: An introduction</em>. in Adaptive computation and machine learning. MIT Press, 2022.</div>
+</div>
+<div id="ref-dobson4e" class="csl-entry" role="listitem">
+<div class="csl-left-margin">[9] </div><div class="csl-right-inline">A. J. Dobson and A. G. Barnett, <em>An introduction to generalized linear models</em>, 4th ed. CRC press, 2018. doi: <a href="https://doi.org/10.1201/9781315182780">10.1201/9781315182780</a>.</div>
+</div>
+<div id="ref-dunn2018generalized" class="csl-entry" role="listitem">
+<div class="csl-left-margin">[10] </div><div class="csl-right-inline">P. K. Dunn and G. K. Smyth, <em>Generalized linear models with examples in <span>R</span></em>, vol. 53. Springer, 2018. doi: <a href="https://doi.org/10.1007/978-1-4419-0118-7">10.1007/978-1-4419-0118-7</a>.</div>
+</div>
+<div id="ref-mclachlan2007em" class="csl-entry" role="listitem">
+<div class="csl-left-margin">[11] </div><div class="csl-right-inline">G. J. McLachlan and T. Krishnan, <em>The <span>EM</span> algorithm and extensions</em>, 2nd ed. John Wiley &amp; Sons, 2007. doi: <a href="https://doi.org/10.1002/9780470191613">10.1002/9780470191613</a>.</div>
+</div>
+<div id="ref-wood2017generalized" class="csl-entry" role="listitem">
+<div class="csl-left-margin">[12] </div><div class="csl-right-inline">S. N. Wood, <em>Generalized additive models: An introduction with r</em>, 2nd ed. Chapman; Hall/CRC, 2017. doi: <a href="https://doi.org/10.1201/9781315370279">10.1201/9781315370279</a>.</div>
+</div>
+</div>
+
+
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp('/' + window.location.host + '/');
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+</div> <!-- /content -->
+
+
+
+
+<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/d-morrison/macros/blob/main/notation-across-sources.qmd" class="toc-action"><i class="bi bi-github"></i>View source</a></li></ul></div></div></div></footer></body></html>
