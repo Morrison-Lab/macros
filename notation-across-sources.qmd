@@ -1,0 +1,160 @@
+---
+title: "Notation Across Sources"
+format:
+  html:
+    include-in-header:
+      - macros-header.html
+bibliography: references.bib
+csl: citations/numeric-author.csl
+filters:
+  - citations/numeric-citations.lua
+execute:
+  freeze: false
+---
+
+This page sets our notation beside the notation of Hutchinson's and Harris' lecture notes and five textbooks.
+The [Notation Choices](notation-choices.qmd) page gives the reasons for our conventions;
+this page lists the symbols side by side.
+The data are in [`data/notation-conventions.csv`](data/notation-conventions.csv) and [`data/symbols-used.csv`](data/symbols-used.csv).
+Links in the tables go to the definitions in the [DATA 571 notes](https://morrison-lab.github.io/lds/).
+
+# Sources {#sec-notation-sources}
+
+The tables on this page set our notation beside the notation of these sources:
+
+-   Brian Hutchinson's lecture notes for DATA 471/571 [@hutchinson2025data471].
+-   Kameron Decker Harris' 2022 weekly notes for DATA 471 [@harris2022data471].
+-   *An Introduction to Statistical Learning*, or ISL, in its R edition [@james2021islr]
+    and its Python edition [@james2023introduction].
+    They share one column because the two books use the same notation:
+    their notation sections are word for word the same,
+    and so are the symbols for the slack variable, the budget $C$ and the learning rate.
+-   *The Elements of Statistical Learning*, or ESL [@hastie2009esl].
+-   *Learning From Data*, or LfD [@abumostafa2012learning].
+-   Bishop's *Pattern Recognition and Machine Learning* [@bishop2006prml].
+-   Murphy's *Probabilistic Machine Learning: An Introduction* [@murphy2022pml].
+
+To read the tables:
+
+-   A dash means the source has no symbol for the concept or does not cover it.
+    The printed chapters of LfD, for example, stop before neural networks and SVMs.
+-   A cell is bold where the source writes the symbol in bold, and plain where the source does not.
+    Hutchinson's notes write vectors as plain letters, and Harris' notes put an arrow over them.
+-   The name of each source in a table header links to its entry in the reference list.
+-   A row label links to the definition in these notes where there is one.
+
+
+# Differences that cause confusion {#sec-notation-differences}
+
+Six differences cause most of the confusion when you read across sources:
+
+-   **Labels**: the two-class label is $\{0, 1\}$ for logistic regression and $\{-1, +1\}$ for SVMs in most sources,
+    and always $\{-1, +1\}$ in LfD.
+-   **The SVM constant $C$**: Hutchinson, Bishop and Murphy use $C$ as a penalty on the slack,
+    so a larger $C$ allows fewer violations.
+    ISL uses $C$ as a budget on the slack, so a larger $C$ allows more.
+-   **Sample index**: a superscript in parentheses ($x^{(i)}$) in Hutchinson's notes,
+    a subscript $i$ in ISL and ESL, and a subscript $n$ in LfD, Bishop and Murphy.
+-   **Prediction of the fitted model, averaged over data sets**: these notes write the prediction at $x$ as $\predvalf{x}$, as ISL and ESL do ($\hat{f}(x)$).
+    Where $x$ is fixed and its dependence is not the point, as in the [bias--variance decomposition](https://morrison-lab.github.io/lds/big-ideas.html#eq-bias-variance), they drop the argument and write $\predval$.
+    Either way the prediction is a random variable, because it depends on the training set.
+    The [average fit](https://morrison-lab.github.io/lds/big-ideas.html#eq-average-fit) $\avgfitf{x}$ is the population expectation of that prediction over training sets, written with no bar and no hat.
+-   **Target**: Bishop calls the output $t$ for *target*, and every other source calls it $y$.
+-   **Subscripts and parentheses**: which arguments go in a subscript and which in parentheses varies,
+    as in $f_\theta(x)$ versus $f(x; \theta)$.
+    The [Notation Choices page](notation-choices.qmd#sec-subscripts-parentheses) states our convention and the alternatives.
+
+
+# Tables {#sec-notation-tables}
+
+```{r}
+#| label: setup-notation-conventions
+#| include: false
+notation <- readr::read_csv(
+  "data/notation-conventions.csv",
+  show_col_types = FALSE
+)
+
+notation_groups <- c(
+  data = "Data",
+  model = "Models, loss and risk",
+  linear = "Linear models",
+  nn = "Neural networks",
+  svm = "Support vector machines",
+  unsup = "Unsupervised learning"
+)
+
+# One table per group, so each stays narrow enough to read in every format.
+notation_table <- function(which_group) {
+  rows <- notation[notation$group == which_group, ]
+  table <- data.frame(
+    Concept = rows$concept,
+    `These notes` = rows$ours,
+    rows$hutchinson,
+    rows$harris,
+    rows$islr,
+    rows$esl,
+    rows$lfd,
+    rows$bishop,
+    rows$murphy,
+    check.names = FALSE
+  )
+  # Each source's name links to its entry in the reference list.
+  names(table) <- c(
+    "Concept", "These notes",
+    "[Hutchinson](#ref-hutchinson2025data471)",
+    "[Harris](#ref-harris2022data471)",
+    "ISL ([R](#ref-james2021islr), [Python](#ref-james2023introduction))",
+    "[ESL](#ref-hastie2009esl)",
+    "[LfD](#ref-abumostafa2012learning)",
+    "[Bishop](#ref-bishop2006prml)",
+    "[Murphy](#ref-murphy2022pml)"
+  )
+  knitr::kable(
+    table,
+    format = "pipe",
+    caption = sprintf(
+      "%s: notation across sources {#tbl-notation-%s}",
+      notation_groups[[which_group]], which_group
+    )
+  )
+}
+```
+
+```{r}
+#| label: notation-tables
+#| output: asis
+for (g in names(notation_groups)) {
+  cat("\n\n## ", notation_groups[[g]], " {#sec-notation-", g, "}\n\n", sep = "")
+  cat(notation_table(g), "\n", sep = "\n")
+}
+```
+
+
+# Other symbols used {#sec-notation-symbols}
+
+The side-by-side tables show the symbols that differ between sources.
+This table lists every other symbol that a chapter of these notes uses, with what it means.
+Where a symbol takes arguments, the letters $a$, $b$ and so on stand in for them.
+
+```{r}
+#| label: symbols-used-table
+#| output: asis
+symbols_used <- readr::read_csv("data/symbols-used.csv", show_col_types = FALSE)
+symbols_used$meaning[is.na(symbols_used$meaning)] <- ""
+symbols_table <- data.frame(
+  Symbol = sprintf("$%s$", symbols_used$symbol),
+  Meaning = gsub("|", "\\|", symbols_used$meaning, fixed = TRUE)
+)
+knitr::kable(
+  symbols_table,
+  format = "pipe",
+  caption = "Other symbols used in these notes {#tbl-symbols-used}"
+)
+```
+
+
+# References {#references .unnumbered}
+
+::: {#refs}
+:::
