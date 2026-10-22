@@ -1253,8 +1253,8 @@
 \def\hcovmat{\hat{\Sigma}}
 \def\ecovmat{\est{\covmat}}
 \def\corpar{\rho}
-\def\noise{\deviation_{\truemean}}
-\def\Noise{\Deviation_{\truemean}}
+\def\noise{{\deviation_{\truemean}}}
+\def\Noise{{\Deviation_{\truemean}}}
 \def\vnoise{\vecf{\noise}}
 \def\vNoise{\vecf{\Noise}}
 \def\biassym{\distop{B}}
