@@ -320,13 +320,14 @@ This is an exception to our rule that a random variable gets a capital Latin let
 We accept the exception because every common textbook uses $\varepsilon$ for the noise.
 
 The residual is a different quantity, because it is computed from a fitted model and so is observed.
-We write it $\resid$, the Latin letter $e$, as ISL does for $e_i = y_i - \hat{y}_i$.
-The residual estimates the noise, but it has its own letter, so a reader can tell the observed residual from the unobserved noise.
+It estimates the noise, with the same sign: both are an outcome minus a reference.
+So we write the residual as the estimate of the noise, $\resid$, using `\est` as we do for every other estimate.
+This needs no new letter.
+ISL writes the residual as $e_i = y_i - \hat{y}_i$, but the letter $e$ is Euler's number (`\euler`, `\e{}`) and the start of the expectation operator $\E{\cdot}$ and its estimate, so we avoid it.
+The standardized residual is $\stdresid$ and the modified residual is $\modresid$.
 The residual has no separate capital: `\Resid` prints the same $\resid$.
-Lower-case $e$ is also Euler's number, which we write with `\euler` and `\e{}`, and `\ve` prints the generic vector $\ve$.
-Upper-case $E$ is the expectation operator, which is why the residual has no capital.
 
-The prediction error `\prederr` prints $\prederr$.
+The prediction error `\prederr` prints $\prederr$, the general deviation symbol `\devn`, because a prediction error is a deviation of a prediction from the new outcome.
 The noise, the residual and the prediction error each have their own symbol, because each has its own reference.
 Our older macros `\err` and `\eps` print $\varepsilon$, so they are now the same symbol as the noise.
 Earlier versions of these macros printed the noise as $U$ with realized value $u$, and before that as the Greek letter $\nu$.

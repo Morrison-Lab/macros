@@ -190,22 +190,22 @@ name	interpretation
 \popdevf	deviation of the argument from its population mean, ν_z
 \Deviation	uppercase deviation symbol Δ
 \Devn	uppercase deviation (alias for \Deviation)
-\residual	residual symbol e
+\residual	residual symbol ε̂: the estimate of the noise \Noise (via \est)
 \resid	residual, observed minus predicted outcome (alias for \residual)
-\residv	residual vector ḛ
-\Residual	residual symbol e (alias for \residual; a residual has no separate capital)
+\residv	residual vector ε̰̂
+\Residual	residual symbol ε̂ (alias for \residual; a residual has no separate capital)
 \Resid	residual (alias for \Residual)
-\stdresidual	standardized residual e′
+\stdresidual	standardized residual ε̂′
 \stdresid	standardized residual (alias for \stdresidual)
-\StdResidual	standardized residual e′ (alias for \stdresidual)
+\StdResidual	standardized residual ε̂′ (alias for \stdresidual)
 \StdResid	standardized residual (alias)
-\modresidual	modified residual e*
+\modresidual	modified residual ε̂*
 \modresid	modified residual (alias for \modresidual)
-\ModResidual	modified residual e* (alias for \modresidual)
+\ModResidual	modified residual ε̂* (alias for \modresidual)
 \ModResid	modified residual (alias)
 \devof	deviation of the first argument from the reference value in the second (prints the first minus the second inside parentheses; see notation-choices for compound references)
 \esterr	estimation error: the estimate in the first argument minus the estimand in the second (prints \devof{estimate}{estimand}; an instance of \devof)
-\prederr	prediction error, predicted minus observed outcome, symbol χ; same meaning as \esterr{\predval}{\Outvar}
+\prederr	prediction error, predicted minus observed outcome, symbol δ (alias for \devn); same meaning as \esterr{\predval}{\Outvar}
 \score	score function ℓ′
 \scorev	score vector
 \scorei	per-observation score vector ℓ′_i
@@ -402,7 +402,7 @@ name	interpretation
 \devsq	squared deviation of the first argument from the reference value in the second (δ_r(z))²
 \ssdev	sum over i = 1, ..., n of the squared deviation of the observation from the argument (·), via \devsq
 \sq	square superscript ² (postfix)
-\err	error term ε (alias for \eps); the noise is \Noise, which prints the same ε (following ISL); the prediction error \prederr prints χ
+\err	error term ε (alias for \eps); the noise is \Noise, which prints the same ε (following ISL); the prediction error \prederr prints δ
 \erf	error function ε(·); for an estimate, the estimation error (estimate minus truth), written \esterr{estimate}{truth}
 \vec	vector notation (undertilde style)
 \vecf	vector notation (alias for \vec)
@@ -430,7 +430,7 @@ name	interpretation
 \vpredvar	vector of one observation's predictor values (prints x̰)
 \mpredvar	input matrix: the predictor vectors of all n observations, one per row (prints bold X, like \mX, the usual textbook form)
 \vPredvar	random vector of predictors (prints X̰)
-\vresid	vector of residuals, observed minus predicted outcomes (the negative of the prediction errors \prederr) (prints ḛ)
+\vresid	vector of residuals, observed minus predicted outcomes (the negative of the prediction errors \prederr) (prints ε̰̂)
 \vprederr	vector of prediction errors, predicted minus observed outcomes (the vec accent applied to \prederr)
 \vz	vector z (z̰)
 \vZ	random vector Z (Z̰)

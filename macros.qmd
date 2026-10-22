@@ -251,19 +251,19 @@
 \def\Devn{\Deviation}
 \providecommand{\devof}[2]{{\paren{#1 - #2}}}
 \providecommand{\esterr}[2]{{\devof{#1}{#2}}}
-\def\residual{e}
+\def\residual{\est{\Noise}}
 \def\resid{\residual}
 \def\Residual{\residual}
 \def\Resid{\Residual}
-\def\stdresidual{e^\prime}
+\def\stdresidual{\residual^\prime}
 \def\stdresid{\stdresidual}
 \def\StdResidual{\stdresidual}
 \def\StdResid{\StdResidual}
-\def\modresidual{e^*}
+\def\modresidual{\residual^*}
 \def\modresid{\modresidual}
 \def\ModResidual{\modresidual}
 \def\ModResid{\ModResidual}
-\def\prederr{\chi}
+\def\prederr{\devn}
 \def\score{\llik'}
 \def\scorev{\vec{\llik'}}
 \def\scorei{\vec{\llik_i'}}
@@ -726,7 +726,7 @@
 \def\ub{\underbrace}
 \providecommand{\ubf}[2]{\ub{#1}_{#2}}
 \providecommand{\dims}[2]{\ub{#1}_{#2}}
-\providecommand{\residv}{\vec{e}}
+\providecommand{\residv}{\vecf{\residual}}
 \def\bbN{\mathbb{N}}
 \def\bbZ{\mathbb{Z}}
 \def\bbQ{\mathbb{Q}}
