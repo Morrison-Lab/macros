@@ -205,7 +205,7 @@ name	interpretation
 \ModResid	modified residual (alias)
 \devof	deviation of the first argument from the reference value in the second (prints the first minus the second inside parentheses; see notation-choices for compound references)
 \esterr	estimation error: the estimate in the first argument minus the estimand in the second (prints \devof{estimate}{estimand}; an instance of \devof)
-\prederr	prediction error, predicted minus observed outcome, symbol δ (alias for \devn); same meaning as \esterr{\predval}{\Outvar}
+\prederr	prediction error, predicted minus observed outcome, symbol ε (alias for \err); same meaning as \esterr{\predval}{\Outvar}
 \score	score function ℓ′
 \scorev	score vector
 \scorei	per-observation score vector ℓ′_i
@@ -402,7 +402,7 @@ name	interpretation
 \devsq	squared deviation of the first argument from the reference value in the second (δ_r(z))²
 \ssdev	sum over i = 1, ..., n of the squared deviation of the observation from the argument (·), via \devsq
 \sq	square superscript ² (postfix)
-\err	error term ε (alias for \eps); the noise is \Noise, which prints the same ε (following ISL); the prediction error \prederr prints δ
+\err	error term ε (alias for \eps); the noise is \Noise, a deviation, not an error, so it does not print ε; the prediction error \prederr prints ε
 \erf	error function ε(·); for an estimate, the estimation error (estimate minus truth), written \esterr{estimate}{truth}
 \vec	vector notation (undertilde style)
 \vecf	vector notation (alias for \vec)
@@ -1187,8 +1187,8 @@ name	interpretation
 \hcovmat	an estimated covariance matrix (prints \hat{\Sigma})
 \ecovmat	an estimated covariance matrix (forward-looking form) (prints \est{\covmat})
 \corpar	a correlation parameter (prints \rho)
-\noise	a realized value of the noise (prints ε, the same symbol as \Noise, following ISL)
-\Noise	the noise: a latent random variable, the deviation \devof{\Outvar}{\truemeanf{\predvar}} of an outcome from its mean given the input (prints ε, following ISL; \noise prints the same symbol for a realized value)
+\noise	a realized value of the noise (prints δ with the true mean as subscript, δ_μ; the same symbol as \Noise in lowercase)
+\Noise	the noise: a latent random variable, the deviation \devof{\Outvar}{\truemeanf{\predvar}} of an outcome from its mean given the input (prints Δ with the true mean as subscript, Δ_μ)
 \vnoise	a vector of realized noise values (prints \vecf{\noise})
 \vNoise	a vector of noise random variables (prints \vecf{\Noise})
 \biassym	short bias operator 𝔹 (no argument, blackboard bold like \Expp)

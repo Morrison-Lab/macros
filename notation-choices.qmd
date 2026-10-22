@@ -315,15 +315,20 @@ When the reference is a sum, wrap it in `\paren` yourself, as in $\devof{a}{\par
 The macro `\devsq` prints a squared deviation, and `\ssdev` prints the sum of squared deviations over observations.
 Both print the labelled symbol $\delta$ and not a difference.
 
-We follow the textbook *An Introduction to Statistical Learning* (ISL) and write the noise as the Greek letter $\varepsilon$.
-The macros `\Noise` and `\noise` both print $\Noise$, so a random noise variable and its realized value share one symbol, as in ISL.
-The vector of noise variables and the vector of realized values are both $\vNoise$.
+We distinguish errors from other deviations, and the noise is a deviation, not an error.
+An error has an estimand: an estimation error is an estimate minus its estimand, and a prediction error is the case where the estimand is the new outcome.
+The noise is the outcome minus its mean given the input, so nothing was estimated and nothing went wrong.
+We therefore write it in the deviation family, with the true mean as a subscript that names the reference: `\Noise` prints $\Noise$ for the random variable and `\noise` prints $\noise$ for a realized value.
+The vector of noise variables is $\vNoise$ and the vector of realized values is $\vnoise$.
 The noise differs from one observation to the next and has a distribution.
 In real data we never observe a realized noise value, but we write it when we reason about a single observation.
-This is an exception to our rule that a random variable gets a capital Latin letter and a Greek letter names a parameter.
-We accept the exception because every common textbook uses $\varepsilon$ for the noise.
+The subscript keeps the noise from sharing a bare $\delta$ or $\Delta$ with the other macros that print those letters.
 
-The residual is a different quantity, because it is computed from a fitted model and so is observed.
+The errors keep the letter $\varepsilon$: `\prederr` and `\err` print $\varepsilon$.
+So the Greek letter $\varepsilon$ means an error here, even though ISL and most textbooks use it for the noise and call it the error term.
+Check what a source means by $\varepsilon$ before comparing a formula with ours.
+
+The residual is computed from a fitted model and so is observed.
 It estimates the noise, with the same sign: both are an outcome minus a reference.
 So we write the residual as the estimate of the noise, $\resid$, using `\est` as we do for every other estimate.
 This needs no new letter.
@@ -331,16 +336,13 @@ ISL writes the residual as $e_i = y_i - \hat{y}_i$, but the letter $e$ is Euler'
 The standardized residual is $\stdresid$ and the modified residual is $\modresid$.
 The residual has no separate capital: `\Resid` prints the same $\resid$.
 
-The prediction error `\prederr` prints $\prederr$, the general deviation symbol `\devn`, because a prediction error is a deviation of a prediction from the new outcome.
-The noise, the residual and the prediction error each have their own symbol, because each has its own reference.
-Our older macros `\err` and `\eps` print $\varepsilon$, so they are now the same symbol as the noise.
 Earlier versions of these macros printed the noise as $U$ with realized value $u$, and before that as the Greek letter $\nu$.
 Any use that meant $\nu$ needs a sweep.
 The macros `\popdev` and `\cdev` still print $\nu$ for a deviation from a mean.
 The macro `\deviationf` also prints $\delta$, with the reference as a subscript.
 We keep `\popdev` and `\deviationf` for existing uses.
 
-Some sources reuse $\varepsilon$ for the residual, or $e$ for the noise, so check what a source means by it.
+Some sources use $e$ for the noise, so check what a source means by it.
 Some sources subtract in the other order, so check the sign before comparing a formula with ours.
 
 ## Probability notation {#sec-probability-notation}
