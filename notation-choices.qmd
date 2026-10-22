@@ -400,6 +400,11 @@ The deviance is twice the gap between the log-likelihood of the saturated model 
 It is a scaled statistic, not a deviation of a value from a reference, so it does not take the deviation symbol.
 `\deviance` now prints the upright name $\deviance$, as the other named quantities do.
 
+The deviance information criterion uses a different quantity, minus twice the log-likelihood with no saturated term.
+It has its own macro, `\dicdev`, which prints $\dicdev$, and a call form `\dicdevf{\vth}`, so the two are not confused.
+The two differ by a constant that does not depend on the parameter, and that constant drops out when models are compared.
+In symbols, the deviance of a fitted model is the difference between this quantity at the fitted model and at the saturated model.
+
 Other sources differ.
 Some write the design matrix as $X$, and some write the feature map as $\phi$ or $\Phi$.
 Check which letter a source uses for each of the three objects before you compare formulas.
