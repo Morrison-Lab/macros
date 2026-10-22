@@ -67,7 +67,7 @@ name	interpretation
 \vbeta	beta coefficient vector
 \vcoef	coefficient vector (alias for \vbeta)
 \regcoef	regression coefficient symbol β
-\Regcoef	uppercase regression coefficient symbol B
+\Regcoef	uppercase regression coefficient symbol B (italic, because a coefficient is a variable)
 \coef	regression coefficient for covariate (β_x)
 \Coef	uppercase regression coefficient for covariate (B_x)
 \intcoef	regression intercept (β_0)
@@ -204,7 +204,7 @@ name	interpretation
 \ModResidual	modified residual ε̂* (alias for \modresidual)
 \ModResid	modified residual (alias)
 \devof	deviation of the first argument from the reference value in the second (prints the first minus the second inside parentheses; see notation-choices for compound references)
-\esterr	estimation error: the estimate in the first argument minus the estimand in the second (prints \devof{estimate}{estimand}; an instance of \devof)
+\esterr	estimation error: the error ε of the estimate in the first argument for the estimand in the second, ε_estimand(estimate); the estimate minus the estimand, written explicitly with \devof{estimate}{estimand}
 \prederr	prediction error, predicted minus observed outcome, symbol ε (alias for \err); same meaning as \esterr{\predval}{\Outvar}
 \score	score function ℓ′
 \scorev	score vector
