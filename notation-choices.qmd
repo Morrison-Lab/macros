@@ -357,7 +357,7 @@ A deviation and a difference are both one value minus another.
 They differ in what the second value is.
 
 - A deviation is a value minus a fixed reference, such as a mean or an estimand. We write it with $\deviation$, or with `\devof` for the explicit form.
-- A difference compares two values of equal standing, such as an outcome at two inputs. We write it with $\diff$, as in `\diffvx`.
+- A difference compares two values of equal standing, such as two input vectors or the log-odds at two inputs. We write it with $\diff$, as in `\diffvx` for the inputs and `\difflogodds` for the log-odds.
 
 We keep two symbols because the two ideas answer different questions.
 A deviation answers "how far is this from where it should be?".
