@@ -245,7 +245,7 @@
 \providecommand{\deviationv}{\vec{\deviation}}
 \def\devnv{\deviationv}
 \providecommand{\deviationf}[2]{{\deviation_{#2}\paren{#1}}}
-\def\popdev{\nu}
+\def\popdev{\deviation}
 \providecommand{\popdevf}[1]{\popdev_{#1}}
 \def\Deviation{\Delta}
 \def\Devn{\Deviation}
@@ -263,7 +263,7 @@
 \def\modresid{\modresidual}
 \def\ModResidual{\modresidual}
 \def\ModResid{\ModResidual}
-\def\prederr{\err}
+\def\prederr{{\varepsilon_{\text{pred}}}}
 \def\score{\llik'}
 \def\scorev{\vec{\llik'}}
 \def\scorei{\vec{\llik_i'}}
@@ -1253,8 +1253,8 @@
 \def\hcovmat{\hat{\Sigma}}
 \def\ecovmat{\est{\covmat}}
 \def\corpar{\rho}
-\def\noise{{\deviation_{\truemean}}}
-\def\Noise{{\Deviation_{\truemean}}}
+\def\noise{\varepsilon}
+\def\Noise{\varepsilon}
 \def\vnoise{\vecf{\noise}}
 \def\vNoise{\vecf{\Noise}}
 \def\biassym{\mathbb{B}}
@@ -1307,8 +1307,8 @@
 \def\angpar{\theta}
 \def\shape{\alpha}
 \def\shapeb{\beta}
-\def\df{\nu}
-\def\hdf{\hat{\nu}}
+\def\df{\operatorname{df}}
+\def\hdf{\hat{\operatorname{df}}}
 \def\edf{\est{\df}}
 \def\gammafn{\Gamma}
 \def\samplespace{\Omega}
