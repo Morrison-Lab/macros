@@ -21,3 +21,5 @@ Subscripted and squared deviations: $\devof{\frac{a}{b}}{\paren{\mu_1 + \mu_2}}_
 Noise: $\Noise_i^2$, $\noise_i^2$, $\vNoise_i^2$, $\vnoise_i^2$, $\vNoise^T$.
 
 Equality with a reason, alone, with a tall side, and squared: $a \eqby{\text{(A1)}} b$, $\frac{a}{b} \eqby{\text{Thm 2}} c$, $\paren{a \eqby{\text{(A1)}} b}^2$, $\E{X \eqby{\text{(A1)}} Y}^2$.
+
+Sum of the elements, plain, squared and with a tall argument: $\sumof{\vy}$, $\Sumof{\vY}^2$, $\Sumof{\frac{a}{b}}_i$.
