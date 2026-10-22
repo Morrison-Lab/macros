@@ -408,7 +408,7 @@ name	interpretation
 \vecf	vector notation (alias for \vec)
 \v	vector shorthand (alias for \vecf)
 \matr	matrix notation (bold style)
-\mX	design matrix X (bold)
+\mX	predictor matrix X (bold): the matrix of covariate values; the design matrix built from a feature map is \design
 \mx	design matrix x lowercase (bold)
 \va	vector a (a̰)
 \vx	vector x (x̰)
