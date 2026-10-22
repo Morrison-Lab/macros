@@ -393,6 +393,10 @@ window.Quarto = {
 <span class="menu-text">Notation Choices</span></a>
   </li>  
   <li class="nav-item">
+    <a class="nav-link" href="./notation-across-sources.html"> 
+<span class="menu-text">Notation Across Sources</span></a>
+  </li>  
+  <li class="nav-item">
     <a class="nav-link" href="./demo-include-in-header.html"> 
 <span class="menu-text">Demo (include in header strategy)</span></a>
   </li>  
@@ -440,6 +444,7 @@ window.Quarto = {
   <li><a href="#sec-true-mean-function" id="toc-sec-true-mean-function" class="nav-link" data-scroll-target="#sec-true-mean-function">The true mean function and its conditional form</a></li>
   <li><a href="#sec-brace-delimited-forms" id="toc-sec-brace-delimited-forms" class="nav-link" data-scroll-target="#sec-brace-delimited-forms">An exponent on a function with built-in delimiters</a></li>
   <li><a href="#sec-counting-notation" id="toc-sec-counting-notation" class="nav-link" data-scroll-target="#sec-counting-notation">Counting: cardinality, factorials and binomial coefficients</a></li>
+  <li><a href="#sec-sum-of-elements" id="toc-sec-sum-of-elements" class="nav-link" data-scroll-target="#sec-sum-of-elements">The sum of the elements of a vector</a></li>
   </ul>
 <div class="toc-actions"><ul><li><a href="https://github.com/d-morrison/macros/blob/main/notation-choices.qmd" class="toc-action"><i class="bi bi-github"></i>View source</a></li></ul></div></nav>
     </div>
@@ -652,6 +657,18 @@ window.Quarto = {
 </ul>
 <p>The <code>\factorial</code> macro puts an exclamation mark after its argument without adding parentheses. An argument with more than one symbol needs its own parentheses, as in <code>\factorial{(n-1)}</code>, which prints <span class="math inline">\(\factorial{(n-1)}\)</span>. Without them, <code>\factorial{n-1}</code> prints <span class="math inline">\(\factorial{n-1}\)</span>, which reads as <span class="math inline">\(n - (1!)\)</span>.</p>
 <p>Other sources write the cardinality as <span class="math inline">\(\#A\)</span> or <span class="math inline">\(n(A)\)</span>. They write the binomial coefficient as <span class="math inline">\(C(n, k)\)</span> or <span class="math inline">\({}^{n}C_{k}\)</span>. When you read a formula from another source, check which of these a symbol means before you compare it with ours.</p>
+</section>
+<section id="sec-sum-of-elements" class="level2">
+<h2 class="anchored" data-anchor-id="sec-sum-of-elements">The sum of the elements of a vector</h2>
+<p>Our convention is to write the sum of the elements of a vector <span class="math inline">\(\vy\)</span> as <span class="math inline">\(\sumof{\vy}\)</span>, which prints <span class="math inline">\(s_{\vy}\)</span>. We write the sum of the elements of a vector of random variables <span class="math inline">\(\vY\)</span> as <span class="math inline">\(\Sumof{\vY}\)</span>, which prints <span class="math inline">\(S_{\vY}\)</span>. This follows the rule that a capital letter is a random variable and a lowercase letter is a value.</p>
+<p>The two symbols are <code>\sumsym</code> and <code>\Sumsym</code>. The macros <code>\sumof</code> and <code>\Sumof</code> put the vector in the subscript, so a formula about a sum names the vector it sums.</p>
+<p>We chose this for three reasons.</p>
+<ul>
+<li>One symbol replaces a sum <span class="math inline">\(\sum_{i=1}^{n}\)</span> whose index and limits would repeat in every line of a derivation.</li>
+<li>The subscript names the vector, so the symbol stays unambiguous when two vectors appear in the same line.</li>
+<li>The sum of the entries of <span class="math inline">\(\vy\)</span> equals the dot product <span class="math inline">\(\vone \cdot \vy\)</span> of <span class="math inline">\(\vy\)</span> with the ones vector, so the symbol and the dot product are two names for one quantity.</li>
+</ul>
+<p>Some sources write the sum of <span class="math inline">\(n\)</span> random variables as <span class="math inline">\(S_n\)</span>. The subscript <span class="math inline">\(n\)</span> there is the sample size, not the vector. Within these notes, <span class="math inline">\(S\)</span> with two subscripts, such as <code>\sspred</code>, is a centered sum of squares or cross-products, not a sum of elements. When you read a formula from another source, check whether the subscript of <span class="math inline">\(S\)</span> is a count or a vector before you compare it with ours.</p>
 
 
 </section>

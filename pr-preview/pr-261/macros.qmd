@@ -255,11 +255,11 @@
 \def\resid{\residual}
 \def\Residual{\residual}
 \def\Resid{\Residual}
-\def\stdresidual{{\residual'}}
+\def\stdresidual{{\residual'{}}}
 \def\stdresid{\stdresidual}
 \def\StdResidual{\stdresidual}
 \def\StdResid{\StdResidual}
-\def\modresidual{{\residual^*}}
+\def\modresidual{{\residual^*{}}}
 \def\modresid{\modresidual}
 \def\ModResidual{\modresidual}
 \def\ModResid{\ModResidual}
@@ -455,6 +455,10 @@
 \providecommand{\card}[1]{{\abs{#1}}}
 \providecommand{\factorial}[1]{{{#1}!}}
 \providecommand{\binomial}[2]{{\binom{#1}{#2}}}
+\def\sumsym{s}
+\def\Sumsym{S}
+\providecommand{\sumof}[1]{{\sumsym_{#1}}}
+\providecommand{\Sumof}[1]{{\Sumsym_{#1}}}
 \providecommand{\powf}[2]{{\paren{#1}}^{#2}}
 \providecommand{\sqf}[1]{\powf{#1}{2}}
 \providecommand{\devsq}[2]{\sqf{\devn_{#2}\paren{#1}}}
