@@ -18,6 +18,8 @@ website:
         text: Macro Reference
       - href: notation-choices.qmd
         text: Notation Choices
+      - href: notation-across-sources.qmd
+        text: Notation Across Sources
       - href: demo-include-in-header.qmd
         text: Demo (include in header strategy)
       - href: demo-shortcode.qmd
