@@ -255,7 +255,7 @@
 \def\resid{\residual}
 \def\Residual{\residual}
 \def\Resid{\Residual}
-\def\stdresidual{{\residual^\prime}}
+\def\stdresidual{{\residual'}}
 \def\stdresid{\stdresidual}
 \def\StdResidual{\stdresidual}
 \def\StdResid{\StdResidual}
