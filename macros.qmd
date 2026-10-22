@@ -47,7 +47,7 @@
 \providecommand{\hQf}[1]{{\hQ\paren{#1}}}
 \providecommand{\hquantilef}[1]{{\hquantile\paren{#1}}}
 \def\ph{\mathop{\hat{\p}}\nolimits}
-\def\P{\distop{P}}
+\def\P{\mathbb{P}}
 \def\hp{\mathop{\hat{\p}}\nolimits}
 \def\ga{\alpha}
 \def\a{\alpha}
@@ -322,13 +322,13 @@
 \providecommand{\purple}[1]{{\color{purple}{#1}}}
 \providecommand{\teal}[1]{{\color{teal}{#1}}}
 \providecommand{\violet}[1]{{\color{violet}{#1}}}
-\providecommand{\hE}[1]{{\mathop{\hat{\operatorname{E}}}\nolimits\sb{#1}}}
+\providecommand{\hE}[1]{{\mathop{\hat{\mathbb{E}}}\nolimits\sb{#1}}}
 \def\hExp{\hE}
 \def\hExpf{\hE}
 \def\hmu{\hat{\mu}}
 \providecommand{\hmuf}[1]{{\hmu\paren{#1}}}
-\def\Expp{\distop{E}}
-\def\Ep{\distop{E}}
+\def\Expp{\mathbb{E}}
+\def\Ep{\mathbb{E}}
 \def\expit{\operatorname{expit}}
 \providecommand{\expitf}[1]{{\expit\cb{#1}}}
 \providecommand{\dexpitf}[1]{{\expit'\cb{#1}}}
@@ -336,11 +336,11 @@
 \def\sigmoid{\sigma}
 \providecommand{\sigmoidf}[1]{{\sigmoid\paren{#1}}}
 \providecommand{\logitf}[1]{{\logit\cb{#1}}}
-\providecommand{\E}[1]{{\distop{E}\sb{#1}}}
+\providecommand{\E}[1]{{\mathbb{E}\sb{#1}}}
 \def\Ef{\E}
 \def\Exp{\E}
 \def\Expf{\E}
-\providecommand{\Expfc}[2]{{\distop{E}_{#1}\sb{#2}}}
+\providecommand{\Expfc}[2]{{\mathbb{E}_{#1}\sb{#2}}}
 \def\ATT{\operatorname{ATT}}
 \providecommand{\ATTf}[1]{{\ATT\paren{#1}}}
 \providecommand{\evalbar}[1]{\left.{#1}\right|}
@@ -695,7 +695,7 @@
 \def\reglincomb{\vx \cdot \vb}
 \def\regbetasum{\beta_1 x_1+ \dots + \beta_p x_p}
 \def\pdf{\distop{f}}
-\providecommand{\pmf}[1]{{\distop{P}\paren{#1}}}
+\providecommand{\pmf}[1]{{\mathbb{P}\paren{#1}}}
 \def\cdf{\distop{F}}
 \providecommand{\cdff}[1]{{\cdf\paren{#1}}}
 \def\hcdf{\mathop{\hat{\cdf}}\nolimits}
@@ -799,11 +799,11 @@
 \providecommand{\dWf}[1]{{\dW\paren{#1}}}
 \def\dWeib{\operatorname{Weib}}
 \providecommand{\dWeibf}[1]{{\dWeib\paren{#1}}}
-\def\Ebar{\bar{\operatorname{E}}}
+\def\Ebar{\bar{\mathbb{E}}}
 \providecommand{\Ebarf}[1]{{\Ebar\sb{#1}}}
-\def\Ehat{\hat{\operatorname{E}}}
+\def\Ehat{\hat{\mathbb{E}}}
 \providecommand{\Ehatf}[1]{{\Ehat\sb{#1}}}
-\def\Etilde{\tilde{\operatorname{E}}}
+\def\Etilde{\tilde{\mathbb{E}}}
 \providecommand{\Etildef}[1]{{\Etilde\sb{#1}}}
 \def\Corrt{\operatorname{Corr}}
 \providecommand{\Corr}[1]{{\Corrt\paren{#1}}}
@@ -1091,7 +1091,7 @@
 \providecommand{\esnaaf}[1]{{\esnaa\paren{#1}}}
 \def\eth{\est{\theta}}
 \def\ethml{\eth_{\text{ML}}}
-\providecommand{\eE}[1]{{\mathop{\est{\operatorname{E}}}\nolimits\sb{#1}}}
+\providecommand{\eE}[1]{{\mathop{\est{\mathbb{E}}}\nolimits\sb{#1}}}
 \def\eExp{\eE}
 \def\eExpf{\eE}
 \def\emu{\est{\mu}}
@@ -1257,9 +1257,9 @@
 \def\Noise{\varepsilon}
 \def\vnoise{\vecf{\noise}}
 \def\vNoise{\vecf{\Noise}}
-\def\biassym{\distop{B}}
+\def\biassym{\mathbb{B}}
 \providecommand{\biassymf}[1]{{\biassym\sb{#1}}}
-\def\varsym{\distop{V}}
+\def\varsym{\mathbb{V}}
 \providecommand{\varsymf}[1]{{\varsym\sb{#1}}}
 \def\irrerr{\varpar}
 \def\rvar{x}

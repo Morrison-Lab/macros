@@ -264,7 +264,11 @@ A derivation that does not manipulate a piece can write its short symbol, after 
 Each piece is a population quantity.
 It is a fixed number once $\predvar$, the population, the fitting procedure and the training sample size are fixed.
 
-We write the bias and the variance with upright Latin letters, in the style of the expectation $\E{\cdot}$.
+We write the expectation, the probability, the bias and the variance as operators in blackboard bold: $\Expp$, $\P$, $\biassym$ and $\varsym$.
+The blackboard letter marks an operator that takes a random variable or an estimator, so it cannot be mistaken for an italic variable.
+We do not use blackboard bold for the risk, because $\reals$ is the real numbers.
+The risk stays an italic $\poprisk$, which is free now that the noise is $\varepsilon$.
+The long operators $\Biast$ and $\Vart$ stay upright words.
 We make this exception to the Greek convention for estimands in [the estimands entry](#sec-estimand-estimator-symbols).
 The variance operator applies to any random variable, not only to a fitted value.
 The bias operator is applied to an estimator, and its letter matches the name of the long operator $\Biast$.
@@ -357,7 +361,7 @@ Some sources write $P()$ for all of these.
 Others keep $f()$ for densities and mass functions, and use $P()$ only for the probability of an event.
 
 We write the expectation of a random variable with square brackets, as in $\E{X}$.
-Some sources write blackboard bold $\mathbb{E}[X]$, or parentheses, $E(X)$.
+Some sources write plain $E[X]$, or parentheses, $E(X)$.
 The meaning is the same.
 
 We write $X \ind Y$ for "$X$ is independent of $Y$".
