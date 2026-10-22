@@ -79,7 +79,7 @@ name	interpretation
 \gg	Greek letter gamma (alias for \g)
 \gd	Greek letter delta (δ)
 \eps	varepsilon error term (ε)
-\cdev	deviation from conditional mean (alias for \popdev, symbol ν; for the noise, the deviation of an outcome from its conditional mean, use \Noise)
+\cdev	deviation from conditional mean (alias for \popdev, symbol ν; the noise is \Noise, which prints ε)
 \veps	error vector (ε-vector)
 \epsp	ε(·) error function
 \epsf	ε(·) error function (alias for \epsp)
@@ -186,7 +186,7 @@ name	interpretation
 \deviationv	deviation vector (the vec accent applied to δ)
 \devnv	deviation vector (alias for \deviationv)
 \deviationf	deviation of the first argument from the reference value in the second, δ_r(z)
-\popdev	deviation from a population mean, symbol ν (for the noise, the deviation from the conditional mean, use \Noise)
+\popdev	deviation from a population mean, symbol ν (the noise is \Noise, which prints ε)
 \popdevf	deviation of the argument from its population mean, ν_z
 \Deviation	uppercase deviation symbol Δ
 \Devn	uppercase deviation (alias for \Deviation)
@@ -205,7 +205,7 @@ name	interpretation
 \ModResid	modified residual (alias)
 \devof	deviation of the first argument from the reference value in the second (prints the first minus the second inside parentheses; see notation-choices for compound references)
 \esterr	estimation error: the error ε of the estimate in the first argument for the estimand in the second, ε_estimand(estimate); the estimate minus the estimand, written explicitly with \devof{estimate}{estimand}
-\prederr	prediction error, predicted minus observed outcome, symbol ε (alias for \err); same meaning as \esterr{\predval}{\Outvar}
+\prederr	prediction error, predicted minus observed outcome, symbol ε with the upright label pred; same meaning as \esterr{\predval}{\Outvar}
 \score	score function ℓ′
 \scorev	score vector
 \scorei	per-observation score vector ℓ′_i
@@ -402,7 +402,7 @@ name	interpretation
 \devsq	squared deviation of the first argument from the reference value in the second (δ_r(z))²
 \ssdev	sum over i = 1, ..., n of the squared deviation of the observation from the argument (·), via \devsq
 \sq	square superscript ² (postfix)
-\err	error term ε (alias for \eps); the noise is \Noise, a deviation, not an error, so it does not print ε; the prediction error \prederr prints ε
+\err	error term ε (alias for \eps); the same symbol as the noise \Noise
 \erf	error function ε(·); for an estimate, the estimation error (estimate minus truth), written \esterr{estimate}{truth}
 \vec	vector notation (undertilde style)
 \vecf	vector notation (alias for \vec)
@@ -1187,8 +1187,8 @@ name	interpretation
 \hcovmat	an estimated covariance matrix (prints \hat{\Sigma})
 \ecovmat	an estimated covariance matrix (forward-looking form) (prints \est{\covmat})
 \corpar	a correlation parameter (prints \rho)
-\noise	a realized value of the noise (prints ν, the same symbol as \Noise and \popdev; a deviation, so it shares ν with \popdev)
-\Noise	the noise: a latent random variable, the deviation \devof{\Outvar}{\truemeanf{\predvar}} of an outcome from its mean given the input (prints ν, the same symbol as \noise and \popdev)
+\noise	a realized value of the noise (prints ε, the same symbol as \Noise, following ISL and ESL)
+\Noise	the noise: a latent random variable, the deviation \devof{\Outvar}{\truemeanf{\predvar}} of an outcome from its mean given the input (prints ε, following ISL and ESL; \noise prints the same symbol for a realized value)
 \vnoise	a vector of realized noise values (prints \vecf{\noise})
 \vNoise	a vector of noise random variables (prints \vecf{\Noise})
 \biassym	short bias operator 𝔹 (no argument, blackboard bold like \Expp)

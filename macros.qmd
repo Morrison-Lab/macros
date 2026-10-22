@@ -263,7 +263,7 @@
 \def\modresid{\modresidual}
 \def\ModResidual{\modresidual}
 \def\ModResid{\ModResidual}
-\def\prederr{\err}
+\def\prederr{{\varepsilon_{\text{pred}}}}
 \def\score{\llik'}
 \def\scorev{\vec{\llik'}}
 \def\scorei{\vec{\llik_i'}}
@@ -1253,8 +1253,8 @@
 \def\hcovmat{\hat{\Sigma}}
 \def\ecovmat{\est{\covmat}}
 \def\corpar{\rho}
-\def\noise{\popdev}
-\def\Noise{\popdev}
+\def\noise{\varepsilon}
+\def\Noise{\varepsilon}
 \def\vnoise{\vecf{\noise}}
 \def\vNoise{\vecf{\Noise}}
 \def\biassym{\mathbb{B}}
