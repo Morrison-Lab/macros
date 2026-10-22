@@ -1363,6 +1363,13 @@ name	interpretation
 \ninputvars	number p of input variables (predictors): the columns of the data matrix, not the number of inputs
 \inputdim	alias for \ninputvars, kept for existing uses
 \nparams	number p* of parameters: the columns of the design matrix after any feature map
+\nnetparams	number P of parameters (weights and biases) in a neural network
+\iter	index t of the step of an iterative algorithm, such as gradient descent
+\layeridx	index k of a layer of a neural network
+\objective	objective function J: the cost that an optimization algorithm lowers
+\objectivef	objective function applied to the argument, J(·)
+\RSS	residual sum of squares, RSS: the sum over the observations of the squared residuals of a fitted model
+\TSS	total sum of squares, TSS: the sum over the observations of the squared differences of the outcome from its sample mean
 \npatterns	number K of distinct covariate patterns in a dataset
 \nreps	number m of replicates (observations) that share one covariate pattern; written with a pattern index, as \nreps_k
 \nevents	number s of events among the replicates of one covariate pattern; written with a pattern index, as \nevents_k

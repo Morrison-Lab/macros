@@ -190,6 +190,13 @@
 \def\ninputvars{p}
 \def\inputdim{\ninputvars}
 \def\nparams{p^{*}}
+\def\nnetparams{P}
+\def\iter{t}
+\def\layeridx{k}
+\def\objective{J}
+\providecommand{\objectivef}[1]{{\objective\paren{#1}}}
+\def\RSS{\operatorname{RSS}}
+\def\TSS{\operatorname{TSS}}
 \def\npatterns{K}
 \def\nreps{m}
 \def\nevents{s}
