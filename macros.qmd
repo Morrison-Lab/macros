@@ -245,7 +245,7 @@
 \providecommand{\deviationv}{\vec{\deviation}}
 \def\devnv{\deviationv}
 \providecommand{\deviationf}[2]{{\deviation_{#2}\paren{#1}}}
-\def\popdev{\nu}
+\def\popdev{\deviation}
 \providecommand{\popdevf}[1]{\popdev_{#1}}
 \def\Deviation{\Delta}
 \def\Devn{\Deviation}

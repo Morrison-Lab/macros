@@ -79,7 +79,7 @@ name	interpretation
 \gg	Greek letter gamma (alias for \g)
 \gd	Greek letter delta (δ)
 \eps	varepsilon error term (ε)
-\cdev	deviation from conditional mean (alias for \popdev, symbol ν; the noise is \Noise, which prints ε)
+\cdev	deviation from conditional mean (alias for \popdev, symbol δ; the noise is \Noise, which prints ε)
 \veps	error vector (ε-vector)
 \epsp	ε(·) error function
 \epsf	ε(·) error function (alias for \epsp)
@@ -186,8 +186,8 @@ name	interpretation
 \deviationv	deviation vector (the vec accent applied to δ)
 \devnv	deviation vector (alias for \deviationv)
 \deviationf	deviation of the first argument from the reference value in the second, δ_r(z)
-\popdev	deviation from a population mean, symbol ν (the noise is \Noise, which prints ε)
-\popdevf	deviation of the argument from its population mean, ν_z
+\popdev	deviation from a population mean, symbol δ (alias for \deviation; the noise is \Noise, which prints ε)
+\popdevf	deviation of the argument from its population mean, δ_z
 \Deviation	uppercase deviation symbol Δ
 \Devn	uppercase deviation (alias for \Deviation)
 \residual	residual symbol ε̂: the estimate of the noise \Noise (via \est)

@@ -345,7 +345,7 @@ The residual has no separate capital: `\Resid` prints the same $\resid$.
 
 Earlier versions of these macros printed the noise as $U$ with realized value $u$, and before that as the Greek letter $\nu$.
 Any use that meant $\nu$ or expected $U$ or $u$ needs a sweep.
-The macros `\popdev` and `\cdev` still print $\nu$ for a deviation from a mean.
+The macros `\popdev` and `\cdev` now print $\popdev$, the general deviation symbol `\devn`, for a deviation from a mean, where they used to print $\nu$.
 The macro `\deviationf` prints $\delta$ with the reference as a subscript, for a labelled deviation of a given value.
 We keep `\popdev` and `\deviationf` for existing uses.
 
@@ -362,7 +362,7 @@ It is an operator, a function name, a constant or a label, such as $\tr$, $\diag
 So we never print a variable upright, and we never print an operator or a constant in italic.
 For example, `\Regcoef` prints an italic $\Regcoef$, because a regression coefficient is a variable.
 The degrees of freedom `\df` prints the upright name $\df$ instead of $\nu$, because an abbreviation is a name.
-That also frees $\nu$ for `\popdev`, the deviation from a population mean.
+That leaves $\nu$ to the macros that still print it, such as `\shrinkage`.
 
 ## Probability notation {#sec-probability-notation}
 
