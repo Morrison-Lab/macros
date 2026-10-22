@@ -233,8 +233,8 @@ We write an estimator by placing a hat over the symbol of its estimand, as in $\
 Usually the dependence of the estimator on the data is left implicit.
 
 In the source, we write the hat with the macro `\est{\theta}`, which prints $\est{\theta}$, or with a named macro that begins with `e`, such as `\eth` or `\ecoef{x}`.
-The older macros that begin with `h`, such as `\hth` and `\hcoef{x}`, print the same symbols but are deprecated.
-Each one is marked "deprecated, use" with its replacement in `interpretations.tsv`.
+The older hat macros that begin with `h`, such as `\hth` and `\hcoef{x}`, have `e` counterparts that print the same symbols.
+Most of them are marked "deprecated, use" with the replacement in `interpretations.tsv`.
 
 Other sources use other symbols, so check which symbol a source uses for the estimand before reading a formula.
 
