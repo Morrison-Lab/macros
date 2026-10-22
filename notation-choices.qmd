@@ -594,7 +594,9 @@ The training symbols below name a role, so the macro names the role and the lett
     We use a capital letter because it counts every weight and bias in the network, and it differs from the number of input variables $\ninputvars$.
 -   The index of a step of an iterative algorithm, such as gradient descent, is $\iter$, from `\iter`.
 -   The index of a layer of a neural network is $\layeridx$, from `\layeridx`.
-    The letter is the same as the number of cross-validation folds $\nfolds$, so the macro name says which one is meant.
+    The letter is the usual one for a layer index in deep learning, and it differs from the letter of the number of cross-validation folds $\nfolds$.
+    The same letter also names the log-likelihood `\llik`, the loss of one observation `\obsloss` and the norm `\lpnorm`.
+    A layer index labels layers, not observations or parameters, so we accept the overlap rather than take a letter that is free but unusual.
 -   The objective function that an optimization algorithm lowers is $\objective$, from `\objective`, and `\objectivef{\vth}` prints $\objectivef{\vth}$.
 
 Some existing macros already cover other symbols that lecture exercises write as a bare letter.

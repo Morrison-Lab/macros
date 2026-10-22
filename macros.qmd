@@ -192,7 +192,7 @@
 \def\nparams{p^{*}}
 \def\nnetparams{P}
 \def\iter{t}
-\def\layeridx{k}
+\def\layeridx{\ell}
 \def\objective{J}
 \providecommand{\objectivef}[1]{{\objective\paren{#1}}}
 \def\RSS{\operatorname{RSS}}
