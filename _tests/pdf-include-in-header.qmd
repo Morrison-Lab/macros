@@ -20,7 +20,7 @@ Subscripted and squared deviations: $\devof{\frac{a}{b}}{\paren{\mu_1 + \mu_2}}_
 
 Noise: $\Noise_i^2$, $\noise_i^2$, $\vNoise_i^2$, $\vnoise_i^2$, $\vNoise^T$.
 
-Residuals, prediction errors and the deviation from a mean, subscripted and squared: $\resid_i^2$, $\Resid_i$, $\stdresid_i^2$, $\modresid_i^2$, $\vresid_i^T$, $\residv^T$, $\prederr_i^2$, $\vprederr_i^T$, $\popdev_i^2$, $\cdev_i$.
+Residuals, prediction errors and the deviation from a mean, subscripted and squared: $\resid_i^2$, $\Resid_i$, $\stdresid_i^2$, $\modresid_i^2$, $\vresid_i^T$, $\residv^T$, $\prederr_i^2$, $\prederrf{g}_i^2$, $\vprederr_i^T$, $\popdev_i^2$, $\cdev_i$.
 
 Design matrix, design vector and feature map, subscripted and squared: $\design_{ij}^2$, $\vdesign_i^2$, $\vdesign^T$, $\vfeatmap_i^2$, $\featmap^2$.
 
