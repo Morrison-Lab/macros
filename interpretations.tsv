@@ -46,7 +46,7 @@ name	interpretation
 \hQf	estimated quantile function Q̂(·) applied to argument
 \hquantilef	estimated quantile function applied to argument (alias for \hQf)
 \ph	estimated probability p-hat
-\P	probability operator P
+\P	probability operator ℙ (blackboard bold)
 \hp	estimated probability (alias for \ph)
 \ga	Greek letter alpha (α)
 \a	Greek letter alpha (alias for \ga)
@@ -264,12 +264,12 @@ name	interpretation
 \purple	typeset argument in purple
 \teal	typeset argument in teal
 \violet	typeset argument in violet
-\hE	estimated expected value Ê[·]
+\hE	estimated expected value (prints the hat of \Expp, with the argument in square brackets)
 \hExp	estimated expected value (alias for \hE)
 \hExpf	estimated expected value (alias for \hE)
 \hmu	estimated mean μ̂
 \hmuf	estimated mean function μ̂(·)
-\Expp	expectation operator E (no argument)
+\Expp	expectation operator 𝔼 (no argument; blackboard bold)
 \Ep	expectation operator (alias for \Expp)
 \expit	expit / logistic function
 \expitf	expit applied to argument
@@ -278,11 +278,11 @@ name	interpretation
 \sigmoid	logistic (sigmoid) function symbol (σ)
 \sigmoidf	logistic (sigmoid) function applied to its argument, σ(·)
 \logitf	logit applied to argument
-\E	expected value E[·]
+\E	expected value (prints \Expp, with the argument in square brackets)
 \Ef	expected value (alias for \E)
 \Exp	expected value (alias for \E)
 \Expf	expected value (alias for \E)
-\Expfc	conditional expected value E_c[·]
+\Expfc	conditional expected value (prints \Expp with the conditioning subscript c and the argument in square brackets)
 \ATT	average treatment effect on the treated label ATT
 \ATTf	average treatment effect on the treated function ATT(·)
 \evalbar	expression followed by an evaluation bar ·|
@@ -384,7 +384,7 @@ name	interpretation
 \indicf	indicator function (alias for \indic)
 \set	set notation {·}
 \pf	probability density/mass p(·)
-\Pf	probability P(·)
+\Pf	probability (prints \P with the argument in parentheses)
 \Bias	bias function Bias(·)
 \bias	bias function (alias for \Bias)
 \ss	variance σ²
@@ -594,7 +594,7 @@ name	interpretation
 \reglincomb	regression linear combination x̰·β̰
 \regbetasum	expanded regression sum β₁x₁+⋯+βₚxₚ
 \pdf	probability density function symbol f
-\pmf	probability mass function P(·)
+\pmf	probability mass function ℙ(·)
 \cdf	cumulative distribution function symbol F
 \cdff	cumulative distribution function F(·) applied to argument
 \hcdf	estimated cumulative distribution function F̂
@@ -794,7 +794,7 @@ name	interpretation
 \esnaaf	Nelson-Aalen survival function estimator Ŝ_NA(·) applied to argument
 \eth	estimated theta θ̂
 \ethml	maximum likelihood estimate of theta
-\eE	estimated expected value Ê[·]
+\eE	estimated expected value (prints \est of \Expp, with the argument in square brackets)
 \eExp	estimated expected value (alias for \eE)
 \eExpf	estimated expected value (alias for \eE)
 \emu	estimated mean μ̂
@@ -1191,9 +1191,9 @@ name	interpretation
 \Noise	the noise: a latent random variable, the deviation \devof{\Outvar}{\truemeanf{\predvar}} of an outcome from its mean given the input (prints ε, following ISL and ESL; \noise prints the same symbol for a realized value)
 \vnoise	a vector of realized noise values (prints \vecf{\noise})
 \vNoise	a vector of noise random variables (prints \vecf{\Noise})
-\biassym	short bias operator B (no argument, upright like \Expp)
+\biassym	short bias operator 𝔹 (no argument, blackboard bold like \Expp)
 \biassymf	short bias operator applied to an estimator, like \E (prints \biassym with its argument in square brackets)
-\varsym	short variance operator V for any random variable (no argument, upright like \Expp)
+\varsym	short variance operator 𝕍 for any random variable (no argument, blackboard bold like \Expp)
 \varsymf	short variance operator applied to a random variable, like \E (prints \varsym with its argument in square brackets)
 \irrerr	short symbol for the irreducible error, the variance of the noise \Noise (alias for \varpar)
 \rvar	a generic value of a random variable in probability expressions (prints x)
@@ -1448,7 +1448,7 @@ name	interpretation
 \condVar	conditional variance Var(A | B), \condVar{A}{B}
 \condCov	conditional covariance Cov(A, B | C), \condCov{A}{B}{C}
 \condPr	conditional probability Pr(A | B), \condPr{A}{B}
-\condpmf	conditional probability mass function P(A | B), \condpmf{A}{B}
+\condpmf	conditional probability mass function (prints \pmf of A given B), \condpmf{A}{B}
 \condpdf	conditional probability density function f(A | B), \condpdf{A}{B}
 \condcdf	conditional cumulative distribution function F(A | B), \condcdf{A}{B}
 \generr	generalization error operator Err (expected loss of a prediction rule on new data)
