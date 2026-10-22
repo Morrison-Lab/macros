@@ -1278,9 +1278,10 @@
 \def\regpar{\lambda}
 \def\eigval{\lambda}
 \def\Eigvals{\Lambda}
-\def\featmap{\phi}
-\def\vfeatmap{\vecf{\phi}}
 \def\design{D}
+\def\vdesign{\vecf{\design}}
+\def\featmap{\design}
+\def\vfeatmap{\vdesign}
 \def\normpdf{\phi}
 \def\normcdf{\Phi}
 \def\backerr{\delta}
