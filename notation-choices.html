@@ -472,7 +472,7 @@ window.Quarto = {
 </header>
 
 
-<p>This page records why the lab’s notes write certain symbols the way they do. Each entry states our convention, the reasons for it, and the other conventions you will see in other sources. Notes sites can link to an entry here instead of keeping their own copy.</p>
+<p>This page records why the lab’s notes write certain symbols the way they do. Each entry states our convention, the reasons for it, and the other conventions you will encounter in other sources. Notes sites can link to an entry here instead of keeping their own copy.</p>
 <section id="sec-vector-mark" class="level2">
 <h2 class="anchored" data-anchor-id="sec-vector-mark">The vector mark</h2>
 <p>Our convention is a tilde under the letter, as in <span class="math inline">\(\vx\)</span>. The shared macro <code>\vecf</code> (and shortcuts such as <code>\vx</code> and <code>\vbeta</code>) prints it.</p>
@@ -491,7 +491,7 @@ window.Quarto = {
 <h2 class="anchored" data-anchor-id="sec-subscripts-parentheses">Subscripts and parentheses</h2>
 <p>Our convention splits the work between a subscript and parentheses. An indexed family is a collection of objects labeled by an index. A subscript names which member of an indexed family we mean. A subscript holds an index, such as the <span class="math inline">\(i\)</span> in <span class="math inline">\(x_i\)</span>, or a parameter that picks one function or distribution out of a family, such as the <span class="math inline">\(\theta\)</span> in <span class="math inline">\(f_\theta\)</span>. Parentheses hold the input a function is evaluated at, as in <span class="math inline">\(f(x)\)</span>. So <span class="math inline">\(f_\theta(x)\)</span> reads “the member of the family labeled <span class="math inline">\(\theta\)</span>, evaluated at <span class="math inline">\(x\)</span>”.</p>
 <p>We chose this split for one reason. Each slot then answers one question about the symbol, so once you know the split, you can tell what each part of a symbol is doing.</p>
-<p>Nothing forces the split. Sources divide the work differently, and you will see the same objects written the other way around. When you read a formula from another source, first work out what each subscript and each input in parentheses is doing: labeling a member of an indexed family, or being the input of a function. That tells you which convention the source follows, whatever its layout.</p>
+<p>Nothing forces the split. Sources divide the work differently, and you will encounter the same objects written the other way around. When you read a formula from another source, first work out what each subscript and each input in parentheses is doing: labeling a member of an indexed family, or being the input of a function. That tells you which convention the source follows, whatever its layout.</p>
 <div id="exm-stochastic-process-slots" class="theorem example">
 <p><span class="theorem-title"><strong>Example 2 (A stochastic process uses both slots)</strong></span> A random experiment is a process that involves chance, such as a coin flip, and an outcome <span class="math inline">\(\omega\)</span> is one possible result of it. A random variable is a function whose input is an outcome <span class="math inline">\(\omega\)</span>. A stochastic process is an indexed family of random variables <span class="math inline">\(X_t\)</span>, one for each index <span class="math inline">\(t\)</span>, such as a time. The index goes in the subscript, because it picks a member of the family. Each <span class="math inline">\(X_t\)</span> is itself a function of the outcome <span class="math inline">\(\omega\)</span>, so the outcome goes in the parentheses: <span class="math inline">\(X_t(\omega)\)</span>. Fixing <span class="math inline">\(\omega\)</span> and letting <span class="math inline">\(t\)</span> vary gives one ordinary function of <span class="math inline">\(t\)</span>, called a path of the process. Many sources drop <span class="math inline">\(\omega\)</span> and write <span class="math inline">\(X_t\)</span>. Others write <span class="math inline">\(X(t)\)</span>, often when <span class="math inline">\(t\)</span> is continuous, which puts the index in the parentheses instead of the subscript.</p>
 </div>
@@ -532,7 +532,7 @@ window.Quarto = {
 <li>Machine learning texts often write <span class="math inline">\(D\)</span> or <span class="math inline">\(d\)</span> for the number of inputs and <span class="math inline">\(N\)</span> for the number of observations. Statistics texts write <span class="math inline">\(n\)</span> for the number of observations and <span class="math inline">\(p\)</span> for the number of inputs, which they call predictors.</li>
 <li>Neural network and pattern recognition texts often call the label the target. Statistics texts call it the response or the outcome. In classification, all of these names mean the same object as our label.</li>
 </ul>
-<p>You will read both literatures, so expect to see both sets of names and symbols.</p>
+<p>You will read both literatures, so expect to encounter both sets of names and symbols.</p>
 </section>
 <section id="sec-likelihood-notation" class="level2">
 <h2 class="anchored" data-anchor-id="sec-likelihood-notation">Writing the likelihood function</h2>
