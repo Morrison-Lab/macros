@@ -150,8 +150,9 @@
 \def\th{\theta}
 \def\vth{\vec{\theta}}
 \def\Th{\Theta}
-\def\xbar{\bar{x}}
-\providecommand{\samplemean}[2]{\bar{#1}_{#2}}
+\providecommand{\smean}[1]{{\bar{#1}}}
+\def\xbar{\smean{x}}
+\providecommand{\samplemean}[2]{{\smean{#1}_{#2}}}
 \def\hth{\hat\theta}
 \def\hthml{\hth_{\text{ML}}}
 \def\ba{\begin{aligned}}
@@ -221,7 +222,7 @@
 \def\poolsize{q}
 \def\hatmat{H}
 \providecommand{\leverage}[1]{h_{#1}}
-\def\avgleverage{\bar{h}}
+\def\avgleverage{\smean{h}}
 \def\cutheight{h}
 \def\clusterassign{C}
 \providecommand{\clusterassignf}[1]{{\clusterassign\paren{#1}}}
@@ -248,6 +249,7 @@
 \providecommand{\deviationv}{\vec{\deviation}}
 \def\devnv{\deviationv}
 \providecommand{\deviationf}[2]{{\deviation_{#2}\paren{#1}}}
+\def\smeandev{\smean{\deviation}}
 \def\popdev{\deviation}
 \providecommand{\popdevf}[1]{\popdev_{#1}}
 \def\Deviation{\Delta}
@@ -1272,9 +1274,9 @@
 \def\irrerr{\varpar}
 \def\rvar{x}
 \def\Rvar{X}
-\def\predbar{\bar{\predvar}}
-\def\outbar{\bar{\outvar}}
-\def\rvarbar{\bar{\rvar}}
+\def\predbar{\smean{\predvar}}
+\def\outbar{\smean{\outvar}}
+\def\rvarbar{\smean{\rvar}}
 \def\sspred{S_{\predvar\predvar}}
 \def\ssout{S_{\outvar\outvar}}
 \def\sspredout{S_{\predvar\outvar}}
