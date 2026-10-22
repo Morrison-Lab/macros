@@ -67,7 +67,7 @@ name	interpretation
 \vbeta	beta coefficient vector
 \vcoef	coefficient vector (alias for \vbeta)
 \regcoef	regression coefficient symbol β
-\Regcoef	uppercase regression coefficient symbol B
+\Regcoef	uppercase regression coefficient symbol B (italic, because a coefficient is a variable)
 \coef	regression coefficient for covariate (β_x)
 \Coef	uppercase regression coefficient for covariate (B_x)
 \intcoef	regression intercept (β_0)
@@ -79,7 +79,7 @@ name	interpretation
 \gg	Greek letter gamma (alias for \g)
 \gd	Greek letter delta (δ)
 \eps	varepsilon error term (ε)
-\cdev	deviation from conditional mean (alias for \popdev, symbol ν; for the noise, the deviation of an outcome from its conditional mean, use \Noise)
+\cdev	deviation from conditional mean (alias for \popdev, symbol δ; the noise is \Noise, which prints ε)
 \veps	error vector (ε-vector)
 \epsp	ε(·) error function
 \epsf	ε(·) error function (alias for \epsp)
@@ -186,26 +186,26 @@ name	interpretation
 \deviationv	deviation vector (the vec accent applied to δ)
 \devnv	deviation vector (alias for \deviationv)
 \deviationf	deviation of the first argument from the reference value in the second, δ_r(z)
-\popdev	deviation from a population mean, symbol ν (for the noise, the deviation from the conditional mean, use \Noise)
-\popdevf	deviation of the argument from its population mean, ν_z
+\popdev	deviation from a population mean, symbol δ (alias for \deviation; the noise is \Noise, which prints ε)
+\popdevf	deviation of the argument from its population mean, δ_z
 \Deviation	uppercase deviation symbol Δ
 \Devn	uppercase deviation (alias for \Deviation)
-\residual	residual symbol r
+\residual	residual symbol ε̂: the estimate of the noise \Noise (via \est)
 \resid	residual, observed minus predicted outcome (alias for \residual)
-\residv	residual vector r̰
-\Residual	uppercase residual symbol R
-\Resid	uppercase residual (alias for \Residual)
-\stdresidual	standardized residual r′
+\residv	residual vector ε̰̂
+\Residual	residual symbol ε̂ (alias for \residual; a residual has no separate capital)
+\Resid	residual (alias for \Residual)
+\stdresidual	standardized residual ε̂′
 \stdresid	standardized residual (alias for \stdresidual)
-\StdResidual	uppercase standardized residual R′
-\StdResid	uppercase standardized residual (alias)
-\modresidual	modified residual r*
+\StdResidual	standardized residual ε̂′ (alias for \stdresidual)
+\StdResid	standardized residual (alias)
+\modresidual	modified residual ε̂*
 \modresid	modified residual (alias for \modresidual)
-\ModResidual	uppercase modified residual R*
-\ModResid	uppercase modified residual (alias)
+\ModResidual	modified residual ε̂* (alias for \modresidual)
+\ModResid	modified residual (alias)
 \devof	deviation of the first argument from the reference value in the second (prints the first minus the second inside parentheses; see notation-choices for compound references)
-\esterr	estimation error: the estimate in the first argument minus the estimand in the second (prints \devof{estimate}{estimand}; an instance of \devof)
-\prederr	prediction error, predicted minus observed outcome, symbol ε (alias for \err); same meaning as \esterr{\predval}{\Outvar}
+\esterr	estimation error: the error ε of the estimate in the first argument for the estimand in the second, ε_estimand(estimate); the estimate minus the estimand, written explicitly with \devof{estimate}{estimand}
+\prederr	prediction error, predicted minus observed outcome, symbol ε with the upright label pred; same meaning as \esterr{\predval}{\Outvar}
 \score	score function ℓ′
 \scorev	score vector
 \scorei	per-observation score vector ℓ′_i
@@ -402,13 +402,13 @@ name	interpretation
 \devsq	squared deviation of the first argument from the reference value in the second (δ_r(z))²
 \ssdev	sum over i = 1, ..., n of the squared deviation of the observation from the argument (·), via \devsq
 \sq	square superscript ² (postfix)
-\err	error term ε (alias for \eps); also the prediction error, which \prederr aliases; the noise is \Noise, not \err
+\err	error term ε (alias for \eps); the same symbol as the noise \Noise
 \erf	error function ε(·); for an estimate, the estimation error (estimate minus truth), written \esterr{estimate}{truth}
 \vec	vector notation (undertilde style)
 \vecf	vector notation (alias for \vec)
 \v	vector shorthand (alias for \vecf)
 \matr	matrix notation (bold style)
-\mX	design matrix X (bold)
+\mX	predictor matrix X (bold): the matrix of covariate values; the design matrix built from a feature map is \design
 \mx	design matrix x lowercase (bold)
 \va	vector a (a̰)
 \vx	vector x (x̰)
@@ -430,7 +430,7 @@ name	interpretation
 \vpredvar	vector of one observation's predictor values (prints x̰)
 \mpredvar	input matrix: the predictor vectors of all n observations, one per row (prints bold X, like \mX, the usual textbook form)
 \vPredvar	random vector of predictors (prints X̰)
-\vresid	vector of residuals, observed minus predicted outcomes (the negative of the prediction errors \prederr) (prints r̰)
+\vresid	vector of residuals, observed minus predicted outcomes (the negative of the prediction errors \prederr) (prints ε̰̂)
 \vprederr	vector of prediction errors, predicted minus observed outcomes (the vec accent applied to \prederr)
 \vz	vector z (z̰)
 \vZ	random vector Z (Z̰)
@@ -1187,9 +1187,9 @@ name	interpretation
 \hcovmat	an estimated covariance matrix (prints \hat{\Sigma})
 \ecovmat	an estimated covariance matrix (forward-looking form) (prints \est{\covmat})
 \corpar	a correlation parameter (prints \rho)
-\noise	a realized value of the noise (prints the lowercase of \Noise; \ubound prints the same letter for an upper bound)
-\Noise	the noise: a latent random variable, the deviation \devof{\Outvar}{\truemeanf{\predvar}} of an outcome from its mean given the input (prints U)
-\vnoise	a vector of realized noise values (prints \vecf{\noise}; \vu prints the same symbol for a generic vector)
+\noise	a realized value of the noise (prints ε, the same symbol as \Noise, following ISL and ESL)
+\Noise	the noise: a latent random variable, the deviation \devof{\Outvar}{\truemeanf{\predvar}} of an outcome from its mean given the input (prints ε, following ISL and ESL; \noise prints the same symbol for a realized value)
+\vnoise	a vector of realized noise values (prints \vecf{\noise})
 \vNoise	a vector of noise random variables (prints \vecf{\Noise})
 \biassym	short bias operator B (no argument, upright like \Expp)
 \biassymf	short bias operator applied to an estimator, like \E (prints \biassym with its argument in square brackets)
@@ -1235,8 +1235,8 @@ name	interpretation
 \angpar	an angle (prints \theta)
 \shape	a shape parameter (Weibull, gamma, first Beta shape) (prints \alpha)
 \shapeb	the second shape parameter of a Beta distribution (prints \beta)
-\df	degrees of freedom (prints \nu)
-\hdf	estimated degrees of freedom (prints \hat{\nu})
+\df	degrees of freedom (prints the upright name df, because an abbreviation is a name)
+\hdf	estimated degrees of freedom (prints the hat of the upright name df)
 \edf	estimated degrees of freedom (forward-looking form) (prints \est{\df})
 \gammafn	the gamma function (prints \Gamma)
 \samplespace	a sample space (prints \Omega)
