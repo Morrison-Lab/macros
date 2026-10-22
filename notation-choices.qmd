@@ -122,18 +122,17 @@ Our convention is to write the intercept separately, as $\coef{0}$.
 The coefficient vector $\vcoef$ then holds the slopes only, meaning the coefficients that multiply the inputs.
 The input vector $\vpredvar$ holds the inputs.
 
-We call the number $\coef{0} + \dprod{\vcoef}{\vpredvar}$ the score here.
-This is not the score of statistics, which is a different quantity.
-Logistic regression applies one more function to the score to get a probability.
+The number $\coef{0} + \dprod{\vcoef}{\vpredvar}$ is called the linear predictor.
+Logistic regression applies one more function to the linear predictor to get a probability.
 
 Writing the intercept separately keeps it visible as its own number.
 In logistic regression, for example, the intercept shifts the decision boundary, the set of inputs where the model is undecided between the two classes, while the slopes tilt it.
 
 Other sources absorb the intercept.
 They add a constant input $1$ to the start of the input vector, and the coefficient vector then also holds the intercept, at its start.
-The score is then $\dprod{\vcoef}{\vpredvar}$ alone.
+The linear predictor is then $\dprod{\vcoef}{\vpredvar}$ alone.
 Both forms describe the same model.
-When you meet a score written as $\dprod{\vcoef}{\vpredvar}$, check whether the input vector starts with a constant $1$.
+When you meet a linear predictor written as $\dprod{\vcoef}{\vpredvar}$, check whether the input vector starts with a constant $1$.
 
 ## Counting the layers of a neural network {#sec-counting-layers}
 
@@ -217,7 +216,7 @@ So when a source writes one of these two forms, check that it means a function o
 
 The log-likelihood is the natural logarithm of the likelihood function.
 The score function is the derivative of the log-likelihood with respect to the parameter.
-This is the score of statistics, which is not the linear score of [the intercept entry](#sec-intercept).
+This is the score of statistics, which is not the linear predictor of [the intercept entry](#sec-intercept).
 When the model has several parameters, the score is a vector that holds one partial derivative for each parameter, taken with the other parameters held fixed.
 We often omit its arguments and write $\score$ for $\score(\theta)$.
 When we want to show the data, we write $\score(\theta; \vx)$, in the same style as the likelihood.
