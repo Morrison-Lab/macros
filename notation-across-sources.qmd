@@ -70,9 +70,10 @@ Six differences cause most of the confusion when you read across sources:
 ```{r}
 #| label: setup-notation-conventions
 #| include: false
-notation <- readr::read_csv(
+notation <- utils::read.csv(
   "data/notation-conventions.csv",
-  show_col_types = FALSE
+  stringsAsFactors = FALSE,
+  na.strings = character(0)
 )
 
 notation_groups <- c(
@@ -140,7 +141,11 @@ Where a symbol takes arguments, the letters $a$, $b$ and so on stand in for them
 ```{r}
 #| label: symbols-used-table
 #| output: asis
-symbols_used <- readr::read_csv("data/symbols-used.csv", show_col_types = FALSE)
+symbols_used <- utils::read.csv(
+  "data/symbols-used.csv",
+  stringsAsFactors = FALSE,
+  na.strings = character(0)
+)
 symbols_used$meaning[is.na(symbols_used$meaning)] <- ""
 symbols_table <- data.frame(
   Symbol = sprintf("$%s$", symbols_used$symbol),
