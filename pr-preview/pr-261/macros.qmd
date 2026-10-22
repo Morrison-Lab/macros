@@ -68,7 +68,7 @@
 \def\vbeta{\vec \beta}
 \def\vcoef{\vbeta}
 \def\regcoef{\beta}
-\def\Regcoef{\mathrm{B}}
+\def\Regcoef{B}
 \providecommand{\coef}[1]{\regcoef_{#1}}
 \providecommand{\Coef}[1]{\Regcoef_{#1}}
 \def\intcoef{\coef{0}}
@@ -250,7 +250,7 @@
 \def\Deviation{\Delta}
 \def\Devn{\Deviation}
 \providecommand{\devof}[2]{{\paren{#1 - #2}}}
-\providecommand{\esterr}[2]{{\devof{#1}{#2}}}
+\providecommand{\esterr}[2]{{\err_{#2}\paren{#1}}}
 \def\residual{\est{\Noise}}
 \def\resid{\residual}
 \def\Residual{\residual}
@@ -263,7 +263,7 @@
 \def\modresid{\modresidual}
 \def\ModResidual{\modresidual}
 \def\ModResid{\ModResidual}
-\def\prederr{\devn}
+\def\prederr{\err}
 \def\score{\llik'}
 \def\scorev{\vec{\llik'}}
 \def\scorei{\vec{\llik_i'}}
@@ -1253,8 +1253,8 @@
 \def\hcovmat{\hat{\Sigma}}
 \def\ecovmat{\est{\covmat}}
 \def\corpar{\rho}
-\def\noise{\varepsilon}
-\def\Noise{\varepsilon}
+\def\noise{{\deviation_{\truemean}}}
+\def\Noise{{\Deviation_{\truemean}}}
 \def\vnoise{\vecf{\noise}}
 \def\vNoise{\vecf{\Noise}}
 \def\biassym{\mathbb{B}}
