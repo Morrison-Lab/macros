@@ -525,18 +525,17 @@ window.Quarto = {
 </header>
 
 
-<p>This page sets our notation beside the notation of Hutchinson’s and Harris’ lecture notes and five textbooks. The <a href="./notation-choices.html">Notation Choices</a> page gives the reasons for our conventions; this page lists the symbols side by side. The data are in <a href="data/notation-conventions.csv"><code>data/notation-conventions.csv</code></a> and <a href="data/symbols-used.csv"><code>data/symbols-used.csv</code></a>. Links in the tables go to the definitions in the <a href="https://morrison-lab.github.io/lds/">DATA 571 notes</a>, with a few to the statistics and math prerequisite notes.</p>
+<p>This page sets our notation beside the notation of five widely used textbooks and two sets of lecture notes. The <a href="./notation-choices.html">Notation Choices</a> page gives the reasons for our conventions; this page lists the symbols side by side. The data are in <a href="data/notation-conventions.csv"><code>data/notation-conventions.csv</code></a> and <a href="data/symbols-used.csv"><code>data/symbols-used.csv</code></a>. Links in the tables go to the definitions in the <a href="https://morrison-lab.github.io/lds/">DATA 571 notes</a>, with a few to the statistics and math prerequisite notes.</p>
 <section id="sec-notation-sources" class="level1">
 <h1>Sources</h1>
 <p>The tables on this page set our notation beside the notation of these sources:</p>
 <ul>
-<li>Brian Hutchinson’s lecture notes for DATA 471/571 <span class="citation" data-cites="hutchinson2025data471"><a href="#ref-hutchinson2025data471" role="doc-biblioref">[1]</a></span>.</li>
-<li>Kameron Decker Harris’ 2022 weekly notes for DATA 471 <span class="citation" data-cites="harris2022data471"><a href="#ref-harris2022data471" role="doc-biblioref">[2]</a></span>.</li>
-<li><em>An Introduction to Statistical Learning</em>, or ISL, in its R edition <span class="citation" data-cites="james2021islr"><a href="#ref-james2021islr" role="doc-biblioref">[3]</a></span> and its Python edition <span class="citation" data-cites="james2023introduction"><a href="#ref-james2023introduction" role="doc-biblioref">[4]</a></span>. They share one column because the two books use the same notation: their notation sections are word for word the same, and so are the symbols for the slack variable, the budget <span class="math inline">\(C\)</span> and the learning rate.</li>
-<li><em>The Elements of Statistical Learning</em>, or ESL <span class="citation" data-cites="hastie2009esl"><a href="#ref-hastie2009esl" role="doc-biblioref">[5]</a></span>.</li>
-<li><em>Learning From Data</em>, or LfD <span class="citation" data-cites="abumostafa2012learning"><a href="#ref-abumostafa2012learning" role="doc-biblioref">[6]</a></span>.</li>
-<li>Bishop’s <em>Pattern Recognition and Machine Learning</em> <span class="citation" data-cites="bishop2006prml"><a href="#ref-bishop2006prml" role="doc-biblioref">[7]</a></span>.</li>
-<li>Murphy’s <em>Probabilistic Machine Learning: An Introduction</em> <span class="citation" data-cites="murphy2022pml"><a href="#ref-murphy2022pml" role="doc-biblioref">[8]</a></span>.</li>
+<li><em>An Introduction to Statistical Learning</em>, or ISL, in its R edition <span class="citation" data-cites="james2021islr"><a href="#ref-james2021islr" role="doc-biblioref">[1]</a></span> and its Python edition <span class="citation" data-cites="james2023introduction"><a href="#ref-james2023introduction" role="doc-biblioref">[2]</a></span>. They share one column because the two books use the same notation: their notation sections are word for word the same, and so are the symbols for the slack variable, the budget <span class="math inline">\(C\)</span> and the learning rate.</li>
+<li><em>The Elements of Statistical Learning</em>, or ESL <span class="citation" data-cites="hastie2009esl"><a href="#ref-hastie2009esl" role="doc-biblioref">[3]</a></span>.</li>
+<li><em>Learning From Data</em>, or LfD <span class="citation" data-cites="abumostafa2012learning"><a href="#ref-abumostafa2012learning" role="doc-biblioref">[4]</a></span>.</li>
+<li>Bishop’s <em>Pattern Recognition and Machine Learning</em> <span class="citation" data-cites="bishop2006prml"><a href="#ref-bishop2006prml" role="doc-biblioref">[5]</a></span>.</li>
+<li>Murphy’s <em>Probabilistic Machine Learning: An Introduction</em> <span class="citation" data-cites="murphy2022pml"><a href="#ref-murphy2022pml" role="doc-biblioref">[6]</a></span>.</li>
+<li>Two sets of lecture notes from the DATA 471/571 courses, in the last two columns: Brian Hutchinson’s lecture notes <span class="citation" data-cites="hutchinson2025data471"><a href="#ref-hutchinson2025data471" role="doc-biblioref">[7]</a></span> and Kameron Decker Harris’ 2022 weekly notes <span class="citation" data-cites="harris2022data471"><a href="#ref-harris2022data471" role="doc-biblioref">[8]</a></span>.</li>
 </ul>
 <p>To read the tables:</p>
 <ul>
@@ -551,8 +550,8 @@ window.Quarto = {
 <p>Six differences cause most of the confusion when you read across sources:</p>
 <ul>
 <li><strong>Labels</strong>: the two-class label is <span class="math inline">\(\{0, 1\}\)</span> for logistic regression and <span class="math inline">\(\{-1, +1\}\)</span> for SVMs in most sources, and always <span class="math inline">\(\{-1, +1\}\)</span> in LfD.</li>
-<li><strong>The SVM constant <span class="math inline">\(C\)</span></strong>: Hutchinson, Bishop and Murphy use <span class="math inline">\(C\)</span> as a penalty on the slack, so a larger <span class="math inline">\(C\)</span> allows fewer violations. ISL uses <span class="math inline">\(C\)</span> as a budget on the slack, so a larger <span class="math inline">\(C\)</span> allows more.</li>
-<li><strong>Sample index</strong>: a superscript in parentheses (<span class="math inline">\(x^{(i)}\)</span>) in Hutchinson’s notes, a subscript <span class="math inline">\(i\)</span> in ISL and ESL, and a subscript <span class="math inline">\(n\)</span> in LfD, Bishop and Murphy.</li>
+<li><strong>The SVM constant <span class="math inline">\(C\)</span></strong>: Bishop, Murphy and Hutchinson use <span class="math inline">\(C\)</span> as a penalty on the slack, so a larger <span class="math inline">\(C\)</span> allows fewer violations. ISL uses <span class="math inline">\(C\)</span> as a budget on the slack, so a larger <span class="math inline">\(C\)</span> allows more.</li>
+<li><strong>Sample index</strong>: a subscript <span class="math inline">\(i\)</span> in ISL and ESL, a subscript <span class="math inline">\(n\)</span> in LfD, Bishop and Murphy, and a superscript in parentheses (<span class="math inline">\(x^{(i)}\)</span>) in Hutchinson’s notes.</li>
 <li><strong>Prediction of the fitted model, averaged over data sets</strong>: these notes write the prediction at <span class="math inline">\(x\)</span> as <span class="math inline">\(\predvalf{x}\)</span>, as ISL and ESL do (<span class="math inline">\(\hat{f}(x)\)</span>). Where <span class="math inline">\(x\)</span> is fixed and its dependence is not the point, as in the <a href="https://morrison-lab.github.io/lds/chapters/big-ideas.html#eq-bias-variance">bias–variance decomposition</a>, they drop the argument and write <span class="math inline">\(\predval\)</span>. Either way the prediction is a random variable, because it depends on the training set. The <a href="https://morrison-lab.github.io/lds/chapters/big-ideas.html#eq-average-fit">average fit</a> <span class="math inline">\(\avgfitf{x}\)</span> is the population expectation of that prediction over training sets, written with no bar and no hat.</li>
 <li><strong>Target</strong>: Bishop calls the output <span class="math inline">\(t\)</span> for <em>target</em>, and every other source calls it <span class="math inline">\(y\)</span>.</li>
 <li><strong>Subscripts and parentheses</strong>: which arguments go in a subscript and which in parentheses varies, as in <span class="math inline">\(f_\theta(x)\)</span> versus <span class="math inline">\(f(x; \theta)\)</span>. The <a href="./notation-choices.html#sec-subscripts-parentheses">Notation Choices page</a> states our convention and the alternatives.</li>
@@ -577,67 +576,67 @@ Table&nbsp;1: Data: notation across sources
 <tr class="header">
 <th style="text-align: left;">Concept</th>
 <th style="text-align: left;">These notes</th>
-<th style="text-align: left;"><a href="#ref-hutchinson2025data471">Hutchinson</a></th>
-<th style="text-align: left;"><a href="#ref-harris2022data471">Harris</a></th>
 <th style="text-align: left;">ISL (<a href="#ref-james2021islr">R</a>, <a href="#ref-james2023introduction">Python</a>)</th>
 <th style="text-align: left;"><a href="#ref-hastie2009esl">ESL</a></th>
 <th style="text-align: left;"><a href="#ref-abumostafa2012learning">LfD</a></th>
 <th style="text-align: left;"><a href="#ref-bishop2006prml">Bishop</a></th>
 <th style="text-align: left;"><a href="#ref-murphy2022pml">Murphy</a></th>
+<th style="text-align: left;"><a href="#ref-hutchinson2025data471">Hutchinson</a></th>
+<th style="text-align: left;"><a href="#ref-harris2022data471">Harris</a></th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
 <td style="text-align: left;">Number of observations</td>
 <td style="text-align: left;"><span class="math inline">\(\nobs\)</span> (<span class="math inline">\(N\)</span> in the SVM chapter)</td>
-<td style="text-align: left;"><span class="math inline">\(N\)</span></td>
-<td style="text-align: left;"><span class="math inline">\(n\)</span></td>
 <td style="text-align: left;"><span class="math inline">\(n\)</span></td>
 <td style="text-align: left;"><span class="math inline">\(N\)</span></td>
 <td style="text-align: left;"><span class="math inline">\(N\)</span></td>
 <td style="text-align: left;"><span class="math inline">\(N\)</span></td>
 <td style="text-align: left;"><span class="math inline">\(N\)</span></td>
+<td style="text-align: left;"><span class="math inline">\(N\)</span></td>
+<td style="text-align: left;"><span class="math inline">\(n\)</span></td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">Number of input variables</td>
 <td style="text-align: left;"><span class="math inline">\(\inputdim\)</span></td>
-<td style="text-align: left;"><span class="math inline">\(D\)</span></td>
-<td style="text-align: left;"><span class="math inline">\(d\)</span></td>
 <td style="text-align: left;"><span class="math inline">\(p\)</span></td>
 <td style="text-align: left;"><span class="math inline">\(p\)</span></td>
 <td style="text-align: left;"><span class="math inline">\(d\)</span></td>
 <td style="text-align: left;"><span class="math inline">\(D\)</span></td>
 <td style="text-align: left;"><span class="math inline">\(D\)</span></td>
+<td style="text-align: left;"><span class="math inline">\(D\)</span></td>
+<td style="text-align: left;"><span class="math inline">\(d\)</span></td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;"><a href="https://morrison-lab.github.io/lds/chapters/math-prereqs.html#sec-notation-origins">Vector notation</a></td>
 <td style="text-align: left;">a tilde under the letter: <span class="math inline">\(\vx\)</span></td>
-<td style="text-align: left;">plain letter: <span class="math inline">\(x\)</span></td>
-<td style="text-align: left;">an arrow: <span class="math inline">\(\overrightarrow{x}\)</span></td>
 <td style="text-align: left;">plain letter for a feature vector: <span class="math inline">\(x\)</span>; bold for a vector of length <span class="math inline">\(n\)</span>: <span class="math inline">\(\mathbf{a}\)</span></td>
 <td style="text-align: left;">plain letter: <span class="math inline">\(x_i\)</span>; bold for a vector of length <span class="math inline">\(N\)</span>: <span class="math inline">\(\mathbf{x}_j\)</span></td>
 <td style="text-align: left;">bold: <span class="math inline">\(\mathbf{x}\)</span></td>
 <td style="text-align: left;">bold lowercase: <span class="math inline">\(\mathbf{x}\)</span></td>
 <td style="text-align: left;">bold lowercase: <span class="math inline">\(\mathbf{x}\)</span></td>
+<td style="text-align: left;">plain letter: <span class="math inline">\(x\)</span></td>
+<td style="text-align: left;">an arrow: <span class="math inline">\(\overrightarrow{x}\)</span></td>
 </tr>
 <tr class="even">
 <td style="text-align: left;"><a href="https://morrison-lab.github.io/lds/chapters/course-overview.html#def-feature-vector">Input (feature vector)</a>, observed</td>
 <td style="text-align: left;"><span class="math inline">\(\vpredvar \in \reals^\inputdim\)</span></td>
-<td style="text-align: left;"><span class="math inline">\(x \in \reals^D\)</span></td>
-<td style="text-align: left;"><span class="math inline">\(\overrightarrow{x}_i \in \mathbb{R}^d\)</span></td>
 <td style="text-align: left;"><span class="math inline">\(x_i\)</span></td>
 <td style="text-align: left;"><span class="math inline">\(x_i\)</span></td>
 <td style="text-align: left;"><span class="math inline">\(\mathbf{x}\)</span>, with <span class="math inline">\(x_0 = 1\)</span></td>
 <td style="text-align: left;"><span class="math inline">\(\mathbf{x}\)</span></td>
 <td style="text-align: left;"><span class="math inline">\(\mathbf{x}\)</span></td>
+<td style="text-align: left;"><span class="math inline">\(x \in \reals^D\)</span></td>
+<td style="text-align: left;"><span class="math inline">\(\overrightarrow{x}_i \in \mathbb{R}^d\)</span></td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;"><a href="https://morrison-lab.github.io/lds/chapters/course-overview.html#def-feature-vector">Input (feature vector)</a>, random</td>
 <td style="text-align: left;"><span class="math inline">\(\vPredvar\)</span></td>
-<td style="text-align: left;">no separate symbol</td>
-<td style="text-align: left;">no separate symbol</td>
 <td style="text-align: left;"><span class="math inline">\(X\)</span></td>
 <td style="text-align: left;"><span class="math inline">\(X\)</span></td>
+<td style="text-align: left;">no separate symbol</td>
+<td style="text-align: left;">no separate symbol</td>
 <td style="text-align: left;">no separate symbol</td>
 <td style="text-align: left;">no separate symbol</td>
 <td style="text-align: left;">no separate symbol</td>
@@ -645,90 +644,90 @@ Table&nbsp;1: Data: notation across sources
 <tr class="even">
 <td style="text-align: left;"><a href="https://morrison-lab.github.io/lds/chapters/linear-regression.html#def-design-matrix">Data matrix</a></td>
 <td style="text-align: left;"><span class="math inline">\(\mX\)</span> (<span class="math inline">\(\nobs \times \inputdim\)</span>); <span class="math inline">\(\design\)</span> (<span class="math inline">\(\nobs \times \nparams\)</span>) after a feature map</td>
-<td style="text-align: left;"><span class="math inline">\(X \in \reals^{N \times (D+1)}\)</span>, rows padded with a 1</td>
-<td style="text-align: left;"><span class="math inline">\(X\)</span> (<span class="math inline">\(n \times (d+1)\)</span>), rows padded with a 1</td>
 <td style="text-align: left;"><span class="math inline">\(\mathbf{X}\)</span> (<span class="math inline">\(n \times p\)</span>)</td>
 <td style="text-align: left;"><span class="math inline">\(\mathbf{X}\)</span> (<span class="math inline">\(N \times p\)</span>)</td>
 <td style="text-align: left;"><span class="math inline">\(X\)</span> (<span class="math inline">\(N \times (d+1)\)</span>)</td>
 <td style="text-align: left;"><span class="math inline">\(\mathbf{X}\)</span> (<span class="math inline">\(N \times D\)</span>)</td>
 <td style="text-align: left;"><span class="math inline">\(\mathbf{X}\)</span> (<span class="math inline">\(N \times D\)</span>)</td>
+<td style="text-align: left;"><span class="math inline">\(X \in \reals^{N \times (D+1)}\)</span>, rows padded with a 1</td>
+<td style="text-align: left;"><span class="math inline">\(X\)</span> (<span class="math inline">\(n \times (d+1)\)</span>), rows padded with a 1</td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;"><a href="https://morrison-lab.github.io/lds/chapters/linear-regression.html#def-feature-expansion">Feature map</a></td>
 <td style="text-align: left;"><span class="math inline">\(\vfeatmap\)</span></td>
-<td style="text-align: left;"><span class="math inline">\(\phi\)</span></td>
-<td style="text-align: left;"><span class="math inline">\(\Phi\)</span> (<a href="https://morrison-lab.github.io/lds/chapters/linear-regression.html#def-feature-expansion">feature matrix</a>)</td>
 <td style="text-align: left;"><a href="https://morrison-lab.github.io/lds/chapters/linear-regression.html#def-feature-expansion">basis functions</a> <span class="math inline">\(b_j\)</span></td>
 <td style="text-align: left;"><a href="https://morrison-lab.github.io/lds/chapters/linear-regression.html#def-feature-expansion">basis functions</a> <span class="math inline">\(h_m\)</span></td>
 <td style="text-align: left;"><span class="math inline">\(\Phi\)</span></td>
 <td style="text-align: left;"><span class="math inline">\(\boldsymbol{\phi}\)</span> (design matrix <span class="math inline">\(\boldsymbol{\Phi}\)</span>)</td>
 <td style="text-align: left;"><span class="math inline">\(\boldsymbol{\phi}\)</span></td>
+<td style="text-align: left;"><span class="math inline">\(\phi\)</span></td>
+<td style="text-align: left;"><span class="math inline">\(\Phi\)</span> (<a href="https://morrison-lab.github.io/lds/chapters/linear-regression.html#def-feature-expansion">feature matrix</a>)</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;"><a href="https://morrison-lab.github.io/lds/chapters/course-overview.html#def-output-variable">Output (response, target)</a>, observed</td>
 <td style="text-align: left;"><span class="math inline">\(\outvar\)</span></td>
-<td style="text-align: left;"><span class="math inline">\(y\)</span></td>
-<td style="text-align: left;"><span class="math inline">\(y_i\)</span></td>
 <td style="text-align: left;"><span class="math inline">\(y_i\)</span></td>
 <td style="text-align: left;"><span class="math inline">\(y_i\)</span></td>
 <td style="text-align: left;"><span class="math inline">\(y\)</span></td>
 <td style="text-align: left;"><span class="math inline">\(t\)</span> (target)</td>
 <td style="text-align: left;"><span class="math inline">\(y\)</span></td>
+<td style="text-align: left;"><span class="math inline">\(y\)</span></td>
+<td style="text-align: left;"><span class="math inline">\(y_i\)</span></td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;"><a href="https://morrison-lab.github.io/lds/chapters/course-overview.html#def-output-variable">Output (response, target)</a>, random</td>
 <td style="text-align: left;"><span class="math inline">\(\Outvar\)</span></td>
-<td style="text-align: left;">no separate symbol</td>
 <td style="text-align: left;"><span class="math inline">\(Y\)</span></td>
 <td style="text-align: left;"><span class="math inline">\(Y\)</span></td>
+<td style="text-align: left;">no separate symbol</td>
+<td style="text-align: left;">no separate symbol</td>
+<td style="text-align: left;">no separate symbol</td>
+<td style="text-align: left;">no separate symbol</td>
 <td style="text-align: left;"><span class="math inline">\(Y\)</span></td>
-<td style="text-align: left;">no separate symbol</td>
-<td style="text-align: left;">no separate symbol</td>
-<td style="text-align: left;">no separate symbol</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;"><span class="math inline">\(i\)</span>th example</td>
 <td style="text-align: left;"><span class="math inline">\(\vpredvar_i\)</span>, <span class="math inline">\(\outvar_i\)</span> (<span class="math inline">\(\vpredvar_{(i)}\)</span>, <span class="math inline">\(\outvar_{(i)}\)</span> in the SVM chapter)</td>
-<td style="text-align: left;"><span class="math inline">\(x^{(i)}\)</span>, <span class="math inline">\(y^{(i)}\)</span></td>
-<td style="text-align: left;"><span class="math inline">\(\overrightarrow{x}_i\)</span>, <span class="math inline">\(y_i\)</span></td>
 <td style="text-align: left;"><span class="math inline">\(x_i\)</span>, <span class="math inline">\(y_i\)</span></td>
 <td style="text-align: left;"><span class="math inline">\(x_i\)</span>, <span class="math inline">\(y_i\)</span></td>
 <td style="text-align: left;"><span class="math inline">\(\mathbf{x}_n\)</span>, <span class="math inline">\(y_n\)</span></td>
 <td style="text-align: left;"><span class="math inline">\(\mathbf{x}_n\)</span>, <span class="math inline">\(t_n\)</span></td>
 <td style="text-align: left;"><span class="math inline">\(\mathbf{x}_n\)</span>, <span class="math inline">\(y_n\)</span></td>
+<td style="text-align: left;"><span class="math inline">\(x^{(i)}\)</span>, <span class="math inline">\(y^{(i)}\)</span></td>
+<td style="text-align: left;"><span class="math inline">\(\overrightarrow{x}_i\)</span>, <span class="math inline">\(y_i\)</span></td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;"><a href="https://morrison-lab.github.io/lds/chapters/big-ideas.html#def-training-set">Training data</a></td>
 <td style="text-align: left;"><span class="math inline">\(\trainset\)</span></td>
-<td style="text-align: left;"><span class="math inline">\(\mathcal{X}\)</span></td>
-<td style="text-align: left;">no separate symbol</td>
 <td style="text-align: left;">—</td>
 <td style="text-align: left;"><span class="math inline">\(\mathcal{T}\)</span></td>
 <td style="text-align: left;"><span class="math inline">\(\mathcal{D}\)</span></td>
 <td style="text-align: left;"><span class="math inline">\(\mathbf{X}\)</span>, <span class="math inline">\(\mathbf{t}\)</span></td>
 <td style="text-align: left;"><span class="math inline">\(\mathcal{D}\)</span></td>
+<td style="text-align: left;"><span class="math inline">\(\mathcal{X}\)</span></td>
+<td style="text-align: left;">no separate symbol</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;"><a href="https://morrison-lab.github.io/lds/chapters/big-ideas.html#def-validation-set">Validation data</a></td>
 <td style="text-align: left;"><span class="math inline">\(\valset\)</span></td>
-<td style="text-align: left;">dev set</td>
-<td style="text-align: left;">train blocks (<span class="math inline">\(K\)</span>-fold)</td>
 <td style="text-align: left;">validation set</td>
 <td style="text-align: left;">validation set</td>
 <td style="text-align: left;"><span class="math inline">\(\mathcal{D}_{\mathrm{val}}\)</span></td>
 <td style="text-align: left;">validation set</td>
 <td style="text-align: left;">validation set</td>
+<td style="text-align: left;">dev set</td>
+<td style="text-align: left;">train blocks (<span class="math inline">\(K\)</span>-fold)</td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;"><a href="https://morrison-lab.github.io/lds/chapters/big-ideas.html#def-test-set">Test data</a></td>
 <td style="text-align: left;"><span class="math inline">\(\testset\)</span></td>
-<td style="text-align: left;">test set</td>
-<td style="text-align: left;">test block (<span class="math inline">\(K\)</span>-fold)</td>
 <td style="text-align: left;">test observations</td>
 <td style="text-align: left;">test set</td>
 <td style="text-align: left;">test set</td>
 <td style="text-align: left;">test set</td>
 <td style="text-align: left;"><span class="math inline">\(\mathcal{D}_{\mathrm{test}}\)</span></td>
+<td style="text-align: left;">test set</td>
+<td style="text-align: left;">test block (<span class="math inline">\(K\)</span>-fold)</td>
 </tr>
 </tbody>
 </table>
@@ -749,103 +748,103 @@ Table&nbsp;2: Models, loss and risk: notation across sources
 <tr class="header">
 <th style="text-align: left;">Concept</th>
 <th style="text-align: left;">These notes</th>
-<th style="text-align: left;"><a href="#ref-hutchinson2025data471">Hutchinson</a></th>
-<th style="text-align: left;"><a href="#ref-harris2022data471">Harris</a></th>
 <th style="text-align: left;">ISL (<a href="#ref-james2021islr">R</a>, <a href="#ref-james2023introduction">Python</a>)</th>
 <th style="text-align: left;"><a href="#ref-hastie2009esl">ESL</a></th>
 <th style="text-align: left;"><a href="#ref-abumostafa2012learning">LfD</a></th>
 <th style="text-align: left;"><a href="#ref-bishop2006prml">Bishop</a></th>
 <th style="text-align: left;"><a href="#ref-murphy2022pml">Murphy</a></th>
+<th style="text-align: left;"><a href="#ref-hutchinson2025data471">Hutchinson</a></th>
+<th style="text-align: left;"><a href="#ref-harris2022data471">Harris</a></th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
 <td style="text-align: left;"><a href="https://morrison-lab.github.io/sds/model-validation.html#def-prediction-function-family">Model</a></td>
 <td style="text-align: left;"><span class="math inline">\(\modmem\)</span> (family <span class="math inline">\(\modelfam\)</span>)</td>
-<td style="text-align: left;"><span class="math inline">\(h\)</span></td>
-<td style="text-align: left;"><span class="math inline">\(f\)</span></td>
 <td style="text-align: left;"><span class="math inline">\(f\)</span></td>
 <td style="text-align: left;"><span class="math inline">\(f\)</span></td>
 <td style="text-align: left;"><span class="math inline">\(h \in \mathcal{H}\)</span> (target <span class="math inline">\(f\)</span>)</td>
 <td style="text-align: left;"><span class="math inline">\(y(\mathbf{x}, \mathbf{w})\)</span></td>
 <td style="text-align: left;"><span class="math inline">\(f(\mathbf{x}; \boldsymbol{\theta})\)</span></td>
+<td style="text-align: left;"><span class="math inline">\(h\)</span></td>
+<td style="text-align: left;"><span class="math inline">\(f\)</span></td>
 </tr>
 <tr class="even">
 <td style="text-align: left;"><a href="https://morrison-lab.github.io/lds/chapters/big-ideas.html#def-fitted-model">Fitted model</a></td>
 <td style="text-align: left;"><span class="math inline">\(\emodmem\)</span></td>
-<td style="text-align: left;"><span class="math inline">\(h\)</span></td>
-<td style="text-align: left;"><span class="math inline">\(f\)</span> (the fit model)</td>
 <td style="text-align: left;"><span class="math inline">\(\hat{f}\)</span></td>
 <td style="text-align: left;"><span class="math inline">\(\hat{f}\)</span></td>
 <td style="text-align: left;"><span class="math inline">\(g\)</span></td>
 <td style="text-align: left;"><span class="math inline">\(y(\mathbf{x}, \mathbf{w}^{\star})\)</span></td>
 <td style="text-align: left;"><span class="math inline">\(\hat{f}\)</span></td>
+<td style="text-align: left;"><span class="math inline">\(h\)</span></td>
+<td style="text-align: left;"><span class="math inline">\(f\)</span> (the fit model)</td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">Fitted value</td>
 <td style="text-align: left;"><span class="math inline">\(\eoutvar_i = \emodmemf{\predvar_i}\)</span></td>
-<td style="text-align: left;"><span class="math inline">\(h(x^{(i)})\)</span></td>
-<td style="text-align: left;"><span class="math inline">\(\hat{y}\)</span></td>
 <td style="text-align: left;"><span class="math inline">\(\hat{y}_i\)</span></td>
 <td style="text-align: left;"><span class="math inline">\(\hat{y}_i\)</span></td>
 <td style="text-align: left;"><span class="math inline">\(g(\mathbf{x}_n)\)</span></td>
 <td style="text-align: left;"><span class="math inline">\(y(\mathbf{x}_n, \mathbf{w}^{\star})\)</span></td>
 <td style="text-align: left;"><span class="math inline">\(\hat{y}_n\)</span></td>
+<td style="text-align: left;"><span class="math inline">\(h(x^{(i)})\)</span></td>
+<td style="text-align: left;"><span class="math inline">\(\hat{y}\)</span></td>
 </tr>
 <tr class="even">
 <td style="text-align: left;"><a href="https://morrison-lab.github.io/lds/chapters/big-ideas.html#def-parameter">Parameters</a>, general</td>
 <td style="text-align: left;"><span class="math inline">\(\param\)</span></td>
 <td style="text-align: left;"><span class="math inline">\(\theta\)</span></td>
-<td style="text-align: left;">no separate symbol</td>
-<td style="text-align: left;"><span class="math inline">\(\theta\)</span></td>
 <td style="text-align: left;"><span class="math inline">\(\theta\)</span></td>
 <td style="text-align: left;"><span class="math inline">\(\mathbf{w}\)</span></td>
 <td style="text-align: left;"><span class="math inline">\(\mathbf{w}\)</span></td>
 <td style="text-align: left;"><span class="math inline">\(\boldsymbol{\theta}\)</span></td>
+<td style="text-align: left;"><span class="math inline">\(\theta\)</span></td>
+<td style="text-align: left;">no separate symbol</td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;"><a href="https://morrison-lab.github.io/lds/chapters/big-ideas.html#def-noise">Noise</a></td>
 <td style="text-align: left;"><span class="math inline">\(\noise\)</span></td>
 <td style="text-align: left;"><span class="math inline">\(\epsilon\)</span></td>
 <td style="text-align: left;"><span class="math inline">\(\varepsilon\)</span></td>
-<td style="text-align: left;"><span class="math inline">\(\epsilon\)</span></td>
-<td style="text-align: left;"><span class="math inline">\(\varepsilon\)</span></td>
 <td style="text-align: left;">noisy target <span class="math inline">\(P(y \mid \mathbf{x})\)</span></td>
 <td style="text-align: left;"><span class="math inline">\(\epsilon\)</span></td>
 <td style="text-align: left;"><span class="math inline">\(\epsilon\)</span></td>
+<td style="text-align: left;"><span class="math inline">\(\epsilon\)</span></td>
+<td style="text-align: left;"><span class="math inline">\(\varepsilon\)</span></td>
 </tr>
 <tr class="even">
 <td style="text-align: left;"><a href="https://morrison-lab.github.io/lds/chapters/big-ideas.html#def-loss-function">Loss</a> on one example</td>
 <td style="text-align: left;"><span class="math inline">\(\lossf{\outvar, \modmemf{\vx}}\)</span></td>
-<td style="text-align: left;"><span class="math inline">\(L(y, h(x))\)</span></td>
-<td style="text-align: left;"><span class="math inline">\(L(y, f(\overrightarrow{x}))\)</span>; cost <span class="math inline">\(C(\overrightarrow{\beta})\)</span> summed over examples</td>
 <td style="text-align: left;">squared error, no general symbol</td>
 <td style="text-align: left;"><span class="math inline">\(L(Y, f(X))\)</span></td>
 <td style="text-align: left;"><span class="math inline">\(e(h(\mathbf{x}), f(\mathbf{x}))\)</span></td>
 <td style="text-align: left;"><span class="math inline">\(L(t, y(\mathbf{x}))\)</span></td>
 <td style="text-align: left;"><span class="math inline">\(\ell(y, \hat{y})\)</span></td>
+<td style="text-align: left;"><span class="math inline">\(L(y, h(x))\)</span></td>
+<td style="text-align: left;"><span class="math inline">\(L(y, f(\overrightarrow{x}))\)</span>; cost <span class="math inline">\(C(\overrightarrow{\beta})\)</span> summed over examples</td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">Population (true) <a href="https://morrison-lab.github.io/lds/chapters/big-ideas.html#def-risk">risk</a></td>
 <td style="text-align: left;"><span class="math inline">\(\poprisk\)</span></td>
-<td style="text-align: left;"><span class="math inline">\(R(h)\)</span></td>
-<td style="text-align: left;"><span class="math inline">\(E(\hat{y} - y)^2\)</span>, no name</td>
 <td style="text-align: left;">expected test MSE</td>
 <td style="text-align: left;"><span class="math inline">\(\mathrm{Err}\)</span>, <span class="math inline">\(\mathrm{EPE}\)</span></td>
 <td style="text-align: left;"><span class="math inline">\(E_{\mathrm{out}}\)</span></td>
 <td style="text-align: left;"><span class="math inline">\(\mathbb{E}[L]\)</span></td>
 <td style="text-align: left;"><span class="math inline">\(L(\boldsymbol{\theta}; p^{*})\)</span></td>
+<td style="text-align: left;"><span class="math inline">\(R(h)\)</span></td>
+<td style="text-align: left;"><span class="math inline">\(E(\hat{y} - y)^2\)</span>, no name</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;"><a href="https://morrison-lab.github.io/lds/chapters/big-ideas.html#def-training-error">Training error</a> (<a href="https://morrison-lab.github.io/lds/chapters/big-ideas.html#def-empirical-risk">empirical risk</a> on the training set)</td>
 <td style="text-align: left;"><span class="math inline">\(\empriskf{\modmem; \trainset}\)</span></td>
-<td style="text-align: left;"><span class="math inline">\(\hat{R}(h)\)</span></td>
-<td style="text-align: left;"><span class="math inline">\(\mathrm{MSE}\)</span>, cost <span class="math inline">\(C\)</span></td>
 <td style="text-align: left;">training MSE</td>
 <td style="text-align: left;"><span class="math inline">\(\overline{\mathrm{err}}\)</span></td>
 <td style="text-align: left;"><span class="math inline">\(E_{\mathrm{in}}\)</span></td>
 <td style="text-align: left;"><span class="math inline">\(E(\mathbf{w})\)</span></td>
 <td style="text-align: left;"><span class="math inline">\(L(\boldsymbol{\theta}; \mathcal{D}_{\mathrm{train}})\)</span></td>
+<td style="text-align: left;"><span class="math inline">\(\hat{R}(h)\)</span></td>
+<td style="text-align: left;"><span class="math inline">\(\mathrm{MSE}\)</span>, cost <span class="math inline">\(C\)</span></td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;"><a href="https://morrison-lab.github.io/lds/chapters/big-ideas.html#def-penalty-weight">Regularization strength</a></td>
@@ -861,13 +860,13 @@ Table&nbsp;2: Models, loss and risk: notation across sources
 <tr class="even">
 <td style="text-align: left;">Learning rate (step size)</td>
 <td style="text-align: left;"><span class="math inline">\(\learnrate\)</span></td>
-<td style="text-align: left;"><span class="math inline">\(t_k\)</span> (step size)</td>
-<td style="text-align: left;"><span class="math inline">\(h\)</span></td>
 <td style="text-align: left;"><span class="math inline">\(\rho\)</span></td>
 <td style="text-align: left;"><span class="math inline">\(\gamma_r\)</span></td>
 <td style="text-align: left;"><span class="math inline">\(\eta\)</span></td>
 <td style="text-align: left;"><span class="math inline">\(\eta\)</span></td>
 <td style="text-align: left;"><span class="math inline">\(\eta\)</span></td>
+<td style="text-align: left;"><span class="math inline">\(t_k\)</span> (step size)</td>
+<td style="text-align: left;"><span class="math inline">\(h\)</span></td>
 </tr>
 </tbody>
 </table>
@@ -888,13 +887,13 @@ Table&nbsp;3: Linear models: notation across sources
 <tr class="header">
 <th style="text-align: left;">Concept</th>
 <th style="text-align: left;">These notes</th>
-<th style="text-align: left;"><a href="#ref-hutchinson2025data471">Hutchinson</a></th>
-<th style="text-align: left;"><a href="#ref-harris2022data471">Harris</a></th>
 <th style="text-align: left;">ISL (<a href="#ref-james2021islr">R</a>, <a href="#ref-james2023introduction">Python</a>)</th>
 <th style="text-align: left;"><a href="#ref-hastie2009esl">ESL</a></th>
 <th style="text-align: left;"><a href="#ref-abumostafa2012learning">LfD</a></th>
 <th style="text-align: left;"><a href="#ref-bishop2006prml">Bishop</a></th>
 <th style="text-align: left;"><a href="#ref-murphy2022pml">Murphy</a></th>
+<th style="text-align: left;"><a href="#ref-hutchinson2025data471">Hutchinson</a></th>
+<th style="text-align: left;"><a href="#ref-harris2022data471">Harris</a></th>
 </tr>
 </thead>
 <tbody>
@@ -902,56 +901,56 @@ Table&nbsp;3: Linear models: notation across sources
 <td style="text-align: left;"><a href="https://morrison-lab.github.io/lds/chapters/linear-regression.html#def-linear-model">Regression coefficients</a></td>
 <td style="text-align: left;"><span class="math inline">\(\vcoef\)</span></td>
 <td style="text-align: left;"><span class="math inline">\(\beta\)</span></td>
+<td style="text-align: left;"><span class="math inline">\(\beta\)</span></td>
+<td style="text-align: left;"><span class="math inline">\(\mathbf{w}\)</span></td>
+<td style="text-align: left;"><span class="math inline">\(\mathbf{w}\)</span></td>
+<td style="text-align: left;"><span class="math inline">\(\mathbf{w}\)</span></td>
+<td style="text-align: left;"><span class="math inline">\(\beta\)</span></td>
 <td style="text-align: left;"><span class="math inline">\(\overrightarrow{\beta}\)</span></td>
-<td style="text-align: left;"><span class="math inline">\(\beta\)</span></td>
-<td style="text-align: left;"><span class="math inline">\(\beta\)</span></td>
-<td style="text-align: left;"><span class="math inline">\(\mathbf{w}\)</span></td>
-<td style="text-align: left;"><span class="math inline">\(\mathbf{w}\)</span></td>
-<td style="text-align: left;"><span class="math inline">\(\mathbf{w}\)</span></td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">Weights (neural networks, SVMs)</td>
 <td style="text-align: left;"><span class="math inline">\(\vw\)</span></td>
-<td style="text-align: left;"><span class="math inline">\(w\)</span> (SVM), <span class="math inline">\(W\)</span>, <span class="math inline">\(U\)</span> (neural network)</td>
-<td style="text-align: left;"><span class="math inline">\(w_i\)</span> (hidden units), <span class="math inline">\(\overrightarrow{\beta}\)</span> (output layer)</td>
 <td style="text-align: left;"><span class="math inline">\(w_{kj}\)</span>, <span class="math inline">\(\beta_k\)</span> (neural network), <span class="math inline">\(\beta_j\)</span> (SVM)</td>
 <td style="text-align: left;"><span class="math inline">\(\alpha_m\)</span>, <span class="math inline">\(\beta_k\)</span> (neural network), <span class="math inline">\(\beta\)</span> (SVM)</td>
 <td style="text-align: left;"><span class="math inline">\(\mathbf{w}\)</span></td>
 <td style="text-align: left;"><span class="math inline">\(\mathbf{w}\)</span></td>
 <td style="text-align: left;"><span class="math inline">\(\mathbf{w}\)</span></td>
+<td style="text-align: left;"><span class="math inline">\(w\)</span> (SVM), <span class="math inline">\(W\)</span>, <span class="math inline">\(U\)</span> (neural network)</td>
+<td style="text-align: left;"><span class="math inline">\(w_i\)</span> (hidden units), <span class="math inline">\(\overrightarrow{\beta}\)</span> (output layer)</td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">Intercept or bias</td>
 <td style="text-align: left;"><span class="math inline">\(\intcoef\)</span> (regression), <span class="math inline">\(b\)</span> (neural networks, SVMs)</td>
-<td style="text-align: left;"><span class="math inline">\(\beta_0\)</span> or <span class="math inline">\(b\)</span>, or absorbed by padding <span class="math inline">\(\hat{x} = [1; x]\)</span></td>
-<td style="text-align: left;"><span class="math inline">\(\beta_0\)</span></td>
 <td style="text-align: left;"><span class="math inline">\(\beta_0\)</span></td>
 <td style="text-align: left;"><span class="math inline">\(\beta_0\)</span></td>
 <td style="text-align: left;"><span class="math inline">\(w_0\)</span>, with <span class="math inline">\(x_0 = 1\)</span></td>
 <td style="text-align: left;"><span class="math inline">\(w_0\)</span> (<span class="math inline">\(b\)</span> in the SVM chapter)</td>
 <td style="text-align: left;"><span class="math inline">\(b\)</span> (<span class="math inline">\(w_0\)</span> in the SVM chapter)</td>
+<td style="text-align: left;"><span class="math inline">\(\beta_0\)</span> or <span class="math inline">\(b\)</span>, or absorbed by padding <span class="math inline">\(\hat{x} = [1; x]\)</span></td>
+<td style="text-align: left;"><span class="math inline">\(\beta_0\)</span></td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">Logistic (sigmoid) function</td>
 <td style="text-align: left;"><span class="math inline">\(\sigmoid\)</span></td>
-<td style="text-align: left;"><span class="math inline">\(\sigma\)</span></td>
-<td style="text-align: left;">no symbol (the formula is written out)</td>
 <td style="text-align: left;">no symbol</td>
 <td style="text-align: left;">no symbol</td>
 <td style="text-align: left;"><span class="math inline">\(\theta(s)\)</span></td>
 <td style="text-align: left;"><span class="math inline">\(\sigma(a)\)</span></td>
 <td style="text-align: left;"><span class="math inline">\(\sigma(a)\)</span></td>
+<td style="text-align: left;"><span class="math inline">\(\sigma\)</span></td>
+<td style="text-align: left;">no symbol (the formula is written out)</td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">Class labels, two classes</td>
 <td style="text-align: left;"><span class="math inline">\(\{0, 1\}\)</span> (logistic regression), <span class="math inline">\(\{-1, +1\}\)</span> (SVMs)</td>
 <td style="text-align: left;"><span class="math inline">\(\{0, 1\}\)</span> (logistic regression), <span class="math inline">\(\{-1, +1\}\)</span> (SVMs)</td>
-<td style="text-align: left;"><span class="math inline">\(\{+1, -1\}\)</span> (logistic regression)</td>
-<td style="text-align: left;"><span class="math inline">\(\{0, 1\}\)</span> (logistic regression), <span class="math inline">\(\{-1, +1\}\)</span> (SVMs)</td>
 <td style="text-align: left;"><span class="math inline">\(\{0, 1\}\)</span> (logistic regression), <span class="math inline">\(\{-1, +1\}\)</span> (SVMs)</td>
 <td style="text-align: left;"><span class="math inline">\(\{-1, +1\}\)</span></td>
 <td style="text-align: left;"><span class="math inline">\(\{0, 1\}\)</span> (logistic regression), <span class="math inline">\(\{-1, +1\}\)</span> (SVMs)</td>
 <td style="text-align: left;"><span class="math inline">\(\{0, 1\}\)</span> or <span class="math inline">\(\{-1, +1\}\)</span></td>
+<td style="text-align: left;"><span class="math inline">\(\{0, 1\}\)</span> (logistic regression), <span class="math inline">\(\{-1, +1\}\)</span> (SVMs)</td>
+<td style="text-align: left;"><span class="math inline">\(\{+1, -1\}\)</span> (logistic regression)</td>
 </tr>
 </tbody>
 </table>
@@ -972,37 +971,37 @@ Table&nbsp;4: Neural networks: notation across sources
 <tr class="header">
 <th style="text-align: left;">Concept</th>
 <th style="text-align: left;">These notes</th>
-<th style="text-align: left;"><a href="#ref-hutchinson2025data471">Hutchinson</a></th>
-<th style="text-align: left;"><a href="#ref-harris2022data471">Harris</a></th>
 <th style="text-align: left;">ISL (<a href="#ref-james2021islr">R</a>, <a href="#ref-james2023introduction">Python</a>)</th>
 <th style="text-align: left;"><a href="#ref-hastie2009esl">ESL</a></th>
 <th style="text-align: left;"><a href="#ref-abumostafa2012learning">LfD</a></th>
 <th style="text-align: left;"><a href="#ref-bishop2006prml">Bishop</a></th>
 <th style="text-align: left;"><a href="#ref-murphy2022pml">Murphy</a></th>
+<th style="text-align: left;"><a href="#ref-hutchinson2025data471">Hutchinson</a></th>
+<th style="text-align: left;"><a href="#ref-harris2022data471">Harris</a></th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
 <td style="text-align: left;">Hidden-layer values</td>
 <td style="text-align: left;"><span class="math inline">\(\vh\)</span></td>
-<td style="text-align: left;"><span class="math inline">\(h\)</span></td>
-<td style="text-align: left;"><span class="math inline">\(\phi_i\)</span>, <span class="math inline">\(\overrightarrow{\phi}\)</span></td>
 <td style="text-align: left;"><span class="math inline">\(A_k\)</span> (activations)</td>
 <td style="text-align: left;"><span class="math inline">\(Z_m\)</span></td>
 <td style="text-align: left;">—</td>
 <td style="text-align: left;"><span class="math inline">\(z_j\)</span></td>
 <td style="text-align: left;"><span class="math inline">\(\mathbf{z}_\ell\)</span></td>
+<td style="text-align: left;"><span class="math inline">\(h\)</span></td>
+<td style="text-align: left;"><span class="math inline">\(\phi_i\)</span>, <span class="math inline">\(\overrightarrow{\phi}\)</span></td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">Backpropagation error signal</td>
 <td style="text-align: left;"><span class="math inline">\(\backerr\)</span></td>
 <td style="text-align: left;">—</td>
-<td style="text-align: left;">—</td>
-<td style="text-align: left;">—</td>
 <td style="text-align: left;"><span class="math inline">\(\delta_{ki}\)</span>, <span class="math inline">\(s_{mi}\)</span></td>
 <td style="text-align: left;">—</td>
 <td style="text-align: left;"><span class="math inline">\(\delta_j\)</span></td>
 <td style="text-align: left;">Jacobian products, no symbol</td>
+<td style="text-align: left;">—</td>
+<td style="text-align: left;">—</td>
 </tr>
 </tbody>
 </table>
@@ -1023,48 +1022,48 @@ Table&nbsp;5: Support vector machines: notation across sources
 <tr class="header">
 <th style="text-align: left;">Concept</th>
 <th style="text-align: left;">These notes</th>
-<th style="text-align: left;"><a href="#ref-hutchinson2025data471">Hutchinson</a></th>
-<th style="text-align: left;"><a href="#ref-harris2022data471">Harris</a></th>
 <th style="text-align: left;">ISL (<a href="#ref-james2021islr">R</a>, <a href="#ref-james2023introduction">Python</a>)</th>
 <th style="text-align: left;"><a href="#ref-hastie2009esl">ESL</a></th>
 <th style="text-align: left;"><a href="#ref-abumostafa2012learning">LfD</a></th>
 <th style="text-align: left;"><a href="#ref-bishop2006prml">Bishop</a></th>
 <th style="text-align: left;"><a href="#ref-murphy2022pml">Murphy</a></th>
+<th style="text-align: left;"><a href="#ref-hutchinson2025data471">Hutchinson</a></th>
+<th style="text-align: left;"><a href="#ref-harris2022data471">Harris</a></th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
 <td style="text-align: left;">Margin <a href="https://morrison-lab.github.io/lds/chapters/svms.html#def-slack-variable">slack</a></td>
 <td style="text-align: left;"><span class="math inline">\(\slack\)</span></td>
-<td style="text-align: left;"><span class="math inline">\(\xi\)</span></td>
-<td style="text-align: left;">—</td>
 <td style="text-align: left;"><span class="math inline">\(\epsilon_i\)</span></td>
 <td style="text-align: left;"><span class="math inline">\(\xi_i\)</span></td>
 <td style="text-align: left;">—</td>
 <td style="text-align: left;"><span class="math inline">\(\xi_n\)</span></td>
 <td style="text-align: left;"><span class="math inline">\(\xi_n\)</span></td>
+<td style="text-align: left;"><span class="math inline">\(\xi\)</span></td>
+<td style="text-align: left;">—</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;"><a href="https://morrison-lab.github.io/lds/chapters/svms.html#def-dual-variable">Dual variable</a> (Lagrange multiplier)</td>
 <td style="text-align: left;"><span class="math inline">\(\dualvar\)</span></td>
 <td style="text-align: left;"><span class="math inline">\(\alpha_i\)</span></td>
-<td style="text-align: left;">—</td>
-<td style="text-align: left;"><span class="math inline">\(\alpha_i\)</span></td>
 <td style="text-align: left;"><span class="math inline">\(\alpha_i\)</span></td>
 <td style="text-align: left;">—</td>
 <td style="text-align: left;"><span class="math inline">\(a_n\)</span></td>
 <td style="text-align: left;"><span class="math inline">\(\alpha_n\)</span></td>
+<td style="text-align: left;"><span class="math inline">\(\alpha_i\)</span></td>
+<td style="text-align: left;">—</td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;"><a href="https://morrison-lab.github.io/lds/chapters/svms.html#def-kernel-function">Kernel</a></td>
 <td style="text-align: left;"><span class="math inline">\(K(x, z)\)</span></td>
-<td style="text-align: left;"><span class="math inline">\(K(x, z)\)</span></td>
-<td style="text-align: left;"><span class="math inline">\(K(x, x')\)</span></td>
 <td style="text-align: left;"><span class="math inline">\(K(x_i, x_{i'})\)</span></td>
 <td style="text-align: left;"><span class="math inline">\(K(x, x')\)</span></td>
 <td style="text-align: left;">—</td>
 <td style="text-align: left;"><span class="math inline">\(k(\mathbf{x}, \mathbf{x}')\)</span></td>
 <td style="text-align: left;"><span class="math inline">\(K(\mathbf{x}, \mathbf{x}')\)</span></td>
+<td style="text-align: left;"><span class="math inline">\(K(x, z)\)</span></td>
+<td style="text-align: left;"><span class="math inline">\(K(x, x')\)</span></td>
 </tr>
 </tbody>
 </table>
@@ -1085,13 +1084,13 @@ Table&nbsp;6: Unsupervised learning: notation across sources
 <tr class="header">
 <th style="text-align: left;">Concept</th>
 <th style="text-align: left;">These notes</th>
-<th style="text-align: left;"><a href="#ref-hutchinson2025data471">Hutchinson</a></th>
-<th style="text-align: left;"><a href="#ref-harris2022data471">Harris</a></th>
 <th style="text-align: left;">ISL (<a href="#ref-james2021islr">R</a>, <a href="#ref-james2023introduction">Python</a>)</th>
 <th style="text-align: left;"><a href="#ref-hastie2009esl">ESL</a></th>
 <th style="text-align: left;"><a href="#ref-abumostafa2012learning">LfD</a></th>
 <th style="text-align: left;"><a href="#ref-bishop2006prml">Bishop</a></th>
 <th style="text-align: left;"><a href="#ref-murphy2022pml">Murphy</a></th>
+<th style="text-align: left;"><a href="#ref-hutchinson2025data471">Hutchinson</a></th>
+<th style="text-align: left;"><a href="#ref-harris2022data471">Harris</a></th>
 </tr>
 </thead>
 <tbody>
@@ -1100,9 +1099,9 @@ Table&nbsp;6: Unsupervised learning: notation across sources
 <td style="text-align: left;"><span class="math inline">\(K\)</span></td>
 <td style="text-align: left;"><span class="math inline">\(K\)</span></td>
 <td style="text-align: left;"><span class="math inline">\(K\)</span></td>
-<td style="text-align: left;"><span class="math inline">\(K\)</span></td>
-<td style="text-align: left;"><span class="math inline">\(K\)</span></td>
 <td style="text-align: left;">—</td>
+<td style="text-align: left;"><span class="math inline">\(K\)</span></td>
+<td style="text-align: left;"><span class="math inline">\(K\)</span></td>
 <td style="text-align: left;"><span class="math inline">\(K\)</span></td>
 <td style="text-align: left;"><span class="math inline">\(K\)</span></td>
 </tr>
@@ -1110,23 +1109,23 @@ Table&nbsp;6: Unsupervised learning: notation across sources
 <td style="text-align: left;">Mean and covariance matrix</td>
 <td style="text-align: left;"><span class="math inline">\(\mean\)</span>, <span class="math inline">\(\covmat\)</span></td>
 <td style="text-align: left;"><span class="math inline">\(\mu\)</span>, <span class="math inline">\(\Sigma\)</span></td>
-<td style="text-align: left;"><span class="math inline">\(\mu\)</span>, <span class="math inline">\(\sigma^2\)</span></td>
-<td style="text-align: left;"><span class="math inline">\(\mu\)</span>, <span class="math inline">\(\Sigma\)</span></td>
 <td style="text-align: left;"><span class="math inline">\(\mu\)</span>, <span class="math inline">\(\Sigma\)</span></td>
 <td style="text-align: left;">—</td>
 <td style="text-align: left;"><span class="math inline">\(\boldsymbol{\mu}\)</span>, <span class="math inline">\(\boldsymbol{\Sigma}\)</span></td>
 <td style="text-align: left;"><span class="math inline">\(\boldsymbol{\mu}\)</span>, <span class="math inline">\(\boldsymbol{\Sigma}\)</span></td>
+<td style="text-align: left;"><span class="math inline">\(\mu\)</span>, <span class="math inline">\(\Sigma\)</span></td>
+<td style="text-align: left;"><span class="math inline">\(\mu\)</span>, <span class="math inline">\(\sigma^2\)</span></td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;"><a href="https://morrison-lab.github.io/lds/chapters/semi-supervised.html#eq-responsibility">Responsibility</a> of component <span class="math inline">\(c\)</span> for point <span class="math inline">\(i\)</span></td>
 <td style="text-align: left;"><span class="math inline">\(\resp_{ic}\)</span></td>
-<td style="text-align: left;"><span class="math inline">\(\gamma_{ic}\)</span></td>
-<td style="text-align: left;">—</td>
 <td style="text-align: left;">—</td>
 <td style="text-align: left;"><span class="math inline">\(\hat{\gamma}_i\)</span></td>
 <td style="text-align: left;">—</td>
 <td style="text-align: left;"><span class="math inline">\(\gamma(z_{nk})\)</span></td>
 <td style="text-align: left;"><span class="math inline">\(r_{nk}\)</span></td>
+<td style="text-align: left;"><span class="math inline">\(\gamma_{ic}\)</span></td>
+<td style="text-align: left;">—</td>
 </tr>
 </tbody>
 </table>
@@ -1151,7 +1150,7 @@ Table&nbsp;7: Subscripts and parentheses in these notes, and the alternatives
 <tr class="header">
 <th>object</th>
 <th>our form</th>
-<th>other forms you may meet</th>
+<th>other forms you may see</th>
 </tr>
 </thead>
 <tbody>
@@ -2128,29 +2127,29 @@ Table&nbsp;9: Other symbols used in these notes
 <section id="references" class="level1 unnumbered">
 <h1 class="unnumbered">References</h1>
 <div id="refs" class="references csl-bib-body" data-entry-spacing="0" role="list">
-<div id="ref-hutchinson2025data471" class="csl-entry" role="listitem">
-<div class="csl-left-margin">[1] </div><div class="csl-right-inline">B. Hutchinson, <span>“<span>DATA</span> 471/571: Machine learning.”</span> Western Washington University, 2025.</div>
-</div>
-<div id="ref-harris2022data471" class="csl-entry" role="listitem">
-<div class="csl-left-margin">[2] </div><div class="csl-right-inline">K. D. Harris, <span>“<span>DATA</span> 471: Machine learning, weekly lecture notes.”</span> Western Washington University, 2022.</div>
-</div>
 <div id="ref-james2021islr" class="csl-entry" role="listitem">
-<div class="csl-left-margin">[3] </div><div class="csl-right-inline">G. James, D. Witten, T. Hastie, and R. Tibshirani, <em>An introduction to statistical learning with applications in <span>R</span></em>, 2nd ed. Springer, 2021. Available: <a href="https://www.statlearning.com/">https://www.statlearning.com/</a></div>
+<div class="csl-left-margin">[1] </div><div class="csl-right-inline">G. James, D. Witten, T. Hastie, and R. Tibshirani, <em>An introduction to statistical learning with applications in <span>R</span></em>, 2nd ed. Springer, 2021. Available: <a href="https://www.statlearning.com/">https://www.statlearning.com/</a></div>
 </div>
 <div id="ref-james2023introduction" class="csl-entry" role="listitem">
-<div class="csl-left-margin">[4] </div><div class="csl-right-inline">G. James, D. Witten, T. Hastie, R. Tibshirani, and J. Taylor, <em>An introduction to statistical learning: With applications in <span>Python</span></em>. Springer, 2023. doi: <a href="https://doi.org/10.1007/978-3-031-38747-0">10.1007/978-3-031-38747-0</a>.</div>
+<div class="csl-left-margin">[2] </div><div class="csl-right-inline">G. James, D. Witten, T. Hastie, R. Tibshirani, and J. Taylor, <em>An introduction to statistical learning: With applications in <span>Python</span></em>. Springer, 2023. doi: <a href="https://doi.org/10.1007/978-3-031-38747-0">10.1007/978-3-031-38747-0</a>.</div>
 </div>
 <div id="ref-hastie2009esl" class="csl-entry" role="listitem">
-<div class="csl-left-margin">[5] </div><div class="csl-right-inline">T. Hastie, R. Tibshirani, and J. Friedman, <em>The elements of statistical learning: Data mining, inference, and prediction</em>, 2nd ed. Springer, 2009. Available: <a href="https://hastie.su.domains/ElemStatLearn/">https://hastie.su.domains/ElemStatLearn/</a></div>
+<div class="csl-left-margin">[3] </div><div class="csl-right-inline">T. Hastie, R. Tibshirani, and J. Friedman, <em>The elements of statistical learning: Data mining, inference, and prediction</em>, 2nd ed. Springer, 2009. Available: <a href="https://hastie.su.domains/ElemStatLearn/">https://hastie.su.domains/ElemStatLearn/</a></div>
 </div>
 <div id="ref-abumostafa2012learning" class="csl-entry" role="listitem">
-<div class="csl-left-margin">[6] </div><div class="csl-right-inline">Y. S. Abu-Mostafa, M. Magdon-Ismail, and H.-T. Lin, <em>Learning from data: A short course</em>. AMLBook, 2012. Available: <a href="https://amlbook.com/">https://amlbook.com/</a></div>
+<div class="csl-left-margin">[4] </div><div class="csl-right-inline">Y. S. Abu-Mostafa, M. Magdon-Ismail, and H.-T. Lin, <em>Learning from data: A short course</em>. AMLBook, 2012. Available: <a href="https://amlbook.com/">https://amlbook.com/</a></div>
 </div>
 <div id="ref-bishop2006prml" class="csl-entry" role="listitem">
-<div class="csl-left-margin">[7] </div><div class="csl-right-inline">C. M. Bishop, <em>Pattern recognition and machine learning</em>. in Information science and statistics. New York: Springer, 2006.</div>
+<div class="csl-left-margin">[5] </div><div class="csl-right-inline">C. M. Bishop, <em>Pattern recognition and machine learning</em>. in Information science and statistics. New York: Springer, 2006.</div>
 </div>
 <div id="ref-murphy2022pml" class="csl-entry" role="listitem">
-<div class="csl-left-margin">[8] </div><div class="csl-right-inline">K. P. Murphy, <em>Probabilistic machine learning: An introduction</em>. in Adaptive computation and machine learning. MIT Press, 2022.</div>
+<div class="csl-left-margin">[6] </div><div class="csl-right-inline">K. P. Murphy, <em>Probabilistic machine learning: An introduction</em>. in Adaptive computation and machine learning. MIT Press, 2022.</div>
+</div>
+<div id="ref-hutchinson2025data471" class="csl-entry" role="listitem">
+<div class="csl-left-margin">[7] </div><div class="csl-right-inline">B. Hutchinson, <span>“<span>DATA</span> 471/571: Machine learning.”</span> Western Washington University, 2025.</div>
+</div>
+<div id="ref-harris2022data471" class="csl-entry" role="listitem">
+<div class="csl-left-margin">[8] </div><div class="csl-right-inline">K. D. Harris, <span>“<span>DATA</span> 471: Machine learning, weekly lecture notes.”</span> Western Washington University, 2022.</div>
 </div>
 <div id="ref-dobson4e" class="csl-entry" role="listitem">
 <div class="csl-left-margin">[9] </div><div class="csl-right-inline">A. J. Dobson and A. G. Barnett, <em>An introduction to generalized linear models</em>, 4th ed. CRC press, 2018. doi: <a href="https://doi.org/10.1201/9781315182780">10.1201/9781315182780</a>.</div>
