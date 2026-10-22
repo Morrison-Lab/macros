@@ -123,7 +123,6 @@ The coefficient vector $\vcoef$ then holds the slopes only, meaning the coeffici
 The input vector $\vpredvar$ holds the inputs.
 
 The number $\coef{0} + \dprod{\vcoef}{\vpredvar}$ is called the linear predictor.
-Logistic regression applies one more function to the linear predictor to get a probability.
 
 Writing the intercept separately keeps it visible as its own number.
 In logistic regression, for example, the intercept shifts the decision boundary, the set of inputs where the model is undecided between the two classes, while the slopes tilt it.
