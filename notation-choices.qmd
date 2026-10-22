@@ -497,3 +497,23 @@ Without them, `\factorial{n-1}` prints $\factorial{n-1}$, which reads as $n - (1
 Other sources write the cardinality as $\#A$ or $n(A)$.
 They write the binomial coefficient as $C(n, k)$ or ${}^{n}C_{k}$.
 When you read a formula from another source, check which of these a symbol means before you compare it with ours.
+
+## The sum of the elements of a vector {#sec-sum-of-elements}
+
+Our convention is to write the sum of the elements of a vector $\vy$ as $\sumof{\vy}$, which prints $s_{\vy}$.
+We write the sum of the elements of a vector of random variables $\vY$ as $\Sumof{\vY}$, which prints $S_{\vY}$.
+This follows the rule that a capital letter is a random variable and a lowercase letter is a value.
+
+The two symbols are `\sumsym` and `\Sumsym`.
+The macros `\sumof` and `\Sumof` put the vector in the subscript, so a formula about a sum names the vector it sums.
+
+We chose this for three reasons.
+
+-   One symbol replaces a sum $\sum_{i=1}^{n}$ whose index and limits would repeat in every line of a derivation.
+-   The subscript names the vector, so the symbol stays unambiguous when two vectors appear in the same line.
+-   The sum of the entries of $\vy$ equals the dot product $\vone \cdot \vy$ of $\vy$ with the ones vector, so the symbol and the dot product are two names for one quantity.
+
+Some sources write the sum of $n$ random variables as $S_n$.
+The subscript $n$ there is the sample size, not the vector.
+Within these notes, $S$ with two subscripts, such as `\sspred`, is a centered sum of squares or cross-products, not a sum of elements.
+When you read a formula from another source, check whether the subscript of $S$ is a count or a vector before you compare it with ours.
