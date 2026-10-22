@@ -30,4 +30,6 @@ Degrees of freedom and regression coefficients, subscripted and squared: $\df_i^
 
 Equality with a reason, alone, with a tall side, and squared: $a \eqby{\text{(A1)}} b$, $\frac{a}{b} \eqby{\text{Thm 2}} c$, $\paren{a \eqby{\text{(A1)}} b}^2$, $\E{X \eqby{\text{(A1)}} Y}^2$.
 
+Input counts, subscripted and squared: $\ninputvars_i^2$, $\inputdim^2$.
+
 Sum of the elements, plain, squared and with a tall argument: $\sumof{\vy}$, $\Sumof{\vY}^2$, $\Sumof{\frac{a}{b}}_i$.

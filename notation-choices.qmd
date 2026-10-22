@@ -557,3 +557,14 @@ Some sources write the sum of $n$ random variables as $S_n$.
 The subscript $n$ there is the sample size, not the vector.
 Within these notes, $S$ with two subscripts, such as `\sspred`, is a centered sum of squares or cross-products, not a sum of elements.
 When you read a formula from another source, check whether the subscript of $S$ is a count or a vector before you compare it with ours.
+
+## The number of inputs and the number of input variables {#sec-input-counts}
+
+An input is one observation's vector of values, so there are $\nobs$ inputs.
+An input variable is one coordinate of that vector, so there are $\ninputvars$ input variables.
+The data matrix $\mX$ has $\nobs$ rows and $\ninputvars$ columns.
+We name the count `\ninputvars`, not `\ninputs`, because "the number of inputs" can be read as either count.
+The older macro `\inputdim` is kept as an alias for `\ninputvars`.
+
+Many sources write the number of input variables as $p$ (ISL and ESL) or $d$, and some write $D$.
+We avoid $D$ because it is the design matrix.
