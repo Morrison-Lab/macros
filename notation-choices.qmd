@@ -125,7 +125,8 @@ The input vector $\vpredvar$ holds the inputs.
 The number $\coef{0} + \dprod{\vcoef}{\vpredvar}$ is called the linear predictor.
 
 Writing the intercept separately keeps it visible as its own number.
-In logistic regression, for example, the intercept shifts the decision boundary, the set of inputs where the model is undecided between the two classes, while the slopes tilt it.
+In logistic regression, for example, the logistic function turns the linear predictor into a probability.
+The intercept then shifts the decision boundary, the set of inputs where the model is undecided between the two classes, while the slopes tilt it.
 
 Other sources absorb the intercept.
 They add a constant input $1$ to the start of the input vector, and the coefficient vector then also holds the intercept, at its start.
