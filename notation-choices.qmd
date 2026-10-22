@@ -356,6 +356,12 @@ The macros `\popdev` and `\cdev` now print $\delta$, the general deviation symbo
 The macro `\deviationf` prints $\delta$ with the reference as a subscript, for a labelled deviation of a given value.
 We keep `\popdev` and `\deviationf` for existing uses.
 
+A sample mean is a bar over the quantity, and we write it with the macro `\smean{y}`, which prints $\smean{y}$, rather than with a literal `\bar`.
+The macros `\xbar`, `\outbar`, `\predbar`, `\rvarbar`, `\samplemean` and `\avgleverage` use it.
+The sample mean of the deviations from a population mean is the deviation of the sample mean, $\devof{\smean{y}}{\mu}$.
+The macro `\smeandev` prints it as $\smeandev$.
+Other uses of a bar, such as `\Ebar` and `\incidence`, are not sample means and keep their own macros.
+
 Some sources use $e$ for the noise, so check what a source means by it.
 Some sources subtract in the other order, so check the sign before comparing a formula with ours.
 
