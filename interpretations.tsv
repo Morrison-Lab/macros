@@ -182,6 +182,8 @@ name	interpretation
 \nulldeviance	null deviance: the deviance of the intercept-only model
 \satllik	maximized log-likelihood of the saturated model
 \satdeviance	deviance relative to the saturated model: twice the difference between the saturated model's and the fitted model's maximized log-likelihoods
+\dicdev	Bayesian deviance used by the deviance information criterion: minus twice the log-likelihood, with no saturated term (prints \deviance_{\mathrm{DIC}})
+\dicdevf	Bayesian deviance at a parameter value, dev_DIC(·) (prints \dicdev followed by its argument in parentheses)
 \deviation	deviation symbol δ
 \devn	deviation symbol (alias for \deviation)
 \deviationv	deviation vector (the vec accent applied to δ)
