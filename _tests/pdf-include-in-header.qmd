@@ -22,6 +22,10 @@ Noise: $\Noise_i^2$, $\noise_i^2$, $\vNoise_i^2$, $\vnoise_i^2$, $\vNoise^T$.
 
 Residuals, prediction errors and the deviation from a mean, subscripted and squared: $\resid_i^2$, $\Resid_i$, $\stdresid_i^2$, $\modresid_i^2$, $\vresid_i^T$, $\residv^T$, $\prederr_i^2$, $\vprederr_i^T$, $\popdev_i^2$, $\cdev_i$.
 
+Design matrix, design vector and feature map, subscripted and squared: $\design_{ij}^2$, $\vdesign_i^2$, $\vdesign^T$, $\vfeatmap_i^2$, $\featmap^2$.
+
+Deviances, subscripted and squared: $\deviance_i^2$, $\deviance^2$, $\nulldeviance$, $\satdeviance^2$.
+
 Degrees of freedom and regression coefficients, subscripted and squared: $\df_i^2$, $\hdf_i^2$, $\edf^2$, $\Regcoef_i^2$, $\Coef{j}^2$.
 
 Equality with a reason, alone, with a tall side, and squared: $a \eqby{\text{(A1)}} b$, $\frac{a}{b} \eqby{\text{Thm 2}} c$, $\paren{a \eqby{\text{(A1)}} b}^2$, $\E{X \eqby{\text{(A1)}} Y}^2$.
