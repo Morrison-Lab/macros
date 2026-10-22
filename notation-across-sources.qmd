@@ -12,7 +12,7 @@ execute:
   freeze: false
 ---
 
-This page sets our notation beside the notation of Hutchinson's and Harris' lecture notes and five textbooks.
+This page sets our notation beside the notation of five widely used textbooks and two sets of lecture notes.
 The [Notation Choices](notation-choices.qmd) page gives the reasons for our conventions;
 this page lists the symbols side by side.
 The data are in [`data/notation-conventions.csv`](data/notation-conventions.csv) and [`data/symbols-used.csv`](data/symbols-used.csv).
@@ -22,8 +22,6 @@ Links in the tables go to the definitions in the [DATA 571 notes](https://morris
 
 The tables on this page set our notation beside the notation of these sources:
 
--   Brian Hutchinson's lecture notes for DATA 471/571 [@hutchinson2025data471].
--   Kameron Decker Harris' 2022 weekly notes for DATA 471 [@harris2022data471].
 -   *An Introduction to Statistical Learning*, or ISL, in its R edition [@james2021islr]
     and its Python edition [@james2023introduction].
     They share one column because the two books use the same notation:
@@ -33,6 +31,9 @@ The tables on this page set our notation beside the notation of these sources:
 -   *Learning From Data*, or LfD [@abumostafa2012learning].
 -   Bishop's *Pattern Recognition and Machine Learning* [@bishop2006prml].
 -   Murphy's *Probabilistic Machine Learning: An Introduction* [@murphy2022pml].
+-   Two sets of lecture notes from the DATA 471/571 courses, in the last two columns:
+    Brian Hutchinson's lecture notes [@hutchinson2025data471]
+    and Kameron Decker Harris' 2022 weekly notes [@harris2022data471].
 
 To read the tables:
 
@@ -50,11 +51,11 @@ Six differences cause most of the confusion when you read across sources:
 
 -   **Labels**: the two-class label is $\{0, 1\}$ for logistic regression and $\{-1, +1\}$ for SVMs in most sources,
     and always $\{-1, +1\}$ in LfD.
--   **The SVM constant $C$**: Hutchinson, Bishop and Murphy use $C$ as a penalty on the slack,
+-   **The SVM constant $C$**: Bishop, Murphy and Hutchinson use $C$ as a penalty on the slack,
     so a larger $C$ allows fewer violations.
     ISL uses $C$ as a budget on the slack, so a larger $C$ allows more.
--   **Sample index**: a superscript in parentheses ($x^{(i)}$) in Hutchinson's notes,
-    a subscript $i$ in ISL and ESL, and a subscript $n$ in LfD, Bishop and Murphy.
+-   **Sample index**: a subscript $i$ in ISL and ESL, a subscript $n$ in LfD, Bishop and Murphy,
+    and a superscript in parentheses ($x^{(i)}$) in Hutchinson's notes.
 -   **Prediction of the fitted model, averaged over data sets**: these notes write the prediction at $x$ as $\predvalf{x}$, as ISL and ESL do ($\hat{f}(x)$).
     Where $x$ is fixed and its dependence is not the point, as in the [bias--variance decomposition](https://morrison-lab.github.io/lds/chapters/big-ideas.html#eq-bias-variance), they drop the argument and write $\predval$.
     Either way the prediction is a random variable, because it depends on the training set.
@@ -92,25 +93,25 @@ notation_table <- function(which_group) {
   table <- data.frame(
     Concept = rows$concept,
     `These notes` = rows$ours,
-    rows$hutchinson,
-    rows$harris,
     rows$islr,
     rows$esl,
     rows$lfd,
     rows$bishop,
     rows$murphy,
+    rows$hutchinson,
+    rows$harris,
     check.names = FALSE
   )
   # Each source's name links to its entry in the reference list.
   names(table) <- c(
     "Concept", "These notes",
-    "[Hutchinson](#ref-hutchinson2025data471)",
-    "[Harris](#ref-harris2022data471)",
     "ISL ([R](#ref-james2021islr), [Python](#ref-james2023introduction))",
     "[ESL](#ref-hastie2009esl)",
     "[LfD](#ref-abumostafa2012learning)",
     "[Bishop](#ref-bishop2006prml)",
-    "[Murphy](#ref-murphy2022pml)"
+    "[Murphy](#ref-murphy2022pml)",
+    "[Hutchinson](#ref-hutchinson2025data471)",
+    "[Harris](#ref-harris2022data471)"
   )
   knitr::kable(
     table,
