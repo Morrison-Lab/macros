@@ -16,7 +16,7 @@ This page sets our notation beside the notation of Hutchinson's and Harris' lect
 The [Notation Choices](notation-choices.qmd) page gives the reasons for our conventions;
 this page lists the symbols side by side.
 The data are in [`data/notation-conventions.csv`](data/notation-conventions.csv) and [`data/symbols-used.csv`](data/symbols-used.csv).
-Links in the tables go to the definitions in the [DATA 571 notes](https://morrison-lab.github.io/lds/).
+Links in the tables go to the definitions in the [DATA 571 notes](https://morrison-lab.github.io/lds/), with a few to the statistics and math prerequisite notes.
 
 # Sources {#sec-notation-sources}
 
@@ -56,9 +56,9 @@ Six differences cause most of the confusion when you read across sources:
 -   **Sample index**: a superscript in parentheses ($x^{(i)}$) in Hutchinson's notes,
     a subscript $i$ in ISL and ESL, and a subscript $n$ in LfD, Bishop and Murphy.
 -   **Prediction of the fitted model, averaged over data sets**: these notes write the prediction at $x$ as $\predvalf{x}$, as ISL and ESL do ($\hat{f}(x)$).
-    Where $x$ is fixed and its dependence is not the point, as in the [bias--variance decomposition](https://morrison-lab.github.io/lds/big-ideas.html#eq-bias-variance), they drop the argument and write $\predval$.
+    Where $x$ is fixed and its dependence is not the point, as in the [bias--variance decomposition](https://morrison-lab.github.io/lds/chapters/big-ideas.html#eq-bias-variance), they drop the argument and write $\predval$.
     Either way the prediction is a random variable, because it depends on the training set.
-    The [average fit](https://morrison-lab.github.io/lds/big-ideas.html#eq-average-fit) $\avgfitf{x}$ is the population expectation of that prediction over training sets, written with no bar and no hat.
+    The [average fit](https://morrison-lab.github.io/lds/chapters/big-ideas.html#eq-average-fit) $\avgfitf{x}$ is the population expectation of that prediction over training sets, written with no bar and no hat.
 -   **Target**: Bishop calls the output $t$ for *target*, and every other source calls it $y$.
 -   **Subscripts and parentheses**: which arguments go in a subscript and which in parentheses varies,
     as in $f_\theta(x)$ versus $f(x; \theta)$.
