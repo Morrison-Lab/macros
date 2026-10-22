@@ -296,8 +296,8 @@ Check which form a source uses before comparing its decomposition with ours.
 
 ## Noise, deviation and error {#sec-noise-deviation-error}
 
-The noise is a deviation.
-An estimation error and a prediction error are errors, which are deviations whose reference is an estimand.
+The [noise](https://morrison-lab.github.io/lds/chapters/big-ideas.html#def-noise) is a [deviation](https://morrison-lab.github.io/pds/variance-covariance.html#def-deviation).
+An [estimation error](https://morrison-lab.github.io/sds/estimation.html#def-estimation-error) and a [prediction error](https://morrison-lab.github.io/sds/prediction.html#def-prediction-error) are errors, which are deviations whose reference is an estimand.
 Each of the three has its own reference.
 
 Our convention is to write a deviation as $\devof{a}{b}$, the quantity $a$ minus the reference value $b$.
@@ -310,7 +310,7 @@ The macro `\esterr` prints the error symbol $\varepsilon$, with the estimand as 
 The macros `\Noise` and `\prederr` have their own symbols, $\Noise$ and $\prederr$.
 In all three we subtract the reference from the quantity.
 So an estimate or prediction that is too large has a positive error.
-The residual `\resid` is the exception, because it is the observed outcome minus the predicted outcome, the opposite sign of the prediction error.
+The [residual](https://morrison-lab.github.io/lds/chapters/linear-regression.html#def-residual) `\resid` is the exception, because it is the observed outcome minus the predicted outcome, the opposite sign of the prediction error.
 The macro `\devof` always prints parentheses around the difference, so a power such as $\devof{a}{b}^2$ squares the whole difference.
 When the reference is a sum, wrap it in `\paren` yourself, as in $\devof{a}{\paren{b + c}}$.
 The macro `\devsq` prints a squared deviation, and `\ssdev` prints the sum of squared deviations over observations.
