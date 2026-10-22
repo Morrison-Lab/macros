@@ -332,6 +332,8 @@ The textbooks call $\varepsilon$ the error term, but we call it the noise.
 We keep the errors distinct from the noise by giving them a label.
 The macro `\esterr{a}{b}` prints $\esterr{a}{b}$, the error of the estimate $a$ for the estimand $b$.
 The macro `\prederr` prints $\prederr$, with the upright label "pred".
+The macro `\prederrf{g}` prints $\prederrf{g}$, the prediction error of the predictor $g$.
+It is the short form of the estimation error of $g$ for the new outcome, `\esterr{g}{\Outvar}`, and uses the label "pred" in place of the estimand.
 The older macros `\err` and `\eps` print the bare $\varepsilon$, the same symbol as the noise.
 
 The residual is computed from a fitted model and so is observed.
