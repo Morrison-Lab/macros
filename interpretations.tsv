@@ -43,8 +43,8 @@ name	interpretation
 \quantilef	quantile function applied to argument (alias for \Qf)
 \hQ	estimated quantile function Q̂; deprecated, use \eQ
 \hquantile	estimated quantile function (alias for \hQ); deprecated, use \equantile
-\hQf	estimated quantile function Q̂(·) applied to argument
-\hquantilef	estimated quantile function applied to argument (alias for \hQf)
+\hQf	estimated quantile function Q̂(·) applied to argument; deprecated, use \eQf
+\hquantilef	estimated quantile function applied to argument (alias for \hQf); deprecated, use \equantilef
 \ph	estimated probability p-hat; deprecated, use \ep
 \P	probability operator ℙ (blackboard bold)
 \hp	estimated probability (alias for \ph); deprecated, use \ep
@@ -111,7 +111,7 @@ name	interpretation
 \hcoef	estimated regression coefficient for covariate (β̂_x); deprecated, use \ecoef
 \hintcoef	estimated regression intercept (β̂_0); deprecated, use \eintcoef
 \hvb	estimated beta vector (β̂-vector); deprecated, use \evb
-\hvcoef	estimated coefficient vector (alias for \hvb)
+\hvcoef	estimated coefficient vector (alias for \hvb); deprecated, use \evcoef
 \vhcoef	estimated coefficient vector (transposed-letter alias for \hvb)
 \hR	Gelman-Rubin convergence diagnostic (potential scale reduction factor, R-hat); deprecated, use \eR
 \hk	estimated kappa κ̂; deprecated, use \ek
@@ -128,7 +128,7 @@ name	interpretation
 \hSigma	estimated Sigma (alias for \hS); deprecated, use \eSigma
 \hsurv	estimated survival function; deprecated, use \esurv
 \hSurv	estimated survival function (alias for \hsurv); deprecated, use \eSurv
-\hSurvf	estimated survival function Ŝ(·) applied to argument
+\hSurvf	estimated survival function Ŝ(·) applied to argument; deprecated, use \eSurvf
 \dist	distributes as relation (∼)
 \ddist	approximately distributes as (∿)
 \dsim	approximately distributes as (alias for \ddist)
@@ -143,7 +143,7 @@ name	interpretation
 \xbar	sample mean x̄
 \samplemean	sample mean of n random variables, X̄_n (arguments: the variable and the sample size)
 \hth	estimated theta θ̂; deprecated, use \eth
-\hthml	maximum likelihood estimate of theta
+\hthml	maximum likelihood estimate of theta; deprecated, use \ethml
 \ba	begin aligned math environment
 \ea	end aligned math environment
 \ind	statistical independence symbol (⊥⊥)
@@ -268,10 +268,10 @@ name	interpretation
 \teal	typeset argument in teal
 \violet	typeset argument in violet
 \hE	estimated expected value (prints the hat of \Expp, with the argument in square brackets); deprecated, use \eE
-\hExp	estimated expected value (alias for \hE)
-\hExpf	estimated expected value (alias for \hE)
+\hExp	estimated expected value (alias for \hE); deprecated, use \eExp
+\hExpf	estimated expected value (alias for \hE); deprecated, use \eExpf
 \hmu	estimated mean μ̂; deprecated, use \emu
-\hmuf	estimated mean function μ̂(·)
+\hmuf	estimated mean function μ̂(·); deprecated, use \emuf
 \Expp	expectation operator 𝔼 (no argument; blackboard bold)
 \Ep	expectation operator (alias for \Expp)
 \expit	expit / logistic function
@@ -292,58 +292,58 @@ name	interpretation
 \evalAt	evaluate expression at a given point
 \Varr	variance operator symbol Var
 \Vart	variance operator symbol (alias for \Varr)
-\hvar	estimated variance operator (hat)
-\hvart	estimated variance operator (alias for \hvar)
+\hvar	estimated variance operator (hat); deprecated, use \evar
+\hvart	estimated variance operator (alias for \hvar); deprecated, use \evart
 \Covt	covariance operator symbol Cov
-\hcovt	estimated covariance operator
-\hCovt	estimated covariance operator (alias)
+\hcovt	estimated covariance operator; deprecated, use \ecovt
+\hCovt	estimated covariance operator (alias); deprecated, use \eCovt
 \var	variance function Var(·)
 \varf	variance function (alias for \var)
 \Var	variance function (alias for \var)
-\hVar	estimated variance function V̂ar(·)
+\hVar	estimated variance function V̂ar(·); deprecated, use \eVar
 \Varf	variance function (alias for \var)
-\hvarf	estimated variance function (alias for \hVar)
+\hvarf	estimated variance function (alias for \hVar); deprecated, use \evarf
 \Cov	covariance function Cov(·)
 \Covs	bivariate covariance Cov(·,·)
 \Covf	covariance function (alias for \Cov)
 \covh	estimated covariance function Ĉov(·)
 \covhf	estimated covariance function (alias)
-\hcovf	estimated covariance function (alias)
+\hcovf	estimated covariance function (alias); deprecated, use \ecovf
 \aVar	asymptotic variance aVar(·)
 \aCov	asymptotic covariance aCov(·)
 \cum	cumulative-exposure operator cum(·)
 \Cort	correlation operator symbol Cor
-\hcort	estimated correlation operator
+\hcort	estimated correlation operator; deprecated, use \ecort
 \Cor	correlation function Cor(·)
 \Corf	correlation function (alias for \Cor)
 \Cors	bivariate correlation Cor(·,·)
-\hCor	estimated correlation function Ĉor(·)
-\hCorf	estimated correlation function (alias)
-\hCors	estimated bivariate correlation
+\hCor	estimated correlation function Ĉor(·); deprecated, use \eCor
+\hCorf	estimated correlation function (alias); deprecated, use \eCorf
+\hCors	estimated bivariate correlation; deprecated, use \eCors
 \med	median operator symbol
 \medf	median function med(·)
 \IQR	interquartile range operator symbol
 \IQRf	interquartile range function IQR(·)
-\varht	estimated variance operator (hat, alias)
+\varht	estimated variance operator (hat, alias); deprecated, use \evar
 \varh	estimated variance function (alias)
 \varhf	estimated variance function (alias)
 \vc	bold vector notation for argument
 \sd	standard deviation function sd(·)
 \SD	standard deviation function SD(·)
-\hSD	estimated standard deviation SD̂(·)
-\hSDf	estimated standard deviation (alias)
+\hSD	estimated standard deviation SD̂(·); deprecated, use \eSD
+\hSDf	estimated standard deviation (alias); deprecated, use \eSDf
 \se	standard error function se(·)
-\hset	estimated standard error operator ŝe
-\hSE	estimated standard error operator ŜE
-\hSEt	estimated SE operator (alias for \hSE)
+\hset	estimated standard error operator ŝe; deprecated, use \eset
+\hSE	estimated standard error operator ŜE; deprecated, use \eSE
+\hSEt	estimated SE operator (alias for \hSE); deprecated, use \eSEt
 \sef	standard error function (alias for \se)
-\hse	estimated standard error ŝe(·)
-\hsef	estimated standard error (alias for \hse)
+\hse	estimated standard error ŝe(·); deprecated, use \ese
+\hsef	estimated standard error (alias for \hse); deprecated, use \esef
 \SE	standard error function SE(·)
 \SEf	standard error function (alias for \SE)
 \SDf	standard deviation function (alias for \SD)
 \HSE	estimated standard error function (alias)
-\hSEf	estimated standard error function (alias)
+\hSEf	estimated standard error function (alias); deprecated, use \eSEf
 \logt	log operator symbol
 \logf	log{·} function applied to argument
 \lnf	natural log function applied to its argument, ln(·)
@@ -379,7 +379,7 @@ name	interpretation
 \einfm	expected information matrix symbol
 \einff	expected information function ℐ(·)
 \heinf	estimated Fisher information ℐ̂; deprecated, use \eeinf
-\heinff	estimated Fisher information function ℐ̂(·)
+\heinff	estimated Fisher information function ℐ̂(·); deprecated, use \eeinff
 \1	indicator function 1_{·} (upright subscript style)
 \indic	indicator function 𝟙_{·} (blackboard bold)
 \indicp	indicator function 𝟙(·) with parentheses
@@ -523,7 +523,7 @@ name	interpretation
 \logodds	log-odds symbol η
 \logoddsf	log-odds function η(·)
 \difflogodds	difference in log-odds Δη
-\hdifflogodds	estimated difference in log-odds ΔΗ̂
+\hdifflogodds	estimated difference in log-odds ΔΗ̂; deprecated, use \edifflogodds
 \diffeta	difference in eta Δη (alias for \difflogodds)
 \oddst	odds operator label
 \probst	probs operator label
@@ -601,7 +601,7 @@ name	interpretation
 \cdf	cumulative distribution function symbol F
 \cdff	cumulative distribution function F(·) applied to argument
 \hcdf	estimated cumulative distribution function F̂; deprecated, use \ecdf
-\hcdff	estimated cumulative distribution function F̂(·) applied to argument
+\hcdff	estimated cumulative distribution function F̂(·) applied to argument; deprecated, use \ecdff
 \defLik	definitional expression for likelihood ℒ(θ)
 \defLogLik	definitional expression for log-likelihood ℓ
 \defScore	definitional expression for score function ℓ′
@@ -663,107 +663,107 @@ name	interpretation
 \cuhazff	cumulative hazard factor function (shorthand for \cuhazfactorf)
 \survff	survival factor function (shorthand for \survfactorf)
 \hprob	estimated probability π̂; deprecated, use \eprob
-\hprobs	estimated probability symbol π̂ (alias for \hprob)
-\hPr	estimated probability with brackets Pr̂[·]
-\hrisk	estimated risk π̂ (alias for \hprob)
-\hprev	estimated prevalence π̂ (alias for \hprob)
+\hprobs	estimated probability symbol π̂ (alias for \hprob); deprecated, use \eprobs
+\hPr	estimated probability with brackets Pr̂[·]; deprecated, use \ePr
+\hrisk	estimated risk π̂ (alias for \hprob); deprecated, use \erisk
+\hprev	estimated prevalence π̂ (alias for \hprob); deprecated, use \eprev
 \hpoprisk	estimated population risk R̂ (hat-wrapped \poprisk); the empirical risk; deprecated, use \epoprisk
-\hpopriskf	estimated population risk function R̂(·) (hat-wrapped \popriskf)
+\hpopriskf	estimated population risk function R̂(·) (hat-wrapped \popriskf); deprecated, use \epopriskf
 \hodds	estimated odds ω̂; deprecated, use \eodds
-\hATT	estimated average treatment effect on the treated ATT̂
-\hATTf	estimated average treatment effect on the treated function ATT̂(·)
+\hATT	estimated average treatment effect on the treated ATT̂; deprecated, use \eATT
+\hATTf	estimated average treatment effect on the treated function ATT̂(·); deprecated, use \eATTf
 \hrate	estimated rate λ̂; deprecated, use \erate
-\hhaz	estimated hazard λ̂ (alias for \hrate)
+\hhaz	estimated hazard λ̂ (alias for \hrate); deprecated, use \ehaz
 \hcuhaz	estimated cumulative hazard Λ̂; deprecated, use \ecuhaz
-\hcumhaz	estimated cumulative hazard (alias for \hcuhaz)
+\hcumhaz	estimated cumulative hazard (alias for \hcuhaz); deprecated, use \ecumhaz
 \hratio	generic estimated ratio ϙ̂ (hat-wrapped \ratio); deprecated, use \eratio
-\hratiof	generic estimated ratio function ϙ̂(·)
-\hror	estimated odds ratio ϙ̂_ω (\hratio subscripted by \odds, so the hat covers only the main symbol)
-\horf	estimated odds ratio function ϙ̂_ω(·)
-\hhazratio	estimated hazard ratio ϙ̂_λ (\hratio subscripted by \haz, so the hat covers only the main symbol)
-\hhr	estimated hazard ratio (alias for \hhazratio)
-\hrhaz	estimated hazard ratio (alias for \hhazratio)
-\hhazr	estimated hazard ratio (alias for \hhazratio)
-\hhrf	estimated hazard ratio function ϙ̂_λ(·)
-\hrhazf	estimated hazard ratio function (alias for \hhrf)
-\hhazrf	estimated hazard ratio function (alias for \hhrf)
-\hrateratio	estimated rate ratio ϙ̂_λ (\hratio subscripted by \rate, so the hat covers only the main symbol)
-\hrater	estimated rate ratio (alias for \hrateratio)
-\hrrate	estimated rate ratio (alias for \hrateratio)
-\hrateratiof	estimated rate ratio function ϙ̂_λ(·)
-\hraterf	estimated rate ratio function (alias for \hrateratiof)
-\hrratef	estimated rate ratio function (alias for \hrateratiof)
-\hriskratio	estimated risk ratio ϙ̂_π (\hratio subscripted by \risk, so the hat covers only the main symbol)
-\hrrisk	estimated risk ratio (alias for \hriskratio)
-\hriskr	estimated risk ratio (alias for \hriskratio)
-\hriskratiof	estimated risk ratio function ϙ̂_π(·)
-\hrriskf	estimated risk ratio function (alias for \hriskratiof)
-\hriskrf	estimated risk ratio function (alias for \hriskratiof)
-\hRD	estimated risk difference RD̂
-\hRR	estimated risk ratio RR̂
-\hprevratio	estimated prevalence ratio ϙ̂_π (\hratio subscripted by \prev, so the hat covers only the main symbol)
-\hprr	estimated prevalence ratio (alias for \hprevratio)
-\hprevratiof	estimated prevalence ratio function ϙ̂_π(·)
-\hprrf	estimated prevalence ratio function (alias for \hprevratiof)
-\hsurvratio	estimated survival ratio ϙ̂_S (\hratio subscripted by \surv, so the hat covers only the main symbol)
-\hrsurv	estimated survival ratio (alias for \hsurvratio)
-\hsurvr	estimated survival ratio (alias for \hsurvratio)
-\hsurvratiof	estimated survival ratio function ϙ̂_S(·)
-\hrsurvf	estimated survival ratio function (alias for \hsurvratiof)
-\hsurvrf	estimated survival ratio function (alias for \hsurvratiof)
-\hcuhazratio	estimated cumulative hazard ratio ϙ̂_Λ (\hratio subscripted by \cuhaz, so the hat covers only the main symbol)
-\hrcuhaz	estimated cumulative hazard ratio (alias for \hcuhazratio)
-\hcuhazr	estimated cumulative hazard ratio (alias for \hcuhazratio)
-\hcuhazratiof	estimated cumulative hazard ratio function ϙ̂_Λ(·)
-\hrcuhazf	estimated cumulative hazard ratio function (alias for \hcuhazratiof)
-\hcuhazrf	estimated cumulative hazard ratio function (alias for \hcuhazratiof)
+\hratiof	generic estimated ratio function ϙ̂(·); deprecated, use \eratiof
+\hror	estimated odds ratio ϙ̂_ω (\hratio subscripted by \odds, so the hat covers only the main symbol); deprecated, use \eror
+\horf	estimated odds ratio function ϙ̂_ω(·); deprecated, use \eorf
+\hhazratio	estimated hazard ratio ϙ̂_λ (\hratio subscripted by \haz, so the hat covers only the main symbol); deprecated, use \ehazratio
+\hhr	estimated hazard ratio (alias for \hhazratio); deprecated, use \ehr
+\hrhaz	estimated hazard ratio (alias for \hhazratio); deprecated, use \erhaz
+\hhazr	estimated hazard ratio (alias for \hhazratio); deprecated, use \ehazr
+\hhrf	estimated hazard ratio function ϙ̂_λ(·); deprecated, use \ehrf
+\hrhazf	estimated hazard ratio function (alias for \hhrf); deprecated, use \erhazf
+\hhazrf	estimated hazard ratio function (alias for \hhrf); deprecated, use \ehazrf
+\hrateratio	estimated rate ratio ϙ̂_λ (\hratio subscripted by \rate, so the hat covers only the main symbol); deprecated, use \erateratio
+\hrater	estimated rate ratio (alias for \hrateratio); deprecated, use \erater
+\hrrate	estimated rate ratio (alias for \hrateratio); deprecated, use \errate
+\hrateratiof	estimated rate ratio function ϙ̂_λ(·); deprecated, use \erateratiof
+\hraterf	estimated rate ratio function (alias for \hrateratiof); deprecated, use \eraterf
+\hrratef	estimated rate ratio function (alias for \hrateratiof); deprecated, use \erratef
+\hriskratio	estimated risk ratio ϙ̂_π (\hratio subscripted by \risk, so the hat covers only the main symbol); deprecated, use \eriskratio
+\hrrisk	estimated risk ratio (alias for \hriskratio); deprecated, use \errisk
+\hriskr	estimated risk ratio (alias for \hriskratio); deprecated, use \eriskr
+\hriskratiof	estimated risk ratio function ϙ̂_π(·); deprecated, use \eriskratiof
+\hrriskf	estimated risk ratio function (alias for \hriskratiof); deprecated, use \erriskf
+\hriskrf	estimated risk ratio function (alias for \hriskratiof); deprecated, use \eriskrf
+\hRD	estimated risk difference RD̂; deprecated, use \eRD
+\hRR	estimated risk ratio RR̂; deprecated, use \eRR
+\hprevratio	estimated prevalence ratio ϙ̂_π (\hratio subscripted by \prev, so the hat covers only the main symbol); deprecated, use \eprevratio
+\hprr	estimated prevalence ratio (alias for \hprevratio); deprecated, use \eprr
+\hprevratiof	estimated prevalence ratio function ϙ̂_π(·); deprecated, use \eprevratiof
+\hprrf	estimated prevalence ratio function (alias for \hprevratiof); deprecated, use \eprrf
+\hsurvratio	estimated survival ratio ϙ̂_S (\hratio subscripted by \surv, so the hat covers only the main symbol); deprecated, use \esurvratio
+\hrsurv	estimated survival ratio (alias for \hsurvratio); deprecated, use \ersurv
+\hsurvr	estimated survival ratio (alias for \hsurvratio); deprecated, use \esurvr
+\hsurvratiof	estimated survival ratio function ϙ̂_S(·); deprecated, use \esurvratiof
+\hrsurvf	estimated survival ratio function (alias for \hsurvratiof); deprecated, use \ersurvf
+\hsurvrf	estimated survival ratio function (alias for \hsurvratiof); deprecated, use \esurvrf
+\hcuhazratio	estimated cumulative hazard ratio ϙ̂_Λ (\hratio subscripted by \cuhaz, so the hat covers only the main symbol); deprecated, use \ecuhazratio
+\hrcuhaz	estimated cumulative hazard ratio (alias for \hcuhazratio); deprecated, use \ercuhaz
+\hcuhazr	estimated cumulative hazard ratio (alias for \hcuhazratio); deprecated, use \ecuhazr
+\hcuhazratiof	estimated cumulative hazard ratio function ϙ̂_Λ(·); deprecated, use \ecuhazratiof
+\hrcuhazf	estimated cumulative hazard ratio function (alias for \hcuhazratiof); deprecated, use \ercuhazf
+\hcuhazrf	estimated cumulative hazard ratio function (alias for \hcuhazratiof); deprecated, use \ecuhazrf
 \hfactor	generic estimated factor θ̂ (hat-wrapped \factor); deprecated, use \efactor
-\hfactorf	generic estimated factor function θ̂(·)
-\hff	generic estimated factor function (shorthand for \hfactorf)
-\hoddsfactor	estimated odds factor θ̂_ω (\hfactor subscripted by \odds, so the hat covers only the main symbol)
-\hoddsfactorf	estimated odds factor function θ̂_ω(·)
-\hfodds	estimated odds factor (alias for \hoddsfactor)
-\hfoddsf	estimated odds factor function (alias for \hoddsfactorf)
-\hoddsff	estimated odds factor function (shorthand for \hoddsfactorf)
-\hhazfactor	estimated hazard factor θ̂_λ (\hfactor subscripted by \haz, so the hat covers only the main symbol)
-\hhazfactorf	estimated hazard factor function θ̂_λ(·)
-\hfhaz	estimated hazard factor (alias for \hhazfactor)
-\hfhazf	estimated hazard factor function (alias for \hhazfactorf)
-\hhazff	estimated hazard factor function (shorthand for \hhazfactorf)
-\hratefactor	estimated rate factor θ̂_λ (\hfactor subscripted by \rate, so the hat covers only the main symbol)
-\hratefactorf	estimated rate factor function θ̂_λ(·)
-\hfrate	estimated rate factor (alias for \hratefactor)
-\hfratef	estimated rate factor function (alias for \hratefactorf)
-\hrateff	estimated rate factor function (shorthand for \hratefactorf)
-\hriskfactor	estimated risk factor θ̂_π (\hfactor subscripted by \risk, so the hat covers only the main symbol)
-\hriskfactorf	estimated risk factor function θ̂_π(·)
-\hfrisk	estimated risk factor (alias for \hriskfactor)
-\hfriskf	estimated risk factor function (alias for \hriskfactorf)
-\hriskff	estimated risk factor function (shorthand for \hriskfactorf)
-\hprevfactor	estimated prevalence factor θ̂_π (\hfactor subscripted by \prev, so the hat covers only the main symbol)
-\hprevfactorf	estimated prevalence factor function θ̂_π(·)
-\hfprev	estimated prevalence factor (alias for \hprevfactor)
-\hfprevf	estimated prevalence factor function (alias for \hprevfactorf)
-\hprevff	estimated prevalence factor function (shorthand for \hprevfactorf)
-\hcuhazfactor	estimated cumulative hazard factor θ̂_Λ (\hfactor subscripted by \cuhaz, so the hat covers only the main symbol)
-\hcuhazfactorf	estimated cumulative hazard factor function θ̂_Λ(·)
-\hfcuhaz	estimated cumulative hazard factor (alias for \hcuhazfactor)
-\hfcuhazf	estimated cumulative hazard factor function (alias for \hcuhazfactorf)
-\hcuhazff	estimated cumulative hazard factor function (shorthand for \hcuhazfactorf)
-\hsurvfactor	estimated survival factor θ̂_S (\hfactor subscripted by \surv, so the hat covers only the main symbol)
-\hsurvfactorf	estimated survival factor function θ̂_S(·)
-\hfsurv	estimated survival factor (alias for \hsurvfactor)
-\hfsurvf	estimated survival factor function (alias for \hsurvfactorf)
-\hsurvff	estimated survival factor function (shorthand for \hsurvfactorf)
+\hfactorf	generic estimated factor function θ̂(·); deprecated, use \efactorf
+\hff	generic estimated factor function (shorthand for \hfactorf); deprecated, use \eff
+\hoddsfactor	estimated odds factor θ̂_ω (\hfactor subscripted by \odds, so the hat covers only the main symbol); deprecated, use \eoddsfactor
+\hoddsfactorf	estimated odds factor function θ̂_ω(·); deprecated, use \eoddsfactorf
+\hfodds	estimated odds factor (alias for \hoddsfactor); deprecated, use \efodds
+\hfoddsf	estimated odds factor function (alias for \hoddsfactorf); deprecated, use \efoddsf
+\hoddsff	estimated odds factor function (shorthand for \hoddsfactorf); deprecated, use \eoddsff
+\hhazfactor	estimated hazard factor θ̂_λ (\hfactor subscripted by \haz, so the hat covers only the main symbol); deprecated, use \ehazfactor
+\hhazfactorf	estimated hazard factor function θ̂_λ(·); deprecated, use \ehazfactorf
+\hfhaz	estimated hazard factor (alias for \hhazfactor); deprecated, use \efhaz
+\hfhazf	estimated hazard factor function (alias for \hhazfactorf); deprecated, use \efhazf
+\hhazff	estimated hazard factor function (shorthand for \hhazfactorf); deprecated, use \ehazff
+\hratefactor	estimated rate factor θ̂_λ (\hfactor subscripted by \rate, so the hat covers only the main symbol); deprecated, use \eratefactor
+\hratefactorf	estimated rate factor function θ̂_λ(·); deprecated, use \eratefactorf
+\hfrate	estimated rate factor (alias for \hratefactor); deprecated, use \efrate
+\hfratef	estimated rate factor function (alias for \hratefactorf); deprecated, use \efratef
+\hrateff	estimated rate factor function (shorthand for \hratefactorf); deprecated, use \erateff
+\hriskfactor	estimated risk factor θ̂_π (\hfactor subscripted by \risk, so the hat covers only the main symbol); deprecated, use \eriskfactor
+\hriskfactorf	estimated risk factor function θ̂_π(·); deprecated, use \eriskfactorf
+\hfrisk	estimated risk factor (alias for \hriskfactor); deprecated, use \efrisk
+\hfriskf	estimated risk factor function (alias for \hriskfactorf); deprecated, use \efriskf
+\hriskff	estimated risk factor function (shorthand for \hriskfactorf); deprecated, use \eriskff
+\hprevfactor	estimated prevalence factor θ̂_π (\hfactor subscripted by \prev, so the hat covers only the main symbol); deprecated, use \eprevfactor
+\hprevfactorf	estimated prevalence factor function θ̂_π(·); deprecated, use \eprevfactorf
+\hfprev	estimated prevalence factor (alias for \hprevfactor); deprecated, use \efprev
+\hfprevf	estimated prevalence factor function (alias for \hprevfactorf); deprecated, use \efprevf
+\hprevff	estimated prevalence factor function (shorthand for \hprevfactorf); deprecated, use \eprevff
+\hcuhazfactor	estimated cumulative hazard factor θ̂_Λ (\hfactor subscripted by \cuhaz, so the hat covers only the main symbol); deprecated, use \ecuhazfactor
+\hcuhazfactorf	estimated cumulative hazard factor function θ̂_Λ(·); deprecated, use \ecuhazfactorf
+\hfcuhaz	estimated cumulative hazard factor (alias for \hcuhazfactor); deprecated, use \efcuhaz
+\hfcuhazf	estimated cumulative hazard factor function (alias for \hcuhazfactorf); deprecated, use \efcuhazf
+\hcuhazff	estimated cumulative hazard factor function (shorthand for \hcuhazfactorf); deprecated, use \ecuhazff
+\hsurvfactor	estimated survival factor θ̂_S (\hfactor subscripted by \surv, so the hat covers only the main symbol); deprecated, use \esurvfactor
+\hsurvfactorf	estimated survival factor function θ̂_S(·); deprecated, use \esurvfactorf
+\hfsurv	estimated survival factor (alias for \hsurvfactor); deprecated, use \efsurv
+\hfsurvf	estimated survival factor function (alias for \hsurvfactorf); deprecated, use \efsurvf
+\hsurvff	estimated survival factor function (shorthand for \hsurvfactorf); deprecated, use \esurvff
 \emp	empirical estimator label ("emp" subscript)
 \km	Kaplan-Meier estimator label ("KM" subscript)
 \naa	Nelson-Aalen estimator label ("NA" subscript)
-\hsemp	empirical survival function estimator Ŝ_emp
-\hskm	Kaplan-Meier survival function estimator Ŝ_KM
-\hsnaa	Nelson-Aalen survival function estimator Ŝ_NA
-\hsempf	empirical survival function estimator Ŝ_emp(·) applied to argument
-\hskmf	Kaplan-Meier survival function estimator Ŝ_KM(·) applied to argument
-\hsnaaf	Nelson-Aalen survival function estimator Ŝ_NA(·) applied to argument
+\hsemp	empirical survival function estimator Ŝ_emp; deprecated, use \esemp
+\hskm	Kaplan-Meier survival function estimator Ŝ_KM; deprecated, use \eskm
+\hsnaa	Nelson-Aalen survival function estimator Ŝ_NA; deprecated, use \esnaa
+\hsempf	empirical survival function estimator Ŝ_emp(·) applied to argument; deprecated, use \esempf
+\hskmf	Kaplan-Meier survival function estimator Ŝ_KM(·) applied to argument; deprecated, use \eskmf
+\hsnaaf	Nelson-Aalen survival function estimator Ŝ_NA(·) applied to argument; deprecated, use \esnaaf
 \eQ	estimated quantile function Q̂
 \equantile	estimated quantile function (alias for \eQ)
 \eQf	estimated quantile function Q̂(·) applied to argument
@@ -1136,29 +1136,29 @@ name	interpretation
 \bfPsi	bold Greek capital letter Psi
 \bfOmega	bold Greek capital letter Omega
 \bfzero	bold zero vector/number
-\hCorrt	estimated correlation operator Corr̂ (legacy \hat form)
-\hCorr	estimated correlation Corr̂(·) applied to argument (legacy \hat form)
-\hCorrf	estimated correlation Corr̂(·) applied to argument (alias for \hCorr)
-\hCorrs	estimated correlation Corr̂(·, ·) applied to two arguments (legacy \hat form)
+\hCorrt	estimated correlation operator Corr̂ (legacy \hat form); deprecated, use \eCorrt
+\hCorr	estimated correlation Corr̂(·) applied to argument (legacy \hat form); deprecated, use \eCorr
+\hCorrf	estimated correlation Corr̂(·) applied to argument (alias for \hCorr); deprecated, use \eCorrf
+\hCorrs	estimated correlation Corr̂(·, ·) applied to two arguments (legacy \hat form); deprecated, use \eCorrs
 \eCorrt	estimated correlation operator (composable \Est form)
 \eCorr	estimated correlation applied to argument (composable \Est form)
 \eCorrf	estimated correlation applied to argument (alias for \eCorr)
 \eCorrs	estimated correlation applied to two arguments (composable \Est form)
-\hMSEt	estimated mean squared error operator MSÊ (legacy \hat form)
-\hMSE	estimated mean squared error applied to argument (legacy \hat form)
-\hMSEf	estimated mean squared error applied to argument (alias for \hMSE)
-\hRMSEt	estimated root mean squared error operator (legacy \hat form)
-\hRMSE	estimated root mean squared error applied to argument (legacy \hat form)
-\hRMSEf	estimated root mean squared error applied to argument (alias for \hRMSE)
+\hMSEt	estimated mean squared error operator MSÊ (legacy \hat form); deprecated, use \eMSEt
+\hMSE	estimated mean squared error applied to argument (legacy \hat form); deprecated, use \eMSE
+\hMSEf	estimated mean squared error applied to argument (alias for \hMSE); deprecated, use \eMSEf
+\hRMSEt	estimated root mean squared error operator (legacy \hat form); deprecated, use \eRMSEt
+\hRMSE	estimated root mean squared error applied to argument (legacy \hat form); deprecated, use \eRMSE
+\hRMSEf	estimated root mean squared error applied to argument (alias for \hRMSE); deprecated, use \eRMSEf
 \eMSEt	estimated mean squared error operator (composable \Est form)
 \eMSE	estimated mean squared error applied to argument (composable \Est form)
 \eMSEf	estimated mean squared error applied to argument (alias for \eMSE)
 \eRMSEt	estimated root mean squared error operator (composable \Est form)
 \eRMSE	estimated root mean squared error applied to argument (composable \Est form)
 \eRMSEf	estimated root mean squared error applied to argument (alias for \eRMSE)
-\hBiast	estimated bias operator Biaŝ (legacy \hat form)
-\hBias	estimated bias applied to argument (legacy \hat form)
-\hbias	estimated bias applied to argument (lowercase alias)
+\hBiast	estimated bias operator Biaŝ (legacy \hat form); deprecated, use \eBiast
+\hBias	estimated bias applied to argument (legacy \hat form); deprecated, use \eBias
+\hbias	estimated bias applied to argument (lowercase alias); deprecated, use \ebias
 \eBiast	estimated bias operator (composable \Est form)
 \eBias	estimated bias applied to argument (composable \Est form)
 \ebias	estimated bias applied to argument (lowercase alias)
@@ -1170,10 +1170,10 @@ name	interpretation
 \Ratiof	capital ratio function Ϙ(·)
 \hkoppa	estimated koppa ϙ̂ (hat-wrapped \koppa); deprecated, use \ekoppa
 \hKoppa	estimated Koppa Ϙ̂ (hat-wrapped \Koppa); deprecated, use \eKoppa
-\hqoppa	estimated qoppa (alias for \hkoppa)
-\hQoppa	estimated Qoppa (alias for \hKoppa)
+\hqoppa	estimated qoppa (alias for \hkoppa); deprecated, use \eqoppa
+\hQoppa	estimated Qoppa (alias for \hKoppa); deprecated, use \eQoppa
 \hRatio	estimated capital ratio Ϙ̂ (hat-wrapped \Ratio); deprecated, use \eRatio
-\hRatiof	estimated capital ratio function Ϙ̂(·)
+\hRatiof	estimated capital ratio function Ϙ̂(·); deprecated, use \eRatiof
 \ekoppa	estimated koppa ϙ̂ (estimator-wrapped \koppa)
 \eKoppa	estimated Koppa Ϙ̂ (estimator-wrapped \Koppa)
 \eqoppa	estimated qoppa (alias for \ekoppa)
@@ -1382,10 +1382,10 @@ name	interpretation
 \cmean	conditional population mean function of the outcome given the predictor, the subscripted \truemean with the subscript \Outvar \given \Predvar and no argument
 \cmeanf	conditional population mean of the outcome given the predictor at x, \cmeanf{x}; the same as \truemeansubf{\Outvar \given \Predvar}{x} and \condE{\Outvar}{\Predvar = x}
 \hmodmem	fitted model (hat-wrapped \modmem), legacy form; deprecated, use \emodmem
-\hmodmemf	fitted model applied to its argument (hat-wrapped), h-hat(·)
-\hmodmemof	fitted model with its mean-function model family as subscript (hat-wrapped)
+\hmodmemf	fitted model applied to its argument (hat-wrapped), h-hat(·); deprecated, use \emodmemf
+\hmodmemof	fitted model with its mean-function model family as subscript (hat-wrapped); deprecated, use \emodmemof
 \htargetfn	estimated target function: fitted counterpart of the target function (hat-wrapped), legacy form; deprecated, use \etargetfn
-\htargetfnf	estimated target function applied to its argument (hat-wrapped), \mu-hat(·)
+\htargetfnf	estimated target function applied to its argument (hat-wrapped), \mu-hat(·); deprecated, use \etargetfnf
 \emodmem	fitted model: estimate of a member of a mean-function model family (via \est)
 \emodmemf	fitted model applied to its argument (via \est), h-hat(·)
 \emodmemof	fitted model with its mean-function model family as subscript (via \est)
