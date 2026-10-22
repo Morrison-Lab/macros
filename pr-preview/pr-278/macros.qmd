@@ -269,6 +269,7 @@
 \def\ModResidual{\modresidual}
 \def\ModResid{\ModResidual}
 \def\prederr{{\varepsilon_{\text{pred}}}}
+\providecommand{\prederrf}[1]{{\prederr\paren{#1}}}
 \def\score{\llik'}
 \def\scorev{\vec{\llik'}}
 \def\scorei{\vec{\llik_i'}}
