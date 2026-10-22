@@ -41,13 +41,13 @@ name	interpretation
 \quantile	quantile function symbol (alias for \Q)
 \Qf	quantile function Q(·) applied to argument
 \quantilef	quantile function applied to argument (alias for \Qf)
-\hQ	estimated quantile function Q̂
-\hquantile	estimated quantile function (alias for \hQ)
+\hQ	estimated quantile function Q̂; deprecated, use \eQ
+\hquantile	estimated quantile function (alias for \hQ); deprecated, use \equantile
 \hQf	estimated quantile function Q̂(·) applied to argument
 \hquantilef	estimated quantile function applied to argument (alias for \hQf)
-\ph	estimated probability p-hat
+\ph	estimated probability p-hat; deprecated, use \ep
 \P	probability operator ℙ (blackboard bold)
-\hp	estimated probability (alias for \ph)
+\hp	estimated probability (alias for \ph); deprecated, use \ep
 \ga	Greek letter alpha (α)
 \a	Greek letter alpha (alias for \ga)
 \b	Greek letter beta (β)
@@ -107,27 +107,27 @@ name	interpretation
 \eqdef	equals-by-definition symbol (≝)
 \defeq	equals-by-definition (alias for \eqdef)
 \eqby	equals sign with the reason written over it (prints \eqby{\text{Thm 2}})
-\hb	estimated beta coefficient β̂
-\hcoef	estimated regression coefficient for covariate (β̂_x)
-\hintcoef	estimated regression intercept (β̂_0)
-\hvb	estimated beta vector (β̂-vector)
+\hb	estimated beta coefficient β̂; deprecated, use \eb
+\hcoef	estimated regression coefficient for covariate (β̂_x); deprecated, use \ecoef
+\hintcoef	estimated regression intercept (β̂_0); deprecated, use \eintcoef
+\hvb	estimated beta vector (β̂-vector); deprecated, use \evb
 \hvcoef	estimated coefficient vector (alias for \hvb)
 \vhcoef	estimated coefficient vector (transposed-letter alias for \hvb)
-\hR	Gelman-Rubin convergence diagnostic (potential scale reduction factor, R-hat)
-\hk	estimated kappa κ̂
-\hkappa	estimated kappa (alias for \hk)
-\hl	estimated lambda λ̂
-\hy	fitted / predicted value ŷ
-\yh	fitted value ŷ (alias for \hy)
+\hR	Gelman-Rubin convergence diagnostic (potential scale reduction factor, R-hat); deprecated, use \eR
+\hk	estimated kappa κ̂; deprecated, use \ek
+\hkappa	estimated kappa (alias for \hk); deprecated, use \ekappa
+\hl	estimated lambda λ̂; deprecated, use \el
+\hy	fitted / predicted value ŷ; deprecated, use \ey
+\yh	fitted value ŷ (alias for \hy); deprecated, use \ey
 \fitted	fitted or predicted value (alias for \hy)
 \V	variance operator symbol Var
-\hs	estimated sigma σ̂
-\hsig	estimated sigma (alias for \hs)
-\hS	estimated covariance matrix Σ̂
-\hSig	estimated Sigma (alias for \hS)
-\hSigma	estimated Sigma (alias for \hS)
-\hsurv	estimated survival function
-\hSurv	estimated survival function (alias for \hsurv)
+\hs	estimated sigma σ̂; deprecated, use \es
+\hsig	estimated sigma (alias for \hs); deprecated, use \esig
+\hS	estimated covariance matrix Σ̂; deprecated, use \eS
+\hSig	estimated Sigma (alias for \hS); deprecated, use \eSig
+\hSigma	estimated Sigma (alias for \hS); deprecated, use \eSigma
+\hsurv	estimated survival function; deprecated, use \esurv
+\hSurv	estimated survival function (alias for \hsurv); deprecated, use \eSurv
 \hSurvf	estimated survival function Ŝ(·) applied to argument
 \dist	distributes as relation (∼)
 \ddist	approximately distributes as (∿)
@@ -142,7 +142,7 @@ name	interpretation
 \Th	uppercase Theta (Θ)
 \xbar	sample mean x̄
 \samplemean	sample mean of n random variables, X̄_n (arguments: the variable and the sample size)
-\hth	estimated theta θ̂
+\hth	estimated theta θ̂; deprecated, use \eth
 \hthml	maximum likelihood estimate of theta
 \ba	begin aligned math environment
 \ea	end aligned math environment
@@ -267,10 +267,10 @@ name	interpretation
 \purple	typeset argument in purple
 \teal	typeset argument in teal
 \violet	typeset argument in violet
-\hE	estimated expected value (prints the hat of \Expp, with the argument in square brackets)
+\hE	estimated expected value (prints the hat of \Expp, with the argument in square brackets); deprecated, use \eE
 \hExp	estimated expected value (alias for \hE)
 \hExpf	estimated expected value (alias for \hE)
-\hmu	estimated mean μ̂
+\hmu	estimated mean μ̂; deprecated, use \emu
 \hmuf	estimated mean function μ̂(·)
 \Expp	expectation operator 𝔼 (no argument; blackboard bold)
 \Ep	expectation operator (alias for \Expp)
@@ -378,7 +378,7 @@ name	interpretation
 \FInf	Fisher information (alias for \einf)
 \einfm	expected information matrix symbol
 \einff	expected information function ℐ(·)
-\heinf	estimated Fisher information ℐ̂
+\heinf	estimated Fisher information ℐ̂; deprecated, use \eeinf
 \heinff	estimated Fisher information function ℐ̂(·)
 \1	indicator function 1_{·} (upright subscript style)
 \indic	indicator function 𝟙_{·} (blackboard bold)
@@ -600,7 +600,7 @@ name	interpretation
 \pmf	probability mass function ℙ(·)
 \cdf	cumulative distribution function symbol F
 \cdff	cumulative distribution function F(·) applied to argument
-\hcdf	estimated cumulative distribution function F̂
+\hcdf	estimated cumulative distribution function F̂; deprecated, use \ecdf
 \hcdff	estimated cumulative distribution function F̂(·) applied to argument
 \defLik	definitional expression for likelihood ℒ(θ)
 \defLogLik	definitional expression for log-likelihood ℓ
@@ -662,21 +662,21 @@ name	interpretation
 \prevff	prevalence factor function (shorthand for \prevfactorf)
 \cuhazff	cumulative hazard factor function (shorthand for \cuhazfactorf)
 \survff	survival factor function (shorthand for \survfactorf)
-\hprob	estimated probability π̂
+\hprob	estimated probability π̂; deprecated, use \eprob
 \hprobs	estimated probability symbol π̂ (alias for \hprob)
 \hPr	estimated probability with brackets Pr̂[·]
 \hrisk	estimated risk π̂ (alias for \hprob)
 \hprev	estimated prevalence π̂ (alias for \hprob)
-\hpoprisk	estimated population risk R̂ (hat-wrapped \poprisk); the empirical risk
+\hpoprisk	estimated population risk R̂ (hat-wrapped \poprisk); the empirical risk; deprecated, use \epoprisk
 \hpopriskf	estimated population risk function R̂(·) (hat-wrapped \popriskf)
-\hodds	estimated odds ω̂
+\hodds	estimated odds ω̂; deprecated, use \eodds
 \hATT	estimated average treatment effect on the treated ATT̂
 \hATTf	estimated average treatment effect on the treated function ATT̂(·)
-\hrate	estimated rate λ̂
+\hrate	estimated rate λ̂; deprecated, use \erate
 \hhaz	estimated hazard λ̂ (alias for \hrate)
-\hcuhaz	estimated cumulative hazard Λ̂
+\hcuhaz	estimated cumulative hazard Λ̂; deprecated, use \ecuhaz
 \hcumhaz	estimated cumulative hazard (alias for \hcuhaz)
-\hratio	generic estimated ratio ϙ̂ (hat-wrapped \ratio)
+\hratio	generic estimated ratio ϙ̂ (hat-wrapped \ratio); deprecated, use \eratio
 \hratiof	generic estimated ratio function ϙ̂(·)
 \hror	estimated odds ratio ϙ̂_ω (\hratio subscripted by \odds, so the hat covers only the main symbol)
 \horf	estimated odds ratio function ϙ̂_ω(·)
@@ -717,7 +717,7 @@ name	interpretation
 \hcuhazratiof	estimated cumulative hazard ratio function ϙ̂_Λ(·)
 \hrcuhazf	estimated cumulative hazard ratio function (alias for \hcuhazratiof)
 \hcuhazrf	estimated cumulative hazard ratio function (alias for \hcuhazratiof)
-\hfactor	generic estimated factor θ̂ (hat-wrapped \factor)
+\hfactor	generic estimated factor θ̂ (hat-wrapped \factor); deprecated, use \efactor
 \hfactorf	generic estimated factor function θ̂(·)
 \hff	generic estimated factor function (shorthand for \hfactorf)
 \hoddsfactor	estimated odds factor θ̂_ω (\hfactor subscripted by \odds, so the hat covers only the main symbol)
@@ -1168,11 +1168,11 @@ name	interpretation
 \Qoppa	archaic Greek letter Qoppa (alias for \Koppa)
 \Ratio	capital ratio symbol Ϙ (\Koppa)
 \Ratiof	capital ratio function Ϙ(·)
-\hkoppa	estimated koppa ϙ̂ (hat-wrapped \koppa)
-\hKoppa	estimated Koppa Ϙ̂ (hat-wrapped \Koppa)
+\hkoppa	estimated koppa ϙ̂ (hat-wrapped \koppa); deprecated, use \ekoppa
+\hKoppa	estimated Koppa Ϙ̂ (hat-wrapped \Koppa); deprecated, use \eKoppa
 \hqoppa	estimated qoppa (alias for \hkoppa)
 \hQoppa	estimated Qoppa (alias for \hKoppa)
-\hRatio	estimated capital ratio Ϙ̂ (hat-wrapped \Ratio)
+\hRatio	estimated capital ratio Ϙ̂ (hat-wrapped \Ratio); deprecated, use \eRatio
 \hRatiof	estimated capital ratio function Ϙ̂(·)
 \ekoppa	estimated koppa ϙ̂ (estimator-wrapped \koppa)
 \eKoppa	estimated Koppa Ϙ̂ (estimator-wrapped \Koppa)
@@ -1182,12 +1182,12 @@ name	interpretation
 \eRatiof	estimated capital ratio function Ϙ̂(·)
 \sdpar	a standard-deviation parameter (prints \sigma)
 \varpar	a variance parameter (prints \sigma^2)
-\hsdpar	an estimated standard deviation (prints \hat{\sigma})
+\hsdpar	an estimated standard deviation (prints \hat{\sigma}); deprecated, use \esdpar
 \esdpar	an estimated standard deviation (forward-looking form) (prints \est{\sdpar})
-\hvarpar	an estimated variance (prints \hat{\sigma}^2)
+\hvarpar	an estimated variance (prints \hat{\sigma}^2); deprecated, use \evarpar
 \evarpar	an estimated variance (forward-looking form) (prints \est{\sdpar}^2)
 \covmat	a covariance matrix (prints \Sigma)
-\hcovmat	an estimated covariance matrix (prints \hat{\Sigma})
+\hcovmat	an estimated covariance matrix (prints \hat{\Sigma}); deprecated, use \ecovmat
 \ecovmat	an estimated covariance matrix (forward-looking form) (prints \est{\covmat})
 \corpar	a correlation parameter (prints \rho)
 \noise	a realized value of the noise (prints ε, the same symbol as \Noise, following ISL and ESL)
@@ -1230,9 +1230,9 @@ name	interpretation
 \thresh	a classification threshold (prints \theta)
 \param	a generic parameter (prints \theta)
 \vparam	a generic parameter vector (prints \vec{\theta})
-\hparam	an estimated parameter (prints \hat{\theta})
+\hparam	an estimated parameter (prints \hat{\theta}); deprecated, use \eparam
 \eparam	an estimated parameter (forward-looking form) (prints \est{\param})
-\hvparam	an estimated parameter vector (prints \hat{\vec{\theta}})
+\hvparam	an estimated parameter vector (prints \hat{\vec{\theta}}); deprecated, use \evparam
 \evparam	an estimated parameter vector (forward-looking form) (prints \est{\vparam})
 \Param	a parameter as a random variable (prints \Theta)
 \Paramspace	a parameter space (prints \Theta)
@@ -1240,7 +1240,7 @@ name	interpretation
 \shape	a shape parameter (Weibull, gamma, first Beta shape) (prints \alpha)
 \shapeb	the second shape parameter of a Beta distribution (prints \beta)
 \df	degrees of freedom (prints the upright name df, because an abbreviation is a name)
-\hdf	estimated degrees of freedom (prints the hat of the upright name df)
+\hdf	estimated degrees of freedom (prints the hat of the upright name df); deprecated, use \edf
 \edf	estimated degrees of freedom (forward-looking form) (prints \est{\df})
 \gammafn	the gamma function (prints \Gamma)
 \samplespace	a sample space (prints \Omega)
@@ -1251,9 +1251,9 @@ name	interpretation
 \condnum	a condition number (prints \kappa)
 \change	a change or difference (prints \Delta)
 \vprob	a vector of probabilities (prints \vecf{\pi})
-\hmean	an estimated mean (prints \hat{\mu})
+\hmean	an estimated mean (prints \hat{\mu}); deprecated, use \emean
 \emean	an estimated mean (forward-looking form) (prints \est{\mean})
-\hregcoef	an estimated unsubscripted regression coefficient (prints \hat{\beta})
+\hregcoef	an estimated unsubscripted regression coefficient (prints \hat{\beta}); deprecated, use \eregcoef
 \eregcoef	an estimated unsubscripted regression coefficient (forward-looking form) (prints \est{\regcoef})
 \armijo	the Armijo sufficient-decrease constant of a backtracking line search (prints c_1)
 \schedfrac	the fraction of a learning-rate schedule that has elapsed (prints \zeta)
@@ -1293,7 +1293,7 @@ name	interpretation
 \lowend	the lower endpoint of an interval (prints \alpha)
 \highend	the upper endpoint of an interval (prints \beta)
 \precision	a precision (reciprocal variance) (prints \tau)
-\hprecision	an estimated precision (prints \hat{\tau})
+\hprecision	an estimated precision (prints \hat{\tau}); deprecated, use \eprecision
 \eprecision	an estimated precision (forward-looking form) (prints \est{\precision})
 \mahal	the Mahalanobis distance function (prints \Delta)
 \mahaldist	a Mahalanobis distance value (prints \delta)
@@ -1318,7 +1318,7 @@ name	interpretation
 \rfac	the factor of a density that does not depend on the parameter, in the factorization theorem for sufficiency (prints h)
 \rfacf	the parameter-free factor evaluated at a sample, \rfacf{\vx} (prints h(x))
 \nuisance	a nuisance parameter (prints \lambda)
-\hnuisance	an estimated nuisance parameter (prints \hat{\lambda})
+\hnuisance	an estimated nuisance parameter (prints \hat{\lambda}); deprecated, use \enuisance
 \enuisance	an estimated nuisance parameter (forward-looking form) (prints \est{\nuisance})
 \interest	a parameter of interest (prints \psi)
 \quantlevel	a quantile level (prints \beta)
@@ -1381,10 +1381,10 @@ name	interpretation
 \truemeansubf	true mean function with the subscript given as the first argument, applied to the second argument; with the subscript \Outvar \given \Predvar it is the conditional population mean \condE{\Outvar}{\Predvar = x}
 \cmean	conditional population mean function of the outcome given the predictor, the subscripted \truemean with the subscript \Outvar \given \Predvar and no argument
 \cmeanf	conditional population mean of the outcome given the predictor at x, \cmeanf{x}; the same as \truemeansubf{\Outvar \given \Predvar}{x} and \condE{\Outvar}{\Predvar = x}
-\hmodmem	fitted model (hat-wrapped \modmem), legacy form
+\hmodmem	fitted model (hat-wrapped \modmem), legacy form; deprecated, use \emodmem
 \hmodmemf	fitted model applied to its argument (hat-wrapped), h-hat(·)
 \hmodmemof	fitted model with its mean-function model family as subscript (hat-wrapped)
-\htargetfn	estimated target function: fitted counterpart of the target function (hat-wrapped), legacy form
+\htargetfn	estimated target function: fitted counterpart of the target function (hat-wrapped), legacy form; deprecated, use \etargetfn
 \htargetfnf	estimated target function applied to its argument (hat-wrapped), \mu-hat(·)
 \emodmem	fitted model: estimate of a member of a mean-function model family (via \est)
 \emodmemf	fitted model applied to its argument (via \est), h-hat(·)

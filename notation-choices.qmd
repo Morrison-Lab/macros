@@ -232,6 +232,10 @@ Our convention is to write estimands with lower-case Greek letters, such as $\al
 We write an estimator by placing a hat over the symbol of its estimand, as in $\hat\theta$.
 Usually the dependence of the estimator on the data is left implicit.
 
+In the source, we write the hat with the macro `\est{\theta}`, which prints $\est{\theta}$, or with a named macro that begins with `e`, such as `\eth` or `\ecoef{x}`.
+The older macros that begin with `h`, such as `\hth` and `\hcoef{x}`, print the same symbols but are deprecated.
+Each one is marked "deprecated, use" with its replacement in `interpretations.tsv`.
+
 Other sources use other symbols, so check which symbol a source uses for the estimand before reading a formula.
 
 ## Short symbols for the pieces of the bias-variance decomposition {#sec-bias-variance-symbols}
