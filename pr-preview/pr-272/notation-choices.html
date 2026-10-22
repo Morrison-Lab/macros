@@ -447,6 +447,7 @@ window.Quarto = {
   <li><a href="#sec-brace-delimited-forms" id="toc-sec-brace-delimited-forms" class="nav-link" data-scroll-target="#sec-brace-delimited-forms">An exponent on a function with built-in delimiters</a></li>
   <li><a href="#sec-counting-notation" id="toc-sec-counting-notation" class="nav-link" data-scroll-target="#sec-counting-notation">Counting: cardinality, factorials and binomial coefficients</a></li>
   <li><a href="#sec-sum-of-elements" id="toc-sec-sum-of-elements" class="nav-link" data-scroll-target="#sec-sum-of-elements">The sum of the elements of a vector</a></li>
+  <li><a href="#sec-input-counts" id="toc-sec-input-counts" class="nav-link" data-scroll-target="#sec-input-counts">The number of inputs and the number of input variables</a></li>
   </ul>
 <div class="toc-actions"><ul><li><a href="https://github.com/d-morrison/macros/blob/main/notation-choices.qmd" class="toc-action"><i class="bi bi-github"></i>View source</a></li></ul></div></nav>
     </div>
@@ -688,6 +689,11 @@ window.Quarto = {
 <li>The sum of the entries of <span class="math inline">\(\vy\)</span> equals the dot product <span class="math inline">\(\vone \cdot \vy\)</span> of <span class="math inline">\(\vy\)</span> with the ones vector, so the symbol and the dot product are two names for one quantity.</li>
 </ul>
 <p>Some sources write the sum of <span class="math inline">\(n\)</span> random variables as <span class="math inline">\(S_n\)</span>. The subscript <span class="math inline">\(n\)</span> there is the sample size, not the vector. Within these notes, <span class="math inline">\(S\)</span> with two subscripts, such as <code>\sspred</code>, is a centered sum of squares or cross-products, not a sum of elements. When you read a formula from another source, check whether the subscript of <span class="math inline">\(S\)</span> is a count or a vector before you compare it with ours.</p>
+</section>
+<section id="sec-input-counts" class="level2">
+<h2 class="anchored" data-anchor-id="sec-input-counts">The number of inputs and the number of input variables</h2>
+<p>An input is one observation’s vector of values, so there are <span class="math inline">\(\nobs\)</span> inputs. An input variable is one coordinate of that vector, so there are <span class="math inline">\(\ninputvars\)</span> input variables. The data matrix <span class="math inline">\(\mX\)</span> has <span class="math inline">\(\nobs\)</span> rows and <span class="math inline">\(\ninputvars\)</span> columns. We name the count <code>\ninputvars</code>, not <code>\ninputs</code>, because “the number of inputs” can be read as either count. The older macro <code>\inputdim</code> is kept as an alias for <code>\ninputvars</code>.</p>
+<p>Many sources write the number of input variables as <span class="math inline">\(p\)</span> (ISL and ESL) or <span class="math inline">\(d\)</span>, and some write <span class="math inline">\(D\)</span>. We avoid <span class="math inline">\(D\)</span> because it is the design matrix.</p>
 
 
 </section>
