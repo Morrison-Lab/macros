@@ -235,6 +235,8 @@ Usually the dependence of the estimator on the data is left implicit.
 In the source, we write the hat with the macro `\est{\theta}`, which prints $\est{\theta}$, or with a named macro that begins with `e`, such as `\eth` or `\ecoef{x}`.
 The older hat macros that begin with `h`, such as `\hth` and `\hcoef{x}`, have `e` counterparts that print the same symbols.
 Most of them are marked "deprecated, use" with the replacement in `interpretations.tsv`.
+We made this decision on 2026-10-22, so that a hat has one source form, the `e` macros, which name the estimate they print.
+Each deprecated macro still works, so no existing page breaks.
 
 Other sources use other symbols, so check which symbol a source uses for the estimand before reading a formula.
 
