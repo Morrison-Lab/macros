@@ -1355,7 +1355,8 @@ name	interpretation
 \modmemof	member (or fit) h of the mean-function model family given as the argument, h with the family as subscript
 \nobs	sample size n: the number of observations or training examples
 \nmodels	number M of models (classifiers) in a model family
-\inputdim	number p of input variables (predictors)
+\ninputvars	number p of input variables (predictors): the columns of the data matrix, not the number of inputs
+\inputdim	alias for \ninputvars, kept for existing uses
 \nparams	number p* of parameters: the columns of the design matrix after any feature map
 \npatterns	number K of distinct covariate patterns in a dataset
 \nreps	number m of replicates (observations) that share one covariate pattern; written with a pattern index, as \nreps_k
