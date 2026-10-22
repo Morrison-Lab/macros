@@ -133,6 +133,43 @@ for (g in names(notation_groups)) {
 ```
 
 
+# Other comparisons {#sec-notation-other}
+
+## Subscripts and parentheses {#sec-notation-subscripts}
+
+The [Notation Choices](notation-choices.qmd#sec-subscripts-parentheses) page gives the reason for our split.
+
+| object | our form | other forms you may meet |
+|---|---|---|
+| entry of a vector or matrix | $x_i$, $A_{ij}$ | $x(i)$, $A(i, j)$, and `A[i, j]` in code |
+| term of a [sequence](https://morrison-lab.github.io/mds/functions.html#def-sequence) | $a_n$ | $a(n)$ |
+| function with a parameter | $f_\theta(x)$ | $f(x; \theta)$, $f(x \mid \theta)$, $f(x, \theta)$ |
+| probability under a parameter | $\Pr_\theta(A)$ | $\Pr(A; \theta)$, $\Pr(A \mid \theta)$ |
+| derivative of order $k$ | $f^{(k)}(x)$ | $f^{[k]}(x)$, $\mathrm{D}^k f(x)$ |
+| order statistic | $X_{(i)}$ | $X_{i:n}$ |
+| sample index | $x_i$ | $x^{(i)}$ |
+
+: Subscripts and parentheses in these notes, and the alternatives {#tbl-subscript-parentheses}
+
+## Information matrices {#sec-notation-information}
+
+Sources disagree on the symbols for the observed and expected information
+(@tbl-info-mat-symbols).
+
+::: {#tbl-info-mat-symbols}
+
+| Source                | Observed information | Expected information |
+|-----------------------|----------------------|----------------------|
+| These notes           | $\oinf$              | $\einf$              |
+| @dobson4e             | $-U'$                | $\mathfrak{I}$       |
+| @dunn2018generalized  | $\mathfrak{I}$       | $\mathcal{I}$        |
+| @mclachlan2007em      | $I$                  | $\mathcal{I}$        |
+| @wood2017generalized  | $\hat{I}$            | $\mathcal{I}$        |
+
+Notation for information matrices in several sources
+
+:::
+
 # Other symbols used {#sec-notation-symbols}
 
 The side-by-side tables show the symbols that differ between sources.
