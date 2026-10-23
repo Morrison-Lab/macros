@@ -120,3 +120,12 @@ This approach is useful when you prefer to load macros at the document level wit
 - [quarto-dev discussion #8376](https://github.com/orgs/quarto-dev/discussions/8376) — Follow-up discussing limitations of the `include` shortcode in RevealJS output and the recommended `include-in-header` workaround using a MathJax configuration script.
 - [Quarto docs: Equations — Custom TeX macros](https://quarto.org/docs/authoring/markdown-basics.html#:~:text=If%20you%20want%20to%20define%20custom%20TeX%20macros) — Official Quarto documentation on defining custom TeX macros for HTML output.
 - [Stack Overflow: How to define LaTeX macros globally for a Quarto book?](https://stackoverflow.com/questions/76398554/how-to-define-latex-macros-globally-for-a-quarto-book) — Detailed community discussion covering both HTML and PDF strategies, including the `\providecommand` trick for avoiding XeTeX redefinition errors in multi-file books.
+
+## License
+
+The macro definitions and other code are under the [MIT License](LICENSE).
+The documentation pages and prose are under
+[Creative Commons Attribution 4.0 International](LICENSE-docs) (CC BY 4.0).
+That covers `README.md`, `index.qmd`, `notation-choices.qmd`, `notation-across-sources.qmd`, `macros-table.qmd`, the demo pages and `docs/`.
+`macros.qmd` and the files in `_extensions/` and `tools/` are code.
+Quoted material and cited sources belong to their authors.
