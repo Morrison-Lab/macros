@@ -631,7 +631,6 @@ Each symbol is a macro that names a role, so the letter is our choice.
 -   The sufficient statistic is $\stat$, from the existing macro `\stat`, and `\statf{x}` prints $\statf{x}$.
 -   The base measure is $\basemeasure$, from `\basemeasure`, and `\basemeasuref{x}` prints $\basemeasuref{x}$.
 -   The log-partition function is $\logpartition$, from `\logpartition`, and `\logpartitionf{\natparam}` prints $\logpartitionf{\natparam}$.
--   The dispersion parameter is $\dispersion$, from `\dispersion`.
 
 Other sources use other letters for the same roles.
 Casella and Berger write $h(x)\,c(\theta)\exp\paren{w(\theta) t(x)}$, which puts the log-partition function inside $c(\theta)$ and the natural parameter in $w(\theta)$.

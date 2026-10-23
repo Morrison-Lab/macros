@@ -1407,7 +1407,6 @@
 \providecommand{\basemeasuref}[1]{{\basemeasure\paren{#1}}}
 \def\logpartition{A}
 \providecommand{\logpartitionf}[1]{{\logpartition\paren{#1}}}
-\def\dispersion{\phi}
 \def\nuisance{\lambda}
 \def\hnuisance{\hat{\lambda}}
 \def\enuisance{\est{\nuisance}}

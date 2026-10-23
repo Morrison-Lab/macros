@@ -1528,4 +1528,3 @@ name	interpretation
 \basemeasuref	base measure of an exponential family at its argument (prints h(#1))
 \logpartition	log-partition function of an exponential family (prints A)
 \logpartitionf	log-partition function of an exponential family at its argument (prints A(#1))
-\dispersion	dispersion parameter of an exponential dispersion family (prints \phi)
