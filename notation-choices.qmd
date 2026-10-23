@@ -630,8 +630,15 @@ Each symbol is a macro that names a role, so the letter is our choice.
 -   The natural parameter is $\natparam$, from `\natparam`, and the vector form is $\vnatparam$, from `\vnatparam`.
 -   The sufficient statistic is $\stat$, from the existing macro `\stat`, and `\statf{x}` prints $\statf{x}$.
 -   The base measure is $\basemeasure$, from `\basemeasure`, and `\basemeasuref{x}` prints $\basemeasuref{x}$.
+    It is the same factor as the existing `\rfac` in the factorization theorem, so `\basemeasure` expands to `\rfac`, and the two always print alike.
+    The letter $h$ also names the hazard function `\h`; the argument tells them apart, since the hazard takes a time.
 -   The log-partition function is $\logpartition$, from `\logpartition`, and `\logpartitionf{\natparam}` prints $\logpartitionf{\natparam}$.
 
+The natural parameter prints the same $\eta$ as the linear predictor `\lincomp` of a generalized linear model, and the two are the same quantity only for the canonical link.
+We keep two macros so that a page can say which one it means.
+
 Other sources use other letters for the same roles.
-Casella and Berger write $h(x)\,c(\theta)\exp\paren{w(\theta) t(x)}$, which puts the log-partition function inside $c(\theta)$ and the natural parameter in $w(\theta)$.
-Dobson and Barnett write $\exp\paren{a(y) b(\theta) + c(\theta) + d(y)}$, whose natural parameter is $b(\theta)$ when $a(y) = y$.
+Casella and Berger write $h(x)\,c(\theta)\exp\paren{\sum_{i=1}^k w_i(\theta) t_i(x)}$ with $k$ terms; we write the case $k = 1$.
+Their normalizing constant $c(\theta)$ is $\expf{-\logpartition}$ when the single weight $w(\theta)$ is the natural parameter, and their $h(x)$ is our base measure.
+Dobson and Barnett write $\exp\paren{a(y) b(\theta) + c(\theta) + d(y)}$.
+When $a(y) = y$, their $b(\theta)$ is the natural parameter, $c(\theta)$ is minus the log-partition function, and $\exp\paren{d(y)}$ is the base measure.

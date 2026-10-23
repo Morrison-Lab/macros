@@ -1403,8 +1403,8 @@
 \providecommand{\rfacf}[1]{{\rfac\paren{#1}}}
 \def\natparam{\eta}
 \def\vnatparam{\vecf{\natparam}}
-\def\basemeasure{h}
-\providecommand{\basemeasuref}[1]{{\basemeasure\paren{#1}}}
+\def\basemeasure{\rfac}
+\providecommand{\basemeasuref}[1]{{\rfacf{#1}}}
 \def\logpartition{A}
 \providecommand{\logpartitionf}[1]{{\logpartition\paren{#1}}}
 \def\nuisance{\lambda}
