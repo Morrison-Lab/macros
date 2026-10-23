@@ -1500,7 +1500,7 @@
 \def\truenulls{\mathcal{I}_0}
 \def\levelset{\mathcal{L}}
 \providecommand{\levelsetof}[2]{{\levelset_{#1}\paren{#2}}}
-\def\predfn{\outvar}
+\def\predfn{f}
 \def\epredfn{\est{\predfn}}
 \providecommand{\predfnf}[1]{{\predfn\paren{#1}}}
 \providecommand{\epredfnf}[1]{{\epredfn\paren{#1}}}
