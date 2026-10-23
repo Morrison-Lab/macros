@@ -449,6 +449,7 @@ window.Quarto = {
   <li><a href="#sec-sum-of-elements" id="toc-sec-sum-of-elements" class="nav-link" data-scroll-target="#sec-sum-of-elements">The sum of the elements of a vector</a></li>
   <li><a href="#sec-input-counts" id="toc-sec-input-counts" class="nav-link" data-scroll-target="#sec-input-counts">The number of inputs and the number of input variables</a></li>
   <li><a href="#sec-training-symbols" id="toc-sec-training-symbols" class="nav-link" data-scroll-target="#sec-training-symbols">Sums of squares, and counts and indices for training</a></li>
+  <li><a href="#sec-exponential-family-notation" id="toc-sec-exponential-family-notation" class="nav-link" data-scroll-target="#sec-exponential-family-notation">Exponential families</a></li>
   </ul>
 <div class="toc-actions"><ul><li><a href="https://github.com/d-morrison/macros/blob/main/notation-choices.qmd" class="toc-action"><i class="bi bi-github"></i>View source</a></li></ul></div></nav>
     </div>
@@ -716,6 +717,18 @@ window.Quarto = {
 <li>The number of features in a feature vector is <code>\ninputvars</code>, which prints <span class="math inline">\(\ninputvars\)</span>, because we avoid <span class="math inline">\(D\)</span> for a count. See <a href="#sec-input-counts">the input counts entry</a>.</li>
 </ul>
 <p>We do not give the size of a minibatch a letter of its own. Write it as the cardinality of the set of indices, such as <code>\card{B_t}</code>, because the letter <span class="math inline">\(b\)</span> is already the bias of a neural network in <a href="#sec-ml-statistics-names">the names entry</a>.</p>
+</section>
+<section id="sec-exponential-family-notation" class="level2">
+<h2 class="anchored" data-anchor-id="sec-exponential-family-notation">Exponential families</h2>
+<p>We write the density of a one-parameter exponential family in its natural form, <span class="math inline">\(\basemeasuref{x} \expf{\natparam \statf{x} - \logpartitionf{\natparam}}\)</span>. Each symbol is a macro that names a role, so the letter is our choice.</p>
+<ul>
+<li>The natural parameter is <span class="math inline">\(\natparam\)</span>, from <code>\natparam</code>, and the vector form is <span class="math inline">\(\vnatparam\)</span>, from <code>\vnatparam</code>.</li>
+<li>The sufficient statistic is <span class="math inline">\(\stat\)</span>, from the existing macro <code>\stat</code>, and <code>\statf{x}</code> prints <span class="math inline">\(\statf{x}\)</span>.</li>
+<li>The base measure is <span class="math inline">\(\basemeasure\)</span>, from <code>\basemeasure</code>, and <code>\basemeasuref{x}</code> prints <span class="math inline">\(\basemeasuref{x}\)</span>. It is the same factor as the existing <code>\rfac</code> in the factorization theorem, so <code>\basemeasure</code> expands to <code>\rfac</code>, and the two always print alike. The letter <span class="math inline">\(h\)</span> also names the hazard function <code>\h</code>; the argument tells them apart, since the hazard takes a time.</li>
+<li>The log-partition function is <span class="math inline">\(\logpartition\)</span>, from <code>\logpartition</code>, and <code>\logpartitionf{\natparam}</code> prints <span class="math inline">\(\logpartitionf{\natparam}\)</span>.</li>
+</ul>
+<p>The natural parameter prints the same <span class="math inline">\(\eta\)</span> as the linear predictor <code>\lincomp</code> of a generalized linear model, and the two are the same quantity only for the canonical link. We keep two macros so that a page can say which one it means.</p>
+<p>Other sources use other letters for the same roles. Casella and Berger write <span class="math inline">\(h(x)\,c(\theta)\exp\paren{\sum_{i=1}^k w_i(\theta) t_i(x)}\)</span> with <span class="math inline">\(k\)</span> terms; we write the case <span class="math inline">\(k = 1\)</span>. Their normalizing constant <span class="math inline">\(c(\theta)\)</span> is <span class="math inline">\(\expf{-\logpartition}\)</span> when the single weight <span class="math inline">\(w(\theta)\)</span> is the natural parameter, and their <span class="math inline">\(h(x)\)</span> is our base measure. Dobson and Barnett write <span class="math inline">\(\exp\paren{a(y) b(\theta) + c(\theta) + d(y)}\)</span>. When <span class="math inline">\(a(y) = y\)</span>, their <span class="math inline">\(b(\theta)\)</span> is the natural parameter, <span class="math inline">\(c(\theta)\)</span> is minus the log-partition function, and <span class="math inline">\(\exp\paren{d(y)}\)</span> is the base measure.</p>
 
 
 </section>
