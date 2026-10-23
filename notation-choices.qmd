@@ -621,3 +621,18 @@ Some existing macros already cover other symbols that lecture exercises write as
 
 We do not give the size of a minibatch a letter of its own.
 Write it as the cardinality of the set of indices, such as `\card{B_t}`, because the letter $b$ is already the bias of a neural network in [the names entry](#sec-ml-statistics-names).
+
+## Exponential families {#sec-exponential-family-notation}
+
+We write the density of a one-parameter exponential family in its natural form, $\basemeasuref{x} \expf{\natparam \statf{x} - \logpartitionf{\natparam}}$.
+Each symbol is a macro that names a role, so the letter is our choice.
+
+-   The natural parameter is $\natparam$, from `\natparam`, and the vector form is $\vnatparam$, from `\vnatparam`.
+-   The sufficient statistic is $\stat$, from the existing macro `\stat`, and `\statf{x}` prints $\statf{x}$.
+-   The base measure is $\basemeasure$, from `\basemeasure`, and `\basemeasuref{x}` prints $\basemeasuref{x}$.
+-   The log-partition function is $\logpartition$, from `\logpartition`, and `\logpartitionf{\natparam}` prints $\logpartitionf{\natparam}$.
+-   The dispersion parameter is $\dispersion$, from `\dispersion`.
+
+Other sources use other letters for the same roles.
+Casella and Berger write $h(x)\,c(\theta)\exp\paren{w(\theta) t(x)}$, which puts the log-partition function inside $c(\theta)$ and the natural parameter in $w(\theta)$.
+Dobson and Barnett write $\exp\paren{a(y) b(\theta) + c(\theta) + d(y)}$, whose natural parameter is $b(\theta)$ when $a(y) = y$.
