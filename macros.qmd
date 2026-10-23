@@ -1401,6 +1401,12 @@
 \providecommand{\sfacf}[2]{{\sfac\paren{#1 ; #2}}}
 \def\rfac{h}
 \providecommand{\rfacf}[1]{{\rfac\paren{#1}}}
+\def\natparam{\eta}
+\def\vnatparam{\vecf{\natparam}}
+\def\basemeasure{\rfac}
+\providecommand{\basemeasuref}[1]{{\rfacf{#1}}}
+\def\logpartition{A}
+\providecommand{\logpartitionf}[1]{{\logpartition\paren{#1}}}
 \def\nuisance{\lambda}
 \def\hnuisance{\hat{\lambda}}
 \def\enuisance{\est{\nuisance}}
