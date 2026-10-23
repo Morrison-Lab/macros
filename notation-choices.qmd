@@ -243,17 +243,23 @@ Other sources use other symbols, so check which symbol a source uses for the est
 ## Short symbols for the pieces of the bias-variance decomposition {#sec-bias-variance-symbols}
 
 Fix a covariate value $\predvar$, a training sample size, and a fitting procedure.
-The fitted prediction function $\predfn$ varies from one training data set to the next.
+The fitted prediction function $\epredfn$ varies from one training data set to the next.
+We follow ISL: the prediction function is $f$, the fitted one is $\epredfn$ (from the macro `\epredfn`), and the fitted value at a point is $\eoutvar$, which prints $\hat{y}$.
+The macro used to print $g$, so the fitted function printed as $\hat{g}$.
+On 2026-10-22 we chose $f$ provisionally, because it is the symbol in the textbooks.
+On 2026-10-23 we chose to follow ISL's notation, after a request to write the function as $\hat{y}$ was dropped, so the function is $f$ and $\hat{y}$ stays the fitted value.
+ESL also writes the fitted function as $\hat{f}$, and uses $\hat{G}$ for a predicted class.
+The older macros `\hf` and `\hfx{x}` print the same fitted function and are deprecated in favour of `\epredfn` and `\epredfnf{x}`.
 Let $\Outvar$ be a new outcome at $\predvar$, independent of the training data.
 Write $\truemeanf{\predvar}$ for the mean of $\Outvar$.
 The noise is the random part of $\Outvar$ that no function of the covariates predicts.
 Three short symbols name the pieces of the expected squared error in predicting $\Outvar$:
 
--   The bias of the fitted value at $\predvar$ is $\biassymf{\predfn\paren{\predvar}}$, from the macro `\biassymf`.
+-   The bias of the fitted value at $\predvar$ is $\biassymf{\epredfnf{\predvar}}$, from the macro `\biassymf`.
     It is the mean of the fitted value over training data sets, minus the true mean $\truemeanf{\predvar}$.
     This is the expected error of the fitted value as an estimate of the true mean.
     The long operator $\Biast$ stays available for the full definition.
--   The variance of the fitted value over training data sets is $\varsymf{\predfn\paren{\predvar}}$, from the macro `\varsymf`.
+-   The variance of the fitted value over training data sets is $\varsymf{\epredfnf{\predvar}}$, from the macro `\varsymf`.
     The macro `\varsymf` is a variance operator for any random variable, in the style of the expectation $\E{\cdot}$.
 -   The irreducible error is $\irrerr$, from the macro `\irrerr`.
     It is the variance of the noise, so it is the existing variance parameter $\varpar$.
@@ -262,7 +268,7 @@ Three short symbols name the pieces of the expected squared error in predicting 
 With these symbols, the expected squared error splits into three pieces, where the expectation is over the training data and over $\Outvar$:
 
 $$
-\E{\sqf{\Outvar - \predfn\paren{\predvar}}} = \sqf{\biassymf{\predfn\paren{\predvar}}} + \varsymf{\predfn\paren{\predvar}} + \irrerr.
+\E{\sqf{\Outvar - \epredfnf{\predvar}}} = \sqf{\biassymf{\epredfnf{\predvar}}} + \varsymf{\epredfnf{\predvar}} + \irrerr.
 $$
 
 A derivation that does not manipulate a piece can write its short symbol, after the piece is defined in full.

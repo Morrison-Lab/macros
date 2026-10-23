@@ -169,8 +169,8 @@ name	interpretation
 \lpnorm	name of an ℓ_p norm or penalty, such as ℓ_1 or ℓ_2 (argument: p)
 \lbound	a lower bound of a set (ℓ)
 \ubound	an upper bound of a set (u)
-\hf	fitted prediction function (f̂)
-\hfx	fitted prediction function applied to its argument, f̂(·)
+\hf	fitted prediction function (f̂); deprecated, use \epredfn
+\hfx	fitted prediction function applied to its argument, f̂(·); deprecated, use \epredfnf
 \loglik	log-likelihood symbol (alias for \llik)
 \logl	log-likelihood symbol (alias for \llik)
 \llikf	log-likelihood function ℓ(·)
@@ -1491,13 +1491,13 @@ name	interpretation
 \levelset	symbol for a level set of a function
 \levelsetof	level set of the function given as the second argument at the value given as the first, written with the value as a subscript
 \predfn	symbol for a prediction function, which maps predictor values to a predicted outcome
-\epredfn	estimated prediction function, such as one fitted from training data
+\epredfn	estimated prediction function, such as one fitted from training data; replaces the deprecated \hf
 \predfnf	prediction function applied to the argument
-\epredfnf	estimated prediction function applied to the argument
+\epredfnf	estimated prediction function applied to the argument; replaces the deprecated \hfx
 \cent	mark for the centered version of the argument (the data with its mean subtracted)
 \aug	mark for the augmented version of the argument (extended with additional entries)
-\bestpredfn	best prediction function g*: the conditional mean of the outcome given the inputs, which minimizes the squared-error risk
-\bestpredfnf	best prediction function applied to its argument, g*(·)
+\bestpredfn	best prediction function f*: the conditional mean of the outcome given the inputs, which minimizes the squared-error risk
+\bestpredfnf	best prediction function applied to its argument, f*(·)
 \predfam	prediction function family Y-script: the set of prediction functions that training chooses from (prediction level; a member is \predfn, a fitted member is \epredfn)
 \predfamof	prediction function family with its label as the subscript, Y-script with the label below
 \distfam	probability distribution model family P-script: a set of probability distribution models, each a candidate for the distribution of the outcome given the covariate (distribution level)
