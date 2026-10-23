@@ -190,6 +190,11 @@
 \def\ninputvars{p}
 \def\inputdim{\ninputvars}
 \def\nparams{p^{*}}
+\def\nnetparams{P}
+\def\iter{t}
+\def\layeridx{\ell}
+\def\RSS{\operatorname{RSS}}
+\def\TSS{\operatorname{TSS}}
 \def\npatterns{K}
 \def\nreps{m}
 \def\nevents{s}
