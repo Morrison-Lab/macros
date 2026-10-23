@@ -244,11 +244,14 @@ Other sources use other symbols, so check which symbol a source uses for the est
 
 Fix a covariate value $\predvar$, a training sample size, and a fitting procedure.
 The fitted prediction function $\epredfn$ varies from one training data set to the next.
-We write the prediction function as $f$, as ISL and ESL do, and the fitted one as $\epredfn$, from the macro `\epredfn`.
-The macro used to print $g$, so the fitted function printed as $\hat{g}$.
-We chose $f$ provisionally on 2026-10-22, before the maintainer answered the question of $f$ against $g$, because $f$ is the symbol in the textbooks.
-The maintainer can reverse the choice.
-The older macros `\hf` and `\hfx{x}` print the same fitted function and are deprecated in favour of `\epredfn` and `\epredfnf{x}`.
+We write the fitted prediction function as $\epredfn$, from the macro `\epredfn`, which prints $\hat{y}$.
+The macro `\predfn` prints $y$, so the prediction function takes the letter of the outcome it predicts, and the best prediction function `\bestpredfn` prints $y^*$.
+The macro used to print $g$, and for a few hours on 2026-10-22 it printed $f$.
+The maintainer decided on 2026-10-23 that the function is written $\hat{y}$.
+This is the same glyph as `\eoutvar`, the fitted value.
+We accept the overlap: the fitted function is applied to an argument, as in $\epredfnf{\predvar}$, and the fitted value is not.
+The older macros `\hf` and `\hfx{x}` still print $\hat{f}$ and are not deprecated, because they print a different symbol.
+Other sources write the fitted function as $\hat{f}$ (ISL and ESL) or $\hat{g}$.
 Let $\Outvar$ be a new outcome at $\predvar$, independent of the training data.
 Write $\truemeanf{\predvar}$ for the mean of $\Outvar$.
 The noise is the random part of $\Outvar$ that no function of the covariates predicts.
