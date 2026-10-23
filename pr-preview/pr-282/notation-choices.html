@@ -556,6 +556,7 @@ window.Quarto = {
 <h2 class="anchored" data-anchor-id="sec-estimand-estimator-symbols">Symbols for estimands and estimators</h2>
 <p>An estimand is the quantity we want to learn about, and an estimator is a rule that computes a guess of it from data.</p>
 <p>Our convention is to write estimands with lower-case Greek letters, such as <span class="math inline">\(\alpha, \beta, \gamma, \delta\)</span>. We write an estimator by placing a hat over the symbol of its estimand, as in <span class="math inline">\(\hat\theta\)</span>. Usually the dependence of the estimator on the data is left implicit.</p>
+<p>In the source, we write the hat with the macro <code>\est{\theta}</code>, which prints <span class="math inline">\(\est{\theta}\)</span>, or with a named macro that begins with <code>e</code>, such as <code>\eth</code> or <code>\ecoef{x}</code>. The older hat macros that begin with <code>h</code>, such as <code>\hth</code> and <code>\hcoef{x}</code>, have <code>e</code> counterparts that print the same symbols. Most of them are marked “deprecated, use” with the replacement in <code>interpretations.tsv</code>. We made this decision on 2026-10-22, so that a hat has one source form, the <code>e</code> macros, which name the estimate they print. Each deprecated macro still works, so no existing page breaks.</p>
 <p>Other sources use other symbols, so check which symbol a source uses for the estimand before reading a formula.</p>
 </section>
 <section id="sec-bias-variance-symbols" class="level2">
