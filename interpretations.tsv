@@ -1411,6 +1411,10 @@ name	interpretation
 \asymub	big-O asymptotic upper bound applied to its argument, O(g)
 \entropy	Shannon entropy symbol H
 \entropyf	Shannon entropy of a random variable, H(X)
+\surprisal	surprisal symbol s
+\surprisalf	surprisal of an outcome, s(x)
+\kldiv	Kullback–Leibler divergence symbol D_KL
+\kldivf	Kullback–Leibler divergence of the second distribution from the first, D_KL(p ‖ q)
 \kolm	Kolmogorov complexity symbol K
 \kolmf	Kolmogorov complexity of a string, K(x)
 \ckolmf	conditional Kolmogorov complexity of a string given an input, K(x | n)
