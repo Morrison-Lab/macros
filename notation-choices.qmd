@@ -587,3 +587,31 @@ The older macro `\inputdim` is kept as an alias for `\ninputvars`.
 
 Many sources write the number of input variables as $p$ (ISL and ESL) or $d$, and some write $D$.
 We avoid $D$ because it is the design matrix.
+
+## Sums of squares, and counts and indices for training {#sec-training-symbols}
+
+We write the residual sum of squares as $\RSS$, from the macro `\RSS`, and the total sum of squares as $\TSS$, from the macro `\TSS`.
+They are names of statistics, so they are upright, and a subscript marks a model, as in $\RSS_0$.
+We avoid writing `\text{RSS}` in the source, because the macro keeps the spelling and the font the same on every page.
+
+The training symbols below name a role, so the macro names the role and the letter is our choice.
+
+-   The number of parameters in a neural network is $\nnetparams$, from `\nnetparams`.
+    We use a capital letter because it counts every weight and bias in the network, and it differs from the number of input variables $\ninputvars$.
+-   The index of a step of an iterative algorithm, such as gradient descent, is $\iter$, from `\iter`.
+-   The index of a layer of a neural network is $\layeridx$, from `\layeridx`.
+    The letter is the usual one for a layer index in deep learning, and it differs from the letter of the number of cross-validation folds $\nfolds$.
+    The same letter also names the log-likelihood `\llik`, the loss of one observation `\obsloss` and the norm `\lpnorm`.
+    A layer index labels layers, not observations or parameters, so we accept the overlap rather than take a letter that is free but unusual.
+-   The objective function that an optimization algorithm lowers is $\objfn$, from the existing macro `\objfn`, and `\objfnf{\vth}` prints $\objfnf{\vth}$.
+    Lecture exercises that write a plain $J$ for the cost use `\objfn`, so there is one macro for one concept.
+
+Some existing macros already cover other symbols that lecture exercises write as a bare letter.
+
+-   The number of models in a finite family is `\nmodels`, which prints $\nmodels$.
+-   The number of cross-validation folds is `\nfolds`, which prints $\nfolds$, and the index of a fold is `\ifold`.
+-   The number of features in a feature vector is `\ninputvars`, which prints $\ninputvars$, because we avoid $D$ for a count.
+    See [the input counts entry](#sec-input-counts).
+
+We do not give the size of a minibatch a letter of its own.
+Write it as the cardinality of the set of indices, such as `\card{B_t}`, because the letter $b$ is already the bias of a neural network in [the names entry](#sec-ml-statistics-names).
