@@ -247,7 +247,8 @@ The fitted prediction function $\epredfn$ varies from one training data set to t
 We follow ISL: the prediction function is $f$, the fitted one is $\epredfn$ (from the macro `\epredfn`), and the fitted value at a point is $\eoutvar$, which prints $\hat{y}$.
 The macro used to print $g$, so the fitted function printed as $\hat{g}$.
 On 2026-10-22 we chose $f$ provisionally, because it is the symbol in the textbooks.
-On 2026-10-23 the maintainer first asked for $\hat{y}$ as the function, then decided to go with ISL's notation, so the function is $f$ and $\hat{y}$ stays the fitted value.
+On 2026-10-23 we chose to follow ISL's notation, after a request to write the function as $\hat{y}$ was dropped, so the function is $f$ and $\hat{y}$ stays the fitted value.
+The lab's project chat holds the maintainer's decision, and that chat is not public.
 ESL also writes the fitted function as $\hat{f}$, and uses $\hat{G}$ for a predicted class.
 The older macros `\hf` and `\hfx{x}` print the same fitted function and are deprecated in favour of `\epredfn` and `\epredfnf{x}`.
 Let $\Outvar$ be a new outcome at $\predvar$, independent of the training data.
