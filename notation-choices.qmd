@@ -174,6 +174,14 @@ Some software reports the average under the same name.
 On the same data, dividing every cross-entropy by the number of examples does not change which of two models is preferred, but it does change the number.
 So also check whether a source reports the sum or the average before comparing its numbers with ours.
 
+## Surprisal and the Kullback--Leibler divergence {#sec-surprisal-kl-notation}
+
+The [surprisal](https://morrison-lab.github.io/ids/entropy.html#def-surprisal) of an outcome $x$ is written $\surprisalf{x}$.
+The [Kullback--Leibler divergence](https://morrison-lab.github.io/pds/expectation.html#def-kl-divergence) of $q$ from $p$ is written $\kldivf{p}{q}$, with the true or reference distribution first.
+Our convention puts $p$ first, because the divergence is the expectation under $p$ of the log ratio of $p$ to $q$.
+It is not symmetric, so swapping the arguments changes the value.
+Some sources write the same quantity with the arguments in the other order, or call it the relative entropy, so check which distribution comes first before comparing a formula with ours.
+
 ## Names for the same object in machine learning and statistics {#sec-ml-statistics-names}
 
 Machine learning and statistics texts often use different names and symbols for the same object.
