@@ -1430,6 +1430,10 @@
 \providecommand{\asymub}[1]{{O\paren{#1}}}
 \def\entropy{H}
 \providecommand{\entropyf}[1]{{\entropy\paren{#1}}}
+\def\surprisal{s}
+\providecommand{\surprisalf}[1]{{\surprisal\paren{#1}}}
+\def\kldiv{{D_{\mathrm{KL}}}}
+\providecommand{\kldivf}[2]{{\kldiv\paren{#1 \,\Vert\, #2}}}
 \def\kolm{K}
 \providecommand{\kolmf}[1]{{\kolm\paren{#1}}}
 \providecommand{\ckolmf}[2]{{\kolm\paren{#1 \mid #2}}}
