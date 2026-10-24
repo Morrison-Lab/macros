@@ -1509,8 +1509,8 @@
 \def\testerr{\overline{\operatorname{err}}_{\text{test}}}
 \def\arcoef{\rho}
 \def\truenulls{\mathcal{I}_0}
-\def\levelset{\mathcal{L}}
-\providecommand{\levelsetof}[2]{{\levelset_{#1}\paren{#2}}}
+\providecommand{\preimage}[2]{{{#1}^{-1}\paren{#2}}}
+\providecommand{\levelsetof}[2]{{\preimage{#2}{\cb{#1}}}}
 \def\predfn{f}
 \def\epredfn{\est{\predfn}}
 \providecommand{\predfnf}[1]{{\predfn\paren{#1}}}
