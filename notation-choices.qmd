@@ -408,6 +408,15 @@ For example, `\Regcoef` prints an italic $\Regcoef$, because a regression coeffi
 The degrees of freedom `\df` prints the upright name $\df$ instead of $\nu$, because an abbreviation is a name.
 That leaves $\nu$ to the macros that still print it, such as `\shrinkage`.
 
+We follow [ISO 80000-2:2019](https://www.iso.org/standard/64973.html), the international standard for mathematical notation, on this split.
+It sets variables and generic function symbols, such as $f$, in italic, and the names of specific functions and operators, such as $\sin$ and $\exp$, upright.
+So the prediction function `\predfn` ($\predfn$), its estimate `\epredfn` ($\epredfn$) and the best prediction function `\bestpredfn` ($\bestpredfn$) stay italic, because each is a generic function symbol.
+The predicted value `\predvalf{x}` ($\predvalf{x}$) stays italic too, because it is a value.
+It does not matter that the estimated function and the predicted value depend on the training data and so are random.
+Italic marks a symbol that stands for something that varies, and random quantities are among those.
+The operators that act on them, such as the expectation and the variance, are named, so they are upright or blackboard.
+The textbook [ISL](https://www.statlearning.com/) also writes $f$ and $\hat{f}$ in italic.
+
 ## The design matrix and the design vector {#sec-design-notation}
 
 The [design matrix](https://morrison-lab.github.io/lds/chapters/linear-regression.html#def-design-matrix) holds the input values for a model, one row for each observation, after any feature map.
