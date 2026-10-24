@@ -1201,7 +1201,7 @@ name	interpretation
 \varsym	short variance operator 𝕍 for any random variable (no argument, blackboard bold like \Expp)
 \varsymf	short variance operator applied to a random variable, like \E (prints \varsym with its argument in square brackets)
 \devsym	deviation operator 𝔻 for any random variable, X minus its mean (blackboard bold like \varsym and \Expp; the design matrix \design is italic D, and the value δ is \deviation)
-\devsymf	deviation operator applied to a random variable, like \varsymf (prints \devsym with its argument as a subscript)
+\devsymf	deviation operator applied to a random variable, like \varsymf (prints \devsym with its argument in square brackets)
 \irrerr	short symbol for the irreducible error, the variance of the noise \Noise (alias for \varpar)
 \rvar	a generic value of a random variable in probability expressions (prints x)
 \Rvar	a generic random variable in probability expressions (prints X)
