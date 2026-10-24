@@ -648,10 +648,9 @@ When $a(y) = y$, their $b(\theta)$ is the natural parameter, $c(\theta)$ is minu
 A level set of a function $f$ at a value $c$ is the preimage of the single value $c$, so we write it as a preimage.
 The macro `\preimage{f}{S}` prints $\preimage{f}{S}$, the set of inputs whose values are in $S$, and `\levelsetof{c}{f}` prints $\levelsetof{c}{f}$.
 
-We chose this form for three reasons.
+We chose this form for two reasons.
 
 -   It defines the symbol by its most literal meaning, and the level set follows as a special case with $S = \cb{c}$.
--   It does not use a script letter, which does not print in the PDF font.
--   It does not reuse $\mathcal{L}$, which names a loss function or a likelihood in other pages.
+-   It does not reuse $\mathcal{L}$, which `\Lik` already prints for the likelihood.
 
-The macro `\levelset`, which printed the script letter $\mathcal{L}$, is removed; no page used it alone.
+The macro `\levelset`, which printed the script letter $\mathcal{L}$, is removed.
