@@ -207,7 +207,7 @@
     "href": "notation-choices.html#sec-level-set-preimage",
     "title": "Notation Choices",
     "section": "Level sets and preimages",
-    "text": "Level sets and preimages\nA level set of a function \\(f\\) at a value \\(c\\) is the preimage of the single value \\(c\\), so we write it as a preimage. The macro \\preimage{f}{S} prints \\(\\preimage{f}{S}\\), the set of inputs whose values are in \\(S\\), and \\levelsetof{c}{f} prints \\(\\levelsetof{c}{f}\\).\nWe chose this form for three reasons.\n\nIt defines the symbol by its most literal meaning, and the level set follows as a special case with \\(S = \\cb{c}\\).\nIt does not use a script letter, which does not print in the PDF font.\nIt does not reuse \\(\\mathcal{L}\\), which names a loss function or a likelihood in other pages.\n\nThe macro \\levelset, which printed the script letter \\(\\mathcal{L}\\), is removed; no page used it alone."
+    "text": "Level sets and preimages\nA level set of a function \\(f\\) at a value \\(c\\) is the preimage of the single value \\(c\\), so we write it as a preimage. The macro \\preimage{f}{S} prints \\(\\preimage{f}{S}\\), the set of inputs whose values are in \\(S\\), and \\levelsetof{c}{f} prints \\(\\levelsetof{c}{f}\\).\nWe chose this form for two reasons.\n\nIt defines the symbol by its most literal meaning, and the level set follows as a special case with \\(S = \\cb{c}\\).\nIt does not reuse \\(\\mathcal{L}\\), which \\Lik already prints for the likelihood.\n\nThe macro \\levelset, which printed the script letter \\(\\mathcal{L}\\), is removed."
   },
   {
     "objectID": "CONTRIBUTING.html",

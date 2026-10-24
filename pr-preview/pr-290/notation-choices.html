@@ -734,13 +734,12 @@ window.Quarto = {
 <section id="sec-level-set-preimage" class="level2">
 <h2 class="anchored" data-anchor-id="sec-level-set-preimage">Level sets and preimages</h2>
 <p>A level set of a function <span class="math inline">\(f\)</span> at a value <span class="math inline">\(c\)</span> is the preimage of the single value <span class="math inline">\(c\)</span>, so we write it as a preimage. The macro <code>\preimage{f}{S}</code> prints <span class="math inline">\(\preimage{f}{S}\)</span>, the set of inputs whose values are in <span class="math inline">\(S\)</span>, and <code>\levelsetof{c}{f}</code> prints <span class="math inline">\(\levelsetof{c}{f}\)</span>.</p>
-<p>We chose this form for three reasons.</p>
+<p>We chose this form for two reasons.</p>
 <ul>
 <li>It defines the symbol by its most literal meaning, and the level set follows as a special case with <span class="math inline">\(S = \cb{c}\)</span>.</li>
-<li>It does not use a script letter, which does not print in the PDF font.</li>
-<li>It does not reuse <span class="math inline">\(\mathcal{L}\)</span>, which names a loss function or a likelihood in other pages.</li>
+<li>It does not reuse <span class="math inline">\(\mathcal{L}\)</span>, which <code>\Lik</code> already prints for the likelihood.</li>
 </ul>
-<p>The macro <code>\levelset</code>, which printed the script letter <span class="math inline">\(\mathcal{L}\)</span>, is removed; no page used it alone.</p>
+<p>The macro <code>\levelset</code>, which printed the script letter <span class="math inline">\(\mathcal{L}\)</span>, is removed.</p>
 
 
 </section>
