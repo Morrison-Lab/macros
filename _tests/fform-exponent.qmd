@@ -3,6 +3,7 @@ title: "Exponent after an f form"
 format:
   pdf:
     include-in-header:
+      - ../macros-pdf-header.tex
       - ../macros.qmd
 ---
 

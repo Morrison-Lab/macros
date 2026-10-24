@@ -3,6 +3,7 @@ title: "PDF path check: include-in-header"
 format:
   pdf:
     include-in-header:
+      - ../macros-pdf-header.tex
       - ../macros.qmd
 ---
 
