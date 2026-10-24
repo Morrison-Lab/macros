@@ -249,7 +249,7 @@
 \def\satdeviance{\deviance_{\mathrm{sat}}}
 \def\dicdev{\deviance_{\mathrm{DIC}}}
 \providecommand{\dicdevf}[1]{{\dicdev\paren{#1}}}
-\def\deviation{\mathbb{D}}
+\def\deviation{\delta}
 \def\devn{\deviation}
 \providecommand{\deviationv}{\vec{\deviation}}
 \def\devnv{\deviationv}
@@ -1276,6 +1276,8 @@
 \providecommand{\biassymf}[1]{{\biassym\sb{#1}}}
 \def\varsym{\mathbb{V}}
 \providecommand{\varsymf}[1]{{\varsym\sb{#1}}}
+\def\devsym{\mathbb{D}}
+\providecommand{\devsymf}[1]{{\devsym\sb{#1}}}
 \def\irrerr{\varpar}
 \def\rvar{x}
 \def\Rvar{X}

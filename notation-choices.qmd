@@ -334,7 +334,7 @@ The [residual](https://morrison-lab.github.io/lds/chapters/linear-regression.htm
 The macro `\devof` always prints parentheses around the difference, so a power such as $\devof{a}{b}^2$ squares the whole difference.
 When the reference is a sum, wrap it in `\paren` yourself, as in $\devof{a}{\paren{b + c}}$.
 The macro `\devsq` prints a squared deviation, and `\ssdev` prints the sum of squared deviations over observations.
-Both print the labelled symbol $\deviation$ and not a difference.
+Both print the labelled symbol $\delta$ and not a difference.
 
 We follow the textbooks *An Introduction to Statistical Learning* (ISL) and *The Elements of Statistical Learning* (ESL) and write the noise as the Greek letter $\varepsilon$.
 The macros `\Noise` and `\noise` both print $\Noise$, so a random noise variable and its realized value share one symbol, as in those books.
@@ -366,12 +366,11 @@ The residual has no separate capital: `\Resid` prints the same $\resid$.
 
 Earlier versions of these macros printed the noise as $U$ with realized value $u$, and before that as the Greek letter $\nu$.
 Any use that meant $\nu$ or expected $U$ or $u$ needs a sweep.
-The macros `\popdev` and `\cdev` now print $\deviation$, the general deviation operator `\devn`, for a deviation from a mean, where they used to print $\nu$.
-The macro `\deviationf` prints $\deviation$ with the reference as a subscript, for a labelled deviation of a given value.
+The macros `\popdev` and `\cdev` now print $\delta$, the general deviation symbol `\devn`, for a deviation from a mean, where they used to print $\nu$.
+The macro `\deviationf` prints $\delta$ with the reference as a subscript, for a labelled deviation of a given value.
 We keep `\popdev` and `\deviationf` for existing uses.
-The deviation is blackboard bold, like the operators $\P$ and $\Var$, because it maps a value to its distance from a reference.
-It printed $\delta$ before.
-The design matrix `\design` is an italic $\design$, so the two do not collide.
+The value $\deviation$ is italic, like a variable, and the operator that takes a random variable to its deviation from its mean is blackboard bold, `\devsym`, which prints $\devsym$, like $\P$ and $\varsym$.
+The design matrix `\design` is an italic $\design$, so the operator does not collide with it.
 
 A sample mean is a bar over the quantity, and we write it with the macro `\smean{y}`, which prints $\smean{y}$, rather than with a literal `\bar`.
 The macros `\xbar`, `\outbar`, `\predbar`, `\rvarbar`, `\samplemean` and `\avgleverage` use it.
