@@ -1488,8 +1488,8 @@ name	interpretation
 \testerr	test error (average loss on the test set), over-barred err with subscript test
 \arcoef	autoregressive coefficient ρ
 \truenulls	index set I_0 of the true null hypotheses
-\levelset	symbol for a level set of a function
-\levelsetof	level set of the function given as the second argument at the value given as the first, written with the value as a subscript
+\preimage	preimage of the set given as the second argument under the function given as the first, written as the function with exponent -1 applied to the set (prints f^{-1}(S))
+\levelsetof	level set of the function given as the second argument at the value given as the first, the preimage of that single value (prints f^{-1}({c}))
 \predfn	symbol for a prediction function, which maps predictor values to a predicted outcome
 \epredfn	estimated prediction function, such as one fitted from training data; replaces the deprecated \hf
 \predfnf	prediction function applied to the argument

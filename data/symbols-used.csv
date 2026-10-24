@@ -101,7 +101,8 @@ symbol,meaning
 \indicp{a},indicator function 𝟙(·) with parentheses
 \indic{a},indicator function 𝟙_{·} (blackboard bold)
 \mpredvar,"input matrix: the predictor vectors of all n observations, one per row"
-\levelsetof{a}{b},"level set of the function given as the second argument at the value given as the first, written with the value as a subscript"
+\levelsetof{a}{b},"level set of the function given as the second argument at the value given as the first, the preimage of that single value"
+\preimage{a}{b},"preimage of the set given as the second argument under the function given as the first"
 \leverage{a},"leverage of the observation given as the argument, h with the observation as subscript"
 \llik,log-likelihood symbol (ℓ)
 \logodds,log-odds symbol η
