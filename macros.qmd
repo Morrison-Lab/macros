@@ -249,7 +249,7 @@
 \def\satdeviance{\deviance_{\mathrm{sat}}}
 \def\dicdev{\deviance_{\mathrm{DIC}}}
 \providecommand{\dicdevf}[1]{{\dicdev\paren{#1}}}
-\def\deviation{\delta}
+\def\deviation{\mathbb{D}}
 \def\devn{\deviation}
 \providecommand{\deviationv}{\vec{\deviation}}
 \def\devnv{\deviationv}
