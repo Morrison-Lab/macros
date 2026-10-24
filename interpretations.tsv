@@ -1200,7 +1200,7 @@ name	interpretation
 \biassymf	short bias operator applied to an estimator, like \E (prints \biassym with its argument in square brackets)
 \varsym	short variance operator 𝕍 for any random variable (no argument, blackboard bold like \Expp)
 \varsymf	short variance operator applied to a random variable, like \E (prints \varsym with its argument in square brackets)
-\devsym	deviation operator 𝔻 for any random variable, X minus its mean (blackboard bold like \varsym and \Expp; the design matrix \design is italic D, and the value δ is \deviation)
+\devsym	deviation operator 𝔻 for any random variable, X minus its mean (blackboard bold like \varsym and \Expp; the design matrix \design is italic D, and the observed value 𝕕 is \deviation)
 \devsymf	deviation operator applied to a random variable, like \varsymf (prints \devsym with its argument in square brackets)
 \devval	observed deviation, double-struck lowercase d 𝕕 (a value, as 𝔼 is the operator and x the value; the PDF needs bbm, see macros-pdf-header.tex)
 \mathbbm	double-struck letter that includes lowercase (alias for \mathbb where bbm is not loaded, as in MathJax)
