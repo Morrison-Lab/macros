@@ -450,6 +450,7 @@ window.Quarto = {
   <li><a href="#sec-input-counts" id="toc-sec-input-counts" class="nav-link" data-scroll-target="#sec-input-counts">The number of inputs and the number of input variables</a></li>
   <li><a href="#sec-training-symbols" id="toc-sec-training-symbols" class="nav-link" data-scroll-target="#sec-training-symbols">Sums of squares, and counts and indices for training</a></li>
   <li><a href="#sec-exponential-family-notation" id="toc-sec-exponential-family-notation" class="nav-link" data-scroll-target="#sec-exponential-family-notation">Exponential families</a></li>
+  <li><a href="#sec-level-set-preimage" id="toc-sec-level-set-preimage" class="nav-link" data-scroll-target="#sec-level-set-preimage">Level sets and preimages</a></li>
   </ul>
 <div class="toc-actions"><ul><li><a href="https://github.com/d-morrison/macros/blob/main/notation-choices.qmd" class="toc-action"><i class="bi bi-github"></i>View source</a></li></ul></div></nav>
     </div>
@@ -729,6 +730,16 @@ window.Quarto = {
 </ul>
 <p>The natural parameter prints the same <span class="math inline">\(\eta\)</span> as the linear predictor <code>\lincomp</code> of a generalized linear model, and the two are the same quantity only for the canonical link. We keep two macros so that a page can say which one it means.</p>
 <p>Other sources use other letters for the same roles. Casella and Berger write <span class="math inline">\(h(x)\,c(\theta)\exp\paren{\sum_{i=1}^k w_i(\theta) t_i(x)}\)</span> with <span class="math inline">\(k\)</span> terms; we write the case <span class="math inline">\(k = 1\)</span>. Their normalizing constant <span class="math inline">\(c(\theta)\)</span> is <span class="math inline">\(\expf{-\logpartition}\)</span> when the single weight <span class="math inline">\(w(\theta)\)</span> is the natural parameter, and their <span class="math inline">\(h(x)\)</span> is our base measure. Dobson and Barnett write <span class="math inline">\(\exp\paren{a(y) b(\theta) + c(\theta) + d(y)}\)</span>. When <span class="math inline">\(a(y) = y\)</span>, their <span class="math inline">\(b(\theta)\)</span> is the natural parameter, <span class="math inline">\(c(\theta)\)</span> is minus the log-partition function, and <span class="math inline">\(\exp\paren{d(y)}\)</span> is the base measure.</p>
+</section>
+<section id="sec-level-set-preimage" class="level2">
+<h2 class="anchored" data-anchor-id="sec-level-set-preimage">Level sets and preimages</h2>
+<p>A level set of a function <span class="math inline">\(f\)</span> at a value <span class="math inline">\(c\)</span> is the preimage of the single value <span class="math inline">\(c\)</span>, so we write it as a preimage. The macro <code>\preimage{f}{S}</code> prints <span class="math inline">\(\preimage{f}{S}\)</span>, the set of inputs whose values are in <span class="math inline">\(S\)</span>, and <code>\levelsetof{c}{f}</code> prints <span class="math inline">\(\levelsetof{c}{f}\)</span>.</p>
+<p>We chose this form for two reasons.</p>
+<ul>
+<li>It defines the symbol by its most literal meaning, and the level set follows as a special case with <span class="math inline">\(S = \cb{c}\)</span>.</li>
+<li>It does not reuse <span class="math inline">\(\mathcal{L}\)</span>, which <code>\Lik</code> already prints for the likelihood.</li>
+</ul>
+<p>The macro <code>\levelset</code>, which printed the script letter <span class="math inline">\(\mathcal{L}\)</span>, is removed.</p>
 
 
 </section>
