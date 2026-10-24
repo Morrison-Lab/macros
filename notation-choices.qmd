@@ -531,6 +531,22 @@ In the source, `\mean`, `\popmean` and `\pmean` name the population mean of a va
 The names `\truemean` and `\truemeanf` name the true mean function.
 Each name then says which of the two a formula means, even though all of them print $\mu$.
 
+## The logistic function {#sec-logistic-function-symbol}
+
+The logistic function maps a real number $a$ to $1 / (1 + e^{-a})$.
+Our convention is to print it as the upright name $\sigmoidf{a}$, which is `expit`, with the inverse $\logit$, the log-odds function.
+`\expit` is the primary name, and `\sigmoid` and `\sigmoidf` are aliases that print the same.
+
+We chose this for one reason.
+The symbol $\sigma$ is the usual choice in the deep learning literature, but here it also prints a standard deviation, a kernel bandwidth, a singular value and the generator of a $\sigma$-algebra.
+A named function is upright (ISO 80000-2), and `expit` is already a name in software: scipy calls it `expit`, and R calls it `plogis`.
+
+Other sources use other forms.
+*An Introduction to Statistical Learning* writes it out as $e^x / (1 + e^x)$.
+Deep learning texts write $\sigma$ and call it the "logistic sigmoid".
+We did not choose an upright $\mathrm{s}$, which is easily read as the variable $s$, or the text "sigmoid", which is long inside network equations and also names $\tanh$.
+In a neural network, where the activation function is a role rather than one function, a chapter can name the activation with a generic symbol and say which function it is.
+
 ## An exponent on a function with built-in delimiters {#sec-brace-delimited-forms}
 
 Some macros print a function name with its argument inside delimiters, such as `\Pf{x}` (parentheses), `\E{x}` (square brackets) and `\sigmoidf{x}`.
