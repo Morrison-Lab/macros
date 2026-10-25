@@ -536,6 +536,7 @@ Each name then says which of the two a formula means, even though all of them pr
 The logistic function maps a real number $a$ to $1 / (1 + e^{-a})$.
 Our convention is to print it as the upright name $\sigmoidf{a}$, which is `expit`, with the inverse $\logit$, the log-odds function.
 `\expit` is the primary name, and `\sigmoid` and `\sigmoidf` are aliases that print the same.
+We keep the aliases permanently rather than renaming every use, because a rename changes no output and the name `sigmoid` remains a natural way to say "the logistic function" in neural-network text.
 
 We chose this for two reasons.
 First, the symbol $\sigma$ is the usual choice in the deep learning literature, but here it also prints a standard deviation, a kernel bandwidth, a singular value and the generator of a $\sigma$-algebra.
