@@ -547,6 +547,8 @@ Deep learning texts write $\sigma$ and call it the "logistic sigmoid".
 We did not choose an upright $\mathrm{s}$, which is easily read as the variable $s$, or the text "sigmoid", which is long inside network equations and also names $\tanh$.
 In a neural network, where the activation function is a role rather than one function, a chapter can name the activation with a generic symbol and say which function it is.
 
+We keep the `\sigmoid` and `\sigmoidf` aliases permanently rather than renaming every use, because a rename changes no output and the name `sigmoid` remains a natural way to say "the logistic function" in neural-network text.
+
 ## An exponent on a function with built-in delimiters {#sec-brace-delimited-forms}
 
 Some macros print a function name with its argument inside delimiters, such as `\Pf{x}` (parentheses), `\E{x}` (square brackets) and `\sigmoidf{x}`.
