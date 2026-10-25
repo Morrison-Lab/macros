@@ -23,6 +23,10 @@ read both before editing `macros.qmd`.
   and every finding addressed, rebutted or deferred.
   Where it can run,
   ai-config's `scripts/check-pr-fully-clean.py` is the check.
+  A cloud session cannot run it (it needs GraphQL), so run it through Remote Control on the XPS
+  and see exit 0 on the current head before every standing-`mwc` merge.
+  A hand reading of the check runs and the review verdict does not replace it
+  ([macros#298](https://github.com/Morrison-Lab/macros/pull/298) was merged that way on 2026-10-25 and checked only afterwards).
 
 - **Why:** this repository is shared notation for several lab sites,
   so a new macro often blocks work downstream until it merges.
