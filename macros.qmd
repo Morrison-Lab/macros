@@ -344,8 +344,8 @@
 \providecommand{\expitf}[1]{{\expit\cb{#1}}}
 \providecommand{\dexpitf}[1]{{\expit'\cb{#1}}}
 \def\logit{\operatorname{logit}}
-\def\sigmoid{\sigma}
-\providecommand{\sigmoidf}[1]{{\sigmoid\paren{#1}}}
+\def\sigmoid{\expit}
+\providecommand{\sigmoidf}[1]{{\expit\paren{#1}}}
 \providecommand{\logitf}[1]{{\logit\cb{#1}}}
 \providecommand{\E}[1]{{\mathbb{E}\sb{#1}}}
 \def\Ef{\E}

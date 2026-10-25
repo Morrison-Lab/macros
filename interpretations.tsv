@@ -280,8 +280,8 @@ name	interpretation
 \expitf	expit applied to argument
 \dexpitf	derivative of expit function
 \logit	logit function
-\sigmoid	logistic (sigmoid) function symbol (σ)
-\sigmoidf	logistic (sigmoid) function applied to its argument, σ(·)
+\sigmoid	logistic (sigmoid) function symbol (expit)
+\sigmoidf	logistic (sigmoid) function applied to its argument, expit(·)
 \logitf	logit applied to argument
 \E	expected value (prints \Expp, with the argument in square brackets)
 \Ef	expected value (alias for \E)
