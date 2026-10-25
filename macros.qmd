@@ -464,6 +464,8 @@
 \providecommand{\norm}[1]{\mathopen{}\left\lVert#1\right\rVert\mathclose{}}
 \providecommand{\normsq}[1]{{\norm{#1}}\sq}
 \providecommand{\card}[1]{{\abs{#1}}}
+\def\powersetsym{\mathcal{P}}
+\providecommand{\powerset}[1]{{\powersetsym\paren{#1}}}
 \providecommand{\factorial}[1]{{{#1}!}}
 \providecommand{\binomial}[2]{{\binom{#1}{#2}}}
 \def\sumsym{s}

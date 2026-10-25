@@ -400,6 +400,8 @@ name	interpretation
 \norm	Euclidean norm ‖·‖
 \normsq	squared norm ‖·‖²
 \card	cardinality (number of elements) of a finite set |·|
+\powersetsym	power set symbol 𝒫
+\powerset	power set of a set, the set of all its subsets 𝒫(·)
 \factorial	factorial of a non-negative integer n! (prints its argument followed by an exclamation mark)
 \binomial	binomial coefficient, "n choose k" (prints \binom{n}{k})
 \powf	first argument (·) raised to the power of the second argument, with parentheses around the base
