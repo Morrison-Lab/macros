@@ -317,6 +317,40 @@ Some sources write the same pieces in other ways:
 
 Check which form a source uses before comparing its decomposition with ours.
 
+## One symbol for a variance {#sec-single-variance-symbol}
+
+We looked for a single symbol that could replace $\varpar$, the variance parameter, and we found none.
+On 2026-10-26 we chose to keep $\varpar$ for the parameter and $\varsym$ for the variance of a random variable.
+We add no macro and no new Greek letter.
+
+We checked these books, which [Notation Across Sources](notation-across-sources.qmd#sec-notation-sources) lists in full:
+
+-   ISL, 2nd ed. (eq. 3.8, p. 77), writes $\sigma^2 = \Vart(\epsilon)$.
+    ESL (eq. 2.27, p. 26) writes the variance parameter as $\sigma^2$, and Bishop (Section 1.2.4, p. 24) does too.
+-   Bishop (eq. 1.40) writes the variance of a random variable as lower-case $\mathrm{var}[f]$.
+    Murphy, *Probabilistic Machine Learning* (eq. 2.29), writes it as $V[X]$, with a Latin capital V, and writes the precision as $\lambda = 1/\sigma^2$.
+-   Dobson and Barnett, 4th ed. (Notation, p. 7), writes $\mathrm{var}(Y_i) = \sigma_i^2$.
+
+No book we checked uses one glyph for the variance parameter.
+The nearest single letter is the operator $\varsym$, which we already have.
+
+We rejected these letters, each for a collision in the macros:
+
+-   $\phi$ and $\varphi$ are the dispersion parameter of a generalized linear model.
+    Dobson and Barnett, 4th ed. (overdispersion paragraph for binomial data, PDF page 184), writes $\mathrm{var}(Y_i) = n_i \pi_i (1 - \pi_i) \phi$ for overdispersed binomial data, so $\phi$ multiplies the variance and is not the variance.
+    The macros `\normpdf`, `\linefn` and `\poismean` also print $\phi$.
+-   $\nu$ prints a shrinkage factor (`\shrinkage`), a bound on the fraction of margin errors (`\svfrac`), a second measure (`\measureb`) and a nullity (`\nullity`).
+-   $\omega$ prints an outcome (`\outcome`).
+-   $\vartheta$ looks like $\theta$, which names a parameter.
+-   $\varrho$ looks like $\rho$, which is the overdispersion parameter `\overdisp`.
+-   $\varpi$ looks like $\pi$.
+-   $\varsigma$ is the only unused letter that is a form of $\sigma$.
+    We rejected it because it looks like $\zeta$ or $c$ at a small size and is hard to write by hand.
+-   A lower-case Latin $v$ collides with the vector macros, such as `\vv`.
+-   A capital $V$ collides with `\V` and with the variance function $V(\mu)$ of a generalized linear model.
+
+The precision $\tau$ (`\precision`) stays a separate symbol, because it is the reciprocal of the variance.
+
 ## Noise, deviation and error {#sec-noise-deviation-error}
 
 The [noise](https://morrison-lab.github.io/lds/chapters/big-ideas.html#def-noise) is a [deviation](https://morrison-lab.github.io/pds/variance-covariance.html#def-deviation).
