@@ -231,6 +231,13 @@
     "text": "Level sets and preimages\nA level set of a function \\(f\\) at a value \\(c\\) is the preimage of the single value \\(c\\), so we write it as a preimage. The macro \\preimage{f}{S} prints \\(\\preimage{f}{S}\\), the set of inputs whose values are in \\(S\\), and \\levelsetof{c}{f} prints \\(\\levelsetof{c}{f}\\).\nWe chose this form for two reasons.\n\nIt defines the symbol by its most literal meaning, and the level set follows as a special case with \\(S = \\cb{c}\\).\nIt does not reuse \\(\\mathcal{L}\\), which \\Lik already prints for the likelihood.\n\nThe macro \\levelset, which printed the script letter \\(\\mathcal{L}\\), is removed."
   },
   {
+    "objectID": "notation-choices.html#sec-confidence-interval-endpoints",
+    "href": "notation-choices.html#sec-confidence-interval-endpoints",
+    "title": "Notation Choices",
+    "section": "The endpoints of a confidence interval",
+    "text": "The endpoints of a confidence interval\nOur convention is to call the lower and upper endpoints of a confidence interval \\(\\cilo\\) and \\(\\ciup\\), which are statistics, and to write the interval as the closed interval \\(\\cintf{X}\\). The macros \\cilof{x} and \\ciupf{x} print \\(\\cilof{x}\\) and \\(\\ciupf{x}\\), and \\cintf{x} prints \\(\\cintf{x}\\).\nWe chose this form for two reasons.\n\nIt matches Casella and Berger, who define an interval estimator as the random interval \\([L(\\vX), U(\\vX)]\\) (Casella and Berger, Statistical Inference, 2nd ed., 2002, Definition 9.1.1).\nIt writes the interval in interval notation, so the interval is the random object and the parameter is not. A statement such as \\(\\Pr\\paren{\\theta \\in \\cintf{X}}\\) is then a statement about the data \\(X\\).\n\nThe macro \\ci prints the Wald form \\(\\hb \\pm \\cirad\\) of one such interval, and is not a general notation for the interval."
+  },
+  {
     "objectID": "macros.html",
     "href": "macros.html",
     "title": "macros",

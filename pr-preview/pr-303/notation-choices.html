@@ -685,6 +685,7 @@ window.Quarto = {
   <li><a href="#sec-training-symbols" id="toc-sec-training-symbols" class="nav-link" data-scroll-target="#sec-training-symbols">Sums of squares, and counts and indices for training</a></li>
   <li><a href="#sec-exponential-family-notation" id="toc-sec-exponential-family-notation" class="nav-link" data-scroll-target="#sec-exponential-family-notation">Exponential families</a></li>
   <li><a href="#sec-level-set-preimage" id="toc-sec-level-set-preimage" class="nav-link" data-scroll-target="#sec-level-set-preimage">Level sets and preimages</a></li>
+  <li><a href="#sec-confidence-interval-endpoints" id="toc-sec-confidence-interval-endpoints" class="nav-link" data-scroll-target="#sec-confidence-interval-endpoints">The endpoints of a confidence interval</a></li>
   </ul>
 <div class="toc-actions"><ul><li><a href="https://github.com/d-morrison/macros/blob/main/notation-choices.qmd" class="toc-action"><i class="bi bi-github"></i>View source</a></li></ul></div></nav>
     </div>
@@ -990,6 +991,16 @@ window.Quarto = {
 <li>It does not reuse <span class="math inline">\(\mathcal{L}\)</span>, which <code>\Lik</code> already prints for the likelihood.</li>
 </ul>
 <p>The macro <code>\levelset</code>, which printed the script letter <span class="math inline">\(\mathcal{L}\)</span>, is removed.</p>
+</section>
+<section id="sec-confidence-interval-endpoints" class="level2">
+<h2 class="anchored" data-anchor-id="sec-confidence-interval-endpoints">The endpoints of a confidence interval</h2>
+<p>Our convention is to call the lower and upper endpoints of a confidence interval <span class="math inline">\(\cilo\)</span> and <span class="math inline">\(\ciup\)</span>, which are statistics, and to write the interval as the closed interval <span class="math inline">\(\cintf{X}\)</span>. The macros <code>\cilof{x}</code> and <code>\ciupf{x}</code> print <span class="math inline">\(\cilof{x}\)</span> and <span class="math inline">\(\ciupf{x}\)</span>, and <code>\cintf{x}</code> prints <span class="math inline">\(\cintf{x}\)</span>.</p>
+<p>We chose this form for two reasons.</p>
+<ul>
+<li>It matches Casella and Berger, who define an interval estimator as the random interval <span class="math inline">\([L(\vX), U(\vX)]\)</span> (Casella and Berger, <em>Statistical Inference</em>, 2nd ed., 2002, Definition 9.1.1).</li>
+<li>It writes the interval in interval notation, so the interval is the random object and the parameter is not. A statement such as <span class="math inline">\(\Pr\paren{\theta \in \cintf{X}}\)</span> is then a statement about the data <span class="math inline">\(X\)</span>.</li>
+</ul>
+<p>The macro <code>\ci</code> prints the Wald form <span class="math inline">\(\hb \pm \cirad\)</span> of one such interval, and is not a general notation for the interval.</p>
 
 
 </section>
