@@ -504,7 +504,7 @@ We keep `\truemeansubf` for any other pair of variables.
 
 These four forms differ in how much they say.
 
--   `\condE{\Outvar}{\Predvar = x}` writes out the expectation, so a reader sees the definition.
+-   `\condE{\Outvar}{\Predvar = x}` writes out the expectation, so the definition appears in the text.
 -   `\cmeanf{x}` is the function notation for that expectation, used once the function is the object of study, as in "$\cmeanf{x}$ is linear in $x$".
 -   `\cmean` names the function itself, without a value, as in "the function $\cmean$".
 -   `\truemeansubf{A \given B}{x}` is the general form, for variables other than $\Outvar$ and $\Predvar$.
