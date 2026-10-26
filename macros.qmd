@@ -147,6 +147,11 @@
 \def\cirad{\za \cdot \hse{\hb}}
 \providecommand{\ciradf}[1]{\za \cdot \hse{#1}}
 \def\ci{\hb {\color{red}\pm} \cirad}
+\def\cilo{L}
+\def\ciup{U}
+\providecommand{\cilof}[1]{{\cilo\paren{#1}}}
+\providecommand{\ciupf}[1]{{\ciup\paren{#1}}}
+\providecommand{\cintf}[1]{{\sb{\cilof{#1}, \ciupf{#1}}}}
 \def\th{\theta}
 \def\vth{\vec{\theta}}
 \def\Th{\Theta}
