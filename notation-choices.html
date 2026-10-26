@@ -884,7 +884,7 @@ window.Quarto = {
 <p>The usual case has the outcome <span class="math inline">\(\Outvar\)</span> and the predictor <span class="math inline">\(\Predvar\)</span>, and there we shorten that form. We write <span class="math inline">\(\cmean\)</span> for the conditional population mean function. We write <span class="math inline">\(\cmeanf{x}\)</span> for its value at <span class="math inline">\(x\)</span>. The macro <code>\cmeanf{x}</code> prints the same as <code>\truemeansubf{\Outvar \given \Predvar}{x}</code>. The macro <code>\cmean</code> prints <span class="math inline">\(\truemean\)</span> with the subscript <span class="math inline">\(\Outvar \given \Predvar\)</span>, and no argument. So <span class="math inline">\(\cmeanf{10}\)</span> is the same number as <span class="math inline">\(\condE{\Outvar}{\Predvar = 10}\)</span>. We keep <code>\truemeansubf</code> for any other pair of variables.</p>
 <p>These four forms differ in how much they say.</p>
 <ul>
-<li><code>\condE{\Outvar}{\Predvar = x}</code> writes out the expectation, so a reader sees the definition.</li>
+<li><code>\condE{\Outvar}{\Predvar = x}</code> writes out the expectation, so the definition appears in the text.</li>
 <li><code>\cmeanf{x}</code> is the function notation for that expectation, used once the function is the object of study, as in “<span class="math inline">\(\cmeanf{x}\)</span> is linear in <span class="math inline">\(x\)</span>”.</li>
 <li><code>\cmean</code> names the function itself, without a value, as in “the function <span class="math inline">\(\cmean\)</span>”.</li>
 <li><code>\truemeansubf{A \given B}{x}</code> is the general form, for variables other than <span class="math inline">\(\Outvar\)</span> and <span class="math inline">\(\Predvar\)</span>.</li>
