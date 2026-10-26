@@ -139,8 +139,8 @@ name	interpretation
 \ci	full confidence interval expression
 \cilo	lower endpoint statistic of a confidence interval (prints L)
 \ciup	upper endpoint statistic of a confidence interval (prints U)
-\cilof	lower confidence limit as a function of the data (prints L\paren{x})
-\ciupf	upper confidence limit as a function of the data (prints U\paren{x})
+\cilof	lower endpoint statistic of a confidence interval as a function of the data (prints L\paren{x})
+\ciupf	upper endpoint statistic of a confidence interval as a function of the data (prints U\paren{x})
 \cintf	confidence interval as the closed interval of its endpoint statistics (prints \sb{\cilof{x}, \ciupf{x}})
 \th	Greek letter theta (θ)
 \vth	theta parameter vector

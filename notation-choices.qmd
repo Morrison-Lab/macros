@@ -698,6 +698,6 @@ We chose this form for two reasons.
 
 -   It matches Casella and Berger, who define an interval estimator as the random interval $[L(\vX), U(\vX)]$ (Casella and Berger, *Statistical Inference*, 2nd ed., 2002, Definition 9.1.1).
 -   It packages the two random endpoints into a single random interval, rather than placing the parameter between two random bounds.
-    A statement such as $\Pr\paren{\theta \in \cintf{X}}$ is then a statement about the data $X$.
+    In $\Pr\paren{\theta \in \cintf{X}}$, the event $\theta \in \cintf{X}$ is then an event about the random data $X$, and the probability is over $X$ with $\theta$ held fixed.
 
 The macro `\ci` prints the Wald form $\ci$ of one such interval, with the $\pm$ sign in red, and is not a general notation for the interval.
