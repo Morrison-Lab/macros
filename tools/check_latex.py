@@ -124,6 +124,7 @@ UNSUPPORTED = re.compile(
 MIN_DELIMITER_MACROS = 9
 MIN_DEFINITIONS = 400
 SCRIPT_STARTS = "^_'"
+HAT = "̂"  # combining circumflex, which pdftotext emits for a hat accent
 # An even run of backslashes before % leaves the % a real comment start.
 COMMENT = re.compile(r"(?<!\\)((?:\\\\)*)%.*$", re.M)
 
@@ -375,9 +376,17 @@ def render_checks():
             ["pdftotext", str(pdfs[0]), "-"], capture_output=True, text=True
         ).stdout
         text = re.sub(r"\s+", "", unicodedata.normalize("NFKC", text))
+        # pdftotext places a hat after the next glyph on some engines (after a
+        # comma that follows the letter, say), so compare without hats and
+        # require the hats separately.
         stem_ok = True
+        hats_wanted = sum(s.count(HAT) for s in wanted)
+        if text.count(HAT) < hats_wanted:
+            print(f"render {stem}: FAIL, extracted text has {text.count(HAT)} hats, expected at least {hats_wanted}")
+            stem_ok = False
+        bare = text.replace(HAT, "")
         for s in wanted:
-            if s not in text:
+            if s.replace(HAT, "") not in bare:
                 print(f"render {stem}: FAIL, extracted text lacks {s!r}; got {text[:200]!r}")
                 stem_ok = False
         if stem_ok:
