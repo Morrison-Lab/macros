@@ -1415,6 +1415,8 @@ name	interpretation
 \entropyf	Shannon entropy of a random variable, H(X)
 \surprisal	surprisal symbol s
 \surprisalf	surprisal of an outcome, s(x)
+\crossentropy	cross-entropy symbol H (prints \entropy)
+\crossentropyf	cross-entropy of the second distribution relative to the first, H(p, q)
 \kldiv	Kullback–Leibler divergence symbol D_KL
 \kldivf	Kullback–Leibler divergence of the second distribution from the first, D_KL(p ‖ q)
 \kolm	Kolmogorov complexity symbol K
