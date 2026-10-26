@@ -182,6 +182,9 @@ Our convention puts $p$ first, because the divergence is the expectation under $
 It is not symmetric, so swapping the arguments changes the value.
 Some sources write the same quantity with the arguments in the other order, or call it the relative entropy, so check which distribution comes first before comparing a formula with ours.
 
+The [cross-entropy](https://morrison-lab.github.io/pds/expectation.html#def-cross-entropy) of $q$ relative to $p$ is written $\crossentropyf{p}{q}$, again with $p$ first, and it uses the same letter as the entropy because $\crossentropyf{p}{p}$ is the entropy.
+It is not symmetric either, so check the order of the arguments in a source before comparing a formula with ours.
+
 ## Names for the same object in machine learning and statistics {#sec-ml-statistics-names}
 
 Machine learning and statistics texts often use different names and symbols for the same object.
