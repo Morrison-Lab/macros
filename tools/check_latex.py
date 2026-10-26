@@ -44,7 +44,7 @@ EXPECTED = {
         "DINVODDSRISES",
         "CTRLSTUCK",
     ],
-    # pdftotext puts a hat after its letter and may reorder scripts, and NFKC
+    # pdftotext puts a hat after its letter and may reorder scripts, and NFKD
     # folds a script letter to its plain letter, so these strings pin which
     # macro prints which letter, not the script or subscript position.
     # EXPRISES is printed by a box-height test in the page: an exponent after
@@ -375,18 +375,26 @@ def render_checks():
         text = subprocess.run(
             ["pdftotext", str(pdfs[0]), "-"], capture_output=True, text=True
         ).stdout
-        text = re.sub(r"\s+", "", unicodedata.normalize("NFKC", text))
+        # NFKD, not NFKC: a hat that lands on a letter with a precomposed
+        # circumflex (Ê, say) must stay a separate HAT so it can be counted.
+        def fold(t):
+            return re.sub(r"\s+", "", unicodedata.normalize("NFKD", t))
+
+        text = fold(text)
         # pdftotext places a hat after the next glyph on some engines (after a
         # comma that follows the letter, say), so compare without hats and
         # require the hats separately.
         stem_ok = True
-        hats_wanted = sum(s.count(HAT) for s in wanted)
+        hats_wanted = sum(fold(s).count(HAT) for s in wanted)
         if text.count(HAT) < hats_wanted:
-            print(f"render {stem}: FAIL, extracted text has {text.count(HAT)} hats, expected at least {hats_wanted}")
+            print(
+                f"render {stem}: FAIL, extracted text has {text.count(HAT)} hats,"
+                f" expected at least {hats_wanted}"
+            )
             stem_ok = False
         bare = text.replace(HAT, "")
         for s in wanted:
-            if s.replace(HAT, "") not in bare:
+            if fold(s).replace(HAT, "") not in bare:
                 print(f"render {stem}: FAIL, extracted text lacks {s!r}; got {text[:200]!r}")
                 stem_ok = False
         if stem_ok:
