@@ -688,3 +688,16 @@ We chose this form for two reasons.
 -   It does not reuse $\mathcal{L}$, which `\Lik` already prints for the likelihood.
 
 The macro `\levelset`, which printed the script letter $\mathcal{L}$, is removed.
+
+## The endpoints of a confidence interval {#sec-confidence-interval-endpoints}
+
+Our convention is to call the lower and upper endpoints of a confidence interval $\cilo$ and $\ciup$, which are statistics, and to write the interval as the closed interval $\cintf{X}$.
+The macros `\cilof{x}` and `\ciupf{x}` print $\cilof{x}$ and $\ciupf{x}$, and `\cintf{x}` prints $\cintf{x}$.
+
+We chose this form for two reasons.
+
+-   It matches Casella and Berger, who define an interval estimator as the random interval $[L(\vX), U(\vX)]$ (Casella and Berger, *Statistical Inference*, 2nd ed., 2002, Definition 9.1.1).
+-   It writes the interval in interval notation, so the interval is the random object and the parameter is not.
+    A statement such as $\Pr\paren{\theta \in \cintf{X}}$ is then a statement about the data $X$.
+
+The macro `\ci` prints the Wald form $\hb \pm \cirad$ of one such interval, and is not a general notation for the interval.
