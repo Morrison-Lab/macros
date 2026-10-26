@@ -9,6 +9,7 @@ name	interpretation
 \distop	operator-name distribution/function dispatcher
 \sbmat	matrix formatted with square brackets (bmatrix)
 \Prf	Pr(·) probability expression
+\Prunder	probability of an event when the distribution is indexed by the first argument, such as a parameter or a distribution, \Prunder{\theta}{A} (prints Pr_θ(A))
 \am	arg max operator
 \argmax	arg max operator (alias for \am)
 \amin	arg min operator
