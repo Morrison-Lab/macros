@@ -1212,7 +1212,8 @@ name	interpretation
 \devsymf	deviation operator applied to a random variable, like \varsymf (prints \devsym with its argument in square brackets)
 \devval	observed deviation, double-struck lowercase d 𝕕 (a value, as 𝔼 is the operator and x the value; the PDF needs bbm, see macros-pdf-header.tex)
 \mathbbm	double-struck letter that includes lowercase (alias for \mathbb where bbm is not loaded, as in MathJax)
-\irrerr	short symbol for the irreducible error, the variance of the noise \Noise (alias for \varpar)
+\resvar	short symbol for the residual variance, the variance of the noise \Noise given the inputs (alias for \varpar)
+\irrerr	short symbol for the residual variance (alias for \resvar); deprecated, use \resvar
 \rvar	a generic value of a random variable in probability expressions (prints x)
 \Rvar	a generic random variable in probability expressions (prints X)
 \learnrate	a learning rate (gradient-descent step size) (prints \alpha)

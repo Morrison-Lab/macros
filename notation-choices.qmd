@@ -272,14 +272,18 @@ Three short symbols name the pieces of the expected squared error in predicting 
     The long operator $\Biast$ stays available for the full definition.
 -   The variance of the fitted value over training data sets is $\varsymf{\epredfnf{\predvar}}$, from the macro `\varsymf`.
     The macro `\varsymf` is a variance operator for any random variable, in the style of the expectation $\E{\cdot}$.
--   The irreducible error is $\irrerr$, from the macro `\irrerr`.
-    It is the variance of the noise, so it is the existing variance parameter $\varpar$.
-    When the noise variance depends on $\predvar$, the irreducible error is a function of $\predvar$.
+-   The residual variance is $\resvar$, from the macro `\resvar`.
+    It is the variance of the noise given the inputs, so it is the existing variance parameter $\varpar$.
+    When the noise variance depends on $\predvar$, the residual variance is a function of $\predvar$.
+    Many sources call it the irreducible error.
+    We avoid that name because it is a variance and not an error, and because it is irreducible only given the inputs:
+    a further input that predicts the outcome reduces it.
+    The macro `\irrerr` stays available as a deprecated alias.
 
 With these symbols, the expected squared error splits into three pieces, where the expectation is over the training data and over $\Outvar$:
 
 $$
-\E{\sqf{\Outvar - \epredfnf{\predvar}}} = \sqf{\biassymf{\epredfnf{\predvar}}} + \varsymf{\epredfnf{\predvar}} + \irrerr.
+\E{\sqf{\Outvar - \epredfnf{\predvar}}} = \sqf{\biassymf{\epredfnf{\predvar}}} + \varsymf{\epredfnf{\predvar}} + \resvar.
 $$
 
 A derivation that does not manipulate a piece can write its short symbol, after the piece is defined in full.
@@ -304,14 +308,14 @@ These Latin letters have collisions:
     The bias operator prints a blackboard bold letter, so the two are distinguishable in one document.
 -   The existing macro `\V` prints $\V$, the full name of the variance, so `\varsymf` is the short form, not a replacement.
 
-The irreducible error keeps a Greek letter, because it is a variance parameter and not an operator.
+The residual variance keeps a Greek letter, because it is a variance parameter and not an operator.
 It reuses $\sigma^2$, which already names the variance parameter, instead of getting a new letter.
 
 Some sources write the same pieces in other ways:
 
 -   They keep the operator form, as in $\Biast(\hat f(x))^2$ and $\Vart(\hat f(x))$, in every line of the derivation.
     This is unambiguous but long.
--   They write $\sigma_\epsilon^2$ or $\Vart(\epsilon)$ for the irreducible error, where $\epsilon$ is their noise symbol.
+-   They write $\sigma_\epsilon^2$ or $\Vart(\epsilon)$ for the residual variance, where $\epsilon$ is their noise symbol.
 -   They may use a lower-case Latin letter for each piece.
     We avoid this because $b$ already names the bias of a neural network in [the names entry](#sec-ml-statistics-names), and the macro `\vv` prints the vector $\vv$.
 
