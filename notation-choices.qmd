@@ -276,8 +276,8 @@ Three short symbols name the pieces of the expected squared error in predicting 
     It is the variance of the noise given the inputs, so it is the existing variance parameter $\varpar$.
     When the noise variance depends on $\predvar$, the residual variance is a function of $\predvar$.
     Many sources call it the irreducible error.
-    We avoid that name because it is a variance and not an error, and because it is irreducible only given the inputs:
-    a further input that predicts the outcome reduces it.
+    We avoid that name because the residual variance is a variance and not an error, and because it is irreducible only given the inputs:
+    a further input that predicts the outcome can reduce the average residual variance.
     The macro `\irrerr` stays available as a deprecated alias.
 
 With these symbols, the expected squared error splits into three pieces, where the expectation is over the training data and over $\Outvar$:
