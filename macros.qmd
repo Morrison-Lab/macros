@@ -10,6 +10,7 @@
 \providecommand{\distop}[1]{\operatorname{#1}}
 \providecommand{\sbmat}[1]{\begin{bmatrix}#1\end{bmatrix}}
 \providecommand{\Prf}[1]{{\Pr\paren{#1}}}
+\providecommand{\Prunder}[2]{{\Pr_{#1}\paren{#2}}}
 \def\am{\arg \max}
 \def\argmax{\arg \max}
 \def\amin{\arg \min}
@@ -147,6 +148,11 @@
 \def\cirad{\za \cdot \hse{\hb}}
 \providecommand{\ciradf}[1]{\za \cdot \hse{#1}}
 \def\ci{\hb {\color{red}\pm} \cirad}
+\def\cilo{L}
+\def\ciup{U}
+\providecommand{\cilof}[1]{{\cilo\paren{#1}}}
+\providecommand{\ciupf}[1]{{\ciup\paren{#1}}}
+\providecommand{\cintf}[1]{{\sb{\cilof{#1}, \ciupf{#1}}}}
 \def\th{\theta}
 \def\vth{\vec{\theta}}
 \def\Th{\Theta}
@@ -344,8 +350,8 @@
 \providecommand{\expitf}[1]{{\expit\cb{#1}}}
 \providecommand{\dexpitf}[1]{{\expit'\cb{#1}}}
 \def\logit{\operatorname{logit}}
-\def\sigmoid{\sigma}
-\providecommand{\sigmoidf}[1]{{\sigmoid\paren{#1}}}
+\def\sigmoid{\expit}
+\providecommand{\sigmoidf}[1]{{\expit\paren{#1}}}
 \providecommand{\logitf}[1]{{\logit\cb{#1}}}
 \providecommand{\E}[1]{{\mathbb{E}\sb{#1}}}
 \def\Ef{\E}
@@ -464,6 +470,8 @@
 \providecommand{\norm}[1]{\mathopen{}\left\lVert#1\right\rVert\mathclose{}}
 \providecommand{\normsq}[1]{{\norm{#1}}\sq}
 \providecommand{\card}[1]{{\abs{#1}}}
+\def\powersetsym{\mathcal{P}}
+\providecommand{\powerset}[1]{{\powersetsym\paren{#1}}}
 \providecommand{\factorial}[1]{{{#1}!}}
 \providecommand{\binomial}[2]{{\binom{#1}{#2}}}
 \def\sumsym{s}
@@ -1432,6 +1440,8 @@
 \providecommand{\entropyf}[1]{{\entropy\paren{#1}}}
 \def\surprisal{s}
 \providecommand{\surprisalf}[1]{{\surprisal\paren{#1}}}
+\def\crossentropy{\entropy}
+\providecommand{\crossentropyf}[2]{{\crossentropy\paren{#1, #2}}}
 \def\kldiv{{D_{\mathrm{KL}}}}
 \providecommand{\kldivf}[2]{{\kldiv\paren{#1 \,\Vert\, #2}}}
 \def\kolm{K}

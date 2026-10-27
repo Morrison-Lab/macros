@@ -106,7 +106,7 @@ symbol,meaning
 \leverage{a},"leverage of the observation given as the argument, h with the observation as subscript"
 \llik,log-likelihood symbol (ℓ)
 \logodds,log-odds symbol η
-\sigmoidf{a},"logistic (sigmoid) function applied to its argument, σ(·)"
+\sigmoidf{a},"logistic (sigmoid) function applied to its argument, expit(·)"
 \logit,logit function
 \loss,loss function symbol (L)
 \obsloss{a},"loss on one observation, ℓ_i (argument: the observation index)"

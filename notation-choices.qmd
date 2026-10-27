@@ -182,6 +182,9 @@ Our convention puts $p$ first, because the divergence is the expectation under $
 It is not symmetric, so swapping the arguments changes the value.
 Some sources write the same quantity with the arguments in the other order, or call it the relative entropy, so check which distribution comes first before comparing a formula with ours.
 
+The [cross-entropy](https://morrison-lab.github.io/pds/expectation.html#def-cross-entropy) of $q$ relative to $p$ is written $\crossentropyf{p}{q}$, again with $p$ first, and it uses the same letter as the entropy because $\crossentropyf{p}{p}$ is the entropy.
+It is not symmetric either, so check the order of the arguments in a source before comparing a formula with ours.
+
 ## Names for the same object in machine learning and statistics {#sec-ml-statistics-names}
 
 Machine learning and statistics texts often use different names and symbols for the same object.
@@ -463,6 +466,11 @@ Here $\p$ is a function name, not the number of inputs.
 Some sources write $P()$ for all of these.
 Others keep $f()$ for densities and mass functions, and use $P()$ only for the probability of an event.
 
+When the distribution depends on a parameter, we write the parameter as a subscript, $\Prunder{\theta}{A}$, read "the probability of $A$ when the parameter is $\theta$".
+The macro `\Prunder` takes the subscript first and the event second, so a source does not need to put a subscript between `\Pr` and its parentheses by hand.
+Some sources write $P(A \mid \theta)$, which reads as conditioning on a random $\theta$.
+We reserve the bar for conditioning on an event or a random variable, and use the subscript when the parameter is fixed rather than random.
+
 We write the expectation of a random variable with square brackets, as in $\E{X}$.
 Some sources write plain $E[X]$, or parentheses, $E(X)$.
 The meaning is the same.
@@ -510,7 +518,7 @@ We keep `\truemeansubf` for any other pair of variables.
 
 These four forms differ in how much they say.
 
--   `\condE{\Outvar}{\Predvar = x}` writes out the expectation, so a reader sees the definition.
+-   `\condE{\Outvar}{\Predvar = x}` writes out the expectation, so the definition appears in the text.
 -   `\cmeanf{x}` is the function notation for that expectation, used once the function is the object of study, as in "$\cmeanf{x}$ is linear in $x$".
 -   `\cmean` names the function itself, without a value, as in "the function $\cmean$".
 -   `\truemeansubf{A \given B}{x}` is the general form, for variables other than $\Outvar$ and $\Predvar$.
@@ -539,6 +547,24 @@ We do not make them aliases of `\truemean`, and we do not define a `\popmeanf` a
 In the source, `\mean`, `\popmean` and `\pmean` name the population mean of a variable.
 The names `\truemean` and `\truemeanf` name the true mean function.
 Each name then says which of the two a formula means, even though all of them print $\mu$.
+
+## The logistic function {#sec-logistic-function-symbol}
+
+The logistic function maps a real number $a$ to $1 / (1 + e^{-a})$.
+Our convention is to print it as the upright name $\sigmoidf{a}$, which is `expit`, with the inverse $\logit$, the log-odds function.
+`\expit` is the primary name, and `\sigmoid` and `\sigmoidf` are aliases that print the same.
+
+We chose this for two reasons.
+First, the symbol $\sigma$ is the usual choice in the deep learning literature, but here it also prints a standard deviation, a kernel bandwidth, a singular value and the generator of a $\sigma$-algebra.
+Second, a named function is upright (ISO 80000-2), and `expit` is already a name in software: scipy calls it `expit`, and R calls it `plogis`.
+
+Other sources use other forms.
+*An Introduction to Statistical Learning* writes it out as $e^x / (1 + e^x)$.
+Deep learning texts write $\sigma$ and call it the "logistic sigmoid".
+We did not choose an upright $\mathrm{s}$, which is easily read as the variable $s$, or the text "sigmoid", which is long inside network equations and also names $\tanh$.
+In a neural network, where the activation function is a role rather than one function, a chapter can name the activation with a generic symbol and say which function it is.
+
+We keep the `\sigmoid` and `\sigmoidf` aliases permanently rather than renaming every use, because a rename changes no output and the name `sigmoid` remains a natural way to say "the logistic function" in neural-network text.
 
 ## An exponent on a function with built-in delimiters {#sec-brace-delimited-forms}
 
@@ -579,6 +605,14 @@ Without them, `\factorial{n-1}` prints $\factorial{n-1}$, which reads as $n - (1
 Other sources write the cardinality as $\#A$ or $n(A)$.
 They write the binomial coefficient as $C(n, k)$ or ${}^{n}C_{k}$.
 When you read a formula from another source, check which of these a symbol means before you compare it with ours.
+
+## The power set {#sec-power-set-notation}
+
+We write the power set of a set $A$, the set of all its subsets, as $\powerset{A}$, with a calligraphic P.
+The macro `\powerset` prints it, and `\powersetsym` prints the symbol alone.
+`\powerset` names the role, so a reader of the source can tell the power set from the other calligraphic P in these macros, `\distfam`, a family of distributions.
+A set with $n$ elements has $2^n$ subsets, which is why other sources write the power set as $2^A$.
+Some write it with a plain $P(A)$, or with Weierstrass's $\wp(A)$.
 
 ## The sum of the elements of a vector {#sec-sum-of-elements}
 
@@ -671,3 +705,16 @@ We chose this form for two reasons.
 -   It does not reuse $\mathcal{L}$, which `\Lik` already prints for the likelihood.
 
 The macro `\levelset`, which printed the script letter $\mathcal{L}$, is removed.
+
+## The endpoints of a confidence interval {#sec-confidence-interval-endpoints}
+
+Our convention is to call the lower and upper endpoints of a confidence interval $\cilo$ and $\ciup$, which are statistics, and to write the interval as the closed interval $\cintf{X}$.
+The macros `\cilof{x}` and `\ciupf{x}` print $\cilof{x}$ and $\ciupf{x}$, and `\cintf{x}` prints $\cintf{x}$.
+
+We chose this form for two reasons.
+
+-   It matches Casella and Berger, who define an interval estimator as the random interval $[L(\vX), U(\vX)]$ (Casella and Berger, *Statistical Inference*, 2nd ed., 2002, Definition 9.1.1).
+-   It packages the two random endpoints into a single random interval, rather than placing the parameter between two random bounds.
+    In $\Pr\paren{\theta \in \cintf{X}}$, the event $\theta \in \cintf{X}$ is then an event about the random data $X$, and the probability is over $X$ with $\theta$ held fixed.
+
+The macro `\ci` prints the Wald form $\ci$ of one such interval, with the $\pm$ sign in red, and is not a general notation for the interval.
