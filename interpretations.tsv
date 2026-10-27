@@ -9,6 +9,7 @@ name	interpretation
 \distop	operator-name distribution/function dispatcher
 \sbmat	matrix formatted with square brackets (bmatrix)
 \Prf	Pr(·) probability expression
+\Prunder	probability of an event when the distribution is indexed by the first argument, such as a parameter or a distribution, \Prunder{\theta}{A} (prints Pr_θ(A))
 \am	arg max operator
 \argmax	arg max operator (alias for \am)
 \amin	arg min operator
@@ -137,6 +138,11 @@ name	interpretation
 \cirad	confidence interval radius expression
 \ciradf	confidence interval radius with argument
 \ci	full confidence interval expression
+\cilo	lower endpoint statistic of a confidence interval (prints L)
+\ciup	upper endpoint statistic of a confidence interval (prints U)
+\cilof	lower endpoint statistic of a confidence interval as a function of the data (prints L\paren{x})
+\ciupf	upper endpoint statistic of a confidence interval as a function of the data (prints U\paren{x})
+\cintf	confidence interval as the closed interval of its endpoint statistics (prints \sb{\cilof{x}, \ciupf{x}})
 \th	Greek letter theta (θ)
 \vth	theta parameter vector
 \Th	uppercase Theta (Θ)
@@ -280,8 +286,8 @@ name	interpretation
 \expitf	expit applied to argument
 \dexpitf	derivative of expit function
 \logit	logit function
-\sigmoid	logistic (sigmoid) function symbol (σ)
-\sigmoidf	logistic (sigmoid) function applied to its argument, σ(·)
+\sigmoid	logistic (sigmoid) function symbol (expit)
+\sigmoidf	logistic (sigmoid) function applied to its argument, expit(·)
 \logitf	logit applied to argument
 \E	expected value (prints \Expp, with the argument in square brackets)
 \Ef	expected value (alias for \E)
@@ -400,6 +406,8 @@ name	interpretation
 \norm	Euclidean norm ‖·‖
 \normsq	squared norm ‖·‖²
 \card	cardinality (number of elements) of a finite set |·|
+\powersetsym	power set symbol 𝒫
+\powerset	power set of a set, the set of all its subsets 𝒫(·)
 \factorial	factorial of a non-negative integer n! (prints its argument followed by an exclamation mark)
 \binomial	binomial coefficient, "n choose k" (prints \binom{n}{k})
 \powf	first argument (·) raised to the power of the second argument, with parentheses around the base
@@ -1417,6 +1425,8 @@ name	interpretation
 \entropyf	Shannon entropy of a random variable, H(X)
 \surprisal	surprisal symbol s
 \surprisalf	surprisal of an outcome, s(x)
+\crossentropy	cross-entropy symbol H (prints \entropy)
+\crossentropyf	cross-entropy of the second distribution relative to the first, H(p, q)
 \kldiv	Kullback–Leibler divergence symbol D_KL
 \kldivf	Kullback–Leibler divergence of the second distribution from the first, D_KL(p ‖ q)
 \kolm	Kolmogorov complexity symbol K

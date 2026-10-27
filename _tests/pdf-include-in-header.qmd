@@ -40,3 +40,7 @@ Fitted prediction function, plain, squared and applied: $\epredfn^2$, $\epredfnf
 Sample means, plain, subscripted and squared: $\smean{y}_i^2$, $\xbar^2$, $\samplemean{X}{n}^2$, $\smeandev^2$, $\smeandev_i$, $\avgleverage^2$.
 
 Sums of squares, squared and subscripted: $\RSS^2$, $\RSS_0$, $\TSS_i$. Training symbols: $\nnetparams^2$, $\iter_i$, $\layeridx^2$, $\objfn_i$, $\objfnf{\vth}^2$.
+
+Confidence interval endpoints, plain, subscripted, squared and with a tall argument: $\cilo^2$, $\ciup_i$, $\cilof{x}^2$, $\ciupf{x}_i$, $\cintf{X}^2$, $\cintf{\frac{a}{b}}_i$, $\Prunder{\theta}{\theta \in \cintf{X}} \ge 1 - \alpha$.
+
+Probability under a parameter, plain, squared, subscripted and with a tall argument: $\Prunder{\theta}{A}$, $\Prunder{\theta}{A}^2$, $\Prunder{\theta}{A}_i$, $\Prunder{\frac{a}{b}}{\frac{c}{d} \in \cintf{X}}^2$.
