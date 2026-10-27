@@ -33,6 +33,7 @@ EXPECTED = {
     "fform-exponent": [
         "EFRISES",
         "VARRISES",
+        "DEVRISES",
         "PROBRISES",
         "SIGRISES",
         "DODDSRISES",

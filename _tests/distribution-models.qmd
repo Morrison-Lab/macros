@@ -3,6 +3,7 @@ title: "Distribution model macros"
 format:
   pdf:
     include-in-header:
+      - ../macros-pdf-header.tex
       - ../macros.qmd
 ---
 
