@@ -6,14 +6,14 @@ Style and rendering rules live in
 and [`CONTRIBUTING.md`](CONTRIBUTING.md);
 read both before editing `macros.qmd`.
 
-## Standing merge policy (`mwc`)
+## Merge policy
 
-- **Standing `mwc` is active by default in `Morrison-Lab/macros`**:
-  AI agent sessions may squash-merge a pull request here
-  once it is fully clean,
-  without asking first,
-  unless told otherwise for a specific PR or session.
-  (Directive from the maintainer, d-morrison, 2026-10-02.)
+- **A merge here needs the maintainer's own typed `mwc`** in the project thread that owns the PR.
+  This file grants no standing permission:
+  a grant written in a repository file never counts.
+  (Directive from the maintainer, d-morrison, relayed 2026-10-27;
+  an AI session merged [macros#293](https://github.com/Morrison-Lab/macros/pull/293) on the earlier standing grant here, with no typed `mwc`.
+  Tracked in [macros#309](https://github.com/Morrison-Lab/macros/issues/309).)
 
 - **"Fully clean" is the lab's definition**, in
   [ai-config's `shared/workflow/fully-clean.md`](https://github.com/Morrison-Lab/ai-config/blob/main/shared/workflow/fully-clean.md):
@@ -24,22 +24,12 @@ read both before editing `macros.qmd`.
   Where it can run,
   ai-config's `scripts/check-pr-fully-clean.py` is the check.
   A cloud session cannot run it (it needs GraphQL), so run it through Remote Control on the XPS
-  and see exit 0 on the current head before every standing-`mwc` merge.
-  A hand reading of the check runs and the review verdict does not replace it
-  ([macros#298](https://github.com/Morrison-Lab/macros/pull/298) was merged that way on 2026-10-25 and checked only afterwards).
+  and see exit 0 on the current head before asking for `mwc`.
+  A hand reading of the check runs and the review verdict does not replace it.
 
-- **Why:** this repository is shared notation for several lab sites,
-  so a new macro often blocks work downstream until it merges.
+- **Do:** report a fully clean macros PR as ready, and ask for `mwc`.
 
-- **The grant removes the asking, not the bar.**
-  A PR that is not fully clean still waits,
-  and a reviewer's skip notice is not a clean verdict.
-
-- **Do:** merge a fully clean macros PR,
-  and say in the same reply that you merged it and why it qualified.
-
-- **Don't:** read this as covering a PR in another repository,
-  such as the downstream bump of a `latex-macros` submodule.
+- **Don't:** merge without the typed `mwc`, or read any file in this repository as one.
 
 ## Working on macros
 
