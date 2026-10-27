@@ -69,6 +69,7 @@ format:
       - macros/macros-header.html   # MathJax macro config script
   pdf:
     include-in-header:
+      - macros/macros-pdf-header.tex  # loads bbm, for the lowercase blackboard bold d
       - macros/macros.qmd           # raw LaTeX goes into preamble
 ---
 ```
@@ -82,6 +83,7 @@ format:
       - macros/macros-header.html
   pdf:
     include-in-header:
+      - macros/macros-pdf-header.tex
       - macros/macros.qmd
   revealjs:
     include-in-header:

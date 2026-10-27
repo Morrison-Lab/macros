@@ -255,11 +255,11 @@
 \def\satdeviance{\deviance_{\mathrm{sat}}}
 \def\dicdev{\deviance_{\mathrm{DIC}}}
 \providecommand{\dicdevf}[1]{{\dicdev\paren{#1}}}
-\def\deviation{\delta}
+\def\deviation{\devval}
 \def\devn{\deviation}
 \providecommand{\deviationv}{\vec{\deviation}}
 \def\devnv{\deviationv}
-\providecommand{\deviationf}[2]{{\deviation_{#2}\paren{#1}}}
+\providecommand{\deviationf}[2]{{\devsym_{#2}\paren{#1}}}
 \def\smeandev{\smean{\deviation}}
 \def\popdev{\deviation}
 \providecommand{\popdevf}[1]{\popdev_{#1}}
@@ -480,7 +480,7 @@
 \providecommand{\Sumof}[1]{{\Sumsym_{#1}}}
 \providecommand{\powf}[2]{{\paren{#1}}^{#2}}
 \providecommand{\sqf}[1]{\powf{#1}{2}}
-\providecommand{\devsq}[2]{\sqf{\devn_{#2}\paren{#1}}}
+\providecommand{\devsq}[2]{\sqf{\devsym_{#2}\paren{#1}}}
 \providecommand{\ssdev}[1]{\suminf{\devsq{\rvar_\iobs}{#1}}}
 \providecommand{\sq}{^2}
 \def\err{\eps}
@@ -1157,7 +1157,7 @@
 \providecommand{\emodmematf}[2]{{\emodmemat{#1}\paren{#2}}}
 \def\etargetfn{\est{\targetfn}}
 \providecommand{\etargetfnf}[1]{{\etargetfn\paren{#1}}}
-\def\targeterr{\deviation_{\targetfn}}
+\def\targeterr{\devsym_{\targetfn}}
 \providecommand{\targeterrf}[1]{{\targeterr\paren{#1}}}
 \def\emprisk{\epoprisk}
 \def\empriskf{\epopriskf}
@@ -1284,6 +1284,10 @@
 \providecommand{\biassymf}[1]{{\biassym\sb{#1}}}
 \def\varsym{\mathbb{V}}
 \providecommand{\varsymf}[1]{{\varsym\sb{#1}}}
+\def\devsym{\mathbb{D}}
+\providecommand{\devsymf}[1]{{\devsym\sb{#1}}}
+\providecommand{\mathbbm}[1]{\mathbb{#1}}
+\def\devval{\mathbbm{d}}
 \def\irrerr{\varpar}
 \def\rvar{x}
 \def\Rvar{X}

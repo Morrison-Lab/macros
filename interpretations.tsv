@@ -80,7 +80,7 @@ name	interpretation
 \gg	Greek letter gamma (alias for \g)
 \gd	Greek letter delta (δ)
 \eps	varepsilon error term (ε)
-\cdev	deviation from conditional mean (alias for \popdev, symbol δ; the noise is \Noise, which prints ε)
+\cdev	deviation from conditional mean (alias for \popdev, symbol 𝕕; the noise is \Noise, which prints ε)
 \veps	error vector (ε-vector)
 \epsp	ε(·) error function
 \epsf	ε(·) error function (alias for \epsp)
@@ -190,14 +190,14 @@ name	interpretation
 \satdeviance	deviance relative to the saturated model: twice the difference between the saturated model's and the fitted model's maximized log-likelihoods
 \dicdev	Bayesian deviance used by the deviance information criterion: minus twice the log-likelihood, with no saturated term (prints \deviance_{\mathrm{DIC}})
 \dicdevf	Bayesian deviance at a parameter value, dev_DIC(·) (prints \dicdev followed by its argument in parentheses)
-\deviation	deviation symbol δ
+\deviation	observed deviation 𝕕 (double-struck lowercase d, via \devval; the operator is \devsym, 𝔻)
 \devn	deviation symbol (alias for \deviation)
-\deviationv	deviation vector (the vec accent applied to δ)
+\deviationv	deviation vector (the vec accent applied to 𝕕)
 \devnv	deviation vector (alias for \deviationv)
-\deviationf	deviation of the first argument from the reference value in the second, δ_r(z)
-\smeandev	deviation of the sample mean, the sample mean of the deviations (prints \smean{\deviation}, δ with a bar)
-\popdev	deviation from a population mean, symbol δ (alias for \deviation; the noise is \Noise, which prints ε)
-\popdevf	deviation of the argument from its population mean, δ_z
+\deviationf	deviation of the first argument from the reference value in the second, 𝔻_r(z)
+\smeandev	deviation of the sample mean, the sample mean of the deviations (prints \smean{\deviation}, 𝕕 with a bar)
+\popdev	deviation from a population mean, symbol 𝕕 (alias for \deviation; the noise is \Noise, which prints ε)
+\popdevf	deviation of the argument from its population mean, 𝕕_z
 \Deviation	uppercase deviation symbol Δ
 \Devn	uppercase deviation (alias for \Deviation)
 \residual	residual symbol ε̂: the estimate of the noise \Noise (via \est)
@@ -412,7 +412,7 @@ name	interpretation
 \binomial	binomial coefficient, "n choose k" (prints \binom{n}{k})
 \powf	first argument (·) raised to the power of the second argument, with parentheses around the base
 \sqf	square of argument (·)²
-\devsq	squared deviation of the first argument from the reference value in the second (δ_r(z))²
+\devsq	squared deviation of the first argument from the reference value in the second (𝔻_r(z))²
 \ssdev	sum over i = 1, ..., n of the squared deviation of the observation from the argument (·), via \devsq
 \sq	square superscript ² (postfix)
 \err	error term ε (alias for \eps); the same symbol as the noise \Noise
@@ -1208,6 +1208,10 @@ name	interpretation
 \biassymf	short bias operator applied to an estimator, like \E (prints \biassym with its argument in square brackets)
 \varsym	short variance operator 𝕍 for any random variable (no argument, blackboard bold like \Expp)
 \varsymf	short variance operator applied to a random variable, like \E (prints \varsym with its argument in square brackets)
+\devsym	deviation operator 𝔻 for any random variable, X minus its mean (blackboard bold like \varsym and \Expp; the design matrix \design is italic D, and the observed value 𝕕 is \deviation)
+\devsymf	deviation operator applied to a random variable, like \varsymf (prints \devsym with its argument in square brackets)
+\devval	observed deviation, double-struck lowercase d 𝕕 (a value, as 𝔼 is the operator and x the value; the PDF needs bbm, see macros-pdf-header.tex)
+\mathbbm	double-struck letter that includes lowercase (alias for \mathbb where bbm is not loaded, as in MathJax)
 \irrerr	short symbol for the irreducible error, the variance of the noise \Noise (alias for \varpar)
 \rvar	a generic value of a random variable in probability expressions (prints x)
 \Rvar	a generic random variable in probability expressions (prints X)
@@ -1408,7 +1412,7 @@ name	interpretation
 \emodmematf	fitted model indexed by the input value in the subscript, applied to the data set in parentheses, h-hat_x(D) (via \est)
 \etargetfn	estimated target function: fitted counterpart of the target function (via \est), \mu-hat
 \etargetfnf	estimated target function applied to its argument (via \est), \mu-hat(·)
-\targeterr	error of the fitted target function: target function minus its fitted counterpart (the deviation symbol subscripted by the target function)
+\targeterr	error of the fitted target function: target function minus its fitted counterpart (the deviation operator 𝔻 subscripted by the target function)
 \targeterrf	error of the fitted target function at a point (via \targeterr)
 \codealph	alphabet of a block code (the set of symbols codewords use), Sigma
 \srcalph	alphabet of a source: the finite set of values a random variable takes, calligraphic X

@@ -6,6 +6,7 @@ format:
       - macros-header.html
   pdf:
     include-in-header:
+      - macros-pdf-header.tex
       - macros.qmd
   revealjs:
     output-file: demo-include-in-header-slides.html

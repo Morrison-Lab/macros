@@ -3,6 +3,7 @@ title: "Exponent after an f form"
 format:
   pdf:
     include-in-header:
+      - ../macros-pdf-header.tex
       - ../macros.qmd
 ---
 
@@ -16,6 +17,9 @@ An exponent after an f form must rise over a tall argument (the macros#147 brace
 \sbox{\withexp}{$\var{\frac{a}{b}}^2$}
 \sbox{\withoutexp}{$\var{\frac{a}{b}}$}
 \par\ifdim\dimexpr\ht\withexp-\ht\withoutexp\relax>1.5pt VARRISES\else VARSTUCK\fi
+\sbox{\withexp}{$\devsymf{\frac{a}{b}}^2$}
+\sbox{\withoutexp}{$\devsymf{\frac{a}{b}}$}
+\par\ifdim\dimexpr\ht\withexp-\ht\withoutexp\relax>1.5pt DEVRISES\else DEVSTUCK\fi
 \sbox{\withexp}{$\Pf{\frac{a}{b}}^2$}
 \sbox{\withoutexp}{$\Pf{\frac{a}{b}}$}
 \par\ifdim\dimexpr\ht\withexp-\ht\withoutexp\relax>1.5pt PROBRISES\else PROBSTUCK\fi
