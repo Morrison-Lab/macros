@@ -670,6 +670,7 @@ window.Quarto = {
   <li><a href="#sec-score-notation" id="toc-sec-score-notation" class="nav-link" data-scroll-target="#sec-score-notation">Writing the score function</a></li>
   <li><a href="#sec-estimand-estimator-symbols" id="toc-sec-estimand-estimator-symbols" class="nav-link" data-scroll-target="#sec-estimand-estimator-symbols">Symbols for estimands and estimators</a></li>
   <li><a href="#sec-bias-variance-symbols" id="toc-sec-bias-variance-symbols" class="nav-link" data-scroll-target="#sec-bias-variance-symbols">Short symbols for the pieces of the bias-variance decomposition</a></li>
+  <li><a href="#sec-single-variance-symbol" id="toc-sec-single-variance-symbol" class="nav-link" data-scroll-target="#sec-single-variance-symbol">One symbol for a variance</a></li>
   <li><a href="#sec-noise-deviation-error" id="toc-sec-noise-deviation-error" class="nav-link" data-scroll-target="#sec-noise-deviation-error">Noise, deviation and error</a></li>
   <li><a href="#sec-deviation-difference" id="toc-sec-deviation-difference" class="nav-link" data-scroll-target="#sec-deviation-difference">A deviation and a difference</a></li>
   <li><a href="#sec-italic-upright" id="toc-sec-italic-upright" class="nav-link" data-scroll-target="#sec-italic-upright">Italic and upright</a></li>
@@ -829,6 +830,30 @@ window.Quarto = {
 <li>They may use a lower-case Latin letter for each piece. We avoid this because <span class="math inline">\(b\)</span> already names the bias of a neural network in <a href="#sec-ml-statistics-names">the names entry</a>, and the macro <code>\vv</code> prints the vector <span class="math inline">\(\vv\)</span>.</li>
 </ul>
 <p>Check which form a source uses before comparing its decomposition with ours.</p>
+</section>
+<section id="sec-single-variance-symbol" class="level2">
+<h2 class="anchored" data-anchor-id="sec-single-variance-symbol">One symbol for a variance</h2>
+<p>We looked for a single symbol that could replace <span class="math inline">\(\varpar\)</span>, the variance parameter, and we found none. On 2026-10-26 we chose to keep <span class="math inline">\(\varpar\)</span> for the parameter and <span class="math inline">\(\varsym\)</span> for the variance of a random variable. We add no macro and no new Greek letter.</p>
+<p>We checked these books, which <a href="./notation-across-sources.html#sec-notation-sources">Notation Across Sources</a> lists in full:</p>
+<ul>
+<li>ISL, 2nd ed.&nbsp;(eq. 3.8, p.&nbsp;77), writes <span class="math inline">\(\sigma^2 = \Vart(\epsilon)\)</span>. ESL (eq. 2.27, p.&nbsp;26) writes the variance parameter as <span class="math inline">\(\sigma^2\)</span>, and Bishop (Section 1.2.4, p.&nbsp;24) does too.</li>
+<li>Bishop (eq. 1.40) writes the variance of a random variable as lower-case <span class="math inline">\(\mathrm{var}[f]\)</span>. Murphy, <em>Probabilistic Machine Learning</em> (eq. 2.29), writes it as <span class="math inline">\(V[X]\)</span>, with a Latin capital V, and writes the precision as <span class="math inline">\(\lambda = 1/\sigma^2\)</span>.</li>
+<li>Dobson and Barnett, 4th ed.&nbsp;(Notation, p.&nbsp;7), writes <span class="math inline">\(\mathrm{var}(Y_i) = \sigma_i^2\)</span>.</li>
+</ul>
+<p>No book we checked uses one glyph for the variance parameter. The nearest single letter is the operator <span class="math inline">\(\varsym\)</span>, which we already have.</p>
+<p>We rejected these letters, each for a collision in the macros:</p>
+<ul>
+<li><span class="math inline">\(\phi\)</span> and <span class="math inline">\(\varphi\)</span> are the dispersion parameter of a generalized linear model. Dobson and Barnett, 4th ed.&nbsp;(overdispersion paragraph for binomial data, PDF page 184), writes <span class="math inline">\(\mathrm{var}(Y_i) = n_i \pi_i (1 - \pi_i) \phi\)</span> for overdispersed binomial data, so <span class="math inline">\(\phi\)</span> multiplies the variance and is not the variance. The macros <code>\normpdf</code>, <code>\linefn</code> and <code>\poismean</code> also print <span class="math inline">\(\phi\)</span>.</li>
+<li><span class="math inline">\(\nu\)</span> prints a shrinkage factor (<code>\shrinkage</code>), a bound on the fraction of margin errors (<code>\svfrac</code>), a second measure (<code>\measureb</code>) and a nullity (<code>\nullity</code>).</li>
+<li><span class="math inline">\(\omega\)</span> prints an outcome (<code>\outcome</code>).</li>
+<li><span class="math inline">\(\vartheta\)</span> looks like <span class="math inline">\(\theta\)</span>, which names a parameter.</li>
+<li><span class="math inline">\(\varrho\)</span> looks like <span class="math inline">\(\rho\)</span>, which is the overdispersion parameter <code>\overdisp</code>.</li>
+<li><span class="math inline">\(\varpi\)</span> looks like <span class="math inline">\(\pi\)</span>.</li>
+<li><span class="math inline">\(\varsigma\)</span> is the only unused letter that is a form of <span class="math inline">\(\sigma\)</span>. We rejected it because it looks like <span class="math inline">\(\zeta\)</span> or <span class="math inline">\(c\)</span> at a small size and is hard to write by hand.</li>
+<li>A lower-case Latin <span class="math inline">\(v\)</span> collides with the vector macros, such as <code>\vv</code>.</li>
+<li>A capital <span class="math inline">\(V\)</span> collides with <code>\V</code> and with the variance function <span class="math inline">\(V(\mu)\)</span> of a generalized linear model.</li>
+</ul>
+<p>The precision <span class="math inline">\(\tau\)</span> (<code>\precision</code>) stays a separate symbol, because it is the reciprocal of the variance.</p>
 </section>
 <section id="sec-noise-deviation-error" class="level2">
 <h2 class="anchored" data-anchor-id="sec-noise-deviation-error">Noise, deviation and error</h2>
