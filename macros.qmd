@@ -1288,7 +1288,8 @@
 \providecommand{\devsymf}[1]{{\devsym\sb{#1}}}
 \providecommand{\mathbbm}[1]{\mathbb{#1}}
 \def\devval{\mathbbm{d}}
-\def\irrerr{\varpar}
+\def\resvar{\varpar}
+\def\irrerr{\resvar}
 \def\rvar{x}
 \def\Rvar{X}
 \def\predbar{\smean{\predvar}}
