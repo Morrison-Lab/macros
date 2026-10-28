@@ -47,9 +47,9 @@ ul.task-list li input[type="checkbox"] {
 <link href="site_libs/quarto-html/quarto-syntax-highlighting-bf27225e3a48a9273f3daa8f8e829971.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-8fb81616cc08d420bd1dcc5e03fb86a6.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="site_libs/bootstrap/bootstrap-dark-90b0ccabdf50233fb893b00cd6e33405.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
-<link href="site_libs/bootstrap/bootstrap-8fb81616cc08d420bd1dcc5e03fb86a6.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-38e310c92370d7eefecc7783883a2076.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-dark-8e5f4fda91cd1ee6f4b3374b158417d0.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="site_libs/bootstrap/bootstrap-38e310c92370d7eefecc7783883a2076.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
 <link href="site_libs/quarto-contrib/code-language-labels-1.0.2/code-language-labels.css" rel="stylesheet">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
@@ -668,6 +668,7 @@ window.Quarto = {
   <li><a href="#sec-ml-statistics-names" id="toc-sec-ml-statistics-names" class="nav-link" data-scroll-target="#sec-ml-statistics-names">Names for the same object in machine learning and statistics</a></li>
   <li><a href="#sec-likelihood-notation" id="toc-sec-likelihood-notation" class="nav-link" data-scroll-target="#sec-likelihood-notation">Writing the likelihood function</a></li>
   <li><a href="#sec-score-notation" id="toc-sec-score-notation" class="nav-link" data-scroll-target="#sec-score-notation">Writing the score function</a></li>
+  <li><a href="#sec-slash-partial-derivative" id="toc-sec-slash-partial-derivative" class="nav-link" data-scroll-target="#sec-slash-partial-derivative">A partial derivative written with a slash</a></li>
   <li><a href="#sec-estimand-estimator-symbols" id="toc-sec-estimand-estimator-symbols" class="nav-link" data-scroll-target="#sec-estimand-estimator-symbols">Symbols for estimands and estimators</a></li>
   <li><a href="#sec-bias-variance-symbols" id="toc-sec-bias-variance-symbols" class="nav-link" data-scroll-target="#sec-bias-variance-symbols">Short symbols for the pieces of the bias-variance decomposition</a></li>
   <li><a href="#sec-single-variance-symbol" id="toc-sec-single-variance-symbol" class="nav-link" data-scroll-target="#sec-single-variance-symbol">One symbol for a variance</a></li>
@@ -795,6 +796,11 @@ window.Quarto = {
 <h2 class="anchored" data-anchor-id="sec-score-notation">Writing the score function</h2>
 <p>The <a href="https://morrison-lab.github.io/sds/intro-MLEs.html#def-loglik">log-likelihood</a> is the natural logarithm of the likelihood function. The <a href="https://morrison-lab.github.io/sds/intro-MLEs.html#def-score">score function</a> is the derivative of the log-likelihood with respect to the parameter. This is the score of statistics, which is not the linear predictor of <a href="#sec-intercept">the intercept entry</a>. When the model has several parameters, the score is a vector that holds one partial derivative for each parameter, taken with the other parameters held fixed. We often omit its arguments and write <span class="math inline">\(\score\)</span> for <span class="math inline">\(\score(\theta)\)</span>. When we want to show the data, we write <span class="math inline">\(\score(\theta; \vx)\)</span>, in the same style as the likelihood.</p>
 <p>Some sources write <span class="math inline">\(U\)</span> or <span class="math inline">\(S\)</span> for the score function instead. We write <span class="math inline">\(\score\)</span> because it keeps <span class="math inline">\(U\)</span> and <span class="math inline">\(S\)</span> free for other uses.</p>
+</section>
+<section id="sec-slash-partial-derivative" class="level2">
+<h2 class="anchored" data-anchor-id="sec-slash-partial-derivative">A partial derivative written with a slash</h2>
+<p>A partial derivative can be written as a stacked fraction, <span class="math inline">\(\derivf{f}{x}\)</span>, or with a slash, <span class="math inline">\(\derivfslash{f}{x}\)</span>. The two mean the same thing. We write <code>\derivf{f}{x}</code> in displayed equations and <code>\derivfslash{f}{x}</code> in running text, where a stacked fraction would push the lines of a paragraph apart. Use the macro rather than typing <code>\partial f / \partial x</code>, so a reader of the source sees one notation for one object. Put the slash form inside <code>\paren{}</code> before a subscript or an exponent: <span class="math inline">\(\derivfslash{f}{x}_i\)</span> reads as a derivative with respect to <span class="math inline">\(x_i\)</span>, and <span class="math inline">\(\paren{\derivfslash{f}{x}}_i\)</span> does not.</p>
+<p>Other sources also write <span class="math inline">\(f_x\)</span> or <span class="math inline">\(\partial_x f\)</span> for the same derivative. We do not use them, because our subscripts mark indices, as in <span class="math inline">\(x_i\)</span> for the <span class="math inline">\(i\)</span>th observation.</p>
 </section>
 <section id="sec-estimand-estimator-symbols" class="level2">
 <h2 class="anchored" data-anchor-id="sec-estimand-estimator-symbols">Symbols for estimands and estimators</h2>
