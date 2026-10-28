@@ -235,6 +235,21 @@ When we want to show the data, we write $\score(\theta; \vx)$, in the same style
 Some sources write $U$ or $S$ for the score function instead.
 We write $\score$ because it keeps $U$ and $S$ free for other uses.
 
+## A partial derivative written with a slash {#sec-slash-partial-derivative}
+
+A partial derivative can be written as a stacked fraction, $\derivf{f}{x}$, or with a slash, $\derivfslash{f}{x}$.
+The two mean the same thing.
+We write `\derivf{f}{x}` in displayed equations and `\derivfslash{f}{x}` in running text,
+where a stacked fraction would push the lines of a paragraph apart.
+Use the macro rather than typing `\partial f / \partial x`,
+so a reader of the source sees one notation for one object.
+Put the slash form inside `\paren{}` before a subscript or an exponent:
+$\derivfslash{f}{x}_i$ reads as a derivative with respect to $x_i$,
+and $\paren{\derivfslash{f}{x}}_i$ does not.
+
+Other sources also write $f_x$ or $\partial_x f$ for the same derivative.
+We do not use them, because our subscripts mark indices, as in $x_i$ for the $i$th observation.
+
 ## Symbols for estimands and estimators {#sec-estimand-estimator-symbols}
 
 An estimand is the quantity we want to learn about, and an estimator is a rule that computes a guess of it from data.

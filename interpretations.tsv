@@ -252,6 +252,7 @@ name	interpretation
 \xderiv	cross partial derivative ∂²/∂x∂y
 \xderivf	cross partial ∂²f/∂x∂y with numerator
 \xderivff	cross partial (reversed argument order)
+\derivfslash	partial derivative ∂f/∂x written with a slash (prints \partial f / \partial x)
 \grad	gradient operator ∇
 \gradf	gradient of a function, ∇f
 \gradwrt	gradient with respect to a variable, ∇_θ f
