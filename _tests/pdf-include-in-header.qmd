@@ -46,3 +46,5 @@ Confidence interval endpoints, plain, subscripted, squared and with a tall argum
 Probability under a parameter, plain, squared, subscripted and with a tall argument: $\Prunder{\theta}{A}$, $\Prunder{\theta}{A}^2$, $\Prunder{\theta}{A}_i$, $\Prunder{\frac{a}{b}}{\frac{c}{d} \in \cintf{X}}^2$.
 
 Residual variance and its deprecated alias: $\resvar$, $\irrerr$, $\paren{\resvar}^2$.
+
+Partial derivative with a slash, with a compound numerator, subscripted and squared: $\derivfslash{f}{x}$, $\derivfslash{\paren{n \bar{y}}}{\beta_0}$, $\derivfslash{\frac{a}{b}}{\theta}^2$, $\derivfslash{f}{x}_i$, $\paren{\derivfslash{f}{x}}^2$, $\paren{\derivfslash{f}{x}}_i$.
