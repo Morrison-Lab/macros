@@ -198,6 +198,8 @@
 \def\nparams{p^{*}}
 \def\nnetparams{P}
 \def\iter{t}
+\def\steplen{s}
+\providecommand{\iterate}[2]{{{#1}^{(#2)}}}
 \def\layeridx{\ell}
 \def\RSS{\operatorname{RSS}}
 \def\TSS{\operatorname{TSS}}

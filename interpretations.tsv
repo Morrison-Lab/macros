@@ -1379,6 +1379,8 @@ name	interpretation
 \nparams	number p* of parameters: the columns of the design matrix after any feature map
 \nnetparams	number P of parameters (weights and biases) in a neural network
 \iter	index t of the step of an iterative algorithm, such as gradient descent
+\steplen	length s of a step of an iterative algorithm, such as gradient descent, the positive factor that multiplies the search direction
+\iterate	iterate: the point that an iterative algorithm has reached after the given number of steps; takes the point's symbol and the step index (prints #1^{(#2)})
 \layeridx	index ℓ of a layer of a neural network
 \RSS	residual sum of squares, RSS: the sum over the observations of the squared residuals of a fitted model
 \TSS	total sum of squares, TSS: the sum over the observations of the squared differences of the outcome from its sample mean
