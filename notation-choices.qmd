@@ -471,7 +471,7 @@ The degrees of freedom `\df` prints the upright name $\df$ instead of $\nu$, bec
 That leaves $\nu$ to the macros that still print it, such as `\shrinkage`.
 
 We follow [ISO 80000-2:2019](https://www.iso.org/standard/64973.html), the international standard for mathematical notation, on this split.
-It sets variables and generic function symbols, such as $f$, in italic, and the names of specific functions and operators, such as $\sin$ and $\exp$, upright.
+It sets variables and generic function symbols, such as $f$, in italic, and the names of specific functions and operators, such as $\sin$ and $\expt$, upright.
 So the prediction function `\predfn` ($\predfn$), its estimate `\epredfn` ($\epredfn$) and the best prediction function `\bestpredfn` ($\bestpredfn$) stay italic, because each is a generic function symbol.
 The predicted value `\predvalf{x}` ($\predvalf{x}$) stays italic too, because it is a value.
 It does not matter that the estimated function and the predicted value depend on the training data and so are random.
@@ -775,10 +775,10 @@ The natural parameter prints the same $\eta$ as the linear predictor `\lincomp` 
 We keep two macros so that a page can say which one it means.
 
 Other sources use other letters for the same roles.
-Casella and Berger write $h(x)\,c(\theta)\exp\paren{\sum_{i=1}^k w_i(\theta) t_i(x)}$ with $k$ terms; we write the case $k = 1$.
+Casella and Berger write $h(x)\,c(\theta)\expt\paren{\sum_{i=1}^k w_i(\theta) t_i(x)}$ with $k$ terms; we write the case $k = 1$.
 Their normalizing constant $c(\theta)$ is $\expf{-\logpartition}$ when the single weight $w(\theta)$ is the natural parameter, and their $h(x)$ is our base measure.
-Dobson and Barnett write $\exp\paren{a(y) b(\theta) + c(\theta) + d(y)}$.
-When $a(y) = y$, their $b(\theta)$ is the natural parameter, $c(\theta)$ is minus the log-partition function, and $\exp\paren{d(y)}$ is the base measure.
+Dobson and Barnett write $\expt\paren{a(y) b(\theta) + c(\theta) + d(y)}$.
+When $a(y) = y$, their $b(\theta)$ is the natural parameter, $c(\theta)$ is minus the log-partition function, and $\expt\paren{d(y)}$ is the base measure.
 
 ## Level sets and preimages {#sec-level-set-preimage}
 
