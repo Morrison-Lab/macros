@@ -305,7 +305,7 @@
 \def\range{\mathcal{R}}
 \def\Range{\mathcal{R}}
 \providecommand{\rangef}[1]{\cR(#1)}
-\providecommand{\modef}[1]{\operatorname{mode}\paren{#1}}
+\providecommand{\modef}[1]{{\operatorname{mode}\paren{#1}}}
 \providecommand{\seq}[2]{#1{:}#2}
 \def\~{\approx}
 \def\dapp{\dot\approx}
