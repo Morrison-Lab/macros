@@ -717,11 +717,14 @@ The training symbols below name a role, so the macro names the role and the lett
 -   The index of a step of an iterative algorithm, such as gradient descent, is $\iter$, from `\iter`.
 -   The length of a step of an iterative algorithm, such as gradient descent, is $\steplen$, from `\steplen`.
     We use $s$ because it is the first letter of "step".
-    It is the scalar length of a step, whereas `\stepvec` and `\step` are the step itself, a vector and a scalar increment $\step$, and the learning rate $\learnrate$ is the fixed constant that gradient descent often uses as its step length.
+    It is the scalar length of a step.
+    The step itself is `\stepvec`, which prints $\stepvec$ for a vector, or `\step`, which prints $\step$ for a scalar increment.
+    The learning rate $\learnrate$ is the fixed constant that gradient descent often uses as its step length.
     The number of events $\nevents$ also prints $s$, but a step length and a count of events do not appear in the same expression, so we accept the overlap.
 -   The point that an iterative algorithm has reached after $\iter$ steps is its iterate, written `\iterpoint{\vx}{\iter}`, which prints $\iterpoint{\vx}{\iter}$.
     The starting point is `\iterpoint{\vx}{0}`, which prints $\iterpoint{\vx}{0}$, and a step length that changes from step to step is `\iterpoint{\steplen}{\iter}`, which prints $\iterpoint{\steplen}{\iter}$.
-    The parenthesized superscript separates the step index from a power, as in $x^2$, and from a derivative of order $k$ written $f^{(k)}$.
+    The parentheses distinguish the step index from a power, as in $x^2$.
+    A derivative of order $k$, written $f^{(k)}$, uses the same notation, so the symbol before the superscript says which is meant: a function for a derivative, and a point or a step length for the value at a given step.
     A power after the macro applies to the whole iterate, so `\iterpoint{\vx}{\iter}^2` squares $\iterpoint{\vx}{\iter}$.
 -   The index of a layer of a neural network is $\layeridx$, from `\layeridx`.
     The letter is the usual one for a layer index in deep learning, and it differs from the letter of the number of cross-validation folds $\nfolds$.
