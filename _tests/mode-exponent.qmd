@@ -1,0 +1,26 @@
+---
+title: "Exponent after the set of modes"
+format:
+  pdf:
+    include-in-header:
+      - ../macros-pdf-header.tex
+      - ../macros.qmd
+---
+
+An exponent after the set of modes must rise over a tall argument.
+
+```{=latex}
+\newsavebox{\withexp}\newsavebox{\withoutexp}
+\sbox{\withexp}{$\modef{\frac{a}{b}}^2$}
+\sbox{\withoutexp}{$\modef{\frac{a}{b}}$}
+\par\ifdim\dimexpr\ht\withexp-\ht\withoutexp\relax>1.5pt MODEFEXPRISES\else MODEFEXPSTUCK\fi
+```
+
+The rejected form is the control: an unbraced body must not rise, so the test can fail.
+
+```{=latex}
+\newcommand{\unbracedcontrol}[1]{\mathrm{P}\paren{#1}}
+\sbox{\withexp}{$\unbracedcontrol{\frac{a}{b}}^2$}
+\sbox{\withoutexp}{$\unbracedcontrol{\frac{a}{b}}$}
+\par\ifdim\dimexpr\ht\withexp-\ht\withoutexp\relax>1.5pt CTRLRISES\else CTRLSTUCK\fi
+```
