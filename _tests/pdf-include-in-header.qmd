@@ -48,3 +48,5 @@ Probability under a parameter, plain, squared, subscripted and with a tall argum
 Residual variance and its deprecated alias: $\resvar$, $\irrerr$, $\paren{\resvar}^2$.
 
 Partial derivative with a slash, with a compound numerator, subscripted and squared: $\derivfslash{f}{x}$, $\derivfslash{\paren{n \bar{y}}}{\beta_0}$, $\derivfslash{\frac{a}{b}}{\theta}^2$, $\derivfslash{f}{x}_i$, $\paren{\derivfslash{f}{x}}^2$, $\paren{\derivfslash{f}{x}}_i$.
+
+Step length and iterate, plain, squared and with a tall argument: $\steplen$, $\steplen^2$, $\iterpoint{\vx}{\iter}$, $\iterpoint{\vx}{\iter + 1}$, $\iterpoint{\steplen}{\iter}$, $\iterpoint{\vx}{\iter}^2$, $\iterpoint{\E{\frac{a}{b}}}{\iter}^2$.
