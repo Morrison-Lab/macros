@@ -1221,6 +1221,10 @@ name	interpretation
 \regpar	a regularization penalty (tuning) parameter (prints \lambda)
 \eigval	an eigenvalue (prints \lambda)
 \Eigvals	a diagonal matrix of eigenvalues (prints \Lambda)
+\eigvalmax	the largest eigenvalue of a matrix (prints \eigval_{\max})
+\eigvalmin	the smallest eigenvalue of a matrix (prints \eigval_{\min})
+\eigvalmaxf	the largest eigenvalue of a given matrix (prints \eigvalmax followed by its argument in parentheses)
+\eigvalminf	the smallest eigenvalue of a given matrix (prints \eigvalmin followed by its argument in parentheses)
 \featmap	a feature map (basis expansion) (prints \design)
 \vfeatmap	a vector of feature-map outputs (hidden-unit features) (alias for \vdesign)
 \design	a design matrix built from a feature map (prints D)
@@ -1379,8 +1383,8 @@ name	interpretation
 \nparams	number p* of parameters: the columns of the design matrix after any feature map
 \nnetparams	number P of parameters (weights and biases) in a neural network
 \iter	index t of the step of an iterative algorithm, such as gradient descent
-\steplen	step length: the scalar length of a step of an iterative algorithm, such as gradient descent (prints s)
-\iterpoint	iterate: the point that an iterative algorithm has reached after the given number of steps; takes the point's symbol and the step index (prints #1^{(#2)})
+\steplen	scalar length of a step of an iterative algorithm, such as gradient descent (prints s)
+\iterpoint	point that an iterative algorithm has reached after the given number of steps; takes the point's symbol and the step index (prints #1^{(#2)})
 \layeridx	index ℓ of a layer of a neural network
 \RSS	residual sum of squares, RSS: the sum over the observations of the squared residuals of a fitted model
 \TSS	total sum of squares, TSS: the sum over the observations of the squared differences of the outcome from its sample mean

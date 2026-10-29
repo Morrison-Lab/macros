@@ -25,6 +25,8 @@ Residuals, prediction errors and the deviation from a mean, subscripted and squa
 
 Design matrix, design vector and feature map, subscripted and squared: $\design_{ij}^2$, $\vdesign_i^2$, $\vdesign^T$, $\vfeatmap_i^2$, $\featmap^2$.
 
+Largest and smallest eigenvalues, subscripted and squared, and the call forms with a tall argument: $\eigvalmax^2$, $\eigvalmin_i^2$, $\eigvalmaxf{\frac{a}{b}}^2$, $\eigvalminf{\stprod{\design} / \nobs}^{-1}$.
+
 Deviances, subscripted and squared: $\deviance_i^2$, $\deviance^2$, $\nulldeviance$, $\satdeviance^2$, $\dicdev^2$, $\dicdevf{\vth}^2$.
 
 Degrees of freedom and regression coefficients, subscripted and squared: $\df_i^2$, $\hdf_i^2$, $\edf^2$, $\Regcoef_i^2$, $\Coef{j}^2$.

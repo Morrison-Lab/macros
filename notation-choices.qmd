@@ -526,6 +526,22 @@ Murphy writes "feature matrix or design matrix" for one matrix of raw inputs, an
 The Wikipedia article on [feature engineering](https://en.wikipedia.org/wiki/Feature_engineering) describes preprocessing that turns raw data into inputs made of features.
 Check which of the two matrices a source means before you compare formulas.
 
+## The largest and smallest eigenvalues {#sec-extreme-eigenvalues}
+
+Step-size bounds and condition numbers use the largest and smallest eigenvalues of a symmetric matrix,
+such as the Hessian or $\stprod{\design}$.
+Our convention is to write them as $\eigvalmax$ and $\eigvalmin$, with `\eigvalmax` and `\eigvalmin`,
+and to apply them to a matrix with the call forms `\eigvalmaxf{A}` and `\eigvalminf{A}`,
+which print $\eigvalmaxf{A}$ and $\eigvalminf{A}$.
+The letter is the eigenvalue letter $\eigval$, so the subscript says which eigenvalue it is.
+
+Other sources differ.
+Some write $\lambda_1$ for the largest eigenvalue and $\lambda_n$ or $\lambda_d$ for the smallest, after sorting the eigenvalues in decreasing order,
+and some sort them in increasing order instead, which swaps the two.
+Some write $\rho(A)$, the spectral radius, for the largest eigenvalue of a positive semidefinite matrix,
+or $\norm{A}_2$, its spectral norm; for such a matrix both equal $\eigvalmaxf{A}$.
+Check which order and which symbol a source uses before you compare a bound.
+
 ## Probability notation {#sec-probability-notation}
 
 A random variable is a function of the outcome of a random experiment, as in [the stochastic process example](#exm-stochastic-process-slots).
@@ -735,11 +751,14 @@ The training symbols below name a role, so the macro names the role and the lett
 -   The index of a step of an iterative algorithm, such as gradient descent, is $\iter$, from `\iter`.
 -   The length of a step of an iterative algorithm, such as gradient descent, is $\steplen$, from `\steplen`.
     We use $s$ because it is the first letter of "step".
-    It is the scalar length of a step, whereas `\stepvec` and `\step` are the step itself, a vector and a scalar increment $\step$, and the learning rate $\learnrate$ is the fixed constant that gradient descent often uses as its step length.
+    It is the scalar length of a step.
+    The step itself is `\stepvec`, which prints $\stepvec$ for a vector, or `\step`, which prints $\step$ for a scalar increment.
+    The learning rate $\learnrate$ is the fixed constant that gradient descent often uses as its step length.
     The number of events $\nevents$ also prints $s$, but a step length and a count of events do not appear in the same expression, so we accept the overlap.
 -   The point that an iterative algorithm has reached after $\iter$ steps is its iterate, written `\iterpoint{\vx}{\iter}`, which prints $\iterpoint{\vx}{\iter}$.
     The starting point is `\iterpoint{\vx}{0}`, which prints $\iterpoint{\vx}{0}$, and a step length that changes from step to step is `\iterpoint{\steplen}{\iter}`, which prints $\iterpoint{\steplen}{\iter}$.
-    The parenthesized superscript separates the step index from a power, as in $x^2$, and from a derivative of order $k$ written $f^{(k)}$.
+    The parentheses distinguish the step index from a power, as in $x^2$.
+    A derivative of order $k$, written $f^{(k)}$, uses the same notation, so the symbol before the superscript says which is meant: a function for a derivative, and a point or a step length for the value at a given step.
     A power after the macro applies to the whole iterate, so `\iterpoint{\vx}{\iter}^2` squares $\iterpoint{\vx}{\iter}$.
 -   The index of a layer of a neural network is $\layeridx$, from `\layeridx`.
     The letter is the usual one for a layer index in deep learning, and it differs from the letter of the number of cross-validation folds $\nfolds$.
