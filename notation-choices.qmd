@@ -724,7 +724,7 @@ The training symbols below name a role, so the macro names the role and the lett
 -   The point that an iterative algorithm has reached after $\iter$ steps is its iterate, written `\iterpoint{\vx}{\iter}`, which prints $\iterpoint{\vx}{\iter}$.
     The starting point is `\iterpoint{\vx}{0}`, which prints $\iterpoint{\vx}{0}$, and a step length that changes from step to step is `\iterpoint{\steplen}{\iter}`, which prints $\iterpoint{\steplen}{\iter}$.
     The parentheses separate the step index from a power, as in $x^2$.
-    A derivative of order $k$, written $f^{(k)}$, uses the same notation, so the symbol before the superscript says what is indexed.
+    A derivative of order $k$, written $f^{(k)}$, uses the same notation, so the symbol before the superscript, a point for an iterate and a function for a derivative, says which is meant.
     A power after the macro applies to the whole iterate, so `\iterpoint{\vx}{\iter}^2` squares $\iterpoint{\vx}{\iter}$.
 -   The index of a layer of a neural network is $\layeridx$, from `\layeridx`.
     The letter is the usual one for a layer index in deep learning, and it differs from the letter of the number of cross-validation folds $\nfolds$.
