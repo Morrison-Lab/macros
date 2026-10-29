@@ -575,6 +575,10 @@ Some sources write $X \perp Y$, or state independence only in words.
 We write $\neg A$ for the complement of an event $A$, read "not $A$".
 Some sources write $A^c$ or $\bar{A}$.
 
+We write $\setdiff{A}{B}$ for the set difference, the elements of $A$ not in $B$, from the macro `\setdiff`.
+We write $\setbuild{x \in S}{x \notin B}$ for set-builder notation, with a colon between the membership condition and the property, from the macro `\setbuild`.
+Some sources write $A - B$ for the set difference, or a vertical bar instead of the colon.
+
 We write $\eqdef$ for an equality that holds by definition.
 This tells it apart from an equality that follows from other facts.
 Some sources use a bare $=$ for both.
