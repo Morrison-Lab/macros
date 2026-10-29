@@ -827,3 +827,11 @@ We chose this form for two reasons.
     In $\Pr\paren{\theta \in \cintf{X}}$, the event $\theta \in \cintf{X}$ is then an event about the random data $X$, and the probability is over $X$ with $\theta$ held fixed.
 
 The macro `\ci` prints the Wald form $\ci$ of one such interval, with the $\pm$ sign in red, and is not a general notation for the interval.
+
+## The modes of a density {#sec-modes-of-a-density}
+
+A mode belongs to a density or mass function, not to the random variable: the function has a largest value at its modes, and a continuous random variable has many densities that differ on a null set.
+Our convention is to write the set of modes of a function $f$ as $\modef{f}$, with `\modef{f}`, so that $\modef{f} = \argmax_{x \in \rangef{X}} f(x)$.
+The macro prints a set because a density can have more than one mode.
+
+Other sources write "the mode of $X$" for one value, which is the single element of $\modef{f}$ when the mode is unique.

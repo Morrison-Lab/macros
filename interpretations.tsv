@@ -239,6 +239,7 @@ name	interpretation
 \range	range / codomain (alias for \cR)
 \Range	range / codomain (alias for \cR)
 \rangef	range of a function ℛ(·)
+\modef	set of modes of a density or mass function (prints mode(f))
 \seq	sequence (colon range) from first to second argument, e.g. 1:n
 \~	approximately equal (≈)
 \dapp	approximately equal dot notation (≐)
