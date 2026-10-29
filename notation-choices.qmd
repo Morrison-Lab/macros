@@ -508,6 +508,22 @@ Other sources differ.
 Some write the design matrix as $X$, and some write the feature map as $\phi$ or $\Phi$.
 Check which letter a source uses for each of the three objects before you compare formulas.
 
+## The largest and smallest eigenvalues {#sec-extreme-eigenvalues}
+
+Step-size bounds and condition numbers use the largest and smallest eigenvalues of a symmetric matrix,
+such as the Hessian or $\stprod{\design}$.
+Our convention is to write them as $\eigvalmax$ and $\eigvalmin$, with `\eigvalmax` and `\eigvalmin`,
+and to apply them to a matrix with the call forms `\eigvalmaxf{A}` and `\eigvalminf{A}`,
+which print $\eigvalmaxf{A}$ and $\eigvalminf{A}$.
+The letter is the eigenvalue letter $\eigval$, so the subscript says which eigenvalue it is.
+
+Other sources differ.
+Some write $\lambda_1$ for the largest eigenvalue and $\lambda_n$ or $\lambda_d$ for the smallest, after sorting the eigenvalues in decreasing order,
+and some sort them in increasing order instead, which swaps the two.
+Some write $\rho(A)$, the spectral radius, for the largest eigenvalue of a positive semidefinite matrix,
+or $\norm{A}_2$, its spectral norm; for such a matrix both equal $\eigvalmaxf{A}$.
+Check which order and which symbol a source uses before you compare a bound.
+
 ## Probability notation {#sec-probability-notation}
 
 A random variable is a function of the outcome of a random experiment, as in [the stochastic process example](#exm-stochastic-process-slots).

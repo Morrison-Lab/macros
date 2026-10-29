@@ -1305,6 +1305,10 @@
 \def\regpar{\lambda}
 \def\eigval{\lambda}
 \def\Eigvals{\Lambda}
+\def\eigvalmax{{\eigval_{\max}}}
+\def\eigvalmin{{\eigval_{\min}}}
+\providecommand{\eigvalmaxf}[1]{{\eigvalmax\paren{#1}}}
+\providecommand{\eigvalminf}[1]{{\eigvalmin\paren{#1}}}
 \def\design{D}
 \def\vdesign{\vecf{\design}}
 \def\featmap{\design}
