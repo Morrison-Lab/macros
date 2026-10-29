@@ -508,6 +508,25 @@ Other sources differ.
 Some write the design matrix as $X$, and some write the feature map as $\phi$ or $\Phi$.
 Check which letter a source uses for each of the three objects before you compare formulas.
 
+## Covariates, features and the feature matrix {#sec-feature-names}
+
+A [covariate](https://morrison-lab.github.io/sds/model-validation.html#def-covariate) is a variable as it was measured.
+The [preprocessing](https://morrison-lab.github.io/sds/model-validation.html#def-preprocessing) turns the covariates into the features, and the model receives the features.
+With no preprocessing, the features are the covariates.
+We call the matrix of the features, one row for each observation, the design matrix, and also the feature matrix.
+Its constant column of ones is itself a feature.
+
+We chose this because the sds notes already define the features as the outputs of the preprocessing, so the matrix of features is the design matrix.
+Using one object for both names avoids a second matrix with a second letter.
+
+Other sources differ, and the differences are in which matrix they mean.
+The books ESL and ISLR2 write "feature matrix" for the matrix of raw inputs [@hastie2009esl, Chapter 18; @james2021islr, Section 10.4].
+In their examples the preprocessing does nothing, so that is the same matrix as ours.
+Murphy writes "feature matrix or design matrix" for one matrix of raw inputs [@murphy2012mlapp, Section 25.1],
+and Bishop's design matrix holds the values of the basis functions, which are features after preprocessing [@bishop2006prml, Section 3.1.1].
+The Wikipedia article on [feature engineering](https://en.wikipedia.org/wiki/Feature_engineering) describes preprocessing that turns raw data into inputs made of features.
+Check which of the two matrices a source means before you compare formulas.
+
 ## The largest and smallest eigenvalues {#sec-extreme-eigenvalues}
 
 Step-size bounds and condition numbers use the largest and smallest eigenvalues of a symmetric matrix,
