@@ -461,6 +461,8 @@
 \providecommand{\indiccb}[1]{{\mathbb{1}\cb{#1}}}
 \def\indicf{\indic}
 \providecommand{\set}[1]{{\cb{#1}}}
+\providecommand{\setbuild}[2]{{\set{#1 : #2}}}
+\providecommand{\setdiff}[2]{{#1 \setminus #2}}
 \providecommand{\pf}[1]{{\p \paren{#1}}}
 \providecommand{\Pf}[1]{{\P \paren{#1}}}
 \providecommand{\Bias}[1]{{\operatorname{Bias}\paren{#1}}}

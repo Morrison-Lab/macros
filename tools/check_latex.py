@@ -45,6 +45,8 @@ EXPECTED = {
         "DINVODDSRISES",
         "CTRLSTUCK",
     ],
+    # An exponent after \setbuild and \setdiff rises over a tall argument.
+    "set-notation-exponent": ["SETBUILDEXPRISES", "SETDIFFEXPRISES", "CTRLSTUCK"],
     # pdftotext puts a hat after its letter and may reorder scripts, and NFKD
     # folds a script letter to its plain letter, so these strings pin which
     # macro prints which letter, not the script or subscript position.
