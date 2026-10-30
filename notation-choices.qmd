@@ -16,6 +16,7 @@ Notes sites can link to an entry here instead of keeping their own copy.
 
 Our convention is a tilde under the letter, as in $\vx$.
 The shared macro `\vecf` (and shortcuts such as `\vx` and `\vbeta`) prints it.
+The tilde counts toward the height of its line in a PDF, so a tight list or table row leaves room for it instead of letting it touch the next line.
 
 We chose a mark underneath for three reasons.
 
