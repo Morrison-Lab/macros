@@ -7,6 +7,8 @@ format: pdf
 
 Surprisal: $\surprisalf{x}$, $\surprisalf{\frac{a}{b}}^2$, $\surprisal_i$.
 
+Surprisal under a named distribution: $\surprisalunderf{q}{x}$, $\surprisalunderf{q}{\frac{a}{b}}^2$.
+
 Divergence: $\kldivf{p}{q}$, $\kldivf{\frac{a}{b}}{q}^2$, $\kldiv_{\param_0}$.
 
 Cross-entropy: $\crossentropyf{p}{q}$, $\crossentropyf{\frac{a}{b}}{q}^2$, $\crossentropy_{\param_0}$.

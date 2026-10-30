@@ -1434,6 +1434,7 @@ name	interpretation
 \entropyf	Shannon entropy of a random variable, H(X)
 \surprisal	surprisal symbol s
 \surprisalf	surprisal of an outcome, s(x)
+\surprisalunderf	surprisal of an outcome measured by a named distribution, s_q(x)
 \crossentropy	cross-entropy symbol H (prints \entropy)
 \crossentropyf	cross-entropy of the second distribution relative to the first, H(p, q)
 \kldiv	Kullback–Leibler divergence symbol D_KL

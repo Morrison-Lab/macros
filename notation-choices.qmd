@@ -177,6 +177,8 @@ So also check whether a source reports the sum or the average before comparing i
 ## Surprisal and the Kullback--Leibler divergence {#sec-surprisal-kl-notation}
 
 The [surprisal](https://morrison-lab.github.io/ids/entropy.html#def-surprisal) of an outcome $x$ is written $\surprisalf{x}$.
+That form leaves the distribution implicit.
+To name the distribution that measures the surprisal, write it as a subscript with $\surprisalunderf{q}{x}$, which is $-\log q(x)$.
 The [Kullback--Leibler divergence](https://morrison-lab.github.io/pds/expectation.html#def-kl-divergence) of $q$ from $p$ is written $\kldivf{p}{q}$, with the true or reference distribution first.
 Our convention puts $p$ first, because the divergence is the expectation under $p$ of the log ratio of $p$ to $q$.
 It is not symmetric, so swapping the arguments changes the value.
