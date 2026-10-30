@@ -690,6 +690,7 @@ window.Quarto = {
   <li><a href="#sec-exponential-family-notation" id="toc-sec-exponential-family-notation" class="nav-link" data-scroll-target="#sec-exponential-family-notation">Exponential families</a></li>
   <li><a href="#sec-level-set-preimage" id="toc-sec-level-set-preimage" class="nav-link" data-scroll-target="#sec-level-set-preimage">Level sets and preimages</a></li>
   <li><a href="#sec-confidence-interval-endpoints" id="toc-sec-confidence-interval-endpoints" class="nav-link" data-scroll-target="#sec-confidence-interval-endpoints">The endpoints of a confidence interval</a></li>
+  <li><a href="#sec-modes-of-a-density" id="toc-sec-modes-of-a-density" class="nav-link" data-scroll-target="#sec-modes-of-a-density">The modes of a density</a></li>
   </ul>
 <div class="toc-actions"><ul><li><a href="https://github.com/d-morrison/macros/blob/main/notation-choices.qmd" class="toc-action"><i class="bi bi-github"></i>View source</a></li></ul></div></nav>
     </div>
@@ -1051,6 +1052,11 @@ window.Quarto = {
 <li>It packages the two random endpoints into a single random interval, rather than placing the parameter between two random bounds. In <span class="math inline">\(\Pr\paren{\theta \in \cintf{X}}\)</span>, the event <span class="math inline">\(\theta \in \cintf{X}\)</span> is then an event about the random data <span class="math inline">\(X\)</span>, and the probability is over <span class="math inline">\(X\)</span> with <span class="math inline">\(\theta\)</span> held fixed.</li>
 </ul>
 <p>The macro <code>\ci</code> prints the Wald form <span class="math inline">\(\ci\)</span> of one such interval, with the <span class="math inline">\(\pm\)</span> sign in red, and is not a general notation for the interval.</p>
+</section>
+<section id="sec-modes-of-a-density" class="level2">
+<h2 class="anchored" data-anchor-id="sec-modes-of-a-density">The modes of a density</h2>
+<p>A mode belongs to a density or mass function, not to the random variable: the function has a largest value at its modes, and a continuous random variable has many densities that differ on a null set. Our convention is to write the set of modes of a function <span class="math inline">\(f\)</span> as <span class="math inline">\(\modef{f}\)</span>, with <code>\modef{f}</code>, so that <span class="math inline">\(\modef{f} = \argmax_{x \in \rangef{X}} f(x)\)</span>. The macro prints a set because a density can have more than one mode.</p>
+<p>Other sources write “the mode of <span class="math inline">\(X\)</span>” for one value, which is the single element of <span class="math inline">\(\modef{f}\)</span> when the mode is unique.</p>
 
 
 </section>
