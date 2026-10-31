@@ -1455,6 +1455,7 @@
 \providecommand{\entropyf}[1]{{\entropy\paren{#1}}}
 \def\surprisal{s}
 \providecommand{\surprisalf}[1]{{\surprisal\paren{#1}}}
+\providecommand{\surprisalunderf}[2]{{\surprisal_{#1}\paren{#2}}}
 \def\crossentropy{\entropy}
 \providecommand{\crossentropyf}[2]{{\crossentropy\paren{#1, #2}}}
 \def\kldiv{{D_{\mathrm{KL}}}}
