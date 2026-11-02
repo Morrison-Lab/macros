@@ -436,6 +436,7 @@ name	interpretation
 \vY	uppercase outcome vector Y (Y̰)
 \outvar	outcome variable, observed value (prints y)
 \Outvar	outcome variable, random variable (prints Y)
+\signoutvar	binary outcome coded -1 or +1, 2y - 1 for a 0/1 outcome y (prints a tilde over y)
 \voutvar	vector of observed outcomes (prints y̰)
 \vOutvar	random vector of outcomes (prints Y̰)
 \eoutvar	predicted outcome, through \est (prints ŷ)

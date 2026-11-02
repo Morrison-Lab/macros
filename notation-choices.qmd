@@ -101,6 +101,7 @@ for positive and negative test results.
 When a model needs numerical labels for the two classes, our convention is to code the labels as $0$ and $1$, as in logistic regression.
 There the label $1$ means the positive class and the label $0$ means the negative class.
 The chapter on support vector machines switches to the numerical labels $-1$ and $+1$, and says so where it does.
+Where a page needs both codings at once, it writes the $\pm 1$ label as $\signoutvar$, with the macro `\signoutvar`, and defines it as $\signoutvar = 2\outvar - 1$ for the $0/1$ label $\outvar$.
 
 We switch to $-1$ and $+1$ for support vector machines for one reason.
 A classifier outputs a number.
