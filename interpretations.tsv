@@ -6,7 +6,7 @@ name	interpretation
 \pmat	matrix formatted with parentheses (pmatrix)
 \sparen	fixed-size parentheses around argument
 \sb	auto-sized square brackets around argument
-\distop	operator-name distribution/function dispatcher
+\distop	blackboard bold distribution/function symbol (the shared form of \p, \f, \F, \h, \H, \S, \Q, \entropy and \surprisal)
 \sbmat	matrix formatted with square brackets (bmatrix)
 \Prf	Pr(·) probability expression
 \Prunder	probability of an event when the distribution is indexed by the first argument, such as a parameter or a distribution, \Prunder{\theta}{A} (prints Pr_θ(A))

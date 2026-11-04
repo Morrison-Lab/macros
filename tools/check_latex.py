@@ -49,6 +49,9 @@ EXPECTED = {
     "set-notation-exponent": ["SETBUILDEXPRISES", "SETDIFFEXPRISES", "CTRLSTUCK"],
     # An exponent after \modef rises over a tall argument.
     "mode-exponent": ["MODEFEXPRISES", "CTRLSTUCK"],
+    # Compiles with bbm loaded: the distribution-function macros print lowercase
+    # blackboard letters through \mathbbm. A LaTeX error fails the render.
+    "kl-surprisal-check": ["KLSURPRISALOK"],
     # pdftotext puts a hat after its letter and may reorder scripts, and NFKD
     # folds a script letter to its plain letter, so these strings pin which
     # macro prints which letter, not the script or subscript position.
