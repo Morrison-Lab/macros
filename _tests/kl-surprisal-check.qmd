@@ -1,6 +1,9 @@
 ---
 title: "KL and surprisal macros: PDF check"
-format: pdf
+format:
+  pdf:
+    include-in-header:
+      - ../macros-pdf-header.tex
 ---
 
 {{< include ../macros.qmd >}}
