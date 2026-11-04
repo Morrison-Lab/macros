@@ -508,6 +508,7 @@
 \def\vY{\vecf{Y}}
 \def\outvar{y}
 \def\Outvar{Y}
+\def\signoutvar{\tilde{\outvar}}
 \def\voutvar{\vecf{\outvar}}
 \def\vOutvar{\vecf{\Outvar}}
 \def\eoutvar{\est{\outvar}}
