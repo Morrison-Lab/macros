@@ -15,3 +15,7 @@ Surprisal under a named distribution: $\surprisalunderf{q}{x}$, $\surprisalunder
 Divergence: $\kldivf{p}{q}$, $\kldivf{\frac{a}{b}}{q}^2$, $\kldiv_{\param_0}$.
 
 Cross-entropy: $\crossentropyf{p}{q}$, $\crossentropyf{\frac{a}{b}}{q}^2$, $\crossentropy_{\param_0}$.
+
+Distribution functions, which need the lowercase blackboard letters from `bbm`: $\p(x)$, $\f(x)$, $\h(x)$, $\F(x)$, $\S(x)$, $\Q(u)$, $\H(x)$, $\entropyf{X}$.
+
+KLSURPRISALOK

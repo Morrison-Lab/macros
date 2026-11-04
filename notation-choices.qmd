@@ -179,7 +179,8 @@ So also check whether a source reports the sum or the average before comparing i
 
 Every function that describes a population distribution is blackboard bold (Ezra, 2026-11-04).
 This covers the probability mass $\P$, the density $\p$ (and $\f$), the distribution function $\F$, the survival function $\S$, the hazard $\h$, the cumulative hazard $\H$, the quantile function $\Q$, the entropy $\entropy$ and the surprisal $\surprisal$.
-They all print through `\distop`, so a new function of a distribution uses `\distop{...}` too.
+All of them except $\P$ print through `\distop`, so a new function of a distribution uses `\distop{...}` too.
+The macros `\P` and `\pmf` print their blackboard letter directly.
 The blackboard letter marks a function of the distribution, as it marks the operators $\Expp$, $\biassym$ and $\varsym$ in [the bias and variance entry](#sec-bias-variance-symbols), and it cannot be mistaken for an italic variable.
 Sources differ on the type: Cover and Thomas write an italic $H$, and Wikipedia's article on [information content](https://en.wikipedia.org/wiki/Information_content) writes an upright $\mathrm{H}$ and $\operatorname{I}$.
 We chose blackboard bold so that one rule covers all of these functions.
