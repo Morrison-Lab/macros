@@ -1430,7 +1430,9 @@ name	interpretation
 \hamdist	Hamming distance: number of positions where two strings differ, Delta(x, y)
 \errfrac	fraction of a received word's positions that are corrupted, delta
 \codeparams	parameters of a linear code: block length, message length, minimum distance, alphabet size, [n, k, d]_q
-\asymub	big-O asymptotic upper bound applied to its argument, O(g)
+\asymub	alias of \bigO: big-O asymptotic upper bound applied to its argument, O(g)
+\bigO	big-O asymptotic upper bound applied to its argument (prints O(g), italic)
+\littleo	little-o asymptotic negligibility applied to its argument (prints o(g), italic)
 \entropy	Shannon entropy symbol H
 \entropyf	Shannon entropy of a random variable, H(X)
 \surprisal	surprisal symbol s

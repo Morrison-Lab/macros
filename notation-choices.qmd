@@ -500,6 +500,11 @@ Italic marks a symbol that stands for something that varies, and random quantiti
 The operators that act on them, such as the expectation and the variance, are named, so they are upright or blackboard.
 The textbook [ISL](https://www.statlearning.com/) also writes $f$ and $\hat{f}$ in italic.
 
+The Landau symbols follow the same split.
+The big-O `\bigO{g}` ($\bigO{g}$) and the little-o `\littleo{g}` ($\littleo{g}$) print an italic $O$ and $o$.
+The letter stands for a class of functions that depends on $g$, so it is not the name of a specific function such as $\sin$, and it is not an operator.
+Algorithms and statistics textbooks print these symbols in italic too.
+
 ## The design matrix and the design vector {#sec-design-notation}
 
 The [design matrix](https://morrison-lab.github.io/lds/chapters/linear-regression.html#def-design-matrix) holds the input values for a model, one row for each observation, after any feature map.
