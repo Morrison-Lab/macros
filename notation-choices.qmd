@@ -772,6 +772,10 @@ We avoid $D$ because it is the design matrix.
 The number of outcome variables in multivariate regression, the length of the response vector, is $\noutvars$, from `\noutvars`.
 We use $q$ to pair it with $\ninputvars$, and avoid $C$ and $K$ because those letters count classes and covariate patterns.
 
+In multivariate regression the matrix over all $\nobs$ observations stacks one vector per row.
+We set the outcome matrix $\moutvar$, the coefficient matrix $\mcoef$ and the noise matrix $\mnoise$ in bold, from `\moutvar`, `\mcoef` and `\mnoise`, like the data matrix $\mX$.
+A plain italic letter reads as a scalar, so the bold type is what marks each one as a matrix.
+
 ## Sums of squares, and counts and indices for training {#sec-training-symbols}
 
 We write the residual sum of squares as $\RSS$, from the macro `\RSS`, and the total sum of squares as $\TSS$, from the macro `\TSS`.
