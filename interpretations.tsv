@@ -423,7 +423,7 @@ name	interpretation
 \vecf	vector notation (alias for \vec)
 \v	vector shorthand (alias for \vecf)
 \matr	matrix notation (bold style)
-\mX	predictor matrix X (bold): the matrix of covariate values; the design matrix built from a feature map is \design
+\mX	predictor matrix X (bold): the matrix of covariate values; the design matrix built from a feature map is \mdesign
 \mx	design matrix x lowercase (bold)
 \va	vector a (a̰)
 \vx	vector x (x̰)
@@ -1214,7 +1214,7 @@ name	interpretation
 \biassymf	short bias operator applied to an estimator, like \E (prints \biassym with its argument in square brackets)
 \varsym	short variance operator 𝕍 for any random variable (no argument, blackboard bold like \Expp)
 \varsymf	short variance operator applied to a random variable, like \E (prints \varsym with its argument in square brackets)
-\devsym	deviation operator 𝔻 for any random variable, X minus its mean (blackboard bold like \varsym and \Expp; the design matrix \design is bold D, and the observed value 𝕕 is \deviation)
+\devsym	deviation operator 𝔻 for any random variable, X minus its mean (blackboard bold like \varsym and \Expp; the design matrix \mdesign is bold D, and the observed value 𝕕 is \deviation)
 \devsymf	deviation operator applied to a random variable, like \varsymf (prints \devsym with its argument in square brackets)
 \devval	observed deviation, double-struck lowercase d 𝕕 (a value, as 𝔼 is the operator and x the value; the PDF needs bbm, see macros-pdf-header.tex)
 \mathbbm	double-struck letter that includes lowercase (alias for \mathbb where bbm is not loaded, as in MathJax)

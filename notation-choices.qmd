@@ -451,7 +451,7 @@ The operator that takes a value to its deviation from a reference is uppercase b
 An observed deviation is the lowercase letter, `\devval` or `\deviation`, which prints $\deviation$.
 Before this change both printed $\delta$.
 In a PDF the lowercase letter needs the `bbm` package, which `macros-pdf-header.tex` loads, so list that file before `macros.qmd` in `include-in-header`.
-The design matrix `\design` is a bold $\design$, like every matrix, and the deviation operator is blackboard bold, so the two do not collide.
+The design matrix `\mdesign` is a bold $\mdesign$, like every matrix, and the deviation operator is blackboard bold, so the two do not collide.
 
 A sample mean is a bar over the quantity, and we write it with the macro `\smean{y}`, which prints $\smean{y}$, rather than with a literal `\bar`.
 The macros `\xbar`, `\outbar`, `\predbar`, `\rvarbar`, `\samplemean` and `\avgleverage` use it.
