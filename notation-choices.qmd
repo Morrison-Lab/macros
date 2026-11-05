@@ -769,6 +769,9 @@ The older macro `\inputdim` is kept as an alias for `\ninputvars`.
 Many sources write the number of input variables as $p$ (ISL and ESL) or $d$, and some write $D$.
 We avoid $D$ because it is the design matrix.
 
+The number of outcome variables in multivariate regression, the length of the response vector, is $\noutvars$, from `\noutvars`.
+We use $q$ to pair it with $\ninputvars$, and avoid $C$ and $K$ because those letters count classes and covariate patterns.
+
 ## Sums of squares, and counts and indices for training {#sec-training-symbols}
 
 We write the residual sum of squares as $\RSS$, from the macro `\RSS`, and the total sum of squares as $\TSS$, from the macro `\TSS`.

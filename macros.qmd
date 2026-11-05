@@ -196,6 +196,7 @@
 \def\nmodels{M}
 \def\ninputvars{p}
 \def\inputdim{\ninputvars}
+\def\noutvars{q}
 \def\nparams{p^{*}}
 \def\nnetparams{P}
 \def\iter{t}
