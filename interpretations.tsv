@@ -1382,6 +1382,7 @@ name	interpretation
 \nmodels	number M of models (classifiers) in a model family
 \ninputvars	number p of input variables (predictors): the columns of the data matrix, not the number of inputs
 \inputdim	alias for \ninputvars, kept for existing uses
+\noutvars	number q of outcome variables: the length of the response vector in multivariate regression, not the number of classes
 \nparams	number p* of parameters: the columns of the design matrix after any feature map
 \nnetparams	number P of parameters (weights and biases) in a neural network
 \iter	index t of the step of an iterative algorithm, such as gradient descent
