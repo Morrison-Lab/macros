@@ -1453,7 +1453,7 @@
 \providecommand{\codeparams}[4]{{\sb{#1, #2, #3}}_{#4}}
 \providecommand{\bigO}[1]{{O\paren{#1}}}
 \providecommand{\littleo}[1]{{o\paren{#1}}}
-\providecommand{\asymub}[1]{{\bigO{#1}}}
+\providecommand{\asymub}[1]{{O\paren{#1}}}
 \def\entropy{\distop{H}}
 \providecommand{\entropyf}[1]{{\entropy\paren{#1}}}
 \def\surprisal{\distop{s}}
