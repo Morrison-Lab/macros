@@ -521,7 +521,7 @@
 \def\vPredvar{\vecf{\Predvar}}
 \def\mpredvar{\matr{\Predvar}}
 \def\moutvar{\matr{\Outvar}}
-\def\mcoef{\matr{B}}
+\def\mcoef{\matr{\Regcoef}}
 \def\mnoise{\matr{E}}
 \def\vresid{\vecf{\resid}}
 \def\vprederr{\vecf{\prederr}}
