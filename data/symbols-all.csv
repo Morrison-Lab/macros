@@ -1,0 +1,1176 @@
+macros,interpretation
+\',transpose superscript ⊤
+\1,indicator function 1_{·} (upright subscript style)
+\a \ga \leak \shape \accept \combwt \lowend \votewt \dualvar \adjlevel \siglevel \learnrate \attnweight,Greek letter alpha (alias for \ga)
+\abs,absolute value |·|
+\aCov,asymptotic covariance aCov(·)
+\all,universal quantifier (∀)
+\am \argmax,arg max operator
+\amin \argmin,arg min operator
+\and,set intersection (∩)
+\angb,angle brackets ⟨·⟩ sized to their contents
+\arcoef \corpar \convrate \overdisp,autoregressive coefficient ρ
+\armijo,the Armijo sufficient-decrease constant of a backtracking line search (prints c_1)
+\ATT,average treatment effect on the treated label ATT
+\ATTf,average treatment effect on the treated function ATT(·)
+\aug,mark for the augmented version of the argument (extended with additional entries)
+\aVar,asymptotic variance aVar(·)
+\avgfit,"average fit: the population mean over training sets of the fitted model, written as the population mean with the model as subscript (mu_h; no bar or hat)"
+\avgfitf,"average fit at input x: the population expectation over training sets of the fitted model's value at x, mu_h(x)"
+\avgiN,average over i from 1 to N: one over N times the sum
+\avgin,average over i from 1 to n: one over n times the sum
+\avgiNf,average over i from 1 to N of the argument (·)
+\avginf,average over i from 1 to n of the argument (·)
+\avgleverage,"mean leverage, h-bar"
+\avgon,average over the observations in an index set: one over the set's size times the sum over its members
+\avgonf,average over the observations in an index set of the second argument (·)
+\avgto,average over the first argument from 1 to the second: one over the second argument times the sum
+\avgtof,average over the first argument from 1 to the second of the third argument (·)
+\b \gb \shapeb \combwtb \highend \regcoef \quantlevel \typetwoerr \recallweight,Greek letter beta (β)
+\ba,begin aligned math environment
+\basemeasuref,base measure of an exponential family at its argument (same as \rfacf; prints h(#1))
+\bbC,blackboard bold C (complex numbers)
+\bbQ,blackboard bold Q (rational numbers)
+\bbR \reals,blackboard bold R (real numbers)
+\bbZ,blackboard bold Z (integers)
+\Ber,Bernoulli distribution label
+\Bernoulli,Bernoulli distribution label (long form)
+\bestmod,best-in-family model h*: the member of the mean-function model family closest to the target function
+\bestmodf,"best-in-family model applied to its argument, h*(·)"
+\bestpredfn,"best prediction function f*: the conditional mean of the outcome given the inputs, which minimizes the squared-error risk"
+\bestpredfnf,"best prediction function applied to its argument, f*(·)"
+\bfA,bold Roman capital letter A
+\bfa,bold Roman lowercase letter a
+\bfalpha,bold Greek lowercase letter alpha
+\bfB,bold Roman capital letter B
+\bfb,bold Roman lowercase letter b
+\bfbeta,bold Greek lowercase letter beta
+\bfC,bold Roman capital letter C
+\bfc,bold Roman lowercase letter c
+\bfchi,bold Greek lowercase letter chi
+\bfD,bold Roman capital letter D
+\bfd,bold Roman lowercase letter d
+\bfDelta,bold Greek capital letter Delta
+\bfdelta,bold Greek lowercase letter delta
+\bfE,bold Roman capital letter E
+\bfe,bold Roman lowercase letter e
+\bfepsilon,bold Greek lowercase letter epsilon
+\bfeta,bold Greek lowercase letter eta
+\bfF,bold Roman capital letter F
+\bff,bold Roman lowercase letter f
+\bfG,bold Roman capital letter G
+\bfg,bold Roman lowercase letter g
+\bfGamma,bold Greek capital letter Gamma
+\bfgamma,bold Greek lowercase letter gamma
+\bfH,bold Roman capital letter H
+\bfh,bold Roman lowercase letter h
+\bfI,bold Roman capital letter I
+\bfi,bold Roman lowercase letter i
+\bfiota,bold Greek lowercase letter iota
+\bfJ,bold Roman capital letter J
+\bfj,bold Roman lowercase letter j
+\bfK,bold Roman capital letter K
+\bfk,bold Roman lowercase letter k
+\bfkappa,bold Greek lowercase letter kappa
+\bfL,bold Roman capital letter L
+\bfl,bold Roman lowercase letter l
+\bfLambda,bold Greek capital letter Lambda
+\bflambda,bold Greek lowercase letter lambda
+\bfM,bold Roman capital letter M
+\bfm,bold Roman lowercase letter m
+\bfmu,bold Greek lowercase letter mu
+\bfN,bold Roman capital letter N
+\bfn,bold Roman lowercase letter n
+\bfnu,bold Greek lowercase letter nu
+\bfO,bold Roman capital letter O
+\bfo,bold Roman lowercase letter o
+\bfOmega,bold Greek capital letter Omega
+\bfomega,bold Greek lowercase letter omega
+\bfP,bold Roman capital letter P
+\bfp,bold Roman lowercase letter p
+\bfPhi,bold Greek capital letter Phi
+\bfphi,bold Greek lowercase letter phi
+\bfPi,bold Greek capital letter Pi
+\bfpi,bold Greek lowercase letter pi
+\bfPsi,bold Greek capital letter Psi
+\bfpsi,bold Greek lowercase letter psi
+\bfQ,bold Roman capital letter Q
+\bfq,bold Roman lowercase letter q
+\bfR,bold Roman capital letter R
+\bfr,bold Roman lowercase letter r
+\bfrho,bold Greek lowercase letter rho
+\bfS,bold Roman capital letter S
+\bfs,bold Roman lowercase letter s
+\bfSigma,bold Greek capital letter Sigma
+\bfsigma,bold Greek lowercase letter sigma
+\bfT,bold Roman capital letter T
+\bft,bold Roman lowercase letter t
+\bftau,bold Greek lowercase letter tau
+\bfTheta,bold Greek capital letter Theta
+\bftheta,bold Greek lowercase letter theta
+\bfU,bold Roman capital letter U
+\bfu,bold Roman lowercase letter u
+\bfUpsilon,bold Greek capital letter Upsilon
+\bfupsilon,bold Greek lowercase letter upsilon
+\bfV,bold Roman capital letter V
+\bfv,bold Roman lowercase letter v
+\bfvarepsilon,bold Greek lowercase letter varepsilon
+\bfvarphi,bold Greek lowercase letter varphi
+\bfvarpi,bold Greek lowercase letter varpi
+\bfvarrho,bold Greek lowercase letter varrho
+\bfvarsigma,bold Greek lowercase letter varsigma
+\bfvartheta,bold Greek lowercase letter vartheta
+\bfW,bold Roman capital letter W
+\bfw,bold Roman lowercase letter w
+\bfX,bold Roman capital letter X
+\bfx,bold Roman lowercase letter x
+\bfXi,bold Greek capital letter Xi
+\bfxi,bold Greek lowercase letter xi
+\bfY,bold Roman capital letter Y
+\bfy,bold Roman lowercase letter y
+\bfZ,bold Roman capital letter Z
+\bfz,bold Roman lowercase letter z
+\bfzero,bold zero vector/number
+\bfzeta,bold Greek lowercase letter zeta
+\Bias,bias function Bias(·)
+\bias,bias function (alias for \Bias)
+\biassym,"short bias operator 𝔹 (no argument, blackboard bold like \Expp)"
+\biassymf,"short bias operator applied to an estimator, like \E (prints \biassym with its argument in square brackets)"
+\Biast \biast,bias operator Bias
+\bigO \asymub,"big-O asymptotic upper bound applied to its argument (prints O(g), italic)"
+\binomial,"binomial coefficient, ""n choose k"" (prints \binom{n}{k})"
+\black,typeset argument in black
+\blue,typeset argument in blue
+\brown,typeset argument in brown
+\candfnset,"set of candidate prediction functions of a fitting procedure, with the index of the procedure as the subscript"
+\candpredvalf,"prediction at the covariate value given as the second argument, from the model that the candidate procedure with the index given as the first argument fits to the training set (prints \fitted_{l}\paren{x}, where the subscript is the candidate index, not an observation index; the candidate counterpart of \predvalf; unlike \predval and unlike \epredfnf, which applies any estimated prediction function, it is fixed to the candidate's training-set fit)"
+\candproc,"candidate fitting procedure with the index given as the argument, g with that subscript"
+\candproctuned,"fitting procedure with the label given as the argument as a superscript, such as CV for the cross-validation choice procedure"
+\candproctunedf,"fitted model that the tuned procedure with the label given as the first argument fits to the data set given as the second argument (prints \candproctuned{\text{CV}}\paren{D}; the f form of \candproctuned, which names the procedure and leaves the data set implicit)"
+\card \strlen,cardinality (number of elements) of a finite set |·|
+\cb,auto-sized curly braces around argument
+\cbl,left curly brace (open only)
+\cbmat,matrix wrapped in auto-sized curly braces
+\cd \dpr,centered dot multiplication symbol (·)
+\cdev \devn \devval \popdev \deviation,"deviation from conditional mean (alias for \popdev, symbol 𝕕; the noise is \Noise, which prints ε)"
+\cdff,cumulative distribution function F(·) applied to argument
+\cds,centered ellipsis (⋯)
+\ceil,ceiling function (alias for \ceiling)
+\ceiling,ceiling function ⌈·⌉
+\censhist,censoring history through time k (prints \bar{C}_k)
+\censvalhist,a censoring-history value through time k (prints \bar{c}_k)
+\cent,mark for the centered version of the argument (the data with its mean subtracted)
+\ci,full confidence interval expression
+\ciid,conditionally i.i.d. label
+\cilo \loss \ncand,lower endpoint statistic of a confidence interval (prints L)
+\cilof,lower endpoint statistic of a confidence interval as a function of the data (prints L\paren{x})
+\cintf,"confidence interval as the closed interval of its endpoint statistics (prints \sb{\cilof{x}, \ciupf{x}})"
+\cirad,confidence interval radius expression
+\ciradf,confidence interval radius with argument
+\ciup,upper endpoint statistic of a confidence interval (prints U)
+\ciupf,upper endpoint statistic of a confidence interval as a function of the data (prints U\paren{x})
+\ckolmf,"conditional Kolmogorov complexity of a string given an input, K(x | n)"
+\clusterassign,"cluster-assignment function (the encoder) of a clustering method such as k-means, C"
+\clusterassignf,"cluster assigned to the argument, C applied to it"
+\cmean,"conditional population mean function of the outcome given the predictor, the subscripted \truemean with the subscript \Outvar \given \Predvar and no argument"
+\cmeanf,"conditional population mean of the outcome given the predictor at x, \cmeanf{x}; the same as \truemeansubf{\Outvar \given \Predvar}{x} and \condE{\Outvar}{\Predvar = x}"
+\codeparams,"parameters of a linear code: block length, message length, minimum distance, alphabet size, [n, k, d]_q"
+\Coef,uppercase regression coefficient for covariate (B_x)
+\coef,regression coefficient for covariate (β_x)
+\coll \scrC \collection,collection of sets symbol 𝒞
+\condcdf,"conditional cumulative distribution function F(A | B), \condcdf{A}{B}"
+\condCov,"conditional covariance Cov(A, B | C), \condCov{A}{B}{C}"
+\condE,"conditional expected value E[A | B], \condE{A}{B}"
+\condpdf,"conditional probability density function f(A | B), \condpdf{A}{B}"
+\condpmf,"conditional probability mass function (prints \pmf of A given B), \condpmf{A}{B}"
+\condPr,"conditional probability Pr(A | B), \condPr{A}{B}"
+\condVar,"conditional variance Var(A | B), \condVar{A}{B}"
+\Cor,correlation function Cor(·)
+\Corf,correlation function (alias for \Cor)
+\Corr,correlation Corr(·) applied to argument
+\Corrf,correlation Corr(·) applied to argument (alias for \Corr)
+\Corrs,"correlation Corr(·, ·) applied to two arguments"
+\Corrt,correlation operator Corr
+\Cors,"bivariate correlation Cor(·,·)"
+\Cort,correlation operator symbol Cor
+\cosf,"cosine function applied to its argument, cos(·)"
+\cossim,cosine similarity: dot product divided by the product of the lengths
+\cossimf,"cosine similarity applied to two arguments, cossim(x, y)"
+\Cov,covariance function Cov(·)
+\Covf,covariance function (alias for \Cov)
+\covh,estimated covariance function Ĉov(·)
+\covhf \hcovf,estimated covariance function (alias)
+\covhist,covariate history through time k (prints \bar{L}_k)
+\covmat \codealph,a covariance matrix (prints \Sigma)
+\Covs,"bivariate covariance Cov(·,·)"
+\Covt,covariance operator symbol Cov
+\covvalhist,a covariate-history value through time k (prints \bar{l}_k)
+\cR \Range \range \riskset,range / codomain symbol ℛ
+\crossentropyf,"cross-entropy of the second distribution relative to the first, H(p, q)"
+\cuhaz \cumhaz,cumulative hazard symbol Λ
+\cuhazfactorf,cumulative hazard factor function θ_Λ(·)
+\cuhazff \fcuhazf,cumulative hazard factor function (shorthand for \cuhazfactorf)
+\cuhazr \rcuhaz \cuhazratio,cumulative hazard ratio (alias for \cuhazratio)
+\cuhazratiof,cumulative hazard ratio function ϙ_Λ(·)
+\cuhazrf \rcuhazf,cumulative hazard ratio function (alias for \cuhazratiof)
+\cum,cumulative-exposure operator cum(·)
+\cvest,"cross-validation estimate of generalization error, Êrr_CV(k)"
+\cvestof,"k-fold cross-validation estimate of the generalization error of fitting procedure g, Êrr^g_CV(k); \cvestof{k}{g}"
+\cvestoff,"k-fold cross-validation estimate of the generalization error of the fitting procedure given as the second argument, computed on the data set given as the third argument (prints \cvestof{k}{g}\paren{D}; the f form of \cvestof, which leaves the data set implicit)"
+\cvse,standard error SE_CV(k) of the cross-validation estimate
+\cvseof,"standard error of the k-fold cross-validation estimate for fitting procedure g, SE^g_CV(k); \cvseof{k}{g}"
+\cvseoff,"standard error of the k-fold cross-validation estimate for the fitting procedure given as the second argument, computed on the data set given as the third argument (prints \cvseof{k}{g}\paren{D}; the f form of \cvseof, which leaves the data set implicit)"
+\cyan,typeset argument in cyan
+\dapp,approximately equal dot notation (≐)
+\darkgray,typeset argument in dark gray
+\dataset,"data set: the whole collection of labelled observations that the training, validation and test sets are subsets of (prints a calligraphic D)"
+\dBern,Bernoulli distribution operator (statmath prefix)
+\dBernf,Bernoulli distribution applied to parameters
+\dBeta,Beta distribution operator
+\dBetaf,Beta distribution applied to parameters
+\dBin,Binomial distribution operator
+\dBinf,Binomial distribution applied to parameters
+\dderiv,second partial derivative ∂²/∂(·)²
+\dderivf,second partial derivative ∂²f/∂x²
+\defEInf,definitional expression for expected information ℐ
+\defeq \eqdef,equals-by-definition (alias for \eqdef)
+\defHess,definitional expression for Hessian matrix ℓ″
+\defHR,definitional expression for hazard ratio
+\defLik,definitional expression for likelihood ℒ(θ)
+\defLogLik,definitional expression for log-likelihood ℓ
+\defOInf,definitional expression for observed information I
+\defScore,definitional expression for score function ℓ′
+\deriv,partial derivative operator ∂/∂(·)
+\derivf,partial derivative ∂f/∂x with numerator
+\derivfdn,"alias for \derivff (denominator first, numerator second)"
+\derivff,partial derivative ∂f/∂x (reversed argument order)
+\derivfnd,"alias for \derivf (numerator first, denominator second)"
+\derivfslash,partial derivative ∂f/∂x written with a slash (prints \partial f / \partial x)
+\design,a design matrix built from a feature map (prints bold D)
+\detf,"determinant of its argument, det(·)"
+\deviance,"deviance of a fitted model: twice the gap between the saturated model's log-likelihood and its own (prints the upright name dev, because an abbreviation is a name)"
+\deviationf,"deviation of the first argument from the reference value in the second, 𝔻_r(z)"
+\Devn \diff \mahal \change \degmat \subdiv \estimand \mbackerr \Deviation,uppercase deviation (alias for \Deviation)
+\devnv \deviationv,deviation vector (alias for \deviationv)
+\devof,deviation of the first argument from the reference value in the second (prints the first minus the second inside parentheses; see notation-choices for compound references)
+\devsq,squared deviation of the first argument from the reference value in the second (𝔻_r(z))²
+\devsym,"deviation operator 𝔻 for any random variable, X minus its mean (blackboard bold like \varsym and \Expp; the design matrix \design is bold D, and the observed value 𝕕 is \deviation)"
+\devsymf,"deviation operator applied to a random variable, like \varsymf (prints \devsym with its argument in square brackets)"
+\dexp,derivative of exponential (exp′)
+\dexpf,derivative of exp applied to argument
+\dexpitf,derivative of expit function
+\dF,F-distribution operator
+\df,"degrees of freedom (prints the upright name df, because an abbreviation is a name)"
+\dFf,F-distribution applied to parameters
+\dGam,Gamma distribution operator
+\dGamf,Gamma distribution applied to parameters
+\diag,diagonal matrix operator (diag)
+\diagf,diagonal of matrix applied to argument
+\dicdev,"Bayesian deviance used by the deviance information criterion: minus twice the log-likelihood, with no saturated term (prints \deviance_{\mathrm{DIC}})"
+\dicdevf,"Bayesian deviance at a parameter value, dev_DIC(·) (prints \dicdev followed by its argument in parentheses)"
+\dif,"total derivative fraction dF/dt (numerator first, denominator second)"
+\diffeta,difference in eta Δη (alias for \difflogodds)
+\diffloghaz,difference in log-hazard Δη
+\difflogodds,difference in log-odds Δη
+\diffvx,difference in x-vector Δx̰
+\dInvGam,Inverse-Gamma distribution operator
+\dInvGamf,Inverse-Gamma distribution applied to parameters
+\dinvoddsf,derivative of inverse odds (alias)
+\dInvW,Inverse-Wishart distribution operator
+\dInvWf,Inverse-Wishart distribution applied to parameters
+\dist,distributes as relation (∼)
+\distfam \powersetsym,"probability distribution model family P-script: a set of probability distribution models, each a candidate for the distribution of the outcome given the covariate (distribution level)"
+\distfamof,"distribution model family with its label as the subscript, P-script with the label below"
+\distmem \popdist \nnetparams,generic member P of a distribution model family: a probability distribution model for the outcome given the covariate; the mean-function model it contains is \meanfnof{\distmem}
+\distmemof,"member of a distribution model family, with its label as the subscript, P with the label below"
+\distop,"blackboard bold distribution/function symbol (the shared form of \p, \f, \F, \h, \H, \S, \Q, \entropy and \surprisal)"
+\dLaplace,Laplace distribution operator
+\dLaplacef,Laplace distribution applied to parameters
+\dlog,derivative of log (log′)
+\dlogf,derivative of log applied to argument
+\dMN,Multinomial/Matrix-Normal distribution operator
+\dMNf,Multinomial/Matrix-Normal distribution applied to parameters
+\dN \Normal,Normal distribution operator (statmath prefix)
+\dNf,Normal distribution applied to parameters
+\doddsf,derivative of odds function odds′{·}
+\doddsinvf,derivative of inverse odds function
+\dpf \dprodf,dot product a·b (alias for \dprodf)
+\dPo,Poisson distribution operator (statmath prefix)
+\dPof,Poisson distribution applied to parameters
+\dprod,dot product of two arguments a·b
+\dsim \ddist,approximately distributes as (alias for \ddist)
+\dsn,"sequence x₁, …, xₙ"
+\dsvn,"paired sequence X₁=x₁, …, Xₙ=xₙ (alias)"
+\dt,Student-t distribution operator
+\dtf,Student-t distribution applied to parameters
+\dW,Wishart distribution operator
+\dWeib,Weibull distribution operator
+\dWeibf,Weibull distribution applied to parameters
+\dWf,Wishart distribution applied to parameters
+\E,"expected value (prints \Expp, with the argument in square brackets)"
+\e,e^(·) exponential notation
+\ea,end aligned math environment
+\eATT,estimated average treatment effect on the treated ATT̂ (via \Est)
+\eATTf,estimated average treatment effect on the treated function ATT̂(·) (via \Est)
+\eb,estimated beta coefficient β̂
+\Ebar,expectation operator with bar
+\Ebarf,expectation with bar applied to subscript
+\eBias,estimated bias applied to argument (composable \Est form)
+\ebias,estimated bias applied to argument (lowercase alias)
+\eBiast,estimated bias operator (composable \Est form)
+\ecdf,estimated cumulative distribution function F̂
+\ecdff,estimated cumulative distribution function F̂(·) applied to argument
+\ecoef,estimated regression coefficient for covariate (β̂_x)
+\eCor,estimated correlation function Ĉor(·)
+\eCorf,estimated correlation function (alias)
+\eCorr,estimated correlation applied to argument (composable \Est form)
+\eCorrf,estimated correlation applied to argument (alias for \eCorr)
+\eCorrs,estimated correlation applied to two arguments (composable \Est form)
+\eCorrt,estimated correlation operator (composable \Est form)
+\eCors,estimated bivariate correlation
+\ecort,estimated correlation operator
+\ecovf,estimated covariance function (alias)
+\ecovmat,an estimated covariance matrix (forward-looking form) (prints \est{\covmat})
+\eCovt \ecovt,estimated covariance operator (alias)
+\ecuhaz \ecumhaz,estimated cumulative hazard Λ̂
+\ecuhazfactorf,estimated cumulative hazard factor function θ̂_Λ(·)
+\ecuhazff \efcuhazf,estimated cumulative hazard factor function (shorthand for \ecuhazfactorf)
+\ecuhazr \ercuhaz \ecuhazratio,estimated cumulative hazard ratio (alias for \ecuhazratio)
+\ecuhazratiof,estimated cumulative hazard ratio function ϙ̂_Λ(·)
+\ecuhazrf \ercuhazf,estimated cumulative hazard ratio function (alias for \ecuhazratiof)
+\edf,estimated degrees of freedom (forward-looking form) (prints \est{\df})
+\edifflogodds,estimated difference in log-odds ΔΗ̂
+\edistmem,fitted distribution model: estimate of a member of a distribution model family (via \est)
+\edistmemof,fitted distribution model with its label as the subscript (via \est)
+\eE,"estimated expected value (prints \est of \Expp, with the argument in square brackets)"
+\eeinf,estimated Fisher information ℐ̂
+\eeinff,estimated Fisher information function ℐ̂(·)
+\eExp \eExpf,estimated expected value (alias for \eE)
+\ef,e^(·) exponential notation (alias for \e)
+\Ef \Exp \Expf,expected value (alias for \E)
+\efactor,generic estimated factor θ̂ (hat-wrapped \factor)
+\efactorf,generic estimated factor function θ̂(·)
+\efcuhaz \ecuhazfactor,estimated cumulative hazard factor (alias for \ecuhazfactor)
+\eff,generic estimated factor function (shorthand for \efactorf)
+\efhaz \ehazfactor,estimated hazard factor (alias for \ehazfactor)
+\efhazf \ehazff,estimated hazard factor function (alias for \ehazfactorf)
+\efodds \eoddsfactor,estimated odds factor (alias for \eoddsfactor)
+\efoddsf \eoddsff,estimated odds factor function (alias for \eoddsfactorf)
+\efprev \eprevfactor,estimated prevalence factor (alias for \eprevfactor)
+\efprevf \eprevff,estimated prevalence factor function (alias for \eprevfactorf)
+\efrate \eratefactor,estimated rate factor (alias for \eratefactor)
+\efratef \erateff,estimated rate factor function (alias for \eratefactorf)
+\efrisk \eriskfactor,estimated risk factor (alias for \eriskfactor)
+\efriskf \eriskff,estimated risk factor function (alias for \eriskfactorf)
+\efsurv \esurvfactor,estimated survival factor (alias for \esurvfactor)
+\efsurvf \esurvff,estimated survival factor function (alias for \esurvfactorf)
+\Ehat,expectation operator with hat
+\Ehatf,expectation with hat applied to subscript
+\ehaz \erate,estimated hazard λ̂ (alias for \erate)
+\ehazfactorf,estimated hazard factor function θ̂_λ(·)
+\ehazrf \erhazf,estimated hazard ratio function (alias for \ehrf)
+\ehr \ehazr \erhaz \ehazratio,estimated hazard ratio (alias for \ehazratio)
+\ehrf,estimated hazard ratio function ϙ̂_λ(·)
+\eigvalmax,the largest eigenvalue of a matrix (prints \eigval_{\max})
+\eigvalmaxf,the largest eigenvalue of a given matrix (prints \eigvalmax followed by its argument in parentheses)
+\eigvalmin,the smallest eigenvalue of a matrix (prints \eigval_{\min})
+\eigvalminf,the smallest eigenvalue of a given matrix (prints \eigvalmin followed by its argument in parentheses)
+\EInf \FInf \einf \einfm,expected information (alias for \einf)
+\einff,expected information function ℐ(·)
+\eintcoef,estimated regression intercept (β̂_0)
+\ek \ekappa,estimated kappa κ̂
+\eKoppa \eQoppa,estimated Koppa Ϙ̂ (estimator-wrapped \Koppa)
+\ekoppa \eqoppa,estimated koppa ϙ̂ (estimator-wrapped \koppa)
+\el,estimated lambda λ̂
+\emean,an estimated mean (forward-looking form) (prints \est{\mean})
+\emodmem,fitted model: estimate of a member of a mean-function model family (via \est)
+\emodmemat \emodmemof,"fitted model indexed by the input value, which is the subscript (stochastic-process style), h-hat_x (via \est)"
+\emodmematf,"fitted model indexed by the input value in the subscript, applied to the data set in parentheses, h-hat_x(D) (via \est)"
+\emodmemf,"fitted model applied to its argument (via \est), h-hat(·)"
+\emp,"empirical estimator label (""emp"" subscript)"
+\emprisk \epoprisk,empirical risk R̂ (alias for \epoprisk)
+\empriskf,empirical risk function R̂(·) (alias for \epopriskf)
+\eMSE,estimated mean squared error applied to argument (composable \Est form)
+\eMSEf,estimated mean squared error applied to argument (alias for \eMSE)
+\eMSEt,estimated mean squared error operator (composable \Est form)
+\emu,estimated mean μ̂
+\emuf,estimated mean function μ̂(·)
+\entropyf,"Shannon entropy of a random variable, H(X)"
+\enuisance,an estimated nuisance parameter (forward-looking form) (prints \est{\nuisance})
+\eodds,estimated odds ω̂
+\eoddsfactorf,estimated odds factor function θ̂_ω(·)
+\eorf,estimated odds ratio function ϙ̂_ω(·)
+\eoutvar \predval,"predicted outcome, through \est (prints ŷ)"
+\ep,estimated probability density (hat p)
+\Ep \Expp,expectation operator (alias for \Expp)
+\eparam,an estimated parameter (forward-looking form) (prints \est{\param})
+\epe,"expected prediction error at input x of fitting procedure g trained on n observations, EPE^g_n(x); \epe{g}{n}{x}"
+\epl,"expected prediction loss at input x of fitting procedure g trained on n observations, for any loss, EPL^g_n(x); \epl{g}{n}{x}"
+\epopriskf,estimated population risk function R̂(·) (via \est)
+\ePr,estimated probability with brackets Pr̂[·] (via \Est)
+\eprecision,an estimated precision (forward-looking form) (prints \est{\precision})
+\epredfn,"estimated prediction function, such as one fitted from training data; replaces the deprecated \hf"
+\epredfnf,estimated prediction function applied to the argument; replaces the deprecated \hfx
+\Epredval,expected predicted value when no covariate value is salient: the population expectation over training sets of \predval
+\Epredvalf,"expected predicted value at the covariate value given as the argument: the population expectation over training sets of the fitted model's prediction at that value (prints the expectation over the training set of \fitted\paren{x}; the same quantity \avgfitf prints as mu_h(x), written as an expectation of a prediction rather than as a function in a model family; unlike \Epredval, it names the covariate value)"
+\eprev \eprob \erisk \eprobs,estimated prevalence π̂ (alias for \eprob)
+\eprevfactorf,estimated prevalence factor function θ̂_π(·)
+\eprevratiof,estimated prevalence ratio function ϙ̂_π(·)
+\eprr \eprevratio,estimated prevalence ratio (alias for \eprevratio)
+\eprrf,estimated prevalence ratio function (alias for \eprevratiof)
+\eps \err \Noise \noise \wterr \tolout \lsresid \propstep \machineps \smallconst,varepsilon error term (ε)
+\epsf,ε(·) error function (alias for \epsp)
+\epsp,ε(·) error function
+\eQ,estimated quantile function Q̂
+\eqby,equals sign with the reason written over it (prints \eqby{\text{Thm 2}})
+\eQf,estimated quantile function Q̂(·) applied to argument
+\eqGLMRatio,GLM hazard or odds ratio expression
+\equantile,estimated quantile function (alias for \eQ)
+\equantilef,estimated quantile function applied to argument (alias for \eQf)
+\eR,"Gelman-Rubin convergence diagnostic (potential scale reduction factor, R-hat)"
+\eratefactorf,estimated rate factor function θ̂_λ(·)
+\erater \errate \erateratio,estimated rate ratio (alias for \erateratio)
+\erateratiof,estimated rate ratio function ϙ̂_λ(·)
+\eraterf \erratef,estimated rate ratio function (alias for \erateratiof)
+\eRatio,estimated capital ratio Ϙ̂ (estimator-wrapped \Ratio)
+\eratio,generic estimated ratio ϙ̂ (hat-wrapped \ratio)
+\eRatiof,estimated capital ratio function Ϙ̂(·)
+\eratiof,generic estimated ratio function ϙ̂(·)
+\eRD,estimated risk difference RD̂ (via \Est)
+\eregcoef,an estimated unsubscripted regression coefficient (forward-looking form) (prints \est{\regcoef})
+\erf,"error function ε(·); for an estimate, the estimation error (estimate minus truth), written \esterr{estimate}{truth}"
+\eriskfactorf,estimated risk factor function θ̂_π(·)
+\eriskr \errisk \eriskratio,estimated risk ratio (alias for \eriskratio)
+\eriskratiof,estimated risk ratio function ϙ̂_π(·)
+\eriskrf \erriskf,estimated risk ratio function (alias for \eriskratiof)
+\eRMSE,estimated root mean squared error applied to argument (composable \Est form)
+\eRMSEf,estimated root mean squared error applied to argument (alias for \eRMSE)
+\eRMSEt,estimated root mean squared error operator (composable \Est form)
+\eror,"estimated odds ratio ϙ̂_ω (\eratio subscripted by \odds, so the hat covers only the main symbol)"
+\eRR,estimated risk ratio RR̂ (via \Est)
+\errcov \universe \samplespace,the covariance matrix of observation errors (prints \Omega)
+\ersurv \esurvr \esurvratio,estimated survival ratio (alias for \esurvratio)
+\ersurvf \esurvrf,estimated survival ratio function (alias for \esurvratiof)
+\es \esig,estimated sigma σ̂
+\eS \eSig \eSigma,estimated covariance matrix Σ̂
+\eSD,estimated standard deviation SD̂(·)
+\eSDf,estimated standard deviation (alias)
+\esdpar,an estimated standard deviation (forward-looking form) (prints \est{\sdpar})
+\ESE,"expected squared error ESE(·) of a predicted value or a parameter estimate, applied to argument"
+\ese,estimated standard error ŝe(·)
+\eSE \eSEt,estimated standard error operator ŜE
+\ESEE,"expected squared estimation error ESEE(·) of a parameter estimate, applied to argument"
+\ESEEf,expected squared estimation error ESEE(·) applied to argument (alias for \ESEE)
+\ESEEt,"expected squared estimation error operator ESEE, of a parameter estimate"
+\ESEf,expected squared error ESE(·) applied to argument (alias for \ESE)
+\eSEf,estimated standard error function (alias)
+\esef,estimated standard error (alias for \ese)
+\esemp,empirical survival function estimator Ŝ_emp
+\esempf,empirical survival function estimator Ŝ_emp(·) applied to argument
+\ESEt,"expected squared error operator ESE, of a predicted value or a parameter estimate"
+\eset,estimated standard error operator ŝe
+\eskm,Kaplan-Meier survival function estimator Ŝ_KM
+\eskmf,Kaplan-Meier survival function estimator Ŝ_KM(·) applied to argument
+\esnaa,Nelson-Aalen survival function estimator Ŝ_NA
+\esnaaf,Nelson-Aalen survival function estimator Ŝ_NA(·) applied to argument
+\ESPE,"expected squared prediction error ESPE(·) of a predicted value, applied to argument"
+\ESPEf,expected squared prediction error ESPE(·) applied to argument (alias for \ESPE)
+\ESPEt,"expected squared prediction error operator ESPE, of a predicted value"
+\Est,estimated / wide-hat version of argument (for multi-character targets)
+\est,estimated / hat version of argument
+\esterr,"estimation error: the error ε of the estimate in the first argument for the estimand in the second, ε_estimand(estimate); the estimate minus the estimand, written explicitly with \devof{estimate}{estimand}"
+\estmeanf,"estimate of the mean function value at the covariate value given as the argument (prints \emuf{x}, the estimated mean function applied to x; the value that the fitted model's prediction \predvalf{x} estimates, here named by its role as an estimator of \truemeanf{x} rather than as a prediction)"
+\esttmp,alternative estimate notation (·̂*)
+\esttmpl,alternative estimate of lambda
+\eSurv \esurv,estimated survival function (alias for \esurv)
+\eSurvf,estimated survival function Ŝ(·) applied to argument
+\esurvfactorf,estimated survival factor function θ̂_S(·)
+\esurvratiof,estimated survival ratio function ϙ̂_S(·)
+\etargetfn,"estimated target function: fitted counterpart of the target function (via \est), \mu-hat"
+\etargetfnf,"estimated target function applied to its argument (via \est), \mu-hat(·)"
+\eth,estimated theta θ̂
+\ethml,maximum likelihood estimate of theta
+\Etilde,expectation operator with tilde
+\Etildef,expectation with tilde applied to subscript
+\euler,Euler's number e (roman)
+\evalAt,evaluate expression at a given point
+\evalbar,expression followed by an evaluation bar ·|
+\eVar,estimated variance function V̂ar(·)
+\evar \evart,estimated variance operator (hat)
+\evarf,estimated variance function (alias for \eVar)
+\evarpar,an estimated variance (forward-looking form) (prints \est{\sdpar}^2)
+\evb \evcoef \evhcoef,estimated beta vector (β̂-vector)
+\eventnocens,event indicator at time m under the intervention that eliminates censoring (prints D^{\bar{c}=0}_m)
+\evparam,an estimated parameter vector (forward-looking form) (prints \est{\vparam})
+\exp \expf,"exponential function exp{·}; takes one argument, so never write it bare: use \expf{·} or \expt with your own delimiters"
+\Expfc,conditional expected value (prints \Expp with the conditioning subscript c and the argument in square brackets)
+\expfn,exponential function (alias for \exp)
+\expgenerr,"expected generalization error of fitting procedure g trained on n observations, averaged over training sets, Err^g(n); \expgenerr{g}{n}"
+\expit \sigmoid,expit / logistic function
+\expitf,expit applied to argument
+\expt,exp operator symbol
+\ey \efitted,estimated value of y
+\F \cdf \fmass,cumulative distribution function symbol F
+\f \pdf \fdens,probability density function symbol f
+\factorf,generic factor function θ(·)
+\factorial,factorial of a non-negative integer n! (prints its argument followed by an exclamation mark)
+\fcuhaz \cuhazfactor,cumulative hazard factor (alias for \cuhazfactor)
+\featmap,"a feature map (basis expansion) (prints D, not bold, since a feature map is a function)"
+\ff,generic factor function (shorthand for \factorf)
+\ffield,"finite field with the given number of elements, F_q"
+\fhaz \hazfactor,hazard factor (alias for \hazfactor)
+\fhazf \hazff,hazard factor function (alias for \hazfactorf)
+\fitmodf \candfitted,"fitted model obtained from the training set given as the argument, the prediction function ŷ with the training set as subscript (prints \fitted_{D}, where the subscript is a data set, not an observation index); \fitmodf{D}\paren{x} is its prediction at x, and \fitprocf{D} is the same model written as the fitting procedure g applied to D"
+\fitmodvalf,"prediction at the covariate value given as the second argument, from the model that the fitting procedure fits to the data set given as the first argument (prints \fitmodf{D}\paren{x}, that is the fitted model ŷ_D applied to x; the counterpart of \predvalf for a data set other than the full training set, such as the observations outside a fold; unlike \candpredvalf, which indexes a candidate procedure rather than a data set; unlike \predval and unlike \epredfnf, which applies any estimated prediction function, it is fixed to the fit to that data set)"
+\fitprocf,"fitting procedure applied to its argument, g(·); write \fitprocf{D} for the model g(D) fitted to the data set D, and \fitprocf{D}\paren{x} for its prediction at x"
+\fittedwo,"fitted value at input x from a fit leaving out fold j, ŷ^(-j)(x); \fittedwo{j}{x}"
+\floor,floor function ⌊·⌋
+\fodds \oddsfactor,odds factor (alias for \oddsfactor)
+\foddsf \oddsff,odds factor function (alias for \oddsfactorf)
+\fold,cross-validation fold F_j (set of held-out observation indices)
+\foldmse,mean squared error MSE_j on fold j
+\foldmseof,"mean squared error of fitting procedure g on fold j, MSE^g_j; \foldmseof{j}{g}"
+\foldmseoff,"mean squared error on the fold given as the first argument, of the fitting procedure given as the second argument, computed on the data set given as the third argument (prints \foldmseof{j}{g}\paren{D}; the f form of \foldmseof, which leaves the data set implicit)"
+\foldof,fold κ(i) containing observation i
+\foldsize,number of observations n_j in fold j
+\fprev \prevfactor,prevalence factor (alias for \prevfactor)
+\fprevf \prevff,prevalence factor function (alias for \prevfactorf)
+\frate \ratefactor,rate factor (alias for \ratefactor)
+\fratef \rateff,rate factor function (alias for \ratefactorf)
+\frisk \riskfactor,risk factor (alias for \riskfactor)
+\friskf \riskff,risk factor function (alias for \riskfactorf)
+\fsurv \survfactor,survival factor (alias for \survfactor)
+\fsurvf \survff,survival factor function (alias for \survfactorf)
+\g \gg \resp \decay,Greek letter gamma (γ)
+\gammafn,the gamma function (prints \Gamma)
+\Gaus,Gaussian distribution label
+\gd \kron \step \event \tolin \backerr \errfrac \failprob \truthind \mahaldist,Greek letter delta (δ)
+\generr,generalization error operator Err (expected loss of a prediction rule on new data)
+\gensalg,sigma-algebra generated by argument σ(·)
+\gensigmaalg,generated sigma-algebra (alias for \gensalg)
+\given,"the conditioning bar ""given"" (prints |), for conditional expressions such as E[Y | X]"
+\grad,gradient operator ∇
+\gradf,"gradient of a function, ∇f"
+\gradwrt,"gradient with respect to a variable, ∇_θ f"
+\gray,typeset argument in gray
+\green,typeset argument in green
+\growthfn,growth function m_Y (prints m_{\predfam}): the most labelings of n points that the prediction function family can produce
+\growthfnf,"growth function at n points, m_Y(n) (prints \growthfn\paren{n})"
+\h,hazard function symbol h
+\H \entropy \crossentropy,cumulative hazard function symbol H
+\hamdist,"Hamming distance: number of positions where two strings differ, Delta(x, y)"
+\hatmat,"hat matrix H, which maps observed responses to fitted responses"
+\hATT,"estimated average treatment effect on the treated ATT̂; deprecated, use \eATT"
+\hATTf,"estimated average treatment effect on the treated function ATT̂(·); deprecated, use \eATTf"
+\haz \rate,hazard function symbol λ (alias for \rate)
+\hazfactorf,hazard factor function θ_λ(·)
+\hazrf \rhazf,hazard ratio function (alias for \hrf)
+\hb,"estimated beta coefficient β̂; deprecated, use \eb"
+\hBias,"estimated bias applied to argument (legacy \hat form); deprecated, use \eBias"
+\hbias,"estimated bias applied to argument (lowercase alias); deprecated, use \ebias"
+\hBiast,"estimated bias operator Biaŝ (legacy \hat form); deprecated, use \eBiast"
+\hcdf,"estimated cumulative distribution function F̂; deprecated, use \ecdf"
+\hcdff,"estimated cumulative distribution function F̂(·) applied to argument; deprecated, use \ecdff"
+\hcoef,"estimated regression coefficient for covariate (β̂_x); deprecated, use \ecoef"
+\hCor,"estimated correlation function Ĉor(·); deprecated, use \eCor"
+\hCorf,"estimated correlation function (alias); deprecated, use \eCorf"
+\hCorr,"estimated correlation Corr̂(·) applied to argument (legacy \hat form); deprecated, use \eCorr"
+\hCorrf,"estimated correlation Corr̂(·) applied to argument (alias for \hCorr); deprecated, use \eCorrf"
+\hCorrs,"estimated correlation Corr̂(·, ·) applied to two arguments (legacy \hat form); deprecated, use \eCorrs"
+\hCorrt,"estimated correlation operator Corr̂ (legacy \hat form); deprecated, use \eCorrt"
+\hCors,"estimated bivariate correlation; deprecated, use \eCors"
+\hcort,"estimated correlation operator; deprecated, use \ecort"
+\hcovmat,"an estimated covariance matrix (prints \hat{\Sigma}); deprecated, use \ecovmat"
+\hCovt \hcovt,"estimated covariance operator (alias); deprecated, use \eCovt"
+\hcuhaz \hcumhaz,"estimated cumulative hazard Λ̂; deprecated, use \ecuhaz"
+\hcuhazfactorf,"estimated cumulative hazard factor function θ̂_Λ(·); deprecated, use \ecuhazfactorf"
+\hcuhazff \hfcuhazf,"estimated cumulative hazard factor function (shorthand for \hcuhazfactorf); deprecated, use \ecuhazff"
+\hcuhazr \hrcuhaz \hcuhazratio,"estimated cumulative hazard ratio (alias for \hcuhazratio); deprecated, use \ecuhazr"
+\hcuhazratiof,"estimated cumulative hazard ratio function ϙ̂_Λ(·); deprecated, use \ecuhazratiof"
+\hcuhazrf \hrcuhazf,"estimated cumulative hazard ratio function (alias for \hcuhazratiof); deprecated, use \ecuhazrf"
+\hdf,"estimated degrees of freedom (prints the hat of the upright name df); deprecated, use \edf"
+\hdifflogodds,"estimated difference in log-odds ΔΗ̂; deprecated, use \edifflogodds"
+\hE,"estimated expected value (prints the hat of \Expp, with the argument in square brackets); deprecated, use \eE"
+\heinf,"estimated Fisher information ℐ̂; deprecated, use \eeinf"
+\heinff,"estimated Fisher information function ℐ̂(·); deprecated, use \eeinff"
+\heldoutval,"outcome value of a held-out observation (fixed), y with subscript star and the index of the observation"
+\heldoutvar,"outcome of a held-out observation (random), Y with subscript star and the index of the observation"
+\heldpredval,"covariate value of a held-out observation (fixed), x with subscript star and the index of the observation"
+\heldpredvar,"covariate of a held-out observation (random), X with subscript star and the index of the observation"
+\hess \hessm \hessian,Hessian of log-likelihood ℓ″
+\hessf,Hessian function ℓ″(·)
+\hessianf,Hessian function (alias for \hessf)
+\hessij,"(i,j) element of the Hessian"
+\hessijalt,"(i,j) Hessian in bracket notation"
+\hExp \hExpf,"estimated expected value (alias for \hE); deprecated, use \eExp"
+\hf,"fitted prediction function (f̂); deprecated, use \epredfn"
+\hfactor,"generic estimated factor θ̂ (hat-wrapped \factor); deprecated, use \efactor"
+\hfactorf,"generic estimated factor function θ̂(·); deprecated, use \efactorf"
+\hfcuhaz \hcuhazfactor,"estimated cumulative hazard factor (alias for \hcuhazfactor); deprecated, use \efcuhaz"
+\hff,"generic estimated factor function (shorthand for \hfactorf); deprecated, use \eff"
+\hfhaz \hhazfactor,"estimated hazard factor (alias for \hhazfactor); deprecated, use \efhaz"
+\hfhazf \hhazff,"estimated hazard factor function (alias for \hhazfactorf); deprecated, use \efhazf"
+\hfodds \hoddsfactor,"estimated odds factor (alias for \hoddsfactor); deprecated, use \efodds"
+\hfoddsf \hoddsff,"estimated odds factor function (alias for \hoddsfactorf); deprecated, use \efoddsf"
+\hfprev \hprevfactor,"estimated prevalence factor (alias for \hprevfactor); deprecated, use \efprev"
+\hfprevf \hprevff,"estimated prevalence factor function (alias for \hprevfactorf); deprecated, use \efprevf"
+\hfrate \hratefactor,"estimated rate factor (alias for \hratefactor); deprecated, use \efrate"
+\hfratef \hrateff,"estimated rate factor function (alias for \hratefactorf); deprecated, use \efratef"
+\hfrisk \hriskfactor,"estimated risk factor (alias for \hriskfactor); deprecated, use \efrisk"
+\hfriskf \hriskff,"estimated risk factor function (alias for \hriskfactorf); deprecated, use \efriskf"
+\hfsurv \hsurvfactor,"estimated survival factor (alias for \hsurvfactor); deprecated, use \efsurv"
+\hfsurvf \hsurvff,"estimated survival factor function (alias for \hsurvfactorf); deprecated, use \efsurvf"
+\hfx,"fitted prediction function applied to its argument, f̂(·); deprecated, use \epredfnf"
+\hhaz \hrate,"estimated hazard λ̂ (alias for \hrate); deprecated, use \ehaz"
+\hhazfactorf,"estimated hazard factor function θ̂_λ(·); deprecated, use \ehazfactorf"
+\hhazrf \hrhazf,"estimated hazard ratio function (alias for \hhrf); deprecated, use \ehazrf"
+\hhr \hhazr \hrhaz \hhazratio,"estimated hazard ratio (alias for \hhazratio); deprecated, use \ehr"
+\hhrf,"estimated hazard ratio function ϙ̂_λ(·); deprecated, use \ehrf"
+\hidvalof,"value of the hidden unit given as the argument, h with the unit as subscript"
+\hintcoef,"estimated regression intercept (β̂_0); deprecated, use \eintcoef"
+\hist,"history of a variable through a time point, as in \hist{X}{k} (prints \bar{X}_{k})"
+\hk \hkappa,"estimated kappa κ̂; deprecated, use \ek"
+\hKoppa \hQoppa,"estimated Koppa Ϙ̂ (hat-wrapped \Koppa); deprecated, use \eKoppa"
+\hkoppa \hqoppa,"estimated koppa ϙ̂ (hat-wrapped \koppa); deprecated, use \ekoppa"
+\hl,"estimated lambda λ̂; deprecated, use \el"
+\hmodmem,"fitted model (hat-wrapped \modmem), legacy form; deprecated, use \emodmem"
+\hmodmemf,"fitted model applied to its argument (hat-wrapped), h-hat(·); deprecated, use \emodmemf"
+\hmodmemof,"fitted model with its mean-function model family as subscript (hat-wrapped); deprecated, use \emodmemof"
+\hMSE,"estimated mean squared error applied to argument (legacy \hat form); deprecated, use \eMSE"
+\hMSEf,"estimated mean squared error applied to argument (alias for \hMSE); deprecated, use \eMSEf"
+\hMSEt,"estimated mean squared error operator MSÊ (legacy \hat form); deprecated, use \eMSEt"
+\hmu \hmean,"estimated mean μ̂; deprecated, use \emu"
+\hmuf,"estimated mean function μ̂(·); deprecated, use \emuf"
+\hnuisance,"an estimated nuisance parameter (prints \hat{\lambda}); deprecated, use \enuisance"
+\hodds,"estimated odds ω̂; deprecated, use \eodds"
+\hoddsfactorf,"estimated odds factor function θ̂_ω(·); deprecated, use \eoddsfactorf"
+\horf,"estimated odds ratio function ϙ̂_ω(·); deprecated, use \eorf"
+\hp \ph,"estimated probability (alias for \ph); deprecated, use \ep"
+\hparam,"an estimated parameter (prints \hat{\theta}); deprecated, use \eparam"
+\hpoprisk,"estimated population risk R̂ (hat-wrapped \poprisk); the empirical risk; deprecated, use \epoprisk"
+\hpopriskf,"estimated population risk function R̂(·) (hat-wrapped \popriskf); deprecated, use \epopriskf"
+\hPr,"estimated probability with brackets Pr̂[·]; deprecated, use \ePr"
+\hprecision,"an estimated precision (prints \hat{\tau}); deprecated, use \eprecision"
+\hprev \hprob \hrisk \hprobs,"estimated prevalence π̂ (alias for \hprob); deprecated, use \eprev"
+\hprevfactorf,"estimated prevalence factor function θ̂_π(·); deprecated, use \eprevfactorf"
+\hprevratiof,"estimated prevalence ratio function ϙ̂_π(·); deprecated, use \eprevratiof"
+\hprr \hprevratio,"estimated prevalence ratio (alias for \hprevratio); deprecated, use \eprr"
+\hprrf,"estimated prevalence ratio function (alias for \hprevratiof); deprecated, use \eprrf"
+\hQ,"estimated quantile function Q̂; deprecated, use \eQ"
+\hQf,"estimated quantile function Q̂(·) applied to argument; deprecated, use \eQf"
+\hquantile,"estimated quantile function (alias for \hQ); deprecated, use \equantile"
+\hquantilef,"estimated quantile function applied to argument (alias for \hQf); deprecated, use \equantilef"
+\hR,"Gelman-Rubin convergence diagnostic (potential scale reduction factor, R-hat); deprecated, use \eR"
+\hr \hazr \rhaz \hazratio,hazard ratio (alias for \hazratio)
+\hratefactorf,"estimated rate factor function θ̂_λ(·); deprecated, use \eratefactorf"
+\hrater \hrrate \hrateratio,"estimated rate ratio (alias for \hrateratio); deprecated, use \erater"
+\hrateratiof,"estimated rate ratio function ϙ̂_λ(·); deprecated, use \erateratiof"
+\hraterf \hrratef,"estimated rate ratio function (alias for \hrateratiof); deprecated, use \eraterf"
+\hRatio,"estimated capital ratio Ϙ̂ (hat-wrapped \Ratio); deprecated, use \eRatio"
+\hratio,"generic estimated ratio ϙ̂ (hat-wrapped \ratio); deprecated, use \eratio"
+\hRatiof,"estimated capital ratio function Ϙ̂(·); deprecated, use \eRatiof"
+\hratiof,"generic estimated ratio function ϙ̂(·); deprecated, use \eratiof"
+\hRD,"estimated risk difference RD̂; deprecated, use \eRD"
+\hregcoef,"an estimated unsubscripted regression coefficient (prints \hat{\beta}); deprecated, use \eregcoef"
+\hrf,hazard ratio function ϙ_λ(·)
+\hriskfactorf,"estimated risk factor function θ̂_π(·); deprecated, use \eriskfactorf"
+\hriskr \hrrisk \hriskratio,"estimated risk ratio (alias for \hriskratio); deprecated, use \eriskr"
+\hriskratiof,"estimated risk ratio function ϙ̂_π(·); deprecated, use \eriskratiof"
+\hriskrf \hrriskf,"estimated risk ratio function (alias for \hriskratiof); deprecated, use \eriskrf"
+\hRMSE,"estimated root mean squared error applied to argument (legacy \hat form); deprecated, use \eRMSE"
+\hRMSEf,"estimated root mean squared error applied to argument (alias for \hRMSE); deprecated, use \eRMSEf"
+\hRMSEt,"estimated root mean squared error operator (legacy \hat form); deprecated, use \eRMSEt"
+\hror,"estimated odds ratio ϙ̂_ω (\hratio subscripted by \odds, so the hat covers only the main symbol); deprecated, use \eror"
+\hRR,"estimated risk ratio RR̂; deprecated, use \eRR"
+\hrsurv \hsurvr \hsurvratio,"estimated survival ratio (alias for \hsurvratio); deprecated, use \ersurv"
+\hrsurvf \hsurvrf,"estimated survival ratio function (alias for \hsurvratiof); deprecated, use \ersurvf"
+\hs \hsig,"estimated sigma σ̂; deprecated, use \es"
+\hS \hSig \hSigma,"estimated covariance matrix Σ̂; deprecated, use \eS"
+\hSD,"estimated standard deviation SD̂(·); deprecated, use \eSD"
+\hSDf,"estimated standard deviation (alias); deprecated, use \eSDf"
+\hsdpar,"an estimated standard deviation (prints \hat{\sigma}); deprecated, use \esdpar"
+\HSE,"estimated standard error function (alias); deprecated, use \eSEf"
+\hse,"estimated standard error ŝe(·); deprecated, use \ese"
+\hSE \hSEt,"estimated standard error operator ŜE; deprecated, use \eSE"
+\hSEf,"estimated standard error function (alias); deprecated, use \eSEf"
+\hsef,"estimated standard error (alias for \hse); deprecated, use \esef"
+\hsemp,"empirical survival function estimator Ŝ_emp; deprecated, use \esemp"
+\hsempf,"empirical survival function estimator Ŝ_emp(·) applied to argument; deprecated, use \esempf"
+\hset,"estimated standard error operator ŝe; deprecated, use \eset"
+\hskm,"Kaplan-Meier survival function estimator Ŝ_KM; deprecated, use \eskm"
+\hskmf,"Kaplan-Meier survival function estimator Ŝ_KM(·) applied to argument; deprecated, use \eskmf"
+\hsnaa,"Nelson-Aalen survival function estimator Ŝ_NA; deprecated, use \esnaa"
+\hsnaaf,"Nelson-Aalen survival function estimator Ŝ_NA(·) applied to argument; deprecated, use \esnaaf"
+\hSurv \hsurv,"estimated survival function (alias for \hsurv); deprecated, use \eSurv"
+\hSurvf,"estimated survival function Ŝ(·) applied to argument; deprecated, use \eSurvf"
+\hsurvfactorf,"estimated survival factor function θ̂_S(·); deprecated, use \esurvfactorf"
+\hsurvratiof,"estimated survival ratio function ϙ̂_S(·); deprecated, use \esurvratiof"
+\htargetfn,"estimated target function: fitted counterpart of the target function (hat-wrapped), legacy form; deprecated, use \etargetfn"
+\htargetfnf,"estimated target function applied to its argument (hat-wrapped), \mu-hat(·); deprecated, use \etargetfnf"
+\hth,"estimated theta θ̂; deprecated, use \eth"
+\hthml,"maximum likelihood estimate of theta; deprecated, use \ethml"
+\hVar,"estimated variance function V̂ar(·); deprecated, use \eVar"
+\hvar \hvart,"estimated variance operator (hat); deprecated, use \evar"
+\hvarf,"estimated variance function (alias for \hVar); deprecated, use \evarf"
+\hvarpar,"an estimated variance (prints \hat{\sigma}^2); deprecated, use \evarpar"
+\hvb \hvcoef \vhcoef,"estimated beta vector (β̂-vector); deprecated, use \evb"
+\hvparam,"an estimated parameter vector (prints \hat{\vec{\theta}}); deprecated, use \evparam"
+\hy \yh \fitted,"fitted / predicted value ŷ; deprecated, use \ey"
+\icand,"index of a candidate fitting procedure, l"
+\idmat,identity matrix 𝕀
+\ifold,"index of a cross-validation fold, j"
+\iid,i.i.d. label
+\imgwidth,"width of an image or feature map, in pixels"
+\inas,convergence almost surely arrow
+\incidence,incidence rate (average hazard)
+\ind \indpt,statistical independence symbol (⊥⊥)
+\indic,indicator function 𝟙_{·} (blackboard bold)
+\indiccb,indicator function 𝟙{·} with curly braces
+\indicf,indicator function (alias for \indic)
+\indicp,indicator function 𝟙(·) with parentheses
+\indist,convergence in distribution arrow
+\indold,independence symbol (legacy Unicode)
+\inprob,convergence in probability arrow
+\inputdim \ninputvars,"alias for \ninputvars, kept for existing uses"
+\Intcoef,uppercase regression intercept (B_0)
+\intcoef,regression intercept (β_0)
+\interest,a parameter of interest (prints \psi)
+\inv,multiplicative inverse (·)^{−1} with parentheses
+\invcb,inverse with curly braces {·}^{−1}
+\invf \invp,multiplicative inverse (alias for \inv)
+\invodds,inverse odds (alternative notation)
+\invoddsf,inverse odds function (alias)
+\invsb,inverse with square brackets [·]^{−1}
+\iobs,"index of an observation, i"
+\iprod,"inner product ⟨x, y⟩"
+\iprodf,inner product (alias for \iprod)
+\IQR,interquartile range operator symbol
+\IQRf,interquartile range function IQR(·)
+\iter,"index t of the step of an iterative algorithm, such as gradient descent"
+\iterpoint,point that an iterative algorithm has reached after the given number of steps; takes the point's symbol and the step index (prints #1^{(#2)})
+\k \cs \condnum \condsurv \foldassign,Greek letter kappa (κ)
+\kerngaus,Gaussian distribution kernel exponent
+\kldiv,Kullback–Leibler divergence symbol D_KL
+\kldivf,"Kullback–Leibler divergence of the second distribution from the first, D_KL(p ‖ q)"
+\km,"Kaplan-Meier estimator label (""KM"" subscript)"
+\kolm \npatterns,Kolmogorov complexity symbol K
+\kolmf,"Kolmogorov complexity of a string, K(x)"
+\Koppa \Qoppa \Ratio,archaic Greek letter Koppa Ϙ (uppercase; capital quotient/ratio symbol)
+\koppa \qoppa \ratio,archaic Greek letter koppa ϙ (lowercase; base symbol for quotient and ratios)
+\l \gl \lam \eigval \regpar \tuning \lagmult \lebesgue \nuisance,Greek letter lambda (λ)
+\lds,lower ellipsis (…)
+\lev \leverage,leverage h_i of observation i (diagonal of the hat matrix)
+\levelsetof,"level set of the function given as the second argument at the value given as the first, the preimage of that single value (prints f^{-1}({c}))"
+\lightgray,typeset argument in light gray
+\Lik,likelihood script symbol (ℒ)
+\lik \llik \logl \lbound \loglik \layeridx,log-likelihood (alias for \llik)
+\Likf,likelihood function ℒ(·)
+\likf \loglf \loglikf,log-likelihood function ℓ(·) (alias for \llikf)
+\likgaus,Gaussian likelihood expression
+\lime,typeset argument in lime green
+\linefn \normpdf \poismean,the one-variable function a line search minimizes (prints \phi)
+\littleo,"little-o asymptotic negligibility applied to its argument (prints o(g), italic)"
+\llexpmean,log-likelihood expression for exponential mean model
+\llgaus,Gaussian log-likelihood expression
+\llikf,log-likelihood function ℓ(·)
+\lnf,"natural log function applied to its argument, ln(·)"
+\logf,log{·} function applied to argument
+\loghaz \lincomp \logodds \lograte \natparam,log-hazard symbol η
+\logit,logit function
+\logitf,logit applied to argument
+\logoddsf,log-odds function η(·)
+\logoddst,log-odds text label
+\logpartitionf,log-partition function of an exponential family at its argument (prints A(#1))
+\logt,log operator symbol
+\lossf,"loss function applied to its arguments, L(·)"
+\lp,linear predictor x′β
+\lpdp,linear predictor at x (dot product x⃗·β⃗)
+\lpnorm \obsloss,"name of an ℓ_p norm or penalty, such as ℓ_1 or ℓ_2 (argument: p)"
+\lrstat \rvrate \Eigvals \penaltygrid,a likelihood-ratio test statistic (prints \Lambda)
+\m \gm \mean \pmean \measure \popmean \targetfn \truemean \strongconv \truemeanfn \coordfactor,Greek letter mu / population mean (μ)
+\M \Mu \gM \nmodels,"uppercase M symbol (italic variable, alias for mean/moment)"
+\maelr,mean absolute error function MAE(·)
+\magenta,typeset argument in magenta
+\mat \matr,matrix notation (alias for \matr)
+\mathbbm,"double-struck letter that includes lowercase (alias for \mathbb where bbm is not loaded, as in MathJax)"
+\mathscr,script font operator (fallback to \mathcal)
+\matvecf,matrix vectorization applied to argument (alias for \vctf)
+\maxf,"maximum of a comma-separated list, max(·)"
+\meanfnoff,"mean function of the distribution model in the first argument, applied to the covariate value in the second"
+\med,median operator symbol
+\medf,median function med(·)
+\midpt \sdest \sdprior \schedlen \precision \sdbetween \clipthresh,an intermediate point in a mean-value or Taylor remainder (prints \tau)
+\minf,"minimum of a comma-separated list, min(·)"
+\modef,set of modes of a density or mass function (prints mode(f))
+\modelfam,mean-function model family (hypothesis class) H: the set of mean-function models that training chooses from (mean-function level; the distribution level is \distfam)
+\modmemf,"generic member of a mean-function model family applied to its argument, h(·)"
+\modmemof,"member (or fit) h of the mean-function model family given as the argument, h with the family as subscript"
+\ModResid \modresid \ModResidual \modresidual,modified residual (alias)
+\mpredvar,"input matrix: the predictor vectors of all n observations, one per row (prints bold X, like \mX, the usual textbook form)"
+\MSE,mean squared error MSE(·) applied to argument
+\MSEf,mean squared error MSE(·) applied to argument (alias for \MSE)
+\mselr,mean squared error function MSE(·)
+\MSEt,mean squared error operator MSE
+\mX,predictor matrix X (bold): the matrix of covariate values; the design matrix built from a feature map is \design
+\mx,design matrix x lowercase (bold)
+\NA \naa,"not-available / missing-value placeholder (text ""NA"")"
+\Nat \bbN,natural numbers set ℕ (blackboard-bold)
+\NB \NegBin,Negative Binomial distribution label
+\ndist,Normal distribution expression N(·)
+\negclass,negative class or negative test result in binary classification (prints a minus sign)
+\newoutval,"outcome value of a new observation (fixed), y with subscript star"
+\newoutvar,"outcome of a new observation (random), Y with subscript star"
+\newpredval,"covariate value of a new observation (fixed), x with subscript star"
+\newpredvar,"covariate of a new observation (random), X with subscript star"
+\nfn,number of false negatives in a confusion matrix (prints n_{F\negclass})
+\nfolds,"number of cross-validation folds, k"
+\nfp,number of false positives in a confusion matrix (prints n_{F\posclass})
+\nheld \nreps,"number of observations in a held-out set, m"
+\nobs,sample size n: the number of observations or training examples
+\norm,Euclidean norm ‖·‖
+\normcdf,the standard normal CDF (prints \Phi)
+\normsq,squared norm ‖·‖²
+\noutvars \poolsize,"number q of outcome variables: the length of the response vector in multivariate regression, not the number of classes"
+\nparams,number p* of parameters: the columns of the design matrix after any feature map
+\ntn,number of true negatives in a confusion matrix (prints n_{T\negclass})
+\ntp,number of true positives in a confusion matrix (prints n_{T\posclass})
+\nulldeviance,null deviance: the deviance of the intercept-only model
+\objfn,objective function that a fitting procedure minimizes over a model family (prints \mathcal{J})
+\objfnf,"value of the objective function at a candidate model, the argument (prints \objfn applied to the argument)"
+\obsmean,observed outcome mean μ(a) (given observed exposure a)
+\obsprob,observed outcome probability π(a) (given observed exposure a)
+\oddsf,odds function odds{·}
+\oddsfactorf,odds factor function θ_ω(·)
+\oddsinv,inverse odds operator
+\oddsinvf,inverse odds function
+\oddst,odds operator label
+\oinf \obsidx,observed information symbol I
+\oinff,observed information function I(·)
+\oinfm,observed information matrix symbol
+\olive,typeset argument in olive
+\om \odds \outcome,Greek letter omega (ω)
+\omu,observed outcome mean μ(a) (shorthand for \obsmean)
+\opi,observed outcome probability π(a) (shorthand for \obsprob)
+\oprod,outer product x y′
+\optalg,optimization algorithm that searches a model family for a minimizer of the objective function (prints \mathcal{A})
+\OR,odds ratio label OR
+\orange,typeset argument in orange
+\orf,odds ratio function ϙ_ω(·)
+\outbar,sample mean of the outcome values (prints \bar{\outvar})
+\Outvar,"outcome variable, random variable (prints Y)"
+\outvar,"outcome variable, observed value (prints y)"
+\P \mass \pmass,probability operator ℙ (blackboard bold)
+\p \pr \dens \pdens,probability density/mass function symbol p
+\paren,auto-sized parentheses around argument
+\Pf,probability (prints \P with the argument in parentheses)
+\pf,probability density/mass p(·)
+\phaz,expected hazard E[λ] (Poisson hazard)
+\pink,typeset argument in pink
+\plim,probability limit operator (plim)
+\plimf,probability limit applied to argument
+\pMAE,population mean absolute error pMAE(·) applied to argument
+\pMAEf,population mean absolute error pMAE(·) applied to argument (alias for \pMAE)
+\pMAEt,population mean absolute error operator pMAE
+\pmat,matrix formatted with parentheses (pmatrix)
+\pmf,probability mass function ℙ(·)
+\pMSE,population mean squared error pMSE(·) applied to argument
+\pMSEf,population mean squared error pMSE(·) applied to argument (alias for \pMSE)
+\pMSEt,population mean squared error operator pMSE
+\pmu,potential outcome mean μ_a (shorthand for \potmean)
+\Pois,Poisson distribution label
+\Poisson,Poisson distribution label (long form)
+\polydeg,"degree of a polynomial model, d"
+\popdevf,"deviation of the argument from its population mean, 𝕕_z"
+\poprisk,population (true) risk symbol R: the expected loss of a model
+\popriskf,"population risk of a model, R(·)"
+\posclass,positive class or positive test result in binary classification (prints a plus sign)
+\potmean \meanfnof,potential outcome mean μ_a (e.g. E[Y_a])
+\potout,potential outcome Y_a (outcome under intervened exposure a)
+\potprob,potential outcome probability π_a (e.g. Pr(Y_a=1) for binary Y)
+\powerset,"power set of a set, the set of all its subsets 𝒫(·)"
+\powf,"first argument (·) raised to the power of the second argument, with parentheses around the base"
+\ppi,potential outcome probability π_a (shorthand for \potprob)
+\predbar,sample mean of the predictor values (prints \bar{\predvar})
+\prederr,"prediction error, predicted minus observed outcome, symbol ε with the upright label pred; same meaning as \esterr{\predval}{\Outvar}"
+\prederrf,"prediction error of the predictor in the argument, ε_pred(·) (prints \prederr followed by its argument in parentheses); the estimation error of that predictor for the new outcome, \esterr{predictor}{\Outvar}"
+\predfam,"prediction function family Y-script: the set of prediction functions that training chooses from (prediction level; a member is \predfn, a fitted member is \epredfn)"
+\predfamof,"prediction function family with its label as the subscript, Y-script with the label below"
+\predfn,"symbol for a prediction function, which maps predictor values to a predicted outcome"
+\predfnf,prediction function applied to the argument
+\predvalf,"prediction at the covariate value given as the argument, from the model that a fitting procedure fits to the training set (prints \fitted\paren{x}, the fitted prediction function applied to x; unlike \predval, which takes no argument and names no covariate value, this applies the fitted function to the covariate value given, and unlike \epredfnf, which applies any estimated prediction function, it is fixed to the training-set fit)"
+\preimage,"preimage of the set given as the second argument under the function given as the first, written as the function with exponent -1 applied to the set (prints f^{-1}(S))"
+\prev \prob \risk \probs \prevalence \stationary,prevalence symbol π (used as the subscript for \prevratio)
+\prevfactorf,prevalence factor function θ_π(·)
+\prevratiof,prevalence ratio function ϙ_π(·)
+\Prf,Pr(·) probability expression
+\pRMSE,population root mean squared error pRMSE(·) applied to argument
+\pRMSEf,population root mean squared error pRMSE(·) applied to argument (alias for \pRMSE)
+\pRMSEt,population root mean squared error operator pRMSE
+\probit,probit link function
+\probst,probs operator label
+\probt,prob operator label
+\prodin,product over i from 1 to n
+\prodinf,product over i from 1 to n of the argument (·)
+\prr \prevratio,prevalence ratio (alias for \prevratio)
+\prrf,prevalence ratio function (alias for \prevratiof)
+\Prunder,"probability of an event when the distribution is indexed by the first argument, such as a parameter or a distribution, \Prunder{\theta}{A} (prints Pr_θ(A))"
+\pt,parenthesized transpose (x)′
+\purple,typeset argument in purple
+\py,potential outcome Y_a (shorthand for \potout)
+\Q \quantile,quantile function symbol Q
+\Qf,quantile function Q(·) applied to argument
+\qform,"quadratic form of a matrix M in a vector x: x′Mx, written \qform{M}{x}"
+\quantilef,quantile function applied to argument (alias for \Qf)
+\rangef,range of a function ℛ(·)
+\rank,matrix rank operator (rank)
+\rankf,matrix rank applied to argument
+\ratefactorf,rate factor function θ_λ(·)
+\rater \rrate \rateratio,rate ratio (alias for \rateratio)
+\rateratiof,rate ratio function ϙ_λ(·)
+\raterf \rratef,rate ratio function (alias for \rateratiof)
+\Ratiof,capital ratio function Ϙ(·)
+\ratiof,generic ratio function ϙ(·)
+\RD,risk difference label RD
+\red,typeset argument in red
+\regbetasum,expanded regression sum β₁x₁+⋯+βₚxₚ
+\Regcoef,"uppercase regression coefficient symbol B (italic, because a coefficient is a variable)"
+\reglincomb,regression linear combination x̰·β̰
+\Resid \resid \Residual \residual,residual (alias for \Residual)
+\residv,residual vector ε̰̂
+\rfac \hidval \modmem \cutheight \imgheight \basemeasure,"the factor of a density that does not depend on the parameter, in the factorization theorem for sufficiency (prints h)"
+\rfacf,"the parameter-free factor evaluated at a sample, \rfacf{\vx} (prints h(x))"
+\riskfactorf,risk factor function θ_π(·)
+\riskr \rrisk \riskratio,risk ratio (alias for \riskratio)
+\riskratiof,risk ratio function ϙ_π(·)
+\riskrf \rriskf,risk ratio function (alias for \riskratiof)
+\risksetf,risk set at time t: ℛ(t)
+\riskt,risk operator label
+\RMSE \rmselr,root mean squared error RMSE(·) applied to argument
+\RMSEf,root mean squared error RMSE(·) applied to argument (alias for \RMSE)
+\RMSEt,root mean squared error operator RMSE
+\ror,odds ratio ϙ_ω (ratio symbol with odds subscript)
+\RR,risk ratio label RR
+\RSS,"residual sum of squares, RSS: the sum over the observations of the squared residuals of a fitted model"
+\rsurv \survr \survratio,survival ratio (alias for \survratio)
+\rsurvf \survrf,survival ratio function (alias for \survratiof)
+\Rvar \Predvar,a generic random variable in probability expressions (prints X)
+\rvar \predvar,a generic value of a random variable in probability expressions (prints x)
+\rvarbar,sample mean of a generic variable (prints \bar{\rvar})
+\s \gs \sdpar \singval \bandwidth,Greek letter sigma (σ)
+\S \Surv \surv,survival function symbol S
+\salg \scrS \salgS \sigmaalg \sigmaalgebra,sigma-algebra on S symbol 𝒮
+\samplemean,"sample mean of n random variables, X̄_n (arguments: the variable and the sample size)"
+\satdeviance,deviance relative to the saturated model: twice the difference between the saturated model's and the fitted model's maximized log-likelihoods
+\satllik,maximized log-likelihood of the saturated model
+\sb,auto-sized square brackets around argument
+\sbmat,matrix formatted with square brackets (bmatrix)
+\schedfrac,the fraction of a learning-rate schedule that has elapsed (prints \zeta)
+\sciid,c.i.i.d. distributed relation
+\score,score function ℓ′
+\scoreexpf,score function for exponential family
+\scoref,score function ℓ′(·)
+\scorei \scorevi,per-observation score vector ℓ′_i
+\scorev,score vector
+\scrA,script A symbol 𝒜
+\scrB \Borel \borel \borelalg,script B symbol ℬ
+\scrF \events \eventspace,script F symbol ℱ
+\scrT \salgT,script T symbol 𝒯
+\SD,standard deviation function SD(·)
+\sd,standard deviation function sd(·)
+\SDf,standard deviation function (alias for \SD)
+\sdprod,self dot product x·x
+\sdprodf,self dot product (alias for \sdprod)
+\SE,standard error function SE(·)
+\se,standard error function se(·)
+\seed,random seed that starts a pseudorandom number generator (prints \mathfrak{s})
+\SEf,standard error function (alias for \SE)
+\sef,standard error function (alias for \se)
+\seq,"sequence (colon range) from first to second argument, e.g. 1:n"
+\set,set notation {·}
+\setbuild,"set-builder notation: the set of elements satisfying a condition, {condition : property}"
+\setdiff,set difference A \ B: the elements of A that are not in B
+\SEtilde,standard error with tilde applied to argument
+\SEtildef,standard error with tilde applied to argument (alias for \SEtilde)
+\SEtildet,standard error operator with tilde
+\Sf,survival function S(·) applied to argument
+\sfac \fitproc,"the factor of a density that depends on the data only through a statistic, in the factorization theorem for sufficiency (prints g)"
+\sfacf,"the statistic factor evaluated at a statistic value and a parameter, \sfacf{t}{\param} (prints g(t ; \theta))"
+\sigmoidf,"logistic (sigmoid) function applied to its argument, expit(·)"
+\sign \signt,sign operator (alias for \signt)
+\signf,sign function sign{·}
+\signoutvar,"binary outcome coded -1 or +1, 2y - 1 for a 0/1 outcome y (prints a tilde over y)"
+\siid \simiid \distiid,i.i.d. distributed relation
+\simind,independently distributed relation
+\sinf,"sine function applied to its argument, sin(·)"
+\siprod,"self inner product ⟨x, x⟩"
+\slack \ciradsym,an SVM slack variable (prints \xi)
+\sMAE,sample mean absolute error sMAE(·) applied to argument
+\sMAEf,sample mean absolute error sMAE(·) applied to argument (alias for \sMAE)
+\sMAEt,"sample mean absolute error operator sMAE, the estimator of pMAE (no hat form is needed)"
+\smean,"sample mean of the quantity in the argument, a bar over it (prints a bar over its argument)"
+\smeandev,"deviation of the sample mean, the sample mean of the deviations (prints \smean{\deviation}, 𝕕 with a bar)"
+\sMSE,sample mean squared error sMSE(·) applied to argument
+\sMSEf,sample mean squared error sMSE(·) applied to argument (alias for \sMSE)
+\sMSEt,"sample mean squared error operator sMSE, the estimator of pMSE (no hat form is needed)"
+\soprod,self outer product x x′
+\sparen,fixed-size parentheses around argument
+\sq,square superscript ² (postfix)
+\sqf,square of argument (·)²
+\srcalph,"alphabet of a source: the finite set of values a random variable takes, calligraphic X"
+\sRMSE,sample root mean squared error sRMSE(·) applied to argument
+\sRMSEf,sample root mean squared error sRMSE(·) applied to argument (alias for \sRMSE)
+\sRMSEt,"sample root mean squared error operator sRMSE, the estimator of pRMSE (no hat form is needed)"
+\ss \irrerr \resvar \varpar,variance σ²
+\sscp \logpartition,"sum-of-squares-and-cross-products matrix of the term vectors, A"
+\ssdev,"sum over i = 1, ..., n of the squared deviation of the observation from the argument (·), via \devsq"
+\ssout,centered sum of squares of the outcome values (prints S_{\outvar\outvar})
+\sspred,centered sum of squares of the predictor values (prints S_{\predvar\predvar})
+\sspredout,centered sum of cross-products of the predictor and outcome values (prints S_{\predvar\outvar})
+\ssqf,σ²(·) variance as a function
+\starf,starred / optimal version of argument
+\stat,"a statistic, a function of the sample (prints T)"
+\statf,"a statistic evaluated at a sample, \statf{\vx} (prints T(x))"
+\StdResid \stdresid \StdResidual \stdresidual,standardized residual (alias)
+\stprod,self transpose-based product x′x
+\sumiN,sum over i from 1 to N
+\sumin,sum over i from 1 to n
+\sumiNf,sum over i from 1 to N of the argument (·)
+\suminf,sum over i from 1 to n of the argument (·)
+\sumip,sum over i from 1 to p
+\sumipf,sum over i from 1 to p of the argument (·)
+\sumjn,sum over j from 1 to n
+\sumjnf,sum over j from 1 to n of the argument (·)
+\sumjp,sum over j from 1 to p
+\sumjpf,sum over j from 1 to p of the argument (·)
+\sumkK,"sum over the K distinct covariate patterns, k from 1 to K"
+\sumkKf,sum over k from 1 to K of the argument (·)
+\sumn,sum over index from 1 to n
+\sumnf,sum over the first argument from 1 to n of the second argument (·)
+\Sumof,sum of the elements of a vector of random variables (prints S_{#1})
+\sumof,sum of the elements of a vector of values (prints s_{#1})
+\Sumsym,symbol for the sum of the elements of a vector of random variables (prints S)
+\sumsym \nevents \steplen,symbol for the sum of the elements of a vector of values (prints s)
+\sumto,sum over the first argument from 1 to the second
+\sumtof,sum over the first argument from 1 to the second of the third argument (·)
+\surprisal,surprisal symbol s
+\surprisalf,"surprisal of an outcome, s(x)"
+\surprisalunderf,"surprisal of an outcome measured by a named distribution, s_q(x)"
+\survf,survival function applied to argument (alias for \Sf)
+\survfactorf,survival factor function θ_S(·)
+\survratiof,survival ratio function ϙ_S(·)
+\svfrac \nullity \measureb \shrinkage,the nu-SVM bound on the fraction of margin errors (prints \nu)
+\tanhf,"hyperbolic tangent function applied to its argument, tanh(·)"
+\targeterr,error of the fitted target function: target function minus its fitted counterpart (the deviation operator 𝔻 subscripted by the target function)
+\targeterrf,error of the fitted target function at a point (via \targeterr)
+\targetfnf,"target function applied to its argument, \mu(·)"
+\teal,typeset argument in teal
+\termfn,"term of a linear-in-terms model, a function of the covariate value, t with the index given as the argument as a subscript"
+\termvec,vector t_k of a model term evaluated at every observation
+\testerr,"test error (average loss on the test set), over-barred err with subscript test"
+\testidx,index set of the test set (prints I with a test subscript)
+\testset,"test set: the held-out observations used once, to estimate the risk of the chosen model (prints a calligraphic D with a test subscript)"
+\tf,therefore symbol (∴)
+\th \param \angpar \factor \thresh,Greek letter theta (θ)
+\Th \Param \Paramspace \unitthresh,uppercase Theta (Θ)
+\thmADistMLE,asymptotic normal distribution of the MLE
+\thmHessij,"formula for (i,j) element of the Hessian"
+\tp,transpose of argument x′
+\tprod,transpose-based product x′y
+\tprodf,transpose-based product (alias for \tprod)
+\tr,matrix trace operator (tr)
+\trainerr,"training error (average loss on the training set), over-barred err"
+\trainidx,index set of the training set (prints I with a train subscript)
+\trainset,training set: the labelled data a model is fitted to (prints a calligraphic D with a train subscript)
+\trf,matrix trace applied to argument
+\trthist,treatment history through time k (prints \bar{A}_k)
+\trtvalhist,a treatment-history value through time k (prints \bar{a}_k)
+\truemeanf,"true mean function applied to its argument, \mu(·); replaces the deprecated \truemeanfnf"
+\truemeanfnf,"true mean function applied to its argument, \mu(·); deprecated, use \truemeanf"
+\truemeansubf,"true mean function with the subscript given as the first argument, applied to the second argument; with the subscript \Outvar \given \Predvar it is the conditional population mean \condE{\Outvar}{\Predvar = x}"
+\truenulls,index set I_0 of the true null hypotheses
+\truthindf,"prints \truthind\paren{...}, the truth indicator of its condition"
+\TSS,"total sum of squares, TSS: the sum over the observations of the squared differences of the outcome from its sample mean"
+\ub,underbrace shorthand (alias for \underbrace)
+\ubf \dims,underbrace with subscript label \underbrace{·}_{label}
+\ubound,an upper bound of a set (u)
+\V,variance operator symbol Var
+\v \vec,vector shorthand (alias for \vecf)
+\va,vector a (a̰)
+\valerr,"validation error (average loss on the validation set), over-barred err with subscript val"
+\validx,index set of the validation set (prints I with a val subscript)
+\valset,validation set: the held-out observations used to choose among fitted models (prints a calligraphic D with a val subscript)
+\var,variance function Var(·)
+\Var \Varf \varf,variance function (alias for \var)
+\varh,estimated variance function (alias)
+\varhf,estimated variance function (alias)
+\varht,"estimated variance operator (hat, alias); deprecated, use \evar"
+\Varr \Vart,variance operator symbol Var
+\varsym,"short variance operator 𝕍 for any random variable (no argument, blackboard bold like \Expp)"
+\varsymf,"short variance operator applied to a random variable, like \E (prints \varsym with its argument in square brackets)"
+\vb \vbeta \vcoef,beta vector (alias for \vbeta)
+\vc,bold vector notation for argument
+\vcdim,Vapnik-Chervonenkis dimension d_VC: the largest number of points the model family shatters
+\vcdimf,"VC dimension of a model family, d_VC(·)"
+\vch,matrix half-vectorization operator (vech)
+\vchf,matrix half-vectorization applied to argument
+\vconst,constant vector c (c̰)
+\vcs,matrix strict half-vectorization operator (vecs)
+\vcsf,matrix strict half-vectorization applied to argument
+\vct \matvec,matrix vectorization operator (vec)
+\vctf,matrix vectorization applied to argument
+\vd,exposure vector d lowercase (d̰)
+\vD \vdesign \vfeatmap,exposure/treatment vector D (D̰)
+\vdelta \stepvec \vbackerr,"vector δ, such as backpropagated errors (δ̰)"
+\ve,residual vector e (ḛ)
+\vecf,vector notation (alias for \vec)
+\veoutvar \vpredval,vector of predicted outcomes (prints a tilde under ŷ)
+\veps \vlsresid,error vector (ε-vector)
+\vepsilon \vhidgrad,vector ϵ (ϵ̰); see also \veps for an error vector
+\vg,"vector g, such as a gradient (g̰)"
+\vh,"vector h, such as hidden-unit values (h̰)"
+\vhidval,"vector of hidden-unit values (or a recurrent network's hidden state), h̰"
+\violet,typeset argument in violet
+\vlagmult,a vector of Lagrange multipliers (prints \vecf{\lambda})
+\vm,mean vector (μ-vector)
+\vnatparam,natural parameter vector of an exponential family (prints \vecf{\eta})
+\vNoise,a vector of noise random variables (prints \vecf{\Noise})
+\vnoise,a vector of realized noise values (prints \vecf{\noise})
+\vone,vector of ones
+\vOutvar,random vector of outcomes (prints Y̰)
+\voutvar,vector of observed outcomes (prints y̰)
+\vp,"vector p, such as a probability distribution (p̰)"
+\vphi,"vector φ, such as features (φ̰)"
+\vpi \vprob,vector of probabilities π (π̰)
+\vprederr,"vector of prediction errors, predicted minus observed outcomes (the vec accent applied to \prederr)"
+\vPredvar,random vector of predictors (prints X̰)
+\vpredvar,vector of one observation's predictor values (prints x̰)
+\vq,"vector q, such as a second probability distribution (q̰)"
+\vr,vector r (r̰)
+\vresid,"vector of residuals, observed minus predicted outcomes (the negative of the prediction errors \prederr) (prints ε̰̂)"
+\vT,time vector T (T̰)
+\vt,time vector t lowercase (t̰)
+\vth \vparam,theta parameter vector
+\vu,vector u (ṵ)
+\vv,vector v (v̰)
+\vw,weight vector w (w̰)
+\vX,random vector X (X̰)
+\vx,vector x (x̰)
+\vxi,i-th observation vector x̰_i
+\vxs,starred/reference vector x* (x̰*)
+\vY,uppercase outcome vector Y (Y̰)
+\vy,outcome vector y (y̰)
+\vZ,random vector Z (Z̰)
+\vz,vector z (z̰)
+\vzero,zero vector
+\white,typeset argument in white
+\xbar,sample mean x̄
+\xderiv,cross partial derivative ∂²/∂x∂y
+\xderivf,cross partial ∂²f/∂x∂y with numerator
+\xderivff,cross partial (reversed argument order)
+\Xin,"sequence of random variables X₁, …, Xₙ"
+\xin,"sequence of observations x₁, …, xₙ"
+\Xxin,"paired sequence X₁=x₁, …, Xₙ=xₙ"
+\yellow,typeset argument in yellow
+\yin,"sequence of outcomes y₁, …, yₙ"
+\za,normal critical value z_{1−α/2}
+\~,approximately equal (≈)
