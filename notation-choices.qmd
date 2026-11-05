@@ -451,7 +451,7 @@ The operator that takes a value to its deviation from a reference is uppercase b
 An observed deviation is the lowercase letter, `\devval` or `\deviation`, which prints $\deviation$.
 Before this change both printed $\delta$.
 In a PDF the lowercase letter needs the `bbm` package, which `macros-pdf-header.tex` loads, so list that file before `macros.qmd` in `include-in-header`.
-The design matrix `\design` is a bold $\design$, like every matrix, and the deviation operator is blackboard bold, so the two do not collide.
+The design matrix `\mdesign` is a bold $\mdesign$, like every matrix, and the deviation operator is blackboard bold, so the two do not collide.
 
 A sample mean is a bar over the quantity, and we write it with the macro `\smean{y}`, which prints $\smean{y}$, rather than with a literal `\bar`.
 The macros `\xbar`, `\outbar`, `\predbar`, `\rvarbar`, `\samplemean` and `\avgleverage` use it.
@@ -509,9 +509,11 @@ Algorithms and statistics textbooks print these symbols in italic too.
 
 The [design matrix](https://morrison-lab.github.io/lds/chapters/linear-regression.html#def-design-matrix) holds the input values for a model, one row for each observation, after any feature map.
 A feature map turns one input into a vector of features, such as its powers or the outputs of a layer of hidden units.
-Our convention is to write the design matrix as the bold $\design$, and the design vector for one input as $\vdesign$.
+Our convention is to write the design matrix as the bold $\mdesign$, and the design vector for one input as $\vdesign$.
 The vector mark is the same one that every vector here carries.
-Row $i$ of the design matrix is the design vector of observation $i$, transposed.
+The macro names follow the prefix pairs of the other matrices and vectors, such as `\mX` and `\vx`: `\mdesign` is the matrix and `\vdesign` is the vector.
+The macro `\design` still works and prints the same symbol as `\mdesign`, so existing pages keep rendering.
+The design matrix is the design vector applied to each row of the data matrix: $\mdesign(\mX) = \tp{\sb{\vdesign(\vx_1), \ldots, \vdesign(\vx_n)}}$, so row $i$ is the design vector of observation $i$, transposed.
 The feature map itself, `\featmap`, prints the same letter, $\featmap$.
 
 We chose the letter $D$ because the design matrix involves no parameters, so it has no reason to be a Greek letter.

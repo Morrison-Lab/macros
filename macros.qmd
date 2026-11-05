@@ -1317,7 +1317,8 @@
 \def\eigvalmin{{\eigval_{\min}}}
 \providecommand{\eigvalmaxf}[1]{{\eigvalmax\paren{#1}}}
 \providecommand{\eigvalminf}[1]{{\eigvalmin\paren{#1}}}
-\def\design{\matr{D}}
+\def\mdesign{\matr{D}}
+\def\design{\mdesign}
 \def\vdesign{\vecf{D}}
 \def\featmap{D}
 \def\vfeatmap{\vdesign}
