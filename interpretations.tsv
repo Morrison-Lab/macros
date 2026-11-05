@@ -1232,7 +1232,8 @@ name	interpretation
 \eigvalminf	the smallest eigenvalue of a given matrix (prints \eigvalmin followed by its argument in parentheses)
 \featmap	a feature map (basis expansion) (prints D, not bold, since a feature map is a function)
 \vfeatmap	a vector of feature-map outputs (hidden-unit features) (alias for \vdesign)
-\design	a design matrix built from a feature map (prints bold D)
+\mdesign	a design matrix built from a feature map (prints bold D); the matrix form of \vdesign
+\design	a design matrix built from a feature map (prints bold D) (alias for \mdesign)
 \vdesign	the design vector for one input: the feature-map outputs (prints \vecf{D}, with the vector mark and no bold)
 \normpdf	the standard normal density (prints \phi)
 \normcdf	the standard normal CDF (prints \Phi)
