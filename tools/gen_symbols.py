@@ -26,21 +26,61 @@ ROOT = Path(__file__).resolve().parent.parent
 MACROS = ROOT / "macros.qmd"
 INTERP = ROOT / "interpretations.tsv"
 OUT = ROOT / "data" / "symbols-all.csv"
+# Names that macros.qmd defines more than once on purpose; update this count
+# when a definition is added twice deliberately.
+REDEFINITIONS = 3
 
-DEF = re.compile(
-    "^" + re.escape(BS) + r"(?:def|providecommand|renewcommand|newcommand)\*?\s*\{?"
-    + re.escape(BS) + r"([A-Za-z]+)\}?\s*(?:\[(\d)\])?\s*(?:#\d)*\s*\{(.*)\}\s*$"
+START = re.compile(
+    "^" + re.escape(BS) + r"(?:def|providecommand|renewcommand|newcommand)\*?[ \t]*\{?",
+    re.M,
 )
+# A control-sequence name is letters, or one non-letter character (as in the
+# tilde and prime macros).
+NAME = re.compile(re.escape(BS) + r"([A-Za-z]+|[^A-Za-z])")
+ARGS = re.compile(r"\}?[ \t]*(?:\[(\d)\])?[ \t]*(?:#\d)*[ \t\n]*")
 ALIAS = re.compile(r"^\{?" + re.escape(BS) + r"([A-Za-z]+)\}?$")
 
 
+def read_body(text, i):
+    """Return the contents of the brace group that opens at text[i]."""
+    depth = 0
+    j = i
+    while j < len(text):
+        c = text[j]
+        if c == BS:
+            j += 2
+            continue
+        if c == "{":
+            depth += 1
+        elif c == "}":
+            depth -= 1
+            if depth == 0:
+                return text[i + 1 : j]
+        j += 1
+    raise ValueError(f"unbalanced braces in the definition at offset {i}")
+
+
+def count_definition_lines(text):
+    """How many definition commands start a line (the completeness target)."""
+    return len(START.findall(text))
+
+
 def parse_definitions(text):
-    """Map macro name to (argument count, body); a later definition wins."""
+    """Map macro name to (argument count, body); a later definition wins.
+
+    The body may span lines, and the name may be one non-letter character.
+    """
     defs = {}
-    for line in text.splitlines():
-        m = DEF.match(line.rstrip())
-        if m:
-            defs[m.group(1)] = (int(m.group(2) or 0), m.group(3))
+    for m in START.finditer(text):
+        nm = NAME.match(text, m.end())
+        if not nm:
+            continue
+        am = ARGS.match(text, nm.end())
+        k = am.end()
+        if k >= len(text) or text[k] != "{":
+            continue
+        nargs = int(am.group(1)) if am.group(1) else 0
+        defs[nm.group(1)] = (nargs, read_body(text, k))
     return defs
 
 
@@ -105,6 +145,18 @@ def main():
     text = render(rows)
     if args.check:
         bad = False
+        n_lines = count_definition_lines(MACROS.read_text(encoding="utf-8"))
+        if len(defs) > n_lines:
+            print(f"Parsed {len(defs)} names from only {n_lines} definition lines")
+            bad = True
+        # Redefinitions make n_lines exceed len(defs); count them so a
+        # silently skipped definition cannot hide inside that gap.
+        if n_lines - len(defs) != REDEFINITIONS:
+            print(
+                f"{n_lines - len(defs)} definition lines were not parsed or "
+                f"redefine a name (expected {REDEFINITIONS} redefinitions)"
+            )
+            bad = True
         if missing:
             print("Rows with no interpretation:", *missing[:20], sep="\n  ")
             bad = True

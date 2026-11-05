@@ -1,4 +1,6 @@
 macros,interpretation
+\',transpose superscript ⊤
+\1,indicator function 1_{·} (upright subscript style)
 \a \ga \leak \shape \accept \combwt \lowend \votewt \dualvar \adjlevel \siglevel \learnrate \attnweight,Greek letter alpha (alias for \ga)
 \abs,absolute value |·|
 \aCov,asymptotic covariance aCov(·)
@@ -1071,6 +1073,7 @@ macros,interpretation
 \th \param \angpar \factor \thresh,Greek letter theta (θ)
 \Th \Param \Paramspace \unitthresh,uppercase Theta (Θ)
 \thmADistMLE,asymptotic normal distribution of the MLE
+\thmHessij,"formula for (i,j) element of the Hessian"
 \tp,transpose of argument x′
 \tprod,transpose-based product x′y
 \tprodf,transpose-based product (alias for \tprod)
@@ -1170,3 +1173,4 @@ macros,interpretation
 \yellow,typeset argument in yellow
 \yin,"sequence of outcomes y₁, …, yₙ"
 \za,normal critical value z_{1−α/2}
+\~,approximately equal (≈)

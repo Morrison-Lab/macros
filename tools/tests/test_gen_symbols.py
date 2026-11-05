@@ -42,6 +42,28 @@ def test_different_symbols_do_not_merge():
     assert len(g.build_rows(defs, {})) == 2
 
 
+def test_non_letter_names_and_multiline_bodies_are_parsed():
+    text = "\n".join(
+        [
+            BS + "def" + BS + "~{" + BS + "approx}",
+            BS + "def" + BS + "'{^{" + BS + "top}}",
+            BS + "providecommand{" + BS + "1}[1]{" + BS + "text{1}_{#1}}",
+            BS + "def" + BS + "multi{" + BS + "a =",
+            BS + "deriv{x}" + BS + "deriv{y}}",
+        ]
+    )
+    defs = g.parse_definitions(text)
+    assert set(defs) == {"~", "'", "1", "multi"}, defs
+    assert defs["1"][0] == 1
+    assert "deriv{y}" in defs["multi"][1]
+
+
+def test_every_definition_line_in_macros_qmd_is_parsed():
+    text = g.MACROS.read_text(encoding="utf-8")
+    defs = g.parse_definitions(text)
+    assert g.count_definition_lines(text) - len(defs) == g.REDEFINITIONS
+
+
 def test_generated_file_is_current():
     defs = g.parse_definitions(g.MACROS.read_text(encoding="utf-8"))
     interp = g.read_interpretations(g.INTERP)
