@@ -486,6 +486,7 @@ name	interpretation
 \dpf	dot product a·b (alias for \dprodf)
 \tprod	transpose-based product x′y
 \tprodf	transpose-based product (alias for \tprod)
+\cpf	cross-product matrix x′y (alias for \tprod)
 \angb	angle brackets ⟨·⟩ sized to their contents
 \iprod	inner product ⟨x, y⟩
 \iprodf	inner product (alias for \iprod)

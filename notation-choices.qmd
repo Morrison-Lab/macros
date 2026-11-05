@@ -870,3 +870,16 @@ Our convention is to write the set of modes of a function $f$ as $\modef{f}$, wi
 The macro prints a set because a density can have more than one mode.
 
 Other sources write "the mode of $X$" for one value, which is the single element of $\modef{f}$ when the mode is unique.
+
+## The cross-product and Gram matrices {#sec-cross-product-gram}
+
+The cross-product matrix of two matrices $\mX$ and $\mY$ is $\tprod{\mX}{\mY}$, written `\tprod{\mX}{\mY}`.
+The call form `\cpf{\mX}{\mY}` is an alias, named for the cross-product matrix, and prints the same expression.
+The Gram matrix of $\mX$ is the cross-product matrix of $\mX$ with itself, $\stprod{\mX}$, written `\stprod{\mX}`.
+Both macros always print the transpose glyph, so a reader sees the transpose and the inner products of the columns.
+Neither has a glyph of its own for now.
+
+Other sources differ.
+ISLR2, ESL and Murphy write $\tp{\mX}\mX$ and $\tp{\mX}\vy$ with no name or symbol,
+and ESL and Murphy use "Gram matrix" mostly for the kernel matrix.
+R computes the cross-product matrix with `crossprod(X, Y)`, which equals `t(X) %*% Y`.

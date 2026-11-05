@@ -560,6 +560,7 @@
 \def\dpf{\dprodf}
 \providecommand{\tprod}[2]{\tp{#1} #2}
 \def\tprodf{\tprod}
+\def\cpf{\tprod}
 \providecommand{\iprod}[2]{{\angb{#1, #2}}}
 \def\iprodf{\iprod}
 \providecommand{\oprod}[2]{#1 \tp{#2}}
