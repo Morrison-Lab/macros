@@ -47,6 +47,7 @@ EXPECTED = {
     ],
     # An exponent after \setbuild and \setdiff rises over a tall argument.
     "set-notation-exponent": ["SETBUILDEXPRISES", "SETDIFFEXPRISES", "CTRLSTUCK"],
+    "landau-exponent": ["BIGOEXPRISES", "LITTLEOEXPRISES", "ASYMUBEXPRISES", "CTRLSTUCK"],
     # An exponent after \modef rises over a tall argument.
     "mode-exponent": ["MODEFEXPRISES", "CTRLSTUCK"],
     # Compiles with bbm loaded: the distribution-function macros print lowercase
