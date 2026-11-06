@@ -182,6 +182,7 @@
 \providecommand{\obsloss}[1]{\ell_{#1}}
 \def\poprisk{R}
 \providecommand{\popriskf}[1]{{\poprisk\paren{#1}}}
+\providecommand{\condpopriskf}[2]{{\poprisk\paren{#1 \mid #2}}}
 \def\modelfam{\mathcal{H}}
 \def\growthfn{m_{\predfam}}
 \providecommand{\growthfnf}[1]{{\growthfn\paren{#1}}}
