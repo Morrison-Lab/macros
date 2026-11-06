@@ -101,6 +101,7 @@ for positive and negative test results.
 When a model needs numerical labels for the two classes, our convention is to code the labels as $0$ and $1$, as in logistic regression.
 There the label $1$ means the positive class and the label $0$ means the negative class.
 The chapter on support vector machines switches to the numerical labels $-1$ and $+1$, and says so where it does.
+Where a page needs both codings at once, it writes the $\pm 1$ label as $\signoutvar$, with the macro `\signoutvar`, and defines it as $\signoutvar = 2\outvar - 1$ for the $0/1$ label $\outvar$.
 
 We switch to $-1$ and $+1$ for support vector machines for one reason.
 A classifier outputs a number.
@@ -174,9 +175,29 @@ Some software reports the average under the same name.
 On the same data, dividing every cross-entropy by the number of examples does not change which of two models is preferred, but it does change the number.
 So also check whether a source reports the sum or the average before comparing its numbers with ours.
 
+## Functions of a population distribution {#sec-distribution-function-notation}
+
+Every function that describes a population distribution is blackboard bold (Ezra, 2026-11-04).
+This covers the probability mass $\P$, the density $\p$ (and $\f$), the distribution function $\F$, the survival function $\S$, the hazard $\h$, the cumulative hazard $\H$, the quantile function $\Q$, the entropy $\entropy$ and the surprisal $\surprisal$.
+All of them except $\P$ print through `\distop`, so a new function of a distribution uses `\distop{...}` too.
+The macros `\P` and `\pmf` print their blackboard letter directly.
+The blackboard letter marks a function of the distribution, as it marks the operators $\Expp$, $\biassym$ and $\varsym$ in [the bias and variance entry](#sec-bias-variance-symbols), and it cannot be mistaken for an italic variable.
+Sources differ on the type: Cover and Thomas write an italic $H$, and Wikipedia's article on [information content](https://en.wikipedia.org/wiki/Information_content) writes an upright $\mathrm{H}$ and $\operatorname{I}$.
+We chose blackboard bold so that one rule covers all of these functions.
+
+Three collisions are resolved by context:
+
+-   The quantile function $\Q$ prints the same letter as the rationals `\bbQ`, and it always takes an argument.
+-   The distribution function $\F$ prints the same letter as the finite field `\ffield{q}`, which always carries a subscript.
+-   The cumulative hazard $\H$ and the entropy $\entropy$ print the same letter, so the surrounding text says which one a formula means.
+
+A PDF needs the `bbm` package for the lowercase letters, so list `macros-pdf-header.tex` before `macros.qmd` in `include-in-header`, as for `\devval`.
+
 ## Surprisal and the Kullback--Leibler divergence {#sec-surprisal-kl-notation}
 
 The [surprisal](https://morrison-lab.github.io/ids/entropy.html#def-surprisal) of an outcome $x$ is written $\surprisalf{x}$.
+That form leaves the distribution implicit.
+To name the distribution that measures the surprisal, write it as a subscript with $\surprisalunderf{q}{x}$, which is $-\log q(x)$.
 The [Kullback--Leibler divergence](https://morrison-lab.github.io/pds/expectation.html#def-kl-divergence) of $q$ from $p$ is written $\kldivf{p}{q}$, with the true or reference distribution first.
 Our convention puts $p$ first, because the divergence is the expectation under $p$ of the log ratio of $p$ to $q$.
 It is not symmetric, so swapping the arguments changes the value.
@@ -435,7 +456,7 @@ The operator that takes a value to its deviation from a reference is uppercase b
 An observed deviation is the lowercase letter, `\devval` or `\deviation`, which prints $\deviation$.
 Before this change both printed $\delta$.
 In a PDF the lowercase letter needs the `bbm` package, which `macros-pdf-header.tex` loads, so list that file before `macros.qmd` in `include-in-header`.
-The design matrix `\design` is an italic $\design$, so the operator does not collide with it.
+The design matrix `\mdesign` is a bold $\mdesign$, like every matrix, and the deviation operator is blackboard bold, so the two do not collide.
 
 A sample mean is a bar over the quantity, and we write it with the macro `\smean{y}`, which prints $\smean{y}$, rather than with a literal `\bar`.
 The macros `\xbar`, `\outbar`, `\predbar`, `\rvarbar`, `\samplemean` and `\avgleverage` use it.
@@ -476,7 +497,7 @@ The degrees of freedom `\df` prints the upright name $\df$ instead of $\nu$, bec
 That leaves $\nu$ to the macros that still print it, such as `\shrinkage`.
 
 We follow [ISO 80000-2:2019](https://www.iso.org/standard/64973.html), the international standard for mathematical notation, on this split.
-It sets variables and generic function symbols, such as $f$, in italic, and the names of specific functions and operators, such as $\sin$ and $\exp$, upright.
+It sets variables and generic function symbols, such as $f$, in italic, and the names of specific functions and operators, such as $\sin$ and $\expt$, upright.
 So the prediction function `\predfn` ($\predfn$), its estimate `\epredfn` ($\epredfn$) and the best prediction function `\bestpredfn` ($\bestpredfn$) stay italic, because each is a generic function symbol.
 The predicted value `\predvalf{x}` ($\predvalf{x}$) stays italic too, because it is a value.
 It does not matter that the estimated function and the predicted value depend on the training data and so are random.
@@ -484,13 +505,20 @@ Italic marks a symbol that stands for something that varies, and random quantiti
 The operators that act on them, such as the expectation and the variance, are named, so they are upright or blackboard.
 The textbook [ISL](https://www.statlearning.com/) also writes $f$ and $\hat{f}$ in italic.
 
+The Landau symbols follow the same split.
+The big-O `\bigO{g}` ($\bigO{g}$) and the little-o `\littleo{g}` ($\littleo{g}$) print an italic $O$ and $o$.
+The letter stands for a class of functions that depends on $g$, so it is not the name of a specific function such as $\sin$, and it is not an operator.
+Algorithms and statistics textbooks print these symbols in italic too.
+
 ## The design matrix and the design vector {#sec-design-notation}
 
 The [design matrix](https://morrison-lab.github.io/lds/chapters/linear-regression.html#def-design-matrix) holds the input values for a model, one row for each observation, after any feature map.
 A feature map turns one input into a vector of features, such as its powers or the outputs of a layer of hidden units.
-Our convention is to write the design matrix as $\design$, and the design vector for one input as $\vdesign$.
+Our convention is to write the design matrix as the bold $\mdesign$, and the design vector for one input as $\vdesign$.
 The vector mark is the same one that every vector here carries.
-Row $i$ of the design matrix is the design vector of observation $i$, transposed.
+The macro names follow the prefix pairs of the other matrices and vectors, such as `\mX` and `\vx`: `\mdesign` is the matrix and `\vdesign` is the vector.
+The macro `\design` still works and prints the same symbol as `\mdesign`, so existing pages keep rendering.
+The design matrix is the design vector applied to each row of the data matrix: $\mdesign(\mX) = \tp{\sb{\vdesign(\vx_1), \ldots, \vdesign(\vx_n)}}$, so row $i$ is the design vector of observation $i$, transposed.
 The feature map itself, `\featmap`, prints the same letter, $\featmap$.
 
 We chose the letter $D$ because the design matrix involves no parameters, so it has no reason to be a Greek letter.
@@ -512,6 +540,41 @@ In symbols, the deviance of a fitted model is the difference between this quanti
 Other sources differ.
 Some write the design matrix as $X$, and some write the feature map as $\phi$ or $\Phi$.
 Check which letter a source uses for each of the three objects before you compare formulas.
+
+## Covariates, features and the feature matrix {#sec-feature-names}
+
+A [covariate](https://morrison-lab.github.io/sds/model-validation.html#def-covariate) is a variable as it was measured.
+The [preprocessing](https://morrison-lab.github.io/sds/model-validation.html#def-preprocessing) turns the covariates into the features, and the model receives the features.
+With no preprocessing, the features are the covariates.
+We call the matrix of the features, one row for each observation, the design matrix, and also the feature matrix.
+Its constant column of ones is itself a feature.
+
+We chose this because the sds notes already define the features as the outputs of the preprocessing, so the matrix of features is the design matrix.
+Using one object for both names avoids a second matrix with a second letter.
+
+Other sources differ, and the differences are in which matrix they mean.
+The books ESL and ISLR2 write "feature matrix" for the matrix of raw inputs [@hastie2009esl, Chapter 18; @james2021islr, Section 10.4].
+In their examples the preprocessing does nothing, so that is the same matrix as ours.
+Murphy writes "feature matrix or design matrix" for one matrix of raw inputs [@murphy2012mlapp, Section 25.1],
+and Bishop's design matrix holds the values of the basis functions, which are features after preprocessing [@bishop2006prml, Section 3.1.1].
+The Wikipedia article on [feature engineering](https://en.wikipedia.org/wiki/Feature_engineering) describes preprocessing that turns raw data into inputs made of features.
+Check which of the two matrices a source means before you compare formulas.
+
+## The largest and smallest eigenvalues {#sec-extreme-eigenvalues}
+
+Step-size bounds and condition numbers use the largest and smallest eigenvalues of a symmetric matrix,
+such as the Hessian or $\stprod{\design}$.
+Our convention is to write them as $\eigvalmax$ and $\eigvalmin$, with `\eigvalmax` and `\eigvalmin`,
+and to apply them to a matrix with the call forms `\eigvalmaxf{A}` and `\eigvalminf{A}`,
+which print $\eigvalmaxf{A}$ and $\eigvalminf{A}$.
+The letter is the eigenvalue letter $\eigval$, so the subscript says which eigenvalue it is.
+
+Other sources differ.
+Some write $\lambda_1$ for the largest eigenvalue and $\lambda_n$ or $\lambda_d$ for the smallest, after sorting the eigenvalues in decreasing order,
+and some sort them in increasing order instead, which swaps the two.
+Some write $\rho(A)$, the spectral radius, for the largest eigenvalue of a positive semidefinite matrix,
+or $\norm{A}_2$, its spectral norm; for such a matrix both equal $\eigvalmaxf{A}$.
+Check which order and which symbol a source uses before you compare a bound.
 
 ## Probability notation {#sec-probability-notation}
 
@@ -544,6 +607,10 @@ Some sources write $X \perp Y$, or state independence only in words.
 
 We write $\neg A$ for the complement of an event $A$, read "not $A$".
 Some sources write $A^c$ or $\bar{A}$.
+
+We write $\setdiff{A}{B}$ for the set difference, the elements of $A$ not in $B$, from the macro `\setdiff`.
+We write $\setbuild{x \in S}{x \notin B}$ for set-builder notation, with a colon between the membership condition and the property, from the macro `\setbuild`.
+Some sources write $A - B$ for the set difference, or a vertical bar instead of the colon.
 
 We write $\eqdef$ for an equality that holds by definition.
 This tells it apart from an equality that follows from other facts.
@@ -709,6 +776,13 @@ The older macro `\inputdim` is kept as an alias for `\ninputvars`.
 Many sources write the number of input variables as $p$ (ISL and ESL) or $d$, and some write $D$.
 We avoid $D$ because it is the design matrix.
 
+The number of outcome variables in multivariate regression, the length of the response vector, is $\noutvars$, from `\noutvars`.
+We use $q$ to pair it with $\ninputvars$, and avoid $C$ and $K$ because those letters count classes and covariate patterns.
+
+In multivariate regression the matrix over all $\nobs$ observations stacks one vector per row.
+We set the outcome matrix $\moutvar$, the coefficient matrix $\mcoef$ and the noise matrix $\mnoise$ in bold, from `\moutvar`, `\mcoef` and `\mnoise`, like the data matrix $\mX$.
+A plain italic letter reads as a scalar, so the bold type is what marks each one as a matrix.
+
 ## Sums of squares, and counts and indices for training {#sec-training-symbols}
 
 We write the residual sum of squares as $\RSS$, from the macro `\RSS`, and the total sum of squares as $\TSS$, from the macro `\TSS`.
@@ -720,6 +794,17 @@ The training symbols below name a role, so the macro names the role and the lett
 -   The number of parameters in a neural network is $\nnetparams$, from `\nnetparams`.
     We use a capital letter because it counts every weight and bias in the network, and it differs from the number of input variables $\ninputvars$.
 -   The index of a step of an iterative algorithm, such as gradient descent, is $\iter$, from `\iter`.
+-   The length of a step of an iterative algorithm, such as gradient descent, is $\steplen$, from `\steplen`.
+    We use $s$ because it is the first letter of "step".
+    It is the scalar length of a step.
+    The step itself is `\stepvec`, which prints $\stepvec$ for a vector, or `\step`, which prints $\step$ for a scalar increment.
+    The learning rate $\learnrate$ is the fixed constant that gradient descent often uses as its step length.
+    The number of events $\nevents$ also prints $s$, but a step length and a count of events do not appear in the same expression, so we accept the overlap.
+-   The point that an iterative algorithm has reached after $\iter$ steps is its iterate, written `\iterpoint{\vx}{\iter}`, which prints $\iterpoint{\vx}{\iter}$.
+    The starting point is `\iterpoint{\vx}{0}`, which prints $\iterpoint{\vx}{0}$, and a step length that changes from step to step is `\iterpoint{\steplen}{\iter}`, which prints $\iterpoint{\steplen}{\iter}$.
+    The parentheses distinguish the step index from a power, as in $x^2$.
+    A derivative of order $k$, written $f^{(k)}$, uses the same notation, so the symbol before the superscript says which is meant: a function for a derivative, and a point or a step length for the value at a given step.
+    A power after the macro applies to the whole iterate, so `\iterpoint{\vx}{\iter}^2` squares $\iterpoint{\vx}{\iter}$.
 -   The index of a layer of a neural network is $\layeridx$, from `\layeridx`.
     The letter is the usual one for a layer index in deep learning, and it differs from the letter of the number of cross-validation folds $\nfolds$.
     The same letter also names the log-likelihood `\llik`, the loss of one observation `\obsloss` and the norm `\lpnorm`.
@@ -753,10 +838,10 @@ The natural parameter prints the same $\eta$ as the linear predictor `\lincomp` 
 We keep two macros so that a page can say which one it means.
 
 Other sources use other letters for the same roles.
-Casella and Berger write $h(x)\,c(\theta)\exp\paren{\sum_{i=1}^k w_i(\theta) t_i(x)}$ with $k$ terms; we write the case $k = 1$.
+Casella and Berger write $h(x)\,c(\theta)\expt\paren{\sum_{i=1}^k w_i(\theta) t_i(x)}$ with $k$ terms; we write the case $k = 1$.
 Their normalizing constant $c(\theta)$ is $\expf{-\logpartition}$ when the single weight $w(\theta)$ is the natural parameter, and their $h(x)$ is our base measure.
-Dobson and Barnett write $\exp\paren{a(y) b(\theta) + c(\theta) + d(y)}$.
-When $a(y) = y$, their $b(\theta)$ is the natural parameter, $c(\theta)$ is minus the log-partition function, and $\exp\paren{d(y)}$ is the base measure.
+Dobson and Barnett write $\expt\paren{a(y) b(\theta) + c(\theta) + d(y)}$.
+When $a(y) = y$, their $b(\theta)$ is the natural parameter, $c(\theta)$ is minus the log-partition function, and $\expt\paren{d(y)}$ is the base measure.
 
 ## Level sets and preimages {#sec-level-set-preimage}
 
@@ -782,3 +867,24 @@ We chose this form for two reasons.
     In $\Pr\paren{\theta \in \cintf{X}}$, the event $\theta \in \cintf{X}$ is then an event about the random data $X$, and the probability is over $X$ with $\theta$ held fixed.
 
 The macro `\ci` prints the Wald form $\ci$ of one such interval, with the $\pm$ sign in red, and is not a general notation for the interval.
+
+## The modes of a density {#sec-modes-of-a-density}
+
+A mode belongs to a density or mass function, not to the random variable: the function has a largest value at its modes, and a continuous random variable has many densities that differ on a null set.
+Our convention is to write the set of modes of a function $f$ as $\modef{f}$, with `\modef{f}`, so that $\modef{f} = \argmax_{x \in \rangef{X}} f(x)$.
+The macro prints a set because a density can have more than one mode.
+
+Other sources write "the mode of $X$" for one value, which is the single element of $\modef{f}$ when the mode is unique.
+
+## The cross-product and Gram matrices {#sec-cross-product-gram}
+
+The cross-product matrix of two matrices $\mX$ and $\mY$ is $\tprod{\mX}{\mY}$, written `\tprod{\mX}{\mY}`.
+The call form `\cpf{\mX}{\mY}` is an alias, named for the cross-product matrix, and prints the same expression.
+The Gram matrix of $\mX$ is the cross-product matrix of $\mX$ with itself, $\stprod{\mX}$, written `\stprod{\mX}`.
+Both macros always print the transpose glyph, so a reader sees the transpose and the inner products of the columns.
+Neither has a glyph of its own for now.
+
+Other sources differ.
+ISLR2, ESL and Murphy write $\tp{\mX}\mX$ and $\tp{\mX}\vy$ with no name or symbol,
+and ESL and Murphy use "Gram matrix" mostly for the kernel matrix.
+R computes the cross-product matrix with `crossprod(X, Y)`, which equals `t(X) %*% Y`.

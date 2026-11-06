@@ -1,0 +1,29 @@
+---
+title: "Exponent after set notation"
+format:
+  pdf:
+    include-in-header:
+      - ../macros-pdf-header.tex
+      - ../macros.qmd
+---
+
+An exponent after a set-builder set or a set difference must rise over a tall argument.
+
+```{=latex}
+\newsavebox{\withexp}\newsavebox{\withoutexp}
+\sbox{\withexp}{$\setbuild{x \in \frac{a}{b}}{x > 0}^2$}
+\sbox{\withoutexp}{$\setbuild{x \in \frac{a}{b}}{x > 0}$}
+\par\ifdim\dimexpr\ht\withexp-\ht\withoutexp\relax>1.5pt SETBUILDEXPRISES\else SETBUILDEXPSTUCK\fi
+\sbox{\withexp}{$\setdiff{\frac{a}{b}}{B}^2$}
+\sbox{\withoutexp}{$\setdiff{\frac{a}{b}}{B}$}
+\par\ifdim\dimexpr\ht\withexp-\ht\withoutexp\relax>1.5pt SETDIFFEXPRISES\else SETDIFFEXPSTUCK\fi
+```
+
+The rejected form is the control: an unbraced body must not rise, so the test can fail.
+
+```{=latex}
+\newcommand{\unbracedcontrol}[1]{\mathrm{P}\paren{#1}}
+\sbox{\withexp}{$\unbracedcontrol{\frac{a}{b}}^2$}
+\sbox{\withoutexp}{$\unbracedcontrol{\frac{a}{b}}$}
+\par\ifdim\dimexpr\ht\withexp-\ht\withoutexp\relax>1.5pt CTRLRISES\else CTRLSTUCK\fi
+```

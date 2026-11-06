@@ -6,7 +6,7 @@ name	interpretation
 \pmat	matrix formatted with parentheses (pmatrix)
 \sparen	fixed-size parentheses around argument
 \sb	auto-sized square brackets around argument
-\distop	operator-name distribution/function dispatcher
+\distop	blackboard bold distribution/function symbol (the shared form of \p, \f, \F, \h, \H, \S, \Q, \entropy and \surprisal)
 \sbmat	matrix formatted with square brackets (bmatrix)
 \Prf	Pr(·) probability expression
 \Prunder	probability of an event when the distribution is indexed by the first argument, such as a parameter or a distribution, \Prunder{\theta}{A} (prints Pr_θ(A))
@@ -240,6 +240,7 @@ name	interpretation
 \range	range / codomain (alias for \cR)
 \Range	range / codomain (alias for \cR)
 \rangef	range of a function ℛ(·)
+\modef	set of modes of a density or mass function (prints mode(f))
 \seq	sequence (colon range) from first to second argument, e.g. 1:n
 \~	approximately equal (≈)
 \dapp	approximately equal dot notation (≐)
@@ -423,7 +424,7 @@ name	interpretation
 \vecf	vector notation (alias for \vec)
 \v	vector shorthand (alias for \vecf)
 \matr	matrix notation (bold style)
-\mX	predictor matrix X (bold): the matrix of covariate values; the design matrix built from a feature map is \design
+\mX	predictor matrix X (bold): the matrix of covariate values; the design matrix built from a feature map is \mdesign
 \mx	design matrix x lowercase (bold)
 \va	vector a (a̰)
 \vx	vector x (x̰)
@@ -436,6 +437,7 @@ name	interpretation
 \vY	uppercase outcome vector Y (Y̰)
 \outvar	outcome variable, observed value (prints y)
 \Outvar	outcome variable, random variable (prints Y)
+\signoutvar	binary outcome coded -1 or +1, 2y - 1 for a 0/1 outcome y (prints a tilde over y)
 \voutvar	vector of observed outcomes (prints y̰)
 \vOutvar	random vector of outcomes (prints Y̰)
 \eoutvar	predicted outcome, through \est (prints ŷ)
@@ -444,6 +446,9 @@ name	interpretation
 \Predvar	predictor variable, random variable (prints X)
 \vpredvar	vector of one observation's predictor values (prints x̰)
 \mpredvar	input matrix: the predictor vectors of all n observations, one per row (prints bold X, like \mX, the usual textbook form)
+\moutvar	outcome matrix: the outcome vectors of all n observations, one per row (prints bold Y, like \mpredvar prints bold X)
+\mcoef	coefficient matrix of a multivariate linear model, one column per outcome variable (prints bold B)
+\mnoise	noise matrix of a multivariate linear model: the noise vectors of all n observations, one per row (prints bold E)
 \vPredvar	random vector of predictors (prints X̰)
 \vresid	vector of residuals, observed minus predicted outcomes (the negative of the prediction errors \prederr) (prints ε̰̂)
 \vprederr	vector of prediction errors, predicted minus observed outcomes (the vec accent applied to \prederr)
@@ -482,6 +487,7 @@ name	interpretation
 \dpf	dot product a·b (alias for \dprodf)
 \tprod	transpose-based product x′y
 \tprodf	transpose-based product (alias for \tprod)
+\cpf	cross-product matrix x′y (alias for \tprod)
 \angb	angle brackets ⟨·⟩ sized to their contents
 \iprod	inner product ⟨x, y⟩
 \iprodf	inner product (alias for \iprod)
@@ -1210,7 +1216,7 @@ name	interpretation
 \biassymf	short bias operator applied to an estimator, like \E (prints \biassym with its argument in square brackets)
 \varsym	short variance operator 𝕍 for any random variable (no argument, blackboard bold like \Expp)
 \varsymf	short variance operator applied to a random variable, like \E (prints \varsym with its argument in square brackets)
-\devsym	deviation operator 𝔻 for any random variable, X minus its mean (blackboard bold like \varsym and \Expp; the design matrix \design is italic D, and the observed value 𝕕 is \deviation)
+\devsym	deviation operator 𝔻 for any random variable, X minus its mean (blackboard bold like \varsym and \Expp; the design matrix \mdesign is bold D, and the observed value 𝕕 is \deviation)
 \devsymf	deviation operator applied to a random variable, like \varsymf (prints \devsym with its argument in square brackets)
 \devval	observed deviation, double-struck lowercase d 𝕕 (a value, as 𝔼 is the operator and x the value; the PDF needs bbm, see macros-pdf-header.tex)
 \mathbbm	double-struck letter that includes lowercase (alias for \mathbb where bbm is not loaded, as in MathJax)
@@ -1222,10 +1228,15 @@ name	interpretation
 \regpar	a regularization penalty (tuning) parameter (prints \lambda)
 \eigval	an eigenvalue (prints \lambda)
 \Eigvals	a diagonal matrix of eigenvalues (prints \Lambda)
-\featmap	a feature map (basis expansion) (prints \design)
+\eigvalmax	the largest eigenvalue of a matrix (prints \eigval_{\max})
+\eigvalmin	the smallest eigenvalue of a matrix (prints \eigval_{\min})
+\eigvalmaxf	the largest eigenvalue of a given matrix (prints \eigvalmax followed by its argument in parentheses)
+\eigvalminf	the smallest eigenvalue of a given matrix (prints \eigvalmin followed by its argument in parentheses)
+\featmap	a feature map (basis expansion) (prints D, not bold, since a feature map is a function)
 \vfeatmap	a vector of feature-map outputs (hidden-unit features) (alias for \vdesign)
-\design	a design matrix built from a feature map (prints D)
-\vdesign	the design vector for one input: the feature-map outputs (prints \vecf{\design})
+\mdesign	a design matrix built from a feature map (prints bold D); the matrix form of \vdesign
+\design	a design matrix built from a feature map (prints bold D) (alias for \mdesign)
+\vdesign	the design vector for one input: the feature-map outputs (prints \vecf{D}, with the vector mark and no bold)
 \normpdf	the standard normal density (prints \phi)
 \normcdf	the standard normal CDF (prints \Phi)
 \backerr	a backpropagation error signal (prints \delta)
@@ -1377,9 +1388,12 @@ name	interpretation
 \nmodels	number M of models (classifiers) in a model family
 \ninputvars	number p of input variables (predictors): the columns of the data matrix, not the number of inputs
 \inputdim	alias for \ninputvars, kept for existing uses
+\noutvars	number q of outcome variables: the length of the response vector in multivariate regression, not the number of classes
 \nparams	number p* of parameters: the columns of the design matrix after any feature map
 \nnetparams	number P of parameters (weights and biases) in a neural network
 \iter	index t of the step of an iterative algorithm, such as gradient descent
+\steplen	scalar length of a step of an iterative algorithm, such as gradient descent (prints s)
+\iterpoint	point that an iterative algorithm has reached after the given number of steps; takes the point's symbol and the step index (prints #1^{(#2)})
 \layeridx	index ℓ of a layer of a neural network
 \RSS	residual sum of squares, RSS: the sum over the observations of the squared residuals of a fitted model
 \TSS	total sum of squares, TSS: the sum over the observations of the squared differences of the outcome from its sample mean
@@ -1423,11 +1437,14 @@ name	interpretation
 \hamdist	Hamming distance: number of positions where two strings differ, Delta(x, y)
 \errfrac	fraction of a received word's positions that are corrupted, delta
 \codeparams	parameters of a linear code: block length, message length, minimum distance, alphabet size, [n, k, d]_q
-\asymub	big-O asymptotic upper bound applied to its argument, O(g)
+\asymub	big-O asymptotic upper bound applied to its argument (prints O(g), italic; same as \bigO)
+\bigO	big-O asymptotic upper bound applied to its argument (prints O(g), italic)
+\littleo	little-o asymptotic negligibility applied to its argument (prints o(g), italic)
 \entropy	Shannon entropy symbol H
 \entropyf	Shannon entropy of a random variable, H(X)
 \surprisal	surprisal symbol s
 \surprisalf	surprisal of an outcome, s(x)
+\surprisalunderf	surprisal of an outcome measured by a named distribution, s_q(x)
 \crossentropy	cross-entropy symbol H (prints \entropy)
 \crossentropyf	cross-entropy of the second distribution relative to the first, H(p, q)
 \kldiv	Kullback–Leibler divergence symbol D_KL
@@ -1549,3 +1566,5 @@ name	interpretation
 \basemeasuref	base measure of an exponential family at its argument (same as \rfacf; prints h(#1))
 \logpartition	log-partition function of an exponential family (prints A)
 \logpartitionf	log-partition function of an exponential family at its argument (prints A(#1))
+\setbuild	set-builder notation: the set of elements satisfying a condition, {condition : property}
+\setdiff	set difference A \ B: the elements of A that are not in B

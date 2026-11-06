@@ -7,7 +7,8 @@
 \providecommand{\sparen}[1]{(#1)}
 \providecommand{\angb}[1]{\mathopen{}\left\langle #1\right\rangle\mathclose{}}
 \renewcommand{\sb}[1]{\mathopen{}\left[#1\right]\mathclose{}}
-\providecommand{\distop}[1]{\operatorname{#1}}
+\providecommand{\mathbbm}[1]{\mathbb{#1}}
+\providecommand{\distop}[1]{\mathbbm{#1}}
 \providecommand{\sbmat}[1]{\begin{bmatrix}#1\end{bmatrix}}
 \providecommand{\Prf}[1]{{\Pr\paren{#1}}}
 \providecommand{\Prunder}[2]{{\Pr_{#1}\paren{#2}}}
@@ -196,9 +197,12 @@
 \def\nmodels{M}
 \def\ninputvars{p}
 \def\inputdim{\ninputvars}
+\def\noutvars{q}
 \def\nparams{p^{*}}
 \def\nnetparams{P}
 \def\iter{t}
+\def\steplen{s}
+\providecommand{\iterpoint}[2]{{{#1}^{(#2)}}}
 \def\layeridx{\ell}
 \def\RSS{\operatorname{RSS}}
 \def\TSS{\operatorname{TSS}}
@@ -304,6 +308,7 @@
 \def\range{\mathcal{R}}
 \def\Range{\mathcal{R}}
 \providecommand{\rangef}[1]{\cR(#1)}
+\providecommand{\modef}[1]{{\operatorname{mode}\paren{#1}}}
 \providecommand{\seq}[2]{#1{:}#2}
 \def\~{\approx}
 \def\dapp{\dot\approx}
@@ -460,6 +465,8 @@
 \providecommand{\indiccb}[1]{{\mathbb{1}\cb{#1}}}
 \def\indicf{\indic}
 \providecommand{\set}[1]{{\cb{#1}}}
+\providecommand{\setbuild}[2]{{\set{#1 : #2}}}
+\providecommand{\setdiff}[2]{{#1 \setminus #2}}
 \providecommand{\pf}[1]{{\p \paren{#1}}}
 \providecommand{\Pf}[1]{{\P \paren{#1}}}
 \providecommand{\Bias}[1]{{\operatorname{Bias}\paren{#1}}}
@@ -504,6 +511,7 @@
 \def\vY{\vecf{Y}}
 \def\outvar{y}
 \def\Outvar{Y}
+\def\signoutvar{\tilde{\outvar}}
 \def\voutvar{\vecf{\outvar}}
 \def\vOutvar{\vecf{\Outvar}}
 \def\eoutvar{\est{\outvar}}
@@ -513,6 +521,9 @@
 \def\vpredvar{\vecf{\predvar}}
 \def\vPredvar{\vecf{\Predvar}}
 \def\mpredvar{\matr{\Predvar}}
+\def\moutvar{\matr{\Outvar}}
+\def\mcoef{\matr{\Regcoef}}
+\def\mnoise{\matr{E}}
 \def\vresid{\vecf{\resid}}
 \def\vprederr{\vecf{\prederr}}
 \def\vz{\vecf{z}}
@@ -550,6 +561,7 @@
 \def\dpf{\dprodf}
 \providecommand{\tprod}[2]{\tp{#1} #2}
 \def\tprodf{\tprod}
+\def\cpf{\tprod}
 \providecommand{\iprod}[2]{{\angb{#1, #2}}}
 \def\iprodf{\iprod}
 \providecommand{\oprod}[2]{#1 \tp{#2}}
@@ -1288,7 +1300,6 @@
 \providecommand{\varsymf}[1]{{\varsym\sb{#1}}}
 \def\devsym{\mathbb{D}}
 \providecommand{\devsymf}[1]{{\devsym\sb{#1}}}
-\providecommand{\mathbbm}[1]{\mathbb{#1}}
 \def\devval{\mathbbm{d}}
 \def\resvar{\varpar}
 \def\irrerr{\resvar}
@@ -1304,9 +1315,14 @@
 \def\regpar{\lambda}
 \def\eigval{\lambda}
 \def\Eigvals{\Lambda}
-\def\design{D}
-\def\vdesign{\vecf{\design}}
-\def\featmap{\design}
+\def\eigvalmax{{\eigval_{\max}}}
+\def\eigvalmin{{\eigval_{\min}}}
+\providecommand{\eigvalmaxf}[1]{{\eigvalmax\paren{#1}}}
+\providecommand{\eigvalminf}[1]{{\eigvalmin\paren{#1}}}
+\def\mdesign{\matr{D}}
+\def\design{\mdesign}
+\def\vdesign{\vecf{D}}
+\def\featmap{D}
 \def\vfeatmap{\vdesign}
 \def\normpdf{\phi}
 \def\normcdf{\Phi}
@@ -1442,11 +1458,14 @@
 \providecommand{\hamdist}[2]{{\Delta\paren{#1, #2}}}
 \def\errfrac{\delta}
 \providecommand{\codeparams}[4]{{\sb{#1, #2, #3}}_{#4}}
+\providecommand{\bigO}[1]{{O\paren{#1}}}
+\providecommand{\littleo}[1]{{o\paren{#1}}}
 \providecommand{\asymub}[1]{{O\paren{#1}}}
-\def\entropy{H}
+\def\entropy{\distop{H}}
 \providecommand{\entropyf}[1]{{\entropy\paren{#1}}}
-\def\surprisal{s}
+\def\surprisal{\distop{s}}
 \providecommand{\surprisalf}[1]{{\surprisal\paren{#1}}}
+\providecommand{\surprisalunderf}[2]{{\surprisal_{#1}\paren{#2}}}
 \def\crossentropy{\entropy}
 \providecommand{\crossentropyf}[2]{{\crossentropy\paren{#1, #2}}}
 \def\kldiv{{D_{\mathrm{KL}}}}

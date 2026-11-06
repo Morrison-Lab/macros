@@ -23,7 +23,9 @@ Noise: $\Noise_i^2$, $\noise_i^2$, $\vNoise_i^2$, $\vnoise_i^2$, $\vNoise^T$.
 
 Residuals, prediction errors and the deviation from a mean, subscripted and squared: $\resid_i^2$, $\Resid_i$, $\stdresid_i^2$, $\modresid_i^2$, $\vresid_i^T$, $\residv^T$, $\prederr_i^2$, $\prederrf{g}_i^2$, $\vprederr_i^T$, $\popdev_i^2$, $\cdev_i$.
 
-Design matrix, design vector and feature map, subscripted and squared: $\design_{ij}^2$, $\vdesign_i^2$, $\vdesign^T$, $\vfeatmap_i^2$, $\featmap^2$.
+Design matrix, design vector and feature map, subscripted and squared: $\mdesign_{ij}^2$, $\design_{ij}^2$, $\vdesign_i^2$, $\vdesign^T$, $\vfeatmap_i^2$, $\featmap^2$.
+
+Largest and smallest eigenvalues, subscripted and squared, and the call forms with a tall argument: $\eigvalmax^2$, $\eigvalmin_i^2$, $\eigvalmaxf{\frac{a}{b}}^2$, $\eigvalminf{\stprod{\design} / \nobs}^{-1}$.
 
 Deviances, subscripted and squared: $\deviance_i^2$, $\deviance^2$, $\nulldeviance$, $\satdeviance^2$, $\dicdev^2$, $\dicdevf{\vth}^2$.
 
@@ -50,3 +52,5 @@ Probability under a parameter, plain, squared, subscripted and with a tall argum
 Residual variance and its deprecated alias: $\resvar$, $\irrerr$, $\paren{\resvar}^2$.
 
 Partial derivative with a slash, with a compound numerator, subscripted and squared: $\derivfslash{f}{x}$, $\derivfslash{\paren{n \bar{y}}}{\beta_0}$, $\derivfslash{\frac{a}{b}}{\theta}^2$, $\derivfslash{f}{x}_i$, $\paren{\derivfslash{f}{x}}^2$, $\paren{\derivfslash{f}{x}}_i$.
+
+Step length and iterate, plain, squared and with a tall argument: $\steplen$, $\steplen^2$, $\iterpoint{\vx}{\iter}$, $\iterpoint{\vx}{\iter + 1}$, $\iterpoint{\steplen}{\iter}$, $\iterpoint{\vx}{\iter}^2$, $\iterpoint{\E{\frac{a}{b}}}{\iter}^2$.
