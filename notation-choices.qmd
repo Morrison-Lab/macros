@@ -330,6 +330,11 @@ We write the expectation, the probability, the bias and the variance as operator
 The blackboard letter marks an operator that takes a random variable or an estimator, so it cannot be mistaken for an italic variable.
 We do not use blackboard bold for the risk, because $\reals$ is the real numbers.
 The risk stays an italic $\poprisk$, which is free now that the noise is $\varepsilon$.
+The risk of a model at one input, the conditional risk, is the same italic letter with the input after a bar: $\condpopriskf{\modmem}{x}$.
+We keep one letter for both because they are one quantity at two levels.
+The population risk $\popriskf{\modmem}$ is the average of $\condpopriskf{\modmem}{\predvar}$ over the distribution of the input.
+Duda and Hart make the same split, between the conditional risk and the overall risk, and *The Elements of Statistical Learning* writes the pointwise form $\mathrm{EPE}(x_0)$ beside $\mathrm{EPE}(f)$.
+*An Introduction to Statistical Learning* does not separate them.
 The long operators $\Biast$ and $\Vart$ stay upright words.
 We make this exception to the Greek convention for estimands in [the estimands entry](#sec-estimand-estimator-symbols).
 The variance operator applies to any random variable, not only to a fitted value.

@@ -172,6 +172,7 @@ name	interpretation
 \obsloss	loss on one observation, ℓ_i (argument: the observation index)
 \poprisk	population (true) risk symbol R: the expected loss of a model
 \popriskf	population risk of a model, R(·)
+\condpopriskf	conditional (pointwise) risk of a model at an input, R(f | x): the expected loss given the input; its average over the input is the population risk
 \lpnorm	name of an ℓ_p norm or penalty, such as ℓ_1 or ℓ_2 (argument: p)
 \lbound	a lower bound of a set (ℓ)
 \ubound	an upper bound of a set (u)
