@@ -205,6 +205,7 @@
 \providecommand{\iterpoint}[2]{{{#1}^{(#2)}}}
 \def\layeridx{\ell}
 \def\RSS{\operatorname{RSS}}
+\def\SSE{\operatorname{SSE}}
 \def\TSS{\operatorname{TSS}}
 \def\npatterns{K}
 \def\nreps{m}

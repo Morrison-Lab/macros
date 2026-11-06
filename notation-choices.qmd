@@ -785,7 +785,8 @@ A plain italic letter reads as a scalar, so the bold type is what marks each one
 
 ## Sums of squares, and counts and indices for training {#sec-training-symbols}
 
-We write the residual sum of squares as $\RSS$, from the macro `\RSS`, and the total sum of squares as $\TSS$, from the macro `\TSS`.
+We write the residual sum of squares as $\RSS$, from the macro `\RSS`, the sum of squared errors as $\SSE$, from the macro `\SSE`, and the total sum of squares as $\TSS$, from the macro `\TSS`.
+The $\SSE$ and the $\RSS$ are the same quantity under two names.
 They are names of statistics, so they are upright, and a subscript marks a model, as in $\RSS_0$.
 We avoid writing `\text{RSS}` in the source, because the macro keeps the spelling and the font the same on every page.
 
