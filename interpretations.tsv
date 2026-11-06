@@ -1396,6 +1396,7 @@ name	interpretation
 \iterpoint	point that an iterative algorithm has reached after the given number of steps; takes the point's symbol and the step index (prints #1^{(#2)})
 \layeridx	index ℓ of a layer of a neural network
 \RSS	residual sum of squares, RSS: the sum over the observations of the squared residuals of a fitted model
+\SSE	sum of squared errors, SSE: the sum over the observations of the squared errors of a model, the same quantity as the RSS
 \TSS	total sum of squares, TSS: the sum over the observations of the squared differences of the outcome from its sample mean
 \npatterns	number K of distinct covariate patterns in a dataset
 \nreps	number m of replicates (observations) that share one covariate pattern; written with a pattern index, as \nreps_k
