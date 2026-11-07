@@ -16,7 +16,7 @@ Divergence: $\kldivf{p}{q}$, $\kldivf{\frac{a}{b}}{q}^2$, $\kldiv_{\param_0}$.
 
 Cross-entropy: $\crossentropyf{p}{q}$, $\crossentropyf{\frac{a}{b}}{q}^2$, $\crossentropy_{\param_0}$.
 
-Improbability: $\improbf{x}$, $\improbf{\frac{a}{b}}^2$, $\improb_i$, $\improbunderf{q}{\frac{a}{b}}^2$.
+Rarity: $\rarityf{x}$, $\rarityf{\frac{a}{b}}^2$, $\rarity_i$, $\rarityunderf{q}{\frac{a}{b}}^2$.
 
 Perplexity: $\perplexityf{X}$, $\perplexityf{\frac{a}{b}}^2$, $\perplexity_q$.
 

@@ -1446,11 +1446,11 @@ name	interpretation
 \surprisal	surprisal symbol s
 \surprisalf	surprisal of an outcome, s(x)
 \surprisalunderf	surprisal of an outcome measured by a named distribution, s_q(x)
-\improb	improbability symbol u
-\improbf	improbability of an outcome, the reciprocal of its probability, u(x) = 1/P(X=x)
-\improbunderf	improbability of an outcome under a named distribution, u_q(x) = 1/q(x)
+\rarity	rarity symbol r
+\rarityf	rarity of an outcome, the reciprocal of its probability, r(x) = 1/P(X=x)
+\rarityunderf	rarity of an outcome under a named distribution, r_q(x) = 1/q(x)
 \perplexity	perplexity symbol PP
-\perplexityf	perplexity of a random variable, PP(X) = b^{H_b(X)}, the geometric mean of the improbabilities
+\perplexityf	perplexity of a random variable, PP(X) = b^{H_b(X)}, the geometric mean of the rarities
 \crossentropy	cross-entropy symbol H (prints \entropy)
 \crossentropyf	cross-entropy of the second distribution relative to the first, H(p, q)
 \kldiv	Kullback–Leibler divergence symbol D_KL
