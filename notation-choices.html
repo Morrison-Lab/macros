@@ -926,7 +926,7 @@ window.Quarto = {
 <li><p><strong><code>\mathcal{...}</code></strong> prints a calligraphic capital. Use it for a set of objects or for a function that has a name of its own, such as the likelihood <code>\Lik</code> (<span class="math inline">\(\Lik\)</span>) and the model family <code>\modelfam</code>. It prints capitals only.</p></li>
 <li><p><strong><code>\mathscr{...}</code></strong> prints a script capital, which is a second style of script letter. <code>macros.qmd</code> defines it as <code>\mathcal</code> wherever no <code>\mathscr</code> exists, so the glyph can differ between outputs. A macro such as <code>\scrA</code> keeps the choice in one place but does not hide the difference, because it expands to <code>\mathscr{A}</code>.</p></li>
 <li><p><strong><code>\mathfrak{...}</code></strong> prints Fraktur letters. The only use here is <code>\seed</code>. Use it when every other alphabet is taken.</p></li>
-<li><p><strong><code>\mathsf{...}</code></strong> prints sans-serif letters. Use it for a label that must not be mistaken for a variable, such as a superscript tag.</p></li>
+<li><p><strong><code>\mathsf{...}</code></strong> prints sans-serif letters. Use it for a label that must not be mistaken for a variable, such as a superscript tag. For example, <code>\cprob</code> prints a sans-serif superscript <span class="math inline">\(\mathsf{c}\)</span>, as in <span class="math inline">\(\cprob{p}\)</span>, so the tag is not read as the variable <span class="math inline">\(c\)</span>.</p></li>
 </ul>
 <p>Choose the command from the meaning, then wrap it in a macro, so the font choice lives in one place (<code>macros.qmd</code>). See <a href="#sec-italic-upright">Italic and upright</a> for the split between variables and names.</p>
 </section>
