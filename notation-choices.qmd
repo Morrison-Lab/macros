@@ -519,6 +519,50 @@ The big-O `\bigO{g}` ($\bigO{g}$) and the little-o `\littleo{g}` ($\littleo{g}$)
 The letter stands for a class of functions that depends on $g$, so it is not the name of a specific function such as $\sin$, and it is not an operator.
 Algorithms and statistics textbooks print these symbols in italic too.
 
+## Math-mode fonts {#sec-math-fonts}
+
+LaTeX has one command for each math alphabet.
+The lab's macros choose among them by what a symbol stands for, so a page that needs a new symbol should pick the command the same way.
+ISO 80000-2:2019 ([link](https://www.iso.org/standard/64973.html)) sets the typeface of each kind of symbol, and the entries below say where they follow it and where they depart from it.
+
+-   **`\mathrm{...}`** prints upright roman letters.
+    Use it for a name, such as an abbreviation or a text subscript.
+    For example, `\vcdim` prints a subscript set with `\mathrm`.
+    ISO 80000-2 sets the names of specific functions and operators upright, and `\operatorname` does the same with correct spacing.
+    Never use it for a variable.
+
+-   **`\mathbf{...}`** prints upright bold roman letters.
+    The `\bfA` family uses it, for a symbol that is bold but not italic.
+    It does not change lowercase Greek letters, so use `\boldsymbol` for those.
+    ISO 80000-2 sets vectors and matrices in bold italic, so this upright form departs from the standard.
+
+-   **`\boldsymbol{...}`** prints bold letters that keep the slant of the symbol.
+    Latin letters and lowercase Greek letters come out bold italic, while uppercase Greek letters and digits come out bold upright.
+    The `\bfalpha` family uses it.
+    It matches the ISO 80000-2 bold italic for a vector or matrix variable.
+
+-   **`\mathbb{...}`** prints blackboard bold.
+    Use it for a number set, such as $\mathbb{R}$, and for an operator that acts on random quantities, such as `\P` ($\P$).
+    ISO 80000-2 sets the number sets in blackboard bold.
+
+-   **`\mathcal{...}`** prints a calligraphic capital.
+    Use it for a set of objects or for a function that has a name of its own, such as the likelihood `\Lik` ($\Lik$) and the model family `\modelfam`.
+    It prints capitals only.
+
+-   **`\mathscr{...}`** prints a script capital, which is a second style of script letter.
+    `macros.qmd` defines it as `\mathcal` wherever no `\mathscr` exists, so the glyph can differ between outputs.
+    A macro such as `\scrA` keeps the choice in one place but does not hide the difference, because it expands to `\mathscr{A}`.
+
+-   **`\mathfrak{...}`** prints Fraktur letters.
+    The only use here is `\seed`.
+    Use it when every other alphabet is taken.
+
+-   **`\mathsf{...}`** prints sans-serif letters.
+    Use it for a label that must not be mistaken for a variable, such as a superscript tag.
+
+Choose the command from the meaning, then wrap it in a macro, so the font choice lives in one place (`macros.qmd`).
+See [Italic and upright](#sec-italic-upright) for the split between variables and names.
+
 ## The design matrix and the design vector {#sec-design-notation}
 
 The [design matrix](https://morrison-lab.github.io/lds/chapters/linear-regression.html#def-design-matrix) holds the input values for a model, one row for each observation, after any feature map.
