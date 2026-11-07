@@ -523,7 +523,7 @@ Algorithms and statistics textbooks print these symbols in italic too.
 
 LaTeX has one command for each math alphabet.
 The lab's macros choose among them by what a symbol stands for, so a page that needs a new symbol should pick the command the same way.
-ISO 80000-2:2019 ([link](https://www.iso.org/standard/64973.html)) sets the typeface of each kind of symbol, and the entries below follow it where it speaks.
+ISO 80000-2:2019 ([link](https://www.iso.org/standard/64973.html)) sets the typeface of each kind of symbol, and the entries below say where they follow it and where they depart from it.
 
 -   **`\mathrm{...}`** prints upright roman letters.
     Use it for a name, such as an abbreviation or a text subscript.
@@ -533,11 +533,13 @@ ISO 80000-2:2019 ([link](https://www.iso.org/standard/64973.html)) sets the type
 
 -   **`\mathbf{...}`** prints upright bold roman letters.
     The `\bfA` family uses it, for a symbol that is bold but not italic.
-    It does not change Greek letters, so use `\boldsymbol` for those.
+    It does not change lowercase Greek letters, so use `\boldsymbol` for those.
+    ISO 80000-2 sets vectors and matrices in bold italic, so this upright form departs from the standard.
 
--   **`\boldsymbol{...}`** prints bold italic letters, including Greek.
+-   **`\boldsymbol{...}`** prints bold letters that keep the slant of the symbol.
+    Latin letters and lowercase Greek letters come out bold italic, while uppercase Greek letters and digits come out bold upright.
     The `\bfalpha` family uses it.
-    ISO 80000-2 sets vectors and matrices in bold italic, which is why this command fits a vector or matrix variable.
+    It matches the ISO 80000-2 bold italic for a vector or matrix variable.
 
 -   **`\mathbb{...}`** prints blackboard bold.
     Use it for a number set, such as $\mathbb{R}$, and for an operator that acts on random quantities, such as `\P` ($\P$).
@@ -549,7 +551,7 @@ ISO 80000-2:2019 ([link](https://www.iso.org/standard/64973.html)) sets the type
 
 -   **`\mathscr{...}`** prints a script capital, which is a second style of script letter.
     `macros.qmd` defines it as `\mathcal` wherever no `\mathscr` exists, so the glyph can differ between outputs.
-    Use it through a macro such as `\scrA`, not directly, so a page does not depend on the difference.
+    A macro such as `\scrA` keeps the choice in one place but does not hide the difference, because it expands to `\mathscr{A}`.
 
 -   **`\mathfrak{...}`** prints Fraktur letters.
     The only use here is `\seed`.
