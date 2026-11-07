@@ -1449,6 +1449,7 @@ name	interpretation
 \rarity	rarity symbol r
 \rarityf	rarity of an outcome, the reciprocal of its probability, r(x) = 1/P(X=x)
 \rarityunderf	rarity of an outcome under a named distribution, r_q(x) = 1/q(x)
+\cprob	complementary probability, the probability 1 - p of the complement (prints p^{\mathsf{c}})
 \perplexity	perplexity symbol PP
 \perplexityf	perplexity of a random variable, PP(X) = b^{H_b(X)}, the geometric mean of the rarities
 \crossentropy	cross-entropy symbol H (prints \entropy)

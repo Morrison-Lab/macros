@@ -18,6 +18,8 @@ Cross-entropy: $\crossentropyf{p}{q}$, $\crossentropyf{\frac{a}{b}}{q}^2$, $\cro
 
 Rarity: $\rarityf{x}$, $\rarityf{\frac{a}{b}}^2$, $\rarity_i$, $\rarityunderf{q}{\frac{a}{b}}^2$.
 
+Complementary probability: $\cprob{p}$, $\cprob{\frac{a}{b}}^2$, $\cprob{\P(A)}$.
+
 Perplexity: $\perplexityf{X}$, $\perplexityf{\frac{a}{b}}^2$, $\perplexity_q$.
 
 Distribution functions, which need the lowercase blackboard letters from `bbm`: $\p(x)$, $\f(x)$, $\h(x)$, $\F(x)$, $\S(x)$, $\Q(u)$, $\H(x)$, $\entropyf{X}$.
