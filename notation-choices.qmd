@@ -666,7 +666,9 @@ We write $X \ind Y$ for "$X$ is independent of $Y$".
 Some sources write $X \perp Y$, or state independence only in words.
 
 We write $\neg A$ for the complement of an event $A$, read "not $A$".
-Some sources write $A^c$ or $\bar{A}$.
+Casella and Berger write $A^c$ for the complement of a set $A$ [@casella2002statistical, Section 1.1],
+and Wasserman writes $A^C$ for the complement of an event $A$ [@wasserman2004all, Section 1.2].
+Bohm and Zech write $\overline{A}$ for the complement of an event $A$ [@bohm2010introduction, Section 2.1].
 
 We write $\setdiff{A}{B}$ for the set difference, the elements of $A$ not in $B$, from the macro `\setdiff`.
 We write $\setbuild{x \in S}{x \notin B}$ for set-builder notation, with a colon between the membership condition and the property, from the macro `\setbuild`.
