@@ -565,6 +565,7 @@ ISO 80000-2:2019 ([link](https://www.iso.org/standard/64973.html)) sets the type
 
 -   **`\mathsf{...}`** prints sans-serif letters.
     Use it for a label that must not be mistaken for a variable, such as a superscript tag.
+    For example, `\cprob` prints a sans-serif superscript $\mathsf{c}$, as in $\cprob{p}$, so the tag is not read as the variable $c$.
 
 Choose the command from the meaning, then wrap it in a macro, so the font choice lives in one place (`macros.qmd`).
 See [Italic and upright](#sec-italic-upright) for the split between variables and names.
