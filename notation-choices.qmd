@@ -203,6 +203,12 @@ Leinster calls $1/p_i$ "a measure of [the] rarity or specialness" of the $i$th s
 MacKay's *Information Theory, Inference, and Learning Algorithms* (2003, section 2.4) defines only the logarithm, the Shannon information content.
 The blackboard letter $\rarity$ is lowercase like $\surprisal$, which keeps it apart from the rate and the rank.
 So $\surprisalf{x} = \logf{\rarityf{x}}$.
+The [complement rule](https://morrison-lab.github.io/pds/probability-basics.html#cor-p-neg0) says $\P(\neg A) = 1 - \P(A)$.
+Its right side, the probability $1 - p$ that an event of probability $p$ does not occur, is the complementary probability, written $\cprob{p}$, with a sans-serif superscript $\mathsf{c}$ as in the complement $A^{\mathsf{c}}$ of an event.
+Grinstead and Snell (*Introduction to Probability*, Theorem 1.1, property 5) state the rule as $P(\tilde{A}) = 1 - P(A)$.
+Grinstead and Snell call $q = 1 - p$ "the probability $q$ of failure" in a Bernoulli trials process (Definition 3.5, p. 96), but no source we found names $1 - p$ itself, so "complementary probability" is ours.
+We do not write $q$ because $q$ is a second distribution in $\surprisalunderf{q}{x}$ and $\kldivf{p}{q}$, nor a bar, which is the sample mean $\smean{x}$.
+The odds in favour are $p / \cprob{p}$, the odds against are $\cprob{p} / p$, and so the odds against equal $\cprob{p}$ times the rarity $1/p$.
 The exponential of the entropy, $\perplexityf{X}$ for a random variable $X$, is the geometric mean of the rarities, weighted by the probabilities.
 The geometric mean is called the perplexity in language modelling, where [Murphy (2012, Section 27.3.3.1)](https://mitpress.mit.edu/9780262018029/machine-learning/) defines it as $2^{H(p, q)}$ for a model $q$ of a process $p$ and reads it as a weighted average branching factor, and in speech recognition, where the term comes from [Jelinek, Mercer, Bahl and Baker (1977)](https://doi.org/10.1121/1.2016299).
 Leinster calls the same quantity the diversity of order 1, an effective number of species.

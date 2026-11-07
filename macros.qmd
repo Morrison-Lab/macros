@@ -1472,6 +1472,7 @@
 \providecommand{\rarityunderf}[2]{{\rarity_{#1}\paren{#2}}}
 \def\perplexity{\mathrm{PP}}
 \providecommand{\perplexityf}[1]{{\perplexity\paren{#1}}}
+\providecommand{\cprob}[1]{{{#1}^{\mathsf{c}}}}
 \def\crossentropy{\entropy}
 \providecommand{\crossentropyf}[2]{{\crossentropy\paren{#1, #2}}}
 \def\kldiv{{D_{\mathrm{KL}}}}
