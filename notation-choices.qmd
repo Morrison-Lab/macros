@@ -198,6 +198,12 @@ A PDF needs the `bbm` package for the lowercase letters, so list `macros-pdf-hea
 The [surprisal](https://morrison-lab.github.io/ids/entropy.html#def-surprisal) of an outcome $x$ is written $\surprisalf{x}$.
 That form leaves the distribution implicit.
 To name the distribution that measures the surprisal, write it as a subscript with $\surprisalunderf{q}{x}$, which is $-\log q(x)$.
+The reciprocal of the probability, of which the surprisal is the logarithm, is the improbability, written $\improbf{x}$, or $\improbunderf{q}{x}$ for a named distribution.
+The name "improbability" is ours: we found no source that names the reciprocal, and MacKay's *Information Theory, Inference, and Learning Algorithms* (2003, section 2.4) defines only its logarithm, the Shannon information content.
+The letter $u$ stands for "unlikeliness": $i$ would collide with the index and the imaginary unit, and $r$ with rate and rank.
+So $\surprisalf{x} = \logf{\improbf{x}}$.
+The exponential of the entropy, $\perplexityf{X}$ for a random variable $X$, is the perplexity, named in [Jelinek, Mercer, Bahl and Baker (1977)](https://doi.org/10.1121/1.2016299) for speech recognition.
+It prints as upright $\perplexity$, and it does not depend on the base of the logarithm, provided the entropy and the exponential use the same base.
 The [Kullback--Leibler divergence](https://morrison-lab.github.io/pds/expectation.html#def-kl-divergence) of $q$ from $p$ is written $\kldivf{p}{q}$, with the true or reference distribution first.
 Our convention puts $p$ first, because the divergence is the expectation under $p$ of the log ratio of $p$ to $q$.
 It is not symmetric, so swapping the arguments changes the value.

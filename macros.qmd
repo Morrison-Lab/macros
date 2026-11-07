@@ -1467,6 +1467,11 @@
 \def\surprisal{\distop{s}}
 \providecommand{\surprisalf}[1]{{\surprisal\paren{#1}}}
 \providecommand{\surprisalunderf}[2]{{\surprisal_{#1}\paren{#2}}}
+\def\improb{\distop{u}}
+\providecommand{\improbf}[1]{{\improb\paren{#1}}}
+\providecommand{\improbunderf}[2]{{\improb_{#1}\paren{#2}}}
+\def\perplexity{\mathrm{PP}}
+\providecommand{\perplexityf}[1]{{\perplexity\paren{#1}}}
 \def\crossentropy{\entropy}
 \providecommand{\crossentropyf}[2]{{\crossentropy\paren{#1, #2}}}
 \def\kldiv{{D_{\mathrm{KL}}}}
