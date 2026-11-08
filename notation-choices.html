@@ -719,6 +719,7 @@ window.Quarto = {
   <li><a href="#sec-sum-of-elements" id="toc-sec-sum-of-elements" class="nav-link" data-scroll-target="#sec-sum-of-elements">The sum of the elements of a vector</a></li>
   <li><a href="#sec-input-counts" id="toc-sec-input-counts" class="nav-link" data-scroll-target="#sec-input-counts">The number of inputs and the number of input variables</a></li>
   <li><a href="#sec-training-symbols" id="toc-sec-training-symbols" class="nav-link" data-scroll-target="#sec-training-symbols">Sums of squares, and counts and indices for training</a></li>
+  <li><a href="#sec-ith-observation" id="toc-sec-ith-observation" class="nav-link" data-scroll-target="#sec-ith-observation">The predictor and the outcome of the <span class="math inline">\(i\)</span>th observation</a></li>
   <li><a href="#sec-exponential-family-notation" id="toc-sec-exponential-family-notation" class="nav-link" data-scroll-target="#sec-exponential-family-notation">Exponential families</a></li>
   <li><a href="#sec-level-set-preimage" id="toc-sec-level-set-preimage" class="nav-link" data-scroll-target="#sec-level-set-preimage">Level sets and preimages</a></li>
   <li><a href="#sec-confidence-interval-endpoints" id="toc-sec-confidence-interval-endpoints" class="nav-link" data-scroll-target="#sec-confidence-interval-endpoints">The endpoints of a confidence interval</a></li>
@@ -1095,6 +1096,11 @@ window.Quarto = {
 <li>The number of features in a feature vector is <code>\ninputvars</code>, which prints <span class="math inline">\(\ninputvars\)</span>, because we avoid <span class="math inline">\(D\)</span> for a count. See <a href="#sec-input-counts">the input counts entry</a>.</li>
 </ul>
 <p>We do not give the size of a minibatch a letter of its own. Write it as the cardinality of the set of indices, such as <code>\card{B_t}</code>, because the letter <span class="math inline">\(b\)</span> is already the bias of a neural network in <a href="#sec-ml-statistics-names">the names entry</a>.</p>
+</section>
+<section id="sec-ith-observation" class="level2">
+<h2 class="anchored" data-anchor-id="sec-ith-observation">The predictor and the outcome of the <span class="math inline">\(i\)</span>th observation</h2>
+<p>Derivations about a sample write the predictor and the outcome of the <span class="math inline">\(i\)</span>th observation hundreds of times, for example in a sum over the observations. Our convention is to write them as <code>\predvari</code> and <code>\outvari</code>, which print <span class="math inline">\(\predvari\)</span> and <span class="math inline">\(\outvari\)</span>, so that a sum of cross-products is <code>\sumin \predvari \outvari</code>. Each macro is the existing <code>\predvar</code> or <code>\outvar</code> with the observation index <code>\iobs</code> as a subscript. A power after the macro stacks over the subscript, so <code>\predvari^2</code> prints <span class="math inline">\(\predvari^2\)</span>.</p>
+<p>ISL writes the same quantities as <span class="math inline">\(x_i\)</span> and <span class="math inline">\(y_i\)</span>, and the observed data as <span class="math inline">\(\{(x_1, y_1), \ldots, (x_n, y_n)\}\)</span> <span class="citation" data-cites="james2021islr">(<a href="#ref-james2021islr" role="doc-biblioref">James et al. 2021, chap. 1</a>, “Notation and Simple Matrix Algebra,” p.&nbsp;11)</span>.</p>
 </section>
 <section id="sec-exponential-family-notation" class="level2">
 <h2 class="anchored" data-anchor-id="sec-exponential-family-notation">Exponential families</h2>
