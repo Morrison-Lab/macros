@@ -918,6 +918,15 @@ Some existing macros already cover other symbols that lecture exercises write as
 We do not give the size of a minibatch a letter of its own.
 Write it as the cardinality of the set of indices, such as `\card{B_t}`, because the letter $b$ is already the bias of a neural network in [the names entry](#sec-ml-statistics-names).
 
+## The predictor and the outcome of the $i$th observation {#sec-ith-observation}
+
+Derivations about a sample write the predictor and the outcome of the $i$th observation hundreds of times, for example in a sum over the observations.
+Our convention is to write them as `\predvari` and `\outvari`, which print $\predvari$ and $\outvari$, so that a sum of cross-products is `\sumin \predvari \outvari`.
+Each macro is the existing `\predvar` or `\outvar` with the observation index `\iobs` as a subscript.
+A power after the macro stacks over the subscript, so `\predvari^2` prints $\predvari^2$.
+
+ISL writes the same quantities as $x_i$ and $y_i$, and the observed data as $\{(x_1, y_1), \ldots, (x_n, y_n)\}$ [@james2021islr, Chapter 1, "Notation and Simple Matrix Algebra", p. 11].
+
 ## Exponential families {#sec-exponential-family-notation}
 
 We write the density of a one-parameter exponential family in its natural form, $\basemeasuref{x} \expf{\natparam \statf{x} - \logpartitionf{\natparam}}$.

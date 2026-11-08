@@ -1519,6 +1519,8 @@
 \def\newoutvar{\Outvar_{*}}
 \def\newpredval{\predvar_{*}}
 \def\newoutval{\outvar_{*}}
+\def\predvari{\predvar_{\iobs}}
+\def\outvari{\outvar_{\iobs}}
 \providecommand{\heldpredvar}[1]{\Predvar_{*,#1}}
 \providecommand{\heldoutvar}[1]{\Outvar_{*,#1}}
 \providecommand{\heldpredval}[1]{\predvar_{*,#1}}
