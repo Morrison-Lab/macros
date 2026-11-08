@@ -791,7 +791,7 @@ window.Quarto = {
 <section id="sec-counting-layers" class="level2">
 <h2 class="anchored" data-anchor-id="sec-counting-layers">Counting the layers of a neural network</h2>
 <p>A neural network passes its input through a sequence of layers. Each layer is a row of units, and each unit computes one number. Between two neighboring layers, a weight matrix holds the numbers that say how much each unit in the first layer contributes to each unit in the second.</p>
-<p>Suppose a network has an input layer, one hidden layer (a layer between the input and the output), and an output layer. Some sources call it a three-layer network, because it has three rows of units. Our convention is to call it a two-layer network. Here “two-layer” counts the weight matrices, not the rows of units. The network has two weight matrices: input to hidden, and hidden to output. We can also say that it has one hidden layer.</p>
+<p>Suppose a network has an input layer, one hidden layer (a layer between the input and the output), and an output layer. Some sources call it a three-layer network, because it has three rows of units. Kriesel calls a feedforward network with two input neurons, three hidden neurons and two output neurons “a feedforward network with three layers” <span class="citation" data-cites="kriesel">(<a href="#ref-kriesel" role="doc-biblioref">Kriesel, n.d., sec. 3.3.1</a>, Figure 3.3)</span>. Our convention is to call it a two-layer network. Here “two-layer” counts the weight matrices, not the rows of units. The network has two weight matrices: input to hidden, and hidden to output. We can also say that it has one hidden layer.</p>
 <p>We chose to count the weight matrices because the input layer has no weights of its own and does no computation. Its values are the data. Each weight matrix is one computation from one row of units to the next, so counting the weight matrices counts the steps that do work. This is a choice, not a requirement, and both names are in use. Check which one a source means before comparing the depths of two networks.</p>
 </section>
 <section id="sec-cross-entropy-conventions" class="level2">
@@ -843,7 +843,7 @@ window.Quarto = {
 <section id="sec-score-notation" class="level2">
 <h2 class="anchored" data-anchor-id="sec-score-notation">Writing the score function</h2>
 <p>The <a href="https://morrison-lab.github.io/sds/intro-MLEs.html#def-loglik">log-likelihood</a> is the natural logarithm of the likelihood function. The <a href="https://morrison-lab.github.io/sds/intro-MLEs.html#def-score">score function</a> is the derivative of the log-likelihood with respect to the parameter. This is the score of statistics, which is not the linear predictor of <a href="#sec-intercept">the intercept entry</a>. When the model has several parameters, the score is a vector that holds one partial derivative for each parameter, taken with the other parameters held fixed. We often omit its arguments and write <span class="math inline">\(\score\)</span> for <span class="math inline">\(\score(\theta)\)</span>. When we want to show the data, we write <span class="math inline">\(\score(\theta; \vx)\)</span>, in the same style as the likelihood.</p>
-<p>Some sources write <span class="math inline">\(U\)</span> or <span class="math inline">\(S\)</span> for the score function instead. We write <span class="math inline">\(\score\)</span> because it keeps <span class="math inline">\(U\)</span> and <span class="math inline">\(S\)</span> free for other uses.</p>
+<p>Some sources write <span class="math inline">\(U\)</span> or <span class="math inline">\(S\)</span> for the score function instead. Dobson and Barnett write the score statistic as <span class="math inline">\(U(\theta; y)\)</span> <span class="citation" data-cites="dobson4e">(<a href="#ref-dobson4e" role="doc-biblioref">Dobson and Barnett 2018, sec. 3.3</a>, p.&nbsp;55)</span>. Casella and Berger write <span class="math inline">\(S(\theta)\)</span> and call it the score statistic <span class="citation" data-cites="casella2002statistical">(<a href="#ref-casella2002statistical" role="doc-biblioref">Casella and Berger 2002, sec. 10.3.2</a>, p.&nbsp;494)</span>. We write <span class="math inline">\(\score\)</span> because it keeps <span class="math inline">\(U\)</span> and <span class="math inline">\(S\)</span> free for other uses.</p>
 </section>
 <section id="sec-slash-partial-derivative" class="level2">
 <h2 class="anchored" data-anchor-id="sec-slash-partial-derivative">A partial derivative written with a slash</h2>
@@ -1143,11 +1143,17 @@ Casella, George, and Roger L. Berger. 2002. <em>Statistical Inference</em>. 2nd 
 <div id="ref-cover2006elements" class="csl-entry" role="listitem">
 Cover, Thomas M., and Joy A. Thomas. 2006. <em>Elements of Information Theory</em>. 2nd ed. Wiley-Interscience.
 </div>
+<div id="ref-dobson4e" class="csl-entry" role="listitem">
+Dobson, Annette J, and Adrian G Barnett. 2018. <em>An Introduction to Generalized Linear Models</em>. 4th ed. CRC press. <a href="https://doi.org/10.1201/9781315182780">https://doi.org/10.1201/9781315182780</a>.
+</div>
 <div id="ref-hastie2009esl" class="csl-entry" role="listitem">
 Hastie, Trevor, Robert Tibshirani, and Jerome Friedman. 2009. <em>The Elements of Statistical Learning: Data Mining, Inference, and Prediction</em>. 2nd ed. Springer. <a href="https://hastie.su.domains/ElemStatLearn/">https://hastie.su.domains/ElemStatLearn/</a>.
 </div>
 <div id="ref-james2021islr" class="csl-entry" role="listitem">
 James, Gareth, Daniela Witten, Trevor Hastie, and Robert Tibshirani. 2021. <em>An Introduction to Statistical Learning with Applications in <span>R</span></em>. 2nd ed. Springer. <a href="https://www.statlearning.com/">https://www.statlearning.com/</a>.
+</div>
+<div id="ref-kriesel" class="csl-entry" role="listitem">
+Kriesel, David. n.d. <em>A Brief Introduction to Neural Networks</em>. <a href="http://www.dkriesel.com/en/science/neural_networks">http://www.dkriesel.com/en/science/neural_networks</a>.
 </div>
 <div id="ref-murphy2012mlapp" class="csl-entry" role="listitem">
 Murphy, Kevin P. 2012. <em>Machine Learning: A Probabilistic Perspective</em>. Adaptive Computation and Machine Learning. MIT Press.
