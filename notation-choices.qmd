@@ -762,7 +762,8 @@ For the general form we chose a separate macro, `\truemeansubf`, not an optional
     Its two arguments are both required, and `\condE` already has the same form.
 -   The macro name tells a reader of the source that a subscript is present.
 
-Other sources write the true mean function as $\mu(x)$ or $f(x)$, or write the conditional population mean in full as $E[Y \mid X = x]$.
+Hastie, Tibshirani and Friedman write the true mean function as $f(x)$, defined as the conditional population mean $E(Y \mid X = x)$ [@hastie2009esl, Section 2.4, Equation 2.13, p. 18].
+Other sources write it as $\mu(x)$.
 The subscripted form $\mu_{Y|X}(x)$ is also common.
 
 We keep `\popmean` and `\pmean` as aliases of `\mean`, the population mean of a variable.
