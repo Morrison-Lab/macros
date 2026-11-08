@@ -844,6 +844,7 @@ name	interpretation
 \edifflogodds	estimated difference in log-odds ΔΗ̂
 \ecdf	estimated cumulative distribution function F̂
 \ecdff	estimated cumulative distribution function F̂(·) applied to argument
+\eclassprior	estimated class prior π̂ (prints \est{\pi}); write \eclassprior_k for the prior of class k
 \eprob	estimated probability π̂
 \eprobs	estimated probability symbol π̂ (alias for \eprob)
 \ePr	estimated probability with brackets Pr̂[·] (via \Est)

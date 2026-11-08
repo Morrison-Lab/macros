@@ -1158,6 +1158,7 @@
 \def\edifflogodds{\Est{\difflogodds}}
 \def\ecdf{\mathop{\est{\cdf}}\nolimits}
 \providecommand{\ecdff}[1]{{\ecdf\paren{#1}}}
+\def\eclassprior{\est{\pi}}
 \def\eprob{\est{\prob}}
 \def\eprobs{\eprob}
 \providecommand{\ePr}[1]{{\mathop{\Est{\Pr}}\nolimits\sb{#1}}}

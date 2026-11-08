@@ -715,6 +715,16 @@ This tells a reader which fact each step of a derivation uses.
 Some sources put the reason in words after the line, or leave it out.
 Equal by definition, $\eqdef$, is the special case where the reason is the definition.
 
+## The estimated class prior {#sec-estimated-class-prior}
+
+The class prior of class $k$ is the probability that an observation belongs to class $k$, before we see its predictors.
+A generative classifier, such as linear discriminant analysis, estimates it by the proportion of training observations in class $k$.
+Our convention is to write the estimate as `\eclassprior_k`, which prints $\eclassprior_k$, so that the hat over $\pi$ has the same source form as our other estimates (see [the estimator symbols](#sec-estimand-estimator-symbols)).
+We name the macro for its role, as an estimated class prior, and not for the letter $\hat\pi$.
+The macro `\eprob` prints the same symbol, but it names an estimated success probability, so we do not use it for a class prior.
+
+Hastie, Tibshirani and Friedman write the same estimate as $\hat\pi_k = N_k / N$, with $N_k$ the number of class-$k$ observations [@hastie2009esl, Section 4.3, p. 109].
+
 ## The true mean function and its conditional form {#sec-true-mean-function}
 
 The true mean function gives the population mean of the outcome $\Outvar$ at each value $x$ of the predictor.
