@@ -659,7 +659,10 @@ Some sources write $P(A \mid \theta)$, which reads as conditioning on a random $
 We reserve the bar for conditioning on an event or a random variable, and use the subscript when the parameter is fixed rather than random.
 
 We write the expectation of a random variable with square brackets, as in $\E{X}$.
-Some sources write plain $E[X]$, or parentheses, $E(X)$.
+Murphy writes plain $E[X]$ [@murphy2012mlapp, Section 2.2.7],
+and Bishop writes $E[x]$ [@bishop2006prml, Section 1.2.2].
+Wasserman writes $E(X)$ with parentheses, or $EX$ with none [@wasserman2004all, Section 3.1, Definition 3.1],
+and Casella and Berger write $EX$ [@casella2002statistical, Section 2.2].
 The meaning is the same.
 
 We write $X \ind Y$ for "$X$ is independent of $Y$".
