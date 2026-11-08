@@ -229,6 +229,10 @@ Cover and Thomas write an italic $I(X; Y)$ with the same semicolon [@cover2006el
 We print the letter in blackboard bold, like the entropy, by the rule in [the section on functions of a distribution](#sec-distribution-function-notation).
 It prints the same letter as the identity matrix `\idmat`, which takes no argument in parentheses, so the surrounding text says which one a formula means.
 
+The [Rényi entropy](https://morrison-lab.github.io/ids/entropy.html#def-renyi-entropy) of order $\alpha$ is written $\renyientropyf{\alpha}{X}$, with the order as a subscript on the entropy letter, so that $\renyientropyf{2}{X}$ is the collision entropy.
+Rényi's paper writes the order as a subscript in the same position [@renyi1961measures].
+It uses the same blackboard letter as the Shannon entropy $\entropyf{X}$, which is the limit of the Rényi entropy as the order tends to $1$, and the subscript tells the two apart.
+
 ## Names for the same object in machine learning and statistics {#sec-ml-statistics-names}
 
 Machine learning and statistics texts often use different names and symbols for the same object.

@@ -24,6 +24,8 @@ Perplexity: $\perplexityf{X}$, $\perplexityf{\frac{a}{b}}^2$, $\perplexity_q$.
 
 Mutual information: $\mutinfof{X}{Y}$, $\mutinfof{\frac{a}{b}}{Y}^2$, $\mutinfo_i$, $\cmutinfof{X}{Y}{Z}$, $\cmutinfof{\frac{a}{b}}{Y}{Z}^2$.
 
+Rényi entropy: $\renyientropyf{2}{X}$, $\renyientropyf{\alpha}{\frac{a}{b}}^2$, $\renyientropy_2$.
+
 Distribution functions, which need the lowercase blackboard letters from `bbm`: $\p(x)$, $\f(x)$, $\h(x)$, $\F(x)$, $\S(x)$, $\Q(u)$, $\H(x)$, $\entropyf{X}$.
 
 KLSURPRISALOK
