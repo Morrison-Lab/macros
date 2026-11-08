@@ -1454,6 +1454,8 @@ name	interpretation
 \perplexityf	perplexity of a random variable, PP(X) = b^{H_b(X)}, the geometric mean of the rarities
 \crossentropy	cross-entropy symbol H (prints \entropy)
 \crossentropyf	cross-entropy of the second distribution relative to the first, H(p, q)
+\avgcrossent	average cross-entropy per example, the sum over the N examples divided by N (prints \smean{\crossentropy})
+\avgcrossentbase	average cross-entropy per example with the base of the logarithm as the argument (prints \avgcrossent with that subscript, as in \avgcrossentbase{b})
 \kldiv	Kullback–Leibler divergence symbol D_KL
 \kldivf	Kullback–Leibler divergence of the second distribution from the first, D_KL(p ‖ q)
 \mutinfo	mutual information symbol I (blackboard bold)
