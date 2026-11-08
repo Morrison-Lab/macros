@@ -700,6 +700,7 @@ Bohm and Zech write $\overline{A}$ for the complement of an event $A$ [@bohm2010
 We write $\setdiff{A}{B}$ for the set difference, the elements of $A$ not in $B$, from the macro `\setdiff`.
 We write $\setbuild{x \in S}{x \notin B}$ for set-builder notation, with a colon between the membership condition and the property, from the macro `\setbuild`.
 Some sources write $A - B$ for the set difference, or a vertical bar instead of the colon.
+Grinstead and Snell write $A - B = \{x \mid x \in A \text{ and } x \notin B\}$, with both a minus sign and a vertical bar (*Introduction to Probability*, Section 1.2, p. 21).
 
 We write $\eqdef$ for an equality that holds by definition.
 This tells it apart from an equality that follows from other facts.
