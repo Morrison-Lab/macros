@@ -1495,6 +1495,8 @@ name	interpretation
 \optalg	optimization algorithm that searches a model family for a minimizer of the objective function (prints \mathcal{A})
 \seed	random seed that starts a pseudorandom number generator (prints \mathfrak{s})
 \sscp	sum-of-squares-and-cross-products matrix of the term vectors, A
+\predvari	predictor value of the i-th observation (prints \predvar_{\iobs}); \predvari^2 prints its square
+\outvari	outcome value of the i-th observation (prints \outvar_{\iobs}); \outvari^2 prints its square
 \newpredvar	covariate of a new observation (random), X with subscript star
 \newoutvar	outcome of a new observation (random), Y with subscript star
 \newpredval	covariate value of a new observation (fixed), x with subscript star
