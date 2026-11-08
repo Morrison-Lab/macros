@@ -144,6 +144,7 @@ Between two neighboring layers, a weight matrix holds the numbers that say how m
 
 Suppose a network has an input layer, one hidden layer (a layer between the input and the output), and an output layer.
 Some sources call it a three-layer network, because it has three rows of units.
+Kriesel calls a feedforward network with two input neurons, three hidden neurons and two output neurons "a feedforward network with three layers" [@kriesel, Section 3.3.1, Figure 3.3, PDF page 66].
 Our convention is to call it a two-layer network.
 Here "two-layer" counts the weight matrices, not the rows of units.
 The network has two weight matrices: input to hidden, and hidden to output.
