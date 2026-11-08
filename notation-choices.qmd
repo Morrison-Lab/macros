@@ -667,7 +667,7 @@ Some sources write $X \perp Y$, or state independence only in words.
 
 We write $\neg A$ for the complement of an event $A$, read "not $A$".
 Casella and Berger write $A^c$ for the complement of a set $A$ [@casella2002statistical, Section 1.1],
-and Wasserman writes $A^C$ for the complement of an event $A$ [@wasserman2004all, Section 1.2].
+and Wasserman writes the same $A^c$ for the complement of an event $A$ [@wasserman2004all, Section 1.2, p. 4].
 Bohm and Zech write $\overline{A}$ for the complement of an event $A$ [@bohm2010introduction, Section 2.1].
 
 We write $\setdiff{A}{B}$ for the set difference, the elements of $A$ not in $B$, from the macro `\setdiff`.
