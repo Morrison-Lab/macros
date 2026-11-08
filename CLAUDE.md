@@ -62,7 +62,7 @@ read both before editing `macros.qmd`.
   Compare old and new with a tall argument (`\frac{a}{b}`) in `mathjax-full` and in pdflatex (compare `\ht`, `\dp` and `\wd` of a box),
   and include the rejected form as a control to prove the test can fail.
 
-- **Check math without a browser** (Ezra: no browser use, headless Chromium and Playwright included).
+- **Check math without a browser** (Directive from the maintainer, Ezra, 2026-11-08: no browser use, headless Chromium and Playwright included).
   Typeset a test string with `mathjax-full` in node, and measure a LaTeX box with pdflatex.
   Read each `\providecommand{\name}[n]{body}` line of `macros.qmd` into the `TeX` input jax's `macros` option,
   because MathJax does not run `\providecommand` in math mode.
