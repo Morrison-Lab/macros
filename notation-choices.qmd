@@ -178,18 +178,19 @@ So also check whether a source reports the sum or the average before comparing i
 ## Functions of a population distribution {#sec-distribution-function-notation}
 
 Every function that describes a population distribution is blackboard bold (Ezra, 2026-11-04).
-This covers the probability mass $\P$, the density $\p$ (and $\f$), the distribution function $\F$, the survival function $\S$, the hazard $\h$, the cumulative hazard $\H$, the quantile function $\Q$, the entropy $\entropy$ and the surprisal $\surprisal$.
+This covers the probability mass $\P$, the density $\p$ (and $\f$), the distribution function $\F$, the survival function $\S$, the hazard $\h$, the cumulative hazard $\H$, the quantile function $\Q$, the entropy $\entropy$, the mutual information $\mutinfo$ and the surprisal $\surprisal$.
 All of them except $\P$ print through `\distop`, so a new function of a distribution uses `\distop{...}` too.
 The macros `\P` and `\pmf` print their blackboard letter directly.
 The blackboard letter marks a function of the distribution, as it marks the operators $\Expp$, $\biassym$ and $\varsym$ in [the bias and variance entry](#sec-bias-variance-symbols), and it cannot be mistaken for an italic variable.
 Sources differ on the type: Cover and Thomas write an italic $H$, and Wikipedia's article on [information content](https://en.wikipedia.org/wiki/Information_content) writes an upright $\mathrm{H}$ and $\operatorname{I}$.
 We chose blackboard bold so that one rule covers all of these functions.
 
-Three collisions are resolved by context:
+Four collisions are resolved by context:
 
 -   The quantile function $\Q$ prints the same letter as the rationals `\bbQ`, and it always takes an argument.
 -   The distribution function $\F$ prints the same letter as the finite field `\ffield{q}`, which always carries a subscript.
 -   The cumulative hazard $\H$ and the entropy $\entropy$ print the same letter, so the surrounding text says which one a formula means.
+-   The mutual information $\mutinfo$ prints the same letter as the identity matrix `\idmat`, and it always takes arguments.
 
 A PDF needs the `bbm` package for the lowercase letters, so list `macros-pdf-header.tex` before `macros.qmd` in `include-in-header`, as for `\devval`.
 
@@ -220,6 +221,12 @@ Some sources write the same quantity with the arguments in the other order, or c
 
 The [cross-entropy](https://morrison-lab.github.io/pds/expectation.html#def-cross-entropy) of $q$ relative to $p$ is written $\crossentropyf{p}{q}$, again with $p$ first, and it uses the same letter as the entropy because $\crossentropyf{p}{p}$ is the entropy.
 It is not symmetric either, so check the order of the arguments in a source before comparing a formula with ours.
+
+The [mutual information](https://morrison-lab.github.io/ids/entropy.html#def-mutual-information) of $X$ and $Y$ is written $\mutinfof{X}{Y}$, with a semicolon between the arguments, and the mutual information given $Z$ is $\cmutinfof{X}{Y}{Z}$.
+The semicolon marks the two variables as a pair that the information is shared between, so it is not read as the joint $(X, Y)$ of the entropy $\entropyf{X, Y}$.
+Cover and Thomas write an italic $I(X; Y)$ with the same semicolon [@cover2006elements, Section 2.3].
+We print the letter in blackboard bold, like the entropy, by the rule in [the section on functions of a distribution](#sec-distribution-function-notation).
+It prints the same letter as the identity matrix `\idmat`, which takes no argument in parentheses, so the surrounding text says which one a formula means.
 
 ## Names for the same object in machine learning and statistics {#sec-ml-statistics-names}
 
