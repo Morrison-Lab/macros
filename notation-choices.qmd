@@ -680,6 +680,7 @@ Others keep $f()$ for densities and mass functions, and use $P()$ only for the p
 When the distribution depends on a parameter, we write the parameter as a subscript, $\Prunder{\theta}{A}$, read "the probability of $A$ when the parameter is $\theta$".
 The macro `\Prunder` takes the subscript first and the event second, so a source does not need to put a subscript between `\Pr` and its parentheses by hand.
 Some sources write $P(A \mid \theta)$, which reads as conditioning on a random $\theta$.
+Murphy writes the likelihood of the data $D$ as $p(D \mid \theta)$ [@murphy2012mlapp, Section 3.3.1, Equation 3.11, p. 73].
 We reserve the bar for conditioning on an event or a random variable, and use the subscript when the parameter is fixed rather than random.
 
 We write the expectation of a random variable with square brackets, as in $\E{X}$.
