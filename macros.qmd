@@ -1480,6 +1480,7 @@
 \def\mutinfo{\distop{I}}
 \providecommand{\mutinfof}[2]{{\mutinfo\paren{#1 ; #2}}}
 \providecommand{\cmutinfof}[3]{{\mutinfo\paren{#1 ; #2 \mid #3}}}
+\providecommand{\mutinfoatf}[3]{{\mutinfo_{#1}\paren{#2 ; #3}}}
 \def\renyientropy{\entropy}
 \providecommand{\renyientropyf}[2]{{\renyientropy_{#1}\paren{#2}}}
 \def\kolm{K}
