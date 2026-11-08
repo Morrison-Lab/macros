@@ -1,5 +1,6 @@
 ---
 title: "Notation Choices"
+bibliography: references.bib
 format:
   html:
     include-in-header:
