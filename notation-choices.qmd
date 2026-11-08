@@ -660,6 +660,17 @@ Some write $\rho(A)$, the spectral radius, for the largest eigenvalue of a posit
 or $\norm{A}_2$, its spectral norm; for such a matrix both equal $\eigvalmaxf{A}$.
 Check which order and which symbol a source uses before you compare a bound.
 
+## The Frobenius norm {#sec-frobenius-norm}
+
+The Frobenius norm of a matrix is the square root of the sum of its squared entries.
+Our convention is to write it as `\normF{W}`, which prints $\normF{W}$, and its square as `\normFsq{W}`, which prints $\normFsq{W}$.
+A weight-decay penalty on a weight matrix is then $\normFsq{W}$.
+
+The macros follow `\norm` and `\normsq`, so the same call form works for every norm.
+The subscript is an upright $\mathrm{F}$, because it is a name and not an index.
+Writing `\norm{W}_F^2` by hand puts the subscript and the exponent on the closing delimiter, where they do not rise over a tall argument.
+The macros wrap the delimited group in braces to avoid that.
+
 ## Probability notation {#sec-probability-notation}
 
 A random variable is a function of the outcome of a random experiment, as in [the stochastic process example](#exm-stochastic-process-slots).
