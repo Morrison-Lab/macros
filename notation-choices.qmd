@@ -492,7 +492,9 @@ The macro `\smeandev` prints it as $\smeandev$.
 Other uses of a bar, such as `\Ebar` and `\incidence`, are not sample means and keep their own macros.
 
 Some sources use $e$ for the noise, so check what a source means by it.
-Some sources subtract in the other order, so check the sign before comparing a formula with ours.
+Some sources subtract in the other order.
+ISL defines the residual as $e_i = y_i - \hat{y}_i$, the observed value minus the predicted one [@james2021islr, section 3.1.1, page 62], where our `\prederr` is the predicted value minus the observed one.
+Check the sign before comparing a formula with ours.
 
 ## A deviation and a difference {#sec-deviation-difference}
 
