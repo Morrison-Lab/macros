@@ -1477,6 +1477,9 @@
 \providecommand{\crossentropyf}[2]{{\crossentropy\paren{#1, #2}}}
 \def\kldiv{{D_{\mathrm{KL}}}}
 \providecommand{\kldivf}[2]{{\kldiv\paren{#1 \,\Vert\, #2}}}
+\def\mutinfo{\distop{I}}
+\providecommand{\mutinfof}[2]{{\mutinfo\paren{#1 ; #2}}}
+\providecommand{\cmutinfof}[3]{{\mutinfo\paren{#1 ; #2 \mid #3}}}
 \def\kolm{K}
 \providecommand{\kolmf}[1]{{\kolm\paren{#1}}}
 \providecommand{\ckolmf}[2]{{\kolm\paren{#1 \mid #2}}}

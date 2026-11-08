@@ -1456,6 +1456,9 @@ name	interpretation
 \crossentropyf	cross-entropy of the second distribution relative to the first, H(p, q)
 \kldiv	Kullback–Leibler divergence symbol D_KL
 \kldivf	Kullback–Leibler divergence of the second distribution from the first, D_KL(p ‖ q)
+\mutinfo	mutual information symbol I (blackboard bold)
+\mutinfof	mutual information of two random variables, I(X; Y)
+\cmutinfof	mutual information of two random variables given a third, I(X; Y | Z)
 \kolm	Kolmogorov complexity symbol K
 \kolmf	Kolmogorov complexity of a string, K(x)
 \ckolmf	conditional Kolmogorov complexity of a string given an input, K(x | n)
