@@ -287,6 +287,8 @@ We often omit its arguments and write $\score$ for $\score(\theta)$.
 When we want to show the data, we write $\score(\theta; \vx)$, in the same style as the likelihood.
 
 Some sources write $U$ or $S$ for the score function instead.
+Dobson and Barnett write the score statistic as $U(\theta; y)$ [@dobson4e, Section 3.3, p. 55].
+Casella and Berger write $S(\theta)$ and call it the score statistic [@casella2002statistical, Section 10.3.2, p. 494].
 We write $\score$ because it keeps $U$ and $S$ free for other uses.
 
 ## A partial derivative written with a slash {#sec-slash-partial-derivative}
