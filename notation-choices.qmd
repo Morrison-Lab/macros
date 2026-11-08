@@ -130,8 +130,8 @@ Writing the intercept separately keeps it visible as its own number.
 In logistic regression, for example, the logistic function turns the linear predictor into a probability.
 The intercept then shifts the [decision boundary](https://morrison-lab.github.io/lds/chapters/logistic-regression.html#def-decision-boundary), the set of inputs where the model is undecided between the two classes, while the slopes tilt it.
 
-Other sources absorb the intercept.
-They add a constant input $1$ to the start of the input vector, and the coefficient vector then also holds the intercept, at its start.
+Hastie, Tibshirani and Friedman absorb the intercept [@hastie2009esl, Section 2.3.1, Equation 2.2, p. 11].
+They include a constant input $1$ in the input vector, and the coefficient vector then also holds the intercept.
 The linear predictor is then $\dprod{\vcoef}{\vpredvar}$ alone.
 Both forms describe the same model.
 When a source writes the linear predictor as $\dprod{\vcoef}{\vpredvar}$, check whether the input vector starts with a constant $1$.
