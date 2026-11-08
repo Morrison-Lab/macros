@@ -687,6 +687,7 @@ The meaning is the same.
 
 We write $X \ind Y$ for "$X$ is independent of $Y$".
 Some sources write $X \perp Y$, or state independence only in words.
+Murphy writes $X \perp Y$ [@murphy2012mlapp, Section 2.2.4, Equation 2.14, p. 30].
 
 We write $\neg A$ for the complement of an event $A$, read "not $A$".
 Casella and Berger write $A^c$ for the complement of a set $A$ [@casella2002statistical, Section 1.1],
