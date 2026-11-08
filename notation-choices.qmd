@@ -674,6 +674,7 @@ A probability density describes a continuous random variable, one that takes val
 We write $\Pr()$ for the probability of an event, and $\p()$ for a probability mass function or a probability density.
 Here $\p$ is a function name, not the number of inputs.
 Some sources write $P()$ for all of these.
+Murphy writes lower-case $p()$ for the probability of an event and for a probability mass function [@murphy2012mlapp, Section 2.2.1, p. 28].
 Others keep $f()$ for densities and mass functions, and use $P()$ only for the probability of an event.
 
 When the distribution depends on a parameter, we write the parameter as a subscript, $\Prunder{\theta}{A}$, read "the probability of $A$ when the parameter is $\theta$".
