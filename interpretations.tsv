@@ -1459,6 +1459,7 @@ name	interpretation
 \mutinfo	mutual information symbol I (blackboard bold)
 \mutinfof	mutual information of two random variables, I(X; Y)
 \cmutinfof	mutual information of two random variables given a third, I(X; Y | Z)
+\mutinfoatf	mutual information of two random variables under the conditional distribution given one value z of a third, I_z(X; Y)
 \renyientropy	Rényi entropy symbol (prints \entropy; give it the order as a subscript)
 \renyientropyf	Rényi entropy of the given order of a random variable, H_α(X)
 \kolm	Kolmogorov complexity symbol K

@@ -22,7 +22,7 @@ Complementary probability: $\cprob{p}$, $\cprob{\frac{a}{b}}^2$, $\cprob{\P(A)}$
 
 Perplexity: $\perplexityf{X}$, $\perplexityf{\frac{a}{b}}^2$, $\perplexity_q$.
 
-Mutual information: $\mutinfof{X}{Y}$, $\mutinfof{\frac{a}{b}}{Y}^2$, $\mutinfo_i$, $\cmutinfof{X}{Y}{Z}$, $\cmutinfof{\frac{a}{b}}{Y}{Z}^2$.
+Mutual information: $\mutinfof{X}{Y}$, $\mutinfof{\frac{a}{b}}{Y}^2$, $\mutinfo_i$, $\cmutinfof{X}{Y}{Z}$, $\cmutinfof{\frac{a}{b}}{Y}{Z}^2$, $\mutinfoatf{z}{X}{Y}$, $\mutinfoatf{z}{\frac{a}{b}}{Y}^2$.
 
 Rényi entropy: $\renyientropyf{2}{X}$, $\renyientropyf{\alpha}{\frac{a}{b}}^2$, $\renyientropy_2$.
 
