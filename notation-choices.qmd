@@ -218,9 +218,9 @@ It prints as upright $\perplexity$, and it does not depend on the base of the lo
 The [Kullback--Leibler divergence](https://morrison-lab.github.io/pds/expectation.html#def-kl-divergence) of $q$ from $p$ is written $\kldivf{p}{q}$, with the true or reference distribution first.
 Our convention puts $p$ first, because the divergence is the expectation under $p$ of the log ratio of $p$ to $q$.
 It is not symmetric, so swapping the arguments changes the value.
-Cover and Thomas call the same quantity the relative entropy or Kullback--Leibler distance and write it $D(p \,\Vert\, q)$ [@cover2006elements, section 2.3].
-Bishop calls it the relative entropy or Kullback--Leibler divergence [@bishop2006prml, section 1.6.1].
-Bishop's derivation of the EM algorithm puts the approximating distribution $q$ first, as $\mathrm{KL}(q \,\Vert\, p)$ [@bishop2006prml, section 9.4, equation 9.72].
+Cover and Thomas call the same quantity the relative entropy or Kullback--Leibler distance and write it $D(p \,\Vert\, q)$ [@cover2006elements, Section 2.3].
+Bishop calls it the relative entropy or Kullback--Leibler divergence [@bishop2006prml, Section 1.6.1].
+Bishop's derivation of the EM algorithm puts the approximating distribution $q$ first, as $\mathrm{KL}(q \,\Vert\, p)$ [@bishop2006prml, Section 9.4, Equation 9.72].
 Check which distribution comes first before comparing a formula with ours.
 
 The [cross-entropy](https://morrison-lab.github.io/pds/expectation.html#def-cross-entropy) of $q$ relative to $p$ is written $\crossentropyf{p}{q}$, again with $p$ first, and it uses the same letter as the entropy because $\crossentropyf{p}{p}$ is the entropy.
