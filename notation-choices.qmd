@@ -621,7 +621,8 @@ The two differ by a constant that does not depend on the parameter, and that con
 In symbols, the deviance of a fitted model is the difference between this quantity at the fitted model and at the saturated model.
 
 Other sources differ.
-Some write the design matrix as $X$, and some write the feature map as $\phi$ or $\Phi$.
+Some write the design matrix as $X$.
+Bishop writes the design matrix as $\Phi$, with entries $\Phi_{nj} = \phi_j(x_n)$ built from the basis functions $\phi_j$ [@bishop2006prml, Section 3.1.1, Equation 3.16, p. 142].
 Check which letter a source uses for each of the three objects before you compare formulas.
 
 ## Covariates, features and the feature matrix {#sec-feature-names}
