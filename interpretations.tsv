@@ -1452,6 +1452,9 @@ name	interpretation
 \rarity	rarity symbol r
 \rarityf	rarity of an outcome, the reciprocal of its probability, r(x) = 1/P(X=x)
 \rarityunderf	rarity of an outcome under a named distribution, r_q(x) = 1/q(x)
+\codelen	codeword length symbol ℓ
+\codelenf	length of the codeword for a symbol, ℓ(x)
+\expcodelen	expected code length symbol L, the expected value of \codelenf{X}
 \cprob	complementary probability, the probability 1 - p of the complement (prints p^{\mathsf{c}})
 \perplexity	perplexity symbol PP
 \perplexityf	perplexity of a random variable, PP(X) = b^{H_b(X)}, the geometric mean of the rarities
