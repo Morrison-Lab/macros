@@ -8,8 +8,9 @@ filter, using the Pandoc that Quarto bundles, and checks that:
 
 - the control (no filter) warns about the tilde-under and keeps raw TeX, so
   the test can fail;
-- the filtered run has no warning about \\smash or \\underset, and the Word
-  text has a tilde over each vector.
+- the filtered run has no conversion warning, and the Word text has a tilde
+  over each plain vector. An estimated vector (\\hvb) keeps only its hat,
+  because Word cannot convert two accents on one letter.
 
 Run from the repository root: python3 tools/test_docx_vecf.py
 """
@@ -21,14 +22,16 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parent.parent
 FILTER = ROOT / "docx-vecf.lua"
 
-# \vecf{\hat{\Noise}} has a nested argument, which the filter must match by
-# brace depth.
+# \hvb is a hat over a vector, and \vecf{\hat{\Noise}} has a nested argument;
+# the filter must match both by brace depth.
 PAGE = r"""
 $\vx$
 
 $\vbeta^\top \vx_i$
 
 $\vecf{\hat{\Noise}}$
+
+$\hvb$
 """
 
 
@@ -65,8 +68,12 @@ def main():
     for word in ("smash", "underset"):
         if word in filtered_err or word in filtered_text:
             failures.append(f"filtered run still mentions {word}")
+    if "Could not convert" in filtered_err:
+        failures.append("filtered run still has a conversion warning")
     if filtered_text.count("̃") < 3:
-        failures.append("filtered text does not have a combining tilde over each of the three vectors")
+        failures.append("filtered text does not have a combining tilde over each plain vector")
+    if "̂" not in filtered_text:
+        failures.append("filtered text lost the hat of the estimated vector")
 
     if failures:
         for failure in failures:

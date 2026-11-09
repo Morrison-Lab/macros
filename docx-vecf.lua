@@ -65,11 +65,26 @@ local function replace_vecf(text)
     local ph_end = after == VPHANTOM
       and group_end(text, arg_end + #VPHANTOM - 1)
     if not ph_end or text:sub(ph_end, ph_end) ~= "}" then
-      break
+      -- Not a well-formed tilde-under vector: keep this opening as it is
+      -- and go on scanning after it.
+      table.insert(out, text:sub(pos, s + #VECF_OPEN - 1))
+      pos = s + #VECF_OPEN
+    else
+      local arg = text:sub(arg_open + 1, arg_end - 2)
+      local before = text:sub(1, s - 1)
+      local in_accent = (before:match("\\hat{$") or before:match("\\widehat{$"))
+        and text:sub(ph_end + 1, ph_end + 1) == "}"
+      table.insert(out, text:sub(pos, s - 1))
+      -- Word cannot convert a second accent on the same letter, or an
+      -- accent on a composite argument, so there the mark is dropped and the
+      -- outer accent (such as the hat of an estimate) is kept.
+      if arg:find("{", 1, true) or in_accent then
+        table.insert(out, arg)
+      else
+        table.insert(out, "\\tilde{" .. arg .. "}")
+      end
+      pos = ph_end + 1
     end
-    table.insert(out, text:sub(pos, s - 1))
-    table.insert(out, "\\tilde{" .. text:sub(arg_open + 1, arg_end - 2) .. "}")
-    pos = ph_end + 1
   end
   table.insert(out, text:sub(pos))
   return table.concat(out)

@@ -1,0 +1,36 @@
+# Converts a page that includes macros.qmd to Word with and without
+# docx-vecf.lua, and checks that the filter gives each vector an over-tilde
+# (#337). The filter matches the exact expansion of \vecf, so a change to
+# that macro in macros.qmd must re-run this check. See tools/test_docx_vecf.py.
+name: Check Word output
+
+on:
+  pull_request:
+    paths:
+      - macros.qmd
+      - docx-vecf.lua
+      - tools/test_docx_vecf.py
+      - .github/workflows/check-docx.yml
+  push:
+    branches: [main]
+    paths:
+      - macros.qmd
+      - docx-vecf.lua
+      - tools/test_docx_vecf.py
+      - .github/workflows/check-docx.yml
+
+permissions:
+  contents: read
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: quarto-dev/quarto-actions/setup@v2
+        env:
+          GH_TOKEN: ${{ github.token }}
+      - name: Check the Word fallback for the vector mark
+        run: python3 tools/test_docx_vecf.py
