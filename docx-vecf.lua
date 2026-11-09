@@ -75,13 +75,27 @@ local function replace_vecf(text)
       local in_accent = (before:match("\\hat{$") or before:match("\\widehat{$"))
         and text:sub(ph_end + 1, ph_end + 1) == "}"
       table.insert(out, text:sub(pos, s - 1))
-      -- Word cannot convert a second accent on the same letter, or an
-      -- accent on a composite argument, so there the mark is dropped and the
-      -- outer accent (such as the hat of an estimate) is kept.
-      if arg:find("{", 1, true) or in_accent then
+      -- Word cannot convert a second accent on the same letter, so there
+      -- the vector mark is dropped and the other accent (such as the hat of
+      -- an estimate) is kept. Word cannot convert an accent over a script
+      -- either, so for a letter with a subscript or superscript, such as
+      -- \prederr, the tilde goes over the base letter.
+      local has_accent = arg:match("^\\hat{") or arg:match("^\\widehat{")
+        or arg:match("^\\bar{") or arg:match("^\\dot{")
+        or arg:match("^\\tilde{") or arg:match("^\\widetilde{")
+      local inner = arg
+      if group_end(arg, 1) == #arg + 1 and arg:sub(1, 1) == "{" then
+        inner = arg:sub(2, -2)
+      end
+      local base, scripts = inner:match("^(\\%a+)([_^].*)$")
+      if has_accent or in_accent then
+        table.insert(out, arg)
+      elseif base then
+        table.insert(out, "\\tilde{" .. base .. "}" .. scripts)
+      elseif inner:find("{", 1, true) then
         table.insert(out, arg)
       else
-        table.insert(out, "\\tilde{" .. arg .. "}")
+        table.insert(out, "\\tilde{" .. inner .. "}")
       end
       pos = ph_end + 1
     end

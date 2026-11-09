@@ -46,6 +46,7 @@ In Word (.docx) output only, the vector mark is a tilde over the letter, not und
 Pandoc converts math to native Word math, and it cannot read a mark under a letter, so without a fallback each vector prints as raw TeX.
 The Lua filter `docx-vecf.lua` rewrites `\vecf` to the over-tilde in Word output, and HTML, slides and PDF keep the tilde under the letter.
 Word cannot convert two accents on one letter, so an estimated vector in Word shows only its hat, with no vector mark.
+Word also cannot convert an accent over a subscripted letter, so a vector such as `\vprederr` carries its tilde over the base letter alone.
 
 ## Subscripts and parentheses {#sec-subscripts-parentheses}
 

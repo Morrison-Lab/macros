@@ -32,6 +32,8 @@ $\vbeta^\top \vx_i$
 $\vecf{\hat{\Noise}}$
 
 $\hvb$
+
+$\vprederr$
 """
 
 
@@ -70,7 +72,7 @@ def main():
             failures.append(f"filtered run still mentions {word}")
     if "Could not convert" in filtered_err:
         failures.append("filtered run still has a conversion warning")
-    if filtered_text.count("̃") < 3:
+    if filtered_text.count("̃") < 4:
         failures.append("filtered text does not have a combining tilde over each plain vector")
     if "̂" not in filtered_text:
         failures.append("filtered text lost the hat of the estimated vector")
