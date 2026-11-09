@@ -1473,6 +1473,9 @@
 \def\rarity{\distop{r}}
 \providecommand{\rarityf}[1]{{\rarity\paren{#1}}}
 \providecommand{\rarityunderf}[2]{{\rarity_{#1}\paren{#2}}}
+\def\codelen{\ell}
+\providecommand{\codelenf}[1]{{\codelen\paren{#1}}}
+\def\expcodelen{L}
 \providecommand{\cprob}[1]{{{#1}^{\mathsf{c}}}}
 \def\perplexity{\mathrm{PP}}
 \providecommand{\perplexityf}[1]{{\perplexity\paren{#1}}}
