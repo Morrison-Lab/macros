@@ -1041,6 +1041,7 @@ R computes the cross-product matrix with `crossprod(X, Y)`, which equals `t(X) %
 ## A brace that closes a display {#sec-closing-brace}
 
 A one-sided brace that groups several lines of a display and labels the group uses `\cbr{...}`, which prints the argument followed by a closing curly brace that spans the argument's height, with no opening delimiter.
+For example, `\cbr{\begin{array}{l}a\\b\end{array}}` prints $\cbr{\begin{array}{l}a\\b\end{array}}$.
 `\cbl{...}` is its mirror, an opening brace alone.
 The pair `\left.` and `\right\}` written by hand is the same construct, and the macro names it.
 
