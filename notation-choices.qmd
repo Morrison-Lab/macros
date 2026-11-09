@@ -250,6 +250,18 @@ The [Rényi entropy](https://morrison-lab.github.io/ids/entropy.html#def-renyi-e
 Rényi's paper writes the order as a subscript in the same position [@renyi1961measures].
 It uses the same blackboard letter as the Shannon entropy $\entropyf{X}$, which is the limit of the Rényi entropy as the order tends to $1$, and the subscript tells the two apart.
 
+## The length of a codeword and the expected code length {#sec-code-length-notation}
+
+A code assigns each symbol $x$ a string of digits, its codeword.
+Our convention is to write the length of that codeword as `\codelenf{x}`, which prints $\codelenf{x}$, with the bare symbol `\codelen` printing $\codelen$.
+The expected code length, the average of the codeword length over the distribution of the symbol, is `\expcodelen`, which prints $\expcodelen$, so that $\expcodelen = \E{\codelenf{X}}$.
+Each macro names its role, so the letter is our choice.
+Cover and Thomas write the same quantities as $l(x)$ and $L(C) = \sum_x p(x) l(x)$ [@cover2006elements, Section 5.1, Equation 5.1, p. 104].
+
+The letters overlap with other macros: `\llik` also prints $\codelen$ and `\loss` also prints $\expcodelen$.
+A codeword length does not appear in the same expression as a log-likelihood or a loss, so we accept the overlap rather than take unusual letters.
+The probability mass function in the sum is `\pf{x}`, which prints $\pf{x}$ in blackboard bold by [the rule for functions of a distribution](#sec-distribution-function-notation), so we do not add a second macro for a plain italic $p(x)$.
+
 ## Names for the same object in machine learning and statistics {#sec-ml-statistics-names}
 
 Machine learning and statistics texts often use different names and symbols for the same object.
