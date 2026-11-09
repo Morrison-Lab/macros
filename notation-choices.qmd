@@ -177,6 +177,11 @@ Some software reports the average under the same name.
 On the same data, dividing every cross-entropy by the number of examples does not change which of two models is preferred, but it does change the number.
 So also check whether a source reports the sum or the average before comparing its numbers with ours.
 
+When a page needs the average, we write it as `\avgcrossent`, which prints $\avgcrossent$, so that the bar marks the average over the examples as it does for `\smean{x}`.
+To state the base, we write `\avgcrossentbase{b}`, which prints $\avgcrossentbase{b}$, and base $e$ is `\avgcrossentbase{e}`.
+Changing the base divides by a constant, as in $\avgcrossentbase{b} = \avgcrossentbase{e} / \ln b$.
+The symbol is the entropy symbol of `\crossentropy` with a bar, not a plain italic $H$ with a bar, so it matches the cross-entropy of two distributions.
+
 ## Functions of a population distribution {#sec-distribution-function-notation}
 
 Every function that describes a population distribution is blackboard bold (Ezra, 2026-11-04).

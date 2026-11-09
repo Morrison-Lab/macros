@@ -1478,6 +1478,8 @@
 \providecommand{\perplexityf}[1]{{\perplexity\paren{#1}}}
 \def\crossentropy{\entropy}
 \providecommand{\crossentropyf}[2]{{\crossentropy\paren{#1, #2}}}
+\def\avgcrossent{\smean{\crossentropy}}
+\providecommand{\avgcrossentbase}[1]{{\avgcrossent_{#1}}}
 \def\kldiv{{D_{\mathrm{KL}}}}
 \providecommand{\kldivf}[2]{{\kldiv\paren{#1 \,\Vert\, #2}}}
 \def\mutinfo{\distop{I}}
