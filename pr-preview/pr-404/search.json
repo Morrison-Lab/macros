@@ -389,7 +389,7 @@
     "href": "notation-choices.html#sec-closing-brace",
     "title": "Notation Choices",
     "section": "A brace that closes a display",
-    "text": "A brace that closes a display\nA one-sided brace that groups several lines of a display and labels the group uses \\cbr{...}, which prints the argument followed by a closing curly brace that spans the argument’s height, with no opening delimiter. \\cbl{...} is its mirror, an opening brace alone. The pair \\left. and \\right\\} written by hand is the same construct, and the macro names it.\nOther sources draw the same brace with \\left., \\right\\} or \\underbrace and \\overbrace, which place the label under or over the grouped expression instead of beside it."
+    "text": "A brace that closes a display\nA one-sided brace that groups several lines of a display and labels the group uses \\cbr{...}, which prints the argument followed by a closing curly brace that spans the argument’s height, with no opening delimiter. For example, \\cbr{\\begin{array}{l}a\\\\b\\end{array}} prints \\(\\cbr{\\begin{array}{l}a\\\\b\\end{array}}\\). \\cbl{...} is its mirror, an opening brace alone. The pair \\left. and \\right\\} written by hand is the same construct, and the macro names it.\nOther sources draw the same brace with \\left., \\right\\} or \\underbrace and \\overbrace, which place the label under or over the grouped expression instead of beside it."
   },
   {
     "objectID": "demo-shortcode.html",
