@@ -2417,16 +2417,18 @@ Table&nbsp;9: Other symbols used in these notes
 <span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a>  <span class="at">Macros =</span> <span class="fu">sprintf</span>(<span class="st">"`%s`"</span>, symbols_all<span class="sc">$</span>macros),</span>
 <span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a>  <span class="at">Meaning =</span> <span class="fu">gsub</span>(<span class="st">"|"</span>, <span class="st">"</span><span class="sc">\\</span><span class="st">|"</span>, symbols_all<span class="sc">$</span>interpretation, <span class="at">fixed =</span> <span class="cn">TRUE</span>)</span>
 <span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a>)</span>
-<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a><span class="co"># A macro named in the meaning, such as an alias note, is shown as code so</span></span>
-<span id="cb3-13"><a href="#cb3-13" aria-hidden="true" tabindex="-1"></a><span class="co"># that markdown does not read its backslash as an escape.</span></span>
-<span id="cb3-14"><a href="#cb3-14" aria-hidden="true" tabindex="-1"></a>all_table<span class="sc">$</span>Meaning <span class="ot">&lt;-</span> <span class="fu">gsub</span>(</span>
-<span id="cb3-15"><a href="#cb3-15" aria-hidden="true" tabindex="-1"></a>  <span class="st">"(</span><span class="sc">\\\\</span><span class="st">[A-Za-z]+)"</span>, <span class="st">"`</span><span class="sc">\\</span><span class="st">1`"</span>, all_table<span class="sc">$</span>Meaning</span>
-<span id="cb3-16"><a href="#cb3-16" aria-hidden="true" tabindex="-1"></a>)</span>
-<span id="cb3-17"><a href="#cb3-17" aria-hidden="true" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">kable</span>(</span>
-<span id="cb3-18"><a href="#cb3-18" aria-hidden="true" tabindex="-1"></a>  all_table,</span>
-<span id="cb3-19"><a href="#cb3-19" aria-hidden="true" tabindex="-1"></a>  <span class="at">format =</span> <span class="st">"pipe"</span>,</span>
-<span id="cb3-20"><a href="#cb3-20" aria-hidden="true" tabindex="-1"></a>  <span class="at">caption =</span> <span class="st">"Every symbol that a macro prints {#tbl-symbols-all}"</span></span>
-<span id="cb3-21"><a href="#cb3-21" aria-hidden="true" tabindex="-1"></a>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a><span class="co"># A macro named in the meaning, such as an alias note or a print hint, is</span></span>
+<span id="cb3-13"><a href="#cb3-13" aria-hidden="true" tabindex="-1"></a><span class="co"># shown as code, with any braced arguments inside the code span, so that</span></span>
+<span id="cb3-14"><a href="#cb3-14" aria-hidden="true" tabindex="-1"></a><span class="co"># markdown does not read its backslash as an escape.</span></span>
+<span id="cb3-15"><a href="#cb3-15" aria-hidden="true" tabindex="-1"></a>all_table<span class="sc">$</span>Meaning <span class="ot">&lt;-</span> <span class="fu">gsub</span>(</span>
+<span id="cb3-16"><a href="#cb3-16" aria-hidden="true" tabindex="-1"></a>  <span class="st">"(</span><span class="sc">\\\\</span><span class="st">[A-Za-z]+(</span><span class="sc">\\</span><span class="st">{(?:[^{}]|(?2))*</span><span class="sc">\\</span><span class="st">})*)"</span>, <span class="st">"`</span><span class="sc">\\</span><span class="st">1`"</span>, all_table<span class="sc">$</span>Meaning,</span>
+<span id="cb3-17"><a href="#cb3-17" aria-hidden="true" tabindex="-1"></a>  <span class="at">perl =</span> <span class="cn">TRUE</span></span>
+<span id="cb3-18"><a href="#cb3-18" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb3-19"><a href="#cb3-19" aria-hidden="true" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">kable</span>(</span>
+<span id="cb3-20"><a href="#cb3-20" aria-hidden="true" tabindex="-1"></a>  all_table,</span>
+<span id="cb3-21"><a href="#cb3-21" aria-hidden="true" tabindex="-1"></a>  <span class="at">format =</span> <span class="st">"pipe"</span>,</span>
+<span id="cb3-22"><a href="#cb3-22" aria-hidden="true" tabindex="-1"></a>  <span class="at">caption =</span> <span class="st">"Every symbol that a macro prints {#tbl-symbols-all}"</span></span>
+<span id="cb3-23"><a href="#cb3-23" aria-hidden="true" tabindex="-1"></a>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div id="tbl-symbols-all" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-tbl figure">
 <figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-symbols-all-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
@@ -2530,12 +2532,12 @@ Table&nbsp;10: Every symbol that a macro prints
 <tr class="odd">
 <td style="text-align: left;"><span class="math inline">\(\avgcrossent\)</span></td>
 <td style="text-align: left;"><code>\avgcrossent</code></td>
-<td style="text-align: left;">average cross-entropy per example, the sum over the N examples divided by N (prints <code>\smean</code>{<code>\crossentropy</code>})</td>
+<td style="text-align: left;">average cross-entropy per example, the sum over the N examples divided by N (prints <code>\smean{\crossentropy}</code>)</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;"><span class="math inline">\(\avgcrossentbase{a}\)</span></td>
 <td style="text-align: left;"><code>\avgcrossentbase</code></td>
-<td style="text-align: left;">average cross-entropy per example with the base of the logarithm as the argument (prints <code>\avgcrossent</code> with that subscript, as in <code>\avgcrossentbase</code>{b})</td>
+<td style="text-align: left;">average cross-entropy per example with the base of the logarithm as the argument (prints <code>\avgcrossent</code> with that subscript, as in <code>\avgcrossentbase{b}</code>)</td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;"><span class="math inline">\(\avgfit\)</span></td>
@@ -2598,7 +2600,7 @@ Table&nbsp;10: Every symbol that a macro prints
 <td style="text-align: left;">Greek letter beta (β)</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;"><span class="math inline">\(\ba\)</span></td>
+<td style="text-align: left;"><span class="math inline">\(\ba a\ea\)</span></td>
 <td style="text-align: left;"><code>\ba</code></td>
 <td style="text-align: left;">begin aligned math environment</td>
 </tr>
@@ -3128,7 +3130,7 @@ Table&nbsp;10: Every symbol that a macro prints
 <td style="text-align: left;">bias function Bias(·)</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;"><span class="math inline">\(\bias\)</span></td>
+<td style="text-align: left;"><span class="math inline">\(\bias{a}\)</span></td>
 <td style="text-align: left;"><code>\bias</code></td>
 <td style="text-align: left;">bias function (alias for <code>\Bias</code>)</td>
 </tr>
@@ -3155,7 +3157,7 @@ Table&nbsp;10: Every symbol that a macro prints
 <tr class="even">
 <td style="text-align: left;"><span class="math inline">\(\binomial{a}{b}\)</span></td>
 <td style="text-align: left;"><code>\binomial</code></td>
-<td style="text-align: left;">binomial coefficient, “n choose k” (prints <code>\binom</code>{n}{k})</td>
+<td style="text-align: left;">binomial coefficient, “n choose k” (prints <code>\binom{n}{k}</code>)</td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;"><span class="math inline">\(\black{a}\)</span></td>
@@ -3180,7 +3182,7 @@ Table&nbsp;10: Every symbol that a macro prints
 <tr class="odd">
 <td style="text-align: left;"><span class="math inline">\(\candpredvalf{a}{b}\)</span></td>
 <td style="text-align: left;"><code>\candpredvalf</code></td>
-<td style="text-align: left;">prediction at the covariate value given as the second argument, from the model that the candidate procedure with the index given as the first argument fits to the training set (prints <code>\fitted</code>_{l}<code>\paren</code>{x}, where the subscript is the candidate index, not an observation index; the candidate counterpart of <code>\predvalf</code>; unlike <code>\predval</code> and unlike <code>\epredfnf</code>, which applies any estimated prediction function, it is fixed to the candidate’s training-set fit)</td>
+<td style="text-align: left;">prediction at the covariate value given as the second argument, from the model that the candidate procedure with the index given as the first argument fits to the training set (prints <code>\fitted</code>_{l}<code>\paren{x}</code>, where the subscript is the candidate index, not an observation index; the candidate counterpart of <code>\predvalf</code>; unlike <code>\predval</code> and unlike <code>\epredfnf</code>, which applies any estimated prediction function, it is fixed to the candidate’s training-set fit)</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;"><span class="math inline">\(\candproc{a}\)</span></td>
@@ -3195,7 +3197,7 @@ Table&nbsp;10: Every symbol that a macro prints
 <tr class="even">
 <td style="text-align: left;"><span class="math inline">\(\candproctunedf{a}{b}\)</span></td>
 <td style="text-align: left;"><code>\candproctunedf</code></td>
-<td style="text-align: left;">fitted model that the tuned procedure with the label given as the first argument fits to the data set given as the second argument (prints <code>\candproctuned</code>{<code>\text</code>{CV}}<code>\paren</code>{D}; the f form of <code>\candproctuned</code>, which names the procedure and leaves the data set implicit)</td>
+<td style="text-align: left;">fitted model that the tuned procedure with the label given as the first argument fits to the data set given as the second argument (prints <code>\candproctuned{\text{CV}}``\paren{D}</code>; the f form of <code>\candproctuned</code>, which names the procedure and leaves the data set implicit)</td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;"><span class="math inline">\(\card{a}\)</span></td>
@@ -3255,12 +3257,12 @@ Table&nbsp;10: Every symbol that a macro prints
 <tr class="even">
 <td style="text-align: left;"><span class="math inline">\(\censhist{a}\)</span></td>
 <td style="text-align: left;"><code>\censhist</code></td>
-<td style="text-align: left;">censoring history through time k (prints <code>\bar</code>{C}_k)</td>
+<td style="text-align: left;">censoring history through time k (prints <code>\bar{C}</code>_k)</td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;"><span class="math inline">\(\censvalhist{a}\)</span></td>
 <td style="text-align: left;"><code>\censvalhist</code></td>
-<td style="text-align: left;">a censoring-history value through time k (prints <code>\bar</code>{c}_k)</td>
+<td style="text-align: left;">a censoring-history value through time k (prints <code>\bar{c}</code>_k)</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;"><span class="math inline">\(\cent{a}\)</span></td>
@@ -3285,12 +3287,12 @@ Table&nbsp;10: Every symbol that a macro prints
 <tr class="even">
 <td style="text-align: left;"><span class="math inline">\(\cilof{a}\)</span></td>
 <td style="text-align: left;"><code>\cilof</code></td>
-<td style="text-align: left;">lower endpoint statistic of a confidence interval as a function of the data (prints L<code>\paren</code>{x})</td>
+<td style="text-align: left;">lower endpoint statistic of a confidence interval as a function of the data (prints L<code>\paren{x}</code>)</td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;"><span class="math inline">\(\cintf{a}\)</span></td>
 <td style="text-align: left;"><code>\cintf</code></td>
-<td style="text-align: left;">confidence interval as the closed interval of its endpoint statistics (prints <code>\sb</code>{<code>\cilof</code>{x}, <code>\ciupf</code>{x}})</td>
+<td style="text-align: left;">confidence interval as the closed interval of its endpoint statistics (prints <code>\sb{\cilof{x}, \ciupf{x}}</code>)</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;"><span class="math inline">\(\cirad\)</span></td>
@@ -3310,7 +3312,7 @@ Table&nbsp;10: Every symbol that a macro prints
 <tr class="odd">
 <td style="text-align: left;"><span class="math inline">\(\ciupf{a}\)</span></td>
 <td style="text-align: left;"><code>\ciupf</code></td>
-<td style="text-align: left;">upper endpoint statistic of a confidence interval as a function of the data (prints U<code>\paren</code>{x})</td>
+<td style="text-align: left;">upper endpoint statistic of a confidence interval as a function of the data (prints U<code>\paren{x}</code>)</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;"><span class="math inline">\(\ckolmf{a}{b}\)</span></td>
@@ -3335,7 +3337,7 @@ Table&nbsp;10: Every symbol that a macro prints
 <tr class="even">
 <td style="text-align: left;"><span class="math inline">\(\cmeanf{a}\)</span></td>
 <td style="text-align: left;"><code>\cmeanf</code></td>
-<td style="text-align: left;">conditional population mean of the outcome given the predictor at x, <code>\cmeanf</code>{x}; the same as <code>\truemeansubf</code>{<code>\Outvar</code> <code>\given</code> <code>\Predvar</code>}{x} and <code>\condE</code>{<code>\Outvar</code>}{<code>\Predvar</code> = x}</td>
+<td style="text-align: left;">conditional population mean of the outcome given the predictor at x, <code>\cmeanf{x}</code>; the same as <code>\truemeansubf{\Outvar \given \Predvar}{x}</code> and <code>\condE{\Outvar}{\Predvar = x}</code></td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;"><span class="math inline">\(\cmutinfof{a}{b}{c}\)</span></td>
@@ -3370,27 +3372,27 @@ Table&nbsp;10: Every symbol that a macro prints
 <tr class="odd">
 <td style="text-align: left;"><span class="math inline">\(\condcdf{a}{b}\)</span></td>
 <td style="text-align: left;"><code>\condcdf</code></td>
-<td style="text-align: left;">conditional cumulative distribution function F(A &amp;#124; B), <code>\condcdf</code>{A}{B}</td>
+<td style="text-align: left;">conditional cumulative distribution function F(A &amp;#124; B), <code>\condcdf{A}{B}</code></td>
 </tr>
 <tr class="even">
 <td style="text-align: left;"><span class="math inline">\(\condCov{a}{b}{c}\)</span></td>
 <td style="text-align: left;"><code>\condCov</code></td>
-<td style="text-align: left;">conditional covariance Cov(A, B &amp;#124; C), <code>\condCov</code>{A}{B}{C}</td>
+<td style="text-align: left;">conditional covariance Cov(A, B &amp;#124; C), <code>\condCov{A}{B}{C}</code></td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;"><span class="math inline">\(\condE{a}{b}\)</span></td>
 <td style="text-align: left;"><code>\condE</code></td>
-<td style="text-align: left;">conditional expected value E[A &amp;#124; B], <code>\condE</code>{A}{B}</td>
+<td style="text-align: left;">conditional expected value E[A &amp;#124; B], <code>\condE{A}{B}</code></td>
 </tr>
 <tr class="even">
 <td style="text-align: left;"><span class="math inline">\(\condpdf{a}{b}\)</span></td>
 <td style="text-align: left;"><code>\condpdf</code></td>
-<td style="text-align: left;">conditional probability density function f(A &amp;#124; B), <code>\condpdf</code>{A}{B}</td>
+<td style="text-align: left;">conditional probability density function f(A &amp;#124; B), <code>\condpdf{A}{B}</code></td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;"><span class="math inline">\(\condpmf{a}{b}\)</span></td>
 <td style="text-align: left;"><code>\condpmf</code></td>
-<td style="text-align: left;">conditional probability mass function (prints <code>\pmf</code> of A given B), <code>\condpmf</code>{A}{B}</td>
+<td style="text-align: left;">conditional probability mass function (prints <code>\pmf</code> of A given B), <code>\condpmf{A}{B}</code></td>
 </tr>
 <tr class="even">
 <td style="text-align: left;"><span class="math inline">\(\condpopriskf{a}{b}\)</span></td>
@@ -3400,12 +3402,12 @@ Table&nbsp;10: Every symbol that a macro prints
 <tr class="odd">
 <td style="text-align: left;"><span class="math inline">\(\condPr{a}{b}\)</span></td>
 <td style="text-align: left;"><code>\condPr</code></td>
-<td style="text-align: left;">conditional probability Pr(A &amp;#124; B), <code>\condPr</code>{A}{B}</td>
+<td style="text-align: left;">conditional probability Pr(A &amp;#124; B), <code>\condPr{A}{B}</code></td>
 </tr>
 <tr class="even">
 <td style="text-align: left;"><span class="math inline">\(\condVar{a}{b}\)</span></td>
 <td style="text-align: left;"><code>\condVar</code></td>
-<td style="text-align: left;">conditional variance Var(A &amp;#124; B), <code>\condVar</code>{A}{B}</td>
+<td style="text-align: left;">conditional variance Var(A &amp;#124; B), <code>\condVar{A}{B}</code></td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;"><span class="math inline">\(\Cor{a}\)</span></td>
@@ -3413,7 +3415,7 @@ Table&nbsp;10: Every symbol that a macro prints
 <td style="text-align: left;">correlation function Cor(·)</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;"><span class="math inline">\(\Corf\)</span></td>
+<td style="text-align: left;"><span class="math inline">\(\Corf{a}\)</span></td>
 <td style="text-align: left;"><code>\Corf</code></td>
 <td style="text-align: left;">correlation function (alias for <code>\Cor</code>)</td>
 </tr>
@@ -3423,7 +3425,7 @@ Table&nbsp;10: Every symbol that a macro prints
 <td style="text-align: left;">correlation Corr(·) applied to argument</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;"><span class="math inline">\(\Corrf\)</span></td>
+<td style="text-align: left;"><span class="math inline">\(\Corrf{a}\)</span></td>
 <td style="text-align: left;"><code>\Corrf</code></td>
 <td style="text-align: left;">correlation Corr(·) applied to argument (alias for <code>\Corr</code>)</td>
 </tr>
@@ -3468,7 +3470,7 @@ Table&nbsp;10: Every symbol that a macro prints
 <td style="text-align: left;">covariance function Cov(·)</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;"><span class="math inline">\(\Covf\)</span></td>
+<td style="text-align: left;"><span class="math inline">\(\Covf{a}\)</span></td>
 <td style="text-align: left;"><code>\Covf</code></td>
 <td style="text-align: left;">covariance function (alias for <code>\Cov</code>)</td>
 </tr>
@@ -3478,14 +3480,14 @@ Table&nbsp;10: Every symbol that a macro prints
 <td style="text-align: left;">estimated covariance function Ĉov(·)</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;"><span class="math inline">\(\covhf\)</span></td>
+<td style="text-align: left;"><span class="math inline">\(\covhf{a}\)</span></td>
 <td style="text-align: left;"><code>\covhf \hcovf</code></td>
 <td style="text-align: left;">estimated covariance function (alias)</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;"><span class="math inline">\(\covhist{a}\)</span></td>
 <td style="text-align: left;"><code>\covhist</code></td>
-<td style="text-align: left;">covariate history through time k (prints <code>\bar</code>{L}_k)</td>
+<td style="text-align: left;">covariate history through time k (prints <code>\bar{L}</code>_k)</td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;"><span class="math inline">\(\covmat\)</span></td>
@@ -3505,17 +3507,17 @@ Table&nbsp;10: Every symbol that a macro prints
 <tr class="even">
 <td style="text-align: left;"><span class="math inline">\(\covvalhist{a}\)</span></td>
 <td style="text-align: left;"><code>\covvalhist</code></td>
-<td style="text-align: left;">a covariate-history value through time k (prints <code>\bar</code>{l}_k)</td>
+<td style="text-align: left;">a covariate-history value through time k (prints <code>\bar{l}</code>_k)</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;"><span class="math inline">\(\cpf\)</span></td>
+<td style="text-align: left;"><span class="math inline">\(\cpf{a}{b}\)</span></td>
 <td style="text-align: left;"><code>\cpf \tprodf</code></td>
 <td style="text-align: left;">cross-product matrix x′y (alias for <code>\tprod</code>)</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;"><span class="math inline">\(\cprob{a}\)</span></td>
 <td style="text-align: left;"><code>\cprob</code></td>
-<td style="text-align: left;">complementary probability, the probability 1 - p of the complement (prints p^{<code>\mathsf</code>{c}})</td>
+<td style="text-align: left;">complementary probability, the probability 1 - p of the complement (prints p^{<code>\mathsf{c}</code>})</td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;"><span class="math inline">\(\cR\)</span></td>
@@ -3538,7 +3540,7 @@ Table&nbsp;10: Every symbol that a macro prints
 <td style="text-align: left;">cumulative hazard factor function θ_Λ(·)</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;"><span class="math inline">\(\cuhazff\)</span></td>
+<td style="text-align: left;"><span class="math inline">\(\cuhazff{a}\)</span></td>
 <td style="text-align: left;"><code>\cuhazff \fcuhazf</code></td>
 <td style="text-align: left;">cumulative hazard factor function (shorthand for <code>\cuhazfactorf</code>)</td>
 </tr>
@@ -3553,7 +3555,7 @@ Table&nbsp;10: Every symbol that a macro prints
 <td style="text-align: left;">cumulative hazard ratio function ϙ_Λ(·)</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;"><span class="math inline">\(\cuhazrf\)</span></td>
+<td style="text-align: left;"><span class="math inline">\(\cuhazrf{a}\)</span></td>
 <td style="text-align: left;"><code>\cuhazrf \rcuhazf</code></td>
 <td style="text-align: left;">cumulative hazard ratio function (alias for <code>\cuhazratiof</code>)</td>
 </tr>
@@ -3570,12 +3572,12 @@ Table&nbsp;10: Every symbol that a macro prints
 <tr class="odd">
 <td style="text-align: left;"><span class="math inline">\(\cvestof{a}{b}\)</span></td>
 <td style="text-align: left;"><code>\cvestof</code></td>
-<td style="text-align: left;">k-fold cross-validation estimate of the generalization error of fitting procedure g, Êrr^g_CV(k); <code>\cvestof</code>{k}{g}</td>
+<td style="text-align: left;">k-fold cross-validation estimate of the generalization error of fitting procedure g, Êrr^g_CV(k); <code>\cvestof{k}{g}</code></td>
 </tr>
 <tr class="even">
 <td style="text-align: left;"><span class="math inline">\(\cvestoff{a}{b}{c}\)</span></td>
 <td style="text-align: left;"><code>\cvestoff</code></td>
-<td style="text-align: left;">k-fold cross-validation estimate of the generalization error of the fitting procedure given as the second argument, computed on the data set given as the third argument (prints <code>\cvestof</code>{k}{g}<code>\paren</code>{D}; the f form of <code>\cvestof</code>, which leaves the data set implicit)</td>
+<td style="text-align: left;">k-fold cross-validation estimate of the generalization error of the fitting procedure given as the second argument, computed on the data set given as the third argument (prints <code>\cvestof{k}{g}``\paren{D}</code>; the f form of <code>\cvestof</code>, which leaves the data set implicit)</td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;"><span class="math inline">\(\cvse{a}\)</span></td>
@@ -3585,12 +3587,12 @@ Table&nbsp;10: Every symbol that a macro prints
 <tr class="even">
 <td style="text-align: left;"><span class="math inline">\(\cvseof{a}{b}\)</span></td>
 <td style="text-align: left;"><code>\cvseof</code></td>
-<td style="text-align: left;">standard error of the k-fold cross-validation estimate for fitting procedure g, SE^g_CV(k); <code>\cvseof</code>{k}{g}</td>
+<td style="text-align: left;">standard error of the k-fold cross-validation estimate for fitting procedure g, SE^g_CV(k); <code>\cvseof{k}{g}</code></td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;"><span class="math inline">\(\cvseoff{a}{b}{c}\)</span></td>
 <td style="text-align: left;"><code>\cvseoff</code></td>
-<td style="text-align: left;">standard error of the k-fold cross-validation estimate for the fitting procedure given as the second argument, computed on the data set given as the third argument (prints <code>\cvseof</code>{k}{g}<code>\paren</code>{D}; the f form of <code>\cvseof</code>, which leaves the data set implicit)</td>
+<td style="text-align: left;">standard error of the k-fold cross-validation estimate for the fitting procedure given as the second argument, computed on the data set given as the third argument (prints <code>\cvseof{k}{g}``\paren{D}</code>; the f form of <code>\cvseof</code>, which leaves the data set implicit)</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;"><span class="math inline">\(\cyan{a}\)</span></td>
@@ -3703,7 +3705,7 @@ Table&nbsp;10: Every symbol that a macro prints
 <td style="text-align: left;">partial derivative ∂f/∂x with numerator</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;"><span class="math inline">\(\derivfdn\)</span></td>
+<td style="text-align: left;"><span class="math inline">\(\derivfdn{a}{b}\)</span></td>
 <td style="text-align: left;"><code>\derivfdn</code></td>
 <td style="text-align: left;">alias for <code>\derivff</code> (denominator first, numerator second)</td>
 </tr>
@@ -3713,7 +3715,7 @@ Table&nbsp;10: Every symbol that a macro prints
 <td style="text-align: left;">partial derivative ∂f/∂x (reversed argument order)</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;"><span class="math inline">\(\derivfnd\)</span></td>
+<td style="text-align: left;"><span class="math inline">\(\derivfnd{a}{b}\)</span></td>
 <td style="text-align: left;"><code>\derivfnd</code></td>
 <td style="text-align: left;">alias for <code>\derivf</code> (numerator first, denominator second)</td>
 </tr>
@@ -3825,7 +3827,7 @@ Table&nbsp;10: Every symbol that a macro prints
 <tr class="even">
 <td style="text-align: left;"><span class="math inline">\(\dicdev\)</span></td>
 <td style="text-align: left;"><code>\dicdev</code></td>
-<td style="text-align: left;">Bayesian deviance used by the deviance information criterion: minus twice the log-likelihood, with no saturated term (prints <code>\deviance</code>_{<code>\mathrm</code>{DIC}})</td>
+<td style="text-align: left;">Bayesian deviance used by the deviance information criterion: minus twice the log-likelihood, with no saturated term (prints <code>\deviance</code>_{<code>\mathrm{DIC}</code>})</td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;"><span class="math inline">\(\dicdevf{a}\)</span></td>
@@ -3900,7 +3902,7 @@ Table&nbsp;10: Every symbol that a macro prints
 <tr class="odd">
 <td style="text-align: left;"><span class="math inline">\(\distmem\)</span></td>
 <td style="text-align: left;"><code>\distmem \popdist \nnetparams</code></td>
-<td style="text-align: left;">generic member P of a distribution model family: a probability distribution model for the outcome given the covariate; the mean-function model it contains is <code>\meanfnof</code>{<code>\distmem</code>}</td>
+<td style="text-align: left;">generic member P of a distribution model family: a probability distribution model for the outcome given the covariate; the mean-function model it contains is <code>\meanfnof{\distmem}</code></td>
 </tr>
 <tr class="even">
 <td style="text-align: left;"><span class="math inline">\(\distmemof{a}\)</span></td>
@@ -3963,7 +3965,7 @@ Table&nbsp;10: Every symbol that a macro prints
 <td style="text-align: left;">derivative of inverse odds function</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;"><span class="math inline">\(\dpf\)</span></td>
+<td style="text-align: left;"><span class="math inline">\(\dpf{a}{b}\)</span></td>
 <td style="text-align: left;"><code>\dpf \dprodf</code></td>
 <td style="text-align: left;">dot product a·b (alias for <code>\dprodf</code>)</td>
 </tr>
@@ -4038,7 +4040,7 @@ Table&nbsp;10: Every symbol that a macro prints
 <td style="text-align: left;">e^(·) exponential notation</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;"><span class="math inline">\(\ea\)</span></td>
+<td style="text-align: left;"><span class="math inline">\(\ba a\ea\)</span></td>
 <td style="text-align: left;"><code>\ea</code></td>
 <td style="text-align: left;">end aligned math environment</td>
 </tr>
@@ -4073,7 +4075,7 @@ Table&nbsp;10: Every symbol that a macro prints
 <td style="text-align: left;">estimated bias applied to argument (composable <code>\Est</code> form)</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;"><span class="math inline">\(\ebias\)</span></td>
+<td style="text-align: left;"><span class="math inline">\(\ebias{a}\)</span></td>
 <td style="text-align: left;"><code>\ebias</code></td>
 <td style="text-align: left;">estimated bias applied to argument (lowercase alias)</td>
 </tr>
@@ -4095,7 +4097,7 @@ Table&nbsp;10: Every symbol that a macro prints
 <tr class="even">
 <td style="text-align: left;"><span class="math inline">\(\eclassprior\)</span></td>
 <td style="text-align: left;"><code>\eclassprior</code></td>
-<td style="text-align: left;">estimated class prior π̂ (prints <code>\est</code>{<code>\pi</code>}); write <code>\eclassprior</code>_k for the prior of class k</td>
+<td style="text-align: left;">estimated class prior π̂ (prints <code>\est{\pi}</code>); write <code>\eclassprior</code>_k for the prior of class k</td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;"><span class="math inline">\(\ecoef{a}\)</span></td>
@@ -4108,7 +4110,7 @@ Table&nbsp;10: Every symbol that a macro prints
 <td style="text-align: left;">estimated correlation function Ĉor(·)</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;"><span class="math inline">\(\eCorf\)</span></td>
+<td style="text-align: left;"><span class="math inline">\(\eCorf{a}\)</span></td>
 <td style="text-align: left;"><code>\eCorf</code></td>
 <td style="text-align: left;">estimated correlation function (alias)</td>
 </tr>
@@ -4118,7 +4120,7 @@ Table&nbsp;10: Every symbol that a macro prints
 <td style="text-align: left;">estimated correlation applied to argument (composable <code>\Est</code> form)</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;"><span class="math inline">\(\eCorrf\)</span></td>
+<td style="text-align: left;"><span class="math inline">\(\eCorrf{a}\)</span></td>
 <td style="text-align: left;"><code>\eCorrf</code></td>
 <td style="text-align: left;">estimated correlation applied to argument (alias for <code>\eCorr</code>)</td>
 </tr>
@@ -4150,7 +4152,7 @@ Table&nbsp;10: Every symbol that a macro prints
 <tr class="odd">
 <td style="text-align: left;"><span class="math inline">\(\ecovmat\)</span></td>
 <td style="text-align: left;"><code>\ecovmat</code></td>
-<td style="text-align: left;">an estimated covariance matrix (forward-looking form) (prints <code>\est</code>{<code>\covmat</code>})</td>
+<td style="text-align: left;">an estimated covariance matrix (forward-looking form) (prints <code>\est{\covmat}</code>)</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;"><span class="math inline">\(\eCovt\)</span></td>
@@ -4168,7 +4170,7 @@ Table&nbsp;10: Every symbol that a macro prints
 <td style="text-align: left;">estimated cumulative hazard factor function θ̂_Λ(·)</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;"><span class="math inline">\(\ecuhazff\)</span></td>
+<td style="text-align: left;"><span class="math inline">\(\ecuhazff{a}\)</span></td>
 <td style="text-align: left;"><code>\ecuhazff \efcuhazf</code></td>
 <td style="text-align: left;">estimated cumulative hazard factor function (shorthand for <code>\ecuhazfactorf</code>)</td>
 </tr>
@@ -4183,14 +4185,14 @@ Table&nbsp;10: Every symbol that a macro prints
 <td style="text-align: left;">estimated cumulative hazard ratio function ϙ̂_Λ(·)</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;"><span class="math inline">\(\ecuhazrf\)</span></td>
+<td style="text-align: left;"><span class="math inline">\(\ecuhazrf{a}\)</span></td>
 <td style="text-align: left;"><code>\ecuhazrf \ercuhazf</code></td>
 <td style="text-align: left;">estimated cumulative hazard ratio function (alias for <code>\ecuhazratiof</code>)</td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;"><span class="math inline">\(\edf\)</span></td>
 <td style="text-align: left;"><code>\edf</code></td>
-<td style="text-align: left;">estimated degrees of freedom (forward-looking form) (prints <code>\est</code>{<code>\df</code>})</td>
+<td style="text-align: left;">estimated degrees of freedom (forward-looking form) (prints <code>\est{\df}</code>)</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;"><span class="math inline">\(\edifflogodds\)</span></td>
@@ -4223,17 +4225,17 @@ Table&nbsp;10: Every symbol that a macro prints
 <td style="text-align: left;">estimated Fisher information function ℐ̂(·)</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;"><span class="math inline">\(\eExp\)</span></td>
+<td style="text-align: left;"><span class="math inline">\(\eExp{a}\)</span></td>
 <td style="text-align: left;"><code>\eExp \eExpf</code></td>
 <td style="text-align: left;">estimated expected value (alias for <code>\eE</code>)</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;"><span class="math inline">\(\ef\)</span></td>
+<td style="text-align: left;"><span class="math inline">\(\ef{a}\)</span></td>
 <td style="text-align: left;"><code>\ef</code></td>
 <td style="text-align: left;">e^(·) exponential notation (alias for <code>\e</code>)</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;"><span class="math inline">\(\Ef\)</span></td>
+<td style="text-align: left;"><span class="math inline">\(\Ef{a}\)</span></td>
 <td style="text-align: left;"><code>\Ef \Exp \Expf</code></td>
 <td style="text-align: left;">expected value (alias for <code>\E</code>)</td>
 </tr>
@@ -4253,7 +4255,7 @@ Table&nbsp;10: Every symbol that a macro prints
 <td style="text-align: left;">estimated cumulative hazard factor (alias for <code>\ecuhazfactor</code>)</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;"><span class="math inline">\(\eff\)</span></td>
+<td style="text-align: left;"><span class="math inline">\(\eff{a}\)</span></td>
 <td style="text-align: left;"><code>\eff</code></td>
 <td style="text-align: left;">generic estimated factor function (shorthand for <code>\efactorf</code>)</td>
 </tr>
@@ -4263,7 +4265,7 @@ Table&nbsp;10: Every symbol that a macro prints
 <td style="text-align: left;">estimated hazard factor (alias for <code>\ehazfactor</code>)</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;"><span class="math inline">\(\efhazf\)</span></td>
+<td style="text-align: left;"><span class="math inline">\(\efhazf{a}\)</span></td>
 <td style="text-align: left;"><code>\efhazf \ehazff</code></td>
 <td style="text-align: left;">estimated hazard factor function (alias for <code>\ehazfactorf</code>)</td>
 </tr>
@@ -4273,7 +4275,7 @@ Table&nbsp;10: Every symbol that a macro prints
 <td style="text-align: left;">estimated odds factor (alias for <code>\eoddsfactor</code>)</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;"><span class="math inline">\(\efoddsf\)</span></td>
+<td style="text-align: left;"><span class="math inline">\(\efoddsf{a}\)</span></td>
 <td style="text-align: left;"><code>\efoddsf \eoddsff</code></td>
 <td style="text-align: left;">estimated odds factor function (alias for <code>\eoddsfactorf</code>)</td>
 </tr>
@@ -4283,7 +4285,7 @@ Table&nbsp;10: Every symbol that a macro prints
 <td style="text-align: left;">estimated prevalence factor (alias for <code>\eprevfactor</code>)</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;"><span class="math inline">\(\efprevf\)</span></td>
+<td style="text-align: left;"><span class="math inline">\(\efprevf{a}\)</span></td>
 <td style="text-align: left;"><code>\efprevf \eprevff</code></td>
 <td style="text-align: left;">estimated prevalence factor function (alias for <code>\eprevfactorf</code>)</td>
 </tr>
@@ -4293,7 +4295,7 @@ Table&nbsp;10: Every symbol that a macro prints
 <td style="text-align: left;">estimated rate factor (alias for <code>\eratefactor</code>)</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;"><span class="math inline">\(\efratef\)</span></td>
+<td style="text-align: left;"><span class="math inline">\(\efratef{a}\)</span></td>
 <td style="text-align: left;"><code>\efratef \erateff</code></td>
 <td style="text-align: left;">estimated rate factor function (alias for <code>\eratefactorf</code>)</td>
 </tr>
@@ -4303,7 +4305,7 @@ Table&nbsp;10: Every symbol that a macro prints
 <td style="text-align: left;">estimated risk factor (alias for <code>\eriskfactor</code>)</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;"><span class="math inline">\(\efriskf\)</span></td>
+<td style="text-align: left;"><span class="math inline">\(\efriskf{a}\)</span></td>
 <td style="text-align: left;"><code>\efriskf \eriskff</code></td>
 <td style="text-align: left;">estimated risk factor function (alias for <code>\eriskfactorf</code>)</td>
 </tr>
@@ -4313,7 +4315,7 @@ Table&nbsp;10: Every symbol that a macro prints
 <td style="text-align: left;">estimated survival factor (alias for <code>\esurvfactor</code>)</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;"><span class="math inline">\(\efsurvf\)</span></td>
+<td style="text-align: left;"><span class="math inline">\(\efsurvf{a}\)</span></td>
 <td style="text-align: left;"><code>\efsurvf \esurvff</code></td>
 <td style="text-align: left;">estimated survival factor function (alias for <code>\esurvfactorf</code>)</td>
 </tr>
@@ -4338,7 +4340,7 @@ Table&nbsp;10: Every symbol that a macro prints
 <td style="text-align: left;">estimated hazard factor function θ̂_λ(·)</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;"><span class="math inline">\(\ehazrf\)</span></td>
+<td style="text-align: left;"><span class="math inline">\(\ehazrf{a}\)</span></td>
 <td style="text-align: left;"><code>\ehazrf \erhazf</code></td>
 <td style="text-align: left;">estimated hazard ratio function (alias for <code>\ehrf</code>)</td>
 </tr>
@@ -4410,7 +4412,7 @@ Table&nbsp;10: Every symbol that a macro prints
 <tr class="odd">
 <td style="text-align: left;"><span class="math inline">\(\emean\)</span></td>
 <td style="text-align: left;"><code>\emean</code></td>
-<td style="text-align: left;">an estimated mean (forward-looking form) (prints <code>\est</code>{<code>\mean</code>})</td>
+<td style="text-align: left;">an estimated mean (forward-looking form) (prints <code>\est{\mean}</code>)</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;"><span class="math inline">\(\emodmem\)</span></td>
@@ -4443,7 +4445,7 @@ Table&nbsp;10: Every symbol that a macro prints
 <td style="text-align: left;">empirical risk R̂ (alias for <code>\epoprisk</code>)</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;"><span class="math inline">\(\empriskf\)</span></td>
+<td style="text-align: left;"><span class="math inline">\(\empriskf{a}\)</span></td>
 <td style="text-align: left;"><code>\empriskf</code></td>
 <td style="text-align: left;">empirical risk function R̂(·) (alias for <code>\epopriskf</code>)</td>
 </tr>
@@ -4453,7 +4455,7 @@ Table&nbsp;10: Every symbol that a macro prints
 <td style="text-align: left;">estimated mean squared error applied to argument (composable <code>\Est</code> form)</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;"><span class="math inline">\(\eMSEf\)</span></td>
+<td style="text-align: left;"><span class="math inline">\(\eMSEf{a}\)</span></td>
 <td style="text-align: left;"><code>\eMSEf</code></td>
 <td style="text-align: left;">estimated mean squared error applied to argument (alias for <code>\eMSE</code>)</td>
 </tr>
@@ -4480,7 +4482,7 @@ Table&nbsp;10: Every symbol that a macro prints
 <tr class="odd">
 <td style="text-align: left;"><span class="math inline">\(\enuisance\)</span></td>
 <td style="text-align: left;"><code>\enuisance</code></td>
-<td style="text-align: left;">an estimated nuisance parameter (forward-looking form) (prints <code>\est</code>{<code>\nuisance</code>})</td>
+<td style="text-align: left;">an estimated nuisance parameter (forward-looking form) (prints <code>\est{\nuisance}</code>)</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;"><span class="math inline">\(\eodds\)</span></td>
@@ -4515,17 +4517,17 @@ Table&nbsp;10: Every symbol that a macro prints
 <tr class="even">
 <td style="text-align: left;"><span class="math inline">\(\eparam\)</span></td>
 <td style="text-align: left;"><code>\eparam</code></td>
-<td style="text-align: left;">an estimated parameter (forward-looking form) (prints <code>\est</code>{<code>\param</code>})</td>
+<td style="text-align: left;">an estimated parameter (forward-looking form) (prints <code>\est{\param}</code>)</td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;"><span class="math inline">\(\epe{a}{b}{c}\)</span></td>
 <td style="text-align: left;"><code>\epe</code></td>
-<td style="text-align: left;">expected prediction error at input x of fitting procedure g trained on n observations, EPE^g_n(x); <code>\epe</code>{g}{n}{x}</td>
+<td style="text-align: left;">expected prediction error at input x of fitting procedure g trained on n observations, EPE^g_n(x); <code>\epe{g}{n}{x}</code></td>
 </tr>
 <tr class="even">
 <td style="text-align: left;"><span class="math inline">\(\epl{a}{b}{c}\)</span></td>
 <td style="text-align: left;"><code>\epl</code></td>
-<td style="text-align: left;">expected prediction loss at input x of fitting procedure g trained on n observations, for any loss, EPL^g_n(x); <code>\epl</code>{g}{n}{x}</td>
+<td style="text-align: left;">expected prediction loss at input x of fitting procedure g trained on n observations, for any loss, EPL^g_n(x); <code>\epl{g}{n}{x}</code></td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;"><span class="math inline">\(\epopriskf{a}\)</span></td>
@@ -4540,7 +4542,7 @@ Table&nbsp;10: Every symbol that a macro prints
 <tr class="odd">
 <td style="text-align: left;"><span class="math inline">\(\eprecision\)</span></td>
 <td style="text-align: left;"><code>\eprecision</code></td>
-<td style="text-align: left;">an estimated precision (forward-looking form) (prints <code>\est</code>{<code>\precision</code>})</td>
+<td style="text-align: left;">an estimated precision (forward-looking form) (prints <code>\est{\precision}</code>)</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;"><span class="math inline">\(\epredfn\)</span></td>
@@ -4560,7 +4562,7 @@ Table&nbsp;10: Every symbol that a macro prints
 <tr class="odd">
 <td style="text-align: left;"><span class="math inline">\(\Epredvalf{a}\)</span></td>
 <td style="text-align: left;"><code>\Epredvalf</code></td>
-<td style="text-align: left;">expected predicted value at the covariate value given as the argument: the population expectation over training sets of the fitted model’s prediction at that value (prints the expectation over the training set of <code>\fitted``\paren</code>{x}; the same quantity <code>\avgfitf</code> prints as mu_h(x), written as an expectation of a prediction rather than as a function in a model family; unlike <code>\Epredval</code>, it names the covariate value)</td>
+<td style="text-align: left;">expected predicted value at the covariate value given as the argument: the population expectation over training sets of the fitted model’s prediction at that value (prints the expectation over the training set of <code>\fitted``\paren{x}</code>; the same quantity <code>\avgfitf</code> prints as mu_h(x), written as an expectation of a prediction rather than as a function in a model family; unlike <code>\Epredval</code>, it names the covariate value)</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;"><span class="math inline">\(\eprev\)</span></td>
@@ -4583,7 +4585,7 @@ Table&nbsp;10: Every symbol that a macro prints
 <td style="text-align: left;">estimated prevalence ratio (alias for <code>\eprevratio</code>)</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;"><span class="math inline">\(\eprrf\)</span></td>
+<td style="text-align: left;"><span class="math inline">\(\eprrf{a}\)</span></td>
 <td style="text-align: left;"><code>\eprrf</code></td>
 <td style="text-align: left;">estimated prevalence ratio function (alias for <code>\eprevratiof</code>)</td>
 </tr>
@@ -4593,7 +4595,7 @@ Table&nbsp;10: Every symbol that a macro prints
 <td style="text-align: left;">varepsilon error term (ε)</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;"><span class="math inline">\(\epsf\)</span></td>
+<td style="text-align: left;"><span class="math inline">\(\epsf{a}\)</span></td>
 <td style="text-align: left;"><code>\epsf</code></td>
 <td style="text-align: left;">ε(·) error function (alias for <code>\epsp</code>)</td>
 </tr>
@@ -4610,7 +4612,7 @@ Table&nbsp;10: Every symbol that a macro prints
 <tr class="odd">
 <td style="text-align: left;"><span class="math inline">\(\eqby{a}\)</span></td>
 <td style="text-align: left;"><code>\eqby</code></td>
-<td style="text-align: left;">equals sign with the reason written over it (prints <code>\eqby</code>{<code>\text</code>{Thm 2}})</td>
+<td style="text-align: left;">equals sign with the reason written over it (prints <code>\eqby{\text{Thm 2}}</code>)</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;"><span class="math inline">\(\eQf{a}\)</span></td>
@@ -4653,7 +4655,7 @@ Table&nbsp;10: Every symbol that a macro prints
 <td style="text-align: left;">estimated rate ratio function ϙ̂_λ(·)</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;"><span class="math inline">\(\eraterf\)</span></td>
+<td style="text-align: left;"><span class="math inline">\(\eraterf{a}\)</span></td>
 <td style="text-align: left;"><code>\eraterf \erratef</code></td>
 <td style="text-align: left;">estimated rate ratio function (alias for <code>\erateratiof</code>)</td>
 </tr>
@@ -4685,12 +4687,12 @@ Table&nbsp;10: Every symbol that a macro prints
 <tr class="even">
 <td style="text-align: left;"><span class="math inline">\(\eregcoef\)</span></td>
 <td style="text-align: left;"><code>\eregcoef</code></td>
-<td style="text-align: left;">an estimated unsubscripted regression coefficient (forward-looking form) (prints <code>\est</code>{<code>\regcoef</code>})</td>
+<td style="text-align: left;">an estimated unsubscripted regression coefficient (forward-looking form) (prints <code>\est{\regcoef}</code>)</td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;"><span class="math inline">\(\erf{a}\)</span></td>
 <td style="text-align: left;"><code>\erf</code></td>
-<td style="text-align: left;">error function ε(·); for an estimate, the estimation error (estimate minus truth), written <code>\esterr</code>{estimate}{truth}</td>
+<td style="text-align: left;">error function ε(·); for an estimate, the estimation error (estimate minus truth), written <code>\esterr{estimate}{truth}</code></td>
 </tr>
 <tr class="even">
 <td style="text-align: left;"><span class="math inline">\(\eriskfactorf{a}\)</span></td>
@@ -4708,7 +4710,7 @@ Table&nbsp;10: Every symbol that a macro prints
 <td style="text-align: left;">estimated risk ratio function ϙ̂_π(·)</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;"><span class="math inline">\(\eriskrf\)</span></td>
+<td style="text-align: left;"><span class="math inline">\(\eriskrf{a}\)</span></td>
 <td style="text-align: left;"><code>\eriskrf \erriskf</code></td>
 <td style="text-align: left;">estimated risk ratio function (alias for <code>\eriskratiof</code>)</td>
 </tr>
@@ -4718,7 +4720,7 @@ Table&nbsp;10: Every symbol that a macro prints
 <td style="text-align: left;">estimated root mean squared error applied to argument (composable <code>\Est</code> form)</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;"><span class="math inline">\(\eRMSEf\)</span></td>
+<td style="text-align: left;"><span class="math inline">\(\eRMSEf{a}\)</span></td>
 <td style="text-align: left;"><code>\eRMSEf</code></td>
 <td style="text-align: left;">estimated root mean squared error applied to argument (alias for <code>\eRMSE</code>)</td>
 </tr>
@@ -4748,7 +4750,7 @@ Table&nbsp;10: Every symbol that a macro prints
 <td style="text-align: left;">estimated survival ratio (alias for <code>\esurvratio</code>)</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;"><span class="math inline">\(\ersurvf\)</span></td>
+<td style="text-align: left;"><span class="math inline">\(\ersurvf{a}\)</span></td>
 <td style="text-align: left;"><code>\ersurvf \esurvrf</code></td>
 <td style="text-align: left;">estimated survival ratio function (alias for <code>\esurvratiof</code>)</td>
 </tr>
@@ -4768,14 +4770,14 @@ Table&nbsp;10: Every symbol that a macro prints
 <td style="text-align: left;">estimated standard deviation SD̂(·)</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;"><span class="math inline">\(\eSDf\)</span></td>
+<td style="text-align: left;"><span class="math inline">\(\eSDf{a}\)</span></td>
 <td style="text-align: left;"><code>\eSDf</code></td>
 <td style="text-align: left;">estimated standard deviation (alias)</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;"><span class="math inline">\(\esdpar\)</span></td>
 <td style="text-align: left;"><code>\esdpar</code></td>
-<td style="text-align: left;">an estimated standard deviation (forward-looking form) (prints <code>\est</code>{<code>\sdpar</code>})</td>
+<td style="text-align: left;">an estimated standard deviation (forward-looking form) (prints <code>\est{\sdpar}</code>)</td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;"><span class="math inline">\(\ESE{a}\)</span></td>
@@ -4798,7 +4800,7 @@ Table&nbsp;10: Every symbol that a macro prints
 <td style="text-align: left;">expected squared estimation error ESEE(·) of a parameter estimate, applied to argument</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;"><span class="math inline">\(\ESEEf\)</span></td>
+<td style="text-align: left;"><span class="math inline">\(\ESEEf{a}\)</span></td>
 <td style="text-align: left;"><code>\ESEEf</code></td>
 <td style="text-align: left;">expected squared estimation error ESEE(·) applied to argument (alias for <code>\ESEE</code>)</td>
 </tr>
@@ -4808,7 +4810,7 @@ Table&nbsp;10: Every symbol that a macro prints
 <td style="text-align: left;">expected squared estimation error operator ESEE, of a parameter estimate</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;"><span class="math inline">\(\ESEf\)</span></td>
+<td style="text-align: left;"><span class="math inline">\(\ESEf{a}\)</span></td>
 <td style="text-align: left;"><code>\ESEf</code></td>
 <td style="text-align: left;">expected squared error ESE(·) applied to argument (alias for <code>\ESE</code>)</td>
 </tr>
@@ -4818,7 +4820,7 @@ Table&nbsp;10: Every symbol that a macro prints
 <td style="text-align: left;">estimated standard error function (alias)</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;"><span class="math inline">\(\esef\)</span></td>
+<td style="text-align: left;"><span class="math inline">\(\esef{a}\)</span></td>
 <td style="text-align: left;"><code>\esef</code></td>
 <td style="text-align: left;">estimated standard error (alias for <code>\ese</code>)</td>
 </tr>
@@ -4868,7 +4870,7 @@ Table&nbsp;10: Every symbol that a macro prints
 <td style="text-align: left;">expected squared prediction error ESPE(·) of a predicted value, applied to argument</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;"><span class="math inline">\(\ESPEf\)</span></td>
+<td style="text-align: left;"><span class="math inline">\(\ESPEf{a}\)</span></td>
 <td style="text-align: left;"><code>\ESPEf</code></td>
 <td style="text-align: left;">expected squared prediction error ESPE(·) applied to argument (alias for <code>\ESPE</code>)</td>
 </tr>
@@ -4890,12 +4892,12 @@ Table&nbsp;10: Every symbol that a macro prints
 <tr class="odd">
 <td style="text-align: left;"><span class="math inline">\(\esterr{a}{b}\)</span></td>
 <td style="text-align: left;"><code>\esterr</code></td>
-<td style="text-align: left;">estimation error: the error ε of the estimate in the first argument for the estimand in the second, ε_estimand(estimate); the estimate minus the estimand, written explicitly with <code>\devof</code>{estimate}{estimand}</td>
+<td style="text-align: left;">estimation error: the error ε of the estimate in the first argument for the estimand in the second, ε_estimand(estimate); the estimate minus the estimand, written explicitly with <code>\devof{estimate}{estimand}</code></td>
 </tr>
 <tr class="even">
 <td style="text-align: left;"><span class="math inline">\(\estmeanf{a}\)</span></td>
 <td style="text-align: left;"><code>\estmeanf</code></td>
-<td style="text-align: left;">estimate of the mean function value at the covariate value given as the argument (prints <code>\emuf</code>{x}, the estimated mean function applied to x; the value that the fitted model’s prediction <code>\predvalf</code>{x} estimates, here named by its role as an estimator of <code>\truemeanf</code>{x} rather than as a prediction)</td>
+<td style="text-align: left;">estimate of the mean function value at the covariate value given as the argument (prints <code>\emuf{x}</code>, the estimated mean function applied to x; the value that the fitted model’s prediction <code>\predvalf{x}</code> estimates, here named by its role as an estimator of <code>\truemeanf{x}</code> rather than as a prediction)</td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;"><span class="math inline">\(\esttmp{a}\)</span></td>
@@ -4990,7 +4992,7 @@ Table&nbsp;10: Every symbol that a macro prints
 <tr class="odd">
 <td style="text-align: left;"><span class="math inline">\(\evarpar\)</span></td>
 <td style="text-align: left;"><code>\evarpar</code></td>
-<td style="text-align: left;">an estimated variance (forward-looking form) (prints <code>\est</code>{<code>\sdpar</code>}^2)</td>
+<td style="text-align: left;">an estimated variance (forward-looking form) (prints <code>\est{\sdpar}</code>^2)</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;"><span class="math inline">\(\evb\)</span></td>
@@ -5000,17 +5002,17 @@ Table&nbsp;10: Every symbol that a macro prints
 <tr class="odd">
 <td style="text-align: left;"><span class="math inline">\(\eventnocens{a}\)</span></td>
 <td style="text-align: left;"><code>\eventnocens</code></td>
-<td style="text-align: left;">event indicator at time m under the intervention that eliminates censoring (prints D^{<code>\bar</code>{c}=0}_m)</td>
+<td style="text-align: left;">event indicator at time m under the intervention that eliminates censoring (prints D^{<code>\bar{c}</code>=0}_m)</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;"><span class="math inline">\(\evparam\)</span></td>
 <td style="text-align: left;"><code>\evparam</code></td>
-<td style="text-align: left;">an estimated parameter vector (forward-looking form) (prints <code>\est</code>{<code>\vparam</code>})</td>
+<td style="text-align: left;">an estimated parameter vector (forward-looking form) (prints <code>\est{\vparam}</code>)</td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;"><span class="math inline">\(\exp{a}\)</span></td>
 <td style="text-align: left;"><code>\exp \expf</code></td>
-<td style="text-align: left;">exponential function exp{·}; takes one argument, so never write it bare: use <code>\expf</code>{·} or <code>\expt</code> with your own delimiters</td>
+<td style="text-align: left;">exponential function exp{·}; takes one argument, so never write it bare: use <code>\expf{·}</code> or <code>\expt</code> with your own delimiters</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;"><span class="math inline">\(\Expfc{a}{b}\)</span></td>
@@ -5018,14 +5020,14 @@ Table&nbsp;10: Every symbol that a macro prints
 <td style="text-align: left;">conditional expected value (prints <code>\Expp</code> with the conditioning subscript c and the argument in square brackets)</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;"><span class="math inline">\(\expfn\)</span></td>
+<td style="text-align: left;"><span class="math inline">\(\expfn{a}\)</span></td>
 <td style="text-align: left;"><code>\expfn</code></td>
 <td style="text-align: left;">exponential function (alias for <code>\exp</code>)</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;"><span class="math inline">\(\expgenerr{a}{b}\)</span></td>
 <td style="text-align: left;"><code>\expgenerr</code></td>
-<td style="text-align: left;">expected generalization error of fitting procedure g trained on n observations, averaged over training sets, Err^g(n); <code>\expgenerr</code>{g}{n}</td>
+<td style="text-align: left;">expected generalization error of fitting procedure g trained on n observations, averaged over training sets, Err^g(n); <code>\expgenerr{g}{n}</code></td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;"><span class="math inline">\(\expit\)</span></td>
@@ -5078,7 +5080,7 @@ Table&nbsp;10: Every symbol that a macro prints
 <td style="text-align: left;">a feature map (basis expansion) (prints D, not bold, since a feature map is a function)</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;"><span class="math inline">\(\ff\)</span></td>
+<td style="text-align: left;"><span class="math inline">\(\ff{a}\)</span></td>
 <td style="text-align: left;"><code>\ff</code></td>
 <td style="text-align: left;">generic factor function (shorthand for <code>\factorf</code>)</td>
 </tr>
@@ -5093,29 +5095,29 @@ Table&nbsp;10: Every symbol that a macro prints
 <td style="text-align: left;">hazard factor (alias for <code>\hazfactor</code>)</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;"><span class="math inline">\(\fhazf\)</span></td>
+<td style="text-align: left;"><span class="math inline">\(\fhazf{a}\)</span></td>
 <td style="text-align: left;"><code>\fhazf \hazff</code></td>
 <td style="text-align: left;">hazard factor function (alias for <code>\hazfactorf</code>)</td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;"><span class="math inline">\(\fitmodf{a}\)</span></td>
 <td style="text-align: left;"><code>\fitmodf \candfitted</code></td>
-<td style="text-align: left;">fitted model obtained from the training set given as the argument, the prediction function ŷ with the training set as subscript (prints <code>\fitted</code>_{D}, where the subscript is a data set, not an observation index); <code>\fitmodf</code>{D}<code>\paren</code>{x} is its prediction at x, and <code>\fitprocf</code>{D} is the same model written as the fitting procedure g applied to D</td>
+<td style="text-align: left;">fitted model obtained from the training set given as the argument, the prediction function ŷ with the training set as subscript (prints <code>\fitted</code>_{D}, where the subscript is a data set, not an observation index); <code>\fitmodf{D}``\paren{x}</code> is its prediction at x, and <code>\fitprocf{D}</code> is the same model written as the fitting procedure g applied to D</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;"><span class="math inline">\(\fitmodvalf{a}{b}\)</span></td>
 <td style="text-align: left;"><code>\fitmodvalf</code></td>
-<td style="text-align: left;">prediction at the covariate value given as the second argument, from the model that the fitting procedure fits to the data set given as the first argument (prints <code>\fitmodf</code>{D}<code>\paren</code>{x}, that is the fitted model ŷ_D applied to x; the counterpart of <code>\predvalf</code> for a data set other than the full training set, such as the observations outside a fold; unlike <code>\candpredvalf</code>, which indexes a candidate procedure rather than a data set; unlike <code>\predval</code> and unlike <code>\epredfnf</code>, which applies any estimated prediction function, it is fixed to the fit to that data set)</td>
+<td style="text-align: left;">prediction at the covariate value given as the second argument, from the model that the fitting procedure fits to the data set given as the first argument (prints <code>\fitmodf{D}``\paren{x}</code>, that is the fitted model ŷ_D applied to x; the counterpart of <code>\predvalf</code> for a data set other than the full training set, such as the observations outside a fold; unlike <code>\candpredvalf</code>, which indexes a candidate procedure rather than a data set; unlike <code>\predval</code> and unlike <code>\epredfnf</code>, which applies any estimated prediction function, it is fixed to the fit to that data set)</td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;"><span class="math inline">\(\fitprocf{a}\)</span></td>
 <td style="text-align: left;"><code>\fitprocf</code></td>
-<td style="text-align: left;">fitting procedure applied to its argument, g(·); write <code>\fitprocf</code>{D} for the model g(D) fitted to the data set D, and <code>\fitprocf</code>{D}<code>\paren</code>{x} for its prediction at x</td>
+<td style="text-align: left;">fitting procedure applied to its argument, g(·); write <code>\fitprocf{D}</code> for the model g(D) fitted to the data set D, and <code>\fitprocf{D}``\paren{x}</code> for its prediction at x</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;"><span class="math inline">\(\fittedwo{a}{b}\)</span></td>
 <td style="text-align: left;"><code>\fittedwo</code></td>
-<td style="text-align: left;">fitted value at input x from a fit leaving out fold j, ŷ^(-j)(x); <code>\fittedwo</code>{j}{x}</td>
+<td style="text-align: left;">fitted value at input x from a fit leaving out fold j, ŷ^(-j)(x); <code>\fittedwo{j}{x}</code></td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;"><span class="math inline">\(\floor{a}\)</span></td>
@@ -5128,7 +5130,7 @@ Table&nbsp;10: Every symbol that a macro prints
 <td style="text-align: left;">odds factor (alias for <code>\oddsfactor</code>)</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;"><span class="math inline">\(\foddsf\)</span></td>
+<td style="text-align: left;"><span class="math inline">\(\foddsf{a}\)</span></td>
 <td style="text-align: left;"><code>\foddsf \oddsff</code></td>
 <td style="text-align: left;">odds factor function (alias for <code>\oddsfactorf</code>)</td>
 </tr>
@@ -5145,12 +5147,12 @@ Table&nbsp;10: Every symbol that a macro prints
 <tr class="even">
 <td style="text-align: left;"><span class="math inline">\(\foldmseof{a}{b}\)</span></td>
 <td style="text-align: left;"><code>\foldmseof</code></td>
-<td style="text-align: left;">mean squared error of fitting procedure g on fold j, MSE^g_j; <code>\foldmseof</code>{j}{g}</td>
+<td style="text-align: left;">mean squared error of fitting procedure g on fold j, MSE^g_j; <code>\foldmseof{j}{g}</code></td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;"><span class="math inline">\(\foldmseoff{a}{b}{c}\)</span></td>
 <td style="text-align: left;"><code>\foldmseoff</code></td>
-<td style="text-align: left;">mean squared error on the fold given as the first argument, of the fitting procedure given as the second argument, computed on the data set given as the third argument (prints <code>\foldmseof</code>{j}{g}<code>\paren</code>{D}; the f form of <code>\foldmseof</code>, which leaves the data set implicit)</td>
+<td style="text-align: left;">mean squared error on the fold given as the first argument, of the fitting procedure given as the second argument, computed on the data set given as the third argument (prints <code>\foldmseof{j}{g}``\paren{D}</code>; the f form of <code>\foldmseof</code>, which leaves the data set implicit)</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;"><span class="math inline">\(\foldof{a}\)</span></td>
@@ -5168,7 +5170,7 @@ Table&nbsp;10: Every symbol that a macro prints
 <td style="text-align: left;">prevalence factor (alias for <code>\prevfactor</code>)</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;"><span class="math inline">\(\fprevf\)</span></td>
+<td style="text-align: left;"><span class="math inline">\(\fprevf{a}\)</span></td>
 <td style="text-align: left;"><code>\fprevf \prevff</code></td>
 <td style="text-align: left;">prevalence factor function (alias for <code>\prevfactorf</code>)</td>
 </tr>
@@ -5178,7 +5180,7 @@ Table&nbsp;10: Every symbol that a macro prints
 <td style="text-align: left;">rate factor (alias for <code>\ratefactor</code>)</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;"><span class="math inline">\(\fratef\)</span></td>
+<td style="text-align: left;"><span class="math inline">\(\fratef{a}\)</span></td>
 <td style="text-align: left;"><code>\fratef \rateff</code></td>
 <td style="text-align: left;">rate factor function (alias for <code>\ratefactorf</code>)</td>
 </tr>
@@ -5188,7 +5190,7 @@ Table&nbsp;10: Every symbol that a macro prints
 <td style="text-align: left;">risk factor (alias for <code>\riskfactor</code>)</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;"><span class="math inline">\(\friskf\)</span></td>
+<td style="text-align: left;"><span class="math inline">\(\friskf{a}\)</span></td>
 <td style="text-align: left;"><code>\friskf \riskff</code></td>
 <td style="text-align: left;">risk factor function (alias for <code>\riskfactorf</code>)</td>
 </tr>
@@ -5198,7 +5200,7 @@ Table&nbsp;10: Every symbol that a macro prints
 <td style="text-align: left;">survival factor (alias for <code>\survfactor</code>)</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;"><span class="math inline">\(\fsurvf\)</span></td>
+<td style="text-align: left;"><span class="math inline">\(\fsurvf{a}\)</span></td>
 <td style="text-align: left;"><code>\fsurvf \survff</code></td>
 <td style="text-align: left;">survival factor function (alias for <code>\survfactorf</code>)</td>
 </tr>
@@ -5233,7 +5235,7 @@ Table&nbsp;10: Every symbol that a macro prints
 <td style="text-align: left;">sigma-algebra generated by argument σ(·)</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;"><span class="math inline">\(\gensigmaalg\)</span></td>
+<td style="text-align: left;"><span class="math inline">\(\gensigmaalg{a}\)</span></td>
 <td style="text-align: left;"><code>\gensigmaalg</code></td>
 <td style="text-align: left;">generated sigma-algebra (alias for <code>\gensalg</code>)</td>
 </tr>
@@ -5275,7 +5277,7 @@ Table&nbsp;10: Every symbol that a macro prints
 <tr class="even">
 <td style="text-align: left;"><span class="math inline">\(\growthfnf{a}\)</span></td>
 <td style="text-align: left;"><code>\growthfnf</code></td>
-<td style="text-align: left;">growth function at n points, m_Y(n) (prints <code>\growthfn``\paren</code>{n})</td>
+<td style="text-align: left;">growth function at n points, m_Y(n) (prints <code>\growthfn``\paren{n}</code>)</td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;"><span class="math inline">\(\h\)</span></td>
@@ -5318,7 +5320,7 @@ Table&nbsp;10: Every symbol that a macro prints
 <td style="text-align: left;">hazard factor function θ_λ(·)</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;"><span class="math inline">\(\hazrf\)</span></td>
+<td style="text-align: left;"><span class="math inline">\(\hazrf{a}\)</span></td>
 <td style="text-align: left;"><code>\hazrf \rhazf</code></td>
 <td style="text-align: left;">hazard ratio function (alias for <code>\hrf</code>)</td>
 </tr>
@@ -5333,7 +5335,7 @@ Table&nbsp;10: Every symbol that a macro prints
 <td style="text-align: left;">estimated bias applied to argument (legacy <code>\hat</code> form); deprecated, use <code>\eBias</code></td>
 </tr>
 <tr class="even">
-<td style="text-align: left;"><span class="math inline">\(\hbias\)</span></td>
+<td style="text-align: left;"><span class="math inline">\(\hbias{a}\)</span></td>
 <td style="text-align: left;"><code>\hbias</code></td>
 <td style="text-align: left;">estimated bias applied to argument (lowercase alias); deprecated, use <code>\ebias</code></td>
 </tr>
@@ -5363,7 +5365,7 @@ Table&nbsp;10: Every symbol that a macro prints
 <td style="text-align: left;">estimated correlation function Ĉor(·); deprecated, use <code>\eCor</code></td>
 </tr>
 <tr class="even">
-<td style="text-align: left;"><span class="math inline">\(\hCorf\)</span></td>
+<td style="text-align: left;"><span class="math inline">\(\hCorf{a}\)</span></td>
 <td style="text-align: left;"><code>\hCorf</code></td>
 <td style="text-align: left;">estimated correlation function (alias); deprecated, use <code>\eCorf</code></td>
 </tr>
@@ -5373,7 +5375,7 @@ Table&nbsp;10: Every symbol that a macro prints
 <td style="text-align: left;">estimated correlation Corr̂(·) applied to argument (legacy <code>\hat</code> form); deprecated, use <code>\eCorr</code></td>
 </tr>
 <tr class="even">
-<td style="text-align: left;"><span class="math inline">\(\hCorrf\)</span></td>
+<td style="text-align: left;"><span class="math inline">\(\hCorrf{a}\)</span></td>
 <td style="text-align: left;"><code>\hCorrf</code></td>
 <td style="text-align: left;">estimated correlation Corr̂(·) applied to argument (alias for <code>\hCorr</code>); deprecated, use <code>\eCorrf</code></td>
 </tr>
@@ -5400,7 +5402,7 @@ Table&nbsp;10: Every symbol that a macro prints
 <tr class="odd">
 <td style="text-align: left;"><span class="math inline">\(\hcovmat\)</span></td>
 <td style="text-align: left;"><code>\hcovmat</code></td>
-<td style="text-align: left;">an estimated covariance matrix (prints <code>\hat</code>{<code>\Sigma</code>}); deprecated, use <code>\ecovmat</code></td>
+<td style="text-align: left;">an estimated covariance matrix (prints <code>\hat{\Sigma}</code>); deprecated, use <code>\ecovmat</code></td>
 </tr>
 <tr class="even">
 <td style="text-align: left;"><span class="math inline">\(\hCovt\)</span></td>
@@ -5418,7 +5420,7 @@ Table&nbsp;10: Every symbol that a macro prints
 <td style="text-align: left;">estimated cumulative hazard factor function θ̂_Λ(·); deprecated, use <code>\ecuhazfactorf</code></td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;"><span class="math inline">\(\hcuhazff\)</span></td>
+<td style="text-align: left;"><span class="math inline">\(\hcuhazff{a}\)</span></td>
 <td style="text-align: left;"><code>\hcuhazff \hfcuhazf</code></td>
 <td style="text-align: left;">estimated cumulative hazard factor function (shorthand for <code>\hcuhazfactorf</code>); deprecated, use <code>\ecuhazff</code></td>
 </tr>
@@ -5433,7 +5435,7 @@ Table&nbsp;10: Every symbol that a macro prints
 <td style="text-align: left;">estimated cumulative hazard ratio function ϙ̂_Λ(·); deprecated, use <code>\ecuhazratiof</code></td>
 </tr>
 <tr class="even">
-<td style="text-align: left;"><span class="math inline">\(\hcuhazrf\)</span></td>
+<td style="text-align: left;"><span class="math inline">\(\hcuhazrf{a}\)</span></td>
 <td style="text-align: left;"><code>\hcuhazrf \hrcuhazf</code></td>
 <td style="text-align: left;">estimated cumulative hazard ratio function (alias for <code>\hcuhazratiof</code>); deprecated, use <code>\ecuhazrf</code></td>
 </tr>
@@ -5493,7 +5495,7 @@ Table&nbsp;10: Every symbol that a macro prints
 <td style="text-align: left;">Hessian function ℓ″(·)</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;"><span class="math inline">\(\hessianf\)</span></td>
+<td style="text-align: left;"><span class="math inline">\(\hessianf{a}\)</span></td>
 <td style="text-align: left;"><code>\hessianf</code></td>
 <td style="text-align: left;">Hessian function (alias for <code>\hessf</code>)</td>
 </tr>
@@ -5508,7 +5510,7 @@ Table&nbsp;10: Every symbol that a macro prints
 <td style="text-align: left;">(i,j) Hessian in bracket notation</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;"><span class="math inline">\(\hExp\)</span></td>
+<td style="text-align: left;"><span class="math inline">\(\hExp{a}\)</span></td>
 <td style="text-align: left;"><code>\hExp \hExpf</code></td>
 <td style="text-align: left;">estimated expected value (alias for <code>\hE</code>); deprecated, use <code>\eExp</code></td>
 </tr>
@@ -5533,7 +5535,7 @@ Table&nbsp;10: Every symbol that a macro prints
 <td style="text-align: left;">estimated cumulative hazard factor (alias for <code>\hcuhazfactor</code>); deprecated, use <code>\efcuhaz</code></td>
 </tr>
 <tr class="even">
-<td style="text-align: left;"><span class="math inline">\(\hff\)</span></td>
+<td style="text-align: left;"><span class="math inline">\(\hff{a}\)</span></td>
 <td style="text-align: left;"><code>\hff</code></td>
 <td style="text-align: left;">generic estimated factor function (shorthand for <code>\hfactorf</code>); deprecated, use <code>\eff</code></td>
 </tr>
@@ -5543,7 +5545,7 @@ Table&nbsp;10: Every symbol that a macro prints
 <td style="text-align: left;">estimated hazard factor (alias for <code>\hhazfactor</code>); deprecated, use <code>\efhaz</code></td>
 </tr>
 <tr class="even">
-<td style="text-align: left;"><span class="math inline">\(\hfhazf\)</span></td>
+<td style="text-align: left;"><span class="math inline">\(\hfhazf{a}\)</span></td>
 <td style="text-align: left;"><code>\hfhazf \hhazff</code></td>
 <td style="text-align: left;">estimated hazard factor function (alias for <code>\hhazfactorf</code>); deprecated, use <code>\efhazf</code></td>
 </tr>
@@ -5553,7 +5555,7 @@ Table&nbsp;10: Every symbol that a macro prints
 <td style="text-align: left;">estimated odds factor (alias for <code>\hoddsfactor</code>); deprecated, use <code>\efodds</code></td>
 </tr>
 <tr class="even">
-<td style="text-align: left;"><span class="math inline">\(\hfoddsf\)</span></td>
+<td style="text-align: left;"><span class="math inline">\(\hfoddsf{a}\)</span></td>
 <td style="text-align: left;"><code>\hfoddsf \hoddsff</code></td>
 <td style="text-align: left;">estimated odds factor function (alias for <code>\hoddsfactorf</code>); deprecated, use <code>\efoddsf</code></td>
 </tr>
@@ -5563,7 +5565,7 @@ Table&nbsp;10: Every symbol that a macro prints
 <td style="text-align: left;">estimated prevalence factor (alias for <code>\hprevfactor</code>); deprecated, use <code>\efprev</code></td>
 </tr>
 <tr class="even">
-<td style="text-align: left;"><span class="math inline">\(\hfprevf\)</span></td>
+<td style="text-align: left;"><span class="math inline">\(\hfprevf{a}\)</span></td>
 <td style="text-align: left;"><code>\hfprevf \hprevff</code></td>
 <td style="text-align: left;">estimated prevalence factor function (alias for <code>\hprevfactorf</code>); deprecated, use <code>\efprevf</code></td>
 </tr>
@@ -5573,7 +5575,7 @@ Table&nbsp;10: Every symbol that a macro prints
 <td style="text-align: left;">estimated rate factor (alias for <code>\hratefactor</code>); deprecated, use <code>\efrate</code></td>
 </tr>
 <tr class="even">
-<td style="text-align: left;"><span class="math inline">\(\hfratef\)</span></td>
+<td style="text-align: left;"><span class="math inline">\(\hfratef{a}\)</span></td>
 <td style="text-align: left;"><code>\hfratef \hrateff</code></td>
 <td style="text-align: left;">estimated rate factor function (alias for <code>\hratefactorf</code>); deprecated, use <code>\efratef</code></td>
 </tr>
@@ -5583,7 +5585,7 @@ Table&nbsp;10: Every symbol that a macro prints
 <td style="text-align: left;">estimated risk factor (alias for <code>\hriskfactor</code>); deprecated, use <code>\efrisk</code></td>
 </tr>
 <tr class="even">
-<td style="text-align: left;"><span class="math inline">\(\hfriskf\)</span></td>
+<td style="text-align: left;"><span class="math inline">\(\hfriskf{a}\)</span></td>
 <td style="text-align: left;"><code>\hfriskf \hriskff</code></td>
 <td style="text-align: left;">estimated risk factor function (alias for <code>\hriskfactorf</code>); deprecated, use <code>\efriskf</code></td>
 </tr>
@@ -5593,7 +5595,7 @@ Table&nbsp;10: Every symbol that a macro prints
 <td style="text-align: left;">estimated survival factor (alias for <code>\hsurvfactor</code>); deprecated, use <code>\efsurv</code></td>
 </tr>
 <tr class="even">
-<td style="text-align: left;"><span class="math inline">\(\hfsurvf\)</span></td>
+<td style="text-align: left;"><span class="math inline">\(\hfsurvf{a}\)</span></td>
 <td style="text-align: left;"><code>\hfsurvf \hsurvff</code></td>
 <td style="text-align: left;">estimated survival factor function (alias for <code>\hsurvfactorf</code>); deprecated, use <code>\efsurvf</code></td>
 </tr>
@@ -5613,7 +5615,7 @@ Table&nbsp;10: Every symbol that a macro prints
 <td style="text-align: left;">estimated hazard factor function θ̂_λ(·); deprecated, use <code>\ehazfactorf</code></td>
 </tr>
 <tr class="even">
-<td style="text-align: left;"><span class="math inline">\(\hhazrf\)</span></td>
+<td style="text-align: left;"><span class="math inline">\(\hhazrf{a}\)</span></td>
 <td style="text-align: left;"><code>\hhazrf \hrhazf</code></td>
 <td style="text-align: left;">estimated hazard ratio function (alias for <code>\hhrf</code>); deprecated, use <code>\ehazrf</code></td>
 </tr>
@@ -5640,7 +5642,7 @@ Table&nbsp;10: Every symbol that a macro prints
 <tr class="odd">
 <td style="text-align: left;"><span class="math inline">\(\hist{a}{b}\)</span></td>
 <td style="text-align: left;"><code>\hist</code></td>
-<td style="text-align: left;">history of a variable through a time point, as in <code>\hist</code>{X}{k} (prints <code>\bar</code>{X}_{k})</td>
+<td style="text-align: left;">history of a variable through a time point, as in <code>\hist{X}{k}</code> (prints <code>\bar{X}</code>_{k})</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;"><span class="math inline">\(\hk\)</span></td>
@@ -5683,7 +5685,7 @@ Table&nbsp;10: Every symbol that a macro prints
 <td style="text-align: left;">estimated mean squared error applied to argument (legacy <code>\hat</code> form); deprecated, use <code>\eMSE</code></td>
 </tr>
 <tr class="even">
-<td style="text-align: left;"><span class="math inline">\(\hMSEf\)</span></td>
+<td style="text-align: left;"><span class="math inline">\(\hMSEf{a}\)</span></td>
 <td style="text-align: left;"><code>\hMSEf</code></td>
 <td style="text-align: left;">estimated mean squared error applied to argument (alias for <code>\hMSE</code>); deprecated, use <code>\eMSEf</code></td>
 </tr>
@@ -5705,7 +5707,7 @@ Table&nbsp;10: Every symbol that a macro prints
 <tr class="even">
 <td style="text-align: left;"><span class="math inline">\(\hnuisance\)</span></td>
 <td style="text-align: left;"><code>\hnuisance</code></td>
-<td style="text-align: left;">an estimated nuisance parameter (prints <code>\hat</code>{<code>\lambda</code>}); deprecated, use <code>\enuisance</code></td>
+<td style="text-align: left;">an estimated nuisance parameter (prints <code>\hat{\lambda}</code>); deprecated, use <code>\enuisance</code></td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;"><span class="math inline">\(\hodds\)</span></td>
@@ -5730,7 +5732,7 @@ Table&nbsp;10: Every symbol that a macro prints
 <tr class="odd">
 <td style="text-align: left;"><span class="math inline">\(\hparam\)</span></td>
 <td style="text-align: left;"><code>\hparam</code></td>
-<td style="text-align: left;">an estimated parameter (prints <code>\hat</code>{<code>\theta</code>}); deprecated, use <code>\eparam</code></td>
+<td style="text-align: left;">an estimated parameter (prints <code>\hat{\theta}</code>); deprecated, use <code>\eparam</code></td>
 </tr>
 <tr class="even">
 <td style="text-align: left;"><span class="math inline">\(\hpoprisk\)</span></td>
@@ -5750,7 +5752,7 @@ Table&nbsp;10: Every symbol that a macro prints
 <tr class="odd">
 <td style="text-align: left;"><span class="math inline">\(\hprecision\)</span></td>
 <td style="text-align: left;"><code>\hprecision</code></td>
-<td style="text-align: left;">an estimated precision (prints <code>\hat</code>{<code>\tau</code>}); deprecated, use <code>\eprecision</code></td>
+<td style="text-align: left;">an estimated precision (prints <code>\hat{\tau}</code>); deprecated, use <code>\eprecision</code></td>
 </tr>
 <tr class="even">
 <td style="text-align: left;"><span class="math inline">\(\hprev\)</span></td>
@@ -5773,7 +5775,7 @@ Table&nbsp;10: Every symbol that a macro prints
 <td style="text-align: left;">estimated prevalence ratio (alias for <code>\hprevratio</code>); deprecated, use <code>\eprr</code></td>
 </tr>
 <tr class="even">
-<td style="text-align: left;"><span class="math inline">\(\hprrf\)</span></td>
+<td style="text-align: left;"><span class="math inline">\(\hprrf{a}\)</span></td>
 <td style="text-align: left;"><code>\hprrf</code></td>
 <td style="text-align: left;">estimated prevalence ratio function (alias for <code>\hprevratiof</code>); deprecated, use <code>\eprrf</code></td>
 </tr>
@@ -5823,7 +5825,7 @@ Table&nbsp;10: Every symbol that a macro prints
 <td style="text-align: left;">estimated rate ratio function ϙ̂_λ(·); deprecated, use <code>\erateratiof</code></td>
 </tr>
 <tr class="even">
-<td style="text-align: left;"><span class="math inline">\(\hraterf\)</span></td>
+<td style="text-align: left;"><span class="math inline">\(\hraterf{a}\)</span></td>
 <td style="text-align: left;"><code>\hraterf \hrratef</code></td>
 <td style="text-align: left;">estimated rate ratio function (alias for <code>\hrateratiof</code>); deprecated, use <code>\eraterf</code></td>
 </tr>
@@ -5855,7 +5857,7 @@ Table&nbsp;10: Every symbol that a macro prints
 <tr class="even">
 <td style="text-align: left;"><span class="math inline">\(\hregcoef\)</span></td>
 <td style="text-align: left;"><code>\hregcoef</code></td>
-<td style="text-align: left;">an estimated unsubscripted regression coefficient (prints <code>\hat</code>{<code>\beta</code>}); deprecated, use <code>\eregcoef</code></td>
+<td style="text-align: left;">an estimated unsubscripted regression coefficient (prints <code>\hat{\beta}</code>); deprecated, use <code>\eregcoef</code></td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;"><span class="math inline">\(\hrf{a}\)</span></td>
@@ -5878,7 +5880,7 @@ Table&nbsp;10: Every symbol that a macro prints
 <td style="text-align: left;">estimated risk ratio function ϙ̂_π(·); deprecated, use <code>\eriskratiof</code></td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;"><span class="math inline">\(\hriskrf\)</span></td>
+<td style="text-align: left;"><span class="math inline">\(\hriskrf{a}\)</span></td>
 <td style="text-align: left;"><code>\hriskrf \hrriskf</code></td>
 <td style="text-align: left;">estimated risk ratio function (alias for <code>\hriskratiof</code>); deprecated, use <code>\eriskrf</code></td>
 </tr>
@@ -5888,7 +5890,7 @@ Table&nbsp;10: Every symbol that a macro prints
 <td style="text-align: left;">estimated root mean squared error applied to argument (legacy <code>\hat</code> form); deprecated, use <code>\eRMSE</code></td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;"><span class="math inline">\(\hRMSEf\)</span></td>
+<td style="text-align: left;"><span class="math inline">\(\hRMSEf{a}\)</span></td>
 <td style="text-align: left;"><code>\hRMSEf</code></td>
 <td style="text-align: left;">estimated root mean squared error applied to argument (alias for <code>\hRMSE</code>); deprecated, use <code>\eRMSEf</code></td>
 </tr>
@@ -5913,7 +5915,7 @@ Table&nbsp;10: Every symbol that a macro prints
 <td style="text-align: left;">estimated survival ratio (alias for <code>\hsurvratio</code>); deprecated, use <code>\ersurv</code></td>
 </tr>
 <tr class="even">
-<td style="text-align: left;"><span class="math inline">\(\hrsurvf\)</span></td>
+<td style="text-align: left;"><span class="math inline">\(\hrsurvf{a}\)</span></td>
 <td style="text-align: left;"><code>\hrsurvf \hsurvrf</code></td>
 <td style="text-align: left;">estimated survival ratio function (alias for <code>\hsurvratiof</code>); deprecated, use <code>\ersurvf</code></td>
 </tr>
@@ -5933,14 +5935,14 @@ Table&nbsp;10: Every symbol that a macro prints
 <td style="text-align: left;">estimated standard deviation SD̂(·); deprecated, use <code>\eSD</code></td>
 </tr>
 <tr class="even">
-<td style="text-align: left;"><span class="math inline">\(\hSDf\)</span></td>
+<td style="text-align: left;"><span class="math inline">\(\hSDf{a}\)</span></td>
 <td style="text-align: left;"><code>\hSDf</code></td>
 <td style="text-align: left;">estimated standard deviation (alias); deprecated, use <code>\eSDf</code></td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;"><span class="math inline">\(\hsdpar\)</span></td>
 <td style="text-align: left;"><code>\hsdpar</code></td>
-<td style="text-align: left;">an estimated standard deviation (prints <code>\hat</code>{<code>\sigma</code>}); deprecated, use <code>\esdpar</code></td>
+<td style="text-align: left;">an estimated standard deviation (prints <code>\hat{\sigma}</code>); deprecated, use <code>\esdpar</code></td>
 </tr>
 <tr class="even">
 <td style="text-align: left;"><span class="math inline">\(\HSE{a}\)</span></td>
@@ -5958,12 +5960,12 @@ Table&nbsp;10: Every symbol that a macro prints
 <td style="text-align: left;">estimated standard error operator ŜE; deprecated, use <code>\eSE</code></td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;"><span class="math inline">\(\hSEf\)</span></td>
+<td style="text-align: left;"><span class="math inline">\(\hSEf{a}\)</span></td>
 <td style="text-align: left;"><code>\hSEf</code></td>
 <td style="text-align: left;">estimated standard error function (alias); deprecated, use <code>\eSEf</code></td>
 </tr>
 <tr class="even">
-<td style="text-align: left;"><span class="math inline">\(\hsef\)</span></td>
+<td style="text-align: left;"><span class="math inline">\(\hsef{a}\)</span></td>
 <td style="text-align: left;"><code>\hsef</code></td>
 <td style="text-align: left;">estimated standard error (alias for <code>\hse</code>); deprecated, use <code>\esef</code></td>
 </tr>
@@ -6060,7 +6062,7 @@ Table&nbsp;10: Every symbol that a macro prints
 <tr class="odd">
 <td style="text-align: left;"><span class="math inline">\(\hvarpar\)</span></td>
 <td style="text-align: left;"><code>\hvarpar</code></td>
-<td style="text-align: left;">an estimated variance (prints <code>\hat</code>{<code>\sigma</code>}^2); deprecated, use <code>\evarpar</code></td>
+<td style="text-align: left;">an estimated variance (prints <code>\hat{\sigma}</code>^2); deprecated, use <code>\evarpar</code></td>
 </tr>
 <tr class="even">
 <td style="text-align: left;"><span class="math inline">\(\hvb\)</span></td>
@@ -6070,7 +6072,7 @@ Table&nbsp;10: Every symbol that a macro prints
 <tr class="odd">
 <td style="text-align: left;"><span class="math inline">\(\hvparam\)</span></td>
 <td style="text-align: left;"><code>\hvparam</code></td>
-<td style="text-align: left;">an estimated parameter vector (prints <code>\hat</code>{<code>\vec</code>{<code>\theta</code>}}); deprecated, use <code>\evparam</code></td>
+<td style="text-align: left;">an estimated parameter vector (prints <code>\hat{\vec{\theta}}</code>); deprecated, use <code>\evparam</code></td>
 </tr>
 <tr class="even">
 <td style="text-align: left;"><span class="math inline">\(\hy\)</span></td>
@@ -6128,7 +6130,7 @@ Table&nbsp;10: Every symbol that a macro prints
 <td style="text-align: left;">indicator function 𝟙{·} with curly braces</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;"><span class="math inline">\(\indicf\)</span></td>
+<td style="text-align: left;"><span class="math inline">\(\indicf{a}\)</span></td>
 <td style="text-align: left;"><code>\indicf</code></td>
 <td style="text-align: left;">indicator function (alias for <code>\indic</code>)</td>
 </tr>
@@ -6183,7 +6185,7 @@ Table&nbsp;10: Every symbol that a macro prints
 <td style="text-align: left;">inverse with curly braces {·}^{−1}</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;"><span class="math inline">\(\invf\)</span></td>
+<td style="text-align: left;"><span class="math inline">\(\invf{a}\)</span></td>
 <td style="text-align: left;"><code>\invf \invp</code></td>
 <td style="text-align: left;">multiplicative inverse (alias for <code>\inv</code>)</td>
 </tr>
@@ -6213,7 +6215,7 @@ Table&nbsp;10: Every symbol that a macro prints
 <td style="text-align: left;">inner product ⟨x, y⟩</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;"><span class="math inline">\(\iprodf\)</span></td>
+<td style="text-align: left;"><span class="math inline">\(\iprodf{a}{b}\)</span></td>
 <td style="text-align: left;"><code>\iprodf</code></td>
 <td style="text-align: left;">inner product (alias for <code>\iprod</code>)</td>
 </tr>
@@ -6323,7 +6325,7 @@ Table&nbsp;10: Every symbol that a macro prints
 <td style="text-align: left;">likelihood function ℒ(·)</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;"><span class="math inline">\(\likf\)</span></td>
+<td style="text-align: left;"><span class="math inline">\(\likf{a}\)</span></td>
 <td style="text-align: left;"><code>\likf \loglf \loglikf</code></td>
 <td style="text-align: left;">log-likelihood function ℓ(·) (alias for <code>\llikf</code>)</td>
 </tr>
@@ -6468,7 +6470,7 @@ Table&nbsp;10: Every symbol that a macro prints
 <td style="text-align: left;">script font operator (fallback to <code>\mathcal</code>)</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;"><span class="math inline">\(\matvecf\)</span></td>
+<td style="text-align: left;"><span class="math inline">\(\matvecf{a}\)</span></td>
 <td style="text-align: left;"><code>\matvecf</code></td>
 <td style="text-align: left;">matrix vectorization applied to argument (alias for <code>\vctf</code>)</td>
 </tr>
@@ -6553,7 +6555,7 @@ Table&nbsp;10: Every symbol that a macro prints
 <td style="text-align: left;">mean squared error MSE(·) applied to argument</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;"><span class="math inline">\(\MSEf\)</span></td>
+<td style="text-align: left;"><span class="math inline">\(\MSEf{a}\)</span></td>
 <td style="text-align: left;"><code>\MSEf</code></td>
 <td style="text-align: left;">mean squared error MSE(·) applied to argument (alias for <code>\MSE</code>)</td>
 </tr>
@@ -6715,7 +6717,7 @@ Table&nbsp;10: Every symbol that a macro prints
 <tr class="even">
 <td style="text-align: left;"><span class="math inline">\(\objfn\)</span></td>
 <td style="text-align: left;"><code>\objfn</code></td>
-<td style="text-align: left;">objective function that a fitting procedure minimizes over a model family (prints <code>\mathcal</code>{J})</td>
+<td style="text-align: left;">objective function that a fitting procedure minimizes over a model family (prints <code>\mathcal{J}</code>)</td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;"><span class="math inline">\(\objfnf{a}\)</span></td>
@@ -6783,12 +6785,12 @@ Table&nbsp;10: Every symbol that a macro prints
 <td style="text-align: left;">Greek letter omega (ω)</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;"><span class="math inline">\(\omu\)</span></td>
+<td style="text-align: left;"><span class="math inline">\(\omu{a}\)</span></td>
 <td style="text-align: left;"><code>\omu</code></td>
 <td style="text-align: left;">observed outcome mean μ(a) (shorthand for <code>\obsmean</code>)</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;"><span class="math inline">\(\opi\)</span></td>
+<td style="text-align: left;"><span class="math inline">\(\opi{a}\)</span></td>
 <td style="text-align: left;"><code>\opi</code></td>
 <td style="text-align: left;">observed outcome probability π(a) (shorthand for <code>\obsprob</code>)</td>
 </tr>
@@ -6800,7 +6802,7 @@ Table&nbsp;10: Every symbol that a macro prints
 <tr class="odd">
 <td style="text-align: left;"><span class="math inline">\(\optalg\)</span></td>
 <td style="text-align: left;"><code>\optalg</code></td>
-<td style="text-align: left;">optimization algorithm that searches a model family for a minimizer of the objective function (prints <code>\mathcal</code>{A})</td>
+<td style="text-align: left;">optimization algorithm that searches a model family for a minimizer of the objective function (prints <code>\mathcal{A}</code>)</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;"><span class="math inline">\(\OR\)</span></td>
@@ -6820,7 +6822,7 @@ Table&nbsp;10: Every symbol that a macro prints
 <tr class="odd">
 <td style="text-align: left;"><span class="math inline">\(\outbar\)</span></td>
 <td style="text-align: left;"><code>\outbar</code></td>
-<td style="text-align: left;">sample mean of the outcome values (prints <code>\bar</code>{<code>\outvar</code>})</td>
+<td style="text-align: left;">sample mean of the outcome values (prints <code>\bar{\outvar}</code>)</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;"><span class="math inline">\(\Outvar\)</span></td>
@@ -6898,7 +6900,7 @@ Table&nbsp;10: Every symbol that a macro prints
 <td style="text-align: left;">population mean absolute error pMAE(·) applied to argument</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;"><span class="math inline">\(\pMAEf\)</span></td>
+<td style="text-align: left;"><span class="math inline">\(\pMAEf{a}\)</span></td>
 <td style="text-align: left;"><code>\pMAEf</code></td>
 <td style="text-align: left;">population mean absolute error pMAE(·) applied to argument (alias for <code>\pMAE</code>)</td>
 </tr>
@@ -6923,7 +6925,7 @@ Table&nbsp;10: Every symbol that a macro prints
 <td style="text-align: left;">population mean squared error pMSE(·) applied to argument</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;"><span class="math inline">\(\pMSEf\)</span></td>
+<td style="text-align: left;"><span class="math inline">\(\pMSEf{a}\)</span></td>
 <td style="text-align: left;"><code>\pMSEf</code></td>
 <td style="text-align: left;">population mean squared error pMSE(·) applied to argument (alias for <code>\pMSE</code>)</td>
 </tr>
@@ -6933,7 +6935,7 @@ Table&nbsp;10: Every symbol that a macro prints
 <td style="text-align: left;">population mean squared error operator pMSE</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;"><span class="math inline">\(\pmu\)</span></td>
+<td style="text-align: left;"><span class="math inline">\(\pmu{a}\)</span></td>
 <td style="text-align: left;"><code>\pmu</code></td>
 <td style="text-align: left;">potential outcome mean μ_a (shorthand for <code>\potmean</code>)</td>
 </tr>
@@ -6998,24 +7000,24 @@ Table&nbsp;10: Every symbol that a macro prints
 <td style="text-align: left;">first argument (·) raised to the power of the second argument, with parentheses around the base</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;"><span class="math inline">\(\ppi\)</span></td>
+<td style="text-align: left;"><span class="math inline">\(\ppi{a}\)</span></td>
 <td style="text-align: left;"><code>\ppi</code></td>
 <td style="text-align: left;">potential outcome probability π_a (shorthand for <code>\potprob</code>)</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;"><span class="math inline">\(\predbar\)</span></td>
 <td style="text-align: left;"><code>\predbar</code></td>
-<td style="text-align: left;">sample mean of the predictor values (prints <code>\bar</code>{<code>\predvar</code>})</td>
+<td style="text-align: left;">sample mean of the predictor values (prints <code>\bar{\predvar}</code>)</td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;"><span class="math inline">\(\prederr\)</span></td>
 <td style="text-align: left;"><code>\prederr</code></td>
-<td style="text-align: left;">prediction error, predicted minus observed outcome, symbol ε with the upright label pred; same meaning as <code>\esterr</code>{<code>\predval</code>}{<code>\Outvar</code>}</td>
+<td style="text-align: left;">prediction error, predicted minus observed outcome, symbol ε with the upright label pred; same meaning as <code>\esterr{\predval}{\Outvar}</code></td>
 </tr>
 <tr class="even">
 <td style="text-align: left;"><span class="math inline">\(\prederrf{a}\)</span></td>
 <td style="text-align: left;"><code>\prederrf</code></td>
-<td style="text-align: left;">prediction error of the predictor in the argument, ε_pred(·) (prints <code>\prederr</code> followed by its argument in parentheses); the estimation error of that predictor for the new outcome, <code>\esterr</code>{predictor}{<code>\Outvar</code>}</td>
+<td style="text-align: left;">prediction error of the predictor in the argument, ε_pred(·) (prints <code>\prederr</code> followed by its argument in parentheses); the estimation error of that predictor for the new outcome, <code>\esterr{predictor}{\Outvar}</code></td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;"><span class="math inline">\(\predfam\)</span></td>
@@ -7040,7 +7042,7 @@ Table&nbsp;10: Every symbol that a macro prints
 <tr class="odd">
 <td style="text-align: left;"><span class="math inline">\(\predvalf{a}\)</span></td>
 <td style="text-align: left;"><code>\predvalf</code></td>
-<td style="text-align: left;">prediction at the covariate value given as the argument, from the model that a fitting procedure fits to the training set (prints <code>\fitted``\paren</code>{x}, the fitted prediction function applied to x; unlike <code>\predval</code>, which takes no argument and names no covariate value, this applies the fitted function to the covariate value given, and unlike <code>\epredfnf</code>, which applies any estimated prediction function, it is fixed to the training-set fit)</td>
+<td style="text-align: left;">prediction at the covariate value given as the argument, from the model that a fitting procedure fits to the training set (prints <code>\fitted``\paren{x}</code>, the fitted prediction function applied to x; unlike <code>\predval</code>, which takes no argument and names no covariate value, this applies the fitted function to the covariate value given, and unlike <code>\epredfnf</code>, which applies any estimated prediction function, it is fixed to the training-set fit)</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;"><span class="math inline">\(\predvari\)</span></td>
@@ -7078,7 +7080,7 @@ Table&nbsp;10: Every symbol that a macro prints
 <td style="text-align: left;">population root mean squared error pRMSE(·) applied to argument</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;"><span class="math inline">\(\pRMSEf\)</span></td>
+<td style="text-align: left;"><span class="math inline">\(\pRMSEf{a}\)</span></td>
 <td style="text-align: left;"><code>\pRMSEf</code></td>
 <td style="text-align: left;">population root mean squared error pRMSE(·) applied to argument (alias for <code>\pRMSE</code>)</td>
 </tr>
@@ -7118,14 +7120,14 @@ Table&nbsp;10: Every symbol that a macro prints
 <td style="text-align: left;">prevalence ratio (alias for <code>\prevratio</code>)</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;"><span class="math inline">\(\prrf\)</span></td>
+<td style="text-align: left;"><span class="math inline">\(\prrf{a}\)</span></td>
 <td style="text-align: left;"><code>\prrf</code></td>
 <td style="text-align: left;">prevalence ratio function (alias for <code>\prevratiof</code>)</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;"><span class="math inline">\(\Prunder{a}{b}\)</span></td>
 <td style="text-align: left;"><code>\Prunder</code></td>
-<td style="text-align: left;">probability of an event when the distribution is indexed by the first argument, such as a parameter or a distribution, <code>\Prunder</code>{<code>\theta</code>}{A} (prints Pr_θ(A))</td>
+<td style="text-align: left;">probability of an event when the distribution is indexed by the first argument, such as a parameter or a distribution, <code>\Prunder{\theta}{A}</code> (prints Pr_θ(A))</td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;"><span class="math inline">\(\pt{a}\)</span></td>
@@ -7138,7 +7140,7 @@ Table&nbsp;10: Every symbol that a macro prints
 <td style="text-align: left;">typeset argument in purple</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;"><span class="math inline">\(\py\)</span></td>
+<td style="text-align: left;"><span class="math inline">\(\py{a}\)</span></td>
 <td style="text-align: left;"><code>\py</code></td>
 <td style="text-align: left;">potential outcome Y_a (shorthand for <code>\potout</code>)</td>
 </tr>
@@ -7155,7 +7157,7 @@ Table&nbsp;10: Every symbol that a macro prints
 <tr class="even">
 <td style="text-align: left;"><span class="math inline">\(\qform{a}{b}\)</span></td>
 <td style="text-align: left;"><code>\qform</code></td>
-<td style="text-align: left;">quadratic form of a matrix M in a vector x: x′Mx, written <code>\qform</code>{M}{x}</td>
+<td style="text-align: left;">quadratic form of a matrix M in a vector x: x′Mx, written <code>\qform{M}{x}</code></td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;"><span class="math inline">\(\quantilef{a}\)</span></td>
@@ -7208,7 +7210,7 @@ Table&nbsp;10: Every symbol that a macro prints
 <td style="text-align: left;">rate ratio function ϙ_λ(·)</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;"><span class="math inline">\(\raterf\)</span></td>
+<td style="text-align: left;"><span class="math inline">\(\raterf{a}\)</span></td>
 <td style="text-align: left;"><code>\raterf \rratef</code></td>
 <td style="text-align: left;">rate ratio function (alias for <code>\rateratiof</code>)</td>
 </tr>
@@ -7270,7 +7272,7 @@ Table&nbsp;10: Every symbol that a macro prints
 <tr class="odd">
 <td style="text-align: left;"><span class="math inline">\(\rfacf{a}\)</span></td>
 <td style="text-align: left;"><code>\rfacf</code></td>
-<td style="text-align: left;">the parameter-free factor evaluated at a sample, <code>\rfacf</code>{<code>\vx</code>} (prints h(x))</td>
+<td style="text-align: left;">the parameter-free factor evaluated at a sample, <code>\rfacf{\vx}</code> (prints h(x))</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;"><span class="math inline">\(\riskfactorf{a}\)</span></td>
@@ -7288,7 +7290,7 @@ Table&nbsp;10: Every symbol that a macro prints
 <td style="text-align: left;">risk ratio function ϙ_π(·)</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;"><span class="math inline">\(\riskrf\)</span></td>
+<td style="text-align: left;"><span class="math inline">\(\riskrf{a}\)</span></td>
 <td style="text-align: left;"><code>\riskrf \rriskf</code></td>
 <td style="text-align: left;">risk ratio function (alias for <code>\riskratiof</code>)</td>
 </tr>
@@ -7308,7 +7310,7 @@ Table&nbsp;10: Every symbol that a macro prints
 <td style="text-align: left;">root mean squared error RMSE(·) applied to argument</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;"><span class="math inline">\(\RMSEf\)</span></td>
+<td style="text-align: left;"><span class="math inline">\(\RMSEf{a}\)</span></td>
 <td style="text-align: left;"><code>\RMSEf</code></td>
 <td style="text-align: left;">root mean squared error RMSE(·) applied to argument (alias for <code>\RMSE</code>)</td>
 </tr>
@@ -7338,7 +7340,7 @@ Table&nbsp;10: Every symbol that a macro prints
 <td style="text-align: left;">survival ratio (alias for <code>\survratio</code>)</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;"><span class="math inline">\(\rsurvf\)</span></td>
+<td style="text-align: left;"><span class="math inline">\(\rsurvf{a}\)</span></td>
 <td style="text-align: left;"><code>\rsurvf \survrf</code></td>
 <td style="text-align: left;">survival ratio function (alias for <code>\survratiof</code>)</td>
 </tr>
@@ -7355,7 +7357,7 @@ Table&nbsp;10: Every symbol that a macro prints
 <tr class="even">
 <td style="text-align: left;"><span class="math inline">\(\rvarbar\)</span></td>
 <td style="text-align: left;"><code>\rvarbar</code></td>
-<td style="text-align: left;">sample mean of a generic variable (prints <code>\bar</code>{<code>\rvar</code>})</td>
+<td style="text-align: left;">sample mean of a generic variable (prints <code>\bar{\rvar}</code>)</td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;"><span class="math inline">\(\s\)</span></td>
@@ -7463,7 +7465,7 @@ Table&nbsp;10: Every symbol that a macro prints
 <td style="text-align: left;">standard deviation function sd(·)</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;"><span class="math inline">\(\SDf\)</span></td>
+<td style="text-align: left;"><span class="math inline">\(\SDf{a}\)</span></td>
 <td style="text-align: left;"><code>\SDf</code></td>
 <td style="text-align: left;">standard deviation function (alias for <code>\SD</code>)</td>
 </tr>
@@ -7473,7 +7475,7 @@ Table&nbsp;10: Every symbol that a macro prints
 <td style="text-align: left;">self dot product x·x</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;"><span class="math inline">\(\sdprodf\)</span></td>
+<td style="text-align: left;"><span class="math inline">\(\sdprodf{a}\)</span></td>
 <td style="text-align: left;"><code>\sdprodf</code></td>
 <td style="text-align: left;">self dot product (alias for <code>\sdprod</code>)</td>
 </tr>
@@ -7490,15 +7492,15 @@ Table&nbsp;10: Every symbol that a macro prints
 <tr class="odd">
 <td style="text-align: left;"><span class="math inline">\(\seed\)</span></td>
 <td style="text-align: left;"><code>\seed</code></td>
-<td style="text-align: left;">random seed that starts a pseudorandom number generator (prints <code>\mathfrak</code>{s})</td>
+<td style="text-align: left;">random seed that starts a pseudorandom number generator (prints <code>\mathfrak{s}</code>)</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;"><span class="math inline">\(\SEf\)</span></td>
+<td style="text-align: left;"><span class="math inline">\(\SEf{a}\)</span></td>
 <td style="text-align: left;"><code>\SEf</code></td>
 <td style="text-align: left;">standard error function (alias for <code>\SE</code>)</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;"><span class="math inline">\(\sef\)</span></td>
+<td style="text-align: left;"><span class="math inline">\(\sef{a}\)</span></td>
 <td style="text-align: left;"><code>\sef</code></td>
 <td style="text-align: left;">standard error function (alias for <code>\se</code>)</td>
 </tr>
@@ -7528,7 +7530,7 @@ Table&nbsp;10: Every symbol that a macro prints
 <td style="text-align: left;">standard error with tilde applied to argument</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;"><span class="math inline">\(\SEtildef\)</span></td>
+<td style="text-align: left;"><span class="math inline">\(\SEtildef{a}\)</span></td>
 <td style="text-align: left;"><code>\SEtildef</code></td>
 <td style="text-align: left;">standard error with tilde applied to argument (alias for <code>\SEtilde</code>)</td>
 </tr>
@@ -7550,7 +7552,7 @@ Table&nbsp;10: Every symbol that a macro prints
 <tr class="odd">
 <td style="text-align: left;"><span class="math inline">\(\sfacf{a}{b}\)</span></td>
 <td style="text-align: left;"><code>\sfacf</code></td>
-<td style="text-align: left;">the statistic factor evaluated at a statistic value and a parameter, <code>\sfacf</code>{t}{<code>\param</code>} (prints g(t ; <code>\theta</code>))</td>
+<td style="text-align: left;">the statistic factor evaluated at a statistic value and a parameter, <code>\sfacf{t}{\param}</code> (prints g(t ; <code>\theta</code>))</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;"><span class="math inline">\(\sigmoidf{a}\)</span></td>
@@ -7603,7 +7605,7 @@ Table&nbsp;10: Every symbol that a macro prints
 <td style="text-align: left;">sample mean absolute error sMAE(·) applied to argument</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;"><span class="math inline">\(\sMAEf\)</span></td>
+<td style="text-align: left;"><span class="math inline">\(\sMAEf{a}\)</span></td>
 <td style="text-align: left;"><code>\sMAEf</code></td>
 <td style="text-align: left;">sample mean absolute error sMAE(·) applied to argument (alias for <code>\sMAE</code>)</td>
 </tr>
@@ -7620,7 +7622,7 @@ Table&nbsp;10: Every symbol that a macro prints
 <tr class="odd">
 <td style="text-align: left;"><span class="math inline">\(\smeandev\)</span></td>
 <td style="text-align: left;"><code>\smeandev</code></td>
-<td style="text-align: left;">deviation of the sample mean, the sample mean of the deviations (prints <code>\smean</code>{<code>\deviation</code>}, 𝕕 with a bar)</td>
+<td style="text-align: left;">deviation of the sample mean, the sample mean of the deviations (prints <code>\smean{\deviation}</code>, 𝕕 with a bar)</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;"><span class="math inline">\(\sMSE{a}\)</span></td>
@@ -7628,7 +7630,7 @@ Table&nbsp;10: Every symbol that a macro prints
 <td style="text-align: left;">sample mean squared error sMSE(·) applied to argument</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;"><span class="math inline">\(\sMSEf\)</span></td>
+<td style="text-align: left;"><span class="math inline">\(\sMSEf{a}\)</span></td>
 <td style="text-align: left;"><code>\sMSEf</code></td>
 <td style="text-align: left;">sample mean squared error sMSE(·) applied to argument (alias for <code>\sMSE</code>)</td>
 </tr>
@@ -7668,7 +7670,7 @@ Table&nbsp;10: Every symbol that a macro prints
 <td style="text-align: left;">sample root mean squared error sRMSE(·) applied to argument</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;"><span class="math inline">\(\sRMSEf\)</span></td>
+<td style="text-align: left;"><span class="math inline">\(\sRMSEf{a}\)</span></td>
 <td style="text-align: left;"><code>\sRMSEf</code></td>
 <td style="text-align: left;">sample root mean squared error sRMSE(·) applied to argument (alias for <code>\sRMSE</code>)</td>
 </tr>
@@ -7730,7 +7732,7 @@ Table&nbsp;10: Every symbol that a macro prints
 <tr class="odd">
 <td style="text-align: left;"><span class="math inline">\(\statf{a}\)</span></td>
 <td style="text-align: left;"><code>\statf</code></td>
-<td style="text-align: left;">a statistic evaluated at a sample, <code>\statf</code>{<code>\vx</code>} (prints T(x))</td>
+<td style="text-align: left;">a statistic evaluated at a sample, <code>\statf{\vx}</code> (prints T(x))</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;"><span class="math inline">\(\StdResid\)</span></td>
@@ -7990,12 +7992,12 @@ Table&nbsp;10: Every symbol that a macro prints
 <tr class="odd">
 <td style="text-align: left;"><span class="math inline">\(\trthist{a}\)</span></td>
 <td style="text-align: left;"><code>\trthist</code></td>
-<td style="text-align: left;">treatment history through time k (prints <code>\bar</code>{A}_k)</td>
+<td style="text-align: left;">treatment history through time k (prints <code>\bar{A}</code>_k)</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;"><span class="math inline">\(\trtvalhist{a}\)</span></td>
 <td style="text-align: left;"><code>\trtvalhist</code></td>
-<td style="text-align: left;">a treatment-history value through time k (prints <code>\bar</code>{a}_k)</td>
+<td style="text-align: left;">a treatment-history value through time k (prints <code>\bar{a}</code>_k)</td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;"><span class="math inline">\(\truemeanf{a}\)</span></td>
@@ -8010,7 +8012,7 @@ Table&nbsp;10: Every symbol that a macro prints
 <tr class="odd">
 <td style="text-align: left;"><span class="math inline">\(\truemeansubf{a}{b}\)</span></td>
 <td style="text-align: left;"><code>\truemeansubf</code></td>
-<td style="text-align: left;">true mean function with the subscript given as the first argument, applied to the second argument; with the subscript <code>\Outvar</code> <code>\given</code> <code>\Predvar</code> it is the conditional population mean <code>\condE</code>{<code>\Outvar</code>}{<code>\Predvar</code> = x}</td>
+<td style="text-align: left;">true mean function with the subscript given as the first argument, applied to the second argument; with the subscript <code>\Outvar</code> <code>\given</code> <code>\Predvar</code> it is the conditional population mean <code>\condE{\Outvar}{\Predvar = x}</code></td>
 </tr>
 <tr class="even">
 <td style="text-align: left;"><span class="math inline">\(\truenulls\)</span></td>
@@ -8020,7 +8022,7 @@ Table&nbsp;10: Every symbol that a macro prints
 <tr class="odd">
 <td style="text-align: left;"><span class="math inline">\(\truthindf{a}\)</span></td>
 <td style="text-align: left;"><code>\truthindf</code></td>
-<td style="text-align: left;">prints <code>\truthind``\paren</code>{…}, the truth indicator of its condition</td>
+<td style="text-align: left;">prints <code>\truthind``\paren{...}</code>, the truth indicator of its condition</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;"><span class="math inline">\(\TSS\)</span></td>
@@ -8028,14 +8030,14 @@ Table&nbsp;10: Every symbol that a macro prints
 <td style="text-align: left;">total sum of squares, TSS: the sum over the observations of the squared differences of the outcome from its sample mean</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;"><span class="math inline">\(\ub\)</span></td>
+<td style="text-align: left;"><span class="math inline">\(\ub{a}\)</span></td>
 <td style="text-align: left;"><code>\ub</code></td>
 <td style="text-align: left;">underbrace shorthand (alias for <code>\underbrace</code>)</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;"><span class="math inline">\(\ubf{a}{b}\)</span></td>
 <td style="text-align: left;"><code>\ubf \dims</code></td>
-<td style="text-align: left;">underbrace with subscript label <code>\underbrace</code>{·}_{label}</td>
+<td style="text-align: left;">underbrace with subscript label <code>\underbrace{·}</code>_{label}</td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;"><span class="math inline">\(\ubound\)</span></td>
@@ -8078,7 +8080,7 @@ Table&nbsp;10: Every symbol that a macro prints
 <td style="text-align: left;">variance function Var(·)</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;"><span class="math inline">\(\Var\)</span></td>
+<td style="text-align: left;"><span class="math inline">\(\Var{a}\)</span></td>
 <td style="text-align: left;"><code>\Var \Varf \varf</code></td>
 <td style="text-align: left;">variance function (alias for <code>\var</code>)</td>
 </tr>
@@ -8088,7 +8090,7 @@ Table&nbsp;10: Every symbol that a macro prints
 <td style="text-align: left;">estimated variance function (alias)</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;"><span class="math inline">\(\varhf\)</span></td>
+<td style="text-align: left;"><span class="math inline">\(\varhf{a}\)</span></td>
 <td style="text-align: left;"><code>\varhf</code></td>
 <td style="text-align: left;">estimated variance function (alias)</td>
 </tr>
@@ -8230,7 +8232,7 @@ Table&nbsp;10: Every symbol that a macro prints
 <tr class="odd">
 <td style="text-align: left;"><span class="math inline">\(\vlagmult\)</span></td>
 <td style="text-align: left;"><code>\vlagmult</code></td>
-<td style="text-align: left;">a vector of Lagrange multipliers (prints <code>\vecf</code>{<code>\lambda</code>})</td>
+<td style="text-align: left;">a vector of Lagrange multipliers (prints <code>\vecf{\lambda}</code>)</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;"><span class="math inline">\(\vm\)</span></td>
@@ -8240,17 +8242,17 @@ Table&nbsp;10: Every symbol that a macro prints
 <tr class="odd">
 <td style="text-align: left;"><span class="math inline">\(\vnatparam\)</span></td>
 <td style="text-align: left;"><code>\vnatparam</code></td>
-<td style="text-align: left;">natural parameter vector of an exponential family (prints <code>\vecf</code>{<code>\eta</code>})</td>
+<td style="text-align: left;">natural parameter vector of an exponential family (prints <code>\vecf{\eta}</code>)</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;"><span class="math inline">\(\vNoise\)</span></td>
 <td style="text-align: left;"><code>\vNoise</code></td>
-<td style="text-align: left;">a vector of noise random variables (prints <code>\vecf</code>{<code>\Noise</code>})</td>
+<td style="text-align: left;">a vector of noise random variables (prints <code>\vecf{\Noise}</code>)</td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;"><span class="math inline">\(\vnoise\)</span></td>
 <td style="text-align: left;"><code>\vnoise</code></td>
-<td style="text-align: left;">a vector of realized noise values (prints <code>\vecf</code>{<code>\noise</code>})</td>
+<td style="text-align: left;">a vector of realized noise values (prints <code>\vecf{\noise}</code>)</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;"><span class="math inline">\(\vone\)</span></td>
