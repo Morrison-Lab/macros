@@ -1,6 +1,7 @@
 # Fails when data/symbols-all.csv, which lists one row per distinct symbol,
-# is stale against macros.qmd, or when a macro has no interpretation.
-# See tools/gen_symbols.py (#334).
+# is stale against macros.qmd, when a macro has no interpretation, or when
+# MathJax rejects a symbol in it.
+# See tools/gen_symbols.py (#334) and tools/check_symbols_mathjax.py (#407).
 name: Check symbols
 
 on:
@@ -10,6 +11,8 @@ on:
       - interpretations.tsv
       - data/symbols-all.csv
       - tools/gen_symbols.py
+      - tools/check_symbols_mathjax.py
+      - tools/check_symbols_mathjax.js
       - tools/tests/test_gen_symbols.py
       - .github/workflows/check-symbols.yml
   push:
@@ -19,6 +22,8 @@ on:
       - interpretations.tsv
       - data/symbols-all.csv
       - tools/gen_symbols.py
+      - tools/check_symbols_mathjax.py
+      - tools/check_symbols_mathjax.js
       - tools/tests/test_gen_symbols.py
       - .github/workflows/check-symbols.yml
 
@@ -36,3 +41,9 @@ jobs:
         run: python3 -I tools/tests/test_gen_symbols.py
       - name: Check the symbol list is current
         run: python3 -I tools/gen_symbols.py --check
+      - name: Install mathjax-full
+        run: npm install --no-save --no-audit --no-fund --prefix "$RUNNER_TEMP/mj" mathjax-full@3.2.2
+      - name: Typeset every symbol with MathJax
+        env:
+          NODE_PATH: ${{ runner.temp }}/mj/node_modules
+        run: python3 -I tools/check_symbols_mathjax.py

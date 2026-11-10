@@ -59,6 +59,7 @@ read both before editing `macros.qmd`.
   Run `python3 tools/gen_symbols.py`, which writes one row per distinct symbol, and commit the result.
   `check-symbols.yml` runs `python3 tools/gen_symbols.py --check` and fails on a stale file,
   on a row with no interpretation, and on a definition line the parser skipped.
+  It also typesets every symbol with `mathjax-full` (`tools/check_symbols_mathjax.py`) and fails if MathJax rejects one.
   Add a macro's `interpretations.tsv` row first, or the check names the macro with none.
 
 - **A refactor that "leaves output unchanged" needs a measurement in MathJax and in LaTeX.**
