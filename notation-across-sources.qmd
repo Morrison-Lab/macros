@@ -221,10 +221,16 @@ all_table <- data.frame(
   Meaning = gsub("|", "\\|", symbols_all$interpretation, fixed = TRUE)
 )
 # A macro named in the meaning, such as an alias note or a print hint, is
-# shown as code, with any braced arguments inside the code span, so that
-# markdown does not read its backslash as an escape.
+# shown as code, with its braced arguments, subscripts, superscripts and
+# any macro that follows it inside the one code span, so that markdown does
+# not read its backslash or underscore as markup.
 all_table$Meaning <- gsub(
-  "(\\\\[A-Za-z]+(\\{(?:[^{}]|(?2))*\\})*)", "`\\1`", all_table$Meaning,
+  paste0(
+    "(\\\\[A-Za-z]+(?:(?<b>\\{(?:[^{}]|(?&b))*\\})",
+    "|[_^](?:(?&b)|\\\\[A-Za-z]+|[A-Za-z0-9])",
+    "|\\\\[A-Za-z]+)*)"
+  ),
+  "`\\1`", all_table$Meaning,
   perl = TRUE
 )
 knitr::kable(
