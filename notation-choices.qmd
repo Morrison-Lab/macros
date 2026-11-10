@@ -1027,11 +1027,19 @@ Other sources write "the mode of $X$" for one value, which is the single element
 
 ## The cross-product and Gram matrices {#sec-cross-product-gram}
 
-The cross-product matrix of two matrices $\mX$ and $\mY$ is $\tprod{\mX}{\mY}$, written `\tprod{\mX}{\mY}`.
-The call form `\cpf{\mX}{\mY}` is an alias, named for the cross-product matrix, and prints the same expression.
+The ordinary matrix product $\mX\mY$ is a row-column product: its entry $(i, j)$ is the dot product of row $i$ of $\mX$ with column $j$ of $\mY$.
+It needs no macro.
+
+The cross-product matrix of two matrices $\mX$ and $\mY$ is a column-column product: its entry $(i, j)$ is the dot product of column $i$ of $\mX$ with column $j$ of $\mY$.
+Our convention is to write it $\ccprod{\mX}{\mY}$, with `\ccprod{\mX}{\mY}`, or `\ccp{\mX}{\mY}` for short.
+The call form `\cpf{\mX}{\mY}` is another alias, named for the cross-product matrix, and prints the same expression.
+For now `\ccprod` prints the transpose glyph, so a reader sees the transpose and the inner products of the columns.
+It is a macro of its own, rather than `\tprod`, so that the column-column product can get a different glyph later by changing one definition
+(Ezra, 2026-11-10: "let's keep \transpose as the glyph for column-column product for now, but use a \ccprod macro so we can easily change it later").
+`\tprod` stays for a transpose product in general.
+
 The Gram matrix of $\mX$ is the cross-product matrix of $\mX$ with itself, $\stprod{\mX}$, written `\stprod{\mX}`.
-Both macros always print the transpose glyph, so a reader sees the transpose and the inner products of the columns.
-Neither has a glyph of its own for now.
+It also prints the transpose glyph, and has no glyph of its own for now.
 
 Other sources differ.
 ISLR2, ESL and Murphy write $\tp{\mX}\mX$ and $\tp{\mX}\vy$ with no name or symbol,
