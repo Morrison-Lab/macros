@@ -55,6 +55,12 @@ read both before editing `macros.qmd`.
   and afterwards run `cut -f1 interpretations.tsv | sort | uniq -d` to confirm there are no duplicates.
   Write `(prints ...)` for the rendered expression or its name in words (`prints a plus sign`, `prints \vecf{\delta}`, `prints n_{T\posclass}`), without outer atom-grouping braces (`{+}`).
 
+- **Regenerate `data/symbols-all.csv` after changing `macros.qmd` or `interpretations.tsv`.**
+  Run `python3 tools/gen_symbols.py`, which writes one row per distinct symbol, and commit the result.
+  `check-symbols.yml` runs `python3 tools/gen_symbols.py --check` and fails on a stale file,
+  on a row with no interpretation, and on a definition line the parser skipped.
+  Add a macro's `interpretations.tsv` row first, or the check names the macro with none.
+
 - **A refactor that "leaves output unchanged" needs a measurement in MathJax and in LaTeX.**
   A macro that ends in `\mathclose{}` (such as `\paren`, `\sb`, `\cb`, `\norm` and `\angb`) must not have `^` or `_` placed right after it inside another macro:
   the script then attaches to the empty close atom and no longer rises over a tall argument.
