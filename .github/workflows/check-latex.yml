@@ -31,6 +31,8 @@ jobs:
       - uses: quarto-dev/quarto-actions/setup@v2
         with:
           tinytex: true
+        env:
+          GH_TOKEN: ${{ github.token }}
       - name: Put TinyTeX on PATH
         run: echo "$HOME/.TinyTeX/bin/x86_64-linux" >> "$GITHUB_PATH"
       - name: Install pdftotext

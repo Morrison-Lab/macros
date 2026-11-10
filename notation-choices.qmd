@@ -1,5 +1,6 @@
 ---
 title: "Notation Choices"
+bibliography: references.bib
 format:
   html:
     include-in-header:
@@ -40,6 +41,12 @@ That entry is a single number, so it needs no vector mark, only the hat.
 
 Other sources use bold letters ($\mathbf{x}$) or arrows ($\overrightarrow{x}$) for the same objects.
 All of these notations mark a vector.
+
+In Word (.docx) output only, the vector mark is a tilde over the letter, not under it.
+Pandoc converts math to native Word math, and it cannot read a mark under a letter, so without a fallback each vector prints as raw TeX.
+The Lua filter `docx-vecf.lua` rewrites `\vecf` to the over-tilde in Word output, and HTML, slides and PDF keep the tilde under the letter.
+Word cannot convert two accents on one letter, so an estimated vector in Word shows only its hat, with no vector mark.
+Word also cannot convert an accent over a subscripted letter, so a vector such as `\vprederr` carries its tilde over the base letter alone.
 
 ## Subscripts and parentheses {#sec-subscripts-parentheses}
 
@@ -129,8 +136,8 @@ Writing the intercept separately keeps it visible as its own number.
 In logistic regression, for example, the logistic function turns the linear predictor into a probability.
 The intercept then shifts the [decision boundary](https://morrison-lab.github.io/lds/chapters/logistic-regression.html#def-decision-boundary), the set of inputs where the model is undecided between the two classes, while the slopes tilt it.
 
-Other sources absorb the intercept.
-They add a constant input $1$ to the start of the input vector, and the coefficient vector then also holds the intercept, at its start.
+Hastie, Tibshirani and Friedman absorb the intercept [@hastie2009esl, Section 2.3.1, Equation 2.2, p. 11].
+They include a constant input $1$ in the input vector, and the coefficient vector then also holds the intercept.
 The linear predictor is then $\dprod{\vcoef}{\vpredvar}$ alone.
 Both forms describe the same model.
 When a source writes the linear predictor as $\dprod{\vcoef}{\vpredvar}$, check whether the input vector starts with a constant $1$.
@@ -143,6 +150,7 @@ Between two neighboring layers, a weight matrix holds the numbers that say how m
 
 Suppose a network has an input layer, one hidden layer (a layer between the input and the output), and an output layer.
 Some sources call it a three-layer network, because it has three rows of units.
+Kriesel calls a feedforward network with two input neurons, three hidden neurons and two output neurons "a feedforward network with three layers" [@kriesel, Section 3.3.1, Figure 3.3].
 Our convention is to call it a two-layer network.
 Here "two-layer" counts the weight matrices, not the rows of units.
 The network has two weight matrices: input to hidden, and hidden to output.
@@ -175,21 +183,27 @@ Some software reports the average under the same name.
 On the same data, dividing every cross-entropy by the number of examples does not change which of two models is preferred, but it does change the number.
 So also check whether a source reports the sum or the average before comparing its numbers with ours.
 
+When a page needs the average, we write it as `\avgcrossent`, which prints $\avgcrossent$, so that the bar marks the average over the examples as it does for `\smean{x}`.
+To state the base, we write `\avgcrossentbase{b}`, which prints $\avgcrossentbase{b}$, and base $e$ is `\avgcrossentbase{e}`.
+Changing the base divides by a constant, as in $\avgcrossentbase{b} = \avgcrossentbase{e} / \ln b$.
+The symbol is the entropy symbol of `\crossentropy` with a bar, not a plain italic $H$ with a bar, so it matches the cross-entropy of two distributions.
+
 ## Functions of a population distribution {#sec-distribution-function-notation}
 
 Every function that describes a population distribution is blackboard bold (Ezra, 2026-11-04).
-This covers the probability mass $\P$, the density $\p$ (and $\f$), the distribution function $\F$, the survival function $\S$, the hazard $\h$, the cumulative hazard $\H$, the quantile function $\Q$, the entropy $\entropy$ and the surprisal $\surprisal$.
+This covers the probability mass $\P$, the density $\p$ (and $\f$), the distribution function $\F$, the survival function $\S$, the hazard $\h$, the cumulative hazard $\H$, the quantile function $\Q$, the entropy $\entropy$, the mutual information $\mutinfo$ and the surprisal $\surprisal$.
 All of them except $\P$ print through `\distop`, so a new function of a distribution uses `\distop{...}` too.
 The macros `\P` and `\pmf` print their blackboard letter directly.
 The blackboard letter marks a function of the distribution, as it marks the operators $\Expp$, $\biassym$ and $\varsym$ in [the bias and variance entry](#sec-bias-variance-symbols), and it cannot be mistaken for an italic variable.
 Sources differ on the type: Cover and Thomas write an italic $H$, and Wikipedia's article on [information content](https://en.wikipedia.org/wiki/Information_content) writes an upright $\mathrm{H}$ and $\operatorname{I}$.
 We chose blackboard bold so that one rule covers all of these functions.
 
-Three collisions are resolved by context:
+Four collisions are resolved by context:
 
 -   The quantile function $\Q$ prints the same letter as the rationals `\bbQ`, and it always takes an argument.
 -   The distribution function $\F$ prints the same letter as the finite field `\ffield{q}`, which always carries a subscript.
 -   The cumulative hazard $\H$ and the entropy $\entropy$ print the same letter, so the surrounding text says which one a formula means.
+-   The mutual information $\mutinfo$ prints the same letter as the identity matrix `\idmat`, and it always takes arguments.
 
 A PDF needs the `bbm` package for the lowercase letters, so list `macros-pdf-header.tex` before `macros.qmd` in `include-in-header`, as for `\devval`.
 
@@ -198,13 +212,56 @@ A PDF needs the `bbm` package for the lowercase letters, so list `macros-pdf-hea
 The [surprisal](https://morrison-lab.github.io/ids/entropy.html#def-surprisal) of an outcome $x$ is written $\surprisalf{x}$.
 That form leaves the distribution implicit.
 To name the distribution that measures the surprisal, write it as a subscript with $\surprisalunderf{q}{x}$, which is $-\log q(x)$.
+The reciprocal of the probability, of which the surprisal is the logarithm, is the rarity, written $\rarityf{x}$, or $\rarityunderf{q}{x}$ for a named distribution.
+Leinster calls $1/p_i$ "a measure of [the] rarity or specialness" of the $i$th species [*Entropy and Diversity*, 2021, Section 2.4](https://arxiv.org/abs/2012.02113), and takes the diversity of a community to be the average rarity of an individual in it.
+MacKay's *Information Theory, Inference, and Learning Algorithms* (2003, section 2.4) defines only the logarithm, the Shannon information content.
+The blackboard letter $\rarity$ is lowercase like $\surprisal$, which keeps it apart from the rate and the rank.
+So $\surprisalf{x} = \logf{\rarityf{x}}$.
+The [complement rule](https://morrison-lab.github.io/pds/probability-basics.html#cor-p-neg0) says $\P(\neg A) = 1 - \P(A)$.
+Its right side, the probability $1 - p$ that an event of probability $p$ does not occur, is the complementary probability, written $\cprob{p}$, with a sans-serif superscript $\mathsf{c}$ as in the complement $A^{\mathsf{c}}$ of an event.
+Grinstead and Snell (*Introduction to Probability*, Theorem 1.1, property 5) state the rule as $P(\tilde{A}) = 1 - P(A)$.
+Grinstead and Snell call $q = 1 - p$ "the probability $q$ of failure" in a Bernoulli trials process (Definition 3.5, p. 96), but no source we found names $1 - p$ itself, so "complementary probability" is ours.
+We do not write $q$ because $q$ is a second distribution in $\surprisalunderf{q}{x}$ and $\kldivf{p}{q}$, nor a bar, which is the sample mean $\smean{x}$.
+The odds in favour are $p / \cprob{p}$, the odds against are $\cprob{p} / p$, and so the odds against equal $\cprob{p}$ times the rarity $1/p$.
+The exponential of the entropy, $\perplexityf{X}$ for a random variable $X$, is the geometric mean of the rarities, weighted by the probabilities.
+The geometric mean is called the perplexity in language modelling, where [Murphy (2012, Section 27.3.3.1)](https://mitpress.mit.edu/9780262018029/machine-learning/) defines it as $2^{H(p, q)}$ for a model $q$ of a process $p$ and reads it as a weighted average branching factor, and in speech recognition, where the term comes from [Jelinek, Mercer, Bahl and Baker (1977)](https://doi.org/10.1121/1.2016299).
+Leinster calls the same quantity the diversity of order 1, an effective number of species.
+It prints as upright $\perplexity$, and it does not depend on the base of the logarithm, provided the entropy and the exponential use the same base.
 The [Kullback--Leibler divergence](https://morrison-lab.github.io/pds/expectation.html#def-kl-divergence) of $q$ from $p$ is written $\kldivf{p}{q}$, with the true or reference distribution first.
 Our convention puts $p$ first, because the divergence is the expectation under $p$ of the log ratio of $p$ to $q$.
 It is not symmetric, so swapping the arguments changes the value.
-Some sources write the same quantity with the arguments in the other order, or call it the relative entropy, so check which distribution comes first before comparing a formula with ours.
+Cover and Thomas call the same quantity the relative entropy or Kullback--Leibler distance and write it $D(p \,\Vert\, q)$ [@cover2006elements, Section 2.3].
+Bishop calls it the relative entropy or Kullback--Leibler divergence [@bishop2006prml, Section 1.6.1].
+Bishop's derivation of the EM algorithm puts the approximating distribution $q$ first, as $\mathrm{KL}(q \,\Vert\, p)$ [@bishop2006prml, Section 9.4, Equation 9.72].
+Check which distribution comes first before comparing a formula with ours.
 
 The [cross-entropy](https://morrison-lab.github.io/pds/expectation.html#def-cross-entropy) of $q$ relative to $p$ is written $\crossentropyf{p}{q}$, again with $p$ first, and it uses the same letter as the entropy because $\crossentropyf{p}{p}$ is the entropy.
 It is not symmetric either, so check the order of the arguments in a source before comparing a formula with ours.
+
+The [mutual information](https://morrison-lab.github.io/ids/entropy.html#def-mutual-information) of $X$ and $Y$ is written $\mutinfof{X}{Y}$, with a semicolon between the arguments, and the mutual information given $Z$ is $\cmutinfof{X}{Y}{Z}$.
+The mutual information under the conditional distribution given one value $z$ of $Z$ is $\mutinfoatf{z}{X}{Y}$,
+with the value as a subscript,
+so $\cmutinfof{X}{Y}{Z}$ is the average of $\mutinfoatf{z}{X}{Y}$ over the values $z$ of $Z$.
+The semicolon marks the two variables as a pair that the information is shared between, so it is not read as the joint $(X, Y)$ of the entropy $\entropyf{X, Y}$.
+Cover and Thomas write an italic $I(X; Y)$ with the same semicolon [@cover2006elements, Section 2.3].
+We print the letter in blackboard bold, like the entropy, by the rule in [the section on functions of a distribution](#sec-distribution-function-notation).
+It prints the same letter as the identity matrix `\idmat`, which takes no argument in parentheses, so the surrounding text says which one a formula means.
+
+The [Rényi entropy](https://morrison-lab.github.io/ids/entropy.html#def-renyi-entropy) of order $\alpha$ is written $\renyientropyf{\alpha}{X}$, with the order as a subscript on the entropy letter, so that $\renyientropyf{2}{X}$ is the collision entropy.
+Rényi's paper writes the order as a subscript in the same position [@renyi1961measures].
+It uses the same blackboard letter as the Shannon entropy $\entropyf{X}$, which is the limit of the Rényi entropy as the order tends to $1$, and the subscript tells the two apart.
+
+## The length of a codeword and the expected code length {#sec-code-length-notation}
+
+A code assigns each symbol $x$ a string of digits, its codeword.
+Our convention is to write the length of that codeword as `\codelenf{x}`, which prints $\codelenf{x}$, with the bare symbol `\codelen` printing $\codelen$.
+The expected code length, the average of the codeword length over the distribution of the symbol, is `\expcodelen`, which prints $\expcodelen$, so that $\expcodelen = \E{\codelenf{X}}$.
+Each macro names its role, so the letter is our choice.
+Cover and Thomas write the same quantities as $l(x)$ and $L(C) = \sum_x p(x) l(x)$ [@cover2006elements, Section 5.1, Equation 5.1, p. 104].
+
+The letters overlap with other macros: `\llik` also prints $\codelen$ and `\loss` also prints $\expcodelen$.
+A codeword length does not appear in the same expression as a log-likelihood or a loss, so we accept the overlap rather than take unusual letters.
+The probability mass function in the sum is `\pf{x}`, which prints $\pf{x}$ in blackboard bold by [the rule for functions of a distribution](#sec-distribution-function-notation), so we do not add a second macro for a plain italic $p(x)$.
 
 ## Names for the same object in machine learning and statistics {#sec-ml-statistics-names}
 
@@ -254,6 +311,8 @@ We often omit its arguments and write $\score$ for $\score(\theta)$.
 When we want to show the data, we write $\score(\theta; \vx)$, in the same style as the likelihood.
 
 Some sources write $U$ or $S$ for the score function instead.
+Dobson and Barnett write the score statistic as $U(\theta; y)$ [@dobson4e, Section 3.3, p. 55].
+Casella and Berger write $S(\theta)$ and call it the score statistic [@casella2002statistical, Section 10.3.2, p. 494].
 We write $\score$ because it keeps $U$ and $S$ free for other uses.
 
 ## A partial derivative written with a slash {#sec-slash-partial-derivative}
@@ -330,6 +389,11 @@ We write the expectation, the probability, the bias and the variance as operator
 The blackboard letter marks an operator that takes a random variable or an estimator, so it cannot be mistaken for an italic variable.
 We do not use blackboard bold for the risk, because $\reals$ is the real numbers.
 The risk stays an italic $\poprisk$, which is free now that the noise is $\varepsilon$.
+The risk of a model at one input, the conditional risk, is the same italic letter with the input after a bar: $\condpopriskf{\modmem}{x}$.
+We keep one letter for both because they are one quantity at two levels.
+The population risk $\popriskf{\modmem}$ is the average of $\condpopriskf{\modmem}{\predvar}$ over the distribution of the input.
+Duda and Hart make the same split, between the conditional risk and the overall risk, and *The Elements of Statistical Learning* writes the pointwise form $\mathrm{EPE}(x_0)$ beside $\mathrm{EPE}(f)$.
+*An Introduction to Statistical Learning* does not separate them.
 The long operators $\Biast$ and $\Vart$ stay upright words.
 We make this exception to the Greek convention for estimands in [the estimands entry](#sec-estimand-estimator-symbols).
 The variance operator applies to any random variable, not only to a fitted value.
@@ -451,7 +515,7 @@ The operator that takes a value to its deviation from a reference is uppercase b
 An observed deviation is the lowercase letter, `\devval` or `\deviation`, which prints $\deviation$.
 Before this change both printed $\delta$.
 In a PDF the lowercase letter needs the `bbm` package, which `macros-pdf-header.tex` loads, so list that file before `macros.qmd` in `include-in-header`.
-The design matrix `\design` is a bold $\design$, like every matrix, and the deviation operator is blackboard bold, so the two do not collide.
+The design matrix `\mdesign` is a bold $\mdesign$, like every matrix, and the deviation operator is blackboard bold, so the two do not collide.
 
 A sample mean is a bar over the quantity, and we write it with the macro `\smean{y}`, which prints $\smean{y}$, rather than with a literal `\bar`.
 The macros `\xbar`, `\outbar`, `\predbar`, `\rvarbar`, `\samplemean` and `\avgleverage` use it.
@@ -459,8 +523,10 @@ The sample mean of the deviations from a population mean is the deviation of the
 The macro `\smeandev` prints it as $\smeandev$.
 Other uses of a bar, such as `\Ebar` and `\incidence`, are not sample means and keep their own macros.
 
-Some sources use $e$ for the noise, so check what a source means by it.
-Some sources subtract in the other order, so check the sign before comparing a formula with ours.
+Dobson and Barnett write the normal linear model as $y = X\beta + e$, with independent, identically distributed errors $e_i$ [@dobson4e, Section 3.5.1, p. 58], so check what a source means by $e$.
+Some sources subtract in the other order.
+ISL defines the residual as $e_i = y_i - \hat{y}_i$, the observed value minus the predicted one [@james2021islr, Section 3.1.1, p. 62], where our `\prederr` is the predicted value minus the observed one.
+Check the sign before comparing a formula with ours.
 
 ## A deviation and a difference {#sec-deviation-difference}
 
@@ -505,13 +571,60 @@ The big-O `\bigO{g}` ($\bigO{g}$) and the little-o `\littleo{g}` ($\littleo{g}$)
 The letter stands for a class of functions that depends on $g$, so it is not the name of a specific function such as $\sin$, and it is not an operator.
 Algorithms and statistics textbooks print these symbols in italic too.
 
+## Math-mode fonts {#sec-math-fonts}
+
+LaTeX has one command for each math alphabet.
+The lab's macros choose among them by what a symbol stands for, so a page that needs a new symbol should pick the command the same way.
+ISO 80000-2:2019 ([link](https://www.iso.org/standard/64973.html)) sets the typeface of each kind of symbol, and the entries below say where they follow it and where they depart from it.
+
+-   **`\mathrm{...}`** prints upright roman letters.
+    Use it for a name, such as an abbreviation or a text subscript.
+    For example, `\vcdim` prints a subscript set with `\mathrm`.
+    ISO 80000-2 sets the names of specific functions and operators upright, and `\operatorname` does the same with correct spacing.
+    Never use it for a variable.
+
+-   **`\mathbf{...}`** prints upright bold roman letters.
+    The `\bfA` family uses it, for a symbol that is bold but not italic.
+    It does not change lowercase Greek letters, so use `\boldsymbol` for those.
+    ISO 80000-2 sets vectors and matrices in bold italic, so this upright form departs from the standard.
+
+-   **`\boldsymbol{...}`** prints bold letters that keep the slant of the symbol.
+    Latin letters and lowercase Greek letters come out bold italic, while uppercase Greek letters and digits come out bold upright.
+    The `\bfalpha` family uses it.
+    It matches the ISO 80000-2 bold italic for a vector or matrix variable.
+
+-   **`\mathbb{...}`** prints blackboard bold.
+    Use it for a number set, such as $\mathbb{R}$, and for an operator that acts on random quantities, such as `\P` ($\P$).
+    ISO 80000-2 sets the number sets in blackboard bold.
+
+-   **`\mathcal{...}`** prints a calligraphic capital.
+    Use it for a set of objects or for a function that has a name of its own, such as the likelihood `\Lik` ($\Lik$) and the model family `\modelfam`.
+    It prints capitals only.
+
+-   **`\mathscr{...}`** prints a script capital, which is a second style of script letter.
+    `macros.qmd` defines it as `\mathcal` wherever no `\mathscr` exists, so the glyph can differ between outputs.
+    A macro such as `\scrA` keeps the choice in one place but does not hide the difference, because it expands to `\mathscr{A}`.
+
+-   **`\mathfrak{...}`** prints Fraktur letters.
+    The only use here is `\seed`.
+    Use it when every other alphabet is taken.
+
+-   **`\mathsf{...}`** prints sans-serif letters.
+    Use it for a label that must not be mistaken for a variable, such as a superscript tag.
+    For example, `\cprob` prints a sans-serif superscript $\mathsf{c}$, as in $\cprob{p}$, so the tag is not read as the variable $c$.
+
+Choose the command from the meaning, then wrap it in a macro, so the font choice lives in one place (`macros.qmd`).
+See [Italic and upright](#sec-italic-upright) for the split between variables and names.
+
 ## The design matrix and the design vector {#sec-design-notation}
 
 The [design matrix](https://morrison-lab.github.io/lds/chapters/linear-regression.html#def-design-matrix) holds the input values for a model, one row for each observation, after any feature map.
 A feature map turns one input into a vector of features, such as its powers or the outputs of a layer of hidden units.
-Our convention is to write the design matrix as the bold $\design$, and the design vector for one input as $\vdesign$.
+Our convention is to write the design matrix as the bold $\mdesign$, and the design vector for one input as $\vdesign$.
 The vector mark is the same one that every vector here carries.
-Row $i$ of the design matrix is the design vector of observation $i$, transposed.
+The macro names follow the prefix pairs of the other matrices and vectors, such as `\mX` and `\vx`: `\mdesign` is the matrix and `\vdesign` is the vector.
+The macro `\design` still works and prints the same symbol as `\mdesign`, so existing pages keep rendering.
+The design matrix is the design vector applied to each row of the data matrix: $\mdesign(\mX) = \tp{\sb{\vdesign(\vx_1), \ldots, \vdesign(\vx_n)}}$, so row $i$ is the design vector of observation $i$, transposed.
 The feature map itself, `\featmap`, prints the same letter, $\featmap$.
 
 We chose the letter $D$ because the design matrix involves no parameters, so it has no reason to be a Greek letter.
@@ -531,7 +644,8 @@ The two differ by a constant that does not depend on the parameter, and that con
 In symbols, the deviance of a fitted model is the difference between this quantity at the fitted model and at the saturated model.
 
 Other sources differ.
-Some write the design matrix as $X$, and some write the feature map as $\phi$ or $\Phi$.
+Some write the design matrix as $X$.
+Bishop writes the design matrix as $\Phi$, with entries $\Phi_{nj} = \phi_j(x_n)$ built from the basis functions $\phi_j$ [@bishop2006prml, Section 3.1.1, Equation 3.16, p. 142].
 Check which letter a source uses for each of the three objects before you compare formulas.
 
 ## Covariates, features and the feature matrix {#sec-feature-names}
@@ -569,6 +683,17 @@ Some write $\rho(A)$, the spectral radius, for the largest eigenvalue of a posit
 or $\norm{A}_2$, its spectral norm; for such a matrix both equal $\eigvalmaxf{A}$.
 Check which order and which symbol a source uses before you compare a bound.
 
+## The Frobenius norm {#sec-frobenius-norm}
+
+The Frobenius norm of a matrix is the square root of the sum of its squared entries.
+Our convention is to write it as `\normF{W}`, which prints $\normF{W}$, and its square as `\normFsq{W}`, which prints $\normFsq{W}$.
+A weight-decay penalty on a weight matrix is then $\normFsq{W}$.
+
+The macros follow `\norm` and `\normsq`, so the same call form works for every norm.
+The subscript is an upright $\mathrm{F}$, because it is a name and not an index.
+Writing `\norm{W}_F^2` by hand puts the subscript and the exponent on the closing delimiter, where they do not rise over a tall argument.
+The macros wrap the delimited group in braces to avoid that.
+
 ## Probability notation {#sec-probability-notation}
 
 A random variable is a function of the outcome of a random experiment, as in [the stochastic process example](#exm-stochastic-process-slots).
@@ -584,26 +709,35 @@ A probability density describes a continuous random variable, one that takes val
 We write $\Pr()$ for the probability of an event, and $\p()$ for a probability mass function or a probability density.
 Here $\p$ is a function name, not the number of inputs.
 Some sources write $P()$ for all of these.
-Others keep $f()$ for densities and mass functions, and use $P()$ only for the probability of an event.
+Murphy writes lower-case $p()$ for the probability of an event and for a probability mass function [@murphy2012mlapp, Section 2.2.1, p. 28].
+Casella and Berger keep $f_X$ for the mass function and the density, and use $P$ only for the probability of an event [@casella2002statistical, Section 1.6, Definitions 1.6.1 and 1.6.3, pp. 34-35].
 
 When the distribution depends on a parameter, we write the parameter as a subscript, $\Prunder{\theta}{A}$, read "the probability of $A$ when the parameter is $\theta$".
 The macro `\Prunder` takes the subscript first and the event second, so a source does not need to put a subscript between `\Pr` and its parentheses by hand.
 Some sources write $P(A \mid \theta)$, which reads as conditioning on a random $\theta$.
+Murphy writes the likelihood of the data $D$ as $p(D \mid \theta)$ [@murphy2012mlapp, Section 3.3.1, Equation 3.11, p. 73].
 We reserve the bar for conditioning on an event or a random variable, and use the subscript when the parameter is fixed rather than random.
 
 We write the expectation of a random variable with square brackets, as in $\E{X}$.
-Some sources write plain $E[X]$, or parentheses, $E(X)$.
+Murphy writes plain $E[X]$ [@murphy2012mlapp, Section 2.2.7],
+and Bishop writes $E[x]$ [@bishop2006prml, Section 1.2.2].
+Wasserman writes $E(X)$ with parentheses, or $EX$ with none [@wasserman2004all, Section 3.1, Definition 3.1],
+and Casella and Berger write $EX$ [@casella2002statistical, Section 2.2].
 The meaning is the same.
 
 We write $X \ind Y$ for "$X$ is independent of $Y$".
 Some sources write $X \perp Y$, or state independence only in words.
+Murphy writes $X \perp Y$ [@murphy2012mlapp, Section 2.2.4, Equation 2.14, p. 30].
 
 We write $\neg A$ for the complement of an event $A$, read "not $A$".
-Some sources write $A^c$ or $\bar{A}$.
+Casella and Berger write $A^c$ for the complement of a set $A$ [@casella2002statistical, Section 1.1],
+and Wasserman writes the same $A^c$ for the complement of an event $A$ [@wasserman2004all, Section 1.2, p. 4].
+Bohm and Zech write $\overline{A}$ for the complement of an event $A$ [@bohm2010introduction, Section 2.1].
 
 We write $\setdiff{A}{B}$ for the set difference, the elements of $A$ not in $B$, from the macro `\setdiff`.
 We write $\setbuild{x \in S}{x \notin B}$ for set-builder notation, with a colon between the membership condition and the property, from the macro `\setbuild`.
 Some sources write $A - B$ for the set difference, or a vertical bar instead of the colon.
+Grinstead and Snell write $A - B = \{x \mid x \in A \text{ and } x \notin B\}$, with both a minus sign and a vertical bar (*Introduction to Probability*, Section 1.2, p. 21).
 
 We write $\eqdef$ for an equality that holds by definition.
 This tells it apart from an equality that follows from other facts.
@@ -614,6 +748,16 @@ The reason can be an assumption, a numbered result or a rule, such as $\eqby{\te
 This tells a reader which fact each step of a derivation uses.
 Some sources put the reason in words after the line, or leave it out.
 Equal by definition, $\eqdef$, is the special case where the reason is the definition.
+
+## The estimated class prior {#sec-estimated-class-prior}
+
+The class prior of class $k$ is the probability that an observation belongs to class $k$, before we see its predictors.
+A generative classifier, such as linear discriminant analysis, estimates it by the proportion of training observations in class $k$.
+Our convention is to write the estimate as `\eclassprior_k`, which prints $\eclassprior_k$, so that the hat over $\pi$ has the same source form as our other estimates (see [the estimator symbols](#sec-estimand-estimator-symbols)).
+We name the macro for its role, as an estimated class prior, and not for the letter $\hat\pi$.
+The macro `\eprob` prints the same symbol, but it names an estimated success probability, so we do not use it for a class prior.
+
+Hastie, Tibshirani and Friedman write the same estimate as $\hat\pi_k = N_k / N$, with $N_k$ the number of class-$k$ observations [@hastie2009esl, Section 4.3, p. 109].
 
 ## The true mean function and its conditional form {#sec-true-mean-function}
 
@@ -663,7 +807,8 @@ For the general form we chose a separate macro, `\truemeansubf`, not an optional
     Its two arguments are both required, and `\condE` already has the same form.
 -   The macro name tells a reader of the source that a subscript is present.
 
-Other sources write the true mean function as $\mu(x)$ or $f(x)$, or write the conditional population mean in full as $E[Y \mid X = x]$.
+Hastie, Tibshirani and Friedman write the true mean function as $f(x)$, defined as the conditional population mean $E(Y \mid X = x)$ [@hastie2009esl, Section 2.4, Equation 2.13, p. 18].
+Other sources write it as $\mu(x)$.
 The subscripted form $\mu_{Y|X}(x)$ is also common.
 
 We keep `\popmean` and `\pmean` as aliases of `\mean`, the population mean of a variable.
@@ -754,7 +899,8 @@ We chose this for three reasons.
 -   The sum of the entries of $\vy$ equals the dot product $\vone \cdot \vy$ of $\vy$ with the ones vector, so the symbol and the dot product are two names for one quantity.
 
 Some sources write the sum of $n$ random variables as $S_n$.
-The subscript $n$ there is the sample size, not the vector.
+Grinstead and Snell write $S_n = X_1 + X_2 + \cdots + X_n$ (*Introduction to Probability*, Section 4.1, p. 145).
+The subscript $n$ there is the number of terms, not the vector.
 Within these notes, $S$ with two subscripts, such as `\sspred`, is a centered sum of squares or cross-products, not a sum of elements.
 When you read a formula from another source, check whether the subscript of $S$ is a count or a vector before you compare it with ours.
 
@@ -772,9 +918,14 @@ We avoid $D$ because it is the design matrix.
 The number of outcome variables in multivariate regression, the length of the response vector, is $\noutvars$, from `\noutvars`.
 We use $q$ to pair it with $\ninputvars$, and avoid $C$ and $K$ because those letters count classes and covariate patterns.
 
+In multivariate regression the matrix over all $\nobs$ observations stacks one vector per row.
+We set the outcome matrix $\moutvar$, the coefficient matrix $\mcoef$ and the noise matrix $\mnoise$ in bold, from `\moutvar`, `\mcoef` and `\mnoise`, like the data matrix $\mX$.
+A plain italic letter reads as a scalar, so the bold type is what marks each one as a matrix.
+
 ## Sums of squares, and counts and indices for training {#sec-training-symbols}
 
-We write the residual sum of squares as $\RSS$, from the macro `\RSS`, and the total sum of squares as $\TSS$, from the macro `\TSS`.
+We write the residual sum of squares as $\RSS$, from the macro `\RSS`, the sum of squared errors as $\SSE$, from the macro `\SSE`, and the total sum of squares as $\TSS$, from the macro `\TSS`.
+The $\SSE$ and the $\RSS$ are the same quantity under two names.
 They are names of statistics, so they are upright, and a subscript marks a model, as in $\RSS_0$.
 We avoid writing `\text{RSS}` in the source, because the macro keeps the spelling and the font the same on every page.
 
@@ -810,6 +961,15 @@ Some existing macros already cover other symbols that lecture exercises write as
 
 We do not give the size of a minibatch a letter of its own.
 Write it as the cardinality of the set of indices, such as `\card{B_t}`, because the letter $b$ is already the bias of a neural network in [the names entry](#sec-ml-statistics-names).
+
+## The predictor and the outcome of the $i$th observation {#sec-ith-observation}
+
+Derivations about a sample write the predictor and the outcome of the $i$th observation hundreds of times, for example in a sum over the observations.
+Our convention is to write them as `\predvari` and `\outvari`, which print $\predvari$ and $\outvari$, so that a sum of cross-products is `\sumin \predvari \outvari`.
+Each macro is the existing `\predvar` or `\outvar` with the observation index `\iobs` as a subscript.
+A power after the macro stacks over the subscript, so `\predvari^2` prints $\predvari^2$.
+
+ISL writes the same quantities as $x_i$ and $y_i$, and the observed data as $\{(x_1, y_1), \ldots, (x_n, y_n)\}$ [@james2021islr, Chapter 1, "Notation and Simple Matrix Algebra", p. 11].
 
 ## Exponential families {#sec-exponential-family-notation}
 
@@ -864,3 +1024,25 @@ Our convention is to write the set of modes of a function $f$ as $\modef{f}$, wi
 The macro prints a set because a density can have more than one mode.
 
 Other sources write "the mode of $X$" for one value, which is the single element of $\modef{f}$ when the mode is unique.
+
+## The cross-product and Gram matrices {#sec-cross-product-gram}
+
+The cross-product matrix of two matrices $\mX$ and $\mY$ is $\tprod{\mX}{\mY}$, written `\tprod{\mX}{\mY}`.
+The call form `\cpf{\mX}{\mY}` is an alias, named for the cross-product matrix, and prints the same expression.
+The Gram matrix of $\mX$ is the cross-product matrix of $\mX$ with itself, $\stprod{\mX}$, written `\stprod{\mX}`.
+Both macros always print the transpose glyph, so a reader sees the transpose and the inner products of the columns.
+Neither has a glyph of its own for now.
+
+Other sources differ.
+ISLR2, ESL and Murphy write $\tp{\mX}\mX$ and $\tp{\mX}\vy$ with no name or symbol,
+and ESL and Murphy use "Gram matrix" mostly for the kernel matrix.
+R computes the cross-product matrix with `crossprod(X, Y)`, which equals `t(X) %*% Y`.
+
+## A brace that closes a display {#sec-closing-brace}
+
+A one-sided brace that groups several lines of a display and labels the group uses `\cbr{...}`, which prints the argument followed by a closing curly brace that spans the argument's height, with no opening delimiter.
+For example, `\cbr{\begin{array}{l}a\\b\end{array}}` prints $\cbr{\begin{array}{l}a\\b\end{array}}$.
+`\cbl{...}` is its mirror, an opening brace alone.
+The pair `\left.` and `\right\}` written by hand is the same construct, and the macro names it.
+
+Other sources draw the same brace with `\left.`, `\right\}` or `\underbrace` and `\overbrace`, which place the label under or over the grouped expression instead of beside it.

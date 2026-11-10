@@ -9,7 +9,9 @@ format:
     center: false
     include-in-header:
       - reveal-mathjax.html
-  docx: default
+  docx:
+    filters:
+      - docx-vecf.lua
 ---
 
 {{< include macros.qmd >}}
