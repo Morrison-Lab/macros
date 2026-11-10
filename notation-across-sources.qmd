@@ -143,7 +143,7 @@ The [Notation Choices](notation-choices.qmd#sec-subscripts-parentheses) page giv
 | object | our form | other forms you may encounter |
 |---|---|---|
 | entry of a vector or matrix | $x_i$, $A_{ij}$ | $x(i)$, $A(i, j)$, and `A[i, j]` in code |
-| term of a [sequence](https://morrison-lab.github.io/mds/functions.html#def-sequence) | $a_n$ | $a(n)$ |
+| term of a [sequence](https://morrison-lab.github.io/mcs/functions.html#def-sequence) | $a_n$ | $a(n)$ |
 | function with a parameter | $f_\theta(x)$ | $f(x; \theta)$, $f(x \mid \theta)$, $f(x, \theta)$ |
 | probability under a parameter | $\Pr_\theta(A)$ | $\Pr(A; \theta)$, $\Pr(A \mid \theta)$ |
 | derivative of order $k$ | $f^{(k)}(x)$ | $f^{[k]}(x)$, $\mathrm{D}^k f(x)$ |

@@ -1,5 +1,6 @@
 name	interpretation
 \cbl	left curly brace (open only)
+\cbr	right curly brace after the argument (close only), auto-sized to span the argument
 \cb	auto-sized curly braces around argument
 \cbmat	matrix wrapped in auto-sized curly braces
 \paren	auto-sized parentheses around argument
@@ -172,6 +173,7 @@ name	interpretation
 \obsloss	loss on one observation, ℓ_i (argument: the observation index)
 \poprisk	population (true) risk symbol R: the expected loss of a model
 \popriskf	population risk of a model, R(·)
+\condpopriskf	conditional (pointwise) risk of a model at an input, R(f | x): the expected loss given the input; its average over the input is the population risk
 \lpnorm	name of an ℓ_p norm or penalty, such as ℓ_1 or ℓ_2 (argument: p)
 \lbound	a lower bound of a set (ℓ)
 \ubound	an upper bound of a set (u)
@@ -407,6 +409,8 @@ name	interpretation
 \abs	absolute value |·|
 \norm	Euclidean norm ‖·‖
 \normsq	squared norm ‖·‖²
+\normF	Frobenius norm ‖·‖_F
+\normFsq	squared Frobenius norm ‖·‖_F²
 \card	cardinality (number of elements) of a finite set |·|
 \powersetsym	power set symbol 𝒫
 \powerset	power set of a set, the set of all its subsets 𝒫(·)
@@ -423,7 +427,7 @@ name	interpretation
 \vecf	vector notation (alias for \vec)
 \v	vector shorthand (alias for \vecf)
 \matr	matrix notation (bold style)
-\mX	predictor matrix X (bold): the matrix of covariate values; the design matrix built from a feature map is \design
+\mX	predictor matrix X (bold): the matrix of covariate values; the design matrix built from a feature map is \mdesign
 \mx	design matrix x lowercase (bold)
 \va	vector a (a̰)
 \vx	vector x (x̰)
@@ -445,6 +449,9 @@ name	interpretation
 \Predvar	predictor variable, random variable (prints X)
 \vpredvar	vector of one observation's predictor values (prints x̰)
 \mpredvar	input matrix: the predictor vectors of all n observations, one per row (prints bold X, like \mX, the usual textbook form)
+\moutvar	outcome matrix: the outcome vectors of all n observations, one per row (prints bold Y, like \mpredvar prints bold X)
+\mcoef	coefficient matrix of a multivariate linear model, one column per outcome variable (prints bold B)
+\mnoise	noise matrix of a multivariate linear model: the noise vectors of all n observations, one per row (prints bold E)
 \vPredvar	random vector of predictors (prints X̰)
 \vresid	vector of residuals, observed minus predicted outcomes (the negative of the prediction errors \prederr) (prints ε̰̂)
 \vprederr	vector of prediction errors, predicted minus observed outcomes (the vec accent applied to \prederr)
@@ -483,6 +490,7 @@ name	interpretation
 \dpf	dot product a·b (alias for \dprodf)
 \tprod	transpose-based product x′y
 \tprodf	transpose-based product (alias for \tprod)
+\cpf	cross-product matrix x′y (alias for \tprod)
 \angb	angle brackets ⟨·⟩ sized to their contents
 \iprod	inner product ⟨x, y⟩
 \iprodf	inner product (alias for \iprod)
@@ -839,6 +847,7 @@ name	interpretation
 \edifflogodds	estimated difference in log-odds ΔΗ̂
 \ecdf	estimated cumulative distribution function F̂
 \ecdff	estimated cumulative distribution function F̂(·) applied to argument
+\eclassprior	estimated class prior π̂ (prints \est{\pi}); write \eclassprior_k for the prior of class k
 \eprob	estimated probability π̂
 \eprobs	estimated probability symbol π̂ (alias for \eprob)
 \ePr	estimated probability with brackets Pr̂[·] (via \Est)
@@ -1211,7 +1220,7 @@ name	interpretation
 \biassymf	short bias operator applied to an estimator, like \E (prints \biassym with its argument in square brackets)
 \varsym	short variance operator 𝕍 for any random variable (no argument, blackboard bold like \Expp)
 \varsymf	short variance operator applied to a random variable, like \E (prints \varsym with its argument in square brackets)
-\devsym	deviation operator 𝔻 for any random variable, X minus its mean (blackboard bold like \varsym and \Expp; the design matrix \design is bold D, and the observed value 𝕕 is \deviation)
+\devsym	deviation operator 𝔻 for any random variable, X minus its mean (blackboard bold like \varsym and \Expp; the design matrix \mdesign is bold D, and the observed value 𝕕 is \deviation)
 \devsymf	deviation operator applied to a random variable, like \varsymf (prints \devsym with its argument in square brackets)
 \devval	observed deviation, double-struck lowercase d 𝕕 (a value, as 𝔼 is the operator and x the value; the PDF needs bbm, see macros-pdf-header.tex)
 \mathbbm	double-struck letter that includes lowercase (alias for \mathbb where bbm is not loaded, as in MathJax)
@@ -1229,7 +1238,8 @@ name	interpretation
 \eigvalminf	the smallest eigenvalue of a given matrix (prints \eigvalmin followed by its argument in parentheses)
 \featmap	a feature map (basis expansion) (prints D, not bold, since a feature map is a function)
 \vfeatmap	a vector of feature-map outputs (hidden-unit features) (alias for \vdesign)
-\design	a design matrix built from a feature map (prints bold D)
+\mdesign	a design matrix built from a feature map (prints bold D); the matrix form of \vdesign
+\design	a design matrix built from a feature map (prints bold D) (alias for \mdesign)
 \vdesign	the design vector for one input: the feature-map outputs (prints \vecf{D}, with the vector mark and no bold)
 \normpdf	the standard normal density (prints \phi)
 \normcdf	the standard normal CDF (prints \Phi)
@@ -1390,6 +1400,7 @@ name	interpretation
 \iterpoint	point that an iterative algorithm has reached after the given number of steps; takes the point's symbol and the step index (prints #1^{(#2)})
 \layeridx	index ℓ of a layer of a neural network
 \RSS	residual sum of squares, RSS: the sum over the observations of the squared residuals of a fitted model
+\SSE	sum of squared errors, SSE: the sum over the observations of the squared errors of a model, the same quantity as the RSS
 \TSS	total sum of squares, TSS: the sum over the observations of the squared differences of the outcome from its sample mean
 \npatterns	number K of distinct covariate patterns in a dataset
 \nreps	number m of replicates (observations) that share one covariate pattern; written with a pattern index, as \nreps_k
@@ -1439,10 +1450,27 @@ name	interpretation
 \surprisal	surprisal symbol s
 \surprisalf	surprisal of an outcome, s(x)
 \surprisalunderf	surprisal of an outcome measured by a named distribution, s_q(x)
+\rarity	rarity symbol r
+\rarityf	rarity of an outcome, the reciprocal of its probability, r(x) = 1/P(X=x)
+\rarityunderf	rarity of an outcome under a named distribution, r_q(x) = 1/q(x)
+\codelen	codeword length symbol ℓ
+\codelenf	length of the codeword for a symbol, ℓ(x)
+\expcodelen	expected code length symbol L, the expected value of \codelenf{X}
+\cprob	complementary probability, the probability 1 - p of the complement (prints p^{\mathsf{c}})
+\perplexity	perplexity symbol PP
+\perplexityf	perplexity of a random variable, PP(X) = b^{H_b(X)}, the geometric mean of the rarities
 \crossentropy	cross-entropy symbol H (prints \entropy)
 \crossentropyf	cross-entropy of the second distribution relative to the first, H(p, q)
+\avgcrossent	average cross-entropy per example, the sum over the N examples divided by N (prints \smean{\crossentropy})
+\avgcrossentbase	average cross-entropy per example with the base of the logarithm as the argument (prints \avgcrossent with that subscript, as in \avgcrossentbase{b})
 \kldiv	Kullback–Leibler divergence symbol D_KL
 \kldivf	Kullback–Leibler divergence of the second distribution from the first, D_KL(p ‖ q)
+\mutinfo	mutual information symbol I (blackboard bold)
+\mutinfof	mutual information of two random variables, I(X; Y)
+\cmutinfof	mutual information of two random variables given a third, I(X; Y | Z)
+\mutinfoatf	mutual information of two random variables under the conditional distribution given one value z of a third, I_z(X; Y)
+\renyientropy	Rényi entropy symbol (prints \entropy; give it the order as a subscript)
+\renyientropyf	Rényi entropy of the given order of a random variable, H_α(X)
 \kolm	Kolmogorov complexity symbol K
 \kolmf	Kolmogorov complexity of a string, K(x)
 \ckolmf	conditional Kolmogorov complexity of a string given an input, K(x | n)
@@ -1473,6 +1501,8 @@ name	interpretation
 \optalg	optimization algorithm that searches a model family for a minimizer of the objective function (prints \mathcal{A})
 \seed	random seed that starts a pseudorandom number generator (prints \mathfrak{s})
 \sscp	sum-of-squares-and-cross-products matrix of the term vectors, A
+\predvari	predictor value of the i-th observation (prints \predvar_{\iobs}); \predvari^2 prints its square
+\outvari	outcome value of the i-th observation (prints \outvar_{\iobs}); \outvari^2 prints its square
 \newpredvar	covariate of a new observation (random), X with subscript star
 \newoutvar	outcome of a new observation (random), Y with subscript star
 \newpredval	covariate value of a new observation (fixed), x with subscript star

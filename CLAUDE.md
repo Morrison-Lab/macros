@@ -62,6 +62,15 @@ read both before editing `macros.qmd`.
   Compare old and new with a tall argument (`\frac{a}{b}`) in `mathjax-full` and in pdflatex (compare `\ht`, `\dp` and `\wd` of a box),
   and include the rejected form as a control to prove the test can fail.
 
+- **Check math without a browser** (Directive from the maintainer, Ezra, 2026-11-08: no browser use, headless Chromium and Playwright included).
+  Typeset a test string with `mathjax-full` in node, and measure a LaTeX box with pdflatex.
+  Read each `\providecommand{\name}[n]{body}` line of `macros.qmd` into the `TeX` input jax's `macros` option,
+  because MathJax does not run `\providecommand` in math mode.
+  An undefined macro prints as literal text instead of throwing,
+  so compare the widths of the output, and keep an undefined macro as a control that must come out wide.
+  `quarto render <page> --to html` is fine; do not open the result in a browser.
+  If a check seems to need a browser, skip it and say so in the pull request.
+
 - **Test a new macro with a subscript and an exponent in a compiled PDF.**
   `python3 tools/check_latex.py` does not exercise new macros,
   so also render a test `.qmd` that includes `macros.qmd` through `include-in-header`

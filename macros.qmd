@@ -1,5 +1,6 @@
 \providecommand{\mathscr}[1]{\mathcal{#1}}
 \providecommand{\cbl}[1]{\mathopen{}\left\{#1\right.}
+\providecommand{\cbr}[1]{\mathopen{}\left.#1\right\}\mathclose{}}
 \providecommand{\cb}[1]{\mathopen{}\left\{#1\right\}\mathclose{}}
 \providecommand{\cbmat}[1]{\mathopen{}\left\{\begin{matrix}#1\end{matrix}\right\}\mathclose{}}
 \providecommand{\paren}[1]{\mathopen{}\left(#1\right)\mathclose{}}
@@ -183,6 +184,7 @@
 \providecommand{\obsloss}[1]{\ell_{#1}}
 \def\poprisk{R}
 \providecommand{\popriskf}[1]{{\poprisk\paren{#1}}}
+\providecommand{\condpopriskf}[2]{{\poprisk\paren{#1 \mid #2}}}
 \def\modelfam{\mathcal{H}}
 \def\growthfn{m_{\predfam}}
 \providecommand{\growthfnf}[1]{{\growthfn\paren{#1}}}
@@ -204,6 +206,7 @@
 \providecommand{\iterpoint}[2]{{{#1}^{(#2)}}}
 \def\layeridx{\ell}
 \def\RSS{\operatorname{RSS}}
+\def\SSE{\operatorname{SSE}}
 \def\TSS{\operatorname{TSS}}
 \def\npatterns{K}
 \def\nreps{m}
@@ -477,6 +480,8 @@
 \providecommand{\abs}[1]{\mathopen{}\left|#1\right|\mathclose{}}
 \providecommand{\norm}[1]{\mathopen{}\left\lVert#1\right\rVert\mathclose{}}
 \providecommand{\normsq}[1]{{\norm{#1}}\sq}
+\providecommand{\normF}[1]{{{\norm{#1}}_{\mathrm{F}}}}
+\providecommand{\normFsq}[1]{{{\norm{#1}}_{\mathrm{F}}\sq}}
 \providecommand{\card}[1]{{\abs{#1}}}
 \def\powersetsym{\mathcal{P}}
 \providecommand{\powerset}[1]{{\powersetsym\paren{#1}}}
@@ -520,6 +525,9 @@
 \def\vpredvar{\vecf{\predvar}}
 \def\vPredvar{\vecf{\Predvar}}
 \def\mpredvar{\matr{\Predvar}}
+\def\moutvar{\matr{\Outvar}}
+\def\mcoef{\matr{\Regcoef}}
+\def\mnoise{\matr{E}}
 \def\vresid{\vecf{\resid}}
 \def\vprederr{\vecf{\prederr}}
 \def\vz{\vecf{z}}
@@ -557,6 +565,7 @@
 \def\dpf{\dprodf}
 \providecommand{\tprod}[2]{\tp{#1} #2}
 \def\tprodf{\tprod}
+\def\cpf{\tprod}
 \providecommand{\iprod}[2]{{\angb{#1, #2}}}
 \def\iprodf{\iprod}
 \providecommand{\oprod}[2]{#1 \tp{#2}}
@@ -1152,6 +1161,7 @@
 \def\edifflogodds{\Est{\difflogodds}}
 \def\ecdf{\mathop{\est{\cdf}}\nolimits}
 \providecommand{\ecdff}[1]{{\ecdf\paren{#1}}}
+\def\eclassprior{\est{\pi}}
 \def\eprob{\est{\prob}}
 \def\eprobs{\eprob}
 \providecommand{\ePr}[1]{{\mathop{\Est{\Pr}}\nolimits\sb{#1}}}
@@ -1314,7 +1324,8 @@
 \def\eigvalmin{{\eigval_{\min}}}
 \providecommand{\eigvalmaxf}[1]{{\eigvalmax\paren{#1}}}
 \providecommand{\eigvalminf}[1]{{\eigvalmin\paren{#1}}}
-\def\design{\matr{D}}
+\def\mdesign{\matr{D}}
+\def\design{\mdesign}
 \def\vdesign{\vecf{D}}
 \def\featmap{D}
 \def\vfeatmap{\vdesign}
@@ -1460,10 +1471,27 @@
 \def\surprisal{\distop{s}}
 \providecommand{\surprisalf}[1]{{\surprisal\paren{#1}}}
 \providecommand{\surprisalunderf}[2]{{\surprisal_{#1}\paren{#2}}}
+\def\rarity{\distop{r}}
+\providecommand{\rarityf}[1]{{\rarity\paren{#1}}}
+\providecommand{\rarityunderf}[2]{{\rarity_{#1}\paren{#2}}}
+\def\codelen{\ell}
+\providecommand{\codelenf}[1]{{\codelen\paren{#1}}}
+\def\expcodelen{L}
+\providecommand{\cprob}[1]{{{#1}^{\mathsf{c}}}}
+\def\perplexity{\mathrm{PP}}
+\providecommand{\perplexityf}[1]{{\perplexity\paren{#1}}}
 \def\crossentropy{\entropy}
 \providecommand{\crossentropyf}[2]{{\crossentropy\paren{#1, #2}}}
+\def\avgcrossent{\smean{\crossentropy}}
+\providecommand{\avgcrossentbase}[1]{{\avgcrossent_{#1}}}
 \def\kldiv{{D_{\mathrm{KL}}}}
 \providecommand{\kldivf}[2]{{\kldiv\paren{#1 \,\Vert\, #2}}}
+\def\mutinfo{\distop{I}}
+\providecommand{\mutinfof}[2]{{\mutinfo\paren{#1 ; #2}}}
+\providecommand{\cmutinfof}[3]{{\mutinfo\paren{#1 ; #2 \mid #3}}}
+\providecommand{\mutinfoatf}[3]{{\mutinfo_{#1}\paren{#2 ; #3}}}
+\def\renyientropy{\entropy}
+\providecommand{\renyientropyf}[2]{{\renyientropy_{#1}\paren{#2}}}
 \def\kolm{K}
 \providecommand{\kolmf}[1]{{\kolm\paren{#1}}}
 \providecommand{\ckolmf}[2]{{\kolm\paren{#1 \mid #2}}}
@@ -1500,6 +1528,8 @@
 \def\newoutvar{\Outvar_{*}}
 \def\newpredval{\predvar_{*}}
 \def\newoutval{\outvar_{*}}
+\def\predvari{\predvar_{\iobs}}
+\def\outvari{\outvar_{\iobs}}
 \providecommand{\heldpredvar}[1]{\Predvar_{*,#1}}
 \providecommand{\heldoutvar}[1]{\Outvar_{*,#1}}
 \providecommand{\heldpredval}[1]{\predvar_{*,#1}}
