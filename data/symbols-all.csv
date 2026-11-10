@@ -154,6 +154,7 @@ macros,symbol,interpretation
 \cbl,\cbl{a},left curly brace (open only)
 \cbmat,\cbmat{a},matrix wrapped in auto-sized curly braces
 \cbr,\cbr{a},"right curly brace after the argument (close only), auto-sized to span the argument"
+\ccp \cpf,\ccp{a}{b},column-column matrix product A′B (alias for \ccprod)
 \cd \dpr,\cd,centered dot multiplication symbol (·)
 \cdev \devn \devval \popdev \deviation,\cdev,"deviation from conditional mean (alias for \popdev, symbol 𝕕; the noise is \Noise, which prints ε)"
 \cdff,\cdff{a},cumulative distribution function F(·) applied to argument
@@ -211,7 +212,6 @@ macros,symbol,interpretation
 \Covs,\Covs{a}{b},"bivariate covariance Cov(·,·)"
 \Covt,\Covt,covariance operator symbol Cov
 \covvalhist,\covvalhist{a},a covariate-history value through time k (prints \bar{l}_k)
-\cpf \tprodf,\cpf{a}{b},cross-product matrix x′y (alias for \tprod)
 \cprob,\cprob{a},"complementary probability, the probability 1 - p of the complement (prints p^{\mathsf{c}})"
 \cR \Range \range \riskset,\cR,range / codomain symbol ℛ
 \crossentropyf,\crossentropyf{a}{b},"cross-entropy of the second distribution relative to the first, H(p, q)"
@@ -1101,7 +1101,8 @@ macros,symbol,interpretation
 \thmADistMLE,\thmADistMLE,asymptotic normal distribution of the MLE
 \thmHessij,\thmHessij,"formula for (i,j) element of the Hessian"
 \tp,\tp{a},transpose of argument x′
-\tprod,\tprod{a}{b},transpose-based product x′y
+\tprod \ccprod,\tprod{a}{b},transpose-based product x′y
+\tprodf,\tprodf{a}{b},transpose-based product (alias for \tprod)
 \tr,\tr,matrix trace operator (tr)
 \trainerr,\trainerr,"training error (average loss on the training set), over-barred err"
 \trainidx,\trainidx,index set of the training set (prints I with a train subscript)

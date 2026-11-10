@@ -490,7 +490,9 @@ name	interpretation
 \dpf	dot product a·b (alias for \dprodf)
 \tprod	transpose-based product x′y
 \tprodf	transpose-based product (alias for \tprod)
-\cpf	cross-product matrix x′y (alias for \tprod)
+\ccprod	column-column (cross-product) matrix product A′B: entry (i, j) is column i of A dotted with column j of B (prints \tp{A} B)
+\ccp	column-column matrix product A′B (alias for \ccprod)
+\cpf	cross-product matrix A′B (alias for \ccprod)
 \angb	angle brackets ⟨·⟩ sized to their contents
 \iprod	inner product ⟨x, y⟩
 \iprodf	inner product (alias for \iprod)
