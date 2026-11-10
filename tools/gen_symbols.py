@@ -114,9 +114,12 @@ def build_rows(defs, interp):
     for names in groups.values():
         names.sort(key=lambda n: (len(n), n))
         first = names[0]
+        nargs = defs[first][0]
+        placeholders = "".join("{" + "abcdefghi"[i] + "}" for i in range(nargs))
         rows.append(
             {
                 "macros": " ".join(BS + n for n in names),
+                "symbol": BS + first + placeholders,
                 "interpretation": interp.get(first, ""),
             }
         )
@@ -128,7 +131,7 @@ def render(rows):
     import io
 
     buf = io.StringIO()
-    w = csv.DictWriter(buf, ["macros", "interpretation"], lineterminator="\n")
+    w = csv.DictWriter(buf, ["macros", "symbol", "interpretation"], lineterminator="\n")
     w.writeheader()
     w.writerows(rows)
     return buf.getvalue()
