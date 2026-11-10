@@ -2418,17 +2418,23 @@ Table&nbsp;9: Other symbols used in these notes
 <span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a>  <span class="at">Meaning =</span> <span class="fu">gsub</span>(<span class="st">"|"</span>, <span class="st">"</span><span class="sc">\\</span><span class="st">|"</span>, symbols_all<span class="sc">$</span>interpretation, <span class="at">fixed =</span> <span class="cn">TRUE</span>)</span>
 <span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a>)</span>
 <span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a><span class="co"># A macro named in the meaning, such as an alias note or a print hint, is</span></span>
-<span id="cb3-13"><a href="#cb3-13" aria-hidden="true" tabindex="-1"></a><span class="co"># shown as code, with any braced arguments inside the code span, so that</span></span>
-<span id="cb3-14"><a href="#cb3-14" aria-hidden="true" tabindex="-1"></a><span class="co"># markdown does not read its backslash as an escape.</span></span>
-<span id="cb3-15"><a href="#cb3-15" aria-hidden="true" tabindex="-1"></a>all_table<span class="sc">$</span>Meaning <span class="ot">&lt;-</span> <span class="fu">gsub</span>(</span>
-<span id="cb3-16"><a href="#cb3-16" aria-hidden="true" tabindex="-1"></a>  <span class="st">"(</span><span class="sc">\\\\</span><span class="st">[A-Za-z]+(</span><span class="sc">\\</span><span class="st">{(?:[^{}]|(?2))*</span><span class="sc">\\</span><span class="st">})*)"</span>, <span class="st">"`</span><span class="sc">\\</span><span class="st">1`"</span>, all_table<span class="sc">$</span>Meaning,</span>
-<span id="cb3-17"><a href="#cb3-17" aria-hidden="true" tabindex="-1"></a>  <span class="at">perl =</span> <span class="cn">TRUE</span></span>
-<span id="cb3-18"><a href="#cb3-18" aria-hidden="true" tabindex="-1"></a>)</span>
-<span id="cb3-19"><a href="#cb3-19" aria-hidden="true" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">kable</span>(</span>
-<span id="cb3-20"><a href="#cb3-20" aria-hidden="true" tabindex="-1"></a>  all_table,</span>
-<span id="cb3-21"><a href="#cb3-21" aria-hidden="true" tabindex="-1"></a>  <span class="at">format =</span> <span class="st">"pipe"</span>,</span>
-<span id="cb3-22"><a href="#cb3-22" aria-hidden="true" tabindex="-1"></a>  <span class="at">caption =</span> <span class="st">"Every symbol that a macro prints {#tbl-symbols-all}"</span></span>
-<span id="cb3-23"><a href="#cb3-23" aria-hidden="true" tabindex="-1"></a>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb3-13"><a href="#cb3-13" aria-hidden="true" tabindex="-1"></a><span class="co"># shown as code, with its braced arguments, subscripts, superscripts and</span></span>
+<span id="cb3-14"><a href="#cb3-14" aria-hidden="true" tabindex="-1"></a><span class="co"># any macro that follows it inside the one code span, so that markdown does</span></span>
+<span id="cb3-15"><a href="#cb3-15" aria-hidden="true" tabindex="-1"></a><span class="co"># not read its backslash or underscore as markup.</span></span>
+<span id="cb3-16"><a href="#cb3-16" aria-hidden="true" tabindex="-1"></a>all_table<span class="sc">$</span>Meaning <span class="ot">&lt;-</span> <span class="fu">gsub</span>(</span>
+<span id="cb3-17"><a href="#cb3-17" aria-hidden="true" tabindex="-1"></a>  <span class="fu">paste0</span>(</span>
+<span id="cb3-18"><a href="#cb3-18" aria-hidden="true" tabindex="-1"></a>    <span class="st">"(</span><span class="sc">\\\\</span><span class="st">[A-Za-z]+(?:(?&lt;b&gt;</span><span class="sc">\\</span><span class="st">{(?:[^{}]|(?&amp;b))*</span><span class="sc">\\</span><span class="st">})"</span>,</span>
+<span id="cb3-19"><a href="#cb3-19" aria-hidden="true" tabindex="-1"></a>    <span class="st">"|[_^](?:(?&amp;b)|</span><span class="sc">\\\\</span><span class="st">[A-Za-z]+|[A-Za-z0-9])"</span>,</span>
+<span id="cb3-20"><a href="#cb3-20" aria-hidden="true" tabindex="-1"></a>    <span class="st">"|</span><span class="sc">\\\\</span><span class="st">[A-Za-z]+)*)"</span></span>
+<span id="cb3-21"><a href="#cb3-21" aria-hidden="true" tabindex="-1"></a>  ),</span>
+<span id="cb3-22"><a href="#cb3-22" aria-hidden="true" tabindex="-1"></a>  <span class="st">"`</span><span class="sc">\\</span><span class="st">1`"</span>, all_table<span class="sc">$</span>Meaning,</span>
+<span id="cb3-23"><a href="#cb3-23" aria-hidden="true" tabindex="-1"></a>  <span class="at">perl =</span> <span class="cn">TRUE</span></span>
+<span id="cb3-24"><a href="#cb3-24" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb3-25"><a href="#cb3-25" aria-hidden="true" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">kable</span>(</span>
+<span id="cb3-26"><a href="#cb3-26" aria-hidden="true" tabindex="-1"></a>  all_table,</span>
+<span id="cb3-27"><a href="#cb3-27" aria-hidden="true" tabindex="-1"></a>  <span class="at">format =</span> <span class="st">"pipe"</span>,</span>
+<span id="cb3-28"><a href="#cb3-28" aria-hidden="true" tabindex="-1"></a>  <span class="at">caption =</span> <span class="st">"Every symbol that a macro prints {#tbl-symbols-all}"</span></span>
+<span id="cb3-29"><a href="#cb3-29" aria-hidden="true" tabindex="-1"></a>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div id="tbl-symbols-all" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-tbl figure">
 <figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-symbols-all-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
@@ -3182,7 +3188,7 @@ Table&nbsp;10: Every symbol that a macro prints
 <tr class="odd">
 <td style="text-align: left;"><span class="math inline">\(\candpredvalf{a}{b}\)</span></td>
 <td style="text-align: left;"><code>\candpredvalf</code></td>
-<td style="text-align: left;">prediction at the covariate value given as the second argument, from the model that the candidate procedure with the index given as the first argument fits to the training set (prints <code>\fitted</code>_{l}<code>\paren{x}</code>, where the subscript is the candidate index, not an observation index; the candidate counterpart of <code>\predvalf</code>; unlike <code>\predval</code> and unlike <code>\epredfnf</code>, which applies any estimated prediction function, it is fixed to the candidate’s training-set fit)</td>
+<td style="text-align: left;">prediction at the covariate value given as the second argument, from the model that the candidate procedure with the index given as the first argument fits to the training set (prints <code>\fitted_{l}\paren{x}</code>, where the subscript is the candidate index, not an observation index; the candidate counterpart of <code>\predvalf</code>; unlike <code>\predval</code> and unlike <code>\epredfnf</code>, which applies any estimated prediction function, it is fixed to the candidate’s training-set fit)</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;"><span class="math inline">\(\candproc{a}\)</span></td>
@@ -3197,7 +3203,7 @@ Table&nbsp;10: Every symbol that a macro prints
 <tr class="even">
 <td style="text-align: left;"><span class="math inline">\(\candproctunedf{a}{b}\)</span></td>
 <td style="text-align: left;"><code>\candproctunedf</code></td>
-<td style="text-align: left;">fitted model that the tuned procedure with the label given as the first argument fits to the data set given as the second argument (prints <code>\candproctuned{\text{CV}}``\paren{D}</code>; the f form of <code>\candproctuned</code>, which names the procedure and leaves the data set implicit)</td>
+<td style="text-align: left;">fitted model that the tuned procedure with the label given as the first argument fits to the data set given as the second argument (prints <code>\candproctuned{\text{CV}}\paren{D}</code>; the f form of <code>\candproctuned</code>, which names the procedure and leaves the data set implicit)</td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;"><span class="math inline">\(\card{a}\)</span></td>
@@ -3257,12 +3263,12 @@ Table&nbsp;10: Every symbol that a macro prints
 <tr class="even">
 <td style="text-align: left;"><span class="math inline">\(\censhist{a}\)</span></td>
 <td style="text-align: left;"><code>\censhist</code></td>
-<td style="text-align: left;">censoring history through time k (prints <code>\bar{C}</code>_k)</td>
+<td style="text-align: left;">censoring history through time k (prints <code>\bar{C}_k</code>)</td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;"><span class="math inline">\(\censvalhist{a}\)</span></td>
 <td style="text-align: left;"><code>\censvalhist</code></td>
-<td style="text-align: left;">a censoring-history value through time k (prints <code>\bar{c}</code>_k)</td>
+<td style="text-align: left;">a censoring-history value through time k (prints <code>\bar{c}_k</code>)</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;"><span class="math inline">\(\cent{a}\)</span></td>
@@ -3487,7 +3493,7 @@ Table&nbsp;10: Every symbol that a macro prints
 <tr class="even">
 <td style="text-align: left;"><span class="math inline">\(\covhist{a}\)</span></td>
 <td style="text-align: left;"><code>\covhist</code></td>
-<td style="text-align: left;">covariate history through time k (prints <code>\bar{L}</code>_k)</td>
+<td style="text-align: left;">covariate history through time k (prints <code>\bar{L}_k</code>)</td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;"><span class="math inline">\(\covmat\)</span></td>
@@ -3507,7 +3513,7 @@ Table&nbsp;10: Every symbol that a macro prints
 <tr class="even">
 <td style="text-align: left;"><span class="math inline">\(\covvalhist{a}\)</span></td>
 <td style="text-align: left;"><code>\covvalhist</code></td>
-<td style="text-align: left;">a covariate-history value through time k (prints <code>\bar{l}</code>_k)</td>
+<td style="text-align: left;">a covariate-history value through time k (prints <code>\bar{l}_k</code>)</td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;"><span class="math inline">\(\cpf{a}{b}\)</span></td>
@@ -3577,7 +3583,7 @@ Table&nbsp;10: Every symbol that a macro prints
 <tr class="even">
 <td style="text-align: left;"><span class="math inline">\(\cvestoff{a}{b}{c}\)</span></td>
 <td style="text-align: left;"><code>\cvestoff</code></td>
-<td style="text-align: left;">k-fold cross-validation estimate of the generalization error of the fitting procedure given as the second argument, computed on the data set given as the third argument (prints <code>\cvestof{k}{g}``\paren{D}</code>; the f form of <code>\cvestof</code>, which leaves the data set implicit)</td>
+<td style="text-align: left;">k-fold cross-validation estimate of the generalization error of the fitting procedure given as the second argument, computed on the data set given as the third argument (prints <code>\cvestof{k}{g}\paren{D}</code>; the f form of <code>\cvestof</code>, which leaves the data set implicit)</td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;"><span class="math inline">\(\cvse{a}\)</span></td>
@@ -3592,7 +3598,7 @@ Table&nbsp;10: Every symbol that a macro prints
 <tr class="odd">
 <td style="text-align: left;"><span class="math inline">\(\cvseoff{a}{b}{c}\)</span></td>
 <td style="text-align: left;"><code>\cvseoff</code></td>
-<td style="text-align: left;">standard error of the k-fold cross-validation estimate for the fitting procedure given as the second argument, computed on the data set given as the third argument (prints <code>\cvseof{k}{g}``\paren{D}</code>; the f form of <code>\cvseof</code>, which leaves the data set implicit)</td>
+<td style="text-align: left;">standard error of the k-fold cross-validation estimate for the fitting procedure given as the second argument, computed on the data set given as the third argument (prints <code>\cvseof{k}{g}\paren{D}</code>; the f form of <code>\cvseof</code>, which leaves the data set implicit)</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;"><span class="math inline">\(\cyan{a}\)</span></td>
@@ -3827,7 +3833,7 @@ Table&nbsp;10: Every symbol that a macro prints
 <tr class="even">
 <td style="text-align: left;"><span class="math inline">\(\dicdev\)</span></td>
 <td style="text-align: left;"><code>\dicdev</code></td>
-<td style="text-align: left;">Bayesian deviance used by the deviance information criterion: minus twice the log-likelihood, with no saturated term (prints <code>\deviance</code>_{<code>\mathrm{DIC}</code>})</td>
+<td style="text-align: left;">Bayesian deviance used by the deviance information criterion: minus twice the log-likelihood, with no saturated term (prints <code>\deviance_{\mathrm{DIC}}</code>)</td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;"><span class="math inline">\(\dicdevf{a}\)</span></td>
@@ -4097,7 +4103,7 @@ Table&nbsp;10: Every symbol that a macro prints
 <tr class="even">
 <td style="text-align: left;"><span class="math inline">\(\eclassprior\)</span></td>
 <td style="text-align: left;"><code>\eclassprior</code></td>
-<td style="text-align: left;">estimated class prior π̂ (prints <code>\est{\pi}</code>); write <code>\eclassprior</code>_k for the prior of class k</td>
+<td style="text-align: left;">estimated class prior π̂ (prints <code>\est{\pi}</code>); write <code>\eclassprior_k</code> for the prior of class k</td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;"><span class="math inline">\(\ecoef{a}\)</span></td>
@@ -4357,7 +4363,7 @@ Table&nbsp;10: Every symbol that a macro prints
 <tr class="even">
 <td style="text-align: left;"><span class="math inline">\(\eigvalmax\)</span></td>
 <td style="text-align: left;"><code>\eigvalmax</code></td>
-<td style="text-align: left;">the largest eigenvalue of a matrix (prints <code>\eigval</code>_{<code>\max</code>})</td>
+<td style="text-align: left;">the largest eigenvalue of a matrix (prints <code>\eigval_{\max}</code>)</td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;"><span class="math inline">\(\eigvalmaxf{a}\)</span></td>
@@ -4367,7 +4373,7 @@ Table&nbsp;10: Every symbol that a macro prints
 <tr class="even">
 <td style="text-align: left;"><span class="math inline">\(\eigvalmin\)</span></td>
 <td style="text-align: left;"><code>\eigvalmin</code></td>
-<td style="text-align: left;">the smallest eigenvalue of a matrix (prints <code>\eigval</code>_{<code>\min</code>})</td>
+<td style="text-align: left;">the smallest eigenvalue of a matrix (prints <code>\eigval_{\min}</code>)</td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;"><span class="math inline">\(\eigvalminf{a}\)</span></td>
@@ -4562,7 +4568,7 @@ Table&nbsp;10: Every symbol that a macro prints
 <tr class="odd">
 <td style="text-align: left;"><span class="math inline">\(\Epredvalf{a}\)</span></td>
 <td style="text-align: left;"><code>\Epredvalf</code></td>
-<td style="text-align: left;">expected predicted value at the covariate value given as the argument: the population expectation over training sets of the fitted model’s prediction at that value (prints the expectation over the training set of <code>\fitted``\paren{x}</code>; the same quantity <code>\avgfitf</code> prints as mu_h(x), written as an expectation of a prediction rather than as a function in a model family; unlike <code>\Epredval</code>, it names the covariate value)</td>
+<td style="text-align: left;">expected predicted value at the covariate value given as the argument: the population expectation over training sets of the fitted model’s prediction at that value (prints the expectation over the training set of <code>\fitted\paren{x}</code>; the same quantity <code>\avgfitf</code> prints as mu_h(x), written as an expectation of a prediction rather than as a function in a model family; unlike <code>\Epredval</code>, it names the covariate value)</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;"><span class="math inline">\(\eprev\)</span></td>
@@ -4992,7 +4998,7 @@ Table&nbsp;10: Every symbol that a macro prints
 <tr class="odd">
 <td style="text-align: left;"><span class="math inline">\(\evarpar\)</span></td>
 <td style="text-align: left;"><code>\evarpar</code></td>
-<td style="text-align: left;">an estimated variance (forward-looking form) (prints <code>\est{\sdpar}</code>^2)</td>
+<td style="text-align: left;">an estimated variance (forward-looking form) (prints <code>\est{\sdpar}^2</code>)</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;"><span class="math inline">\(\evb\)</span></td>
@@ -5102,17 +5108,17 @@ Table&nbsp;10: Every symbol that a macro prints
 <tr class="odd">
 <td style="text-align: left;"><span class="math inline">\(\fitmodf{a}\)</span></td>
 <td style="text-align: left;"><code>\fitmodf \candfitted</code></td>
-<td style="text-align: left;">fitted model obtained from the training set given as the argument, the prediction function ŷ with the training set as subscript (prints <code>\fitted</code>_{D}, where the subscript is a data set, not an observation index); <code>\fitmodf{D}``\paren{x}</code> is its prediction at x, and <code>\fitprocf{D}</code> is the same model written as the fitting procedure g applied to D</td>
+<td style="text-align: left;">fitted model obtained from the training set given as the argument, the prediction function ŷ with the training set as subscript (prints <code>\fitted_{D}</code>, where the subscript is a data set, not an observation index); <code>\fitmodf{D}\paren{x}</code> is its prediction at x, and <code>\fitprocf{D}</code> is the same model written as the fitting procedure g applied to D</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;"><span class="math inline">\(\fitmodvalf{a}{b}\)</span></td>
 <td style="text-align: left;"><code>\fitmodvalf</code></td>
-<td style="text-align: left;">prediction at the covariate value given as the second argument, from the model that the fitting procedure fits to the data set given as the first argument (prints <code>\fitmodf{D}``\paren{x}</code>, that is the fitted model ŷ_D applied to x; the counterpart of <code>\predvalf</code> for a data set other than the full training set, such as the observations outside a fold; unlike <code>\candpredvalf</code>, which indexes a candidate procedure rather than a data set; unlike <code>\predval</code> and unlike <code>\epredfnf</code>, which applies any estimated prediction function, it is fixed to the fit to that data set)</td>
+<td style="text-align: left;">prediction at the covariate value given as the second argument, from the model that the fitting procedure fits to the data set given as the first argument (prints <code>\fitmodf{D}\paren{x}</code>, that is the fitted model ŷ_D applied to x; the counterpart of <code>\predvalf</code> for a data set other than the full training set, such as the observations outside a fold; unlike <code>\candpredvalf</code>, which indexes a candidate procedure rather than a data set; unlike <code>\predval</code> and unlike <code>\epredfnf</code>, which applies any estimated prediction function, it is fixed to the fit to that data set)</td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;"><span class="math inline">\(\fitprocf{a}\)</span></td>
 <td style="text-align: left;"><code>\fitprocf</code></td>
-<td style="text-align: left;">fitting procedure applied to its argument, g(·); write <code>\fitprocf{D}</code> for the model g(D) fitted to the data set D, and <code>\fitprocf{D}``\paren{x}</code> for its prediction at x</td>
+<td style="text-align: left;">fitting procedure applied to its argument, g(·); write <code>\fitprocf{D}</code> for the model g(D) fitted to the data set D, and <code>\fitprocf{D}\paren{x}</code> for its prediction at x</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;"><span class="math inline">\(\fittedwo{a}{b}\)</span></td>
@@ -5152,7 +5158,7 @@ Table&nbsp;10: Every symbol that a macro prints
 <tr class="odd">
 <td style="text-align: left;"><span class="math inline">\(\foldmseoff{a}{b}{c}\)</span></td>
 <td style="text-align: left;"><code>\foldmseoff</code></td>
-<td style="text-align: left;">mean squared error on the fold given as the first argument, of the fitting procedure given as the second argument, computed on the data set given as the third argument (prints <code>\foldmseof{j}{g}``\paren{D}</code>; the f form of <code>\foldmseof</code>, which leaves the data set implicit)</td>
+<td style="text-align: left;">mean squared error on the fold given as the first argument, of the fitting procedure given as the second argument, computed on the data set given as the third argument (prints <code>\foldmseof{j}{g}\paren{D}</code>; the f form of <code>\foldmseof</code>, which leaves the data set implicit)</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;"><span class="math inline">\(\foldof{a}\)</span></td>
@@ -5277,7 +5283,7 @@ Table&nbsp;10: Every symbol that a macro prints
 <tr class="even">
 <td style="text-align: left;"><span class="math inline">\(\growthfnf{a}\)</span></td>
 <td style="text-align: left;"><code>\growthfnf</code></td>
-<td style="text-align: left;">growth function at n points, m_Y(n) (prints <code>\growthfn``\paren{n}</code>)</td>
+<td style="text-align: left;">growth function at n points, m_Y(n) (prints <code>\growthfn\paren{n}</code>)</td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;"><span class="math inline">\(\h\)</span></td>
@@ -5642,7 +5648,7 @@ Table&nbsp;10: Every symbol that a macro prints
 <tr class="odd">
 <td style="text-align: left;"><span class="math inline">\(\hist{a}{b}\)</span></td>
 <td style="text-align: left;"><code>\hist</code></td>
-<td style="text-align: left;">history of a variable through a time point, as in <code>\hist{X}{k}</code> (prints <code>\bar{X}</code>_{k})</td>
+<td style="text-align: left;">history of a variable through a time point, as in <code>\hist{X}{k}</code> (prints <code>\bar{X}_{k}</code>)</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;"><span class="math inline">\(\hk\)</span></td>
@@ -6062,7 +6068,7 @@ Table&nbsp;10: Every symbol that a macro prints
 <tr class="odd">
 <td style="text-align: left;"><span class="math inline">\(\hvarpar\)</span></td>
 <td style="text-align: left;"><code>\hvarpar</code></td>
-<td style="text-align: left;">an estimated variance (prints <code>\hat{\sigma}</code>^2); deprecated, use <code>\evarpar</code></td>
+<td style="text-align: left;">an estimated variance (prints <code>\hat{\sigma}^2</code>); deprecated, use <code>\evarpar</code></td>
 </tr>
 <tr class="even">
 <td style="text-align: left;"><span class="math inline">\(\hvb\)</span></td>
@@ -6837,7 +6843,7 @@ Table&nbsp;10: Every symbol that a macro prints
 <tr class="even">
 <td style="text-align: left;"><span class="math inline">\(\outvari\)</span></td>
 <td style="text-align: left;"><code>\outvari</code></td>
-<td style="text-align: left;">outcome value of the i-th observation (prints <code>\outvar</code>_{<code>\iobs</code>}); <code>\outvari</code>^2 prints its square</td>
+<td style="text-align: left;">outcome value of the i-th observation (prints <code>\outvar_{\iobs}</code>); <code>\outvari^2</code> prints its square</td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;"><span class="math inline">\(\P\)</span></td>
@@ -7042,12 +7048,12 @@ Table&nbsp;10: Every symbol that a macro prints
 <tr class="odd">
 <td style="text-align: left;"><span class="math inline">\(\predvalf{a}\)</span></td>
 <td style="text-align: left;"><code>\predvalf</code></td>
-<td style="text-align: left;">prediction at the covariate value given as the argument, from the model that a fitting procedure fits to the training set (prints <code>\fitted``\paren{x}</code>, the fitted prediction function applied to x; unlike <code>\predval</code>, which takes no argument and names no covariate value, this applies the fitted function to the covariate value given, and unlike <code>\epredfnf</code>, which applies any estimated prediction function, it is fixed to the training-set fit)</td>
+<td style="text-align: left;">prediction at the covariate value given as the argument, from the model that a fitting procedure fits to the training set (prints <code>\fitted\paren{x}</code>, the fitted prediction function applied to x; unlike <code>\predval</code>, which takes no argument and names no covariate value, this applies the fitted function to the covariate value given, and unlike <code>\epredfnf</code>, which applies any estimated prediction function, it is fixed to the training-set fit)</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;"><span class="math inline">\(\predvari\)</span></td>
 <td style="text-align: left;"><code>\predvari</code></td>
-<td style="text-align: left;">predictor value of the i-th observation (prints <code>\predvar</code>_{<code>\iobs</code>}); <code>\predvari</code>^2 prints its square</td>
+<td style="text-align: left;">predictor value of the i-th observation (prints <code>\predvar_{\iobs}</code>); <code>\predvari^2</code> prints its square</td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;"><span class="math inline">\(\preimage{a}{b}\)</span></td>
@@ -7702,17 +7708,17 @@ Table&nbsp;10: Every symbol that a macro prints
 <tr class="odd">
 <td style="text-align: left;"><span class="math inline">\(\ssout\)</span></td>
 <td style="text-align: left;"><code>\ssout</code></td>
-<td style="text-align: left;">centered sum of squares of the outcome values (prints S_{<code>\outvar``\outvar</code>})</td>
+<td style="text-align: left;">centered sum of squares of the outcome values (prints S_{<code>\outvar\outvar</code>})</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;"><span class="math inline">\(\sspred\)</span></td>
 <td style="text-align: left;"><code>\sspred</code></td>
-<td style="text-align: left;">centered sum of squares of the predictor values (prints S_{<code>\predvar``\predvar</code>})</td>
+<td style="text-align: left;">centered sum of squares of the predictor values (prints S_{<code>\predvar\predvar</code>})</td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;"><span class="math inline">\(\sspredout\)</span></td>
 <td style="text-align: left;"><code>\sspredout</code></td>
-<td style="text-align: left;">centered sum of cross-products of the predictor and outcome values (prints S_{<code>\predvar``\outvar</code>})</td>
+<td style="text-align: left;">centered sum of cross-products of the predictor and outcome values (prints S_{<code>\predvar\outvar</code>})</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;"><span class="math inline">\(\ssqf{a}\)</span></td>
@@ -7992,12 +7998,12 @@ Table&nbsp;10: Every symbol that a macro prints
 <tr class="odd">
 <td style="text-align: left;"><span class="math inline">\(\trthist{a}\)</span></td>
 <td style="text-align: left;"><code>\trthist</code></td>
-<td style="text-align: left;">treatment history through time k (prints <code>\bar{A}</code>_k)</td>
+<td style="text-align: left;">treatment history through time k (prints <code>\bar{A}_k</code>)</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;"><span class="math inline">\(\trtvalhist{a}\)</span></td>
 <td style="text-align: left;"><code>\trtvalhist</code></td>
-<td style="text-align: left;">a treatment-history value through time k (prints <code>\bar{a}</code>_k)</td>
+<td style="text-align: left;">a treatment-history value through time k (prints <code>\bar{a}_k</code>)</td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;"><span class="math inline">\(\truemeanf{a}\)</span></td>
@@ -8022,7 +8028,7 @@ Table&nbsp;10: Every symbol that a macro prints
 <tr class="odd">
 <td style="text-align: left;"><span class="math inline">\(\truthindf{a}\)</span></td>
 <td style="text-align: left;"><code>\truthindf</code></td>
-<td style="text-align: left;">prints <code>\truthind``\paren{...}</code>, the truth indicator of its condition</td>
+<td style="text-align: left;">prints <code>\truthind\paren{...}</code>, the truth indicator of its condition</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;"><span class="math inline">\(\TSS\)</span></td>
@@ -8037,7 +8043,7 @@ Table&nbsp;10: Every symbol that a macro prints
 <tr class="even">
 <td style="text-align: left;"><span class="math inline">\(\ubf{a}{b}\)</span></td>
 <td style="text-align: left;"><code>\ubf \dims</code></td>
-<td style="text-align: left;">underbrace with subscript label <code>\underbrace{·}</code>_{label}</td>
+<td style="text-align: left;">underbrace with subscript label <code>\underbrace{·}_{label}</code></td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;"><span class="math inline">\(\ubound\)</span></td>
