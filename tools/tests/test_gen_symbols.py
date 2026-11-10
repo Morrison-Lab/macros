@@ -37,6 +37,18 @@ def test_same_body_shares_row_but_arg_count_separates():
     assert len(rows) == 2, rows
 
 
+def test_alias_of_a_macro_with_arguments_shows_them():
+    defs = make(
+        [
+            BS + "providecommand{" + BS + "E}[1]{" + BS + "mathbb{E}[#1]}",
+            BS + "def" + BS + "Ef{" + BS + "E}",
+        ]
+    )
+    rows = g.build_rows(defs, {})
+    symbols = {r["macros"]: r["symbol"] for r in rows}
+    assert symbols[BS + "Ef"] == BS + "Ef{a}", symbols
+
+
 def test_different_symbols_do_not_merge():
     defs = make([BS + "def" + BS + "p{x}", BS + "def" + BS + "q{y}"])
     assert len(g.build_rows(defs, {})) == 2

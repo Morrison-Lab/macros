@@ -220,10 +220,12 @@ all_table <- data.frame(
   Macros = sprintf("`%s`", symbols_all$macros),
   Meaning = gsub("|", "\\|", symbols_all$interpretation, fixed = TRUE)
 )
-# A macro named in the meaning, such as an alias note, is shown as code so
-# that markdown does not read its backslash as an escape.
+# A macro named in the meaning, such as an alias note or a print hint, is
+# shown as code, with any braced arguments inside the code span, so that
+# markdown does not read its backslash as an escape.
 all_table$Meaning <- gsub(
-  "(\\\\[A-Za-z]+)", "`\\1`", all_table$Meaning
+  "(\\\\[A-Za-z]+(\\{(?:[^{}]|(?2))*\\})*)", "`\\1`", all_table$Meaning,
+  perl = TRUE
 )
 knitr::kable(
   all_table,

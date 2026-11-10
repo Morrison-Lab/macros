@@ -29,7 +29,7 @@ macros,symbol,interpretation
 \avgto,\avgto{a}{b},average over the first argument from 1 to the second: one over the second argument times the sum
 \avgtof,\avgtof{a}{b}{c},average over the first argument from 1 to the second of the third argument (·)
 \b \gb \shapeb \combwtb \highend \regcoef \quantlevel \typetwoerr \recallweight,\b,Greek letter beta (β)
-\ba,\ba,begin aligned math environment
+\ba,\ba a\ea,begin aligned math environment
 \basemeasuref,\basemeasuref{a},base measure of an exponential family at its argument (same as \rfacf; prints h(#1))
 \bbC,\bbC,blackboard bold C (complex numbers)
 \bbQ,\bbQ,blackboard bold Q (rational numbers)
@@ -135,7 +135,7 @@ macros,symbol,interpretation
 \bfzero,\bfzero,bold zero vector/number
 \bfzeta,\bfzeta,bold Greek lowercase letter zeta
 \Bias,\Bias{a},bias function Bias(·)
-\bias,\bias,bias function (alias for \Bias)
+\bias,\bias{a},bias function (alias for \Bias)
 \biassym,\biassym,"short bias operator 𝔹 (no argument, blackboard bold like \Expp)"
 \biassymf,\biassymf{a},"short bias operator applied to an estimator, like \E (prints \biassym with its argument in square brackets)"
 \Biast \biast,\Biast,bias operator Bias
@@ -192,9 +192,9 @@ macros,symbol,interpretation
 \condPr,\condPr{a}{b},"conditional probability Pr(A | B), \condPr{A}{B}"
 \condVar,\condVar{a}{b},"conditional variance Var(A | B), \condVar{A}{B}"
 \Cor,\Cor{a},correlation function Cor(·)
-\Corf,\Corf,correlation function (alias for \Cor)
+\Corf,\Corf{a},correlation function (alias for \Cor)
 \Corr,\Corr{a},correlation Corr(·) applied to argument
-\Corrf,\Corrf,correlation Corr(·) applied to argument (alias for \Corr)
+\Corrf,\Corrf{a},correlation Corr(·) applied to argument (alias for \Corr)
 \Corrs,\Corrs{a}{b},"correlation Corr(·, ·) applied to two arguments"
 \Corrt,\Corrt,correlation operator Corr
 \Cors,\Cors{a}{b},"bivariate correlation Cor(·,·)"
@@ -203,24 +203,24 @@ macros,symbol,interpretation
 \cossim,\cossim,cosine similarity: dot product divided by the product of the lengths
 \cossimf,\cossimf{a}{b},"cosine similarity applied to two arguments, cossim(x, y)"
 \Cov,\Cov{a},covariance function Cov(·)
-\Covf,\Covf,covariance function (alias for \Cov)
+\Covf,\Covf{a},covariance function (alias for \Cov)
 \covh,\covh{a},estimated covariance function Ĉov(·)
-\covhf \hcovf,\covhf,estimated covariance function (alias)
+\covhf \hcovf,\covhf{a},estimated covariance function (alias)
 \covhist,\covhist{a},covariate history through time k (prints \bar{L}_k)
 \covmat \codealph,\covmat,a covariance matrix (prints \Sigma)
 \Covs,\Covs{a}{b},"bivariate covariance Cov(·,·)"
 \Covt,\Covt,covariance operator symbol Cov
 \covvalhist,\covvalhist{a},a covariate-history value through time k (prints \bar{l}_k)
-\cpf \tprodf,\cpf,cross-product matrix x′y (alias for \tprod)
+\cpf \tprodf,\cpf{a}{b},cross-product matrix x′y (alias for \tprod)
 \cprob,\cprob{a},"complementary probability, the probability 1 - p of the complement (prints p^{\mathsf{c}})"
 \cR \Range \range \riskset,\cR,range / codomain symbol ℛ
 \crossentropyf,\crossentropyf{a}{b},"cross-entropy of the second distribution relative to the first, H(p, q)"
 \cuhaz \cumhaz,\cuhaz,cumulative hazard symbol Λ
 \cuhazfactorf,\cuhazfactorf{a},cumulative hazard factor function θ_Λ(·)
-\cuhazff \fcuhazf,\cuhazff,cumulative hazard factor function (shorthand for \cuhazfactorf)
+\cuhazff \fcuhazf,\cuhazff{a},cumulative hazard factor function (shorthand for \cuhazfactorf)
 \cuhazr \rcuhaz \cuhazratio,\cuhazr,cumulative hazard ratio (alias for \cuhazratio)
 \cuhazratiof,\cuhazratiof{a},cumulative hazard ratio function ϙ_Λ(·)
-\cuhazrf \rcuhazf,\cuhazrf,cumulative hazard ratio function (alias for \cuhazratiof)
+\cuhazrf \rcuhazf,\cuhazrf{a},cumulative hazard ratio function (alias for \cuhazratiof)
 \cum,\cum{a},cumulative-exposure operator cum(·)
 \cvest,\cvest{a},"cross-validation estimate of generalization error, Êrr_CV(k)"
 \cvestof,\cvestof{a}{b},"k-fold cross-validation estimate of the generalization error of fitting procedure g, Êrr^g_CV(k); \cvestof{k}{g}"
@@ -250,9 +250,9 @@ macros,symbol,interpretation
 \defScore,\defScore,definitional expression for score function ℓ′
 \deriv,\deriv{a},partial derivative operator ∂/∂(·)
 \derivf,\derivf{a}{b},partial derivative ∂f/∂x with numerator
-\derivfdn,\derivfdn,"alias for \derivff (denominator first, numerator second)"
+\derivfdn,\derivfdn{a}{b},"alias for \derivff (denominator first, numerator second)"
 \derivff,\derivff{a}{b},partial derivative ∂f/∂x (reversed argument order)
-\derivfnd,\derivfnd,"alias for \derivf (numerator first, denominator second)"
+\derivfnd,\derivfnd{a}{b},"alias for \derivf (numerator first, denominator second)"
 \derivfslash,\derivfslash{a}{b},partial derivative ∂f/∂x written with a slash (prints \partial f / \partial x)
 \design \mdesign,\design,a design matrix built from a feature map (prints bold D) (alias for \mdesign)
 \detf,\detf{a},"determinant of its argument, det(·)"
@@ -302,7 +302,7 @@ macros,symbol,interpretation
 \dNf,\dNf{a},Normal distribution applied to parameters
 \doddsf,\doddsf{a},derivative of odds function odds′{·}
 \doddsinvf,\doddsinvf{a},derivative of inverse odds function
-\dpf \dprodf,\dpf,dot product a·b (alias for \dprodf)
+\dpf \dprodf,\dpf{a}{b},dot product a·b (alias for \dprodf)
 \dPo,\dPo,Poisson distribution operator (statmath prefix)
 \dPof,\dPof{a},Poisson distribution applied to parameters
 \dprod,\dprod{a}{b},dot product of two arguments a·b
@@ -317,23 +317,23 @@ macros,symbol,interpretation
 \dWf,\dWf{a},Wishart distribution applied to parameters
 \E,\E{a},"expected value (prints \Expp, with the argument in square brackets)"
 \e,\e{a},e^(·) exponential notation
-\ea,\ea,end aligned math environment
+\ea,\ba a\ea,end aligned math environment
 \eATT,\eATT,estimated average treatment effect on the treated ATT̂ (via \Est)
 \eATTf,\eATTf{a},estimated average treatment effect on the treated function ATT̂(·) (via \Est)
 \eb,\eb,estimated beta coefficient β̂
 \Ebar,\Ebar,expectation operator with bar
 \Ebarf,\Ebarf{a},expectation with bar applied to subscript
 \eBias,\eBias{a},estimated bias applied to argument (composable \Est form)
-\ebias,\ebias,estimated bias applied to argument (lowercase alias)
+\ebias,\ebias{a},estimated bias applied to argument (lowercase alias)
 \eBiast,\eBiast,estimated bias operator (composable \Est form)
 \ecdf,\ecdf,estimated cumulative distribution function F̂
 \ecdff,\ecdff{a},estimated cumulative distribution function F̂(·) applied to argument
 \eclassprior,\eclassprior,estimated class prior π̂ (prints \est{\pi}); write \eclassprior_k for the prior of class k
 \ecoef,\ecoef{a},estimated regression coefficient for covariate (β̂_x)
 \eCor,\eCor{a},estimated correlation function Ĉor(·)
-\eCorf,\eCorf,estimated correlation function (alias)
+\eCorf,\eCorf{a},estimated correlation function (alias)
 \eCorr,\eCorr{a},estimated correlation applied to argument (composable \Est form)
-\eCorrf,\eCorrf,estimated correlation applied to argument (alias for \eCorr)
+\eCorrf,\eCorrf{a},estimated correlation applied to argument (alias for \eCorr)
 \eCorrs,\eCorrs{a}{b},estimated correlation applied to two arguments (composable \Est form)
 \eCorrt,\eCorrt,estimated correlation operator (composable \Est form)
 \eCors,\eCors{a}{b},estimated bivariate correlation
@@ -343,10 +343,10 @@ macros,symbol,interpretation
 \eCovt \ecovt,\eCovt,estimated covariance operator (alias)
 \ecuhaz \ecumhaz,\ecuhaz,estimated cumulative hazard Λ̂
 \ecuhazfactorf,\ecuhazfactorf{a},estimated cumulative hazard factor function θ̂_Λ(·)
-\ecuhazff \efcuhazf,\ecuhazff,estimated cumulative hazard factor function (shorthand for \ecuhazfactorf)
+\ecuhazff \efcuhazf,\ecuhazff{a},estimated cumulative hazard factor function (shorthand for \ecuhazfactorf)
 \ecuhazr \ercuhaz \ecuhazratio,\ecuhazr,estimated cumulative hazard ratio (alias for \ecuhazratio)
 \ecuhazratiof,\ecuhazratiof{a},estimated cumulative hazard ratio function ϙ̂_Λ(·)
-\ecuhazrf \ercuhazf,\ecuhazrf,estimated cumulative hazard ratio function (alias for \ecuhazratiof)
+\ecuhazrf \ercuhazf,\ecuhazrf{a},estimated cumulative hazard ratio function (alias for \ecuhazratiof)
 \edf,\edf,estimated degrees of freedom (forward-looking form) (prints \est{\df})
 \edifflogodds,\edifflogodds,estimated difference in log-odds ΔΗ̂
 \edistmem,\edistmem,fitted distribution model: estimate of a member of a distribution model family (via \est)
@@ -354,30 +354,30 @@ macros,symbol,interpretation
 \eE,\eE{a},"estimated expected value (prints \est of \Expp, with the argument in square brackets)"
 \eeinf,\eeinf,estimated Fisher information ℐ̂
 \eeinff,\eeinff{a},estimated Fisher information function ℐ̂(·)
-\eExp \eExpf,\eExp,estimated expected value (alias for \eE)
-\ef,\ef,e^(·) exponential notation (alias for \e)
-\Ef \Exp \Expf,\Ef,expected value (alias for \E)
+\eExp \eExpf,\eExp{a},estimated expected value (alias for \eE)
+\ef,\ef{a},e^(·) exponential notation (alias for \e)
+\Ef \Exp \Expf,\Ef{a},expected value (alias for \E)
 \efactor,\efactor,generic estimated factor θ̂ (hat-wrapped \factor)
 \efactorf,\efactorf{a},generic estimated factor function θ̂(·)
 \efcuhaz \ecuhazfactor,\efcuhaz,estimated cumulative hazard factor (alias for \ecuhazfactor)
-\eff,\eff,generic estimated factor function (shorthand for \efactorf)
+\eff,\eff{a},generic estimated factor function (shorthand for \efactorf)
 \efhaz \ehazfactor,\efhaz,estimated hazard factor (alias for \ehazfactor)
-\efhazf \ehazff,\efhazf,estimated hazard factor function (alias for \ehazfactorf)
+\efhazf \ehazff,\efhazf{a},estimated hazard factor function (alias for \ehazfactorf)
 \efodds \eoddsfactor,\efodds,estimated odds factor (alias for \eoddsfactor)
-\efoddsf \eoddsff,\efoddsf,estimated odds factor function (alias for \eoddsfactorf)
+\efoddsf \eoddsff,\efoddsf{a},estimated odds factor function (alias for \eoddsfactorf)
 \efprev \eprevfactor,\efprev,estimated prevalence factor (alias for \eprevfactor)
-\efprevf \eprevff,\efprevf,estimated prevalence factor function (alias for \eprevfactorf)
+\efprevf \eprevff,\efprevf{a},estimated prevalence factor function (alias for \eprevfactorf)
 \efrate \eratefactor,\efrate,estimated rate factor (alias for \eratefactor)
-\efratef \erateff,\efratef,estimated rate factor function (alias for \eratefactorf)
+\efratef \erateff,\efratef{a},estimated rate factor function (alias for \eratefactorf)
 \efrisk \eriskfactor,\efrisk,estimated risk factor (alias for \eriskfactor)
-\efriskf \eriskff,\efriskf,estimated risk factor function (alias for \eriskfactorf)
+\efriskf \eriskff,\efriskf{a},estimated risk factor function (alias for \eriskfactorf)
 \efsurv \esurvfactor,\efsurv,estimated survival factor (alias for \esurvfactor)
-\efsurvf \esurvff,\efsurvf,estimated survival factor function (alias for \esurvfactorf)
+\efsurvf \esurvff,\efsurvf{a},estimated survival factor function (alias for \esurvfactorf)
 \Ehat,\Ehat,expectation operator with hat
 \Ehatf,\Ehatf{a},expectation with hat applied to subscript
 \ehaz \erate,\ehaz,estimated hazard λ̂ (alias for \erate)
 \ehazfactorf,\ehazfactorf{a},estimated hazard factor function θ̂_λ(·)
-\ehazrf \erhazf,\ehazrf,estimated hazard ratio function (alias for \ehrf)
+\ehazrf \erhazf,\ehazrf{a},estimated hazard ratio function (alias for \ehrf)
 \ehr \ehazr \erhaz \ehazratio,\ehr,estimated hazard ratio (alias for \ehazratio)
 \ehrf,\ehrf{a},estimated hazard ratio function ϙ̂_λ(·)
 \eigvalmax,\eigvalmax,the largest eigenvalue of a matrix (prints \eigval_{\max})
@@ -398,9 +398,9 @@ macros,symbol,interpretation
 \emodmemf,\emodmemf{a},"fitted model applied to its argument (via \est), h-hat(·)"
 \emp,\emp,"empirical estimator label (""emp"" subscript)"
 \emprisk \epoprisk,\emprisk,empirical risk R̂ (alias for \epoprisk)
-\empriskf,\empriskf,empirical risk function R̂(·) (alias for \epopriskf)
+\empriskf,\empriskf{a},empirical risk function R̂(·) (alias for \epopriskf)
 \eMSE,\eMSE{a},estimated mean squared error applied to argument (composable \Est form)
-\eMSEf,\eMSEf,estimated mean squared error applied to argument (alias for \eMSE)
+\eMSEf,\eMSEf{a},estimated mean squared error applied to argument (alias for \eMSE)
 \eMSEt,\eMSEt,estimated mean squared error operator (composable \Est form)
 \emu,\emu,estimated mean μ̂
 \emuf,\emuf{a},estimated mean function μ̂(·)
@@ -426,9 +426,9 @@ macros,symbol,interpretation
 \eprevfactorf,\eprevfactorf{a},estimated prevalence factor function θ̂_π(·)
 \eprevratiof,\eprevratiof{a},estimated prevalence ratio function ϙ̂_π(·)
 \eprr \eprevratio,\eprr,estimated prevalence ratio (alias for \eprevratio)
-\eprrf,\eprrf,estimated prevalence ratio function (alias for \eprevratiof)
+\eprrf,\eprrf{a},estimated prevalence ratio function (alias for \eprevratiof)
 \eps \err \Noise \noise \wterr \tolout \lsresid \propstep \machineps \smallconst,\eps,varepsilon error term (ε)
-\epsf,\epsf,ε(·) error function (alias for \epsp)
+\epsf,\epsf{a},ε(·) error function (alias for \epsp)
 \epsp,\epsp{a},ε(·) error function
 \eQ,\eQ,estimated quantile function Q̂
 \eqby,\eqby{a},equals sign with the reason written over it (prints \eqby{\text{Thm 2}})
@@ -440,7 +440,7 @@ macros,symbol,interpretation
 \eratefactorf,\eratefactorf{a},estimated rate factor function θ̂_λ(·)
 \erater \errate \erateratio,\erater,estimated rate ratio (alias for \erateratio)
 \erateratiof,\erateratiof{a},estimated rate ratio function ϙ̂_λ(·)
-\eraterf \erratef,\eraterf,estimated rate ratio function (alias for \erateratiof)
+\eraterf \erratef,\eraterf{a},estimated rate ratio function (alias for \erateratiof)
 \eRatio,\eRatio,estimated capital ratio Ϙ̂ (estimator-wrapped \Ratio)
 \eratio,\eratio,generic estimated ratio ϙ̂ (hat-wrapped \ratio)
 \eRatiof,\eRatiof{a},estimated capital ratio function Ϙ̂(·)
@@ -451,29 +451,29 @@ macros,symbol,interpretation
 \eriskfactorf,\eriskfactorf{a},estimated risk factor function θ̂_π(·)
 \eriskr \errisk \eriskratio,\eriskr,estimated risk ratio (alias for \eriskratio)
 \eriskratiof,\eriskratiof{a},estimated risk ratio function ϙ̂_π(·)
-\eriskrf \erriskf,\eriskrf,estimated risk ratio function (alias for \eriskratiof)
+\eriskrf \erriskf,\eriskrf{a},estimated risk ratio function (alias for \eriskratiof)
 \eRMSE,\eRMSE{a},estimated root mean squared error applied to argument (composable \Est form)
-\eRMSEf,\eRMSEf,estimated root mean squared error applied to argument (alias for \eRMSE)
+\eRMSEf,\eRMSEf{a},estimated root mean squared error applied to argument (alias for \eRMSE)
 \eRMSEt,\eRMSEt,estimated root mean squared error operator (composable \Est form)
 \eror,\eror,"estimated odds ratio ϙ̂_ω (\eratio subscripted by \odds, so the hat covers only the main symbol)"
 \eRR,\eRR,estimated risk ratio RR̂ (via \Est)
 \errcov \universe \samplespace,\errcov,the covariance matrix of observation errors (prints \Omega)
 \ersurv \esurvr \esurvratio,\ersurv,estimated survival ratio (alias for \esurvratio)
-\ersurvf \esurvrf,\ersurvf,estimated survival ratio function (alias for \esurvratiof)
+\ersurvf \esurvrf,\ersurvf{a},estimated survival ratio function (alias for \esurvratiof)
 \es \esig,\es,estimated sigma σ̂
 \eS \eSig \eSigma,\eS,estimated covariance matrix Σ̂
 \eSD,\eSD{a},estimated standard deviation SD̂(·)
-\eSDf,\eSDf,estimated standard deviation (alias)
+\eSDf,\eSDf{a},estimated standard deviation (alias)
 \esdpar,\esdpar,an estimated standard deviation (forward-looking form) (prints \est{\sdpar})
 \ESE,\ESE{a},"expected squared error ESE(·) of a predicted value or a parameter estimate, applied to argument"
 \ese,\ese{a},estimated standard error ŝe(·)
 \eSE \eSEt,\eSE,estimated standard error operator ŜE
 \ESEE,\ESEE{a},"expected squared estimation error ESEE(·) of a parameter estimate, applied to argument"
-\ESEEf,\ESEEf,expected squared estimation error ESEE(·) applied to argument (alias for \ESEE)
+\ESEEf,\ESEEf{a},expected squared estimation error ESEE(·) applied to argument (alias for \ESEE)
 \ESEEt,\ESEEt,"expected squared estimation error operator ESEE, of a parameter estimate"
-\ESEf,\ESEf,expected squared error ESE(·) applied to argument (alias for \ESE)
+\ESEf,\ESEf{a},expected squared error ESE(·) applied to argument (alias for \ESE)
 \eSEf,\eSEf{a},estimated standard error function (alias)
-\esef,\esef,estimated standard error (alias for \ese)
+\esef,\esef{a},estimated standard error (alias for \ese)
 \esemp,\esemp,empirical survival function estimator Ŝ_emp
 \esempf,\esempf{a},empirical survival function estimator Ŝ_emp(·) applied to argument
 \ESEt,\ESEt,"expected squared error operator ESE, of a predicted value or a parameter estimate"
@@ -483,7 +483,7 @@ macros,symbol,interpretation
 \esnaa,\esnaa,Nelson-Aalen survival function estimator Ŝ_NA
 \esnaaf,\esnaaf{a},Nelson-Aalen survival function estimator Ŝ_NA(·) applied to argument
 \ESPE,\ESPE{a},"expected squared prediction error ESPE(·) of a predicted value, applied to argument"
-\ESPEf,\ESPEf,expected squared prediction error ESPE(·) applied to argument (alias for \ESPE)
+\ESPEf,\ESPEf{a},expected squared prediction error ESPE(·) applied to argument (alias for \ESPE)
 \ESPEt,\ESPEt,"expected squared prediction error operator ESPE, of a predicted value"
 \Est,\Est{a},estimated / wide-hat version of argument (for multi-character targets)
 \est,\est{a},estimated / hat version of argument
@@ -513,7 +513,7 @@ macros,symbol,interpretation
 \evparam,\evparam,an estimated parameter vector (forward-looking form) (prints \est{\vparam})
 \exp \expf,\exp{a},"exponential function exp{·}; takes one argument, so never write it bare: use \expf{·} or \expt with your own delimiters"
 \Expfc,\Expfc{a}{b},conditional expected value (prints \Expp with the conditioning subscript c and the argument in square brackets)
-\expfn,\expfn,exponential function (alias for \exp)
+\expfn,\expfn{a},exponential function (alias for \exp)
 \expgenerr,\expgenerr{a}{b},"expected generalization error of fitting procedure g trained on n observations, averaged over training sets, Err^g(n); \expgenerr{g}{n}"
 \expit \sigmoid,\expit,expit / logistic function
 \expitf,\expitf{a},expit applied to argument
@@ -525,17 +525,17 @@ macros,symbol,interpretation
 \factorial,\factorial{a},factorial of a non-negative integer n! (prints its argument followed by an exclamation mark)
 \fcuhaz \cuhazfactor,\fcuhaz,cumulative hazard factor (alias for \cuhazfactor)
 \featmap,\featmap,"a feature map (basis expansion) (prints D, not bold, since a feature map is a function)"
-\ff,\ff,generic factor function (shorthand for \factorf)
+\ff,\ff{a},generic factor function (shorthand for \factorf)
 \ffield,\ffield{a},"finite field with the given number of elements, F_q"
 \fhaz \hazfactor,\fhaz,hazard factor (alias for \hazfactor)
-\fhazf \hazff,\fhazf,hazard factor function (alias for \hazfactorf)
+\fhazf \hazff,\fhazf{a},hazard factor function (alias for \hazfactorf)
 \fitmodf \candfitted,\fitmodf{a},"fitted model obtained from the training set given as the argument, the prediction function ŷ with the training set as subscript (prints \fitted_{D}, where the subscript is a data set, not an observation index); \fitmodf{D}\paren{x} is its prediction at x, and \fitprocf{D} is the same model written as the fitting procedure g applied to D"
 \fitmodvalf,\fitmodvalf{a}{b},"prediction at the covariate value given as the second argument, from the model that the fitting procedure fits to the data set given as the first argument (prints \fitmodf{D}\paren{x}, that is the fitted model ŷ_D applied to x; the counterpart of \predvalf for a data set other than the full training set, such as the observations outside a fold; unlike \candpredvalf, which indexes a candidate procedure rather than a data set; unlike \predval and unlike \epredfnf, which applies any estimated prediction function, it is fixed to the fit to that data set)"
 \fitprocf,\fitprocf{a},"fitting procedure applied to its argument, g(·); write \fitprocf{D} for the model g(D) fitted to the data set D, and \fitprocf{D}\paren{x} for its prediction at x"
 \fittedwo,\fittedwo{a}{b},"fitted value at input x from a fit leaving out fold j, ŷ^(-j)(x); \fittedwo{j}{x}"
 \floor,\floor{a},floor function ⌊·⌋
 \fodds \oddsfactor,\fodds,odds factor (alias for \oddsfactor)
-\foddsf \oddsff,\foddsf,odds factor function (alias for \oddsfactorf)
+\foddsf \oddsff,\foddsf{a},odds factor function (alias for \oddsfactorf)
 \fold,\fold{a},cross-validation fold F_j (set of held-out observation indices)
 \foldmse,\foldmse{a},mean squared error MSE_j on fold j
 \foldmseof,\foldmseof{a}{b},"mean squared error of fitting procedure g on fold j, MSE^g_j; \foldmseof{j}{g}"
@@ -543,20 +543,20 @@ macros,symbol,interpretation
 \foldof,\foldof{a},fold κ(i) containing observation i
 \foldsize,\foldsize{a},number of observations n_j in fold j
 \fprev \prevfactor,\fprev,prevalence factor (alias for \prevfactor)
-\fprevf \prevff,\fprevf,prevalence factor function (alias for \prevfactorf)
+\fprevf \prevff,\fprevf{a},prevalence factor function (alias for \prevfactorf)
 \frate \ratefactor,\frate,rate factor (alias for \ratefactor)
-\fratef \rateff,\fratef,rate factor function (alias for \ratefactorf)
+\fratef \rateff,\fratef{a},rate factor function (alias for \ratefactorf)
 \frisk \riskfactor,\frisk,risk factor (alias for \riskfactor)
-\friskf \riskff,\friskf,risk factor function (alias for \riskfactorf)
+\friskf \riskff,\friskf{a},risk factor function (alias for \riskfactorf)
 \fsurv \survfactor,\fsurv,survival factor (alias for \survfactor)
-\fsurvf \survff,\fsurvf,survival factor function (alias for \survfactorf)
+\fsurvf \survff,\fsurvf{a},survival factor function (alias for \survfactorf)
 \g \gg \resp \decay,\g,Greek letter gamma (γ)
 \gammafn,\gammafn,the gamma function (prints \Gamma)
 \Gaus,\Gaus,Gaussian distribution label
 \gd \kron \step \event \tolin \backerr \errfrac \failprob \truthind \mahaldist,\gd,Greek letter delta (δ)
 \generr,\generr,generalization error operator Err (expected loss of a prediction rule on new data)
 \gensalg,\gensalg{a},sigma-algebra generated by argument σ(·)
-\gensigmaalg,\gensigmaalg,generated sigma-algebra (alias for \gensalg)
+\gensigmaalg,\gensigmaalg{a},generated sigma-algebra (alias for \gensalg)
 \given,\given,"the conditioning bar ""given"" (prints |), for conditional expressions such as E[Y | X]"
 \grad,\grad,gradient operator ∇
 \gradf,\gradf{a},"gradient of a function, ∇f"
@@ -573,18 +573,18 @@ macros,symbol,interpretation
 \hATTf,\hATTf{a},"estimated average treatment effect on the treated function ATT̂(·); deprecated, use \eATTf"
 \haz \rate,\haz,hazard function symbol λ (alias for \rate)
 \hazfactorf,\hazfactorf{a},hazard factor function θ_λ(·)
-\hazrf \rhazf,\hazrf,hazard ratio function (alias for \hrf)
+\hazrf \rhazf,\hazrf{a},hazard ratio function (alias for \hrf)
 \hb,\hb,"estimated beta coefficient β̂; deprecated, use \eb"
 \hBias,\hBias{a},"estimated bias applied to argument (legacy \hat form); deprecated, use \eBias"
-\hbias,\hbias,"estimated bias applied to argument (lowercase alias); deprecated, use \ebias"
+\hbias,\hbias{a},"estimated bias applied to argument (lowercase alias); deprecated, use \ebias"
 \hBiast,\hBiast,"estimated bias operator Biaŝ (legacy \hat form); deprecated, use \eBiast"
 \hcdf,\hcdf,"estimated cumulative distribution function F̂; deprecated, use \ecdf"
 \hcdff,\hcdff{a},"estimated cumulative distribution function F̂(·) applied to argument; deprecated, use \ecdff"
 \hcoef,\hcoef{a},"estimated regression coefficient for covariate (β̂_x); deprecated, use \ecoef"
 \hCor,\hCor{a},"estimated correlation function Ĉor(·); deprecated, use \eCor"
-\hCorf,\hCorf,"estimated correlation function (alias); deprecated, use \eCorf"
+\hCorf,\hCorf{a},"estimated correlation function (alias); deprecated, use \eCorf"
 \hCorr,\hCorr{a},"estimated correlation Corr̂(·) applied to argument (legacy \hat form); deprecated, use \eCorr"
-\hCorrf,\hCorrf,"estimated correlation Corr̂(·) applied to argument (alias for \hCorr); deprecated, use \eCorrf"
+\hCorrf,\hCorrf{a},"estimated correlation Corr̂(·) applied to argument (alias for \hCorr); deprecated, use \eCorrf"
 \hCorrs,\hCorrs{a}{b},"estimated correlation Corr̂(·, ·) applied to two arguments (legacy \hat form); deprecated, use \eCorrs"
 \hCorrt,\hCorrt,"estimated correlation operator Corr̂ (legacy \hat form); deprecated, use \eCorrt"
 \hCors,\hCors{a}{b},"estimated bivariate correlation; deprecated, use \eCors"
@@ -593,10 +593,10 @@ macros,symbol,interpretation
 \hCovt \hcovt,\hCovt,"estimated covariance operator (alias); deprecated, use \eCovt"
 \hcuhaz \hcumhaz,\hcuhaz,"estimated cumulative hazard Λ̂; deprecated, use \ecuhaz"
 \hcuhazfactorf,\hcuhazfactorf{a},"estimated cumulative hazard factor function θ̂_Λ(·); deprecated, use \ecuhazfactorf"
-\hcuhazff \hfcuhazf,\hcuhazff,"estimated cumulative hazard factor function (shorthand for \hcuhazfactorf); deprecated, use \ecuhazff"
+\hcuhazff \hfcuhazf,\hcuhazff{a},"estimated cumulative hazard factor function (shorthand for \hcuhazfactorf); deprecated, use \ecuhazff"
 \hcuhazr \hrcuhaz \hcuhazratio,\hcuhazr,"estimated cumulative hazard ratio (alias for \hcuhazratio); deprecated, use \ecuhazr"
 \hcuhazratiof,\hcuhazratiof{a},"estimated cumulative hazard ratio function ϙ̂_Λ(·); deprecated, use \ecuhazratiof"
-\hcuhazrf \hrcuhazf,\hcuhazrf,"estimated cumulative hazard ratio function (alias for \hcuhazratiof); deprecated, use \ecuhazrf"
+\hcuhazrf \hrcuhazf,\hcuhazrf{a},"estimated cumulative hazard ratio function (alias for \hcuhazratiof); deprecated, use \ecuhazrf"
 \hdf,\hdf,"estimated degrees of freedom (prints the hat of the upright name df); deprecated, use \edf"
 \hdifflogodds,\hdifflogodds,"estimated difference in log-odds ΔΗ̂; deprecated, use \edifflogodds"
 \hE,\hE{a},"estimated expected value (prints the hat of \Expp, with the argument in square brackets); deprecated, use \eE"
@@ -608,31 +608,31 @@ macros,symbol,interpretation
 \heldpredvar,\heldpredvar{a},"covariate of a held-out observation (random), X with subscript star and the index of the observation"
 \hess \hessm \hessian,\hess,Hessian of log-likelihood ℓ″
 \hessf,\hessf{a},Hessian function ℓ″(·)
-\hessianf,\hessianf,Hessian function (alias for \hessf)
+\hessianf,\hessianf{a},Hessian function (alias for \hessf)
 \hessij,\hessij,"(i,j) element of the Hessian"
 \hessijalt,\hessijalt,"(i,j) Hessian in bracket notation"
-\hExp \hExpf,\hExp,"estimated expected value (alias for \hE); deprecated, use \eExp"
+\hExp \hExpf,\hExp{a},"estimated expected value (alias for \hE); deprecated, use \eExp"
 \hf,\hf,"fitted prediction function (f̂); deprecated, use \epredfn"
 \hfactor,\hfactor,"generic estimated factor θ̂ (hat-wrapped \factor); deprecated, use \efactor"
 \hfactorf,\hfactorf{a},"generic estimated factor function θ̂(·); deprecated, use \efactorf"
 \hfcuhaz \hcuhazfactor,\hfcuhaz,"estimated cumulative hazard factor (alias for \hcuhazfactor); deprecated, use \efcuhaz"
-\hff,\hff,"generic estimated factor function (shorthand for \hfactorf); deprecated, use \eff"
+\hff,\hff{a},"generic estimated factor function (shorthand for \hfactorf); deprecated, use \eff"
 \hfhaz \hhazfactor,\hfhaz,"estimated hazard factor (alias for \hhazfactor); deprecated, use \efhaz"
-\hfhazf \hhazff,\hfhazf,"estimated hazard factor function (alias for \hhazfactorf); deprecated, use \efhazf"
+\hfhazf \hhazff,\hfhazf{a},"estimated hazard factor function (alias for \hhazfactorf); deprecated, use \efhazf"
 \hfodds \hoddsfactor,\hfodds,"estimated odds factor (alias for \hoddsfactor); deprecated, use \efodds"
-\hfoddsf \hoddsff,\hfoddsf,"estimated odds factor function (alias for \hoddsfactorf); deprecated, use \efoddsf"
+\hfoddsf \hoddsff,\hfoddsf{a},"estimated odds factor function (alias for \hoddsfactorf); deprecated, use \efoddsf"
 \hfprev \hprevfactor,\hfprev,"estimated prevalence factor (alias for \hprevfactor); deprecated, use \efprev"
-\hfprevf \hprevff,\hfprevf,"estimated prevalence factor function (alias for \hprevfactorf); deprecated, use \efprevf"
+\hfprevf \hprevff,\hfprevf{a},"estimated prevalence factor function (alias for \hprevfactorf); deprecated, use \efprevf"
 \hfrate \hratefactor,\hfrate,"estimated rate factor (alias for \hratefactor); deprecated, use \efrate"
-\hfratef \hrateff,\hfratef,"estimated rate factor function (alias for \hratefactorf); deprecated, use \efratef"
+\hfratef \hrateff,\hfratef{a},"estimated rate factor function (alias for \hratefactorf); deprecated, use \efratef"
 \hfrisk \hriskfactor,\hfrisk,"estimated risk factor (alias for \hriskfactor); deprecated, use \efrisk"
-\hfriskf \hriskff,\hfriskf,"estimated risk factor function (alias for \hriskfactorf); deprecated, use \efriskf"
+\hfriskf \hriskff,\hfriskf{a},"estimated risk factor function (alias for \hriskfactorf); deprecated, use \efriskf"
 \hfsurv \hsurvfactor,\hfsurv,"estimated survival factor (alias for \hsurvfactor); deprecated, use \efsurv"
-\hfsurvf \hsurvff,\hfsurvf,"estimated survival factor function (alias for \hsurvfactorf); deprecated, use \efsurvf"
+\hfsurvf \hsurvff,\hfsurvf{a},"estimated survival factor function (alias for \hsurvfactorf); deprecated, use \efsurvf"
 \hfx,\hfx{a},"fitted prediction function applied to its argument, f̂(·); deprecated, use \epredfnf"
 \hhaz \hrate,\hhaz,"estimated hazard λ̂ (alias for \hrate); deprecated, use \ehaz"
 \hhazfactorf,\hhazfactorf{a},"estimated hazard factor function θ̂_λ(·); deprecated, use \ehazfactorf"
-\hhazrf \hrhazf,\hhazrf,"estimated hazard ratio function (alias for \hhrf); deprecated, use \ehazrf"
+\hhazrf \hrhazf,\hhazrf{a},"estimated hazard ratio function (alias for \hhrf); deprecated, use \ehazrf"
 \hhr \hhazr \hrhaz \hhazratio,\hhr,"estimated hazard ratio (alias for \hhazratio); deprecated, use \ehr"
 \hhrf,\hhrf{a},"estimated hazard ratio function ϙ̂_λ(·); deprecated, use \ehrf"
 \hidvalof,\hidvalof{a},"value of the hidden unit given as the argument, h with the unit as subscript"
@@ -646,7 +646,7 @@ macros,symbol,interpretation
 \hmodmemf,\hmodmemf{a},"fitted model applied to its argument (hat-wrapped), h-hat(·); deprecated, use \emodmemf"
 \hmodmemof,\hmodmemof{a},"fitted model with its mean-function model family as subscript (hat-wrapped); deprecated, use \emodmemof"
 \hMSE,\hMSE{a},"estimated mean squared error applied to argument (legacy \hat form); deprecated, use \eMSE"
-\hMSEf,\hMSEf,"estimated mean squared error applied to argument (alias for \hMSE); deprecated, use \eMSEf"
+\hMSEf,\hMSEf{a},"estimated mean squared error applied to argument (alias for \hMSE); deprecated, use \eMSEf"
 \hMSEt,\hMSEt,"estimated mean squared error operator MSÊ (legacy \hat form); deprecated, use \eMSEt"
 \hmu \hmean,\hmu,"estimated mean μ̂; deprecated, use \emu"
 \hmuf,\hmuf{a},"estimated mean function μ̂(·); deprecated, use \emuf"
@@ -664,7 +664,7 @@ macros,symbol,interpretation
 \hprevfactorf,\hprevfactorf{a},"estimated prevalence factor function θ̂_π(·); deprecated, use \eprevfactorf"
 \hprevratiof,\hprevratiof{a},"estimated prevalence ratio function ϙ̂_π(·); deprecated, use \eprevratiof"
 \hprr \hprevratio,\hprr,"estimated prevalence ratio (alias for \hprevratio); deprecated, use \eprr"
-\hprrf,\hprrf,"estimated prevalence ratio function (alias for \hprevratiof); deprecated, use \eprrf"
+\hprrf,\hprrf{a},"estimated prevalence ratio function (alias for \hprevratiof); deprecated, use \eprrf"
 \hQ,\hQ,"estimated quantile function Q̂; deprecated, use \eQ"
 \hQf,\hQf{a},"estimated quantile function Q̂(·) applied to argument; deprecated, use \eQf"
 \hquantile,\hquantile,"estimated quantile function (alias for \hQ); deprecated, use \equantile"
@@ -674,7 +674,7 @@ macros,symbol,interpretation
 \hratefactorf,\hratefactorf{a},"estimated rate factor function θ̂_λ(·); deprecated, use \eratefactorf"
 \hrater \hrrate \hrateratio,\hrater,"estimated rate ratio (alias for \hrateratio); deprecated, use \erater"
 \hrateratiof,\hrateratiof{a},"estimated rate ratio function ϙ̂_λ(·); deprecated, use \erateratiof"
-\hraterf \hrratef,\hraterf,"estimated rate ratio function (alias for \hrateratiof); deprecated, use \eraterf"
+\hraterf \hrratef,\hraterf{a},"estimated rate ratio function (alias for \hrateratiof); deprecated, use \eraterf"
 \hRatio,\hRatio,"estimated capital ratio Ϙ̂ (hat-wrapped \Ratio); deprecated, use \eRatio"
 \hratio,\hratio,"generic estimated ratio ϙ̂ (hat-wrapped \ratio); deprecated, use \eratio"
 \hRatiof,\hRatiof{a},"estimated capital ratio function Ϙ̂(·); deprecated, use \eRatiof"
@@ -685,24 +685,24 @@ macros,symbol,interpretation
 \hriskfactorf,\hriskfactorf{a},"estimated risk factor function θ̂_π(·); deprecated, use \eriskfactorf"
 \hriskr \hrrisk \hriskratio,\hriskr,"estimated risk ratio (alias for \hriskratio); deprecated, use \eriskr"
 \hriskratiof,\hriskratiof{a},"estimated risk ratio function ϙ̂_π(·); deprecated, use \eriskratiof"
-\hriskrf \hrriskf,\hriskrf,"estimated risk ratio function (alias for \hriskratiof); deprecated, use \eriskrf"
+\hriskrf \hrriskf,\hriskrf{a},"estimated risk ratio function (alias for \hriskratiof); deprecated, use \eriskrf"
 \hRMSE,\hRMSE{a},"estimated root mean squared error applied to argument (legacy \hat form); deprecated, use \eRMSE"
-\hRMSEf,\hRMSEf,"estimated root mean squared error applied to argument (alias for \hRMSE); deprecated, use \eRMSEf"
+\hRMSEf,\hRMSEf{a},"estimated root mean squared error applied to argument (alias for \hRMSE); deprecated, use \eRMSEf"
 \hRMSEt,\hRMSEt,"estimated root mean squared error operator (legacy \hat form); deprecated, use \eRMSEt"
 \hror,\hror,"estimated odds ratio ϙ̂_ω (\hratio subscripted by \odds, so the hat covers only the main symbol); deprecated, use \eror"
 \hRR,\hRR,"estimated risk ratio RR̂; deprecated, use \eRR"
 \hrsurv \hsurvr \hsurvratio,\hrsurv,"estimated survival ratio (alias for \hsurvratio); deprecated, use \ersurv"
-\hrsurvf \hsurvrf,\hrsurvf,"estimated survival ratio function (alias for \hsurvratiof); deprecated, use \ersurvf"
+\hrsurvf \hsurvrf,\hrsurvf{a},"estimated survival ratio function (alias for \hsurvratiof); deprecated, use \ersurvf"
 \hs \hsig,\hs,"estimated sigma σ̂; deprecated, use \es"
 \hS \hSig \hSigma,\hS,"estimated covariance matrix Σ̂; deprecated, use \eS"
 \hSD,\hSD{a},"estimated standard deviation SD̂(·); deprecated, use \eSD"
-\hSDf,\hSDf,"estimated standard deviation (alias); deprecated, use \eSDf"
+\hSDf,\hSDf{a},"estimated standard deviation (alias); deprecated, use \eSDf"
 \hsdpar,\hsdpar,"an estimated standard deviation (prints \hat{\sigma}); deprecated, use \esdpar"
 \HSE,\HSE{a},"estimated standard error function (alias); deprecated, use \eSEf"
 \hse,\hse{a},"estimated standard error ŝe(·); deprecated, use \ese"
 \hSE \hSEt,\hSE,"estimated standard error operator ŜE; deprecated, use \eSE"
-\hSEf,\hSEf,"estimated standard error function (alias); deprecated, use \eSEf"
-\hsef,\hsef,"estimated standard error (alias for \hse); deprecated, use \esef"
+\hSEf,\hSEf{a},"estimated standard error function (alias); deprecated, use \eSEf"
+\hsef,\hsef{a},"estimated standard error (alias for \hse); deprecated, use \esef"
 \hsemp,\hsemp,"empirical survival function estimator Ŝ_emp; deprecated, use \esemp"
 \hsempf,\hsempf{a},"empirical survival function estimator Ŝ_emp(·) applied to argument; deprecated, use \esempf"
 \hset,\hset,"estimated standard error operator ŝe; deprecated, use \eset"
@@ -735,7 +735,7 @@ macros,symbol,interpretation
 \ind \indpt,\ind,statistical independence symbol (⊥⊥)
 \indic,\indic{a},indicator function 𝟙_{·} (blackboard bold)
 \indiccb,\indiccb{a},indicator function 𝟙{·} with curly braces
-\indicf,\indicf,indicator function (alias for \indic)
+\indicf,\indicf{a},indicator function (alias for \indic)
 \indicp,\indicp{a},indicator function 𝟙(·) with parentheses
 \indist,\indist,convergence in distribution arrow
 \indold,\indold,independence symbol (legacy Unicode)
@@ -746,13 +746,13 @@ macros,symbol,interpretation
 \interest,\interest,a parameter of interest (prints \psi)
 \inv,\inv{a},multiplicative inverse (·)^{−1} with parentheses
 \invcb,\invcb{a},inverse with curly braces {·}^{−1}
-\invf \invp,\invf,multiplicative inverse (alias for \inv)
+\invf \invp,\invf{a},multiplicative inverse (alias for \inv)
 \invodds,\invodds,inverse odds (alternative notation)
 \invoddsf,\invoddsf{a},inverse odds function (alias)
 \invsb,\invsb{a},inverse with square brackets [·]^{−1}
 \iobs,\iobs,"index of an observation, i"
 \iprod,\iprod{a}{b},"inner product ⟨x, y⟩"
-\iprodf,\iprodf,inner product (alias for \iprod)
+\iprodf,\iprodf{a}{b},inner product (alias for \iprod)
 \IQR,\IQR,interquartile range operator symbol
 \IQRf,\IQRf{a},interquartile range function IQR(·)
 \iter,\iter,"index t of the step of an iterative algorithm, such as gradient descent"
@@ -774,7 +774,7 @@ macros,symbol,interpretation
 \Lik,\Lik,likelihood script symbol (ℒ)
 \lik \llik \logl \lbound \loglik \codelen \layeridx,\lik,log-likelihood (alias for \llik)
 \Likf,\Likf{a},likelihood function ℒ(·)
-\likf \loglf \loglikf,\likf,log-likelihood function ℓ(·) (alias for \llikf)
+\likf \loglf \loglikf,\likf{a},log-likelihood function ℓ(·) (alias for \llikf)
 \likgaus,\likgaus,Gaussian likelihood expression
 \lime,\lime{a},typeset argument in lime green
 \linefn \normpdf \poismean,\linefn,the one-variable function a line search minimizes (prints \phi)
@@ -803,7 +803,7 @@ macros,symbol,interpretation
 \mat \matr,\mat{a},matrix notation (alias for \matr)
 \mathbbm,\mathbbm{a},"double-struck letter that includes lowercase (alias for \mathbb where bbm is not loaded, as in MathJax)"
 \mathscr,\mathscr{a},script font operator (fallback to \mathcal)
-\matvecf,\matvecf,matrix vectorization applied to argument (alias for \vctf)
+\matvecf,\matvecf{a},matrix vectorization applied to argument (alias for \vctf)
 \maxf,\maxf{a},"maximum of a comma-separated list, max(·)"
 \mcoef,\mcoef,"coefficient matrix of a multivariate linear model, one column per outcome variable (prints bold B)"
 \meanfnoff,\meanfnoff{a}{b},"mean function of the distribution model in the first argument, applied to the covariate value in the second"
@@ -820,7 +820,7 @@ macros,symbol,interpretation
 \moutvar,\moutvar,"outcome matrix: the outcome vectors of all n observations, one per row (prints bold Y, like \mpredvar prints bold X)"
 \mpredvar,\mpredvar,"input matrix: the predictor vectors of all n observations, one per row (prints bold X, like \mX, the usual textbook form)"
 \MSE,\MSE{a},mean squared error MSE(·) applied to argument
-\MSEf,\MSEf,mean squared error MSE(·) applied to argument (alias for \MSE)
+\MSEf,\MSEf{a},mean squared error MSE(·) applied to argument (alias for \MSE)
 \mselr,\mselr{a},mean squared error function MSE(·)
 \MSEt,\MSEt,mean squared error operator MSE
 \mutinfo,\mutinfo,mutual information symbol I (blackboard bold)
@@ -866,8 +866,8 @@ macros,symbol,interpretation
 \oinfm,\oinfm,observed information matrix symbol
 \olive,\olive{a},typeset argument in olive
 \om \odds \outcome,\om,Greek letter omega (ω)
-\omu,\omu,observed outcome mean μ(a) (shorthand for \obsmean)
-\opi,\opi,observed outcome probability π(a) (shorthand for \obsprob)
+\omu,\omu{a},observed outcome mean μ(a) (shorthand for \obsmean)
+\opi,\opi{a},observed outcome probability π(a) (shorthand for \obsprob)
 \oprod,\oprod{a}{b},outer product x y′
 \optalg,\optalg,optimization algorithm that searches a model family for a minimizer of the objective function (prints \mathcal{A})
 \OR,\OR,odds ratio label OR
@@ -889,14 +889,14 @@ macros,symbol,interpretation
 \plim,\plim,probability limit operator (plim)
 \plimf,\plimf{a},probability limit applied to argument
 \pMAE,\pMAE{a},population mean absolute error pMAE(·) applied to argument
-\pMAEf,\pMAEf,population mean absolute error pMAE(·) applied to argument (alias for \pMAE)
+\pMAEf,\pMAEf{a},population mean absolute error pMAE(·) applied to argument (alias for \pMAE)
 \pMAEt,\pMAEt,population mean absolute error operator pMAE
 \pmat,\pmat{a},matrix formatted with parentheses (pmatrix)
 \pmf,\pmf{a},probability mass function ℙ(·)
 \pMSE,\pMSE{a},population mean squared error pMSE(·) applied to argument
-\pMSEf,\pMSEf,population mean squared error pMSE(·) applied to argument (alias for \pMSE)
+\pMSEf,\pMSEf{a},population mean squared error pMSE(·) applied to argument (alias for \pMSE)
 \pMSEt,\pMSEt,population mean squared error operator pMSE
-\pmu,\pmu,potential outcome mean μ_a (shorthand for \potmean)
+\pmu,\pmu{a},potential outcome mean μ_a (shorthand for \potmean)
 \Pois,\Pois,Poisson distribution label
 \Poisson,\Poisson,Poisson distribution label (long form)
 \polydeg,\polydeg,"degree of a polynomial model, d"
@@ -909,7 +909,7 @@ macros,symbol,interpretation
 \potprob,\potprob{a},potential outcome probability π_a (e.g. Pr(Y_a=1) for binary Y)
 \powerset,\powerset{a},"power set of a set, the set of all its subsets 𝒫(·)"
 \powf,\powf{a}{b},"first argument (·) raised to the power of the second argument, with parentheses around the base"
-\ppi,\ppi,potential outcome probability π_a (shorthand for \potprob)
+\ppi,\ppi{a},potential outcome probability π_a (shorthand for \potprob)
 \predbar,\predbar,sample mean of the predictor values (prints \bar{\predvar})
 \prederr,\prederr,"prediction error, predicted minus observed outcome, symbol ε with the upright label pred; same meaning as \esterr{\predval}{\Outvar}"
 \prederrf,\prederrf{a},"prediction error of the predictor in the argument, ε_pred(·) (prints \prederr followed by its argument in parentheses); the estimation error of that predictor for the new outcome, \esterr{predictor}{\Outvar}"
@@ -925,7 +925,7 @@ macros,symbol,interpretation
 \prevratiof,\prevratiof{a},prevalence ratio function ϙ_π(·)
 \Prf,\Prf{a},Pr(·) probability expression
 \pRMSE,\pRMSE{a},population root mean squared error pRMSE(·) applied to argument
-\pRMSEf,\pRMSEf,population root mean squared error pRMSE(·) applied to argument (alias for \pRMSE)
+\pRMSEf,\pRMSEf{a},population root mean squared error pRMSE(·) applied to argument (alias for \pRMSE)
 \pRMSEt,\pRMSEt,population root mean squared error operator pRMSE
 \probit,\probit,probit link function
 \probst,\probst,probs operator label
@@ -933,11 +933,11 @@ macros,symbol,interpretation
 \prodin,\prodin,product over i from 1 to n
 \prodinf,\prodinf{a},product over i from 1 to n of the argument (·)
 \prr \prevratio,\prr,prevalence ratio (alias for \prevratio)
-\prrf,\prrf,prevalence ratio function (alias for \prevratiof)
+\prrf,\prrf{a},prevalence ratio function (alias for \prevratiof)
 \Prunder,\Prunder{a}{b},"probability of an event when the distribution is indexed by the first argument, such as a parameter or a distribution, \Prunder{\theta}{A} (prints Pr_θ(A))"
 \pt,\pt{a},parenthesized transpose (x)′
 \purple,\purple{a},typeset argument in purple
-\py,\py,potential outcome Y_a (shorthand for \potout)
+\py,\py{a},potential outcome Y_a (shorthand for \potout)
 \Q \quantile,\Q,quantile function symbol Q
 \Qf,\Qf{a},quantile function Q(·) applied to argument
 \qform,\qform{a}{b},"quadratic form of a matrix M in a vector x: x′Mx, written \qform{M}{x}"
@@ -951,7 +951,7 @@ macros,symbol,interpretation
 \ratefactorf,\ratefactorf{a},rate factor function θ_λ(·)
 \rater \rrate \rateratio,\rater,rate ratio (alias for \rateratio)
 \rateratiof,\rateratiof{a},rate ratio function ϙ_λ(·)
-\raterf \rratef,\raterf,rate ratio function (alias for \rateratiof)
+\raterf \rratef,\raterf{a},rate ratio function (alias for \rateratiof)
 \Ratiof,\Ratiof{a},capital ratio function Ϙ(·)
 \ratiof,\ratiof{a},generic ratio function ϙ(·)
 \RD,\RD,risk difference label RD
@@ -967,17 +967,17 @@ macros,symbol,interpretation
 \riskfactorf,\riskfactorf{a},risk factor function θ_π(·)
 \riskr \rrisk \riskratio,\riskr,risk ratio (alias for \riskratio)
 \riskratiof,\riskratiof{a},risk ratio function ϙ_π(·)
-\riskrf \rriskf,\riskrf,risk ratio function (alias for \riskratiof)
+\riskrf \rriskf,\riskrf{a},risk ratio function (alias for \riskratiof)
 \risksetf,\risksetf{a},risk set at time t: ℛ(t)
 \riskt,\riskt,risk operator label
 \RMSE \rmselr,\RMSE{a},root mean squared error RMSE(·) applied to argument
-\RMSEf,\RMSEf,root mean squared error RMSE(·) applied to argument (alias for \RMSE)
+\RMSEf,\RMSEf{a},root mean squared error RMSE(·) applied to argument (alias for \RMSE)
 \RMSEt,\RMSEt,root mean squared error operator RMSE
 \ror,\ror,odds ratio ϙ_ω (ratio symbol with odds subscript)
 \RR,\RR,risk ratio label RR
 \RSS,\RSS,"residual sum of squares, RSS: the sum over the observations of the squared residuals of a fitted model"
 \rsurv \survr \survratio,\rsurv,survival ratio (alias for \survratio)
-\rsurvf \survrf,\rsurvf,survival ratio function (alias for \survratiof)
+\rsurvf \survrf,\rsurvf{a},survival ratio function (alias for \survratiof)
 \Rvar \Predvar,\Rvar,a generic random variable in probability expressions (prints X)
 \rvar \predvar,\rvar,a generic value of a random variable in probability expressions (prints x)
 \rvarbar,\rvarbar,sample mean of a generic variable (prints \bar{\rvar})
@@ -1002,20 +1002,20 @@ macros,symbol,interpretation
 \scrT \salgT,\scrT,script T symbol 𝒯
 \SD,\SD{a},standard deviation function SD(·)
 \sd,\sd{a},standard deviation function sd(·)
-\SDf,\SDf,standard deviation function (alias for \SD)
+\SDf,\SDf{a},standard deviation function (alias for \SD)
 \sdprod,\sdprod{a},self dot product x·x
-\sdprodf,\sdprodf,self dot product (alias for \sdprod)
+\sdprodf,\sdprodf{a},self dot product (alias for \sdprod)
 \SE,\SE{a},standard error function SE(·)
 \se,\se{a},standard error function se(·)
 \seed,\seed,random seed that starts a pseudorandom number generator (prints \mathfrak{s})
-\SEf,\SEf,standard error function (alias for \SE)
-\sef,\sef,standard error function (alias for \se)
+\SEf,\SEf{a},standard error function (alias for \SE)
+\sef,\sef{a},standard error function (alias for \se)
 \seq,\seq{a}{b},"sequence (colon range) from first to second argument, e.g. 1:n"
 \set,\set{a},set notation {·}
 \setbuild,\setbuild{a}{b},"set-builder notation: the set of elements satisfying a condition, {condition : property}"
 \setdiff,\setdiff{a}{b},set difference A \ B: the elements of A that are not in B
 \SEtilde,\SEtilde{a},standard error with tilde applied to argument
-\SEtildef,\SEtildef,standard error with tilde applied to argument (alias for \SEtilde)
+\SEtildef,\SEtildef{a},standard error with tilde applied to argument (alias for \SEtilde)
 \SEtildet,\SEtildet,standard error operator with tilde
 \Sf,\Sf{a},survival function S(·) applied to argument
 \sfac \fitproc,\sfac,"the factor of a density that depends on the data only through a statistic, in the factorization theorem for sufficiency (prints g)"
@@ -1030,12 +1030,12 @@ macros,symbol,interpretation
 \siprod,\siprod{a},"self inner product ⟨x, x⟩"
 \slack \ciradsym,\slack,an SVM slack variable (prints \xi)
 \sMAE,\sMAE{a},sample mean absolute error sMAE(·) applied to argument
-\sMAEf,\sMAEf,sample mean absolute error sMAE(·) applied to argument (alias for \sMAE)
+\sMAEf,\sMAEf{a},sample mean absolute error sMAE(·) applied to argument (alias for \sMAE)
 \sMAEt,\sMAEt,"sample mean absolute error operator sMAE, the estimator of pMAE (no hat form is needed)"
 \smean,\smean{a},"sample mean of the quantity in the argument, a bar over it (prints a bar over its argument)"
 \smeandev,\smeandev,"deviation of the sample mean, the sample mean of the deviations (prints \smean{\deviation}, 𝕕 with a bar)"
 \sMSE,\sMSE{a},sample mean squared error sMSE(·) applied to argument
-\sMSEf,\sMSEf,sample mean squared error sMSE(·) applied to argument (alias for \sMSE)
+\sMSEf,\sMSEf{a},sample mean squared error sMSE(·) applied to argument (alias for \sMSE)
 \sMSEt,\sMSEt,"sample mean squared error operator sMSE, the estimator of pMSE (no hat form is needed)"
 \soprod,\soprod{a},self outer product x x′
 \sparen,\sparen{a},fixed-size parentheses around argument
@@ -1043,7 +1043,7 @@ macros,symbol,interpretation
 \sqf,\sqf{a},square of argument (·)²
 \srcalph,\srcalph,"alphabet of a source: the finite set of values a random variable takes, calligraphic X"
 \sRMSE,\sRMSE{a},sample root mean squared error sRMSE(·) applied to argument
-\sRMSEf,\sRMSEf,sample root mean squared error sRMSE(·) applied to argument (alias for \sRMSE)
+\sRMSEf,\sRMSEf{a},sample root mean squared error sRMSE(·) applied to argument (alias for \sRMSE)
 \sRMSEt,\sRMSEt,"sample root mean squared error operator sRMSE, the estimator of pRMSE (no hat form is needed)"
 \ss \irrerr \resvar \varpar,\ss,variance σ²
 \sscp \logpartition,\sscp,"sum-of-squares-and-cross-products matrix of the term vectors, A"
@@ -1115,7 +1115,7 @@ macros,symbol,interpretation
 \truenulls,\truenulls,index set I_0 of the true null hypotheses
 \truthindf,\truthindf{a},"prints \truthind\paren{...}, the truth indicator of its condition"
 \TSS,\TSS,"total sum of squares, TSS: the sum over the observations of the squared differences of the outcome from its sample mean"
-\ub,\ub,underbrace shorthand (alias for \underbrace)
+\ub,\ub{a},underbrace shorthand (alias for \underbrace)
 \ubf \dims,\ubf{a}{b},underbrace with subscript label \underbrace{·}_{label}
 \ubound,\ubound,an upper bound of a set (u)
 \V,\V,variance operator symbol Var
@@ -1125,9 +1125,9 @@ macros,symbol,interpretation
 \validx,\validx,index set of the validation set (prints I with a val subscript)
 \valset,\valset,validation set: the held-out observations used to choose among fitted models (prints a calligraphic D with a val subscript)
 \var,\var{a},variance function Var(·)
-\Var \Varf \varf,\Var,variance function (alias for \var)
+\Var \Varf \varf,\Var{a},variance function (alias for \var)
 \varh,\varh{a},estimated variance function (alias)
-\varhf,\varhf,estimated variance function (alias)
+\varhf,\varhf{a},estimated variance function (alias)
 \varht,\varht,"estimated variance operator (hat, alias); deprecated, use \evar"
 \Varr \Vart,\Varr,variance operator symbol Var
 \varsym,\varsym,"short variance operator 𝕍 for any random variable (no argument, blackboard bold like \Expp)"
