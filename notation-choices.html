@@ -101,13 +101,14 @@ div.csl-indent {
 <script>
 // Theme dropdown: Light, Off-white, Parchment, Dark. Quarto's own toggle
 // handles light/dark and remembers it; the two tinted palettes are a
-// data-palette attribute on <html>. The choice is kept under "mln-theme".
-// Off-white is the default for a first visit.
+// data-palette attribute on <html>. The choice is kept under "lds-theme"
+// (falling back to "mln-theme"). Off-white is the default for a first visit.
 (function () {
-  var KEY = "mln-theme";
+  var KEY = "lds-theme";
+  var LEGACY_KEY = "mln-theme";
   var OPTIONS = [["light", "Light"], ["offwhite", "Off-white"], ["parchment", "Parchment"], ["dark", "Dark"]];
   function stored() {
-    try { return localStorage.getItem(KEY); } catch (e) { return null; }
+    try { return localStorage.getItem(KEY) || localStorage.getItem(LEGACY_KEY); } catch (e) { return null; }
   }
   function isDark() { return document.body.classList.contains("quarto-dark"); }
   function apply(choice, remember) {
