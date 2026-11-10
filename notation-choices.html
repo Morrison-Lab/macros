@@ -726,6 +726,7 @@ window.Quarto = {
   <li><a href="#sec-confidence-interval-endpoints" id="toc-sec-confidence-interval-endpoints" class="nav-link" data-scroll-target="#sec-confidence-interval-endpoints">The endpoints of a confidence interval</a></li>
   <li><a href="#sec-modes-of-a-density" id="toc-sec-modes-of-a-density" class="nav-link" data-scroll-target="#sec-modes-of-a-density">The modes of a density</a></li>
   <li><a href="#sec-cross-product-gram" id="toc-sec-cross-product-gram" class="nav-link" data-scroll-target="#sec-cross-product-gram">The cross-product and Gram matrices</a></li>
+  <li><a href="#sec-closing-brace" id="toc-sec-closing-brace" class="nav-link" data-scroll-target="#sec-closing-brace">A brace that closes a display</a></li>
   </ul>
 <div class="toc-actions"><ul><li><a href="https://github.com/d-morrison/macros/blob/main/notation-choices.qmd" class="toc-action"><i class="bi bi-github"></i>View source</a></li></ul></div></nav>
     </div>
@@ -1151,6 +1152,11 @@ window.Quarto = {
 <h2 class="anchored" data-anchor-id="sec-cross-product-gram">The cross-product and Gram matrices</h2>
 <p>The cross-product matrix of two matrices <span class="math inline">\(\mX\)</span> and <span class="math inline">\(\mY\)</span> is <span class="math inline">\(\tprod{\mX}{\mY}\)</span>, written <code>\tprod{\mX}{\mY}</code>. The call form <code>\cpf{\mX}{\mY}</code> is an alias, named for the cross-product matrix, and prints the same expression. The Gram matrix of <span class="math inline">\(\mX\)</span> is the cross-product matrix of <span class="math inline">\(\mX\)</span> with itself, <span class="math inline">\(\stprod{\mX}\)</span>, written <code>\stprod{\mX}</code>. Both macros always print the transpose glyph, so a reader sees the transpose and the inner products of the columns. Neither has a glyph of its own for now.</p>
 <p>Other sources differ. ISLR2, ESL and Murphy write <span class="math inline">\(\tp{\mX}\mX\)</span> and <span class="math inline">\(\tp{\mX}\vy\)</span> with no name or symbol, and ESL and Murphy use “Gram matrix” mostly for the kernel matrix. R computes the cross-product matrix with <code>crossprod(X, Y)</code>, which equals <code>t(X) %*% Y</code>.</p>
+</section>
+<section id="sec-closing-brace" class="level2">
+<h2 class="anchored" data-anchor-id="sec-closing-brace">A brace that closes a display</h2>
+<p>A one-sided brace that groups several lines of a display and labels the group uses <code>\cbr{...}</code>, which prints the argument followed by a closing curly brace that spans the argument’s height, with no opening delimiter. For example, <code>\cbr{\begin{array}{l}a\\b\end{array}}</code> prints <span class="math inline">\(\cbr{\begin{array}{l}a\\b\end{array}}\)</span>. <code>\cbl{...}</code> is its mirror, an opening brace alone. The pair <code>\left.</code> and <code>\right\}</code> written by hand is the same construct, and the macro names it.</p>
+<p>Other sources draw the same brace with <code>\left.</code>, <code>\right\}</code> or <code>\underbrace</code> and <code>\overbrace</code>, which place the label under or over the grouped expression instead of beside it.</p>
 
 
 
