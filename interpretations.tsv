@@ -1,5 +1,6 @@
 name	interpretation
 \cbl	left curly brace (open only)
+\cbr	right curly brace after the argument (close only), auto-sized to span the argument
 \cb	auto-sized curly braces around argument
 \cbmat	matrix wrapped in auto-sized curly braces
 \paren	auto-sized parentheses around argument
