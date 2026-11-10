@@ -50,7 +50,7 @@ symbol,meaning
 \Expfc{a}{b},conditional expected value E_c[·]
 \Cov{a},covariance function Cov(·)
 \dataset,"data set: the whole collection of labelled observations that the training, validation and test sets are subsets of"
-\popdevf{a},"deviation of the argument from its population mean, ν_z"
+\popdevf{a},"deviation of the argument from its population mean, 𝕕_z"
 \diag,diagonal matrix operator (diag)
 \diagf{a},diagonal of matrix applied to argument
 \dist,distributes as relation (∼)
