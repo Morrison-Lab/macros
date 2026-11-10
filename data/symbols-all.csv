@@ -15,6 +15,8 @@ macros,interpretation
 \ATTf,average treatment effect on the treated function ATT(·)
 \aug,mark for the augmented version of the argument (extended with additional entries)
 \aVar,asymptotic variance aVar(·)
+\avgcrossent,"average cross-entropy per example, the sum over the N examples divided by N (prints \smean{\crossentropy})"
+\avgcrossentbase,"average cross-entropy per example with the base of the logarithm as the argument (prints \avgcrossent with that subscript, as in \avgcrossentbase{b})"
 \avgfit,"average fit: the population mean over training sets of the fitted model, written as the population mean with the model as subscript (mu_h; no bar or hat)"
 \avgfitf,"average fit at input x: the population expectation over training sets of the fitted model's value at x, mu_h(x)"
 \avgiN,average over i from 1 to N: one over N times the sum
@@ -151,6 +153,7 @@ macros,interpretation
 \cb,auto-sized curly braces around argument
 \cbl,left curly brace (open only)
 \cbmat,matrix wrapped in auto-sized curly braces
+\cbr,"right curly brace after the argument (close only), auto-sized to span the argument"
 \cd \dpr,centered dot multiplication symbol (·)
 \cdev \devn \devval \popdev \deviation,"deviation from conditional mean (alias for \popdev, symbol 𝕕; the noise is \Noise, which prints ε)"
 \cdff,cumulative distribution function F(·) applied to argument
@@ -162,7 +165,7 @@ macros,interpretation
 \cent,mark for the centered version of the argument (the data with its mean subtracted)
 \ci,full confidence interval expression
 \ciid,conditionally i.i.d. label
-\cilo \loss \ncand,lower endpoint statistic of a confidence interval (prints L)
+\cilo \loss \ncand \expcodelen,lower endpoint statistic of a confidence interval (prints L)
 \cilof,lower endpoint statistic of a confidence interval as a function of the data (prints L\paren{x})
 \cintf,"confidence interval as the closed interval of its endpoint statistics (prints \sb{\cilof{x}, \ciupf{x}})"
 \cirad,confidence interval radius expression
@@ -174,6 +177,8 @@ macros,interpretation
 \clusterassignf,"cluster assigned to the argument, C applied to it"
 \cmean,"conditional population mean function of the outcome given the predictor, the subscripted \truemean with the subscript \Outvar \given \Predvar and no argument"
 \cmeanf,"conditional population mean of the outcome given the predictor at x, \cmeanf{x}; the same as \truemeansubf{\Outvar \given \Predvar}{x} and \condE{\Outvar}{\Predvar = x}"
+\cmutinfof,"mutual information of two random variables given a third, I(X; Y | Z)"
+\codelenf,"length of the codeword for a symbol, ℓ(x)"
 \codeparams,"parameters of a linear code: block length, message length, minimum distance, alphabet size, [n, k, d]_q"
 \Coef,uppercase regression coefficient for covariate (B_x)
 \coef,regression coefficient for covariate (β_x)
@@ -183,6 +188,7 @@ macros,interpretation
 \condE,"conditional expected value E[A | B], \condE{A}{B}"
 \condpdf,"conditional probability density function f(A | B), \condpdf{A}{B}"
 \condpmf,"conditional probability mass function (prints \pmf of A given B), \condpmf{A}{B}"
+\condpopriskf,"conditional (pointwise) risk of a model at an input, R(f | x): the expected loss given the input; its average over the input is the population risk"
 \condPr,"conditional probability Pr(A | B), \condPr{A}{B}"
 \condVar,"conditional variance Var(A | B), \condVar{A}{B}"
 \Cor,correlation function Cor(·)
@@ -205,6 +211,8 @@ macros,interpretation
 \Covs,"bivariate covariance Cov(·,·)"
 \Covt,covariance operator symbol Cov
 \covvalhist,a covariate-history value through time k (prints \bar{l}_k)
+\cpf \tprodf,cross-product matrix x′y (alias for \tprod)
+\cprob,"complementary probability, the probability 1 - p of the complement (prints p^{\mathsf{c}})"
 \cR \Range \range \riskset,range / codomain symbol ℛ
 \crossentropyf,"cross-entropy of the second distribution relative to the first, H(p, q)"
 \cuhaz \cumhaz,cumulative hazard symbol Λ
@@ -246,7 +254,7 @@ macros,interpretation
 \derivff,partial derivative ∂f/∂x (reversed argument order)
 \derivfnd,"alias for \derivf (numerator first, denominator second)"
 \derivfslash,partial derivative ∂f/∂x written with a slash (prints \partial f / \partial x)
-\design,a design matrix built from a feature map (prints bold D)
+\design \mdesign,a design matrix built from a feature map (prints bold D) (alias for \mdesign)
 \detf,"determinant of its argument, det(·)"
 \deviance,"deviance of a fitted model: twice the gap between the saturated model's log-likelihood and its own (prints the upright name dev, because an abbreviation is a name)"
 \deviationf,"deviation of the first argument from the reference value in the second, 𝔻_r(z)"
@@ -254,7 +262,7 @@ macros,interpretation
 \devnv \deviationv,deviation vector (alias for \deviationv)
 \devof,deviation of the first argument from the reference value in the second (prints the first minus the second inside parentheses; see notation-choices for compound references)
 \devsq,squared deviation of the first argument from the reference value in the second (𝔻_r(z))²
-\devsym,"deviation operator 𝔻 for any random variable, X minus its mean (blackboard bold like \varsym and \Expp; the design matrix \design is bold D, and the observed value 𝕕 is \deviation)"
+\devsym,"deviation operator 𝔻 for any random variable, X minus its mean (blackboard bold like \varsym and \Expp; the design matrix \mdesign is bold D, and the observed value 𝕕 is \deviation)"
 \devsymf,"deviation operator applied to a random variable, like \varsymf (prints \devsym with its argument in square brackets)"
 \dexp,derivative of exponential (exp′)
 \dexpf,derivative of exp applied to argument
@@ -320,6 +328,7 @@ macros,interpretation
 \eBiast,estimated bias operator (composable \Est form)
 \ecdf,estimated cumulative distribution function F̂
 \ecdff,estimated cumulative distribution function F̂(·) applied to argument
+\eclassprior,estimated class prior π̂ (prints \est{\pi}); write \eclassprior_k for the prior of class k
 \ecoef,estimated regression coefficient for covariate (β̂_x)
 \eCor,estimated correlation function Ĉor(·)
 \eCorf,estimated correlation function (alias)
@@ -557,7 +566,7 @@ macros,interpretation
 \growthfn,growth function m_Y (prints m_{\predfam}): the most labelings of n points that the prediction function family can produce
 \growthfnf,"growth function at n points, m_Y(n) (prints \growthfn\paren{n})"
 \h,hazard function symbol h
-\H \entropy \crossentropy,cumulative hazard function symbol H
+\H \entropy \crossentropy \renyientropy,cumulative hazard function symbol H
 \hamdist,"Hamming distance: number of positions where two strings differ, Delta(x, y)"
 \hatmat,"hat matrix H, which maps observed responses to fitted responses"
 \hATT,"estimated average treatment effect on the treated ATT̂; deprecated, use \eATT"
@@ -763,7 +772,7 @@ macros,interpretation
 \levelsetof,"level set of the function given as the second argument at the value given as the first, the preimage of that single value (prints f^{-1}({c}))"
 \lightgray,typeset argument in light gray
 \Lik,likelihood script symbol (ℒ)
-\lik \llik \logl \lbound \loglik \layeridx,log-likelihood (alias for \llik)
+\lik \llik \logl \lbound \loglik \codelen \layeridx,log-likelihood (alias for \llik)
 \Likf,likelihood function ℒ(·)
 \likf \loglf \loglikf,log-likelihood function ℓ(·) (alias for \llikf)
 \likgaus,Gaussian likelihood expression
@@ -796,22 +805,28 @@ macros,interpretation
 \mathscr,script font operator (fallback to \mathcal)
 \matvecf,matrix vectorization applied to argument (alias for \vctf)
 \maxf,"maximum of a comma-separated list, max(·)"
+\mcoef,"coefficient matrix of a multivariate linear model, one column per outcome variable (prints bold B)"
 \meanfnoff,"mean function of the distribution model in the first argument, applied to the covariate value in the second"
 \med,median operator symbol
 \medf,median function med(·)
 \midpt \sdest \sdprior \schedlen \precision \sdbetween \clipthresh,an intermediate point in a mean-value or Taylor remainder (prints \tau)
 \minf,"minimum of a comma-separated list, min(·)"
+\mnoise,"noise matrix of a multivariate linear model: the noise vectors of all n observations, one per row (prints bold E)"
 \modef,set of modes of a density or mass function (prints mode(f))
 \modelfam,mean-function model family (hypothesis class) H: the set of mean-function models that training chooses from (mean-function level; the distribution level is \distfam)
 \modmemf,"generic member of a mean-function model family applied to its argument, h(·)"
 \modmemof,"member (or fit) h of the mean-function model family given as the argument, h with the family as subscript"
 \ModResid \modresid \ModResidual \modresidual,modified residual (alias)
+\moutvar,"outcome matrix: the outcome vectors of all n observations, one per row (prints bold Y, like \mpredvar prints bold X)"
 \mpredvar,"input matrix: the predictor vectors of all n observations, one per row (prints bold X, like \mX, the usual textbook form)"
 \MSE,mean squared error MSE(·) applied to argument
 \MSEf,mean squared error MSE(·) applied to argument (alias for \MSE)
 \mselr,mean squared error function MSE(·)
 \MSEt,mean squared error operator MSE
-\mX,predictor matrix X (bold): the matrix of covariate values; the design matrix built from a feature map is \design
+\mutinfo,mutual information symbol I (blackboard bold)
+\mutinfoatf,"mutual information of two random variables under the conditional distribution given one value z of a third, I_z(X; Y)"
+\mutinfof,"mutual information of two random variables, I(X; Y)"
+\mX,predictor matrix X (bold): the matrix of covariate values; the design matrix built from a feature map is \mdesign
 \mx,design matrix x lowercase (bold)
 \NA \naa,"not-available / missing-value placeholder (text ""NA"")"
 \Nat \bbN,natural numbers set ℕ (blackboard-bold)
@@ -829,6 +844,8 @@ macros,interpretation
 \nobs,sample size n: the number of observations or training examples
 \norm,Euclidean norm ‖·‖
 \normcdf,the standard normal CDF (prints \Phi)
+\normF,Frobenius norm ‖·‖_F
+\normFsq,squared Frobenius norm ‖·‖_F²
 \normsq,squared norm ‖·‖²
 \noutvars \poolsize,"number q of outcome variables: the length of the response vector in multivariate regression, not the number of classes"
 \nparams,number p* of parameters: the columns of the design matrix after any feature map
@@ -859,9 +876,12 @@ macros,interpretation
 \outbar,sample mean of the outcome values (prints \bar{\outvar})
 \Outvar,"outcome variable, random variable (prints Y)"
 \outvar,"outcome variable, observed value (prints y)"
+\outvari,outcome value of the i-th observation (prints \outvar_{\iobs}); \outvari^2 prints its square
 \P \mass \pmass,probability operator ℙ (blackboard bold)
 \p \pr \dens \pdens,probability density/mass function symbol p
 \paren,auto-sized parentheses around argument
+\perplexity,perplexity symbol PP
+\perplexityf,"perplexity of a random variable, PP(X) = b^{H_b(X)}, the geometric mean of the rarities"
 \Pf,probability (prints \P with the argument in parentheses)
 \pf,probability density/mass p(·)
 \phaz,expected hazard E[λ] (Poisson hazard)
@@ -898,6 +918,7 @@ macros,interpretation
 \predfn,"symbol for a prediction function, which maps predictor values to a predicted outcome"
 \predfnf,prediction function applied to the argument
 \predvalf,"prediction at the covariate value given as the argument, from the model that a fitting procedure fits to the training set (prints \fitted\paren{x}, the fitted prediction function applied to x; unlike \predval, which takes no argument and names no covariate value, this applies the fitted function to the covariate value given, and unlike \epredfnf, which applies any estimated prediction function, it is fixed to the training-set fit)"
+\predvari,predictor value of the i-th observation (prints \predvar_{\iobs}); \predvari^2 prints its square
 \preimage,"preimage of the set given as the second argument under the function given as the first, written as the function with exponent -1 applied to the set (prints f^{-1}(S))"
 \prev \prob \risk \probs \prevalence \stationary,prevalence symbol π (used as the subscript for \prevratio)
 \prevfactorf,prevalence factor function θ_π(·)
@@ -924,6 +945,9 @@ macros,interpretation
 \rangef,range of a function ℛ(·)
 \rank,matrix rank operator (rank)
 \rankf,matrix rank applied to argument
+\rarity,rarity symbol r
+\rarityf,"rarity of an outcome, the reciprocal of its probability, r(x) = 1/P(X=x)"
+\rarityunderf,"rarity of an outcome under a named distribution, r_q(x) = 1/q(x)"
 \ratefactorf,rate factor function θ_λ(·)
 \rater \rrate \rateratio,rate ratio (alias for \rateratio)
 \rateratiof,rate ratio function ϙ_λ(·)
@@ -935,6 +959,7 @@ macros,interpretation
 \regbetasum,expanded regression sum β₁x₁+⋯+βₚxₚ
 \Regcoef,"uppercase regression coefficient symbol B (italic, because a coefficient is a variable)"
 \reglincomb,regression linear combination x̰·β̰
+\renyientropyf,"Rényi entropy of the given order of a random variable, H_α(X)"
 \Resid \resid \Residual \residual,residual (alias for \Residual)
 \residv,residual vector ε̰̂
 \rfac \hidval \modmem \cutheight \imgheight \basemeasure,"the factor of a density that does not depend on the parameter, in the factorization theorem for sufficiency (prints h)"
@@ -1023,6 +1048,7 @@ macros,interpretation
 \ss \irrerr \resvar \varpar,variance σ²
 \sscp \logpartition,"sum-of-squares-and-cross-products matrix of the term vectors, A"
 \ssdev,"sum over i = 1, ..., n of the squared deviation of the observation from the argument (·), via \devsq"
+\SSE,"sum of squared errors, SSE: the sum over the observations of the squared errors of a model, the same quantity as the RSS"
 \ssout,centered sum of squares of the outcome values (prints S_{\outvar\outvar})
 \sspred,centered sum of squares of the predictor values (prints S_{\predvar\predvar})
 \sspredout,centered sum of cross-products of the predictor and outcome values (prints S_{\predvar\outvar})
@@ -1076,7 +1102,6 @@ macros,interpretation
 \thmHessij,"formula for (i,j) element of the Hessian"
 \tp,transpose of argument x′
 \tprod,transpose-based product x′y
-\tprodf,transpose-based product (alias for \tprod)
 \tr,matrix trace operator (tr)
 \trainerr,"training error (average loss on the training set), over-barred err"
 \trainidx,index set of the training set (prints I with a train subscript)
