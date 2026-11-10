@@ -29,6 +29,14 @@ OUT = ROOT / "data" / "symbols-all.csv"
 # Names that macros.qmd defines more than once on purpose; update this count
 # when a definition is added twice deliberately.
 REDEFINITIONS = 3
+# Symbols that do not typeset as the macro name plus placeholders: the two
+# halves of an environment need each other, and a macro whose body is a
+# TeX primitive that takes an argument has no definition here to read.
+SYMBOL_OVERRIDES = {
+    "ba": BS + "ba a" + BS + "ea",
+    "ea": BS + "ba a" + BS + "ea",
+    "ub": BS + "ub{a}",
+}
 
 START = re.compile(
     "^" + re.escape(BS) + r"(?:def|providecommand|renewcommand|newcommand)\*?[ \t]*\{?",
@@ -95,6 +103,22 @@ def canonical(name, defs, seen=()):
     return name
 
 
+def shown_args(name, defs, seen=()):
+    """Number of arguments to show after a macro's name in the symbol column.
+
+    A macro with no arguments whose body is another macro that takes some
+    (an alias such as Ef for E) is shown with the arguments of that macro,
+    because the typeset symbol would otherwise be missing them.
+    """
+    nargs, body = defs[name]
+    m = ALIAS.match(body.strip())
+    if nargs == 0 and m:
+        target = m.group(1)
+        if target in defs and target not in seen and target != name:
+            return shown_args(target, defs, seen + (name,))
+    return nargs
+
+
 def read_interpretations(path):
     out = {}
     with open(path, encoding="utf-8") as f:
@@ -114,9 +138,12 @@ def build_rows(defs, interp):
     for names in groups.values():
         names.sort(key=lambda n: (len(n), n))
         first = names[0]
+        nargs = shown_args(first, defs)
+        placeholders = "".join("{" + "abcdefghi"[i] + "}" for i in range(nargs))
         rows.append(
             {
                 "macros": " ".join(BS + n for n in names),
+                "symbol": SYMBOL_OVERRIDES.get(first, BS + first + placeholders),
                 "interpretation": interp.get(first, ""),
             }
         )
@@ -128,7 +155,7 @@ def render(rows):
     import io
 
     buf = io.StringIO()
-    w = csv.DictWriter(buf, ["macros", "interpretation"], lineterminator="\n")
+    w = csv.DictWriter(buf, ["macros", "symbol", "interpretation"], lineterminator="\n")
     w.writeheader()
     w.writerows(rows)
     return buf.getvalue()

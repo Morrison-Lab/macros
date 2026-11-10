@@ -199,6 +199,47 @@ knitr::kable(
 ```
 
 
+# Every symbol {#sec-notation-all-symbols}
+
+This table lists every symbol that a macro in these notes prints, with one row per distinct symbol.
+Macros that expand to the same symbol, such as aliases and deprecated forms, share a row.
+The table is generated from `macros.qmd` by `tools/gen_symbols.py`, so it includes each new macro.
+Where a symbol takes arguments, the letters $a$, $b$ and so on stand in for them.
+
+```{r}
+#| label: symbols-all-table
+#| output: asis
+symbols_all <- utils::read.csv(
+  "data/symbols-all.csv",
+  stringsAsFactors = FALSE,
+  encoding = "UTF-8",
+  na.strings = character(0)
+)
+all_table <- data.frame(
+  Symbol = sprintf("$%s$", symbols_all$symbol),
+  Macros = sprintf("`%s`", symbols_all$macros),
+  Meaning = gsub("|", "\\|", symbols_all$interpretation, fixed = TRUE)
+)
+# A macro named in the meaning, such as an alias note or a print hint, is
+# shown as code, with its braced arguments, subscripts, superscripts and
+# any macro that follows it inside the one code span, so that markdown does
+# not read its backslash or underscore as markup.
+all_table$Meaning <- gsub(
+  paste0(
+    "(\\\\[A-Za-z]+(?:(?<b>\\{(?:[^{}]|(?&b))*\\})",
+    "|[_^](?:(?&b)|\\\\[A-Za-z]+|[A-Za-z0-9])",
+    "|\\\\[A-Za-z]+)*)"
+  ),
+  "`\\1`", all_table$Meaning,
+  perl = TRUE
+)
+knitr::kable(
+  all_table,
+  format = "pipe",
+  caption = "Every symbol that a macro prints {#tbl-symbols-all}"
+)
+```
+
 # References {#references .unnumbered}
 
 ::: {#refs}
