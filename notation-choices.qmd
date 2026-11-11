@@ -945,6 +945,13 @@ The training symbols below name a role, so the macro names the role and the lett
     The parentheses distinguish the step index from a power, as in $x^2$.
     A derivative of order $k$, written $f^{(k)}$, uses the same notation, so the symbol before the superscript says which is meant: a function for a derivative, and a point or a step length for the value at a given step.
     A power after the macro applies to the whole iterate, so `\iterpoint{\vx}{\iter}^2` squares $\iterpoint{\vx}{\iter}$.
+-   The quadratic model that Newton's method minimizes at each iterate is $\quadmodel$, from `\quadmodel`, and its value at a step is `\quadmodelf{\stepvec}`, which prints $\quadmodelf{\stepvec}$.
+    We use $q$ for "quadratic".
+    Some optimization texts write $m$ for "model", but $m$ already names the number of replications $\nreps$ here.
+    The number of outcome variables $\noutvars$ and the pool size $\poolsize$ also print $q$, but neither appears in an expression with a Newton step, so we accept the overlap.
+-   The linear approximation of the gradient at an iterate, whose root is the Newton step, is $\lingrad$, from `\lingrad`, and its value at a step is `\lingradf{\stepvec}`, which prints $\lingradf{\stepvec}$.
+    The tilde over $g$ marks an approximation to the gradient $\vecf{g}$.
+    Sources that write $\ell$ for it clash with the log-likelihood $\llik$, which appears beside Newton's method whenever it fits a model by maximum likelihood.
 -   The index of a layer of a neural network is $\layeridx$, from `\layeridx`.
     The letter is the usual one for a layer index in deep learning, and it differs from the letter of the number of cross-validation folds $\nfolds$.
     The same letter also names the log-likelihood `\llik`, the loss of one observation `\obsloss` and the norm `\lpnorm`.
