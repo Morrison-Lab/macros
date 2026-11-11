@@ -1038,8 +1038,9 @@ It is a macro of its own, rather than `\tprod`, so that the column-column produc
 (Ezra, 2026-11-10: "let's keep \transpose as the glyph for column-column product for now, but use a \ccprod macro so we can easily change it later").
 `\tprod` stays for a transpose product in general.
 
-The Gram matrix of $\mX$ is the cross-product matrix of $\mX$ with itself, $\stprod{\mX}$, written `\stprod{\mX}`.
-It also prints the transpose glyph, and has no glyph of its own for now.
+The Gram matrix of $\mX$ is the cross-product matrix of $\mX$ with itself, $\stprod{\mX}$, written `\stprod{\mX}`, or `\gram{\mX}` for short.
+`\stprod` is defined through `\ccprod`, so the Gram matrix follows any later change to the column-column glyph.
+The short name is `\gram`, for the role, rather than `\gm`, which already prints $\gm$.
 
 Other sources differ.
 ISLR2, ESL and Murphy write $\tp{\mX}\mX$ and $\tp{\mX}\vy$ with no name or symbol,

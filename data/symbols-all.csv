@@ -561,6 +561,7 @@ macros,symbol,interpretation
 \grad,\grad,gradient operator ∇
 \gradf,\gradf{a},"gradient of a function, ∇f"
 \gradwrt,\gradwrt{a}{b},"gradient with respect to a variable, ∇_θ f"
+\gram,\gram{a},Gram matrix X′X (alias for \stprod)
 \gray,\gray{a},typeset argument in gray
 \green,\green{a},typeset argument in green
 \growthfn,\growthfn,growth function m_Y (prints m_{\predfam}): the most labelings of n points that the prediction function family can produce
@@ -1057,7 +1058,7 @@ macros,symbol,interpretation
 \stat,\stat,"a statistic, a function of the sample (prints T)"
 \statf,\statf{a},"a statistic evaluated at a sample, \statf{\vx} (prints T(x))"
 \StdResid \stdresid \StdResidual \stdresidual,\StdResid,standardized residual (alias)
-\stprod,\stprod{a},self transpose-based product x′x
+\stprod,\stprod{a},Gram matrix X′X: the column-column product of X with itself (prints \ccprod{X}{X})
 \sumiN,\sumiN,sum over i from 1 to N
 \sumin,\sumin,sum over i from 1 to n
 \sumiNf,\sumiNf{a},sum over i from 1 to N of the argument (·)

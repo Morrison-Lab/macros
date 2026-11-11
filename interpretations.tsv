@@ -497,7 +497,8 @@ name	interpretation
 \iprod	inner product ⟨x, y⟩
 \iprodf	inner product (alias for \iprod)
 \oprod	outer product x y′
-\stprod	self transpose-based product x′x
+\stprod	Gram matrix X′X: the column-column product of X with itself (prints \ccprod{X}{X})
+\gram	Gram matrix X′X (alias for \stprod)
 \qform	quadratic form of a matrix M in a vector x: x′Mx, written \qform{M}{x}
 \siprod	self inner product ⟨x, x⟩
 \soprod	self outer product x x′
