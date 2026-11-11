@@ -571,7 +571,8 @@
 \providecommand{\iprod}[2]{{\angb{#1, #2}}}
 \def\iprodf{\iprod}
 \providecommand{\oprod}[2]{#1 \tp{#2}}
-\providecommand{\stprod}[1]{\tprod{#1}{#1}}
+\providecommand{\stprod}[1]{\ccprod{#1}{#1}}
+\def\gram{\stprod}
 \providecommand{\qform}[2]{\tp{#2} #1 #2}
 \providecommand{\siprod}[1]{\iprod{#1}{#1}}
 \providecommand{\soprod}[1]{#1 \tp{#1}}
