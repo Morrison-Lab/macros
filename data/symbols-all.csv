@@ -779,6 +779,8 @@ macros,symbol,interpretation
 \likgaus,\likgaus,Gaussian likelihood expression
 \lime,\lime{a},typeset argument in lime green
 \linefn \normpdf \poismean,\linefn,the one-variable function a line search minimizes (prints \phi)
+\lingrad,\lingrad,"linear approximation of the gradient of a function around a point, the gradient of the quadratic model, whose root is the Newton step (prints \vg_{\quadmodel})"
+\lingradf,\lingradf{a},linear approximation of the gradient evaluated at a step; takes the step (prints \lingrad\paren{#1})
 \littleo,\littleo{a},"little-o asymptotic negligibility applied to its argument (prints o(g), italic)"
 \llexpmean,\llexpmean,log-likelihood expression for exponential mean model
 \llgaus,\llgaus,Gaussian log-likelihood expression
@@ -848,7 +850,7 @@ macros,symbol,interpretation
 \normF,\normF{a},Frobenius norm ‖·‖_F
 \normFsq,\normFsq{a},squared Frobenius norm ‖·‖_F²
 \normsq,\normsq{a},squared norm ‖·‖²
-\noutvars \poolsize,\noutvars,"number q of outcome variables: the length of the response vector in multivariate regression, not the number of classes"
+\noutvars \poolsize \quadmodel,\noutvars,"number q of outcome variables: the length of the response vector in multivariate regression, not the number of classes"
 \nparams,\nparams,number p* of parameters: the columns of the design matrix after any feature map
 \ntn,\ntn,number of true negatives in a confusion matrix (prints n_{T\negclass})
 \ntp,\ntp,number of true positives in a confusion matrix (prints n_{T\posclass})
@@ -942,6 +944,7 @@ macros,symbol,interpretation
 \Q \quantile,\Q,quantile function symbol Q
 \Qf,\Qf{a},quantile function Q(·) applied to argument
 \qform,\qform{a}{b},"quadratic form of a matrix M in a vector x: x′Mx, written \qform{M}{x}"
+\quadmodelf,\quadmodelf{a},quadratic model evaluated at a step; takes the step (prints \quadmodel\paren{#1})
 \quantilef,\quantilef{a},quantile function applied to argument (alias for \Qf)
 \rangef,\rangef{a},range of a function ℛ(·)
 \rank,\rank,matrix rank operator (rank)

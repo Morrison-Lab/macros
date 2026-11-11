@@ -34,6 +34,8 @@ $\vecf{\hat{\Noise}}$
 $\hvb$
 
 $\vprederr$
+
+$\lingradf{\stepvec}$
 """
 
 
