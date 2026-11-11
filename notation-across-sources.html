@@ -6357,6 +6357,16 @@ Table&nbsp;10: Every symbol that a macro prints
 <td style="text-align: left;">the one-variable function a line search minimizes (prints <code>\phi</code>)</td>
 </tr>
 <tr class="odd">
+<td style="text-align: left;"><span class="math inline">\(\lingrad\)</span></td>
+<td style="text-align: left;"><code>\lingrad</code></td>
+<td style="text-align: left;">linear approximation of the gradient of a function around a point, the gradient of the quadratic model, whose root is the Newton step (prints <code>\vg_{\quadmodel}</code>)</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><span class="math inline">\(\lingradf{a}\)</span></td>
+<td style="text-align: left;"><code>\lingradf</code></td>
+<td style="text-align: left;">linear approximation of the gradient evaluated at a step; takes the step (prints <code>\lingrad\paren{#1}</code>)</td>
+</tr>
+<tr class="odd">
 <td style="text-align: left;"><span class="math inline">\(\littleo{a}\)</span></td>
 <td style="text-align: left;"><code>\littleo</code></td>
 <td style="text-align: left;">little-o asymptotic negligibility applied to its argument (prints o(g), italic)</td>
@@ -6703,7 +6713,7 @@ Table&nbsp;10: Every symbol that a macro prints
 </tr>
 <tr class="even">
 <td style="text-align: left;"><span class="math inline">\(\noutvars\)</span></td>
-<td style="text-align: left;"><code>\noutvars \poolsize</code></td>
+<td style="text-align: left;"><code>\noutvars \poolsize \quadmodel</code></td>
 <td style="text-align: left;">number q of outcome variables: the length of the response vector in multivariate regression, not the number of classes</td>
 </tr>
 <tr class="odd">
@@ -7172,1296 +7182,1301 @@ Table&nbsp;10: Every symbol that a macro prints
 <td style="text-align: left;">quadratic form of a matrix M in a vector x: x′Mx, written <code>\qform{M}{x}</code></td>
 </tr>
 <tr class="even">
+<td style="text-align: left;"><span class="math inline">\(\quadmodelf{a}\)</span></td>
+<td style="text-align: left;"><code>\quadmodelf</code></td>
+<td style="text-align: left;">quadratic model evaluated at a step; takes the step (prints <code>\quadmodel\paren{#1}</code>)</td>
+</tr>
+<tr class="odd">
 <td style="text-align: left;"><span class="math inline">\(\quantilef{a}\)</span></td>
 <td style="text-align: left;"><code>\quantilef</code></td>
 <td style="text-align: left;">quantile function applied to argument (alias for <code>\Qf</code>)</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td style="text-align: left;"><span class="math inline">\(\rangef{a}\)</span></td>
 <td style="text-align: left;"><code>\rangef</code></td>
 <td style="text-align: left;">range of a function ℛ(·)</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td style="text-align: left;"><span class="math inline">\(\rank\)</span></td>
 <td style="text-align: left;"><code>\rank</code></td>
 <td style="text-align: left;">matrix rank operator (rank)</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td style="text-align: left;"><span class="math inline">\(\rankf{a}\)</span></td>
 <td style="text-align: left;"><code>\rankf</code></td>
 <td style="text-align: left;">matrix rank applied to argument</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td style="text-align: left;"><span class="math inline">\(\rarity\)</span></td>
 <td style="text-align: left;"><code>\rarity</code></td>
 <td style="text-align: left;">rarity symbol r</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td style="text-align: left;"><span class="math inline">\(\rarityf{a}\)</span></td>
 <td style="text-align: left;"><code>\rarityf</code></td>
 <td style="text-align: left;">rarity of an outcome, the reciprocal of its probability, r(x) = 1/P(X=x)</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td style="text-align: left;"><span class="math inline">\(\rarityunderf{a}{b}\)</span></td>
 <td style="text-align: left;"><code>\rarityunderf</code></td>
 <td style="text-align: left;">rarity of an outcome under a named distribution, r_q(x) = 1/q(x)</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td style="text-align: left;"><span class="math inline">\(\ratefactorf{a}\)</span></td>
 <td style="text-align: left;"><code>\ratefactorf</code></td>
 <td style="text-align: left;">rate factor function θ_λ(·)</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td style="text-align: left;"><span class="math inline">\(\rater\)</span></td>
 <td style="text-align: left;"><code>\rater \rrate \rateratio</code></td>
 <td style="text-align: left;">rate ratio (alias for <code>\rateratio</code>)</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td style="text-align: left;"><span class="math inline">\(\rateratiof{a}\)</span></td>
 <td style="text-align: left;"><code>\rateratiof</code></td>
 <td style="text-align: left;">rate ratio function ϙ_λ(·)</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td style="text-align: left;"><span class="math inline">\(\raterf{a}\)</span></td>
 <td style="text-align: left;"><code>\raterf \rratef</code></td>
 <td style="text-align: left;">rate ratio function (alias for <code>\rateratiof</code>)</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td style="text-align: left;"><span class="math inline">\(\Ratiof{a}\)</span></td>
 <td style="text-align: left;"><code>\Ratiof</code></td>
 <td style="text-align: left;">capital ratio function Ϙ(·)</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td style="text-align: left;"><span class="math inline">\(\ratiof{a}\)</span></td>
 <td style="text-align: left;"><code>\ratiof</code></td>
 <td style="text-align: left;">generic ratio function ϙ(·)</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td style="text-align: left;"><span class="math inline">\(\RD\)</span></td>
 <td style="text-align: left;"><code>\RD</code></td>
 <td style="text-align: left;">risk difference label RD</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td style="text-align: left;"><span class="math inline">\(\red{a}\)</span></td>
 <td style="text-align: left;"><code>\red</code></td>
 <td style="text-align: left;">typeset argument in red</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td style="text-align: left;"><span class="math inline">\(\regbetasum\)</span></td>
 <td style="text-align: left;"><code>\regbetasum</code></td>
 <td style="text-align: left;">expanded regression sum β₁x₁+⋯+βₚxₚ</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td style="text-align: left;"><span class="math inline">\(\Regcoef\)</span></td>
 <td style="text-align: left;"><code>\Regcoef</code></td>
 <td style="text-align: left;">uppercase regression coefficient symbol B (italic, because a coefficient is a variable)</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td style="text-align: left;"><span class="math inline">\(\reglincomb\)</span></td>
 <td style="text-align: left;"><code>\reglincomb</code></td>
 <td style="text-align: left;">regression linear combination x̰·β̰</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td style="text-align: left;"><span class="math inline">\(\renyientropyf{a}{b}\)</span></td>
 <td style="text-align: left;"><code>\renyientropyf</code></td>
 <td style="text-align: left;">Rényi entropy of the given order of a random variable, H_α(X)</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td style="text-align: left;"><span class="math inline">\(\Resid\)</span></td>
 <td style="text-align: left;"><code>\Resid \resid \Residual \residual</code></td>
 <td style="text-align: left;">residual (alias for <code>\Residual</code>)</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td style="text-align: left;"><span class="math inline">\(\residv\)</span></td>
 <td style="text-align: left;"><code>\residv</code></td>
 <td style="text-align: left;">residual vector ε̰̂</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td style="text-align: left;"><span class="math inline">\(\rfac\)</span></td>
 <td style="text-align: left;"><code>\rfac \hidval \modmem \cutheight \imgheight \basemeasure</code></td>
 <td style="text-align: left;">the factor of a density that does not depend on the parameter, in the factorization theorem for sufficiency (prints h)</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td style="text-align: left;"><span class="math inline">\(\rfacf{a}\)</span></td>
 <td style="text-align: left;"><code>\rfacf</code></td>
 <td style="text-align: left;">the parameter-free factor evaluated at a sample, <code>\rfacf{\vx}</code> (prints h(x))</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td style="text-align: left;"><span class="math inline">\(\riskfactorf{a}\)</span></td>
 <td style="text-align: left;"><code>\riskfactorf</code></td>
 <td style="text-align: left;">risk factor function θ_π(·)</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td style="text-align: left;"><span class="math inline">\(\riskr\)</span></td>
 <td style="text-align: left;"><code>\riskr \rrisk \riskratio</code></td>
 <td style="text-align: left;">risk ratio (alias for <code>\riskratio</code>)</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td style="text-align: left;"><span class="math inline">\(\riskratiof{a}\)</span></td>
 <td style="text-align: left;"><code>\riskratiof</code></td>
 <td style="text-align: left;">risk ratio function ϙ_π(·)</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td style="text-align: left;"><span class="math inline">\(\riskrf{a}\)</span></td>
 <td style="text-align: left;"><code>\riskrf \rriskf</code></td>
 <td style="text-align: left;">risk ratio function (alias for <code>\riskratiof</code>)</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td style="text-align: left;"><span class="math inline">\(\risksetf{a}\)</span></td>
 <td style="text-align: left;"><code>\risksetf</code></td>
 <td style="text-align: left;">risk set at time t: ℛ(t)</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td style="text-align: left;"><span class="math inline">\(\riskt\)</span></td>
 <td style="text-align: left;"><code>\riskt</code></td>
 <td style="text-align: left;">risk operator label</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td style="text-align: left;"><span class="math inline">\(\RMSE{a}\)</span></td>
 <td style="text-align: left;"><code>\RMSE \rmselr</code></td>
 <td style="text-align: left;">root mean squared error RMSE(·) applied to argument</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td style="text-align: left;"><span class="math inline">\(\RMSEf{a}\)</span></td>
 <td style="text-align: left;"><code>\RMSEf</code></td>
 <td style="text-align: left;">root mean squared error RMSE(·) applied to argument (alias for <code>\RMSE</code>)</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td style="text-align: left;"><span class="math inline">\(\RMSEt\)</span></td>
 <td style="text-align: left;"><code>\RMSEt</code></td>
 <td style="text-align: left;">root mean squared error operator RMSE</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td style="text-align: left;"><span class="math inline">\(\ror\)</span></td>
 <td style="text-align: left;"><code>\ror</code></td>
 <td style="text-align: left;">odds ratio ϙ_ω (ratio symbol with odds subscript)</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td style="text-align: left;"><span class="math inline">\(\RR\)</span></td>
 <td style="text-align: left;"><code>\RR</code></td>
 <td style="text-align: left;">risk ratio label RR</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td style="text-align: left;"><span class="math inline">\(\RSS\)</span></td>
 <td style="text-align: left;"><code>\RSS</code></td>
 <td style="text-align: left;">residual sum of squares, RSS: the sum over the observations of the squared residuals of a fitted model</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td style="text-align: left;"><span class="math inline">\(\rsurv\)</span></td>
 <td style="text-align: left;"><code>\rsurv \survr \survratio</code></td>
 <td style="text-align: left;">survival ratio (alias for <code>\survratio</code>)</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td style="text-align: left;"><span class="math inline">\(\rsurvf{a}\)</span></td>
 <td style="text-align: left;"><code>\rsurvf \survrf</code></td>
 <td style="text-align: left;">survival ratio function (alias for <code>\survratiof</code>)</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td style="text-align: left;"><span class="math inline">\(\Rvar\)</span></td>
 <td style="text-align: left;"><code>\Rvar \Predvar</code></td>
 <td style="text-align: left;">a generic random variable in probability expressions (prints X)</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td style="text-align: left;"><span class="math inline">\(\rvar\)</span></td>
 <td style="text-align: left;"><code>\rvar \predvar</code></td>
 <td style="text-align: left;">a generic value of a random variable in probability expressions (prints x)</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td style="text-align: left;"><span class="math inline">\(\rvarbar\)</span></td>
 <td style="text-align: left;"><code>\rvarbar</code></td>
 <td style="text-align: left;">sample mean of a generic variable (prints <code>\bar{\rvar}</code>)</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td style="text-align: left;"><span class="math inline">\(\s\)</span></td>
 <td style="text-align: left;"><code>\s \gs \sdpar \singval \bandwidth</code></td>
 <td style="text-align: left;">Greek letter sigma (σ)</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td style="text-align: left;"><span class="math inline">\(\S\)</span></td>
 <td style="text-align: left;"><code>\S \Surv \surv</code></td>
 <td style="text-align: left;">survival function symbol S</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td style="text-align: left;"><span class="math inline">\(\salg\)</span></td>
 <td style="text-align: left;"><code>\salg \scrS \salgS \sigmaalg \sigmaalgebra</code></td>
 <td style="text-align: left;">sigma-algebra on S symbol 𝒮</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td style="text-align: left;"><span class="math inline">\(\samplemean{a}{b}\)</span></td>
 <td style="text-align: left;"><code>\samplemean</code></td>
 <td style="text-align: left;">sample mean of n random variables, X̄_n (arguments: the variable and the sample size)</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td style="text-align: left;"><span class="math inline">\(\satdeviance\)</span></td>
 <td style="text-align: left;"><code>\satdeviance</code></td>
 <td style="text-align: left;">deviance relative to the saturated model: twice the difference between the saturated model’s and the fitted model’s maximized log-likelihoods</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td style="text-align: left;"><span class="math inline">\(\satllik\)</span></td>
 <td style="text-align: left;"><code>\satllik</code></td>
 <td style="text-align: left;">maximized log-likelihood of the saturated model</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td style="text-align: left;"><span class="math inline">\(\sb{a}\)</span></td>
 <td style="text-align: left;"><code>\sb</code></td>
 <td style="text-align: left;">auto-sized square brackets around argument</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td style="text-align: left;"><span class="math inline">\(\sbmat{a}\)</span></td>
 <td style="text-align: left;"><code>\sbmat</code></td>
 <td style="text-align: left;">matrix formatted with square brackets (bmatrix)</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td style="text-align: left;"><span class="math inline">\(\schedfrac\)</span></td>
 <td style="text-align: left;"><code>\schedfrac</code></td>
 <td style="text-align: left;">the fraction of a learning-rate schedule that has elapsed (prints <code>\zeta</code>)</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td style="text-align: left;"><span class="math inline">\(\sciid\)</span></td>
 <td style="text-align: left;"><code>\sciid</code></td>
 <td style="text-align: left;">c.i.i.d. distributed relation</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td style="text-align: left;"><span class="math inline">\(\score\)</span></td>
 <td style="text-align: left;"><code>\score</code></td>
 <td style="text-align: left;">score function ℓ′</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td style="text-align: left;"><span class="math inline">\(\scoreexpf\)</span></td>
 <td style="text-align: left;"><code>\scoreexpf</code></td>
 <td style="text-align: left;">score function for exponential family</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td style="text-align: left;"><span class="math inline">\(\scoref{a}\)</span></td>
 <td style="text-align: left;"><code>\scoref</code></td>
 <td style="text-align: left;">score function ℓ′(·)</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td style="text-align: left;"><span class="math inline">\(\scorei\)</span></td>
 <td style="text-align: left;"><code>\scorei \scorevi</code></td>
 <td style="text-align: left;">per-observation score vector ℓ′_i</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td style="text-align: left;"><span class="math inline">\(\scorev\)</span></td>
 <td style="text-align: left;"><code>\scorev</code></td>
 <td style="text-align: left;">score vector</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td style="text-align: left;"><span class="math inline">\(\scrA\)</span></td>
 <td style="text-align: left;"><code>\scrA</code></td>
 <td style="text-align: left;">script A symbol 𝒜</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td style="text-align: left;"><span class="math inline">\(\scrB\)</span></td>
 <td style="text-align: left;"><code>\scrB \Borel \borel \borelalg</code></td>
 <td style="text-align: left;">script B symbol ℬ</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td style="text-align: left;"><span class="math inline">\(\scrF\)</span></td>
 <td style="text-align: left;"><code>\scrF \events \eventspace</code></td>
 <td style="text-align: left;">script F symbol ℱ</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td style="text-align: left;"><span class="math inline">\(\scrT\)</span></td>
 <td style="text-align: left;"><code>\scrT \salgT</code></td>
 <td style="text-align: left;">script T symbol 𝒯</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td style="text-align: left;"><span class="math inline">\(\SD{a}\)</span></td>
 <td style="text-align: left;"><code>\SD</code></td>
 <td style="text-align: left;">standard deviation function SD(·)</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td style="text-align: left;"><span class="math inline">\(\sd{a}\)</span></td>
 <td style="text-align: left;"><code>\sd</code></td>
 <td style="text-align: left;">standard deviation function sd(·)</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td style="text-align: left;"><span class="math inline">\(\SDf{a}\)</span></td>
 <td style="text-align: left;"><code>\SDf</code></td>
 <td style="text-align: left;">standard deviation function (alias for <code>\SD</code>)</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td style="text-align: left;"><span class="math inline">\(\sdprod{a}\)</span></td>
 <td style="text-align: left;"><code>\sdprod</code></td>
 <td style="text-align: left;">self dot product x·x</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td style="text-align: left;"><span class="math inline">\(\sdprodf{a}\)</span></td>
 <td style="text-align: left;"><code>\sdprodf</code></td>
 <td style="text-align: left;">self dot product (alias for <code>\sdprod</code>)</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td style="text-align: left;"><span class="math inline">\(\SE{a}\)</span></td>
 <td style="text-align: left;"><code>\SE</code></td>
 <td style="text-align: left;">standard error function SE(·)</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td style="text-align: left;"><span class="math inline">\(\se{a}\)</span></td>
 <td style="text-align: left;"><code>\se</code></td>
 <td style="text-align: left;">standard error function se(·)</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td style="text-align: left;"><span class="math inline">\(\seed\)</span></td>
 <td style="text-align: left;"><code>\seed</code></td>
 <td style="text-align: left;">random seed that starts a pseudorandom number generator (prints <code>\mathfrak{s}</code>)</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td style="text-align: left;"><span class="math inline">\(\SEf{a}\)</span></td>
 <td style="text-align: left;"><code>\SEf</code></td>
 <td style="text-align: left;">standard error function (alias for <code>\SE</code>)</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td style="text-align: left;"><span class="math inline">\(\sef{a}\)</span></td>
 <td style="text-align: left;"><code>\sef</code></td>
 <td style="text-align: left;">standard error function (alias for <code>\se</code>)</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td style="text-align: left;"><span class="math inline">\(\seq{a}{b}\)</span></td>
 <td style="text-align: left;"><code>\seq</code></td>
 <td style="text-align: left;">sequence (colon range) from first to second argument, e.g.&nbsp;1:n</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td style="text-align: left;"><span class="math inline">\(\set{a}\)</span></td>
 <td style="text-align: left;"><code>\set</code></td>
 <td style="text-align: left;">set notation {·}</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td style="text-align: left;"><span class="math inline">\(\setbuild{a}{b}\)</span></td>
 <td style="text-align: left;"><code>\setbuild</code></td>
 <td style="text-align: left;">set-builder notation: the set of elements satisfying a condition, {condition : property}</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td style="text-align: left;"><span class="math inline">\(\setdiff{a}{b}\)</span></td>
 <td style="text-align: left;"><code>\setdiff</code></td>
 <td style="text-align: left;">set difference A &nbsp;B: the elements of A that are not in B</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td style="text-align: left;"><span class="math inline">\(\SEtilde{a}\)</span></td>
 <td style="text-align: left;"><code>\SEtilde</code></td>
 <td style="text-align: left;">standard error with tilde applied to argument</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td style="text-align: left;"><span class="math inline">\(\SEtildef{a}\)</span></td>
 <td style="text-align: left;"><code>\SEtildef</code></td>
 <td style="text-align: left;">standard error with tilde applied to argument (alias for <code>\SEtilde</code>)</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td style="text-align: left;"><span class="math inline">\(\SEtildet\)</span></td>
 <td style="text-align: left;"><code>\SEtildet</code></td>
 <td style="text-align: left;">standard error operator with tilde</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td style="text-align: left;"><span class="math inline">\(\Sf{a}\)</span></td>
 <td style="text-align: left;"><code>\Sf</code></td>
 <td style="text-align: left;">survival function S(·) applied to argument</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td style="text-align: left;"><span class="math inline">\(\sfac\)</span></td>
 <td style="text-align: left;"><code>\sfac \fitproc</code></td>
 <td style="text-align: left;">the factor of a density that depends on the data only through a statistic, in the factorization theorem for sufficiency (prints g)</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td style="text-align: left;"><span class="math inline">\(\sfacf{a}{b}\)</span></td>
 <td style="text-align: left;"><code>\sfacf</code></td>
 <td style="text-align: left;">the statistic factor evaluated at a statistic value and a parameter, <code>\sfacf{t}{\param}</code> (prints g(t ; <code>\theta</code>))</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td style="text-align: left;"><span class="math inline">\(\sigmoidf{a}\)</span></td>
 <td style="text-align: left;"><code>\sigmoidf</code></td>
 <td style="text-align: left;">logistic (sigmoid) function applied to its argument, expit(·)</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td style="text-align: left;"><span class="math inline">\(\sign\)</span></td>
 <td style="text-align: left;"><code>\sign \signt</code></td>
 <td style="text-align: left;">sign operator (alias for <code>\signt</code>)</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td style="text-align: left;"><span class="math inline">\(\signf{a}\)</span></td>
 <td style="text-align: left;"><code>\signf</code></td>
 <td style="text-align: left;">sign function sign{·}</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td style="text-align: left;"><span class="math inline">\(\signoutvar\)</span></td>
 <td style="text-align: left;"><code>\signoutvar</code></td>
 <td style="text-align: left;">binary outcome coded -1 or +1, 2y - 1 for a 0/1 outcome y (prints a tilde over y)</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td style="text-align: left;"><span class="math inline">\(\siid\)</span></td>
 <td style="text-align: left;"><code>\siid \simiid \distiid</code></td>
 <td style="text-align: left;">i.i.d. distributed relation</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td style="text-align: left;"><span class="math inline">\(\simind\)</span></td>
 <td style="text-align: left;"><code>\simind</code></td>
 <td style="text-align: left;">independently distributed relation</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td style="text-align: left;"><span class="math inline">\(\sinf{a}\)</span></td>
 <td style="text-align: left;"><code>\sinf</code></td>
 <td style="text-align: left;">sine function applied to its argument, sin(·)</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td style="text-align: left;"><span class="math inline">\(\siprod{a}\)</span></td>
 <td style="text-align: left;"><code>\siprod</code></td>
 <td style="text-align: left;">self inner product ⟨x, x⟩</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td style="text-align: left;"><span class="math inline">\(\slack\)</span></td>
 <td style="text-align: left;"><code>\slack \ciradsym</code></td>
 <td style="text-align: left;">an SVM slack variable (prints <code>\xi</code>)</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td style="text-align: left;"><span class="math inline">\(\sMAE{a}\)</span></td>
 <td style="text-align: left;"><code>\sMAE</code></td>
 <td style="text-align: left;">sample mean absolute error sMAE(·) applied to argument</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td style="text-align: left;"><span class="math inline">\(\sMAEf{a}\)</span></td>
 <td style="text-align: left;"><code>\sMAEf</code></td>
 <td style="text-align: left;">sample mean absolute error sMAE(·) applied to argument (alias for <code>\sMAE</code>)</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td style="text-align: left;"><span class="math inline">\(\sMAEt\)</span></td>
 <td style="text-align: left;"><code>\sMAEt</code></td>
 <td style="text-align: left;">sample mean absolute error operator sMAE, the estimator of pMAE (no hat form is needed)</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td style="text-align: left;"><span class="math inline">\(\smean{a}\)</span></td>
 <td style="text-align: left;"><code>\smean</code></td>
 <td style="text-align: left;">sample mean of the quantity in the argument, a bar over it (prints a bar over its argument)</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td style="text-align: left;"><span class="math inline">\(\smeandev\)</span></td>
 <td style="text-align: left;"><code>\smeandev</code></td>
 <td style="text-align: left;">deviation of the sample mean, the sample mean of the deviations (prints <code>\smean{\deviation}</code>, 𝕕 with a bar)</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td style="text-align: left;"><span class="math inline">\(\sMSE{a}\)</span></td>
 <td style="text-align: left;"><code>\sMSE</code></td>
 <td style="text-align: left;">sample mean squared error sMSE(·) applied to argument</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td style="text-align: left;"><span class="math inline">\(\sMSEf{a}\)</span></td>
 <td style="text-align: left;"><code>\sMSEf</code></td>
 <td style="text-align: left;">sample mean squared error sMSE(·) applied to argument (alias for <code>\sMSE</code>)</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td style="text-align: left;"><span class="math inline">\(\sMSEt\)</span></td>
 <td style="text-align: left;"><code>\sMSEt</code></td>
 <td style="text-align: left;">sample mean squared error operator sMSE, the estimator of pMSE (no hat form is needed)</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td style="text-align: left;"><span class="math inline">\(\soprod{a}\)</span></td>
 <td style="text-align: left;"><code>\soprod</code></td>
 <td style="text-align: left;">self outer product x x′</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td style="text-align: left;"><span class="math inline">\(\sparen{a}\)</span></td>
 <td style="text-align: left;"><code>\sparen</code></td>
 <td style="text-align: left;">fixed-size parentheses around argument</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td style="text-align: left;"><span class="math inline">\(\sq\)</span></td>
 <td style="text-align: left;"><code>\sq</code></td>
 <td style="text-align: left;">square superscript ² (postfix)</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td style="text-align: left;"><span class="math inline">\(\sqf{a}\)</span></td>
 <td style="text-align: left;"><code>\sqf</code></td>
 <td style="text-align: left;">square of argument (·)²</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td style="text-align: left;"><span class="math inline">\(\srcalph\)</span></td>
 <td style="text-align: left;"><code>\srcalph</code></td>
 <td style="text-align: left;">alphabet of a source: the finite set of values a random variable takes, calligraphic X</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td style="text-align: left;"><span class="math inline">\(\sRMSE{a}\)</span></td>
 <td style="text-align: left;"><code>\sRMSE</code></td>
 <td style="text-align: left;">sample root mean squared error sRMSE(·) applied to argument</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td style="text-align: left;"><span class="math inline">\(\sRMSEf{a}\)</span></td>
 <td style="text-align: left;"><code>\sRMSEf</code></td>
 <td style="text-align: left;">sample root mean squared error sRMSE(·) applied to argument (alias for <code>\sRMSE</code>)</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td style="text-align: left;"><span class="math inline">\(\sRMSEt\)</span></td>
 <td style="text-align: left;"><code>\sRMSEt</code></td>
 <td style="text-align: left;">sample root mean squared error operator sRMSE, the estimator of pRMSE (no hat form is needed)</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td style="text-align: left;"><span class="math inline">\(\ss\)</span></td>
 <td style="text-align: left;"><code>\ss \irrerr \resvar \varpar</code></td>
 <td style="text-align: left;">variance σ²</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td style="text-align: left;"><span class="math inline">\(\sscp\)</span></td>
 <td style="text-align: left;"><code>\sscp \logpartition</code></td>
 <td style="text-align: left;">sum-of-squares-and-cross-products matrix of the term vectors, A</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td style="text-align: left;"><span class="math inline">\(\ssdev{a}\)</span></td>
 <td style="text-align: left;"><code>\ssdev</code></td>
 <td style="text-align: left;">sum over i = 1, …, n of the squared deviation of the observation from the argument (·), via <code>\devsq</code></td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td style="text-align: left;"><span class="math inline">\(\SSE\)</span></td>
 <td style="text-align: left;"><code>\SSE</code></td>
 <td style="text-align: left;">sum of squared errors, SSE: the sum over the observations of the squared errors of a model, the same quantity as the RSS</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td style="text-align: left;"><span class="math inline">\(\ssout\)</span></td>
 <td style="text-align: left;"><code>\ssout</code></td>
 <td style="text-align: left;">centered sum of squares of the outcome values (prints S_{<code>\outvar\outvar</code>})</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td style="text-align: left;"><span class="math inline">\(\sspred\)</span></td>
 <td style="text-align: left;"><code>\sspred</code></td>
 <td style="text-align: left;">centered sum of squares of the predictor values (prints S_{<code>\predvar\predvar</code>})</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td style="text-align: left;"><span class="math inline">\(\sspredout\)</span></td>
 <td style="text-align: left;"><code>\sspredout</code></td>
 <td style="text-align: left;">centered sum of cross-products of the predictor and outcome values (prints S_{<code>\predvar\outvar</code>})</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td style="text-align: left;"><span class="math inline">\(\ssqf{a}\)</span></td>
 <td style="text-align: left;"><code>\ssqf</code></td>
 <td style="text-align: left;">σ²(·) variance as a function</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td style="text-align: left;"><span class="math inline">\(\starf{a}\)</span></td>
 <td style="text-align: left;"><code>\starf</code></td>
 <td style="text-align: left;">starred / optimal version of argument</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td style="text-align: left;"><span class="math inline">\(\stat\)</span></td>
 <td style="text-align: left;"><code>\stat</code></td>
 <td style="text-align: left;">a statistic, a function of the sample (prints T)</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td style="text-align: left;"><span class="math inline">\(\statf{a}\)</span></td>
 <td style="text-align: left;"><code>\statf</code></td>
 <td style="text-align: left;">a statistic evaluated at a sample, <code>\statf{\vx}</code> (prints T(x))</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td style="text-align: left;"><span class="math inline">\(\StdResid\)</span></td>
 <td style="text-align: left;"><code>\StdResid \stdresid \StdResidual \stdresidual</code></td>
 <td style="text-align: left;">standardized residual (alias)</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td style="text-align: left;"><span class="math inline">\(\stprod{a}\)</span></td>
 <td style="text-align: left;"><code>\stprod</code></td>
 <td style="text-align: left;">Gram matrix X′X: the column-column product of X with itself (prints <code>\ccprod{X}{X}</code>)</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td style="text-align: left;"><span class="math inline">\(\sumiN\)</span></td>
 <td style="text-align: left;"><code>\sumiN</code></td>
 <td style="text-align: left;">sum over i from 1 to N</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td style="text-align: left;"><span class="math inline">\(\sumin\)</span></td>
 <td style="text-align: left;"><code>\sumin</code></td>
 <td style="text-align: left;">sum over i from 1 to n</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td style="text-align: left;"><span class="math inline">\(\sumiNf{a}\)</span></td>
 <td style="text-align: left;"><code>\sumiNf</code></td>
 <td style="text-align: left;">sum over i from 1 to N of the argument (·)</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td style="text-align: left;"><span class="math inline">\(\suminf{a}\)</span></td>
 <td style="text-align: left;"><code>\suminf</code></td>
 <td style="text-align: left;">sum over i from 1 to n of the argument (·)</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td style="text-align: left;"><span class="math inline">\(\sumip\)</span></td>
 <td style="text-align: left;"><code>\sumip</code></td>
 <td style="text-align: left;">sum over i from 1 to p</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td style="text-align: left;"><span class="math inline">\(\sumipf{a}\)</span></td>
 <td style="text-align: left;"><code>\sumipf</code></td>
 <td style="text-align: left;">sum over i from 1 to p of the argument (·)</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td style="text-align: left;"><span class="math inline">\(\sumjn\)</span></td>
 <td style="text-align: left;"><code>\sumjn</code></td>
 <td style="text-align: left;">sum over j from 1 to n</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td style="text-align: left;"><span class="math inline">\(\sumjnf{a}\)</span></td>
 <td style="text-align: left;"><code>\sumjnf</code></td>
 <td style="text-align: left;">sum over j from 1 to n of the argument (·)</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td style="text-align: left;"><span class="math inline">\(\sumjp\)</span></td>
 <td style="text-align: left;"><code>\sumjp</code></td>
 <td style="text-align: left;">sum over j from 1 to p</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td style="text-align: left;"><span class="math inline">\(\sumjpf{a}\)</span></td>
 <td style="text-align: left;"><code>\sumjpf</code></td>
 <td style="text-align: left;">sum over j from 1 to p of the argument (·)</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td style="text-align: left;"><span class="math inline">\(\sumkK\)</span></td>
 <td style="text-align: left;"><code>\sumkK</code></td>
 <td style="text-align: left;">sum over the K distinct covariate patterns, k from 1 to K</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td style="text-align: left;"><span class="math inline">\(\sumkKf{a}\)</span></td>
 <td style="text-align: left;"><code>\sumkKf</code></td>
 <td style="text-align: left;">sum over k from 1 to K of the argument (·)</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td style="text-align: left;"><span class="math inline">\(\sumn{a}\)</span></td>
 <td style="text-align: left;"><code>\sumn</code></td>
 <td style="text-align: left;">sum over index from 1 to n</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td style="text-align: left;"><span class="math inline">\(\sumnf{a}{b}\)</span></td>
 <td style="text-align: left;"><code>\sumnf</code></td>
 <td style="text-align: left;">sum over the first argument from 1 to n of the second argument (·)</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td style="text-align: left;"><span class="math inline">\(\Sumof{a}\)</span></td>
 <td style="text-align: left;"><code>\Sumof</code></td>
 <td style="text-align: left;">sum of the elements of a vector of random variables (prints S_{#1})</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td style="text-align: left;"><span class="math inline">\(\sumof{a}\)</span></td>
 <td style="text-align: left;"><code>\sumof</code></td>
 <td style="text-align: left;">sum of the elements of a vector of values (prints s_{#1})</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td style="text-align: left;"><span class="math inline">\(\Sumsym\)</span></td>
 <td style="text-align: left;"><code>\Sumsym</code></td>
 <td style="text-align: left;">symbol for the sum of the elements of a vector of random variables (prints S)</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td style="text-align: left;"><span class="math inline">\(\sumsym\)</span></td>
 <td style="text-align: left;"><code>\sumsym \nevents \steplen</code></td>
 <td style="text-align: left;">symbol for the sum of the elements of a vector of values (prints s)</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td style="text-align: left;"><span class="math inline">\(\sumto{a}{b}\)</span></td>
 <td style="text-align: left;"><code>\sumto</code></td>
 <td style="text-align: left;">sum over the first argument from 1 to the second</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td style="text-align: left;"><span class="math inline">\(\sumtof{a}{b}{c}\)</span></td>
 <td style="text-align: left;"><code>\sumtof</code></td>
 <td style="text-align: left;">sum over the first argument from 1 to the second of the third argument (·)</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td style="text-align: left;"><span class="math inline">\(\surprisal\)</span></td>
 <td style="text-align: left;"><code>\surprisal</code></td>
 <td style="text-align: left;">surprisal symbol s</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td style="text-align: left;"><span class="math inline">\(\surprisalf{a}\)</span></td>
 <td style="text-align: left;"><code>\surprisalf</code></td>
 <td style="text-align: left;">surprisal of an outcome, s(x)</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td style="text-align: left;"><span class="math inline">\(\surprisalunderf{a}{b}\)</span></td>
 <td style="text-align: left;"><code>\surprisalunderf</code></td>
 <td style="text-align: left;">surprisal of an outcome measured by a named distribution, s_q(x)</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td style="text-align: left;"><span class="math inline">\(\survf{a}\)</span></td>
 <td style="text-align: left;"><code>\survf</code></td>
 <td style="text-align: left;">survival function applied to argument (alias for <code>\Sf</code>)</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td style="text-align: left;"><span class="math inline">\(\survfactorf{a}\)</span></td>
 <td style="text-align: left;"><code>\survfactorf</code></td>
 <td style="text-align: left;">survival factor function θ_S(·)</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td style="text-align: left;"><span class="math inline">\(\survratiof{a}\)</span></td>
 <td style="text-align: left;"><code>\survratiof</code></td>
 <td style="text-align: left;">survival ratio function ϙ_S(·)</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td style="text-align: left;"><span class="math inline">\(\svfrac\)</span></td>
 <td style="text-align: left;"><code>\svfrac \nullity \measureb \shrinkage</code></td>
 <td style="text-align: left;">the nu-SVM bound on the fraction of margin errors (prints <code>\nu</code>)</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td style="text-align: left;"><span class="math inline">\(\tanhf{a}\)</span></td>
 <td style="text-align: left;"><code>\tanhf</code></td>
 <td style="text-align: left;">hyperbolic tangent function applied to its argument, tanh(·)</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td style="text-align: left;"><span class="math inline">\(\targeterr\)</span></td>
 <td style="text-align: left;"><code>\targeterr</code></td>
 <td style="text-align: left;">error of the fitted target function: target function minus its fitted counterpart (the deviation operator 𝔻 subscripted by the target function)</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td style="text-align: left;"><span class="math inline">\(\targeterrf{a}\)</span></td>
 <td style="text-align: left;"><code>\targeterrf</code></td>
 <td style="text-align: left;">error of the fitted target function at a point (via <code>\targeterr</code>)</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td style="text-align: left;"><span class="math inline">\(\targetfnf{a}\)</span></td>
 <td style="text-align: left;"><code>\targetfnf</code></td>
 <td style="text-align: left;">target function applied to its argument, <code>\mu</code>(·)</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td style="text-align: left;"><span class="math inline">\(\teal{a}\)</span></td>
 <td style="text-align: left;"><code>\teal</code></td>
 <td style="text-align: left;">typeset argument in teal</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td style="text-align: left;"><span class="math inline">\(\termfn{a}\)</span></td>
 <td style="text-align: left;"><code>\termfn</code></td>
 <td style="text-align: left;">term of a linear-in-terms model, a function of the covariate value, t with the index given as the argument as a subscript</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td style="text-align: left;"><span class="math inline">\(\termvec{a}\)</span></td>
 <td style="text-align: left;"><code>\termvec</code></td>
 <td style="text-align: left;">vector t_k of a model term evaluated at every observation</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td style="text-align: left;"><span class="math inline">\(\testerr\)</span></td>
 <td style="text-align: left;"><code>\testerr</code></td>
 <td style="text-align: left;">test error (average loss on the test set), over-barred err with subscript test</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td style="text-align: left;"><span class="math inline">\(\testidx\)</span></td>
 <td style="text-align: left;"><code>\testidx</code></td>
 <td style="text-align: left;">index set of the test set (prints I with a test subscript)</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td style="text-align: left;"><span class="math inline">\(\testset\)</span></td>
 <td style="text-align: left;"><code>\testset</code></td>
 <td style="text-align: left;">test set: the held-out observations used once, to estimate the risk of the chosen model (prints a calligraphic D with a test subscript)</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td style="text-align: left;"><span class="math inline">\(\tf\)</span></td>
 <td style="text-align: left;"><code>\tf</code></td>
 <td style="text-align: left;">therefore symbol (∴)</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td style="text-align: left;"><span class="math inline">\(\th\)</span></td>
 <td style="text-align: left;"><code>\th \param \angpar \factor \thresh</code></td>
 <td style="text-align: left;">Greek letter theta (θ)</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td style="text-align: left;"><span class="math inline">\(\Th\)</span></td>
 <td style="text-align: left;"><code>\Th \Param \Paramspace \unitthresh</code></td>
 <td style="text-align: left;">uppercase Theta (Θ)</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td style="text-align: left;"><span class="math inline">\(\thmADistMLE\)</span></td>
 <td style="text-align: left;"><code>\thmADistMLE</code></td>
 <td style="text-align: left;">asymptotic normal distribution of the MLE</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td style="text-align: left;"><span class="math inline">\(\thmHessij\)</span></td>
 <td style="text-align: left;"><code>\thmHessij</code></td>
 <td style="text-align: left;">formula for (i,j) element of the Hessian</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td style="text-align: left;"><span class="math inline">\(\tp{a}\)</span></td>
 <td style="text-align: left;"><code>\tp</code></td>
 <td style="text-align: left;">transpose of argument x′</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td style="text-align: left;"><span class="math inline">\(\tprod{a}{b}\)</span></td>
 <td style="text-align: left;"><code>\tprod \ccprod</code></td>
 <td style="text-align: left;">transpose-based product x′y</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td style="text-align: left;"><span class="math inline">\(\tprodf{a}{b}\)</span></td>
 <td style="text-align: left;"><code>\tprodf</code></td>
 <td style="text-align: left;">transpose-based product (alias for <code>\tprod</code>)</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td style="text-align: left;"><span class="math inline">\(\tr\)</span></td>
 <td style="text-align: left;"><code>\tr</code></td>
 <td style="text-align: left;">matrix trace operator (tr)</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td style="text-align: left;"><span class="math inline">\(\trainerr\)</span></td>
 <td style="text-align: left;"><code>\trainerr</code></td>
 <td style="text-align: left;">training error (average loss on the training set), over-barred err</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td style="text-align: left;"><span class="math inline">\(\trainidx\)</span></td>
 <td style="text-align: left;"><code>\trainidx</code></td>
 <td style="text-align: left;">index set of the training set (prints I with a train subscript)</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td style="text-align: left;"><span class="math inline">\(\trainset\)</span></td>
 <td style="text-align: left;"><code>\trainset</code></td>
 <td style="text-align: left;">training set: the labelled data a model is fitted to (prints a calligraphic D with a train subscript)</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td style="text-align: left;"><span class="math inline">\(\trf{a}\)</span></td>
 <td style="text-align: left;"><code>\trf</code></td>
 <td style="text-align: left;">matrix trace applied to argument</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td style="text-align: left;"><span class="math inline">\(\trthist{a}\)</span></td>
 <td style="text-align: left;"><code>\trthist</code></td>
 <td style="text-align: left;">treatment history through time k (prints <code>\bar{A}_k</code>)</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td style="text-align: left;"><span class="math inline">\(\trtvalhist{a}\)</span></td>
 <td style="text-align: left;"><code>\trtvalhist</code></td>
 <td style="text-align: left;">a treatment-history value through time k (prints <code>\bar{a}_k</code>)</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td style="text-align: left;"><span class="math inline">\(\truemeanf{a}\)</span></td>
 <td style="text-align: left;"><code>\truemeanf</code></td>
 <td style="text-align: left;">true mean function applied to its argument, <code>\mu</code>(·); replaces the deprecated <code>\truemeanfnf</code></td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td style="text-align: left;"><span class="math inline">\(\truemeanfnf{a}\)</span></td>
 <td style="text-align: left;"><code>\truemeanfnf</code></td>
 <td style="text-align: left;">true mean function applied to its argument, <code>\mu</code>(·); deprecated, use <code>\truemeanf</code></td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td style="text-align: left;"><span class="math inline">\(\truemeansubf{a}{b}\)</span></td>
 <td style="text-align: left;"><code>\truemeansubf</code></td>
 <td style="text-align: left;">true mean function with the subscript given as the first argument, applied to the second argument; with the subscript <code>\Outvar</code> <code>\given</code> <code>\Predvar</code> it is the conditional population mean <code>\condE{\Outvar}{\Predvar = x}</code></td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td style="text-align: left;"><span class="math inline">\(\truenulls\)</span></td>
 <td style="text-align: left;"><code>\truenulls</code></td>
 <td style="text-align: left;">index set I_0 of the true null hypotheses</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td style="text-align: left;"><span class="math inline">\(\truthindf{a}\)</span></td>
 <td style="text-align: left;"><code>\truthindf</code></td>
 <td style="text-align: left;">prints <code>\truthind\paren{...}</code>, the truth indicator of its condition</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td style="text-align: left;"><span class="math inline">\(\TSS\)</span></td>
 <td style="text-align: left;"><code>\TSS</code></td>
 <td style="text-align: left;">total sum of squares, TSS: the sum over the observations of the squared differences of the outcome from its sample mean</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td style="text-align: left;"><span class="math inline">\(\ub{a}\)</span></td>
 <td style="text-align: left;"><code>\ub</code></td>
 <td style="text-align: left;">underbrace shorthand (alias for <code>\underbrace</code>)</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td style="text-align: left;"><span class="math inline">\(\ubf{a}{b}\)</span></td>
 <td style="text-align: left;"><code>\ubf \dims</code></td>
 <td style="text-align: left;">underbrace with subscript label <code>\underbrace{·}_{label}</code></td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td style="text-align: left;"><span class="math inline">\(\ubound\)</span></td>
 <td style="text-align: left;"><code>\ubound</code></td>
 <td style="text-align: left;">an upper bound of a set (u)</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td style="text-align: left;"><span class="math inline">\(\V\)</span></td>
 <td style="text-align: left;"><code>\V</code></td>
 <td style="text-align: left;">variance operator symbol Var</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td style="text-align: left;"><span class="math inline">\(\v{a}\)</span></td>
 <td style="text-align: left;"><code>\v \vec</code></td>
 <td style="text-align: left;">vector shorthand (alias for <code>\vecf</code>)</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td style="text-align: left;"><span class="math inline">\(\va\)</span></td>
 <td style="text-align: left;"><code>\va</code></td>
 <td style="text-align: left;">vector a (a̰)</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td style="text-align: left;"><span class="math inline">\(\valerr\)</span></td>
 <td style="text-align: left;"><code>\valerr</code></td>
 <td style="text-align: left;">validation error (average loss on the validation set), over-barred err with subscript val</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td style="text-align: left;"><span class="math inline">\(\validx\)</span></td>
 <td style="text-align: left;"><code>\validx</code></td>
 <td style="text-align: left;">index set of the validation set (prints I with a val subscript)</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td style="text-align: left;"><span class="math inline">\(\valset\)</span></td>
 <td style="text-align: left;"><code>\valset</code></td>
 <td style="text-align: left;">validation set: the held-out observations used to choose among fitted models (prints a calligraphic D with a val subscript)</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td style="text-align: left;"><span class="math inline">\(\var{a}\)</span></td>
 <td style="text-align: left;"><code>\var</code></td>
 <td style="text-align: left;">variance function Var(·)</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td style="text-align: left;"><span class="math inline">\(\Var{a}\)</span></td>
 <td style="text-align: left;"><code>\Var \Varf \varf</code></td>
 <td style="text-align: left;">variance function (alias for <code>\var</code>)</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td style="text-align: left;"><span class="math inline">\(\varh{a}\)</span></td>
 <td style="text-align: left;"><code>\varh</code></td>
 <td style="text-align: left;">estimated variance function (alias)</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td style="text-align: left;"><span class="math inline">\(\varhf{a}\)</span></td>
 <td style="text-align: left;"><code>\varhf</code></td>
 <td style="text-align: left;">estimated variance function (alias)</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td style="text-align: left;"><span class="math inline">\(\varht\)</span></td>
 <td style="text-align: left;"><code>\varht</code></td>
 <td style="text-align: left;">estimated variance operator (hat, alias); deprecated, use <code>\evar</code></td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td style="text-align: left;"><span class="math inline">\(\Varr\)</span></td>
 <td style="text-align: left;"><code>\Varr \Vart</code></td>
 <td style="text-align: left;">variance operator symbol Var</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td style="text-align: left;"><span class="math inline">\(\varsym\)</span></td>
 <td style="text-align: left;"><code>\varsym</code></td>
 <td style="text-align: left;">short variance operator 𝕍 for any random variable (no argument, blackboard bold like <code>\Expp</code>)</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td style="text-align: left;"><span class="math inline">\(\varsymf{a}\)</span></td>
 <td style="text-align: left;"><code>\varsymf</code></td>
 <td style="text-align: left;">short variance operator applied to a random variable, like <code>\E</code> (prints <code>\varsym</code> with its argument in square brackets)</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td style="text-align: left;"><span class="math inline">\(\vb\)</span></td>
 <td style="text-align: left;"><code>\vb \vbeta \vcoef</code></td>
 <td style="text-align: left;">beta vector (alias for <code>\vbeta</code>)</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td style="text-align: left;"><span class="math inline">\(\vc{a}\)</span></td>
 <td style="text-align: left;"><code>\vc</code></td>
 <td style="text-align: left;">bold vector notation for argument</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td style="text-align: left;"><span class="math inline">\(\vcdim\)</span></td>
 <td style="text-align: left;"><code>\vcdim</code></td>
 <td style="text-align: left;">Vapnik-Chervonenkis dimension d_VC: the largest number of points the model family shatters</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td style="text-align: left;"><span class="math inline">\(\vcdimf{a}\)</span></td>
 <td style="text-align: left;"><code>\vcdimf</code></td>
 <td style="text-align: left;">VC dimension of a model family, d_VC(·)</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td style="text-align: left;"><span class="math inline">\(\vch\)</span></td>
 <td style="text-align: left;"><code>\vch</code></td>
 <td style="text-align: left;">matrix half-vectorization operator (vech)</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td style="text-align: left;"><span class="math inline">\(\vchf{a}\)</span></td>
 <td style="text-align: left;"><code>\vchf</code></td>
 <td style="text-align: left;">matrix half-vectorization applied to argument</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td style="text-align: left;"><span class="math inline">\(\vconst\)</span></td>
 <td style="text-align: left;"><code>\vconst</code></td>
 <td style="text-align: left;">constant vector c (c̰)</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td style="text-align: left;"><span class="math inline">\(\vcs\)</span></td>
 <td style="text-align: left;"><code>\vcs</code></td>
 <td style="text-align: left;">matrix strict half-vectorization operator (vecs)</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td style="text-align: left;"><span class="math inline">\(\vcsf{a}\)</span></td>
 <td style="text-align: left;"><code>\vcsf</code></td>
 <td style="text-align: left;">matrix strict half-vectorization applied to argument</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td style="text-align: left;"><span class="math inline">\(\vct\)</span></td>
 <td style="text-align: left;"><code>\vct \matvec</code></td>
 <td style="text-align: left;">matrix vectorization operator (vec)</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td style="text-align: left;"><span class="math inline">\(\vctf{a}\)</span></td>
 <td style="text-align: left;"><code>\vctf</code></td>
 <td style="text-align: left;">matrix vectorization applied to argument</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td style="text-align: left;"><span class="math inline">\(\vd\)</span></td>
 <td style="text-align: left;"><code>\vd</code></td>
 <td style="text-align: left;">exposure vector d lowercase (d̰)</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td style="text-align: left;"><span class="math inline">\(\vD\)</span></td>
 <td style="text-align: left;"><code>\vD \vdesign \vfeatmap</code></td>
 <td style="text-align: left;">exposure/treatment vector D (D̰)</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td style="text-align: left;"><span class="math inline">\(\vdelta\)</span></td>
 <td style="text-align: left;"><code>\vdelta \stepvec \vbackerr</code></td>
 <td style="text-align: left;">vector δ, such as backpropagated errors (δ̰)</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td style="text-align: left;"><span class="math inline">\(\ve\)</span></td>
 <td style="text-align: left;"><code>\ve</code></td>
 <td style="text-align: left;">residual vector e (ḛ)</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td style="text-align: left;"><span class="math inline">\(\vecf{a}\)</span></td>
 <td style="text-align: left;"><code>\vecf</code></td>
 <td style="text-align: left;">vector notation (alias for <code>\vec</code>)</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td style="text-align: left;"><span class="math inline">\(\veoutvar\)</span></td>
 <td style="text-align: left;"><code>\veoutvar \vpredval</code></td>
 <td style="text-align: left;">vector of predicted outcomes (prints a tilde under ŷ)</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td style="text-align: left;"><span class="math inline">\(\veps\)</span></td>
 <td style="text-align: left;"><code>\veps \vlsresid</code></td>
 <td style="text-align: left;">error vector (ε-vector)</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td style="text-align: left;"><span class="math inline">\(\vepsilon\)</span></td>
 <td style="text-align: left;"><code>\vepsilon \vhidgrad</code></td>
 <td style="text-align: left;">vector ϵ (ϵ̰); see also <code>\veps</code> for an error vector</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td style="text-align: left;"><span class="math inline">\(\vg\)</span></td>
 <td style="text-align: left;"><code>\vg</code></td>
 <td style="text-align: left;">vector g, such as a gradient (g̰)</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td style="text-align: left;"><span class="math inline">\(\vh\)</span></td>
 <td style="text-align: left;"><code>\vh</code></td>
 <td style="text-align: left;">vector h, such as hidden-unit values (h̰)</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td style="text-align: left;"><span class="math inline">\(\vhidval\)</span></td>
 <td style="text-align: left;"><code>\vhidval</code></td>
 <td style="text-align: left;">vector of hidden-unit values (or a recurrent network’s hidden state), h̰</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td style="text-align: left;"><span class="math inline">\(\violet{a}\)</span></td>
 <td style="text-align: left;"><code>\violet</code></td>
 <td style="text-align: left;">typeset argument in violet</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td style="text-align: left;"><span class="math inline">\(\vlagmult\)</span></td>
 <td style="text-align: left;"><code>\vlagmult</code></td>
 <td style="text-align: left;">a vector of Lagrange multipliers (prints <code>\vecf{\lambda}</code>)</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td style="text-align: left;"><span class="math inline">\(\vm\)</span></td>
 <td style="text-align: left;"><code>\vm</code></td>
 <td style="text-align: left;">mean vector (μ-vector)</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td style="text-align: left;"><span class="math inline">\(\vnatparam\)</span></td>
 <td style="text-align: left;"><code>\vnatparam</code></td>
 <td style="text-align: left;">natural parameter vector of an exponential family (prints <code>\vecf{\eta}</code>)</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td style="text-align: left;"><span class="math inline">\(\vNoise\)</span></td>
 <td style="text-align: left;"><code>\vNoise</code></td>
 <td style="text-align: left;">a vector of noise random variables (prints <code>\vecf{\Noise}</code>)</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td style="text-align: left;"><span class="math inline">\(\vnoise\)</span></td>
 <td style="text-align: left;"><code>\vnoise</code></td>
 <td style="text-align: left;">a vector of realized noise values (prints <code>\vecf{\noise}</code>)</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td style="text-align: left;"><span class="math inline">\(\vone\)</span></td>
 <td style="text-align: left;"><code>\vone</code></td>
 <td style="text-align: left;">vector of ones</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td style="text-align: left;"><span class="math inline">\(\vOutvar\)</span></td>
 <td style="text-align: left;"><code>\vOutvar</code></td>
 <td style="text-align: left;">random vector of outcomes (prints Y̰)</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td style="text-align: left;"><span class="math inline">\(\voutvar\)</span></td>
 <td style="text-align: left;"><code>\voutvar</code></td>
 <td style="text-align: left;">vector of observed outcomes (prints y̰)</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td style="text-align: left;"><span class="math inline">\(\vp\)</span></td>
 <td style="text-align: left;"><code>\vp</code></td>
 <td style="text-align: left;">vector p, such as a probability distribution (p̰)</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td style="text-align: left;"><span class="math inline">\(\vphi\)</span></td>
 <td style="text-align: left;"><code>\vphi</code></td>
 <td style="text-align: left;">vector φ, such as features (φ̰)</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td style="text-align: left;"><span class="math inline">\(\vpi\)</span></td>
 <td style="text-align: left;"><code>\vpi \vprob</code></td>
 <td style="text-align: left;">vector of probabilities π (π̰)</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td style="text-align: left;"><span class="math inline">\(\vprederr\)</span></td>
 <td style="text-align: left;"><code>\vprederr</code></td>
 <td style="text-align: left;">vector of prediction errors, predicted minus observed outcomes (the vec accent applied to <code>\prederr</code>)</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td style="text-align: left;"><span class="math inline">\(\vPredvar\)</span></td>
 <td style="text-align: left;"><code>\vPredvar</code></td>
 <td style="text-align: left;">random vector of predictors (prints X̰)</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td style="text-align: left;"><span class="math inline">\(\vpredvar\)</span></td>
 <td style="text-align: left;"><code>\vpredvar</code></td>
 <td style="text-align: left;">vector of one observation’s predictor values (prints x̰)</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td style="text-align: left;"><span class="math inline">\(\vq\)</span></td>
 <td style="text-align: left;"><code>\vq</code></td>
 <td style="text-align: left;">vector q, such as a second probability distribution (q̰)</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td style="text-align: left;"><span class="math inline">\(\vr\)</span></td>
 <td style="text-align: left;"><code>\vr</code></td>
 <td style="text-align: left;">vector r (r̰)</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td style="text-align: left;"><span class="math inline">\(\vresid\)</span></td>
 <td style="text-align: left;"><code>\vresid</code></td>
 <td style="text-align: left;">vector of residuals, observed minus predicted outcomes (the negative of the prediction errors <code>\prederr</code>) (prints ε̰̂)</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td style="text-align: left;"><span class="math inline">\(\vT\)</span></td>
 <td style="text-align: left;"><code>\vT</code></td>
 <td style="text-align: left;">time vector T (T̰)</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td style="text-align: left;"><span class="math inline">\(\vt\)</span></td>
 <td style="text-align: left;"><code>\vt</code></td>
 <td style="text-align: left;">time vector t lowercase (t̰)</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td style="text-align: left;"><span class="math inline">\(\vth\)</span></td>
 <td style="text-align: left;"><code>\vth \vparam</code></td>
 <td style="text-align: left;">theta parameter vector</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td style="text-align: left;"><span class="math inline">\(\vu\)</span></td>
 <td style="text-align: left;"><code>\vu</code></td>
 <td style="text-align: left;">vector u (ṵ)</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td style="text-align: left;"><span class="math inline">\(\vv\)</span></td>
 <td style="text-align: left;"><code>\vv</code></td>
 <td style="text-align: left;">vector v (v̰)</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td style="text-align: left;"><span class="math inline">\(\vw\)</span></td>
 <td style="text-align: left;"><code>\vw</code></td>
 <td style="text-align: left;">weight vector w (w̰)</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td style="text-align: left;"><span class="math inline">\(\vX\)</span></td>
 <td style="text-align: left;"><code>\vX</code></td>
 <td style="text-align: left;">random vector X (X̰)</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td style="text-align: left;"><span class="math inline">\(\vx\)</span></td>
 <td style="text-align: left;"><code>\vx</code></td>
 <td style="text-align: left;">vector x (x̰)</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td style="text-align: left;"><span class="math inline">\(\vxi\)</span></td>
 <td style="text-align: left;"><code>\vxi</code></td>
 <td style="text-align: left;">i-th observation vector x̰_i</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td style="text-align: left;"><span class="math inline">\(\vxs\)</span></td>
 <td style="text-align: left;"><code>\vxs</code></td>
 <td style="text-align: left;">starred/reference vector x* (x̰*)</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td style="text-align: left;"><span class="math inline">\(\vY\)</span></td>
 <td style="text-align: left;"><code>\vY</code></td>
 <td style="text-align: left;">uppercase outcome vector Y (Y̰)</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td style="text-align: left;"><span class="math inline">\(\vy\)</span></td>
 <td style="text-align: left;"><code>\vy</code></td>
 <td style="text-align: left;">outcome vector y (y̰)</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td style="text-align: left;"><span class="math inline">\(\vZ\)</span></td>
 <td style="text-align: left;"><code>\vZ</code></td>
 <td style="text-align: left;">random vector Z (Z̰)</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td style="text-align: left;"><span class="math inline">\(\vz\)</span></td>
 <td style="text-align: left;"><code>\vz</code></td>
 <td style="text-align: left;">vector z (z̰)</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td style="text-align: left;"><span class="math inline">\(\vzero\)</span></td>
 <td style="text-align: left;"><code>\vzero</code></td>
 <td style="text-align: left;">zero vector</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td style="text-align: left;"><span class="math inline">\(\white{a}\)</span></td>
 <td style="text-align: left;"><code>\white</code></td>
 <td style="text-align: left;">typeset argument in white</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td style="text-align: left;"><span class="math inline">\(\xbar\)</span></td>
 <td style="text-align: left;"><code>\xbar</code></td>
 <td style="text-align: left;">sample mean x̄</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td style="text-align: left;"><span class="math inline">\(\xderiv{a}{b}\)</span></td>
 <td style="text-align: left;"><code>\xderiv</code></td>
 <td style="text-align: left;">cross partial derivative ∂²/∂x∂y</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td style="text-align: left;"><span class="math inline">\(\xderivf{a}{b}{c}\)</span></td>
 <td style="text-align: left;"><code>\xderivf</code></td>
 <td style="text-align: left;">cross partial ∂²f/∂x∂y with numerator</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td style="text-align: left;"><span class="math inline">\(\xderivff{a}{b}{c}\)</span></td>
 <td style="text-align: left;"><code>\xderivff</code></td>
 <td style="text-align: left;">cross partial (reversed argument order)</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td style="text-align: left;"><span class="math inline">\(\Xin\)</span></td>
 <td style="text-align: left;"><code>\Xin</code></td>
 <td style="text-align: left;">sequence of random variables X₁, …, Xₙ</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td style="text-align: left;"><span class="math inline">\(\xin\)</span></td>
 <td style="text-align: left;"><code>\xin</code></td>
 <td style="text-align: left;">sequence of observations x₁, …, xₙ</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td style="text-align: left;"><span class="math inline">\(\Xxin\)</span></td>
 <td style="text-align: left;"><code>\Xxin</code></td>
 <td style="text-align: left;">paired sequence X₁=x₁, …, Xₙ=xₙ</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td style="text-align: left;"><span class="math inline">\(\yellow{a}\)</span></td>
 <td style="text-align: left;"><code>\yellow</code></td>
 <td style="text-align: left;">typeset argument in yellow</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td style="text-align: left;"><span class="math inline">\(\yin\)</span></td>
 <td style="text-align: left;"><code>\yin</code></td>
 <td style="text-align: left;">sequence of outcomes y₁, …, yₙ</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td style="text-align: left;"><span class="math inline">\(\za\)</span></td>
 <td style="text-align: left;"><code>\za</code></td>
 <td style="text-align: left;">normal critical value z_{1−α/2}</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td style="text-align: left;"><span class="math inline">\(\~\)</span></td>
 <td style="text-align: left;"><code>\~</code></td>
 <td style="text-align: left;">approximately equal (≈)</td>
