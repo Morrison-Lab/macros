@@ -1342,7 +1342,7 @@
 \def\step{\delta}
 \def\quadmodel{q}
 \providecommand{\quadmodelf}[1]{{\quadmodel\paren{#1}}}
-\def\lingrad{\vecf{\tilde{g}}}
+\def\lingrad{{\vg_{\quadmodel}}}
 \providecommand{\lingradf}[1]{{\lingrad\paren{#1}}}
 \def\tolout{\varepsilon}
 \def\tolin{\delta}
