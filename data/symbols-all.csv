@@ -779,7 +779,7 @@ macros,symbol,interpretation
 \likgaus,\likgaus,Gaussian likelihood expression
 \lime,\lime{a},typeset argument in lime green
 \linefn \normpdf \poismean,\linefn,the one-variable function a line search minimizes (prints \phi)
-\lingrad,\lingrad,"linear approximation of the gradient of a function around a point, whose root is the Newton step (prints \vecf{\tilde{g}})"
+\lingrad,\lingrad,"linear approximation of the gradient of a function around a point, the gradient of the quadratic model, whose root is the Newton step (prints \vg_{\quadmodel})"
 \lingradf,\lingradf{a},linear approximation of the gradient evaluated at a step; takes the step (prints \lingrad\paren{#1})
 \littleo,\littleo{a},"little-o asymptotic negligibility applied to its argument (prints o(g), italic)"
 \llexpmean,\llexpmean,log-likelihood expression for exponential mean model

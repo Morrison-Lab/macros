@@ -1254,7 +1254,7 @@ name	interpretation
 \step	an optimization step (scalar) (prints \delta)
 \quadmodel	quadratic model of a function around a point, the second-order Taylor approximation used by Newton's method (prints q)
 \quadmodelf	quadratic model evaluated at a step; takes the step (prints \quadmodel\paren{#1})
-\lingrad	linear approximation of the gradient of a function around a point, whose root is the Newton step (prints \vecf{\tilde{g}})
+\lingrad	linear approximation of the gradient of a function around a point, the gradient of the quadratic model, whose root is the Newton step (prints \vg_{\quadmodel})
 \lingradf	linear approximation of the gradient evaluated at a step; takes the step (prints \lingrad\paren{#1})
 \tolout	an output tolerance (the epsilon of an epsilon-delta statement) (prints \varepsilon)
 \tolin	an input radius (the delta of an epsilon-delta statement), or a small allowed failure probability (prints \delta)
