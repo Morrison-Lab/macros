@@ -1045,6 +1045,8 @@ macros,symbol,interpretation
 \sparen,\sparen{a},fixed-size parentheses around argument
 \sq,\sq,square superscript ² (postfix)
 \sqf,\sqf{a},square of argument (·)²
+\sqprederr,\sqprederr,"squared prediction error, the square of \prederr, one glyph (prints calligraphic E)"
+\sqprederrf,\sqprederrf{a},squared prediction error of the predictor in the argument (prints \sqprederr followed by its argument in parentheses)
 \srcalph,\srcalph,"alphabet of a source: the finite set of values a random variable takes, calligraphic X"
 \sRMSE,\sRMSE{a},sample root mean squared error sRMSE(·) applied to argument
 \sRMSEf,\sRMSEf{a},sample root mean squared error sRMSE(·) applied to argument (alias for \sRMSE)

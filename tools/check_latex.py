@@ -43,6 +43,7 @@ EXPECTED = {
         "INDICPRISES",
         "DODDSINVRISES",
         "DINVODDSRISES",
+        "SQPREDERRRISES",
         "CTRLSTUCK",
     ],
     # An exponent after \setbuild and \setdiff rises over a tall argument.
