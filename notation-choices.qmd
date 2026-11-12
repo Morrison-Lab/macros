@@ -497,6 +497,14 @@ The macro `\prederrf{g}` prints $\prederrf{g}$, the prediction error of the pred
 It is the short form of the estimation error of $g$ for the new outcome, `\esterr{g}{\Outvar}`, and uses the label "pred" in place of the estimand.
 The older macros `\err` and `\eps` print the bare $\varepsilon$, the same symbol as the noise.
 
+The macro `\sqprederr` prints $\sqprederr$, the squared prediction error, and `\sqprederrf{g}` prints $\sqprederrf{g}$.
+The squared prediction error is a concept of its own, the quantity whose expectation is the expected squared prediction error,
+so it gets one glyph rather than the expression $\prederr^2$ (Ezra, 2026-11-12: "ideally, every concept should have a glyph").
+We chose a calligraphic E for "error", because no macro here uses it.
+The mds linear-algebra pages write an eigenspace as $\mathcal{E}_\lambda$ without a macro;
+the two meanings do not meet on one page.
+ESL writes the squared error only as the loss $L(Y, f(X)) = (Y - f(X))^2$, with no symbol of its own [@hastie2009esl, Section 2.4].
+
 The residual is computed from a fitted model and so is observed.
 It estimates the noise, with the same sign: both are an outcome minus a reference.
 So we write the residual as the estimate of the noise, $\resid$, using `\est` as we do for every other estimate.

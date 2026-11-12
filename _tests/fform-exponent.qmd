@@ -44,6 +44,9 @@ An exponent after an f form must rise over a tall argument (the macros#147 brace
 \sbox{\withexp}{$\doddsinvf{\frac{a}{b}}^2$}
 \sbox{\withoutexp}{$\doddsinvf{\frac{a}{b}}$}
 \par\ifdim\dimexpr\ht\withexp-\ht\withoutexp\relax>1.5pt DODDSINVRISES\else DODDSINVSTUCK\fi
+\sbox{\withexp}{$\sqprederrf{\frac{a}{b}}^2$}
+\sbox{\withoutexp}{$\sqprederrf{\frac{a}{b}}$}
+\par\ifdim\dimexpr\ht\withexp-\ht\withoutexp\relax>1.5pt SQPREDERRRISES\else SQPREDERRSTUCK\fi
 \sbox{\withexp}{$\dinvoddsf{\frac{a}{b}}^2$}
 \sbox{\withoutexp}{$\dinvoddsf{\frac{a}{b}}$}
 \par\ifdim\dimexpr\ht\withexp-\ht\withoutexp\relax>1.5pt DINVODDSRISES\else DINVODDSSTUCK\fi
