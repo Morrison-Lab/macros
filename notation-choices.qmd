@@ -499,10 +499,10 @@ The older macros `\err` and `\eps` print the bare $\varepsilon$, the same symbol
 
 The macro `\sqprederr` prints $\sqprederr$, the squared prediction error, and `\sqprederrf{g}` prints $\sqprederrf{g}$.
 The squared prediction error is a concept of its own, the quantity whose expectation is the expected squared prediction error,
-so it gets one glyph rather than the expression $\prederr^2$ (Ezra, 2026-11-12: "ideally, every concept should have a glyph").
-We chose a calligraphic E for "error", because no macro here uses it.
-The mds linear-algebra pages write an eigenspace as $\mathcal{E}_\lambda$ without a macro;
-the two meanings do not meet on one page.
+so it gets a macro of its own.
+The macro prints the square of the prediction error rather than a single glyph,
+because that expression explains itself (Ezra, 2026-11-12, replacing an earlier calligraphic E).
+Every use goes through the macro, so a single glyph can replace the expression later by editing one line.
 ESL writes the squared error only as the loss $L(Y, f(X)) = (Y - f(X))^2$, with no symbol of its own [@hastie2009esl, Section 2.4].
 
 The residual is computed from a fitted model and so is observed.
