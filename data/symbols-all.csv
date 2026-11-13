@@ -280,6 +280,7 @@ macros,symbol,interpretation
 \diffeta,\diffeta,difference in eta Δη (alias for \difflogodds)
 \diffloghaz,\diffloghaz,difference in log-hazard Δη
 \difflogodds,\difflogodds,difference in log-odds Δη
+\diffvpredvar,\diffvpredvar,"change in the predictor vector, the difference of two predictor vectors (prints Δx̰)"
 \diffvx,\diffvx,difference in x-vector Δx̰
 \dInvGam,\dInvGam,Inverse-Gamma distribution operator
 \dInvGamf,\dInvGamf{a},Inverse-Gamma distribution applied to parameters

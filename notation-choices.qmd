@@ -543,6 +543,9 @@ They differ in what the second value is.
 
 - A deviation is a value minus a fixed reference, such as a mean or an estimand. We write it with $\deviation$, or with `\devof` for the explicit form.
 - A difference compares two values of equal standing, such as two input vectors or the log-odds at two inputs. We write it with $\diff$, as in `\diffvx` for the inputs and `\difflogodds` for the log-odds.
+  Pages that write predictor vectors as $\vpredvar$ (sds and lds) write a change in one as `\diffvpredvar`, printed $\diffvpredvar$.
+  It matches `\diffvx` in the notation of rme,
+  where covariate vectors are $\vx$.
 
 We keep two symbols because the two ideas answer different questions.
 A deviation answers "how far is this from where it should be?".

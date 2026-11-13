@@ -525,6 +525,7 @@
 \def\predvar{x}
 \def\Predvar{X}
 \def\vpredvar{\vecf{\predvar}}
+\def\diffvpredvar{\diff\vpredvar}
 \def\vPredvar{\vecf{\Predvar}}
 \def\mpredvar{\matr{\Predvar}}
 \def\moutvar{\matr{\Outvar}}
