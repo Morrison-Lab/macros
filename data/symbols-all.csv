@@ -908,6 +908,8 @@ macros,symbol,interpretation
 \poprisk,\poprisk,population (true) risk symbol R: the expected loss of a model
 \popriskf,\popriskf{a},"population risk of a model, R(·)"
 \posclass,\posclass,positive class or positive test result in binary classification (prints a plus sign)
+\posenc,\posenc,positional encoding symbol (prints PE)
+\posencf,\posencf{a},positional encoding of a position (prints PE(·))
 \potmean \meanfnof,\potmean{a},potential outcome mean μ_a (e.g. E[Y_a])
 \potout,\potout{a},potential outcome Y_a (outcome under intervened exposure a)
 \potprob,\potprob{a},potential outcome probability π_a (e.g. Pr(Y_a=1) for binary Y)
@@ -1045,6 +1047,8 @@ macros,symbol,interpretation
 \sMSE,\sMSE{a},sample mean squared error sMSE(·) applied to argument
 \sMSEf,\sMSEf{a},sample mean squared error sMSE(·) applied to argument (alias for \sMSE)
 \sMSEt,\sMSEt,"sample mean squared error operator sMSE, the estimator of pMSE (no hat form is needed)"
+\softmax,\softmax,"softmax function symbol, exponentials normalized to sum to 1 (prints softmax)"
+\softmaxf,\softmaxf{a},softmax applied to a vector of scores (prints softmax(·))
 \soprod,\soprod{a},self outer product x x′
 \sparen,\sparen{a},fixed-size parentheses around argument
 \sq,\sq,square superscript ² (postfix)

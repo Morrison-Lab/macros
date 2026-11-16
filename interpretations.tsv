@@ -296,6 +296,10 @@ name	interpretation
 \sigmoidf	logistic (sigmoid) function applied to its argument, expit(·)
 \relu	rectified linear unit function symbol (prints ReLU)
 \reluf	rectified linear unit applied to its argument, max(0, ·) entry by entry (prints ReLU(·))
+\softmax	softmax function symbol, exponentials normalized to sum to 1 (prints softmax)
+\softmaxf	softmax applied to a vector of scores (prints softmax(·))
+\posenc	positional encoding symbol (prints PE)
+\posencf	positional encoding of a position (prints PE(·))
 \logitf	logit applied to argument
 \E	expected value (prints \Expp, with the argument in square brackets)
 \Ef	expected value (alias for \E)
