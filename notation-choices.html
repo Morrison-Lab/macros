@@ -67,9 +67,9 @@ div.csl-indent {
 <link href="site_libs/quarto-html/quarto-syntax-highlighting-63b5708e65d6cd79cd7618c58d0c21e7.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-2657efa431525d621dea7d6318b2e656.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="site_libs/bootstrap/bootstrap-dark-73697afd21240edc0e3998da1c8d687b.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
-<link href="site_libs/bootstrap/bootstrap-2657efa431525d621dea7d6318b2e656.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-82277e1a54387e6fb0b97f3f623516b5.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-dark-32280d01ff3a7ff5cbe701a37ed6ca11.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="site_libs/bootstrap/bootstrap-82277e1a54387e6fb0b97f3f623516b5.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
 <link href="site_libs/quarto-contrib/code-language-labels-1.0.2/code-language-labels.css" rel="stylesheet">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
@@ -1106,6 +1106,7 @@ window.Quarto = {
 <ul>
 <li>The number of models in a finite family is <code>\nmodels</code>, which prints <span class="math inline">\(\nmodels\)</span>.</li>
 <li>The number of cross-validation folds is <code>\nfolds</code>, which prints <span class="math inline">\(\nfolds\)</span>, and the index of a fold is <code>\ifold</code>.</li>
+<li>The index of the candidate that a model search selects is <code>\selcand</code>, which prints <span class="math inline">\(\selcand\)</span>. It is the index of a candidate <span class="math inline">\(\icand\)</span> with a hat, because the search estimates which candidate is best from the data, as an estimator carries a hat. The macro names the role, so a page that writes the winner of a search never types <code>\hat{\icand}</code> by hand.</li>
 <li>The number of features in a feature vector is <code>\ninputvars</code>, which prints <span class="math inline">\(\ninputvars\)</span>, because we avoid <span class="math inline">\(D\)</span> for a count. See <a href="#sec-input-counts">the input counts entry</a>.</li>
 </ul>
 <p>We do not give the size of a minibatch a letter of its own. Write it as the cardinality of the set of indices, such as <code>\card{B_t}</code>, because the letter <span class="math inline">\(b\)</span> is already the bias of a neural network in <a href="#sec-ml-statistics-names">the names entry</a>.</p>
