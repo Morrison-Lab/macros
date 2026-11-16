@@ -1499,6 +1499,7 @@ name	interpretation
 \candfnset	set of candidate prediction functions of a fitting procedure, with the index of the procedure as the subscript
 \ncand	number of candidate fitting procedures, L
 \icand	index of a candidate fitting procedure, l
+\selcand	index of the candidate fitting procedure that a model search selects (prints \hat{\icand})
 \nfolds	number of cross-validation folds, k
 \ifold	index of a cross-validation fold, j
 \iobs	index of an observation, i
