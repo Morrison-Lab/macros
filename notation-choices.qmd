@@ -860,7 +860,7 @@ so that a network's equations name the function rather than repeat its formula.
 
 ## The softmax function {#sec-softmax-symbol}
 
-The softmax function maps a vector of scores $\vecf{z}$ to the vector whose entry $j$ is $e^{z_j} / \sum_k e^{z_k}$.
+The softmax function maps a vector of scores $\vecf{z}$ to the vector whose entry $j$ is $\e{z_j} / \sum_k \e{z_k}$.
 Our convention is to print it as the upright name $\softmaxf{\vecf{z}}$, with `\softmax` for the bare name and `\softmaxf` for the name applied to an argument in parentheses.
 It is upright because a named function is upright (ISO 80000-2), and the name matches PyTorch's `torch.softmax` and `nn.Softmax`.
 
