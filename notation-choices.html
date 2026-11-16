@@ -716,6 +716,8 @@ window.Quarto = {
   <li><a href="#sec-true-mean-function" id="toc-sec-true-mean-function" class="nav-link" data-scroll-target="#sec-true-mean-function">The true mean function and its conditional form</a></li>
   <li><a href="#sec-logistic-function-symbol" id="toc-sec-logistic-function-symbol" class="nav-link" data-scroll-target="#sec-logistic-function-symbol">The logistic function</a></li>
   <li><a href="#sec-relu-symbol" id="toc-sec-relu-symbol" class="nav-link" data-scroll-target="#sec-relu-symbol">The rectified linear unit</a></li>
+  <li><a href="#sec-softmax-symbol" id="toc-sec-softmax-symbol" class="nav-link" data-scroll-target="#sec-softmax-symbol">The softmax function</a></li>
+  <li><a href="#sec-posenc-symbol" id="toc-sec-posenc-symbol" class="nav-link" data-scroll-target="#sec-posenc-symbol">The positional encoding</a></li>
   <li><a href="#sec-brace-delimited-forms" id="toc-sec-brace-delimited-forms" class="nav-link" data-scroll-target="#sec-brace-delimited-forms">An exponent on a function with built-in delimiters</a></li>
   <li><a href="#sec-counting-notation" id="toc-sec-counting-notation" class="nav-link" data-scroll-target="#sec-counting-notation">Counting: cardinality, factorials and binomial coefficients</a></li>
   <li><a href="#sec-power-set-notation" id="toc-sec-power-set-notation" class="nav-link" data-scroll-target="#sec-power-set-notation">The power set</a></li>
@@ -1045,6 +1047,16 @@ window.Quarto = {
 <h2 class="anchored" data-anchor-id="sec-relu-symbol">The rectified linear unit</h2>
 <p>The rectified linear unit maps a real number <span class="math inline">\(a\)</span> to <span class="math inline">\(\max(0, a)\)</span>, and a vector entry by entry. Our convention is to print it as the upright name <span class="math inline">\(\reluf{a}\)</span>, with <code>\relu</code> for the bare name and <code>\reluf</code> for the name applied to an argument in parentheses. It is upright for the reason the logistic function is: a named function is upright (ISO 80000-2). The name matches the software readers use: PyTorch calls the module <code>nn.ReLU</code> and the function <code>torch.relu</code>.</p>
 <p>Other sources write the function out as <span class="math inline">\(\max(0, a)\)</span>, or as <span class="math inline">\(\max\{0, a\}\)</span> with braces, or name it <span class="math inline">\(g\)</span> when it is the activation of a layer. We keep <span class="math inline">\(\max(0, a)\)</span> for the place where the function is defined, and <span class="math inline">\(\reluf{\cdot}\)</span> everywhere it is used, so that a network’s equations name the function rather than repeat its formula.</p>
+</section>
+<section id="sec-softmax-symbol" class="level2">
+<h2 class="anchored" data-anchor-id="sec-softmax-symbol">The softmax function</h2>
+<p>The softmax function maps a vector of scores <span class="math inline">\(\vecf{z}\)</span> to the vector whose entry <span class="math inline">\(j\)</span> is <span class="math inline">\(\e{z_j} / \sum_k \e{z_k}\)</span>. Our convention is to print it as the upright name <span class="math inline">\(\softmaxf{\vecf{z}}\)</span>, with <code>\softmax</code> for the bare name and <code>\softmaxf</code> for the name applied to an argument in parentheses. It is upright because a named function is upright (ISO 80000-2), and the name matches PyTorch’s <code>torch.softmax</code> and <code>nn.Softmax</code>.</p>
+<p>Some texts write <span class="math inline">\(\sigma(\vecf{z})\)</span>, which collides with the standard deviation and with the logistic function’s <span class="math inline">\(\sigma\)</span> (see <a href="#sec-logistic-function-symbol">The logistic function</a>). Others write “softargmax”, the more accurate name, since the function is a smooth version of the indicator of the largest entry rather than of the maximum. We keep “softmax”, the name readers meet in software and most deep learning texts.</p>
+</section>
+<section id="sec-posenc-symbol" class="level2">
+<h2 class="anchored" data-anchor-id="sec-posenc-symbol">The positional encoding</h2>
+<p>A positional encoding maps a token’s position <span class="math inline">\(p\)</span> in a sequence to a vector of the model’s width, which a Transformer adds to the token’s embedding. Our convention is to print it as <span class="math inline">\(\posencf{p}\)</span>, with <code>\posenc</code> for the bare name and <code>\posencf</code> for the name applied to a position, following the “PE” of the paper that introduced the sinusoidal encoding. Entry <span class="math inline">\(j\)</span> of the vector is <span class="math inline">\(\posencf{p}_j\)</span>.</p>
+<p>Other sources write <span class="math inline">\(\vecf{p}_p\)</span>, <span class="math inline">\(\vecf{e}_p\)</span> or <span class="math inline">\(\vecf{P}_p\)</span>, or fold the encoding into a learned embedding of positions. The macro names the role, so it serves a learned encoding as well as the sinusoidal one.</p>
 </section>
 <section id="sec-brace-delimited-forms" class="level2">
 <h2 class="anchored" data-anchor-id="sec-brace-delimited-forms">An exponent on a function with built-in delimiters</h2>
