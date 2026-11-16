@@ -1015,6 +1015,7 @@ macros,symbol,interpretation
 \seed,\seed,random seed that starts a pseudorandom number generator (prints \mathfrak{s})
 \SEf,\SEf{a},standard error function (alias for \SE)
 \sef,\sef{a},standard error function (alias for \se)
+\selcand,\selcand,index of the candidate fitting procedure that a model search selects (prints \hat{\icand})
 \seq,\seq{a}{b},"sequence (colon range) from first to second argument, e.g. 1:n"
 \set,\set{a},set notation {·}
 \setbuild,\setbuild{a}{b},"set-builder notation: the set of elements satisfying a condition, {condition : property}"

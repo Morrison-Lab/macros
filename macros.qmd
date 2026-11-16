@@ -1522,6 +1522,7 @@
 \providecommand{\candfnset}[1]{\mathcal{G}_{#1}}
 \def\ncand{L}
 \def\icand{l}
+\def\selcand{\hat{\icand}}
 \def\nfolds{k}
 \def\ifold{j}
 \def\iobs{i}

@@ -975,6 +975,9 @@ Some existing macros already cover other symbols that lecture exercises write as
 
 -   The number of models in a finite family is `\nmodels`, which prints $\nmodels$.
 -   The number of cross-validation folds is `\nfolds`, which prints $\nfolds$, and the index of a fold is `\ifold`.
+-   The index of the candidate that a model search selects is `\selcand`, which prints $\selcand$.
+    It is the index of a candidate $\icand$ with a hat, because the search estimates which candidate is best from the data, as an estimator carries a hat.
+    The macro names the role, so a page that writes the winner of a search never types `\hat{\icand}` by hand.
 -   The number of features in a feature vector is `\ninputvars`, which prints $\ninputvars$, because we avoid $D$ for a count.
     See [the input counts entry](#sec-input-counts).
 
