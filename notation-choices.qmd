@@ -846,6 +846,18 @@ In a neural network, where the activation function is a role rather than one fun
 
 We keep the `\sigmoid` and `\sigmoidf` aliases permanently rather than renaming every use, because a rename changes no output and the name `sigmoid` remains a natural way to say "the logistic function" in neural-network text.
 
+## The rectified linear unit {#sec-relu-symbol}
+
+The rectified linear unit maps a real number $a$ to $\max(0, a)$, and a vector entry by entry.
+Our convention is to print it as the upright name $\reluf{a}$, with `\relu` for the bare name and `\reluf` for the name applied to an argument in parentheses.
+It is upright for the reason the logistic function is: a named function is upright (ISO 80000-2).
+The name matches the software readers use: PyTorch calls the module `nn.ReLU` and the function `torch.relu`.
+
+Other sources write the function out as $\max(0, a)$, or as $\max\{0, a\}$ with braces,
+or name it $g$ when it is the activation of a layer.
+We keep $\max(0, a)$ for the place where the function is defined, and $\reluf{\cdot}$ everywhere it is used,
+so that a network's equations name the function rather than repeat its formula.
+
 ## An exponent on a function with built-in delimiters {#sec-brace-delimited-forms}
 
 Some macros print a function name with its argument inside delimiters, such as `\Pf{x}` (parentheses), `\E{x}` (square brackets) and `\sigmoidf{x}`.

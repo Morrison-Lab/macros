@@ -363,6 +363,8 @@
 \def\logit{\operatorname{logit}}
 \def\sigmoid{\expit}
 \providecommand{\sigmoidf}[1]{{\expit\paren{#1}}}
+\def\relu{\operatorname{ReLU}}
+\providecommand{\reluf}[1]{{\relu\paren{#1}}}
 \providecommand{\logitf}[1]{{\logit\cb{#1}}}
 \providecommand{\E}[1]{{\mathbb{E}\sb{#1}}}
 \def\Ef{\E}
