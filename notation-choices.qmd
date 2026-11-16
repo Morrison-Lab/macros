@@ -958,7 +958,10 @@ Many sources write the number of input variables as $p$ (ISL and ESL) or $d$, an
 We avoid $D$ because it is the design matrix.
 
 A subset model, such as the model that best subset, forward or backward selection chooses, uses some of the $\ninputvars$ input variables.
-We write the number it uses as $\subsetsize$, from `\subsetsize`, so $0 \le \subsetsize \le \ninputvars$, where $\subsetsize = 0$ is the null model, which predicts the sample mean.
+We write the number it uses as $\subsetsize$, from `\subsetsize`,
+so $0 \le \subsetsize \le \ninputvars$.
+The model with $\subsetsize = 0$ is the null model,
+which predicts the sample mean.
 ISL writes this count as $k$ in Algorithm 6.1 (Section 6.1.1) and as $d$ in its formulas for $C_p$, the BIC and the adjusted $R^2$ (Section 6.1.3).
 ESL writes it as $k$, for each $k \in \{0, 1, \dots, p\}$ (Section 3.3.1).
 We use $d$, because $k$ is the number of cross-validation folds $\nfolds$, and cross-validation is one way to choose $\subsetsize$.
