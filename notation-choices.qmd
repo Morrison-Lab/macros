@@ -957,6 +957,12 @@ The older macro `\inputdim` is kept as an alias for `\ninputvars`.
 Many sources write the number of input variables as $p$ (ISL and ESL) or $d$, and some write $D$.
 We avoid $D$ because it is the design matrix.
 
+A subset model, such as the model that best subset, forward or backward selection chooses, uses some of the $\ninputvars$ input variables.
+We write the number it uses as $\subsetsize$, from `\subsetsize`, so $1 \le \subsetsize \le \ninputvars$.
+ISL writes this count as $k$ in its subset selection algorithms and as $d$ in its formulas for $C_p$, the BIC and the adjusted $R^2$ (Sections 6.1.1 and 6.1.3), and ESL writes it as $k$.
+We use $d$, because $k$ is the number of cross-validation folds $\nfolds$, and cross-validation is one way to choose $\subsetsize$.
+The degree of a polynomial model, $\polydeg$, also prints $d$, but the two counts do not appear in the same expression, so we accept the overlap.
+
 The number of outcome variables in multivariate regression, the length of the response vector, is $\noutvars$, from `\noutvars`.
 We use $q$ to pair it with $\ninputvars$, and avoid $C$ and $K$ because those letters count classes and covariate patterns.
 
