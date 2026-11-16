@@ -964,6 +964,8 @@ macros,symbol,interpretation
 \regbetasum,\regbetasum,expanded regression sum β₁x₁+⋯+βₚxₚ
 \Regcoef,\Regcoef,"uppercase regression coefficient symbol B (italic, because a coefficient is a variable)"
 \reglincomb,\reglincomb,regression linear combination x̰·β̰
+\relu,\relu,rectified linear unit function symbol (prints ReLU)
+\reluf,\reluf{a},"rectified linear unit applied to its argument, max(0, ·) entry by entry (prints ReLU(·))"
 \renyientropyf,\renyientropyf{a}{b},"Rényi entropy of the given order of a random variable, H_α(X)"
 \Resid \resid \Residual \residual,\Resid,residual (alias for \Residual)
 \residv,\residv,residual vector ε̰̂
