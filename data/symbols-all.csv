@@ -903,7 +903,7 @@ macros,symbol,interpretation
 \pmu,\pmu{a},potential outcome mean μ_a (shorthand for \potmean)
 \Pois,\Pois,Poisson distribution label
 \Poisson,\Poisson,Poisson distribution label (long form)
-\polydeg,\polydeg,"degree of a polynomial model, d"
+\polydeg \subsetsize,\polydeg,"degree of a polynomial model, d"
 \popdevf,\popdevf{a},"deviation of the argument from its population mean, 𝕕_z"
 \poprisk,\poprisk,population (true) risk symbol R: the expected loss of a model
 \popriskf,\popriskf{a},"population risk of a model, R(·)"
