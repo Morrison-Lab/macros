@@ -1113,6 +1113,21 @@ ISLR2, ESL and Murphy write $\tp{\mX}\mX$ and $\tp{\mX}\vy$ with no name or symb
 and ESL and Murphy use "Gram matrix" mostly for the kernel matrix.
 R computes the cross-product matrix with `crossprod(X, Y)`, which equals `t(X) %*% Y`.
 
+The outer product of two vectors $\vu$ and $\vv$ is the column-row product $\oprod{\vu}{\vv}$:
+its entry $(i, j)$ is $u_i v_j$.
+Our convention is to write it with `\oprod{\vu}{\vv}`.
+The outer product of a vector $\vx$ with itself, $\soprod{\vx}$, is written `\soprod{\vx}` and read "self outer product"
+(Ezra, 2026-11-18, confirming that name in the course project).
+It is not called a Gram matrix,
+because that name is taken by $\stprod{\mX}$ above.
+
+Other sources differ.
+Some write the outer product as $\vu \otimes \vv$,
+as the Wikipedia article ["Scatter matrix"](https://en.wikipedia.org/wiki/Scatter_matrix) does
+(checked 2026-11-19: it writes each term of the scatter matrix as $\paren{\vx_j - \smean{\vx}} \otimes \paren{\vx_j - \smean{\vx}}$).
+We reserve $\otimes$ for the Kronecker product,
+where $\vu \otimes \tp{\vv} = \oprod{\vu}{\vv}$ is a result rather than a second notation for the outer product.
+
 ## Bilinear and quadratic forms {#sec-bilinear-quadratic-forms}
 
 The bilinear form of a matrix $\matr{A}$ in vectors $\vx$ and $\vy$ is $\bform{\matr{A}}{\vx}{\vy}$, written `\bform{\matr{A}}{\vx}{\vy}`.
