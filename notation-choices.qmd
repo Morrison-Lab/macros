@@ -1136,8 +1136,14 @@ That order matches `\qform{\matr{A}}{\vx}`, which prints the quadratic form $\qf
 When $\matr{A}$ is symmetric and positive definite, mds writes the same expression as the matrix-induced inner product $\iprod{\vx}{\vy}_{\matr{A}}$;
 use `\bform` when $\matr{A}$ need not be positive definite.
 
+The bilinear form as a function is $\bformfn{\matr{A}}$, written `\bformfn{\matr{A}}`,
+and its value at $\vx$ and $\vy$ is $\bformf{\matr{A}}{\vx}{\vy}$, written `\bformf{\matr{A}}{\vx}{\vy}`.
+Use `\bformf` on the left side of a definition or a theorem about the function,
+so that the display $\bformf{\matr{A}}{\vx}{\vy} \eqdef \bform{\matr{A}}{\vx}{\vy}$ does not print the same expression on both sides.
+The subscript names the matrix, because a page often works with the forms of several matrices at once.
+
 Other sources differ.
-Wikipedia's [Bilinear form](https://en.wikipedia.org/wiki/Bilinear_form) article writes a bilinear form as a function $B(\vx, \vy)$,
+Wikipedia's [Bilinear form](https://en.wikipedia.org/wiki/Bilinear_form) article writes a bilinear form as a function $B(\vx, \vy)$ with no subscript,
 and writes $\tp{\vx} A \vy$ only for its matrix representation.
 
 ## A brace that closes a display {#sec-closing-brace}

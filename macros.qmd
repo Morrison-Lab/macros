@@ -583,6 +583,8 @@
 \providecommand{\stprod}[1]{\ccprod{#1}{#1}}
 \def\gram{\stprod}
 \providecommand{\bform}[3]{\tp{#2} #1 #3}
+\providecommand{\bformfn}[1]{{B_{#1}}}
+\providecommand{\bformf}[3]{{\bformfn{#1}\paren{#2, #3}}}
 \providecommand{\qform}[2]{\tp{#2} #1 #2}
 \providecommand{\siprod}[1]{\iprod{#1}{#1}}
 \providecommand{\soprod}[1]{#1 \tp{#1}}
