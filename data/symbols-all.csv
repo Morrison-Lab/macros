@@ -88,6 +88,7 @@ macros,symbol,interpretation
 \bfo,\bfo,bold Roman lowercase letter o
 \bfOmega,\bfOmega,bold Greek capital letter Omega
 \bfomega,\bfomega,bold Greek lowercase letter omega
+\bform,\bform{a}{b}{c},"bilinear form of a matrix M in vectors x and y: x′My, written \bform{M}{x}{y}"
 \bfP,\bfP,bold Roman capital letter P
 \bfp,\bfp,bold Roman lowercase letter p
 \bfPhi,\bfPhi,bold Greek capital letter Phi
