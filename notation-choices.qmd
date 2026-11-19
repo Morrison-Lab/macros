@@ -1113,6 +1113,18 @@ ISLR2, ESL and Murphy write $\tp{\mX}\mX$ and $\tp{\mX}\vy$ with no name or symb
 and ESL and Murphy use "Gram matrix" mostly for the kernel matrix.
 R computes the cross-product matrix with `crossprod(X, Y)`, which equals `t(X) %*% Y`.
 
+## Bilinear and quadratic forms {#sec-bilinear-quadratic-forms}
+
+The bilinear form of a matrix $\matr{A}$ in vectors $\vx$ and $\vy$ is $\bform{\matr{A}}{\vx}{\vy}$, written `\bform{\matr{A}}{\vx}{\vy}`.
+The matrix comes first, then the left vector, then the right vector.
+That order matches `\qform{\matr{A}}{\vx}`, which prints the quadratic form $\qform{\matr{A}}{\vx}$, the bilinear form with $\vy = \vx$.
+When $\matr{A}$ is symmetric and positive definite, mds writes the same expression as the matrix-induced inner product $\iprod{\vx}{\vy}_{\matr{A}}$;
+use `\bform` when $\matr{A}$ need not be positive definite.
+
+Other sources differ.
+Wikipedia's [Bilinear form](https://en.wikipedia.org/wiki/Bilinear_form) article writes a bilinear form as a function $B(\vx, \vy)$,
+and writes $\tp{\vx} A \vy$ only for its matrix representation.
+
 ## A brace that closes a display {#sec-closing-brace}
 
 A one-sided brace that groups several lines of a display and labels the group uses `\cbr{...}`, which prints the argument followed by a closing curly brace that spans the argument's height, with no opening delimiter.
