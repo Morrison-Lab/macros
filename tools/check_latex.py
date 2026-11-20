@@ -52,8 +52,8 @@ EXPECTED = {
     # An exponent after \modef rises over a tall argument.
     "mode-exponent": ["MODEFEXPRISES", "CTRLSTUCK"],
     # An exponent after \ball rises over a tall argument, and the radius
-    # subscript sits below the baseline.
-    "ball-exponent": ["BALLEXPRISES", "BALLRADIUSLOW", "CTRLSTUCK"],
+    # subscript adds width; a body without the radius is the control.
+    "ball-exponent": ["BALLEXPRISES", "BALLRADIUSPRINTED", "CTRLSTUCK", "RADIUSCTRLMISSING"],
     # Compiles with bbm loaded: the distribution-function macros print lowercase
     # blackboard letters through \mathbbm. A LaTeX error fails the render.
     "kl-surprisal-check": ["KLSURPRISALOK"],

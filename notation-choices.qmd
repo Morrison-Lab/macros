@@ -710,8 +710,12 @@ The macros wrap the delimited group in braces to avoid that.
 We write the open ball of radius $r$ around a point $\vx$,
 the set of points whose distance from $\vx$ is less than $r$,
 as $\ball{\vx}{r}$.
-The macro takes the center first and the radius second, as in `\ball{\vx}{r}`,
-and `\ballsym` prints the symbol alone.
+The macro takes the center first and the radius second,
+as in `\ball{\vx}{r}`.
+`\ballsym` prints the symbol alone.
+The same letter $B$ is the uppercase regression coefficient `\Regcoef`,
+but a ball always carries a radius subscript and a parenthesized center,
+while a coefficient carries a covariate subscript and no parentheses.
 A neighborhood condition such as "for all $\vx$ with $\norm{\vx - \vx^*} < \tolin$"
 then reads "for all $\vx \in \ball{\vx^*}{\tolin}$",
 which names the set instead of restating its defining inequality.
