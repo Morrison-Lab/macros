@@ -719,7 +719,7 @@ while a coefficient carries a covariate subscript and no parentheses.
 A neighborhood condition such as "for all $\vx$ with $\norm{\vx - \vx^*} < \tolin$"
 then reads "for all $\vx \in \ball{\vx^*}{\tolin}$",
 which names the set instead of restating its defining inequality.
-Other sources write $B(\vx, r)$ or $B_r(\vx)$,
+Other sources write $B(\vx, r)$,
 and some write $N_r(\vx)$ for a neighborhood.
 
 ## Probability notation {#sec-probability-notation}
