@@ -235,6 +235,9 @@
 \def\hidval{h}
 \providecommand{\hidvalof}[1]{\hidval_{#1}}
 \def\vhidval{\vecf{\hidval}}
+\def\droprate{\phi}
+\def\keepind{\delta}
+\providecommand{\keepindof}[1]{\keepind_{#1}}
 \def\imgheight{h}
 \def\imgwidth{w}
 \def\poolsize{q}
