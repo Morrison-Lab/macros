@@ -705,6 +705,23 @@ The subscript is an upright $\mathrm{F}$, because it is a name and not an index.
 Writing `\norm{W}_F^2` by hand puts the subscript and the exponent on the closing delimiter, where they do not rise over a tall argument.
 The macros wrap the delimited group in braces to avoid that.
 
+## The open ball {#sec-open-ball-notation}
+
+We write the open ball of radius $r$ around a point $\vx$,
+the set of points whose distance from $\vx$ is less than $r$,
+as $\ball{\vx}{r}$.
+The macro takes the center first and the radius second,
+as in `\ball{\vx}{r}`.
+`\ballsym` prints the symbol alone.
+The same letter $B$ is the uppercase regression coefficient `\Regcoef`,
+but a ball always carries a radius subscript and a parenthesized center,
+while a coefficient carries a covariate subscript and no parentheses.
+A neighborhood condition such as "for all $\vx$ with $\norm{\vx - \vx^*} < \tolin$"
+then reads "for all $\vx \in \ball{\vx^*}{\tolin}$",
+which names the set instead of restating its defining inequality.
+Other sources write $B(\vx, r)$,
+and some write $N_r(\vx)$ for a neighborhood.
+
 ## Probability notation {#sec-probability-notation}
 
 A random variable is a function of the outcome of a random experiment, as in [the stochastic process example](#exm-stochastic-process-slots).

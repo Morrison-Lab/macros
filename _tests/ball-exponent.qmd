@@ -1,0 +1,41 @@
+---
+title: "Exponent after an open ball"
+format:
+  pdf:
+    include-in-header:
+      - ../macros-pdf-header.tex
+      - ../macros.qmd
+---
+
+An exponent after an open ball must rise over a tall argument,
+and the radius must print as a subscript of the ball symbol.
+
+```{=latex}
+\newsavebox{\withexp}\newsavebox{\withoutexp}
+\sbox{\withexp}{$\ball{\frac{a}{b}}{r}^2$}
+\sbox{\withoutexp}{$\ball{\frac{a}{b}}{r}$}
+\par\ifdim\dimexpr\ht\withexp-\ht\withoutexp\relax>1.5pt BALLEXPRISES\else BALLEXPSTUCK\fi
+\sbox{\withexp}{$\ball{\vx}{\tolin}$}
+\sbox{\withoutexp}{$B\paren{\vx}$}
+\par\ifdim\dimexpr\wd\withexp-\wd\withoutexp\relax>1pt BALLRADIUSPRINTED\else BALLRADIUSMISSING\fi
+```
+
+The radius check compares widths, because the parenthesis already reaches
+as far below the baseline as the subscript does.
+A body without the radius is its control, and must come out missing.
+
+```{=latex}
+\newcommand{\noradiuscontrol}[2]{{B\paren{#1}}}
+\sbox{\withexp}{$\noradiuscontrol{\vx}{\tolin}$}
+\sbox{\withoutexp}{$B\paren{\vx}$}
+\par\ifdim\dimexpr\wd\withexp-\wd\withoutexp\relax>1pt RADIUSCTRLPRINTED\else RADIUSCTRLMISSING\fi
+```
+
+The rejected form is the control: an unbraced body must not rise, so the test can fail.
+
+```{=latex}
+\newcommand{\unbracedcontrol}[2]{B_{#2}\paren{#1}}
+\sbox{\withexp}{$\unbracedcontrol{\frac{a}{b}}{r}^2$}
+\sbox{\withoutexp}{$\unbracedcontrol{\frac{a}{b}}{r}$}
+\par\ifdim\dimexpr\ht\withexp-\ht\withoutexp\relax>1.5pt CTRLRISES\else CTRLSTUCK\fi
+```
