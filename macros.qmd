@@ -490,6 +490,8 @@
 \providecommand{\normsq}[1]{{\norm{#1}}\sq}
 \providecommand{\normF}[1]{{{\norm{#1}}_{\mathrm{F}}}}
 \providecommand{\normFsq}[1]{{{\norm{#1}}_{\mathrm{F}}\sq}}
+\def\ballsym{B}
+\providecommand{\ball}[2]{{\ballsym_{#2}\paren{#1}}}
 \providecommand{\card}[1]{{\abs{#1}}}
 \def\powersetsym{\mathcal{P}}
 \providecommand{\powerset}[1]{{\powersetsym\paren{#1}}}

@@ -417,6 +417,8 @@ name	interpretation
 \abs	absolute value |·|
 \norm	Euclidean norm ‖·‖
 \normsq	squared norm ‖·‖²
+\ballsym	open ball symbol B
+\ball	open ball, the points whose distance from a center is less than a radius (arguments: center, radius; prints B_r(x))
 \normF	Frobenius norm ‖·‖_F
 \normFsq	squared Frobenius norm ‖·‖_F²
 \card	cardinality (number of elements) of a finite set |·|

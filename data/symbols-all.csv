@@ -30,6 +30,7 @@ macros,symbol,interpretation
 \avgtof,\avgtof{a}{b}{c},average over the first argument from 1 to the second of the third argument (·)
 \b \gb \shapeb \combwtb \highend \regcoef \quantlevel \typetwoerr \recallweight,\b,Greek letter beta (β)
 \ba,\ba a\ea,begin aligned math environment
+\ball,\ball{a}{b},"open ball, the points whose distance from a center is less than a radius (arguments: center, radius; prints B_r(x))"
 \basemeasuref,\basemeasuref{a},base measure of an exponential family at its argument (same as \rfacf; prints h(#1))
 \bbC,\bbC,blackboard bold C (complex numbers)
 \bbQ,\bbQ,blackboard bold Q (rational numbers)
@@ -967,7 +968,7 @@ macros,symbol,interpretation
 \RD,\RD,risk difference label RD
 \red,\red{a},typeset argument in red
 \regbetasum,\regbetasum,expanded regression sum β₁x₁+⋯+βₚxₚ
-\Regcoef,\Regcoef,"uppercase regression coefficient symbol B (italic, because a coefficient is a variable)"
+\Regcoef \ballsym,\Regcoef,"uppercase regression coefficient symbol B (italic, because a coefficient is a variable)"
 \reglincomb,\reglincomb,regression linear combination x̰·β̰
 \relu,\relu,rectified linear unit function symbol (prints ReLU)
 \reluf,\reluf{a},"rectified linear unit applied to its argument, max(0, ·) entry by entry (prints ReLU(·))"
