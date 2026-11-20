@@ -1471,6 +1471,9 @@ name	interpretation
 \surprisal	surprisal symbol s
 \surprisalf	surprisal of an outcome, s(x)
 \surprisalunderf	surprisal of an outcome measured by a named distribution, s_q(x)
+\Surprisal	surprisal symbol S for a value of a discrete random variable (prints \distop{S})
+\Surprisalf	surprisal of a value of a discrete random variable, S(x) = -log P(X = x)
+\Surprisalunderf	surprisal of a value measured by a named probability mass function, S_q(x) = -log q(x)
 \rarity	rarity symbol r
 \rarityf	rarity of an outcome, the reciprocal of its probability, r(x) = 1/P(X=x)
 \rarityunderf	rarity of an outcome under a named distribution, r_q(x) = 1/q(x)

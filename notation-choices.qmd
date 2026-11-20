@@ -204,6 +204,7 @@ Four collisions are resolved by context:
 -   The distribution function $\F$ prints the same letter as the finite field `\ffield{q}`, which always carries a subscript.
 -   The cumulative hazard $\H$ and the entropy $\entropy$ print the same letter, so the surrounding text says which one a formula means.
 -   The mutual information $\mutinfo$ prints the same letter as the identity matrix `\idmat`, and it always takes arguments.
+-   The surprisal $\Surprisal$ of a value of a discrete random variable prints the same letter as the survival function $\S$, so the surrounding text says which one a formula means.
 
 A PDF needs the `bbm` package for the lowercase letters, so list `macros-pdf-header.tex` before `macros.qmd` in `include-in-header`, as for `\devval`.
 
@@ -212,6 +213,10 @@ A PDF needs the `bbm` package for the lowercase letters, so list `macros-pdf-hea
 The [surprisal](https://morrison-lab.github.io/ids/entropy.html#def-surprisal) of an outcome $x$ is written $\surprisalf{x}$.
 That form leaves the distribution implicit.
 To name the distribution that measures the surprisal, write it as a subscript with $\surprisalunderf{q}{x}$, which is $-\log q(x)$.
+The surprisal of a value of a discrete random variable may instead be written with a capital letter, as $\Surprisalf{x} = -\log \P(X = x)$, or $\Surprisalunderf{q}{x}$ for a named probability mass function $q$, keeping the lowercase $\surprisal$ for the surprisal measured by a density.
+The case then follows the probability $\P$ and the density $\p$, which the two forms take the logarithm of (Ezra, 2026-11-20).
+The capital form says that the surprisal is a logarithm of a probability, so it is never negative, while the surprisal measured by a density can be.
+Sources use one letter for both: MacKay writes $h(x)$ for the Shannon information content of an outcome, and Cover and Thomas mark the continuous case on the entropy instead, writing $h(X)$ for the differential entropy and $H(X)$ for the entropy of a discrete random variable.
 The reciprocal of the probability, of which the surprisal is the logarithm, is the rarity, written $\rarityf{x}$, or $\rarityunderf{q}{x}$ for a named distribution.
 Leinster calls $1/p_i$ "a measure of [the] rarity or specialness" of the $i$th species [*Entropy and Diversity*, 2021, Section 2.4](https://arxiv.org/abs/2012.02113), and takes the diversity of a community to be the average rarity of an individual in it.
 MacKay's *Information Theory, Inference, and Learning Algorithms* (2003, section 2.4) defines only the logarithm, the Shannon information content.

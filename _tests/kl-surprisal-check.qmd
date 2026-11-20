@@ -12,6 +12,8 @@ Surprisal: $\surprisalf{x}$, $\surprisalf{\frac{a}{b}}^2$, $\surprisal_i$.
 
 Surprisal under a named distribution: $\surprisalunderf{q}{x}$, $\surprisalunderf{q}{\frac{a}{b}}^2$.
 
+Surprisal of a discrete value: $\Surprisalf{x}$, $\Surprisalf{\frac{a}{b}}^2$, $\Surprisal_i$, $\Surprisalunderf{q}{x}$, $\Surprisalunderf{q}{\frac{a}{b}}^2$.
+
 Divergence: $\kldivf{p}{q}$, $\kldivf{\frac{a}{b}}{q}^2$, $\kldiv_{\param_0}$.
 
 Cross-entropy: $\crossentropyf{p}{q}$, $\crossentropyf{\frac{a}{b}}{q}^2$, $\crossentropy_{\param_0}$.
