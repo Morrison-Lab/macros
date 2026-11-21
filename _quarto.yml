@@ -1,5 +1,10 @@
 project:
   type: website
+  # Writes _site/anchor-index.json, which page holds each id, so that
+  # anchor-landing.html sends a link to an id that moved to another page on to
+  # the page that holds it now. Both files are copies of Morrison-Lab/qwt's.
+  post-render:
+    - anchor-index.py
   resources:
     - macros.qmd
 
