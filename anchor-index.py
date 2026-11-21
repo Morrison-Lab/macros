@@ -29,45 +29,62 @@ Do not edit a site's copy.
     anchor-index.py [--site DIR] [--out FILE]
 """
 import argparse
-import html
 import json
 import os
 import re
 import sys
+from html.parser import HTMLParser
 from pathlib import Path
 
-# An id attribute, double- or single-quoted.  A regex is enough: Quarto writes its
-# own HTML, and comments and scripts are cut out before it runs.
-ID_ATTR = re.compile(r"""\sid\s*=\s*(?:"([^"]+)"|'([^']+)')""")
-NOT_MARKUP = re.compile(r"<!--.*?-->|<script\b.*?</script\s*>", re.S | re.I)
 POSITIONAL = re.compile(
     r"^(?:cb\d+(?:-\d+)?|fn(?:ref)?\d+(?:-\d+)?|callout-\d+|tabset-\d+(?:-\d+)*"
     r"|(?:toc-)?section-\d+(?:[.-]\d+)*|htmlwidget-.*|ojs-.*"
     r"|.*[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}.*)$",
     re.I,
 )
-REVEAL = re.compile(r"""<div\s+class="reveal[\s"]""")
 OUT_NAME = "anchor-index.json"
 
 
+class Ids(HTMLParser):
+    """The ids on one page, read with an HTML parser.
+
+    The parser unescapes attribute values and does not read tags inside a
+    <script> or <style>, or inside a comment, so those yield no ids.
+    """
+
+    def __init__(self):
+        super().__init__(convert_charrefs=True)
+        self.ids = set()
+        self.deck = False
+
+    def handle_starttag(self, tag, attrs):
+        for name, value in attrs:
+            if name == "id" and value:
+                self.ids.add(value)
+            elif name == "class" and tag == "div" and value and "reveal" in value.split():
+                self.deck = True
+
+    handle_startendtag = handle_starttag
+
+
 def site_pages(site):
-    """The website pages in `site`, as (path relative to the site root, text)."""
+    """The website pages in `site`, as (path relative to the site root, its ids)."""
     for path in sorted(site.rglob("*.html")):
         rel = path.relative_to(site).as_posix()
         # site_libs holds Quarto's assets; a notebook preview repeats its page's ids.
         if rel.startswith("site_libs/") or "/site_libs/" in rel or rel.endswith(".ipynb.html"):
             continue
-        text = path.read_text(encoding="utf-8", errors="replace")
-        if REVEAL.search(text):
-            continue
-        yield rel, text
+        parser = Ids()
+        parser.feed(path.read_text(encoding="utf-8", errors="replace"))
+        parser.close()
+        if not parser.deck:
+            yield rel, parser.ids
 
 
 def build(site):
     holders = {}
-    for rel, text in site_pages(site):
-        for m in ID_ATTR.finditer(NOT_MARKUP.sub("", text)):
-            name = html.unescape(m.group(1) or m.group(2))
+    for rel, ids in site_pages(site):
+        for name in ids:
             if not POSITIONAL.match(name):
                 holders.setdefault(name, set()).add(rel)
     ids = {i: next(iter(p)) for i, p in sorted(holders.items()) if len(p) == 1}
