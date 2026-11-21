@@ -995,7 +995,7 @@ macros,symbol,interpretation
 \rvar \predvar,\rvar,a generic value of a random variable in probability expressions (prints x)
 \rvarbar,\rvarbar,sample mean of a generic variable (prints \bar{\rvar})
 \s \gs \sdpar \singval \bandwidth,\s,Greek letter sigma (σ)
-\S \Surv \surv,\S,survival function symbol S
+\S \Surv \surv \Surprisal,\S,survival function symbol S
 \salg \scrS \salgS \sigmaalg \sigmaalgebra,\salg,sigma-algebra on S symbol 𝒮
 \samplemean,\samplemean{a}{b},"sample mean of n random variables, X̄_n (arguments: the variable and the sample size)"
 \satdeviance,\satdeviance,deviance relative to the saturated model: twice the difference between the saturated model's and the fitted model's maximized log-likelihoods
@@ -1097,7 +1097,9 @@ macros,symbol,interpretation
 \sumto,\sumto{a}{b},sum over the first argument from 1 to the second
 \sumtof,\sumtof{a}{b}{c},sum over the first argument from 1 to the second of the third argument (·)
 \surprisal,\surprisal,surprisal symbol s
+\Surprisalf,\Surprisalf{a},"surprisal of a value of a discrete random variable, S(x) = -log P(X = x)"
 \surprisalf,\surprisalf{a},"surprisal of an outcome, s(x)"
+\Surprisalunderf,\Surprisalunderf{a}{b},"surprisal of a value measured by a named probability mass function, S_q(x) = -log q(x)"
 \surprisalunderf,\surprisalunderf{a}{b},"surprisal of an outcome measured by a named distribution, s_q(x)"
 \survf,\survf{a},survival function applied to argument (alias for \Sf)
 \survfactorf,\survfactorf{a},survival factor function θ_S(·)
