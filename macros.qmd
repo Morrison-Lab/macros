@@ -1492,6 +1492,9 @@
 \def\surprisal{\distop{s}}
 \providecommand{\surprisalf}[1]{{\surprisal\paren{#1}}}
 \providecommand{\surprisalunderf}[2]{{\surprisal_{#1}\paren{#2}}}
+\def\Surprisal{\distop{S}}
+\providecommand{\Surprisalf}[1]{{\Surprisal\paren{#1}}}
+\providecommand{\Surprisalunderf}[2]{{\Surprisal_{#1}\paren{#2}}}
 \def\rarity{\distop{r}}
 \providecommand{\rarityf}[1]{{\rarity\paren{#1}}}
 \providecommand{\rarityunderf}[2]{{\rarity_{#1}\paren{#2}}}
