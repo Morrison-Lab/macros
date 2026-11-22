@@ -162,6 +162,33 @@ Each weight matrix is one computation from one row of units to the next, so coun
 This is a choice, not a requirement, and both names are in use.
 Check which one a source means before comparing the depths of two networks.
 
+## The weights and intercept terms of a neural network {#sec-network-weights}
+
+A unit of a neural network adds up its inputs times their weights, adds one more number that multiplies no input, and applies an activation function.
+That one more number is the unit's intercept term.
+We write every parameter of a model with a Greek letter, so the weights and intercept terms get one too.
+
+-   A single weight is $\nnwt$, from `\nnwt`.
+-   A unit's weight vector is $\vnnwt$, from `\vnnwt`, so the unit computes a function of $\nnint + \dprod{\vnnwt}{\vpredvar}$.
+-   The unit's intercept term is $\nnint$, from `\nnint`, and the intercept term of unit $m$ is $\nnintof{m}$, from `\nnintof{m}`.
+-   A layer's intercept terms form the vector $\vnnint$, from `\vnnint`.
+-   A weight matrix is $\mnnwt$, from `\mnnwt`, and the weight matrix of layer $\layeridx$ is $\mnnwtof{\layeridx}$, from `\mnnwtof{\layeridx}`.
+
+We chose $\omega$ because it reads as a "w", the letter most sources use for a weight, so a reader moving between books sees the same shape.
+It does not clash with the other parameters of the course: $\vcoef$ stays the coefficients of a regression model, $\param$ a generic parameter, and $\regpar$ a penalty.
+Writing the intercept term as weight number $0$ follows sources that store it as the weight on a constant input $1$, as [the intercept entry](#sec-intercept) describes for regression.
+
+We call $\nnint$ the intercept term, not the bias.
+Neural network texts call it the bias, but the bias of an estimator is a different idea in statistics, and our notes use both.
+
+Other sources write these quantities with Latin letters:
+
+-   Bishop writes the weights of layer $1$ as $w_{ji}^{(1)}$ and the bias of unit $j$ as $w_{j0}^{(1)}$, the same index $0$ we use [@bishop2006prml, Section 5.1].
+-   James, Witten, Hastie and Tibshirani write the weights of a hidden unit $k$ as $w_{kj}$ and its intercept term as $w_{k0}$, and the output layer's coefficients as $\beta_k$ [@james2021islr, Section 10.1].
+-   Many deep learning texts write a weight matrix $W$ and a bias vector $b$.
+
+Check which letter a source uses for a weight and whether it folds the intercept term into the weights.
+
 ## Conventions for cross-entropy {#sec-cross-entropy-conventions}
 
 [Cross-entropy](https://morrison-lab.github.io/pds/expectation.html#def-cross-entropy) is a measure of how well a model's predicted probabilities match the observed labels.
@@ -272,12 +299,12 @@ The probability mass function in the sum is `\pf{x}`, which prints $\pf{x}$ in b
 
 Machine learning and statistics texts often use different names and symbols for the same object.
 Each chapter of our notes says which symbols it uses.
-For example, the chapter on neural networks writes $\vw$ and $b$, and the regression chapters write $\vcoef$ and $\coef{0}$.
+For example, the chapter on neural networks writes $\vnnwt$ and $\nnint$, as in [the weights entry](#sec-network-weights), and the regression chapters write $\vcoef$ and $\coef{0}$.
 
 -   A linear function is written $f(\vx) = \dprod{\vw}{\vx} + b$ in neural network texts.
-    There $\vw$ holds the weights, and $b$ is the bias, which plays the role of the intercept.
-    This "bias" is a different idea from the bias of an estimator in statistics.
-    Statistics texts write the coefficients as $\vbeta$ and the intercept as $\beta_0$, as in [the intercept entry](#sec-intercept).
+    There $\vw$ holds the weights, and $b$ is what those texts call the bias, which plays the role of the intercept term.
+    This "bias" is a different idea from the bias of an estimator in statistics, so we call it the intercept term.
+    Statistics texts write the coefficients as $\vbeta$ and the intercept term as $\beta_0$, as in [the intercept entry](#sec-intercept).
     The two notations describe the same linear model.
 -   Machine learning texts often write $D$ or $d$ for the number of inputs and $N$ for the number of observations.
     Statistics texts write $n$ for the number of observations and $p$ for the number of inputs, which they call predictors.
@@ -422,7 +449,7 @@ Some sources write the same pieces in other ways:
     This is unambiguous but long.
 -   They write $\sigma_\epsilon^2$ or $\Vart(\epsilon)$ for the residual variance, where $\epsilon$ is their noise symbol.
 -   They may use a lower-case Latin letter for each piece.
-    We avoid this because $b$ already names the bias of a neural network in [the names entry](#sec-ml-statistics-names), and the macro `\vv` prints the vector $\vv$.
+    We avoid this because neural network texts already write $b$ for a unit's intercept term, as in [the names entry](#sec-ml-statistics-names), and the macro `\vv` prints the vector $\vv$.
 
 Check which form a source uses before comparing its decomposition with ours.
 
@@ -1048,7 +1075,7 @@ Some existing macros already cover other symbols that lecture exercises write as
     See [the input counts entry](#sec-input-counts).
 
 We do not give the size of a minibatch a letter of its own.
-Write it as the cardinality of the set of indices, such as `\card{B_t}`, because the letter $b$ is already the bias of a neural network in [the names entry](#sec-ml-statistics-names).
+Write it as the cardinality of the set of indices, such as `\card{B_t}`, because neural network texts already write $b$ for a unit's intercept term, as in [the names entry](#sec-ml-statistics-names).
 
 ## The predictor and the outcome of the $i$th observation {#sec-ith-observation}
 
