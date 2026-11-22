@@ -819,6 +819,8 @@ macros,symbol,interpretation
 \medf,\medf{a},median function med(·)
 \midpt \sdest \sdprior \schedlen \precision \sdbetween \clipthresh,\midpt,an intermediate point in a mean-value or Taylor remainder (prints \tau)
 \minf,\minf{a},"minimum of a comma-separated list, min(·)"
+\mnnwt,\mnnwt,"a weight matrix of a neural network, one column per unit of the layer it feeds (prints bold \Omega)"
+\mnnwtof,\mnnwtof{a},the weight matrix of the layer given as the argument (prints bold \Omega with the layer as a parenthesized superscript)
 \mnoise,\mnoise,"noise matrix of a multivariate linear model: the noise vectors of all n observations, one per row (prints bold E)"
 \modef,\modef{a},set of modes of a density or mass function (prints mode(f))
 \modelfam,\modelfam,mean-function model family (hypothesis class) H: the set of mean-function models that training chooses from (mean-function level; the distribution level is \distfam)
@@ -849,6 +851,9 @@ macros,symbol,interpretation
 \nfolds,\nfolds,"number of cross-validation folds, k"
 \nfp,\nfp,number of false positives in a confusion matrix (prints n_{F\posclass})
 \nheld \nreps,\nheld,"number of observations in a held-out set, m"
+\nnint,\nnint,"the intercept term of a unit in a neural network, which neural network texts call the bias (prints \omega_0)"
+\nnintof,\nnintof{a},the intercept term of the unit given as the argument (prints \omega with subscript 0 followed by the unit)
+\nnwtof,\nnwtof{a},"a weight in the layer given as the argument; write its indices as a subscript, as in \nnwtof{1}_{dj} (prints \omega with the layer as a parenthesized superscript)"
 \nobs,\nobs,sample size n: the number of observations or training examples
 \norm,\norm{a},Euclidean norm ‖·‖
 \normcdf,\normcdf,the standard normal CDF (prints \Phi)
@@ -873,7 +878,7 @@ macros,symbol,interpretation
 \oinff,\oinff{a},observed information function I(·)
 \oinfm,\oinfm,observed information matrix symbol
 \olive,\olive{a},typeset argument in olive
-\om \odds \outcome,\om,Greek letter omega (ω)
+\om \nnwt \odds \outcome,\om,Greek letter omega (ω)
 \omu,\omu{a},observed outcome mean μ(a) (shorthand for \obsmean)
 \opi,\opi{a},observed outcome probability π(a) (shorthand for \obsprob)
 \oprod,\oprod{a}{b},outer product x y′
@@ -1179,6 +1184,9 @@ macros,symbol,interpretation
 \vlagmult,\vlagmult,a vector of Lagrange multipliers (prints \vecf{\lambda})
 \vm,\vm,mean vector (μ-vector)
 \vnatparam,\vnatparam,natural parameter vector of an exponential family (prints \vecf{\eta})
+\vnnint,\vnnint,the vector of a layer's intercept terms in a neural network (prints \vecf{\omega}_0)
+\vnnintof,\vnnintof{a},the vector of intercept terms of the layer given as the argument (prints \vecf{\omega}_0 with the layer as a parenthesized superscript)
+\vnnwt,\vnnwt,a unit's weight vector in a neural network (prints \vecf{\omega})
 \vNoise,\vNoise,a vector of noise random variables (prints \vecf{\Noise})
 \vnoise,\vnoise,a vector of realized noise values (prints \vecf{\noise})
 \vone,\vone,vector of ones
