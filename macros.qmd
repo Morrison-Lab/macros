@@ -235,6 +235,15 @@
 \def\hidval{h}
 \providecommand{\hidvalof}[1]{\hidval_{#1}}
 \def\vhidval{\vecf{\hidval}}
+\def\nnwt{\omega}
+\def\vnnwt{\vecf{\nnwt}}
+\def\mnnwt{\matr{\Omega}}
+\providecommand{\mnnwtof}[1]{{\mnnwt}^{(#1)}}
+\def\nnint{{\nnwt_{0}}}
+\providecommand{\nnintof}[1]{\nnwt_{0#1}}
+\def\vnnint{{\vnnwt_{0}}}
+\providecommand{\nnwtof}[1]{{\nnwt}^{(#1)}}
+\providecommand{\vnnintof}[1]{{\vnnint}^{(#1)}}
 \def\imgheight{h}
 \def\imgwidth{w}
 \def\poolsize{q}
