@@ -173,7 +173,8 @@ We write every parameter of a model with a Greek letter, so the weights and inte
 -   The unit's intercept term is $\nnint$, from `\nnint`, and the intercept term of unit $m$ is $\nnintof{m}$, from `\nnintof{m}`.
 -   A layer's intercept terms form the vector $\vnnint$, from `\vnnint`, and those of layer $\layeridx$ form $\vnnintof{\layeridx}$, from `\vnnintof{\layeridx}`.
 -   A weight matrix is $\mnnwt$, from `\mnnwt`, and the weight matrix of layer $\layeridx$ is $\mnnwtof{\layeridx}$, from `\mnnwtof{\layeridx}`.
-    Its rows are the inputs of the layer and its columns are the units, so the weight from input $d$ to unit $j$ is the entry $\nnwtof{\layeridx}_{dj}$, from `\nnwtof{\layeridx}_{dj}`.
+    Its rows are the inputs of the layer and its columns are the units,
+    so the weight from input $d$ to unit $j$ is the entry $\nnwtof{\layeridx}_{dj}$, from `\nnwtof{\layeridx}_{dj}`.
 
 We chose $\omega$ because it reads as a "w", the letter most sources use for a weight, so a reader moving between books sees the same shape.
 It does not clash with the other parameters of the course: $\vcoef$ stays the coefficients of a regression model, $\param$ a generic parameter, and $\regpar$ a penalty.
@@ -185,8 +186,12 @@ Neural network texts call it the bias, but the bias of an estimator is a differe
 Other sources write these quantities with Latin letters:
 
 -   Bishop writes the weights of layer $1$ as $w_{ji}^{(1)}$ and the bias of unit $j$ as $w_{j0}^{(1)}$ [@bishop2006prml, Section 5.1].
-    Bishop also numbers the intercept term $0$, but puts the unit's index first and the $0$ second, while `\nnintof{j}` prints $\nnintof{j}$, with the $0$ first.
--   James, Witten, Hastie and Tibshirani write the weights of a hidden unit $k$ as $w_{kj}$ and its intercept term as $w_{k0}$, with the unit's index first as in Bishop, and the output layer's coefficients as $\beta_k$ [@james2021islr, Section 10.1].
+    Bishop also numbers the intercept term $0$,
+    but puts the unit's index first and the $0$ second,
+    while `\nnintof{j}` prints $\nnintof{j}$, with the $0$ first.
+-   James, Witten, Hastie and Tibshirani write the weights of a hidden unit $k$ as $w_{kj}$ and its intercept term as $w_{k0}$,
+    with the unit's index first as in Bishop,
+    and the output layer's coefficients as $\beta_k$ [@james2021islr, Section 10.1].
 -   Many deep learning texts write a weight matrix $W$ and a bias vector $b$.
 
 Check which letter a source uses for a weight and whether it folds the intercept term into the weights.
