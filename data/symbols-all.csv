@@ -853,6 +853,7 @@ macros,symbol,interpretation
 \nheld \nreps,\nheld,"number of observations in a held-out set, m"
 \nnint,\nnint,"the intercept term of a unit in a neural network, which neural network texts call the bias (prints \omega_0)"
 \nnintof,\nnintof{a},the intercept term of the unit given as the argument (prints \omega with subscript 0 followed by the unit)
+\nnwtof,\nnwtof{a},"a weight in the layer given as the argument; write its indices as a subscript, as in \nnwtof{1}_{dj} (prints \omega with the layer as a parenthesized superscript)"
 \nobs,\nobs,sample size n: the number of observations or training examples
 \norm,\norm{a},Euclidean norm ‖·‖
 \normcdf,\normcdf,the standard normal CDF (prints \Phi)
@@ -1184,6 +1185,7 @@ macros,symbol,interpretation
 \vm,\vm,mean vector (μ-vector)
 \vnatparam,\vnatparam,natural parameter vector of an exponential family (prints \vecf{\eta})
 \vnnint,\vnnint,the vector of a layer's intercept terms in a neural network (prints \vecf{\omega}_0)
+\vnnintof,\vnnintof{a},the vector of intercept terms of the layer given as the argument (prints \vecf{\omega}_0 with the layer as a parenthesized superscript)
 \vnnwt,\vnnwt,a unit's weight vector in a neural network (prints \vecf{\omega})
 \vNoise,\vNoise,a vector of noise random variables (prints \vecf{\Noise})
 \vnoise,\vnoise,a vector of realized noise values (prints \vecf{\noise})

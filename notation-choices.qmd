@@ -171,8 +171,9 @@ We write every parameter of a model with a Greek letter, so the weights and inte
 -   A single weight is $\nnwt$, from `\nnwt`.
 -   A unit's weight vector is $\vnnwt$, from `\vnnwt`, so the unit computes a function of $\nnint + \dprod{\vnnwt}{\vpredvar}$.
 -   The unit's intercept term is $\nnint$, from `\nnint`, and the intercept term of unit $m$ is $\nnintof{m}$, from `\nnintof{m}`.
--   A layer's intercept terms form the vector $\vnnint$, from `\vnnint`.
+-   A layer's intercept terms form the vector $\vnnint$, from `\vnnint`, and those of layer $\layeridx$ form $\vnnintof{\layeridx}$, from `\vnnintof{\layeridx}`.
 -   A weight matrix is $\mnnwt$, from `\mnnwt`, and the weight matrix of layer $\layeridx$ is $\mnnwtof{\layeridx}$, from `\mnnwtof{\layeridx}`.
+    Its entry in row $j$ and column $k$ is $\nnwtof{\layeridx}_{jk}$, from `\nnwtof{\layeridx}_{jk}`.
 
 We chose $\omega$ because it reads as a "w", the letter most sources use for a weight, so a reader moving between books sees the same shape.
 It does not clash with the other parameters of the course: $\vcoef$ stays the coefficients of a regression model, $\param$ a generic parameter, and $\regpar$ a penalty.

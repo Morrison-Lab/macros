@@ -1404,6 +1404,8 @@ name	interpretation
 \nnint	the intercept term of a unit in a neural network, which neural network texts call the bias (prints \omega_0)
 \nnintof	the intercept term of the unit given as the argument (prints \omega with subscript 0 followed by the unit)
 \vnnint	the vector of a layer's intercept terms in a neural network (prints \vecf{\omega}_0)
+\nnwtof	a weight in the layer given as the argument; write its indices as a subscript, as in \nnwtof{1}_{dj} (prints \omega with the layer as a parenthesized superscript)
+\vnnintof	the vector of intercept terms of the layer given as the argument (prints \vecf{\omega}_0 with the layer as a parenthesized superscript)
 \imgheight	height of an image or feature map, in pixels
 \imgwidth	width of an image or feature map, in pixels
 \poolsize	side length q of a square pooling block, in pixels
