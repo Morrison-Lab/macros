@@ -721,6 +721,7 @@ window.Quarto = {
   <li><a href="#sec-softmax-symbol" id="toc-sec-softmax-symbol" class="nav-link" data-scroll-target="#sec-softmax-symbol">The softmax function</a></li>
   <li><a href="#sec-posenc-symbol" id="toc-sec-posenc-symbol" class="nav-link" data-scroll-target="#sec-posenc-symbol">The positional encoding</a></li>
   <li><a href="#sec-brace-delimited-forms" id="toc-sec-brace-delimited-forms" class="nav-link" data-scroll-target="#sec-brace-delimited-forms">An exponent on a function with built-in delimiters</a></li>
+  <li><a href="#sec-inverse-single-symbol" id="toc-sec-inverse-single-symbol" class="nav-link" data-scroll-target="#sec-inverse-single-symbol">The inverse of a single symbol</a></li>
   <li><a href="#sec-counting-notation" id="toc-sec-counting-notation" class="nav-link" data-scroll-target="#sec-counting-notation">Counting: cardinality, factorials and binomial coefficients</a></li>
   <li><a href="#sec-power-set-notation" id="toc-sec-power-set-notation" class="nav-link" data-scroll-target="#sec-power-set-notation">The power set</a></li>
   <li><a href="#sec-sum-of-elements" id="toc-sec-sum-of-elements" class="nav-link" data-scroll-target="#sec-sum-of-elements">The sum of the elements of a vector</a></li>
@@ -1092,6 +1093,12 @@ window.Quarto = {
 <p>We chose this for one reason. The delimiter macros (<code>\paren</code>, <code>\sb</code>, <code>\cb</code> and similar) end in an empty closing atom, and an exponent that follows without the braces attaches to that empty atom. It then stays at the height of the text line. The braces change what is printed in one small way: the thin space between a leading digit and the function name is lost, as it already was for <code>\lnf</code> and <code>\maxf</code>.</p>
 <p>A macro with no argument cannot be wrapped this way, so the aliases <code>\ceil</code>, <code>\set</code> and <code>\strlen</code> take an argument, as in <code>\ceil{x}</code>.</p>
 <p>Another convention is to leave the macros unbraced and to wrap each use in braces. Every use that forgot the braces would then print the exponent at the wrong height.</p>
+</section>
+<section id="sec-inverse-single-symbol" class="level2">
+<h2 class="anchored" data-anchor-id="sec-inverse-single-symbol">The inverse of a single symbol</h2>
+<p>Our convention is to write the inverse of a single symbol with no delimiters, as <span class="math inline">\(\invn{\Sigma}\)</span>, which the macro <code>\invn</code> prints. A symbol with a subscript counts as one symbol, so <code>\invn{\Sigma_k}</code> prints <span class="math inline">\(\invn{\Sigma_k}\)</span>, with the exponent stacked over the subscript. The macro <code>\inv</code> puts parentheses around its argument, as in <span class="math inline">\(\inv{\mat{A}\mat{B}}\)</span>, and is for an argument with more than one symbol.</p>
+<p>We chose this because the exponent <span class="math inline">\(-1\)</span> already applies only to the symbol before it, so parentheses around a single symbol, as in <span class="math inline">\(\inv{\Sigma}\)</span>, add nothing to the meaning. <code>\invn</code> adds no delimiters, as <code>\tp</code> adds none for a transpose. An argument that already carries an exponent, such as <span class="math inline">\(x^2\)</span>, or that is wrapped in a delimiter macro, such as <code>\paren</code>, needs <code>\inv</code> instead.</p>
+<p>Hastie, Tibshirani and Friedman write the inverse covariance matrix in the linear discriminant function as <span class="math inline">\(\Sigma^{-1}\)</span>, with no parentheses <span class="citation" data-cites="hastie2009esl">(<a href="#ref-hastie2009esl" role="doc-biblioref">Hastie et al. 2009, sec. 4.3</a>, Equation 4.10)</span>. James, Witten, Hastie and Tibshirani do the same <span class="citation" data-cites="james2021islr">(<a href="#ref-james2021islr" role="doc-biblioref">James et al. 2021, sec. 4.4.2</a>)</span>.</p>
 </section>
 <section id="sec-counting-notation" class="level2">
 <h2 class="anchored" data-anchor-id="sec-counting-notation">Counting: cardinality, factorials and binomial coefficients</h2>
