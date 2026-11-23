@@ -389,7 +389,7 @@ name	interpretation
 \invp	multiplicative inverse (alias for \inv)
 \invcb	inverse with curly braces {·}^{−1}
 \invsb	inverse with square brackets [·]^{−1}
-\invn	inverse with no delimiters ·^{−1}, for a single symbol such as \Sigma or \Sigma_k
+\invn	inverse of a single symbol with no delimiters (prints \Sigma^{-1} for \invn{\Sigma})
 \oinf	observed information symbol I
 \oinfm	observed information matrix symbol
 \Nat	natural numbers set ℕ (blackboard-bold)

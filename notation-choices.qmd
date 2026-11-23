@@ -958,8 +958,10 @@ The macro `\inv` puts parentheses around its argument, as in $\inv{\mat{A}\mat{B
 We chose this because the exponent $-1$ already applies only to the symbol before it,
 so parentheses around a single symbol, as in $\inv{\Sigma}$, add nothing to the meaning.
 `\invn` adds no delimiters, as `\tp` adds none for a transpose.
+An argument that already carries an exponent, such as $x^2$, or that is wrapped in a delimiter macro, such as `\paren`, needs `\inv` instead.
 
-Most texts write $\Sigma^{-1}$ with no parentheses, and add them only for a product or a sum, as in $(\mat{A}\mat{B})^{-1}$.
+Hastie, Tibshirani and Friedman write the inverse covariance matrix in the linear discriminant function as $\Sigma^{-1}$, with no parentheses [@hastie2009esl, Section 4.3, Equation 4.10].
+James, Witten, Hastie and Tibshirani do the same [@james2021islr, Section 4.4.2].
 
 ## Counting: cardinality, factorials and binomial coefficients {#sec-counting-notation}
 
