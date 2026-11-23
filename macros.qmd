@@ -467,6 +467,7 @@
 \def\invp{\inv}
 \providecommand{\invcb}[1]{{\cb{#1}}^{-1}}
 \providecommand{\invsb}[1]{{\sb{#1}}^{-1}}
+\providecommand{\invn}[1]{{#1^{-1}}}
 \def\oinf{I}
 \def\oinfm{\mat{I}}
 \def\Nat{\mathbb{N}}

@@ -753,6 +753,7 @@ macros,symbol,interpretation
 \inv,\inv{a},multiplicative inverse (·)^{−1} with parentheses
 \invcb,\invcb{a},inverse with curly braces {·}^{−1}
 \invf \invp,\invf{a},multiplicative inverse (alias for \inv)
+\invn,\invn{a},inverse of a single symbol with no delimiters (prints \Sigma^{-1} for \invn{\Sigma})
 \invodds,\invodds,inverse odds (alternative notation)
 \invoddsf,\invoddsf{a},inverse odds function (alias)
 \invsb,\invsb{a},inverse with square brackets [·]^{−1}
