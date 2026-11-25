@@ -178,6 +178,40 @@ so a kept unit's value is scaled by $1 / (1 - \droprate)$ to keep its expected v
 Sources name this indicator differently, or write the whole vector of indicators as a mask;
 ours names the role, not the letter.
 
+## The weights and intercept terms of a neural network {#sec-network-weights}
+
+A unit of a neural network adds up its inputs times their weights, adds one more number that multiplies no input, and applies an activation function.
+That one more number is the unit's intercept term.
+We write every parameter of a model with a Greek letter, so the weights and intercept terms get one too.
+
+-   A single weight is $\nnwt$, from `\nnwt`.
+-   A unit's weight vector is $\vnnwt$, from `\vnnwt`, so the unit computes a function of $\nnint + \dprod{\vnnwt}{\vpredvar}$.
+-   The unit's intercept term is $\nnint$, from `\nnint`, and the intercept term of unit $m$ is $\nnintof{m}$, from `\nnintof{m}`.
+-   A layer's intercept terms form the vector $\vnnint$, from `\vnnint`, and those of layer $\layeridx$ form $\vnnintof{\layeridx}$, from `\vnnintof{\layeridx}`.
+-   A weight matrix is $\mnnwt$, from `\mnnwt`, and the weight matrix of layer $\layeridx$ is $\mnnwtof{\layeridx}$, from `\mnnwtof{\layeridx}`.
+    Its rows are the inputs of the layer and its columns are the units,
+    so the weight from input $d$ to unit $j$ is the entry $\nnwtof{\layeridx}_{dj}$, from `\nnwtof{\layeridx}_{dj}`.
+
+We chose $\omega$ because it reads as a "w", the letter most sources use for a weight, so a reader moving between books sees the same shape.
+It does not clash with the other parameters of the course: $\vcoef$ stays the coefficients of a regression model, $\param$ a generic parameter, and $\regpar$ a penalty.
+Writing the intercept term as weight number $0$ follows sources that store it as the weight on a constant input $1$, as [the intercept entry](#sec-intercept) describes for regression.
+
+We call $\nnint$ the intercept term, not the bias.
+Neural network texts call it the bias, but the bias of an estimator is a different idea in statistics, and our notes use both.
+
+Other sources write these quantities with Latin letters:
+
+-   Bishop writes the weights of layer $1$ as $w_{ji}^{(1)}$ and the bias of unit $j$ as $w_{j0}^{(1)}$ [@bishop2006prml, Section 5.1].
+    Bishop also numbers the intercept term $0$,
+    but puts the unit's index first and the $0$ second,
+    while `\nnintof{j}` prints $\nnintof{j}$, with the $0$ first.
+-   James, Witten, Hastie and Tibshirani write the weights of a hidden unit $k$ as $w_{kj}$ and its intercept term as $w_{k0}$,
+    with the unit's index first as in Bishop,
+    and the output layer's coefficients as $\beta_k$ [@james2021islr, Section 10.1].
+-   Many deep learning texts write a weight matrix $W$ and a bias vector $b$.
+
+Check which letter a source uses for a weight and whether it folds the intercept term into the weights.
+
 ## Conventions for cross-entropy {#sec-cross-entropy-conventions}
 
 [Cross-entropy](https://morrison-lab.github.io/pds/expectation.html#def-cross-entropy) is a measure of how well a model's predicted probabilities match the observed labels.
@@ -220,6 +254,7 @@ Four collisions are resolved by context:
 -   The distribution function $\F$ prints the same letter as the finite field `\ffield{q}`, which always carries a subscript.
 -   The cumulative hazard $\H$ and the entropy $\entropy$ print the same letter, so the surrounding text says which one a formula means.
 -   The mutual information $\mutinfo$ prints the same letter as the identity matrix `\idmat`, and it always takes arguments.
+-   The surprisal $\Surprisal$ of a value of a discrete random variable prints the same letter as the survival function $\S$, so the surrounding text says which one a formula means.
 
 A PDF needs the `bbm` package for the lowercase letters, so list `macros-pdf-header.tex` before `macros.qmd` in `include-in-header`, as for `\devval`.
 
@@ -228,6 +263,10 @@ A PDF needs the `bbm` package for the lowercase letters, so list `macros-pdf-hea
 The [surprisal](https://morrison-lab.github.io/ids/entropy.html#def-surprisal) of an outcome $x$ is written $\surprisalf{x}$.
 That form leaves the distribution implicit.
 To name the distribution that measures the surprisal, write it as a subscript with $\surprisalunderf{q}{x}$, which is $-\log q(x)$.
+The surprisal of a value of a discrete random variable may instead be written with a capital letter, as $\Surprisalf{x} = -\log \P(X = x)$, or $\Surprisalunderf{q}{x}$ for a named probability mass function $q$, keeping the lowercase $\surprisal$ for the surprisal measured by a density.
+The case then follows the probability $\P$ and the density $\p$, which the two forms take the logarithm of (Ezra, 2026-11-20).
+The capital form says that the surprisal is a logarithm of a probability, so it is never negative, while the surprisal measured by a density can be.
+Sources use one letter for both: MacKay writes $h(x)$ for the Shannon information content of an outcome, and Cover and Thomas mark the continuous case on the entropy instead, writing $h(X)$ for the differential entropy and $H(X)$ for the entropy of a discrete random variable.
 The reciprocal of the probability, of which the surprisal is the logarithm, is the rarity, written $\rarityf{x}$, or $\rarityunderf{q}{x}$ for a named distribution.
 Leinster calls $1/p_i$ "a measure of [the] rarity or specialness" of the $i$th species [*Entropy and Diversity*, 2021, Section 2.4](https://arxiv.org/abs/2012.02113), and takes the diversity of a community to be the average rarity of an individual in it.
 MacKay's *Information Theory, Inference, and Learning Algorithms* (2003, section 2.4) defines only the logarithm, the Shannon information content.
@@ -283,12 +322,12 @@ The probability mass function in the sum is `\pf{x}`, which prints $\pf{x}$ in b
 
 Machine learning and statistics texts often use different names and symbols for the same object.
 Each chapter of our notes says which symbols it uses.
-For example, the chapter on neural networks writes $\vw$ and $b$, and the regression chapters write $\vcoef$ and $\coef{0}$.
+For example, the chapter on neural networks writes $\vnnwt$ and $\nnint$, as in [the weights entry](#sec-network-weights), and the regression chapters write $\vcoef$ and $\coef{0}$.
 
 -   A linear function is written $f(\vx) = \dprod{\vw}{\vx} + b$ in neural network texts.
-    There $\vw$ holds the weights, and $b$ is the bias, which plays the role of the intercept.
-    This "bias" is a different idea from the bias of an estimator in statistics.
-    Statistics texts write the coefficients as $\vbeta$ and the intercept as $\beta_0$, as in [the intercept entry](#sec-intercept).
+    There $\vw$ holds the weights, and $b$ is what those texts call the bias, which plays the role of the intercept term.
+    This "bias" is a different idea from the bias of an estimator in statistics, so we call it the intercept term.
+    Statistics texts write the coefficients as $\vbeta$ and the intercept term as $\beta_0$, as in [the intercept entry](#sec-intercept).
     The two notations describe the same linear model.
 -   Machine learning texts often write $D$ or $d$ for the number of inputs and $N$ for the number of observations.
     Statistics texts write $n$ for the number of observations and $p$ for the number of inputs, which they call predictors.
@@ -433,7 +472,7 @@ Some sources write the same pieces in other ways:
     This is unambiguous but long.
 -   They write $\sigma_\epsilon^2$ or $\Vart(\epsilon)$ for the residual variance, where $\epsilon$ is their noise symbol.
 -   They may use a lower-case Latin letter for each piece.
-    We avoid this because $b$ already names the bias of a neural network in [the names entry](#sec-ml-statistics-names), and the macro `\vv` prints the vector $\vv$.
+    We avoid this because neural network texts already write $b$ for a unit's intercept term, as in [the names entry](#sec-ml-statistics-names), and the macro `\vv` prints the vector $\vv$.
 
 Check which form a source uses before comparing its decomposition with ours.
 
@@ -926,6 +965,20 @@ A macro with no argument cannot be wrapped this way, so the aliases `\ceil`, `\s
 Another convention is to leave the macros unbraced and to wrap each use in braces.
 Every use that forgot the braces would then print the exponent at the wrong height.
 
+## The inverse of a single symbol {#sec-inverse-single-symbol}
+
+Our convention is to write the inverse of a single symbol with no delimiters, as $\invn{\Sigma}$, which the macro `\invn` prints.
+A symbol with a subscript counts as one symbol, so `\invn{\Sigma_k}` prints $\invn{\Sigma_k}$, with the exponent stacked over the subscript.
+The macro `\inv` puts parentheses around its argument, as in $\inv{\mat{A}\mat{B}}$, and is for an argument with more than one symbol.
+
+We chose this because the exponent $-1$ already applies only to the symbol before it,
+so parentheses around a single symbol, as in $\inv{\Sigma}$, add nothing to the meaning.
+`\invn` adds no delimiters, as `\tp` adds none for a transpose.
+An argument that already carries an exponent, such as $x^2$, or that is wrapped in a delimiter macro, such as `\paren`, needs `\inv` instead.
+
+Hastie, Tibshirani and Friedman write the inverse covariance matrix in the linear discriminant function as $\Sigma^{-1}$, with no parentheses [@hastie2009esl, Section 4.3, Equation 4.10].
+James, Witten, Hastie and Tibshirani do the same [@james2021islr, Section 4.4.2].
+
 ## Counting: cardinality, factorials and binomial coefficients {#sec-counting-notation}
 
 Our convention has three parts.
@@ -1059,7 +1112,7 @@ Some existing macros already cover other symbols that lecture exercises write as
     See [the input counts entry](#sec-input-counts).
 
 We do not give the size of a minibatch a letter of its own.
-Write it as the cardinality of the set of indices, such as `\card{B_t}`, because the letter $b$ is already the bias of a neural network in [the names entry](#sec-ml-statistics-names).
+Write it as the cardinality of the set of indices, such as `\card{B_t}`, because neural network texts already write $b$ for a unit's intercept term, as in [the names entry](#sec-ml-statistics-names).
 
 ## The predictor and the outcome of the $i$th observation {#sec-ith-observation}
 

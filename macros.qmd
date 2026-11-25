@@ -238,6 +238,15 @@
 \def\droprate{\phi}
 \def\keepind{\delta}
 \providecommand{\keepindof}[1]{\keepind_{#1}}
+\def\nnwt{\omega}
+\def\vnnwt{\vecf{\nnwt}}
+\def\mnnwt{\matr{\Omega}}
+\providecommand{\mnnwtof}[1]{{\mnnwt}^{(#1)}}
+\def\nnint{{\nnwt_{0}}}
+\providecommand{\nnintof}[1]{\nnwt_{0#1}}
+\def\vnnint{{\vnnwt_{0}}}
+\providecommand{\nnwtof}[1]{{\nnwt}^{(#1)}}
+\providecommand{\vnnintof}[1]{{\vnnint}^{(#1)}}
 \def\imgheight{h}
 \def\imgwidth{w}
 \def\poolsize{q}
@@ -461,6 +470,7 @@
 \def\invp{\inv}
 \providecommand{\invcb}[1]{{\cb{#1}}^{-1}}
 \providecommand{\invsb}[1]{{\sb{#1}}^{-1}}
+\providecommand{\invn}[1]{{#1^{-1}}}
 \def\oinf{I}
 \def\oinfm{\mat{I}}
 \def\Nat{\mathbb{N}}
@@ -1495,6 +1505,9 @@
 \def\surprisal{\distop{s}}
 \providecommand{\surprisalf}[1]{{\surprisal\paren{#1}}}
 \providecommand{\surprisalunderf}[2]{{\surprisal_{#1}\paren{#2}}}
+\def\Surprisal{\distop{S}}
+\providecommand{\Surprisalf}[1]{{\Surprisal\paren{#1}}}
+\providecommand{\Surprisalunderf}[2]{{\Surprisal_{#1}\paren{#2}}}
 \def\rarity{\distop{r}}
 \providecommand{\rarityf}[1]{{\rarity\paren{#1}}}
 \providecommand{\rarityunderf}[2]{{\rarity_{#1}\paren{#2}}}

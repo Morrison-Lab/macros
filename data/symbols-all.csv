@@ -753,6 +753,7 @@ macros,symbol,interpretation
 \inv,\inv{a},multiplicative inverse (·)^{−1} with parentheses
 \invcb,\invcb{a},inverse with curly braces {·}^{−1}
 \invf \invp,\invf{a},multiplicative inverse (alias for \inv)
+\invn,\invn{a},inverse of a single symbol with no delimiters (prints \Sigma^{-1} for \invn{\Sigma})
 \invodds,\invodds,inverse odds (alternative notation)
 \invoddsf,\invoddsf{a},inverse odds function (alias)
 \invsb,\invsb{a},inverse with square brackets [·]^{−1}
@@ -820,6 +821,8 @@ macros,symbol,interpretation
 \medf,\medf{a},median function med(·)
 \midpt \sdest \sdprior \schedlen \precision \sdbetween \clipthresh,\midpt,an intermediate point in a mean-value or Taylor remainder (prints \tau)
 \minf,\minf{a},"minimum of a comma-separated list, min(·)"
+\mnnwt,\mnnwt,"a weight matrix of a neural network, one column per unit of the layer it feeds (prints bold \Omega)"
+\mnnwtof,\mnnwtof{a},the weight matrix of the layer given as the argument (prints bold \Omega with the layer as a parenthesized superscript)
 \mnoise,\mnoise,"noise matrix of a multivariate linear model: the noise vectors of all n observations, one per row (prints bold E)"
 \modef,\modef{a},set of modes of a density or mass function (prints mode(f))
 \modelfam,\modelfam,mean-function model family (hypothesis class) H: the set of mean-function models that training chooses from (mean-function level; the distribution level is \distfam)
@@ -850,6 +853,9 @@ macros,symbol,interpretation
 \nfolds,\nfolds,"number of cross-validation folds, k"
 \nfp,\nfp,number of false positives in a confusion matrix (prints n_{F\posclass})
 \nheld \nreps,\nheld,"number of observations in a held-out set, m"
+\nnint,\nnint,"the intercept term of a unit in a neural network, which neural network texts call the bias (prints \omega_0)"
+\nnintof,\nnintof{a},the intercept term of the unit given as the argument (prints \omega with subscript 0 followed by the unit)
+\nnwtof,\nnwtof{a},"a weight in the layer given as the argument; write its indices as a subscript, as in \nnwtof{1}_{dj} (prints \omega with the layer as a parenthesized superscript)"
 \nobs,\nobs,sample size n: the number of observations or training examples
 \norm,\norm{a},Euclidean norm ‖·‖
 \normcdf,\normcdf,the standard normal CDF (prints \Phi)
@@ -874,7 +880,7 @@ macros,symbol,interpretation
 \oinff,\oinff{a},observed information function I(·)
 \oinfm,\oinfm,observed information matrix symbol
 \olive,\olive{a},typeset argument in olive
-\om \odds \outcome,\om,Greek letter omega (ω)
+\om \nnwt \odds \outcome,\om,Greek letter omega (ω)
 \omu,\omu{a},observed outcome mean μ(a) (shorthand for \obsmean)
 \opi,\opi{a},observed outcome probability π(a) (shorthand for \obsprob)
 \oprod,\oprod{a}{b},outer product x y′
@@ -996,7 +1002,7 @@ macros,symbol,interpretation
 \rvar \predvar,\rvar,a generic value of a random variable in probability expressions (prints x)
 \rvarbar,\rvarbar,sample mean of a generic variable (prints \bar{\rvar})
 \s \gs \sdpar \singval \bandwidth,\s,Greek letter sigma (σ)
-\S \Surv \surv,\S,survival function symbol S
+\S \Surv \surv \Surprisal,\S,survival function symbol S
 \salg \scrS \salgS \sigmaalg \sigmaalgebra,\salg,sigma-algebra on S symbol 𝒮
 \samplemean,\samplemean{a}{b},"sample mean of n random variables, X̄_n (arguments: the variable and the sample size)"
 \satdeviance,\satdeviance,deviance relative to the saturated model: twice the difference between the saturated model's and the fitted model's maximized log-likelihoods
@@ -1098,7 +1104,9 @@ macros,symbol,interpretation
 \sumto,\sumto{a}{b},sum over the first argument from 1 to the second
 \sumtof,\sumtof{a}{b}{c},sum over the first argument from 1 to the second of the third argument (·)
 \surprisal,\surprisal,surprisal symbol s
+\Surprisalf,\Surprisalf{a},"surprisal of a value of a discrete random variable, S(x) = -log P(X = x)"
 \surprisalf,\surprisalf{a},"surprisal of an outcome, s(x)"
+\Surprisalunderf,\Surprisalunderf{a}{b},"surprisal of a value measured by a named probability mass function, S_q(x) = -log q(x)"
 \surprisalunderf,\surprisalunderf{a}{b},"surprisal of an outcome measured by a named distribution, s_q(x)"
 \survf,\survf{a},survival function applied to argument (alias for \Sf)
 \survfactorf,\survfactorf{a},survival factor function θ_S(·)
@@ -1178,6 +1186,9 @@ macros,symbol,interpretation
 \vlagmult,\vlagmult,a vector of Lagrange multipliers (prints \vecf{\lambda})
 \vm,\vm,mean vector (μ-vector)
 \vnatparam,\vnatparam,natural parameter vector of an exponential family (prints \vecf{\eta})
+\vnnint,\vnnint,the vector of a layer's intercept terms in a neural network (prints \vecf{\omega}_0)
+\vnnintof,\vnnintof{a},the vector of intercept terms of the layer given as the argument (prints \vecf{\omega}_0 with the layer as a parenthesized superscript)
+\vnnwt,\vnnwt,a unit's weight vector in a neural network (prints \vecf{\omega})
 \vNoise,\vNoise,a vector of noise random variables (prints \vecf{\Noise})
 \vnoise,\vnoise,a vector of realized noise values (prints \vecf{\noise})
 \vone,\vone,vector of ones

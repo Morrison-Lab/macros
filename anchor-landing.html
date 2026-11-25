@@ -1,4 +1,44 @@
 <script>
+// A link to an id that has moved to another page of this site: when the page
+// holds no element with the link's #id, look the id up in anchor-index.json,
+// which the site's anchor-index.py post-render step writes at the site root,
+// and go to the page that holds it now, keeping the rest of the hash (a text
+// fragment). A site without the index, an id it does not list, or an id that
+// maps back to this page leaves the reader where they are. It runs on load
+// and again when an in-page link changes the hash.
+(function () {
+  if (!window.fetch) return;
+  var meta = document.querySelector('meta[name="quarto:offset"]');
+  var root = new URL(meta ? meta.getAttribute("content") : "./", location.href);
+  var index = null;
+  function follow() {
+    var id = "";
+    try { id = decodeURIComponent(location.hash.slice(1).replace(/:~:.*$/, "")); } catch (e) { return; }
+    if (!id || document.getElementById(id)) return;
+    index = index || fetch(new URL("anchor-index.json", root)).then(function (r) {
+      return r.ok ? r.json() : null;
+    }).catch(function () { return null; });
+    index.then(function (data) {
+      var ids = data && data.ids;
+      var page = ids && Object.prototype.hasOwnProperty.call(ids, id) ? ids[id] : null;
+      if (typeof page !== "string" || document.getElementById(id)) return;
+      var dest = new URL(page, root);
+      var here = location.pathname.replace(/\/$/, "/index.html");
+      if (dest.pathname === here) return;
+      // location.hash leaves out a text fragment; the navigation entry keeps it.
+      var hash = location.hash;
+      try {
+        var nav = performance.getEntriesByType("navigation")[0];
+        var m = nav && /#(.*)$/.exec(nav.name);
+        if (m && m[1].indexOf(hash.slice(1)) === 0) hash = "#" + m[1];
+      } catch (e) {}
+      location.replace(dest.href.replace(/#.*$/, "") + hash);
+    });
+  }
+  follow();
+  window.addEventListener("hashchange", follow);
+})();
+
 // Typesetting equations and loading images change the height of everything
 // above the reader and push the text they were reading out of view. Keep the
 // reader's place: until they scroll, that is the link target (#id or a text
