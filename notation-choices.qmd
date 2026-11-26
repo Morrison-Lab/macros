@@ -162,6 +162,22 @@ Each weight matrix is one computation from one row of units to the next, so coun
 This is a choice, not a requirement, and both names are in use.
 Check which one a source means before comparing the depths of two networks.
 
+## Dropout's rate and keep indicator {#sec-dropout-symbols}
+
+Dropout zeroes each unit of a layer independently during training.
+Our convention is to write the probability that a unit is dropped as $\droprate$, with `\droprate`,
+following @james2023introduction [Section 10.7.3], which calls it "a fraction $\phi$ of the units".
+PyTorch's `nn.Dropout(p)` also gives the probability that a unit is dropped, under the name `p`.
+Some sources write $p$ for the probability that a unit is kept instead,
+so $p = 1 - \droprate$ there;
+check which one a source means before comparing rates.
+
+We write the indicator that unit $j$ is kept as $\keepindof{j}$, with `\keepind` for the bare symbol and `\keepindof` for the symbol with the unit as subscript.
+It is $1$ with probability $1 - \droprate$ and $0$ otherwise,
+so a kept unit's value is scaled by $1 / (1 - \droprate)$ to keep its expected value.
+Sources name this indicator differently, or write the whole vector of indicators as a mask;
+ours names the role, not the letter.
+
 ## The weights and intercept terms of a neural network {#sec-network-weights}
 
 A unit of a neural network adds up its inputs times their weights, adds one more number that multiplies no input, and applies an activation function.

@@ -1398,6 +1398,9 @@ name	interpretation
 \hidval	value of a hidden unit in a neural network, h
 \hidvalof	value of the hidden unit given as the argument, h with the unit as subscript
 \vhidval	vector of hidden-unit values (or a recurrent network's hidden state), h̰
+\droprate	dropout rate: the probability that dropout zeroes a unit (prints \phi)
+\keepind	dropout keep indicator: 1 if dropout keeps a unit and 0 if it drops it (prints \delta)
+\keepindof	dropout keep indicator of the unit given as the argument, \delta with the unit as subscript
 \nnwt	a weight of a neural network: the number multiplying one input of a unit (prints \omega)
 \vnnwt	a unit's weight vector in a neural network (prints \vecf{\omega})
 \mnnwt	a weight matrix of a neural network, one column per unit of the layer it feeds (prints bold \Omega)
