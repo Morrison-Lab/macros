@@ -692,6 +692,7 @@ window.Quarto = {
   <li><a href="#sec-binary-labels" id="toc-sec-binary-labels" class="nav-link" data-scroll-target="#sec-binary-labels">Binary labels</a></li>
   <li><a href="#sec-intercept" id="toc-sec-intercept" class="nav-link" data-scroll-target="#sec-intercept">The intercept</a></li>
   <li><a href="#sec-counting-layers" id="toc-sec-counting-layers" class="nav-link" data-scroll-target="#sec-counting-layers">Counting the layers of a neural network</a></li>
+  <li><a href="#sec-dropout-symbols" id="toc-sec-dropout-symbols" class="nav-link" data-scroll-target="#sec-dropout-symbols">Dropout’s rate and keep indicator</a></li>
   <li><a href="#sec-network-weights" id="toc-sec-network-weights" class="nav-link" data-scroll-target="#sec-network-weights">The weights and intercept terms of a neural network</a></li>
   <li><a href="#sec-cross-entropy-conventions" id="toc-sec-cross-entropy-conventions" class="nav-link" data-scroll-target="#sec-cross-entropy-conventions">Conventions for cross-entropy</a></li>
   <li><a href="#sec-distribution-function-notation" id="toc-sec-distribution-function-notation" class="nav-link" data-scroll-target="#sec-distribution-function-notation">Functions of a population distribution</a></li>
@@ -807,6 +808,11 @@ window.Quarto = {
 <p>A neural network passes its input through a sequence of layers. Each layer is a row of units, and each unit computes one number. Between two neighboring layers, a weight matrix holds the numbers that say how much each unit in the first layer contributes to each unit in the second.</p>
 <p>Suppose a network has an input layer, one hidden layer (a layer between the input and the output), and an output layer. Some sources call it a three-layer network, because it has three rows of units. Kriesel calls a feedforward network with two input neurons, three hidden neurons and two output neurons “a feedforward network with three layers” <span class="citation" data-cites="kriesel">(<a href="#ref-kriesel" role="doc-biblioref">Kriesel, n.d., sec. 3.3.1</a>, Figure 3.3)</span>. Our convention is to call it a two-layer network. Here “two-layer” counts the weight matrices, not the rows of units. The network has two weight matrices: input to hidden, and hidden to output. We can also say that it has one hidden layer.</p>
 <p>We chose to count the weight matrices because the input layer has no weights of its own and does no computation. Its values are the data. Each weight matrix is one computation from one row of units to the next, so counting the weight matrices counts the steps that do work. This is a choice, not a requirement, and both names are in use. Check which one a source means before comparing the depths of two networks.</p>
+</section>
+<section id="sec-dropout-symbols" class="level2">
+<h2 class="anchored" data-anchor-id="sec-dropout-symbols">Dropout’s rate and keep indicator</h2>
+<p>Dropout zeroes each unit of a layer independently during training. Our convention is to write the probability that a unit is dropped as <span class="math inline">\(\droprate\)</span>, with <code>\droprate</code>, following <span class="citation" data-cites="james2023introduction">James et al. (<a href="#ref-james2023introduction" role="doc-biblioref">2023, sec. 10.7.3</a>)</span>, which calls it “a fraction <span class="math inline">\(\phi\)</span> of the units”. PyTorch’s <code>nn.Dropout(p)</code> also gives the probability that a unit is dropped, under the name <code>p</code>. Some sources write <span class="math inline">\(p\)</span> for the probability that a unit is kept instead, so <span class="math inline">\(p = 1 - \droprate\)</span> there; check which one a source means before comparing rates.</p>
+<p>We write the indicator that unit <span class="math inline">\(j\)</span> is kept as <span class="math inline">\(\keepindof{j}\)</span>, with <code>\keepind</code> for the bare symbol and <code>\keepindof</code> for the symbol with the unit as subscript. It is <span class="math inline">\(1\)</span> with probability <span class="math inline">\(1 - \droprate\)</span> and <span class="math inline">\(0\)</span> otherwise, so a kept unit’s value is scaled by <span class="math inline">\(1 / (1 - \droprate)\)</span> to keep its expected value. Sources name this indicator differently, or write the whole vector of indicators as a mask; ours names the role, not the letter.</p>
 </section>
 <section id="sec-network-weights" class="level2">
 <h2 class="anchored" data-anchor-id="sec-network-weights">The weights and intercept terms of a neural network</h2>
@@ -1252,6 +1258,9 @@ Hastie, Trevor, Robert Tibshirani, and Jerome Friedman. 2009. <em>The Elements o
 </div>
 <div id="ref-james2021islr" class="csl-entry" role="listitem">
 James, Gareth, Daniela Witten, Trevor Hastie, and Robert Tibshirani. 2021. <em>An Introduction to Statistical Learning with Applications in <span>R</span></em>. 2nd ed. Springer. <a href="https://www.statlearning.com/">https://www.statlearning.com/</a>.
+</div>
+<div id="ref-james2023introduction" class="csl-entry" role="listitem">
+James, Gareth, Daniela Witten, Trevor Hastie, Robert Tibshirani, and Jonathan Taylor. 2023. <em>An Introduction to Statistical Learning: With Applications in <span>Python</span></em>. Springer. <a href="https://doi.org/10.1007/978-3-031-38747-0">https://doi.org/10.1007/978-3-031-38747-0</a>.
 </div>
 <div id="ref-kriesel" class="csl-entry" role="listitem">
 Kriesel, David. n.d. <em>A Brief Introduction to Neural Networks</em>. <a href="http://www.dkriesel.com/en/science/neural_networks">http://www.dkriesel.com/en/science/neural_networks</a>.
